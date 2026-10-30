@@ -1,0 +1,280 @@
+{
+  "schema": "WCPP-UNATTENDED-CANDIDATE-1",
+  "run_id": "20261030T030531Z-a6f812e5",
+  "created_at": "2026-10-30T03:05:31.710833+00:00",
+  "code_sha256": "aee4cb57191ae5c095846e3a1875a44b44551e9c011d539e4f3a1040baad0212",
+  "configuration": {
+    "half_life": 365,
+    "ridge": 20,
+    "minimum_rows": 120,
+    "minimum_fit_rows": 80,
+    "minimum_audit_rows": 20,
+    "split_fraction": 0.75
+  },
+  "source_files": {
+    "config/scopes.json": "5597a7490f8cdba8de4f940e74942baee8757ff7746fecfb7cb728281178eec1",
+    "seed/training.json.gz": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
+    "seed/manifest.json": "9b2f21041001710584f9bc7c45c53caecdc050a4c31983454850bc977605cb77",
+    "normalized-results.jsonl": "a466c969b4908edcc971100508c19b13f7c324785997791e84c0035dfe5f68be"
+  },
+  "scope_count": 21,
+  "accepted_rows": 9181,
+  "quarantined": 0,
+  "excluded_by_time": [
+    {
+      "match_id": "espn:401841290",
+      "reason": "TODAY_OR_FUTURE_DATE"
+    }
+  ],
+  "diagnostic_scope": "RETROSPECTIVE_CHRONOLOGICAL_NOT_PROSPECTIVE_ASOF_RECONSTRUCTION",
+  "active_models_modified": false,
+  "automatic_promotion": false,
+  "cohorts": [
+    {
+      "cohort": "afc.champions:ELITE:league_phase",
+      "rows": 207,
+      "input_sha256": "242e25843f2eef0f8cdbd2a83a23f1bdb3f450b73b2f79a984228378a090c908",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/afc.champions_ELITE_league_phase-2ab55de5/artifact.json",
+      "artifact_sha256": "47ae3b172618feb0ed71fab2c1b6dc36274455146b802425e0f6866ae5b47c1d",
+      "fit_end": "2026-10-12",
+      "audit_n": 58,
+      "baseline_top1_hits": 7,
+      "candidate_top1_hits": 7
+    },
+    {
+      "cohort": "afc.cup:CHAMPIONS_TWO:group_stage",
+      "rows": 211,
+      "input_sha256": "cd3617a9cf17675678b973ab91135fe8e5ac385d00b765c461c7bb3b7b2fd5a7",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/afc.cup_CHAMPIONS_TWO_group_stage-f5074396/artifact.json",
+      "artifact_sha256": "5cd02521e20849043fc9af80189f3c187180d71abbedd18ded844d7b2bde44b6",
+      "fit_end": "2026-10-29",
+      "audit_n": 58,
+      "baseline_top1_hits": 6,
+      "candidate_top1_hits": 6
+    },
+    {
+      "cohort": "aus.1",
+      "rows": 2807,
+      "input_sha256": "0ebbdeffa78ab1673d32a09d6b0ebc722d5b51830b945f0bed3331504e623434",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/aus.1-19929ab0/artifact.json",
+      "artifact_sha256": "68dec4ace109d010a7f330c2ac9abaee1e88cf5c0fc4ed88fd5415b22a2b45ca",
+      "fit_end": "2026-04-26",
+      "audit_n": 793,
+      "baseline_top1_hits": 82,
+      "candidate_top1_hits": 80
+    },
+    {
+      "cohort": "bra.1",
+      "rows": 412,
+      "input_sha256": "e6b9e8f0ff8cf9a3a937b1dc4054b6340bae077e703c81ed31a6ac93683163c8",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/bra.1-43ff8ffc/artifact.json",
+      "artifact_sha256": "0c6648c3eab159c781c0e314dce1df7bf11a72a52259d25f5c23a73103c2cd79",
+      "fit_end": "2026-10-29",
+      "audit_n": 97,
+      "baseline_top1_hits": 11,
+      "candidate_top1_hits": 14
+    },
+    {
+      "cohort": "eng.1",
+      "rows": 360,
+      "input_sha256": "849d0e34abd25cf07dd6a36253d434e7551ecdb69a11576e4377428df5693935",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/eng.1-14668862/artifact.json",
+      "artifact_sha256": "60e8f241deb619e24c7da07586a58835520a21ceb0798fdc350661b7b37cf7c9",
+      "fit_end": "2026-09-20",
+      "audit_n": 86,
+      "baseline_top1_hits": 13,
+      "candidate_top1_hits": 15
+    },
+    {
+      "cohort": "eng.2",
+      "rows": 540,
+      "input_sha256": "d187bee8aa39c757d342bd91702ad927477cd903885f6457a1d00eab9388b991",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/eng.2-76148807/artifact.json",
+      "artifact_sha256": "42363f35d518abba15d051cd74c0a5d8ce6b13ebc7072cc1f8f2230e16bcaad5",
+      "fit_end": "2026-09-20",
+      "audit_n": 132,
+      "baseline_top1_hits": 14,
+      "candidate_top1_hits": 14
+    },
+    {
+      "cohort": "eng.league_cup:single_leg",
+      "rows": 343,
+      "input_sha256": "1498a7a9961c3a618d0990580d112bae3b08b639c6f9ab480efcf0166856bc36",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/eng.league_cup_single_leg-d0f5b7df/artifact.json",
+      "artifact_sha256": "e39224ab492c63cb2ffa87cae52cace2fd4f452a888714932431edef32248a66",
+      "fit_end": "2026-10-29",
+      "audit_n": 78,
+      "baseline_top1_hits": 11,
+      "candidate_top1_hits": 11
+    },
+    {
+      "cohort": "esp.1",
+      "rows": 369,
+      "input_sha256": "08c5302b5e3e90f49e82d658cf6695d9be9b4cbdeb68cb7a51fea0d18849133c",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/esp.1-55a8cf5e/artifact.json",
+      "artifact_sha256": "f9a08173a5dad0c6d00f59f6b1c3df92231e3c366a529acae870295fa514e2f9",
+      "fit_end": "2026-10-09",
+      "audit_n": 97,
+      "baseline_top1_hits": 16,
+      "candidate_top1_hits": 22
+    },
+    {
+      "cohort": "fra.1",
+      "rows": 287,
+      "input_sha256": "468ce58802e115f70b1a69237fdb4b7ba5bdcea3bfe93402a2a53104ea540e13",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/fra.1-bdfdcff6/artifact.json",
+      "artifact_sha256": "0800f47e73173cdd0708091c5a3e3691cc12da88e72669610320a106ac2d053e",
+      "fit_end": "2026-10-09",
+      "audit_n": 79,
+      "baseline_top1_hits": 8,
+      "candidate_top1_hits": 5
+    },
+    {
+      "cohort": "ger.1",
+      "rows": 289,
+      "input_sha256": "efab9079670bd57bbaae396f227984b07caf90f6c19824cef8e45af4b48d98ec",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/ger.1-f075f35b/artifact.json",
+      "artifact_sha256": "1af845d05b921105283a531f0e4ddbfb527e2591e9e70a0cfea930ad55e1f8a3",
+      "fit_end": "2026-10-09",
+      "audit_n": 81,
+      "baseline_top1_hits": 6,
+      "candidate_top1_hits": 6
+    },
+    {
+      "cohort": "ita.1",
+      "rows": 377,
+      "input_sha256": "a3069319bc041e0fe676039b008de8fcc721832dfa5b12f47a87b99d13d4df25",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/ita.1-682ccbf0/artifact.json",
+      "artifact_sha256": "147228573d9ccc8c13afb668bdc940561566616bbcd633bb4db357bc762eecf9",
+      "fit_end": "2026-10-29",
+      "audit_n": 103,
+      "baseline_top1_hits": 9,
+      "candidate_top1_hits": 15
+    },
+    {
+      "cohort": "jpn.1",
+      "rows": 82,
+      "input_sha256": "8ac0b2c824cc6527a6261fff5756a77ac3f1a7a510babe53a3637ce78d2c3afc",
+      "status": "BLOCKED_INSUFFICIENT_ROWS"
+    },
+    {
+      "cohort": "kor.1",
+      "rows": 181,
+      "input_sha256": "48f1d923d6546b6f8f12f31b9107d08b925631fc5328ebb24bb1de29c3b43d91",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/kor.1-457b79e6/artifact.json",
+      "artifact_sha256": "18c5f8e926c1266759560c24ab0b3326ce693a0831ed2073a327f066c30d9ab7",
+      "fit_end": "2026-10-09",
+      "audit_n": 44,
+      "baseline_top1_hits": 5,
+      "candidate_top1_hits": 6
+    },
+    {
+      "cohort": "ksa.1",
+      "rows": 339,
+      "input_sha256": "4aaed359cb9d8c7e803072c71ee8b5b5ae666fbadc690fbd033916c845073cc8",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/ksa.1-01aa3d4d/artifact.json",
+      "artifact_sha256": "f07124c368942e1082e5fd9ce2d56618a9f61e0dc4ca71837e63077c98659b65",
+      "fit_end": "2026-10-29",
+      "audit_n": 87,
+      "baseline_top1_hits": 8,
+      "candidate_top1_hits": 10
+    },
+    {
+      "cohort": "mex.1:apertura:regular",
+      "rows": 238,
+      "input_sha256": "9c151d74ba6935519c358e19b000b82a705974ac2bb91cff70b4f3a34c22dab8",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/mex.1_apertura_regular-b0e0c6ed/artifact.json",
+      "artifact_sha256": "0b195e8173adc61a4075bc7b020987ccbdd705a879ecaa7ed48b7b59399917ec",
+      "fit_end": "2026-10-29",
+      "audit_n": 53,
+      "baseline_top1_hits": 10,
+      "candidate_top1_hits": 10
+    },
+    {
+      "cohort": "ned.1",
+      "rows": 298,
+      "input_sha256": "409b8e2123a89a6191f78667d68b1f971c43cb58e778658add6cb1043bef7d7c",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/ned.1-ebd9ae8c/artifact.json",
+      "artifact_sha256": "a0fbb8abef16387684c230ddd78c1719847850acf815b9f989f60b064050330f",
+      "fit_end": "2026-10-09",
+      "audit_n": 64,
+      "baseline_top1_hits": 4,
+      "candidate_top1_hits": 4
+    },
+    {
+      "cohort": "nor.1",
+      "rows": 390,
+      "input_sha256": "f61edd3dfa71548ab78a7143029ce501376416e5070b68b3ae2d4c63a48af517",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/nor.1-fa8da73f/artifact.json",
+      "artifact_sha256": "c53703b3a317212213d705306030f8cdfc498f82f81d7403fdebcf5a073522ec",
+      "fit_end": "2026-10-09",
+      "audit_n": 93,
+      "baseline_top1_hits": 8,
+      "candidate_top1_hits": 10
+    },
+    {
+      "cohort": "por.1",
+      "rows": 298,
+      "input_sha256": "079da3365166f3dcf64b85da9f47b84ee506bd740b1e03248b97fb6ff2957145",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/por.1-2382f9d8/artifact.json",
+      "artifact_sha256": "defe35a8170aa918724f63d8b3193d1770b2d514c865be466231c09fb805f682",
+      "fit_end": "2026-10-09",
+      "audit_n": 82,
+      "baseline_top1_hits": 7,
+      "candidate_top1_hits": 14
+    },
+    {
+      "cohort": "swe.1",
+      "rows": 407,
+      "input_sha256": "5ae4623d97c5a006edf127ff94df0568d7f1810ef0ce4f91e90aa0e1e5fca744",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/swe.1-d6cfff45/artifact.json",
+      "artifact_sha256": "4634cd3e02ee27781353036bfb4bc1e399e9bd3c8ddf99b1079b55330f9c736e",
+      "fit_end": "2026-10-29",
+      "audit_n": 87,
+      "baseline_top1_hits": 9,
+      "candidate_top1_hits": 8
+    },
+    {
+      "cohort": "uefa.champions:NEW_FORMAT:league_phase",
+      "rows": 306,
+      "input_sha256": "b1265319a4740a0befd91f9dedc3a27d776c2c7d5d7e92c8eabdef3b24ac2668",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/uefa.champions_NEW_FORMAT_league_phase-1dd1b57c/artifact.json",
+      "artifact_sha256": "fd7b545e61f3c8d452c9e861c55a93a0d1e51361c21c3aa78ec2d59ba373ca51",
+      "fit_end": "2026-09-10",
+      "audit_n": 81,
+      "baseline_top1_hits": 5,
+      "candidate_top1_hits": 5
+    },
+    {
+      "cohort": "usa.1",
+      "rows": 440,
+      "input_sha256": "6391f4908b38e2af2da2e35b832403587aebd42eba07145c5b02e3126286c7bf",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261030T030531Z-a6f812e5/usa.1-8026883c/artifact.json",
+      "artifact_sha256": "a7fa840b5aba50774e0f1bbd4c3183eb119a424574a4918315388e2fa8e29cec",
+      "fit_end": "2026-10-29",
+      "audit_n": 99,
+      "baseline_top1_hits": 4,
+      "candidate_top1_hits": 5
+    }
+  ]
+}
