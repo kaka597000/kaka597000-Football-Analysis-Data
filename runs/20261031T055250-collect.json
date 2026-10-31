@@ -1,0 +1,321 @@
+{
+  "run_id": "20261031T055250-collect",
+  "started_at": "2026-10-31T05:52:50.535429+00:00",
+  "mode": "collect",
+  "policy": {
+    "max_cohorts": 21,
+    "max_requests": 100,
+    "lookback_days": 2,
+    "promotion": "NEVER",
+    "max_collection_seconds": 150,
+    "data_sources": "existing public JSON endpoints only",
+    "paid_api_calls": false
+  },
+  "source_commit": "0741bfbb5e53f2173a4b26a58146cbf5f95f9d68",
+  "source_worktree_dirty": false,
+  "seed_sha256": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
+  "active_model_modified": false,
+  "result": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-10-31T05:52:50.586652+00:00",
+    "request_count": 70,
+    "successful_requests": 66,
+    "max_requests": 100,
+    "retry_used": true,
+    "events_seen": 102,
+    "new_result_observations": 5,
+    "quarantined": 0,
+    "market_snapshot_saved": true,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 150,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false,
+    "coverage_by_competition": {
+      "afc.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "afc.cup": {
+        "scoreboards_ok": 3,
+        "events_seen": 6,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "aus.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 4,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "bra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "eng.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 8,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "eng.2": {
+        "scoreboards_ok": 3,
+        "events_seen": 12,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "eng.league_cup": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "esp.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 4,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ger.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 7,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ita.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "jpn.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 6,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "kor.1": {
+        "scoreboards_ok": 0,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ksa.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 9,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "mex.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 7,
+        "new_rows": 3,
+        "quarantined": 0
+      },
+      "ned.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "nor.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "por.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "swe.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "usa.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 9,
+        "new_rows": 0,
+        "quarantined": 0
+      }
+    },
+    "new_rows": [
+      {
+        "match_id": "espn:401892149",
+        "cohort": "aus.1",
+        "competition": "aus.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-10-31",
+        "kickoff_at": "2026-10-31T04:00:00+00:00",
+        "home": "espn:5323",
+        "away": "espn:8352",
+        "home_goals": 0,
+        "away_goals": 3,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-10-31T05:52:53.538624+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/summary?event=401892149",
+        "provider_final_score": [
+          "0",
+          "3"
+        ],
+        "raw_reference": {
+          "path": "raw/631db98436ef8a21eb73b46ed5cf3b1caa3ebca2784c656c9de7f44b86c53e39.json.gz",
+          "sha256": "631db98436ef8a21eb73b46ed5cf3b1caa3ebca2784c656c9de7f44b86c53e39",
+          "captured_at": "2026-10-31T05:52:53.538624+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/summary?event=401892149"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401841295",
+        "cohort": "bra.1",
+        "competition": "bra.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-10-30",
+        "kickoff_at": "2026-10-30T23:00:00+00:00",
+        "home": "espn:874",
+        "away": "espn:9169",
+        "home_goals": 2,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-10-31T05:52:54.495159+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary?event=401841295",
+        "provider_final_score": [
+          "2",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/ae47c102dee40147dd29b534f4d61f21ce4208622d46d8f649737a22cc89638a.json.gz",
+          "sha256": "ae47c102dee40147dd29b534f4d61f21ce4208622d46d8f649737a22cc89638a",
+          "captured_at": "2026-10-31T05:52:54.495159+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary?event=401841295"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401876919",
+        "cohort": "mex.1:apertura:regular",
+        "competition": "mex.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-10-31",
+        "kickoff_at": "2026-10-31T01:00:00+00:00",
+        "home": "espn:15720",
+        "away": "espn:216",
+        "home_goals": 0,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-10-31T05:53:03.930916+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/summary?event=401876919",
+        "provider_final_score": [
+          "0",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/7a71c1ed245c420af65ab1b18b455dbad0395416f3462e713ba3d2339765037a.json.gz",
+          "sha256": "7a71c1ed245c420af65ab1b18b455dbad0395416f3462e713ba3d2339765037a",
+          "captured_at": "2026-10-31T05:53:03.930916+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/summary?event=401876919"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401876918",
+        "cohort": "mex.1:apertura:regular",
+        "competition": "mex.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-10-31",
+        "kickoff_at": "2026-10-31T01:00:00+00:00",
+        "home": "espn:17851",
+        "away": "espn:222",
+        "home_goals": 3,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-10-31T05:53:04.209018+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/summary?event=401876918",
+        "provider_final_score": [
+          "3",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/fecc1790b343ccdf675a6607e3e329c406303e4ffc3c94b659d731bdf124807a.json.gz",
+          "sha256": "fecc1790b343ccdf675a6607e3e329c406303e4ffc3c94b659d731bdf124807a",
+          "captured_at": "2026-10-31T05:53:04.209018+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/summary?event=401876918"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401876917",
+        "cohort": "mex.1:apertura:regular",
+        "competition": "mex.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-10-31",
+        "kickoff_at": "2026-10-31T03:00:00+00:00",
+        "home": "espn:231",
+        "away": "espn:233",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-10-31T05:53:04.496746+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/summary?event=401876917",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/2fb0014dd8af910ea50691501a0af7f744acb55e19ce2e2644a64a4a998b6e44.json.gz",
+          "sha256": "2fb0014dd8af910ea50691501a0af7f744acb55e19ce2e2644a64a4a998b6e44",
+          "captured_at": "2026-10-31T05:53:04.496746+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/summary?event=401876917"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      }
+    ]
+  },
+  "status": "COMPLETED",
+  "finished_at": "2026-10-31T05:53:12.450615+00:00"
+}
