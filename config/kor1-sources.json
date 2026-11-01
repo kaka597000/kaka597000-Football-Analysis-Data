@@ -1,0 +1,22 @@
+{
+  "cohort": "kor.1",
+  "competition": "kor.1",
+  "stage": "regular",
+  "espn": false,
+  "history_from_year": 2018,
+  "max_requests_per_run": 6,
+  "primary": {
+    "provider": "5dollar",
+    "competition_id": 2270596712,
+    "base_url": "https://api.5dollarfootballapi.com/v1",
+    "credential_env": "WCPP_5DOLLAR_API_KEY",
+    "fields": ["fixtures", "results", "bet365_odds", "standings", "stats"]
+  },
+  "fallback": {
+    "provider": "api-football",
+    "competition_id": 219,
+    "base_url": "https://v3.football.api-sports.io",
+    "credential_env": "WCPP_API_FOOTBALL_KEY",
+    "bet365_bookmaker_id": 8
+  }
+}

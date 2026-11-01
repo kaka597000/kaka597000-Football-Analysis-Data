@@ -1,4 +1,5 @@
-# Installed only in the private data repository. No secrets or cross-repo token.
+# Installed only in the private data repository. Football-Analysis checkout uses no token.
+# kor.1 reads WCPP_5DOLLAR_API_KEY and WCPP_API_FOOTBALL_KEY from repository secrets.
 name: WCPP private unattended research
 on:
   workflow_dispatch:
@@ -54,7 +55,33 @@ jobs:
         working-directory: code
         env:
           JOB_MODE: ${{ steps.mode.outputs.value }}
-        run: python -m runtime.automation.run "$JOB_MODE" --state-dir ../private-state --max-collection-seconds 150
+        run: |
+          set -euo pipefail
+          # The pinned collector uses the competition code as an ESPN path.
+          # kor.1 stays in scopes.json and is removed only for this call.
+          if [ "$JOB_MODE" = collect ]; then
+            python ../private-state/runtime/collect_kor1.py omit-espn --state-dir ../private-state
+          fi
+          set +e
+          python -m runtime.automation.run "$JOB_MODE" --state-dir ../private-state --max-collection-seconds 150
+          status=$?
+          set -e
+          if [ "$JOB_MODE" = collect ]; then
+            git -C ../private-state checkout -- config/scopes.json
+          fi
+          exit "$status"
+      - name: Restore scopes.json
+        if: always()
+        working-directory: private-state
+        run: git checkout -- config/scopes.json
+      - name: Collect kor.1 via 5Dollar, API-Football fallback
+        if: steps.mode.outputs.value == 'collect'
+        working-directory: private-state
+        timeout-minutes: 2
+        env:
+          WCPP_5DOLLAR_API_KEY: ${{ secrets.WCPP_5DOLLAR_API_KEY }}
+          WCPP_API_FOOTBALL_KEY: ${{ secrets.WCPP_API_FOOTBALL_KEY }}
+        run: python runtime/collect_kor1.py collect --state-dir .
       - name: Save private audit and data
         if: always()
         working-directory: private-state
