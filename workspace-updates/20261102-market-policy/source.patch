@@ -1,0 +1,234 @@
+From f97fac83aaedb57dc1a95db7c5825c946ae0088d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E5=B8=85=E6=AF=94=E7=9A=84=20Iphone?=
+ <btysdxvp7j@privaterelay.appleid.com>
+Date: Mon, 2 Nov 2026 05:08:18 +0000
+Subject: [PATCH] Prioritize verified market movement and allow explicit lineup
+ uncertainty scenarios
+
+---
+ AGENTS.md                                |  2 ++
+ docs/market-and-lineup-policy.md         | 13 +++++++
+ docs/user-primary-score-requirements.md  |  2 ++
+ project-goals.json                       |  7 ++++
+ runtime/predict_active.py                |  2 ++
+ runtime/research/market_movement.py      | 44 ++++++++++++++++++++++++
+ runtime/research/test_market_movement.py | 17 +++++++++
+ runtime/v4/decision_audit.py             | 20 ++++++++---
+ runtime/v4/test_decision_diagnostics.py  | 18 ++++++++++
+ 9 files changed, 120 insertions(+), 5 deletions(-)
+ create mode 100644 docs/market-and-lineup-policy.md
+ create mode 100644 runtime/research/market_movement.py
+ create mode 100644 runtime/research/test_market_movement.py
+
+diff --git a/AGENTS.md b/AGENTS.md
+index db41fbb..5a346b5 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -34,3 +34,5 @@
+ - **2026-10-21复盘约定**：比分、胜平负与大小球分母独立；比分待定但已明确方向仍结算方向，观望和候选不得补命中。test欧冠/英冠版本分列。乌龙球员队与受益队使用 `runtime/research/review_events.py` 校验分数变化及shotmap球队ID，不能直接取isHome；新增8测试及真实42球验证通过。复盘证据见 `/workspace/WCPP/reports/review-20261021-0813/赛事复盘与调整决定.md`；本次数值参数不变，未宣称训练或晋级。
+ 
+ - **2026-11-02长期目标再次确认**：持续优化分析模型，提高胜平负、实际盘口大小球与唯一第一推荐比分的未来真实命中率；Primary Top1仍最高优先。每批完整冻结/复盘，首次赛前与首发修订分列；同时报告覆盖率、同场净增命中及不确定性，禁止事后择优。近期优先核查训练数据鲜度、官方首发冲突、盘口时点与综合改分净收益。见docs/project-goals.md及project-goals.json；目标登记不等于后台训练已启动。
++
++- **2026-11-02最新分析偏好**：重点关注同机构、同盘线、真实时点的水位变化；降低阵容依赖，未公布真实首发不默认阻断分析。使用可靠伤停及轮换情景，明确未知；重大未解决人员风险仍待定。市场仅为证据，不虚设权重、不把价格当资金流；详见docs/market-and-lineup-policy.md。此条覆盖旧的“必须官方首发才能分析”的笼统要求，旧冻结不回改。
+diff --git a/docs/market-and-lineup-policy.md b/docs/market-and-lineup-policy.md
+new file mode 100644
+index 0000000..0065aca
+--- /dev/null
++++ b/docs/market-and-lineup-policy.md
+@@ -0,0 +1,13 @@
++# 水位变化优先核查与阵容不确定性规则
++
++2026-11-02用户授权：分析重点关注盘口水位变化，降低对真实首发名单的依赖。本规则覆盖旧的“缺官方11人名单即默认待定”要求，不回改旧预测。
++
++水位优先级提高指证据核查与候选比较，不是任意给盘口设置数值权重。先审查球队状态/主客/机会过程，再重点核对同机构初始、赛前及可用临场快照；保存赛事、市场、盘线、双方价格、机构报价时间、抓取时间及来源。分开记录升降盘与同盘升降水，不把不同盘线的价格差当水位变化。欧赔完整三项、大小球及让球完整两项才比较。HTTP时间和抓取时间不代替报价时间。跨机构分开比较；缺时间/历史只展示单点，不推断趋势。价格变化不是资金量、内幕或卖分证据，不机械追低水。
++
++runtime/research/market_movement.py已接入默认predict_active输出market_movement，仅提供观察到的同机构同盘价格差，不改矩阵、均值、第一比分或训练权重。此模块不自动查询API、采集历史或启动定时任务，也不将开盘/当前两点冒充完整逐时轨迹。
++
++阵容仅为修正项：未公布首发不默认阻断已有合格证据支持的分析；使用已核实伤停、常用人员与轮换情景，明确预计/未知。decision_evidence.lineup可使用status=unknown、lineup_status=unannounced，或status=documented、lineup_status=projected；须有source evidence、scenario_analysis、uncertainty以及经审查的material_selection_risk=false。资料齐备不等于预测已验证。已确认首发仍核验11名唯一球员和官方来源；关键门将/核心缺阵或人员冲突足以改变方向且未解决时，保留待定或条件判断，不因降低阵容优先级忽略重大事实。
++
++不固定水位或阵容的百分比，不重新标注旧工件权重。当前/test/综合独立冻结；首发前版本与首发后修订分列。下一步须用同场未来冻结样本验证盘口证据与降低阵容依赖是否改善Primary、胜平负及真实线大小球，并报告覆盖率、改对/改错及不确定性。
++
++验证：353项测试执行，无失败；私有原配方历史资产集成组因缺历史文件跳过。新增检查覆盖跨机构/盘线不比较、无时点/未来报价拒绝，以及无首发情景可记录但重大风险仍阻断。未验证未来命中率提升。
+diff --git a/docs/user-primary-score-requirements.md b/docs/user-primary-score-requirements.md
+index 405ff67..e90471a 100644
+--- a/docs/user-primary-score-requirements.md
++++ b/docs/user-primary-score-requirements.md
+@@ -141,3 +141,5 @@ Champion V21.5、永久λ、Selector4.1-RP1 Challenger、Regime-MT-KL Shadow及
+ 
+ 赫尔—布伦特赛果1—1，当前/test的1—1均命中，综合1—2错误；属于人工覆盖净损失案例。曼联—伯恩茅斯赛果0—3，综合客胜与大2.75正确但1—2错误，说明方向增益不等于比分增益。赛后xG只作诊断，不回填赛前特征。本轮活动参数保持，至少累计50场相同冻结方法的已完赛样本后再评估数值校准。完整证据见[本轮复盘](/workspace/WCPP/reports/remaining-20261025-1942/review-20261026-0830/赛事复盘与调整决定.md)。
+ 
++
++- **2026-11-02最新分析偏好**：重点关注同机构、同盘线、真实时点的水位变化；降低阵容依赖，未公布真实首发不默认阻断分析。使用可靠伤停及轮换情景，明确未知；重大未解决人员风险仍待定。市场仅为证据，不虚设权重、不把价格当资金流；详见docs/market-and-lineup-policy.md。此条覆盖旧的“必须官方首发才能分析”的笼统要求，旧冻结不回改。
+diff --git a/project-goals.json b/project-goals.json
+index 3e62c30..74366cd 100644
+--- a/project-goals.json
++++ b/project-goals.json
+@@ -106,5 +106,12 @@
+       "keep_abstentions_and_pending_results_visible"
+     ],
+     "background_status": "沿用已有任务授权；本次仅登记目标，未启动或验证后台训练"
++  },
++  "analysis_preferences": {
++    "confirmed_at": "2026-11-02",
++    "market_movement": "prioritize_verified_same_bookmaker_same_line_price_history",
++    "lineup_dependency": "reduced; unannounced XI is not an automatic veto; scenario analysis required",
++    "numeric_weights_changed": false,
++    "policy": "docs/market-and-lineup-policy.md"
+   }
+ }
+diff --git a/runtime/predict_active.py b/runtime/predict_active.py
+index 2645986..9e0f45f 100644
+--- a/runtime/predict_active.py
++++ b/runtime/predict_active.py
+@@ -180,6 +180,8 @@ def run(fixture, registry_path=None):
+     attach_audit(output)
+     from research.layered_selector import compare_pair
+     output['selection_experiment'] = compare_pair(output)
++    from research.market_movement import analyze as analyze_market
++    output['market_movement'] = analyze_market(fixture)
+     return output
+ 
+ 
+diff --git a/runtime/research/market_movement.py b/runtime/research/market_movement.py
+new file mode 100644
+index 0000000..73360e1
+--- /dev/null
++++ b/runtime/research/market_movement.py
+@@ -0,0 +1,44 @@
++"""Evidence-only, same-bookmaker/market/line price movement. No forecast override."""
++from datetime import datetime
++import math
++from urllib.parse import urlsplit,parse_qsl
++
++
++def aware(value):
++    t=datetime.fromisoformat(value.replace('Z','+00:00'))
++    if t.tzinfo is None: raise ValueError('timezone required')
++    return t
++
++
++def analyze(fixture):
++    result={'status':'NO_SNAPSHOTS','comparisons':[],'rejected_snapshots':0,
++            'prediction_modified':False,'money_flow_inferred':False}
++    groups={}
++    for row in fixture.get('market_snapshots',[]):
++        try:
++            source=urlsplit(row['source_url'])
++            if (source.scheme!='https' or not source.hostname or source.username or source.password
++                    or any(k.lower() in {'apikey','api_key','token','access_token'} for k,_ in parse_qsl(source.query))):raise ValueError('source')
++            if row['match_id']!=fixture['match_id']:raise ValueError('identity')
++            if not aware(row['quoted_at'])<=aware(row['query_time'])<=aware(fixture['cutoff_at'])<aware(fixture['kickoff_at']):raise ValueError('time')
++            market=row['market'];line=row.get('line')
++            expected={'1x2':{'home','draw','away'},'totals':{'over','under'},'asian_handicap':{'home','away'}}[market]
++            if market!='1x2' and (type(line) not in (int,float) or not math.isfinite(line)):raise ValueError('line')
++            if market=='1x2' and line is not None:raise ValueError('line')
++            if not isinstance(row['bookmaker'],str) or not row['bookmaker'].strip():raise ValueError('bookmaker')
++            odds=row['decimal_odds']
++            if set(odds)!=expected or any(type(v) not in (int,float) or not math.isfinite(v) or v<=1 for v in odds.values()):raise ValueError('odds')
++            key=(row['bookmaker'],market,line)
++            groups.setdefault(key,[]).append(row)
++        except (KeyError,ValueError,TypeError,AttributeError):result['rejected_snapshots']+=1
++    for (book,market,line),rows in groups.items():
++        rows.sort(key=lambda x:aware(x['quoted_at']))
++        first,last=rows[0],rows[-1]
++        if aware(first['quoted_at'])==aware(last['quoted_at']):continue
++        result['comparisons'].append({'bookmaker':book,'market':market,'line':line,
++            'first_quoted_at':first['quoted_at'],'last_quoted_at':last['quoted_at'],
++            'decimal_odds_change':{k:last['decimal_odds'][k]-first['decimal_odds'][k] for k in first['decimal_odds']},
++            'first_decimal_odds':first['decimal_odds'],'last_decimal_odds':last['decimal_odds'],
++            'meaning':'Observed price change only; different lines not compared; no betting-flow or predictive-effect claim'})
++    result['status']='COMPARABLE_HISTORY' if result['comparisons'] else ('INSUFFICIENT_COMPARABLE_HISTORY' if groups else ('INVALID_OR_UNTIMED_SNAPSHOTS' if result['rejected_snapshots'] else 'NO_SNAPSHOTS'))
++    return result
+diff --git a/runtime/research/test_market_movement.py b/runtime/research/test_market_movement.py
+new file mode 100644
+index 0000000..acb0626
+--- /dev/null
++++ b/runtime/research/test_market_movement.py
+@@ -0,0 +1,17 @@
++import copy,unittest
++from market_movement import analyze
++
++class Tests(unittest.TestCase):
++    def fixture(self):
++        def row(t,line=2.5):return {'match_id':'synthetic','bookmaker':'Example','market':'totals','line':line,'decimal_odds':{'over':1.9,'under':1.9},'quoted_at':t,'query_time':t,'source_url':'https://example.test/odds'}
++        return {'match_id':'synthetic','cutoff_at':'2026-01-01T12:00:00Z','kickoff_at':'2026-01-02T12:00:00Z','market_snapshots':[row('2026-01-01T10:00:00Z'),row('2026-01-01T11:00:00Z')]}
++    def test_observed_same_line_price_change_no_prediction_mutation(self):
++        f=self.fixture();f['market_snapshots'][1]['decimal_odds']['over']=1.8;before=copy.deepcopy(f);r=analyze(f)
++        self.assertEqual(r['status'],'COMPARABLE_HISTORY');self.assertAlmostEqual(r['comparisons'][0]['decimal_odds_change']['over'],-.1);self.assertEqual(f,before);self.assertFalse(r['prediction_modified'])
++    def test_different_book_or_line_does_not_create_price_movement(self):
++        for field,value in [('bookmaker','Other'),('line',3.0)]:
++            f=self.fixture();f['market_snapshots'][1][field]=value;self.assertEqual(analyze(f)['comparisons'],[])
++    def test_untimed_future_wrong_identity_or_invalid_odds_rejected(self):
++        for key,value in [('quoted_at',None),('quoted_at','2026-01-03T10:00:00Z'),('match_id','other'),('decimal_odds',{'over':float('nan'),'under':1.9})]:
++            f=self.fixture();f['market_snapshots'][1][key]=value;self.assertEqual(analyze(f)['rejected_snapshots'],1);self.assertEqual(analyze(f)['comparisons'],[])
++if __name__=='__main__':unittest.main()
+diff --git a/runtime/v4/decision_audit.py b/runtime/v4/decision_audit.py
+index aced314..465fd67 100644
+--- a/runtime/v4/decision_audit.py
++++ b/runtime/v4/decision_audit.py
+@@ -101,7 +101,9 @@ def assess_decision(fixture):
+                     raise ValueError('explicit evidence status required')
+                 if not isinstance(b.get('summary'), str) or not b['summary'].strip():
+                     raise ValueError('summary/reason required')
+-                if status in ('unknown', 'conflict'):
++                lineup_uncertainty = (category == 'lineup' and status == 'unknown'
++                                      and b.get('lineup_status') == 'unannounced')
++                if status in ('unknown', 'conflict') and not lineup_uncertainty:
+                     raise ValueError(status + ': ' + b['summary'])
+                 if status == 'not_applicable' and category != 'public_information':
+                     raise ValueError('category cannot be waived; record unknown instead')
+@@ -112,10 +114,18 @@ def assess_decision(fixture):
+                     evidence_ok(e, fixture, category)
+                 if category == 'paths' and not b.get('counterargument'):
+                     raise ValueError('counterargument required for proposed path')
+-                if category == 'lineup' and (b.get('official_confirmed') is not True
+-                        or not any(e['source_tier'] == 'L1' for e in evidence)
+-                        or len(b.get('starters', [])) != 11 or len(set(b['starters'])) != 11):
+-                    raise ValueError('eleven unique official starters required')
++                if category == 'lineup':
++                    if b.get('official_confirmed') is True:
++                        if (not any(e['source_tier'] == 'L1' for e in evidence)
++                                or len(b.get('starters', [])) != 11 or len(set(b['starters'])) != 11):
++                            raise ValueError('eleven unique official starters required')
++                    else:
++                        if (b.get('lineup_status') not in ('unannounced', 'projected')
++                                or not isinstance(b.get('scenario_analysis'), str)
++                                or not b['scenario_analysis'].strip()
++                                or not isinstance(b.get('uncertainty'), str) or not b['uncertainty'].strip()
++                                or b.get('material_selection_risk') is not False):
++                            raise ValueError('document lineup scenarios/uncertainty and resolve material selection risk')
+                 if category == 'process' and b.get('xg_origin') == 'narrative_inference':
+                     raise ValueError('narrative-derived xG is not measured xG')
+                 blocks[side][category] = {'documented': True, 'status': status}
+diff --git a/runtime/v4/test_decision_diagnostics.py b/runtime/v4/test_decision_diagnostics.py
+index 9f87f70..cc6d69b 100644
+--- a/runtime/v4/test_decision_diagnostics.py
++++ b/runtime/v4/test_decision_diagnostics.py
+@@ -83,6 +83,24 @@ class DecisionTests(unittest.TestCase):
+         out=assess_decision(f);self.assertEqual(out['documented_blocks'],15)
+ 
+ 
++class LineupUncertaintyTests(unittest.TestCase):
++    def test_unannounced_lineup_with_scenarios_is_documented_not_official(self):
++        f=fixture();b={'status':'unknown','lineup_status':'unannounced',
++            'summary':'Official XI not published','official_confirmed':False,
++            'scenario_analysis':'Compare regular starters with rotation; direction unchanged',
++            'uncertainty':'Full XI unavailable; do not claim confirmed starters',
++            'material_selection_risk':False,
++            'evidence':[{'source_url':'https://example.org/team-news','source_tier':'L2',
++                         'query_time':f['cutoff_at'],'supports_field':['lineup']}]}
++        f['decision_evidence']={'home':{'lineup':b}}
++        self.assertTrue(assess_decision(f)['blocks']['home']['lineup']['documented'])
++        self.assertFalse(b['official_confirmed'])
++        b['material_selection_risk']=True
++        self.assertFalse(assess_decision(f)['blocks']['home']['lineup']['documented'])
++        b['material_selection_risk']=False;b.pop('scenario_analysis')
++        self.assertFalse(assess_decision(f)['blocks']['home']['lineup']['documented'])
++
++
+ class DiagnosticTests(unittest.TestCase):
+     def test_calibration_and_residuals_known_answer(self):
+         f,r=sample();out=diagnose([f],[r],3)
+-- 
+2.52.0
+
