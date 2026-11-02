@@ -1,0 +1,2156 @@
+{
+  "schema": "WCPP-V2-PHASE1-AUDIT-1",
+  "generated_at": "2026-11-02T05:27:48.917197+00:00",
+  "registry": "/workspace/wcpp-transfer-20261102/incoming-active-model.json",
+  "registry_sha256": "7c53ac2f7b3b5c856beb6590c274b006f2cdc8d4c49625fe6beef16b2e9a1590",
+  "registry_version": "WCPP-DUAL-5",
+  "routes": [
+    {
+      "cohort": "mex.1:apertura:regular",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/mex-apertura-dual/artifact.json",
+          "actual_sha256": "9614858205e8d3dcc56951d957f012e1c4ca603198a8acf79036037ed65e017e",
+          "registered_sha256": "9614858205e8d3dcc56951d957f012e1c4ca603198a8acf79036037ed65e017e",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-09-28",
+          "history": {
+            "rows": 237,
+            "date_min": "2025-07-12",
+            "date_max": "2026-09-28",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 237,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 237,
+            "invalid_goals": 0,
+            "cohorts": {
+              "mex.1:apertura:regular": 237
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.0600424480295514,
+            0.2375353741235148,
+            0.2149839092680539,
+            0.23460067229561057,
+            0.25283759628326924
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": -0.038461538461538464,
+            "date_cluster_bootstrap95": [
+              -0.08513389581804842,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/mex.1-apertura-regular/artifact.json",
+          "actual_sha256": "70d7e66f72c30717327223c47a49c5c3e6998e56a9dbc16fa111f0667cfcad9a",
+          "registered_sha256": "70d7e66f72c30717327223c47a49c5c3e6998e56a9dbc16fa111f0667cfcad9a",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-09-28",
+          "history": {
+            "rows": 237,
+            "date_min": "2025-07-12",
+            "date_max": "2026-09-28",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 237,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 237,
+            "invalid_goals": 0,
+            "cohorts": {
+              "mex.1:apertura:regular": 237
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.25,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": -0.019230769230769246,
+            "date_cluster_bootstrap95": [
+              -0.058823529411764705,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "eng.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/eng.1/artifact.json",
+          "actual_sha256": "ac5ef67c624da8913a2e3492b2fbae6b73776bf0f9e5157423c72e718dd72983",
+          "registered_sha256": "ac5ef67c624da8913a2e3492b2fbae6b73776bf0f9e5157423c72e718dd72983",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-09-20",
+          "history": {
+            "rows": 360,
+            "date_min": "2025-10-18",
+            "date_max": "2026-09-20",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 360,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 360,
+            "invalid_goals": 0,
+            "cohorts": {
+              "eng.1": 360
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.2300598607568977,
+            0.18293084665412768,
+            0.22297417312587292,
+            0.15273564520289207,
+            0.21129947426020967
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.023255813953488358,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.05434782608695652
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/eng.1/artifact.json",
+          "actual_sha256": "9f78989414419514a23f669aa9648e341a4899890101f363cc47bff5057b03e0",
+          "registered_sha256": "9f78989414419514a23f669aa9648e341a4899890101f363cc47bff5057b03e0",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-09-20",
+          "history": {
+            "rows": 360,
+            "date_min": "2025-10-18",
+            "date_max": "2026-09-20",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 360,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 360,
+            "invalid_goals": 0,
+            "cohorts": {
+              "eng.1": 360
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 360,
+          "alpha": 0.5,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.023255813953488358,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.05434782608695652
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "esp.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/esp.1/artifact.json",
+          "actual_sha256": "3d4da662d2b671c368860f7786ce7d2b22ddab4f60efc1b61470230ce57234ec",
+          "registered_sha256": "3d4da662d2b671c368860f7786ce7d2b22ddab4f60efc1b61470230ce57234ec",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 369,
+            "date_min": "2025-10-17",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 369,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 369,
+            "invalid_goals": 0,
+            "cohorts": {
+              "esp.1": 369
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.10789471822971723,
+            0.20944965573339336,
+            0.22266321377026416,
+            0.1901797568259922,
+            0.2698126554406331
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.010309278350515483,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.029710396039603917
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/esp.1/artifact.json",
+          "actual_sha256": "dc1c4071478cabd7de2861e31edfe9decad328ebdf174c3c8cf639dbc4fd5682",
+          "registered_sha256": "dc1c4071478cabd7de2861e31edfe9decad328ebdf174c3c8cf639dbc4fd5682",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 369,
+            "date_min": "2025-10-17",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 369,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 369,
+            "invalid_goals": 0,
+            "cohorts": {
+              "esp.1": 369
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 369,
+          "alpha": 0.25,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": -0.02061855670103091,
+            "date_cluster_bootstrap95": [
+              -0.04706159822419534,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "ger.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/ger.1/artifact.json",
+          "actual_sha256": "d8e4e8edeb3b1be5bb3567496c5ff3f90de31de8bdf2e5ec00e68c38990c7691",
+          "registered_sha256": "d8e4e8edeb3b1be5bb3567496c5ff3f90de31de8bdf2e5ec00e68c38990c7691",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 289,
+            "date_min": "2025-10-17",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 289,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 289,
+            "invalid_goals": 0,
+            "cohorts": {
+              "ger.1": 289
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.15499918871373697,
+            0.2889606112092006,
+            0.18598339942702372,
+            0.08108944249936458,
+            0.28896735815067426
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.0,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/ger.1/artifact.json",
+          "actual_sha256": "9d81229e3699c648596e4545e6670cf705ecfb92385c35f7f19444b641edc740",
+          "registered_sha256": "9d81229e3699c648596e4545e6670cf705ecfb92385c35f7f19444b641edc740",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 289,
+            "date_min": "2025-10-17",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 289,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 289,
+            "invalid_goals": 0,
+            "cohorts": {
+              "ger.1": 289
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.25,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.012345679012345678,
+            "date_cluster_bootstrap95": [
+              -0.03260869565217391,
+              0.05263157894736842
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "ita.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/ita.1/artifact.json",
+          "actual_sha256": "ca69b767362958577e22a4157c23613cb9b6e12604ffb20fcaa2b624413e6dbd",
+          "registered_sha256": "ca69b767362958577e22a4157c23613cb9b6e12604ffb20fcaa2b624413e6dbd",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-09-20",
+          "history": {
+            "rows": 370,
+            "date_min": "2025-10-18",
+            "date_max": "2026-09-20",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 370,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 370,
+            "invalid_goals": 0,
+            "cohorts": {
+              "ita.1": 370
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.3344323656447485,
+            0.16668887661159598,
+            0.15852797558992404,
+            0.17913366653092774,
+            0.1612171156228037
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.030303030303030318,
+            "date_cluster_bootstrap95": [
+              -0.010752688172043012,
+              0.07526881720430108
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/ita.1/artifact.json",
+          "actual_sha256": "f005920710f0124a37ab75e448a96c141bb9b3024d40b444a6445bc6dea34cb5",
+          "registered_sha256": "f005920710f0124a37ab75e448a96c141bb9b3024d40b444a6445bc6dea34cb5",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-09-20",
+          "history": {
+            "rows": 370,
+            "date_min": "2025-10-18",
+            "date_max": "2026-09-20",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 370,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 370,
+            "invalid_goals": 0,
+            "cohorts": {
+              "ita.1": 370
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.5,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.010101010101010097,
+            "date_cluster_bootstrap95": [
+              -0.03847087378640777,
+              0.06796668137687552
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "fra.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/fra.1/artifact.json",
+          "actual_sha256": "403b79855abfe75a6fc05dfe0e4ddaf52f2204e933daadae6335df2ba9b816b8",
+          "registered_sha256": "403b79855abfe75a6fc05dfe0e4ddaf52f2204e933daadae6335df2ba9b816b8",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 287,
+            "date_min": "2025-10-17",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 287,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 287,
+            "invalid_goals": 0,
+            "cohorts": {
+              "fra.1": 287
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.35787717467210195,
+            0.08677547319645972,
+            0.20783271214157917,
+            0.06305009711638494,
+            0.2844645428734742
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": -0.01265822784810127,
+            "date_cluster_bootstrap95": [
+              -0.04054054054054054,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/fra.1/artifact.json",
+          "actual_sha256": "1b6567b71fbbdb0f0e03669bf37c732b9f73ceda0bc66f30bf905d6a5298b9e9",
+          "registered_sha256": "1b6567b71fbbdb0f0e03669bf37c732b9f73ceda0bc66f30bf905d6a5298b9e9",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 287,
+            "date_min": "2025-10-17",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 287,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 287,
+            "invalid_goals": 0,
+            "cohorts": {
+              "fra.1": 287
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 1.0,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.025316455696202528,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.058838089691321996
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "ned.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/ned.1/artifact.json",
+          "actual_sha256": "1440e0242882cecc14d4486f88220270ae05d8bdbf00361384432f026e2d3738",
+          "registered_sha256": "1440e0242882cecc14d4486f88220270ae05d8bdbf00361384432f026e2d3738",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 298,
+            "date_min": "2025-10-18",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 298,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 298,
+            "invalid_goals": 0,
+            "cohorts": {
+              "ned.1": 298
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.1954899736825749,
+            0.1056669110577717,
+            0.17336611824405104,
+            0.41982450581665826,
+            0.10565249119894414
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.0,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/ned.1/artifact.json",
+          "actual_sha256": "2442f03bbe7da265d546af20b9097ca52efbb2435f49a9479d1a88da699f30aa",
+          "registered_sha256": "2442f03bbe7da265d546af20b9097ca52efbb2435f49a9479d1a88da699f30aa",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 298,
+            "date_min": "2025-10-18",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 298,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 298,
+            "invalid_goals": 0,
+            "cohorts": {
+              "ned.1": 298
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.75,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.03125,
+            "date_cluster_bootstrap95": [
+              -0.03078125,
+              0.09090909090909091
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "por.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/por.1/artifact.json",
+          "actual_sha256": "860c6244fed26c1685d5487797b243bc9873ac66fa7f747afe7c6d9b45290746",
+          "registered_sha256": "860c6244fed26c1685d5487797b243bc9873ac66fa7f747afe7c6d9b45290746",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 298,
+            "date_min": "2025-10-24",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 298,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 298,
+            "invalid_goals": 0,
+            "cohorts": {
+              "por.1": 298
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            3.135171062552856e-18,
+            0.23841707806751494,
+            0.26938392450873105,
+            0.25106583910492536,
+            0.24113315831882864
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.0,
+            "date_cluster_bootstrap95": [
+              -0.04445692883895131,
+              0.04938271604938271
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/por.1/artifact.json",
+          "actual_sha256": "86e67de8d9244522e988439ab64041455ba08777d21fdd05558b6c2678999f56",
+          "registered_sha256": "86e67de8d9244522e988439ab64041455ba08777d21fdd05558b6c2678999f56",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 298,
+            "date_min": "2025-10-24",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 298,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 298,
+            "invalid_goals": 0,
+            "cohorts": {
+              "por.1": 298
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.25,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.0,
+            "date_cluster_bootstrap95": [
+              -0.03297619047619048,
+              0.03614457831325301
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "bra.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/bra.1/artifact.json",
+          "actual_sha256": "6fa5b60cec4cc1a51b6ff019072da029cd7d558a33a203ab8c2846b97efdf318",
+          "registered_sha256": "6fa5b60cec4cc1a51b6ff019072da029cd7d558a33a203ab8c2846b97efdf318",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 405,
+            "date_min": "2025-10-11",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 405,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 405,
+            "invalid_goals": 0,
+            "cohorts": {
+              "bra.1": 405
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.13302773606238824,
+            0.2110139431586356,
+            0.24224028197676484,
+            0.20425984952641849,
+            0.20945818927579282
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.009999999999999981,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.03193002940667696
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/bra.1/artifact.json",
+          "actual_sha256": "bfb1ec1472a7503c7f70bd69bbd349d88df652d7ecaac436b4e36fdeef415191",
+          "registered_sha256": "bfb1ec1472a7503c7f70bd69bbd349d88df652d7ecaac436b4e36fdeef415191",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 405,
+            "date_min": "2025-10-11",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 405,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 405,
+            "invalid_goals": 0,
+            "cohorts": {
+              "bra.1": 405
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.25,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": -0.020000000000000018,
+            "date_cluster_bootstrap95": [
+              -0.059833333333333336,
+              0.017391304347826087
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "swe.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/swe.1/artifact.json",
+          "actual_sha256": "ecaf574c2e639139a404ec1f30432c8b27576b310a285843455f2e264832dc27",
+          "registered_sha256": "ecaf574c2e639139a404ec1f30432c8b27576b310a285843455f2e264832dc27",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-09-20",
+          "history": {
+            "rows": 400,
+            "date_min": "2025-04-12",
+            "date_max": "2026-09-20",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 400,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 400,
+            "invalid_goals": 0,
+            "cohorts": {
+              "swe.1": 400
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.26555087393120647,
+            0.15804440728559782,
+            0.278622466505111,
+            0.19178115060428558,
+            0.10600110167379916
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": -0.022988505747126436,
+            "date_cluster_bootstrap95": [
+              -0.056179775280898875,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/swe.1/artifact.json",
+          "actual_sha256": "f540e29e1f11457061b332118412145d8e3d9966c06d23eb9564acbcf34ec5d2",
+          "registered_sha256": "f540e29e1f11457061b332118412145d8e3d9966c06d23eb9564acbcf34ec5d2",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-09-20",
+          "history": {
+            "rows": 400,
+            "date_min": "2025-04-12",
+            "date_max": "2026-09-20",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 400,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 400,
+            "invalid_goals": 0,
+            "cohorts": {
+              "swe.1": 400
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.25,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": -0.034482758620689655,
+            "date_cluster_bootstrap95": [
+              -0.07142857142857142,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "ksa.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/ksa.1/artifact.json",
+          "actual_sha256": "4a59e33f7acce4da67b35b9dcee9d94abfd798bbb80fc9c25ef472fa8fba8dec",
+          "registered_sha256": "4a59e33f7acce4da67b35b9dcee9d94abfd798bbb80fc9c25ef472fa8fba8dec",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 336,
+            "date_min": "2025-10-17",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 336,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 336,
+            "invalid_goals": 0,
+            "cohorts": {
+              "ksa.1": 336
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.23626903542929648,
+            0.270389067317162,
+            0.17348508255851372,
+            0.2615149491301814,
+            0.05834186556484645
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": -0.011627906976744193,
+            "date_cluster_bootstrap95": [
+              -0.053763440860215055,
+              0.025324569944823065
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/ksa.1/artifact.json",
+          "actual_sha256": "f3e45a331a3a0e7ad3cb0221ff3cb0cf45ea2a4bd6c6df55a5a4a58df96f1759",
+          "registered_sha256": "f3e45a331a3a0e7ad3cb0221ff3cb0cf45ea2a4bd6c6df55a5a4a58df96f1759",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 336,
+            "date_min": "2025-10-17",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 336,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 336,
+            "invalid_goals": 0,
+            "cohorts": {
+              "ksa.1": 336
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.25,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.0,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "eng.2",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/eng.2/artifact.json",
+          "actual_sha256": "72beee6485c2c700219ab800fc1ce20794b6b41f096dea3b13214f9b8d283fcc",
+          "registered_sha256": "72beee6485c2c700219ab800fc1ce20794b6b41f096dea3b13214f9b8d283fcc",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-09-20",
+          "history": {
+            "rows": 540,
+            "date_min": "2025-10-17",
+            "date_max": "2026-09-20",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 540,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 540,
+            "invalid_goals": 0,
+            "cohorts": {
+              "eng.2": 540
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.19781851162384267,
+            0.16534567859700225,
+            0.20902553893228154,
+            0.26247131776221705,
+            0.1653389530846566
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.015151515151515152,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.03871092773193298
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/eng.2/artifact.json",
+          "actual_sha256": "8b5450da4931868d9e352c06937a762546f0a08b30cf055be3f809f2ea7cea54",
+          "registered_sha256": "8b5450da4931868d9e352c06937a762546f0a08b30cf055be3f809f2ea7cea54",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-09-20",
+          "history": {
+            "rows": 540,
+            "date_min": "2025-10-17",
+            "date_max": "2026-09-20",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 540,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 540,
+            "invalid_goals": 0,
+            "cohorts": {
+              "eng.2": 540
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.25,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.015151515151515152,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.03871092773193298
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "nor.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/nor.1/artifact.json",
+          "actual_sha256": "7c980a4cf9f4a2c8f47f44eb761f5aa9b75e1933872406416c41e3840ce8ffd3",
+          "registered_sha256": "7c980a4cf9f4a2c8f47f44eb761f5aa9b75e1933872406416c41e3840ce8ffd3",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 390,
+            "date_min": "2025-04-20",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 390,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 390,
+            "invalid_goals": 0,
+            "cohorts": {
+              "nor.1": 390
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.1290924840876396,
+            0.3466329963489984,
+            3.0442963254214973e-19,
+            0.18267838092667069,
+            0.34159613863669136
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.0,
+            "date_cluster_bootstrap95": [
+              -0.02857142857142857,
+              0.030935889175257688
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/nor.1/artifact.json",
+          "actual_sha256": "086fd30bf2ba48fd246af72cd30476007f2e5684f2555f017463d210dbaf31af",
+          "registered_sha256": "086fd30bf2ba48fd246af72cd30476007f2e5684f2555f017463d210dbaf31af",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 390,
+            "date_min": "2025-04-20",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 390,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 390,
+            "invalid_goals": 0,
+            "cohorts": {
+              "nor.1": 390
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.75,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.02150537634408603,
+            "date_cluster_bootstrap95": [
+              -0.02971039603960396,
+              0.07692307692307693
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "usa.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/weighted-20261012/usa.1/artifact.json",
+          "actual_sha256": "ff328c4edd392a31eb414ec0ba188290e56524506dd80cdd011e61da3b9188e7",
+          "registered_sha256": "ff328c4edd392a31eb414ec0ba188290e56524506dd80cdd011e61da3b9188e7",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-07",
+          "history": {
+            "rows": 426,
+            "date_min": "2025-10-11",
+            "date_max": "2026-10-07",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 426,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 426,
+            "invalid_goals": 0,
+            "cohorts": {
+              "usa.1": 426
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.07171031968998101,
+            0.12467767452466916,
+            0.371254458185386,
+            0.12799233690980685,
+            0.304365210690157
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": -0.009999999999999995,
+            "date_cluster_bootstrap95": [
+              -0.03125,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ml-20261012/usa.1/artifact.json",
+          "actual_sha256": "15d3c0f5d570792545b6659590a4be49666944af9be9248f26fcffde98620478",
+          "registered_sha256": "15d3c0f5d570792545b6659590a4be49666944af9be9248f26fcffde98620478",
+          "hash_matches": true,
+          "version": "WCPP-ML-0.1",
+          "engine": "WCPP-ML-0.1",
+          "train_end": "2026-10-07",
+          "history": {
+            "rows": 426,
+            "date_min": "2025-10-11",
+            "date_max": "2026-10-07",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 426,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 426,
+            "invalid_goals": 0,
+            "cohorts": {
+              "usa.1": 426
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 0,
+          "alpha": 0.75,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": -0.039999999999999994,
+            "date_cluster_bootstrap95": [
+              -0.08163265306122448,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "uefa.champions:NEW_FORMAT:league_phase",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/current-artifact.json",
+          "actual_sha256": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759",
+          "registered_sha256": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759",
+          "hash_matches": true,
+          "version": "WCPP-WEIGHTED-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-09-10",
+          "history": {
+            "rows": 306,
+            "date_min": "2024-09-17",
+            "date_max": "2026-09-10",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 306,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 306,
+            "invalid_goals": 0,
+            "cohorts": {
+              "uefa.champions:NEW_FORMAT:league_phase": 306
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": [
+            0.025654318314884062,
+            0.32879424573653593,
+            7.414023646541061e-19,
+            0.3167775635697477,
+            0.32877387237883227
+          ],
+          "stored_expert_weights_used_as_current": false,
+          "current_execution_recipe": "baseline",
+          "acceptance": {
+            "top1_difference": 0.0,
+            "date_cluster_bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "acceptance_gate_passed": false,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-artifact.json",
+          "actual_sha256": "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e",
+          "registered_sha256": "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e",
+          "hash_matches": true,
+          "version": "WCPP-ML-UCL-0.1",
+          "engine": "WCPP-ML-UCL-0.1",
+          "train_end": "2026-09-10",
+          "history": {
+            "rows": 306,
+            "date_min": "2024-09-17",
+            "date_max": "2026-09-10",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 306,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 306,
+            "invalid_goals": 0,
+            "cohorts": {
+              "uefa.champions:NEW_FORMAT:league_phase": 306
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": 0,
+          "declared_process_training_rows": 306,
+          "alpha": 1.0,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "top1_difference": 0.04938271604938271,
+            "date_cluster_bootstrap95": [
+              0.013888888888888888,
+              0.08641975308641975
+            ],
+            "acceptance_gate_passed": true,
+            "draws": 2000,
+            "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+            "formal_promotion": false
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "jpn.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/reports/japan-korea-20261010/jpn.1-artifact.json",
+          "actual_sha256": "995f8686ff6348e5f0c6b40a8838a714c4118036968285d01e188e6db29f4ab2",
+          "registered_sha256": "995f8686ff6348e5f0c6b40a8838a714c4118036968285d01e188e6db29f4ab2",
+          "hash_matches": true,
+          "version": "WCPP-MAIN-1.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 82,
+            "date_min": "2026-08-07",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 82,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 82,
+            "invalid_goals": 0,
+            "cohorts": {
+              "jpn.1": 82
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "acceptance_gate_passed": false,
+            "status": "BASELINE_ONLY_NOT_FULL_CANDIDATE_VALIDATION"
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/systematic-20261015-final-extended-003/jpn.1/artifact.json",
+          "actual_sha256": "f5532bb519983e04eb44c6778df405aaa7420790f78c84b8b6047ea13011b12a",
+          "registered_sha256": "f5532bb519983e04eb44c6778df405aaa7420790f78c84b8b6047ea13011b12a",
+          "hash_matches": true,
+          "version": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+          "engine": "systematic_candidate",
+          "train_end": "2026-10-10",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "kor.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/reports/japan-korea-20261010/kor.1-artifact.json",
+          "actual_sha256": "f2c9a03bf4ddaa7bcb4eabaf2cb94434f9694e18d26dd6721af602e65aa9dd62",
+          "registered_sha256": "f2c9a03bf4ddaa7bcb4eabaf2cb94434f9694e18d26dd6721af602e65aa9dd62",
+          "hash_matches": true,
+          "version": "WCPP-MAIN-1.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 181,
+            "date_min": "2026-02-28",
+            "date_max": "2026-10-09",
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 181,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 181,
+            "invalid_goals": 0,
+            "cohorts": {
+              "kor.1": 181
+            },
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": true,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": {
+            "acceptance_gate_passed": false,
+            "status": "BASELINE_ONLY_NOT_FULL_CANDIDATE_VALIDATION"
+          },
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/systematic-20261015-final-extended-003/kor.1/artifact.json",
+          "actual_sha256": "6b6d9bd66bb2f7dcb1f214407ed027f720d6cd4f823c120061ed1b172631014c",
+          "registered_sha256": "6b6d9bd66bb2f7dcb1f214407ed027f720d6cd4f823c120061ed1b172631014c",
+          "hash_matches": true,
+          "version": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+          "engine": "systematic_candidate",
+          "train_end": "2026-10-09",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "aus.1",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/active-routes-20261027/aus.1/current-artifact.json",
+          "actual_sha256": "f3e9e25f84a468ed937c0d82c041c4ba0f16cb641e36f63e7515a00b2415964a",
+          "registered_sha256": "f3e9e25f84a468ed937c0d82c041c4ba0f16cb641e36f63e7515a00b2415964a",
+          "hash_matches": true,
+          "version": "WCPP-AUS-CURRENT-CONSTANT-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-04-26",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/aus-expert-20261016-boundary-refit-v1/artifact.json",
+          "actual_sha256": "6cd38d5fa0dc9d5413ec4e062bcb209a598763b419f8bab54f60352dd26bef5d",
+          "registered_sha256": "6cd38d5fa0dc9d5413ec4e062bcb209a598763b419f8bab54f60352dd26bef5d",
+          "hash_matches": true,
+          "version": "WCPP-AUS-EXPERT-0.1.1-DATAFIX",
+          "engine": "aus_expert",
+          "train_end": "2026-04-26",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "afc.champions:ELITE:league_phase",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/active-routes-20261027/afc.champions-ELITE-league_phase/current-artifact.json",
+          "actual_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "registered_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "hash_matches": true,
+          "version": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-12",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/active-routes-20261027/afc.champions-ELITE-league_phase/test-artifact.json",
+          "actual_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "registered_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "hash_matches": true,
+          "version": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+          "engine": "generic_poisson",
+          "train_end": "2026-10-12",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "afc.cup:CHAMPIONS_TWO:group_stage",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/afc2-group-20261029-r2/current-artifact.json",
+          "actual_sha256": "ae388db40e998bb0d9ca935e1ca403b414da68c1a07855d313e23d758dbe4665",
+          "registered_sha256": "ae388db40e998bb0d9ca935e1ca403b414da68c1a07855d313e23d758dbe4665",
+          "hash_matches": true,
+          "version": "WCPP-AFC2-CUP-CURRENT-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-09-17",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/afc2-group-20261029-r2/test-artifact.json",
+          "actual_sha256": "75c2c77b99cc366651c146eef95e92498035762dafaf122b641700cc97efc9e3",
+          "registered_sha256": "75c2c77b99cc366651c146eef95e92498035762dafaf122b641700cc97efc9e3",
+          "hash_matches": true,
+          "version": "WCPP-AFC2-CUP-TEST-0.1",
+          "engine": "generic_poisson",
+          "train_end": "2026-09-17",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    },
+    {
+      "cohort": "eng.league_cup:single_leg",
+      "models": {
+        "current": {
+          "path": "/workspace/WCPP/models/efl-cup-20261029-r3/current-artifact.json",
+          "actual_sha256": "3e608caf414d3c68b4100894a18cbaf196123110826f54a9c8d48c3fe5a5efad",
+          "registered_sha256": "3e608caf414d3c68b4100894a18cbaf196123110826f54a9c8d48c3fe5a5efad",
+          "hash_matches": true,
+          "version": "WCPP-EFL-CUP-CURRENT-0.1",
+          "engine": "legacy_anchor",
+          "train_end": "2026-10-28",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        },
+        "test_": {
+          "path": "/workspace/WCPP/models/efl-cup-20261029-r3/test-artifact.json",
+          "actual_sha256": "e2fcdebe8bf984abb8bacee4f722a746ca4d57e9ef79b0239d2782371f6c23fb",
+          "registered_sha256": "e2fcdebe8bf984abb8bacee4f722a746ca4d57e9ef79b0239d2782371f6c23fb",
+          "hash_matches": true,
+          "version": "WCPP-EFL-CUP-TEST-0.1",
+          "engine": "generic_poisson",
+          "train_end": "2026-10-28",
+          "history": {
+            "rows": 0,
+            "date_min": null,
+            "date_max": null,
+            "missing_match_id": 0,
+            "duplicate_match_id_excess": 0,
+            "duplicate_fixture_key_excess": 0,
+            "missing_first_known_at": 0,
+            "missing_observed_at": 0,
+            "observed_after_match_day": 0,
+            "invalid_goals": 0,
+            "cohorts": {},
+            "limitation": "Missing first-known time prevents certifying historical as-of availability; backfill is not by itself proof of leakage."
+          },
+          "history_embedded": false,
+          "declared_xg_training_rows": null,
+          "declared_process_training_rows": null,
+          "alpha": null,
+          "stored_expert_weights": null,
+          "stored_expert_weights_used_as_current": null,
+          "current_execution_recipe": null,
+          "acceptance": null,
+          "coverage_note": "No embedded history is not zero training: inspect dataset manifests for this engine."
+        }
+      }
+    }
+  ],
+  "database": {
+    "path": "/workspace/wcpp-incoming-20261102/WCPP/data/unified/WCPP_统一赛事库.sqlite",
+    "profile": {
+      "match_summary": {
+        "sql": "select count(*) rows, sum(training_eligible=1) training_eligible, min(date) date_min,max(date) date_max,\n       sum(home_id=away_id) same_team,sum(h90<0 or a90<0) negative_goals,\n       sum(training_eligible=1 and (h90 is null or a90 is null)) eligible_missing_score from matches",
+        "result": [
+          {
+            "rows": 46190,
+            "training_eligible": 42765,
+            "date_min": "2005-08-26",
+            "date_max": "2027-01-01",
+            "same_team": 0,
+            "negative_goals": 0,
+            "eligible_missing_score": 0
+          }
+        ]
+      },
+      "eligible_by_competition": {
+        "sql": "select competition,count(*) rows,min(date) date_min,max(date) date_max from matches where training_eligible=1 group by competition",
+        "result": [
+          {
+            "competition": "afc.champions",
+            "rows": 2189,
+            "date_min": "2006-03-08",
+            "date_max": "2026-10-12"
+          },
+          {
+            "competition": "afc.cup",
+            "rows": 460,
+            "date_min": "2021-05-14",
+            "date_max": "2026-09-17"
+          },
+          {
+            "competition": "aus.1",
+            "rows": 2830,
+            "date_min": "2005-08-26",
+            "date_max": "2026-05-23"
+          },
+          {
+            "competition": "bra.1",
+            "rows": 1676,
+            "date_min": "2023-04-15",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "conmebol.libertadores",
+            "rows": 588,
+            "date_min": "2023-02-08",
+            "date_max": "2026-09-18"
+          },
+          {
+            "competition": "eng.1",
+            "rows": 2341,
+            "date_min": "2020-09-12",
+            "date_max": "2026-09-20"
+          },
+          {
+            "competition": "eng.2",
+            "rows": 3427,
+            "date_min": "2020-09-11",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "eng.league_cup",
+            "rows": 292,
+            "date_min": "2023-01-10",
+            "date_max": "2026-09-17"
+          },
+          {
+            "competition": "esp.1",
+            "rows": 2362,
+            "date_min": "2020-09-12",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "fifa.friendly",
+            "rows": 1565,
+            "date_min": "2022-01-02",
+            "date_max": "2026-10-07"
+          },
+          {
+            "competition": "fin.1",
+            "rows": 251,
+            "date_min": "2025-04-05",
+            "date_max": "2026-09-19"
+          },
+          {
+            "competition": "fra.1",
+            "rows": 2108,
+            "date_min": "2020-08-21",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "ger.1",
+            "rows": 1885,
+            "date_min": "2020-09-18",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "ger.2",
+            "rows": 1892,
+            "date_min": "2020-09-18",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "ita.1",
+            "rows": 2339,
+            "date_min": "2020-09-19",
+            "date_max": "2026-09-20"
+          },
+          {
+            "competition": "jpn.1",
+            "rows": 1152,
+            "date_min": "2023-02-17",
+            "date_max": "2026-10-10"
+          },
+          {
+            "competition": "jpn.2",
+            "rows": 1327,
+            "date_min": "2023-02-18",
+            "date_max": "2026-10-10"
+          },
+          {
+            "competition": "jpn.centennial.1",
+            "rows": 148,
+            "date_min": "2026-02-06",
+            "date_max": "2026-06-06"
+          },
+          {
+            "competition": "jpn.league_cup",
+            "rows": 212,
+            "date_min": "2023-03-08",
+            "date_max": "2025-11-01"
+          },
+          {
+            "competition": "kor.1",
+            "rows": 879,
+            "date_min": "2023-02-25",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "kor.2",
+            "rows": 966,
+            "date_min": "2023-03-01",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "kor.cup",
+            "rows": 175,
+            "date_min": "2023-03-04",
+            "date_max": "2025-12-06"
+          },
+          {
+            "competition": "ksa.1",
+            "rows": 1142,
+            "date_min": "2023-01-05",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "ned.1",
+            "rows": 1918,
+            "date_min": "2020-09-12",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "ned.2",
+            "rows": 1446,
+            "date_min": "2023-01-06",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "nor.1",
+            "rows": 891,
+            "date_min": "2023-04-10",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "por.1",
+            "rows": 1905,
+            "date_min": "2020-09-18",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "swe.1",
+            "rows": 900,
+            "date_min": "2023-04-01",
+            "date_max": "2026-10-09"
+          },
+          {
+            "competition": "uefa.champions",
+            "rows": 562,
+            "date_min": "2023-02-14",
+            "date_max": "2026-09-10"
+          },
+          {
+            "competition": "uefa.nations",
+            "rows": 473,
+            "date_min": "2022-03-24",
+            "date_max": "2026-10-06"
+          },
+          {
+            "competition": "usa.1",
+            "rows": 2464,
+            "date_min": "2022-02-26",
+            "date_max": "2026-10-07"
+          }
+        ]
+      },
+      "observation_summary": {
+        "sql": "select count(*) rows,sum(first_known_at is null or first_known_at='') missing_first_known,\n       sum(observed_at is null or observed_at='') missing_observed,\n       sum(source_id not in (select source_id from sources)) orphan_source_id from observations",
+        "result": [
+          {
+            "rows": 158390,
+            "missing_first_known": 158390,
+            "missing_observed": 6179,
+            "orphan_source_id": 0
+          }
+        ]
+      },
+      "duplicate_observation_keys": {
+        "sql": "select count(*) keys from (select provider,source_key,competition,count(*) n from observations group by provider,source_key,competition having count(*)>1)",
+        "result": [
+          {
+            "keys": 58933
+          }
+        ]
+      },
+      "quick_check": "ok"
+    }
+  },
+  "claims": {
+    "activation_changed": false,
+    "new_model_trained": false,
+    "dynamic_fusion_enabled": false,
+    "historical_asof_leakage_cleared": false,
+    "forecast_uplift_proven": false,
+    "audit_includes_new_rolling_backtest": false
+  }
+}

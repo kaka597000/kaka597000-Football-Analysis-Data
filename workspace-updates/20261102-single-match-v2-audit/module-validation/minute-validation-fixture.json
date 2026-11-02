@@ -1,0 +1,56 @@
+{
+  "match_id": "espn:401878758",
+  "cohort": "eng.1",
+  "competition": "eng.1",
+  "home": "espn:357",
+  "away": "espn:367",
+  "neutral": false,
+  "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261107&limit=100",
+  "observed_at": "2026-11-02T01:58:37.219702+00:00",
+  "score_basis": "regulation_90",
+  "display_home": "Leeds United",
+  "display_away": "Tottenham Hotspur",
+  "neutral_evidence": {
+    "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878758",
+    "neutral_site": false,
+    "query_time": "2026-11-02T01:58:37.219702+00:00"
+  },
+  "kickoff_at": "2026-11-07T12:30Z",
+  "cutoff_at": "2026-11-02T05:24:33.579417+00:00",
+  "phase": "PreMatch",
+  "sources": [
+    {
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261107&limit=100",
+      "query_time": "2026-11-02T01:58:37.219702+00:00"
+    }
+  ],
+  "minute_simulation_request": {
+    "artifact": {
+      "schema": "WCPP-MINUTE-RATES-1",
+      "score_basis": "regulation_90_including_stoppage",
+      "cohort": "eng.1",
+      "trained_through": "2026-09-20T00:00:00Z",
+      "created_at": "2026-11-02T05:24:33.579417+00:00",
+      "source": {
+        "path": "/workspace/WCPP/reports/module-integration-20261102/validation-only.json",
+        "sha256": "98c0b3a2ed9ce2df151dc971caacf4ec9df3df3b19ae37722a762717c3104275",
+        "observed_at": "2026-11-02T05:24:33.579417+00:00",
+        "rates_pointer": "/current_model/rates/means"
+      }
+    },
+    "state": {
+      "minute": 0,
+      "score": [
+        0,
+        0
+      ],
+      "clock_basis": "regulation_elapsed_minutes",
+      "observed_at": "2026-11-02T05:24:33.579417+00:00",
+      "red_cards": [
+        0,
+        0
+      ]
+    },
+    "regulation_minutes": 96
+  }
+}

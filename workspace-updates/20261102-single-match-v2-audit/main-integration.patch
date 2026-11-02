@@ -1,0 +1,414 @@
+From 05b0b4480ac37daf91720cc087ac09bdf8c9e77d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E5=B8=85=E6=AF=94=E7=9A=84=20Iphone?=
+ <btysdxvp7j@privaterelay.appleid.com>
+Date: Mon, 2 Nov 2026 05:26:28 +0000
+Subject: [PATCH] Unify eight-module match evidence and preserve active
+ artifact compatibility
+
+---
+ docs/market-and-lineup-policy.md        |   2 +
+ docs/single-match-analysis.md           |  46 +++++++++
+ runtime/predict_active.py               |  11 +++
+ runtime/research/lineup_evidence.py     |  33 +++++++
+ runtime/research/match_analysis.py      | 125 ++++++++++++++++++++++++
+ runtime/research/test_match_analysis.py |  32 ++++++
+ runtime/test_active_route_engines.py    |   7 ++
+ runtime/v4/decision_audit.py            |  20 +---
+ runtime/v4/test_decision_diagnostics.py |   7 +-
+ 9 files changed, 265 insertions(+), 18 deletions(-)
+ create mode 100644 docs/single-match-analysis.md
+ create mode 100644 runtime/research/lineup_evidence.py
+ create mode 100644 runtime/research/match_analysis.py
+ create mode 100644 runtime/research/test_match_analysis.py
+
+diff --git a/docs/market-and-lineup-policy.md b/docs/market-and-lineup-policy.md
+index 0065aca..39a21ef 100644
+--- a/docs/market-and-lineup-policy.md
++++ b/docs/market-and-lineup-policy.md
+@@ -11,3 +11,5 @@ runtime/research/market_movement.py已接入默认predict_active输出market_mov
+ 不固定水位或阵容的百分比，不重新标注旧工件权重。当前/test/综合独立冻结；首发前版本与首发后修订分列。下一步须用同场未来冻结样本验证盘口证据与降低阵容依赖是否改善Primary、胜平负及真实线大小球，并报告覆盖率、改对/改错及不确定性。
+ 
+ 验证：353项测试执行，无失败；私有原配方历史资产集成组因缺历史文件跳过。新增检查覆盖跨机构/盘线不比较、无时点/未来报价拒绝，以及无首发情景可记录但重大风险仍阻断。未验证未来命中率提升。
++
++兼容性修正：新阵容规则在research/lineup_evidence.py独立分析层执行；哈希锁定的v4/decision_audit.py保持原工件版本。旧模型的完整性诊断仍按原契约报告，新情景审查不替它伪造数值就绪。真实工件加载和矩阵一致性必须单独验证。
+diff --git a/docs/single-match-analysis.md b/docs/single-match-analysis.md
+new file mode 100644
+index 0000000..66e2e47
+--- /dev/null
++++ b/docs/single-match-analysis.md
+@@ -0,0 +1,46 @@
++# 每场赛事完整模块分析
++
++2026-11-02用户要求：截图中的八类模块全部进入每场分析。默认predict_active.run/CLI输出match_analysis，CLI可用--report生成八模块Markdown；原JSON和冻结仍包含完整输出。报告是证据和执行状态汇总，不自动生成综合推荐或改变已训练权重。
++
++```bash
++python runtime/predict_active.py /absolute/fixture.json --registry /absolute/registry.json --out /absolute/NEW-pair.json --report /absolute/NEW-analysis.md
++```
++
++输出与报告文件均不能已存在。CLI仍按原规则保存current/test配对冻结；综合Primary、方向、真实盘口大小球和TOP3仍需基于报告、候选比较及反证独立冻结。阵容未公布不自动拒绝，水位变化重点核查；不得把statistical baseline当作综合第一比分。
++
++## 每场必须覆盖的八类证据
++
++1. 历史进失球、球队攻防、主客场：保留两模型身份/实际训练截止及单队均值、0球/2+/3+概率和区间，检查最新完赛是否纳入。
++2. 近期状态与比赛间隔：近况与对手强度分开；同联赛间隔不等于完整体能。
++3. 射门、射正、控球：实际过程事实与工件训练覆盖分别列，不把新采集数据冒充已经训练。
++4. xG/xGA：同提供方、明确窗口/主客/对手/时点；缺失保持未知。工件feature_xg_match_count=0与最新现场有xG证据可以同时成立。
++5. 阵容、伤停、停赛：确认、预计、未公布分开；人员不全时做轮换情景，不给阵容强行设权重。
++6. 战意、旅行、全赛事负荷：数学战意、前14天/后7天全赛事、休息/旅行逐项记录；采集覆盖不完整必须注明。
++7. 盘口、水位：优先核查同机构同线真实时点的连续变化，升降盘另列；缺quoted_at不能用query_time替代。
++8. 研究旁路：展示实际五角色资料、独立冷门分类器及候选、比分选择实验、分钟模拟的执行或拒绝状态；不把资料包说成五个LLM已运行，也不自动融合概率。
++
++## 本场证据输入
++
++采集按现有API优先流程执行；源数据经过主代理核查后填写fixture.analysis_modules。允许的key为history/form/shots/xg/lineup/context/market/research。每个块的契约：
++
++```json
++{
++  "match_id": "SYNTHETIC_ONLY",
++  "status": "partial",
++  "as_of": "2026-01-01T12:00:00Z",
++  "summary": "可核实的事实与缺项说明",
++  "facts": {"provider": "EXAMPLE", "window": "explicit competition and dates"},
++  "sources": [{"source_url": "https://example.test/source", "known_at": "2026-01-01T10:00:00Z", "query_time": "2026-01-01T11:00:00Z"}],
++  "missing": ["explicit unresolved field"]
++}
++```
++
++status为available/partial/scenario/unknown/conflict之一；前三者必须有facts与来源。scenario还需scenarios及uncertainty。来源known_at≤query_time≤块as_of≤预测cutoff；比赛ID必须一致。unknown不能伪装取得数据，错误来源或凭据字段只显示invalid且不回显。available仅指该块提交的证据可核查，不证明所有字段齐全或模型已数值使用。默认不自动发网络请求，不把空模板称为完成八模块采集。
++
++## 分钟模拟调用
++
++可提供fixture.minute_simulation_request，含artifact/state/regulation_minutes及可选state_artifact。调用现有minute_simulator.simulate，固定20000次、seed=0，与同场cohort及cutoff绑定；赛前只接受minute=0。artifact必须符合WCPP-MINUTE-RATES-1且引用真实来源文件/hash。状态修正工件需通过原有训练覆盖和时间验证；红牌交互未训练仍拒绝。不提供输入则NOT_CONFIGURED。基础Poisson模拟只作研究诊断，不证明分钟状态模型已训练。
++
++本次完成统一输出、证据输入校验、研究引擎入口与报告。并未为所有联赛补齐真实数据、训练全部缺失模块、接通五个外部LLM或证明命中率提高。
++
++验收：358项测试，无失败，1组私有历史集成检查因缺文件跳过；真实活动英超工件加载、八模块报告和20000次基础分钟模拟已执行。current/test矩阵与改动前同输入结果逐元素一致。分钟状态修正仍NOT_TRAINED，测试输出单独留档不作为新赛事推荐。新增真实工件代码哈希回归测试，防止独立规则变动阻断旧工件。
+diff --git a/runtime/predict_active.py b/runtime/predict_active.py
+index 9e0f45f..5712641 100644
+--- a/runtime/predict_active.py
++++ b/runtime/predict_active.py
+@@ -182,6 +182,10 @@ def run(fixture, registry_path=None):
+     output['selection_experiment'] = compare_pair(output)
+     from research.market_movement import analyze as analyze_market
+     output['market_movement'] = analyze_market(fixture)
++    from research.match_analysis import build as build_match_analysis
++    output['match_analysis'] = build_match_analysis(fixture, output,
++        current_artifact=json.loads(artifact_path.read_text()),
++        test_artifact=json.loads(test_artifact_path.read_text()) if test_artifact_path else {})
+     return output
+ 
+ 
+@@ -189,11 +193,14 @@ def main():
+     p = argparse.ArgumentParser()
+     p.add_argument('fixture'); p.add_argument('--out', required=True)
+     p.add_argument('--registry')
++    p.add_argument('--report', help='New Markdown path for the eight-module evidence report')
+     p.add_argument('--freeze-root', default='/workspace/WCPP/forecasts/issued-analyses')
+     p.add_argument('--stage', choices=['prematch', 'live'], default='prematch')
+     a = p.parse_args()
+     fixture = json.loads(Path(a.fixture).read_text())
+     # Reject an existing output before producing any new freeze revision.
++    if a.report and (Path(a.report).exists() or Path(a.report).resolve() == Path(a.out).resolve()):
++        raise FileExistsError(a.report)
+     if Path(a.out).exists():
+         raise FileExistsError(a.out)
+     output = run(fixture, a.registry)
+@@ -209,6 +216,10 @@ def main():
+                                    track='current-test-pair', root=a.freeze_root)
+     with Path(a.out).open('x') as f:
+         json.dump(output, f, ensure_ascii=False, indent=2, allow_nan=False)
++    if a.report:
++        from research.match_analysis import render
++        with Path(a.report).open('x') as f:
++            f.write(render(output['match_analysis']))
+     print(a.out)
+ 
+ 
+diff --git a/runtime/research/lineup_evidence.py b/runtime/research/lineup_evidence.py
+new file mode 100644
+index 0000000..e921413
+--- /dev/null
++++ b/runtime/research/lineup_evidence.py
+@@ -0,0 +1,33 @@
++"""Lineup policy outside hash-locked numerical engines; never edits probabilities."""
++from datetime import datetime
++from urllib.parse import urlsplit,parse_qsl
++
++def aware(s):
++    t=datetime.fromisoformat(s.replace('Z','+00:00'))
++    if t.tzinfo is None:raise ValueError('timezone required')
++    return t
++
++def assess(block,fixture):
++    try:
++        if block.get('status') not in ('documented','unknown'):raise ValueError('status')
++        if not block.get('summary') or not block.get('evidence'):raise ValueError('evidence')
++        for e in block['evidence']:
++            u=urlsplit(e['source_url'])
++            if (u.scheme!='https' or not u.hostname or u.username or u.password
++                    or any(k.lower() in {'key','api_key','apikey','token','access_token'} for k,_ in parse_qsl(u.query))):raise ValueError('source')
++            if e.get('source_tier') not in ('L1','L2','L3') or 'lineup' not in e.get('supports_field',[]):raise ValueError('scope')
++            if aware(e['query_time'])>aware(fixture['cutoff_at']):raise ValueError('late')
++            for k in ('known_at','source_published_at'):
++                if e.get(k) and aware(e[k])>aware(e['query_time']):raise ValueError('knowledge')
++        official=block.get('official_confirmed') is True
++        if official:
++            if (not any(e['source_tier']=='L1' for e in block['evidence'])
++                    or len(block.get('starters',[]))!=11 or len(set(block['starters']))!=11):raise ValueError('official XI')
++        elif (block.get('lineup_status') not in ('unannounced','projected')
++              or not isinstance(block.get('scenario_analysis'),str) or not block['scenario_analysis'].strip()
++              or not isinstance(block.get('uncertainty'),str) or not block['uncertainty'].strip()
++              or block.get('material_selection_risk') is not False):raise ValueError('scenario/risk')
++        return {'documented':True,'official_confirmed':official,'numeric_prediction_modified':False,
++                'basis':'OFFICIAL_XI' if official else 'EXPLICIT_LINEUP_UNCERTAINTY_SCENARIO'}
++    except (ValueError,KeyError,TypeError,AttributeError):
++        return {'documented':False,'official_confirmed':False,'numeric_prediction_modified':False,'basis':'MISSING_OR_UNRESOLVED_LINEUP_EVIDENCE'}
+diff --git a/runtime/research/match_analysis.py b/runtime/research/match_analysis.py
+new file mode 100644
+index 0000000..c1f9773
+--- /dev/null
++++ b/runtime/research/match_analysis.py
+@@ -0,0 +1,125 @@
++"""One-match evidence inventory and report; preserves independent numeric models."""
++from datetime import datetime
++from urllib.parse import urlsplit,parse_qsl
++import copy
++import json
++
++MODULES = {
++ 'history':'历史进失球、球队攻防、主客场',
++ 'form':'近期状态与比赛间隔',
++ 'shots':'射门、射正、控球',
++ 'xg':'xG / xGA',
++ 'lineup':'阵容、伤停、停赛',
++ 'context':'战意、旅行、完整赛程负荷',
++ 'market':'盘口、赔率与水位变化',
++ 'research':'五角色审查、分钟模拟、冷门旁路',
++}
++
++
++def aware(value):
++    d=datetime.fromisoformat(value.replace('Z','+00:00'))
++    if d.tzinfo is None:raise ValueError('timezone required')
++    return d
++
++
++def evidence_block(block, fixture):
++    from .analysis_freeze import reject_credentials
++    reject_credentials(block)
++    if block.get('status') not in ('available','partial','scenario','unknown','conflict'):raise ValueError('status')
++    if not isinstance(block.get('summary'),str) or not block['summary'].strip():raise ValueError('summary')
++    if not isinstance(block.get('facts',{}),dict):raise ValueError('facts')
++    if block.get('match_id')!=fixture['match_id']:raise ValueError('match identity')
++    cutoff=aware(fixture['cutoff_at'])
++    if aware(block['as_of'])>cutoff:raise ValueError('late module')
++    if block['status'] in ('available','partial','scenario'):
++        if not block.get('sources') or not block.get('facts'):raise ValueError('source-backed facts required')
++    for e in block.get('sources',[]):
++        u=urlsplit(e['source_url'])
++        if (u.scheme!='https' or not u.hostname or u.username or u.password
++                or any(k.lower() in {'key','apikey','api_key','token','access_token'} for k,_ in parse_qsl(u.query))):raise ValueError('source')
++        if not aware(e['known_at'])<=aware(e['query_time'])<=aware(block['as_of'])<=cutoff:raise ValueError('source time')
++    if block['status']=='scenario' and (not block.get('scenarios') or not block.get('uncertainty')):raise ValueError('scenario uncertainty')
++    return {k:copy.deepcopy(block[k]) for k in ('status','summary','facts','sources','missing','scenarios','uncertainty') if k in block}
++
++
++def build(fixture, pair, *, current_artifact, test_artifact):
++    inputs=fixture.get('analysis_modules') or {};result={}
++    artifacts={'current':current_artifact,'test':test_artifact}
++    for name,title in MODULES.items():
++        entry={'title':title,'status':'unknown','summary':'缺少该模块的本场可核查证据','facts':{},'sources':[],
++               'status_scope':'SUPPLEMENTARY_MATCH_EVIDENCE','numerical_weight':None,'evidence_usage':'MISSING_NOT_ZERO_FILLED'}
++        if name in inputs:
++            try:
++                entry.update(evidence_block(inputs[name],fixture));entry['evidence_usage']='QUALITATIVE_EVIDENCE_ONLY'
++            except (ValueError,TypeError,KeyError,AttributeError):
++                entry.update(status='invalid',summary='模块证据无效；核查赛事身份、来源、时点与敏感字段')
++        result[name]=entry
++    result['history']['numeric_baselines']={k:{'version':pair[k+'_model'].get('version'),
++            'training_cutoff':pair[k+'_model'].get('training_data_cutoff'),
++            'team_goals':copy.deepcopy(pair[k+'_model'].get('team_goal_analysis'))} for k in artifacts}
++    result['form']['numeric_features']='模型自身历史特征依各工件执行；最新补充事实只作定性证据'
++    for name,field in [('shots','feature_process_match_count'),('xg','feature_xg_match_count')]:
++        result[name]['recorded_training_rows']={k:a.get(field) for k,a in artifacts.items()}
++        result[name]['training_notice']='工件未登记的覆盖保持未知；0表示本工件无登记合格训练行，不表示未采集任何资料'
++    result['lineup']['policy']='未公布首发不自动拒绝；预计/未知用情景比较，重大未解决风险另行待定'
++    from .lineup_evidence import assess as assess_lineup
++    result['lineup']['scenario_assessment']={side:assess_lineup(((fixture.get('decision_evidence') or {}).get(side) or {}).get('lineup') or {},fixture) for side in ('home','away')}
++    result['context']['policy']='不把同联赛比赛间隔冒充完整体能；无数学核验不宣称已出线或出局'
++    result['market']['priority']='HIGH_EVIDENCE_REVIEW_NOT_FIXED_NUMERIC_WEIGHT'
++    result['market']['movement']=copy.deepcopy(pair.get('market_movement'))
++    research=result['research']
++    research['execution']={
++        'five_role_review':copy.deepcopy(pair['test_model'].get('five_role_review',{'status':'UNAVAILABLE'})),
++        'upset_classifier':copy.deepcopy(pair.get('upset_classifier')),
++        'upset_candidate':copy.deepcopy(pair.get('upset_candidate')),
++        'selection_experiment':copy.deepcopy(pair.get('selection_experiment')),
++        'minute_simulation':{'status':'NOT_CONFIGURED','reason':'无独立来源支持的分钟率/状态输入；不伪造状态权重'},
++    }
++    request=fixture.get('minute_simulation_request')
++    if request is not None:
++        try:
++            from .minute_simulator import simulate
++            if request['artifact']['cohort']!=fixture['cohort']:raise ValueError('cohort')
++            if fixture.get('phase')=='PreMatch' and request['state']['minute']!=0:raise ValueError('live state in prematch')
++            research['execution']['minute_simulation']=simulate(request['artifact'],request['state'],
++                as_of=fixture['cutoff_at'],draws=20000,seed=0,
++                regulation_minutes=request['regulation_minutes'],state_artifact=request.get('state_artifact'))
++        except (ValueError,KeyError,TypeError,AttributeError,OSError):
++            research['execution']['minute_simulation']={'status':'REFUSED_INVALID_OR_UNTRAINED_INPUT','prediction_modified':False}
++    # Existing real numerical output must never be relabelled by an evidence summary.
++    return {'schema':'WCPP-SINGLE-MATCH-ANALYSIS-1','match_id':fixture['match_id'],
++            'cutoff_at':fixture['cutoff_at'],'modules':result,
++            'missing_or_conflicting_modules':[k for k,v in result.items() if v['status'] in ('unknown','conflict','invalid')],
++            'numeric_prediction_modified':False,'automatic_primary_selected':False,
++            'selection_checklist':['逐队比较0/1/2+进球路径','比较至少两个比分候选及反证',
++              '重点核查同机构同盘口水位变化与升降盘','胜平负、第一比分和实际大小球分别判断',
++              '引用双模型冻结，综合判断独立追加；缺数据如实标记'],
++            'notice':'模块有输出不代表数据齐全、五名外部代理已执行、状态模拟已训练或准确率提高'}
++
++
++def render(report):
++    lines=['# 单场赛事完整模块分析', '',f"赛事ID：{report['match_id']}；截止时间：{report['cutoff_at']}",'',report['notice'],'']
++    for k,v in report['modules'].items():
++        lines.extend(['## '+v['title'],'','补充证据状态：'+v['status'],v['summary'],''])
++        if v.get('facts'):lines.extend(['本场事实：','```json',json.dumps(v['facts'],ensure_ascii=False,indent=2,allow_nan=False),'```',''])
++        for source in v.get('sources',[]):lines.append('- 来源：'+source['source_url']+'；已知时间：'+source['known_at']+'；抓取：'+source['query_time'])
++        for field in ('missing','scenarios','uncertainty'):
++            if v.get(field):lines.append(field+'：'+json.dumps(v[field],ensure_ascii=False))
++        if 'numeric_baselines' in v:
++            for role,b in v['numeric_baselines'].items():
++                lines.append(f"- {role}：{b['version']}；训练比赛截止 {b['training_cutoff']}")
++                goals=b.get('team_goals') or {}
++                for side in ('home','away'):
++                    a=goals.get(side) or {}
++                    if a:lines.append(f"  - {side}：均值 {a.get('mean')}；P0 {a.get('p0')}；P≥2 {a.get('p_ge_2')}；P≥3 {a.get('p_ge_3')}；区间 {a.get('central_interval')}")
++        if 'recorded_training_rows' in v:lines.append('工件记录的训练覆盖行数：'+json.dumps(v['recorded_training_rows'],ensure_ascii=False)+'；'+v['training_notice'])
++        if 'movement' in v:lines.append('同机构同盘口价格比较：'+json.dumps(v['movement'],ensure_ascii=False,allow_nan=False))
++        if 'execution' in v:
++            for name,x in v['execution'].items():
++                x=x or {};status=x.get('status') or x.get('execution_policy') or '见完整JSON执行状态'
++                lines.append('- '+name+'：'+str(status))
++                if name=='five_role_review':lines.append('  外部调用次数：'+str(x.get('external_llm_calls','未知'))+'；独立代理次数：'+str(x.get('independent_agent_runs','未知')))
++        lines.extend(['数值权重：未在本报告另行指定；数据缺失不填零。',''])
++    lines.extend(['## 综合选分检查','',*['- '+s for s in report['selection_checklist']],
++                  '', '本报告是证据与执行状态报告，不自动将统计比分改名为综合第一推荐；综合结论须独立保存冻结。'])
++    return '\n'.join(lines)+'\n'
+diff --git a/runtime/research/test_match_analysis.py b/runtime/research/test_match_analysis.py
+new file mode 100644
+index 0000000..f60c1e9
+--- /dev/null
++++ b/runtime/research/test_match_analysis.py
+@@ -0,0 +1,32 @@
++import copy,unittest
++from unittest.mock import patch
++from research.match_analysis import build,render,MODULES
++
++class Tests(unittest.TestCase):
++    def inputs(self):
++        f={'match_id':'synthetic','cohort':'eng.1','phase':'PreMatch','cutoff_at':'2026-01-01T12:00:00Z','kickoff_at':'2026-01-02T12:00:00Z'}
++        pair={'current_model':{'version':'test-current','matrix':[[.5,.2],[.2,.1]]},'test_model':{'version':'test-independent','matrix':[[.1,.2],[.2,.5]]}}
++        b={'match_id':'synthetic','status':'available','as_of':f['cutoff_at'],'summary':'Historical process observed',
++           'facts':{'recent_xg':1.2},'sources':[{'source_url':'https://example.test/stats','known_at':'2026-01-01T10:00:00Z','query_time':'2026-01-01T11:00:00Z'}]}
++        return f,pair,b
++    def build(self,f,pair):return build(f,pair,current_artifact={},test_artifact={'feature_xg_match_count':0})
++    def test_all_modules_present_without_claiming_missing_data_or_agents_ran(self):
++        f,p,b=self.inputs();before=copy.deepcopy(p);r=self.build(f,p)
++        self.assertEqual(set(r['modules']),set(MODULES));self.assertEqual(p,before)
++        self.assertEqual(r['modules']['research']['execution']['minute_simulation']['status'],'NOT_CONFIGURED')
++        self.assertEqual(r['modules']['xg']['status'],'unknown');self.assertEqual(r['modules']['xg']['recorded_training_rows']['test'],0)
++        self.assertFalse(r['numeric_prediction_modified']);self.assertIn('xG / xGA',render(r))
++    def test_latest_xg_evidence_does_not_relabel_training_or_change_matrix(self):
++        f,p,b=self.inputs();f['analysis_modules']={'xg':b};r=self.build(f,p)
++        self.assertEqual(r['modules']['xg']['status'],'available');self.assertEqual(r['modules']['xg']['recorded_training_rows']['test'],0)
++        self.assertEqual(r['modules']['xg']['evidence_usage'],'QUALITATIVE_EVIDENCE_ONLY')
++    def test_identity_late_or_secret_source_rejected_without_echoing_input(self):
++        for key,value in [('match_id','wrong'),('as_of','2026-01-03T00:00:00Z')]:
++            f,p,b=self.inputs();b[key]=value;f['analysis_modules']={'xg':b};self.assertEqual(self.build(f,p)['modules']['xg']['status'],'invalid')
++        f,p,b=self.inputs();b['sources'][0]['source_url']='https://example.test/?api_key=synthetic-secret';f['analysis_modules']={'xg':b};self.assertNotIn('synthetic-secret',render(self.build(f,p)))
++    def test_minute_engine_called_only_for_matching_valid_prematch_request(self):
++        f,p,b=self.inputs();req={'artifact':{'cohort':'eng.1'},'state':{'minute':0},'regulation_minutes':96};f['minute_simulation_request']=req
++        with patch('research.minute_simulator.simulate',return_value={'status':'SYNTHETIC_ENGINE_RESULT'}) as engine:
++            r=self.build(f,p);self.assertEqual(r['modules']['research']['execution']['minute_simulation']['status'],'SYNTHETIC_ENGINE_RESULT');self.assertEqual(engine.call_args.kwargs['as_of'],f['cutoff_at'])
++            req['state']['minute']=20;engine.reset_mock();r=self.build(f,p);engine.assert_not_called();self.assertEqual(r['modules']['research']['execution']['minute_simulation']['status'],'REFUSED_INVALID_OR_UNTRAINED_INPUT')
++if __name__=='__main__':unittest.main()
+diff --git a/runtime/test_active_route_engines.py b/runtime/test_active_route_engines.py
+index 30430c3..e7a0325 100644
+--- a/runtime/test_active_route_engines.py
++++ b/runtime/test_active_route_engines.py
+@@ -48,6 +48,13 @@ class ActiveRouteEngineTests(unittest.TestCase):
+         self.assertTrue(all(x['canonical_team_id'] in known
+                             for x in mapping['mappings'].values()))
+ 
++    @unittest.skipUnless(REGISTRY.is_file(), 'external active registry required')
++    def test_active_anchor_still_matches_hash_locked_engine(self):
++        import predict_active
++        route=json.loads(REGISTRY.read_text())['models']['eng.1']
++        artifact=json.loads(Path(route['artifact_path']).read_text())
++        self.assertEqual(artifact['anchor']['code_hash'], predict_active.legacy.code_hash())
++
+     def test_zero_padding_preserves_all_probability_values(self):
+         a = np.asarray([[.4, .1], [.2, .3]])
+         b = np.zeros((3, 3)); b[:2, :2] = a
+diff --git a/runtime/v4/decision_audit.py b/runtime/v4/decision_audit.py
+index 465fd67..aced314 100644
+--- a/runtime/v4/decision_audit.py
++++ b/runtime/v4/decision_audit.py
+@@ -101,9 +101,7 @@ def assess_decision(fixture):
+                     raise ValueError('explicit evidence status required')
+                 if not isinstance(b.get('summary'), str) or not b['summary'].strip():
+                     raise ValueError('summary/reason required')
+-                lineup_uncertainty = (category == 'lineup' and status == 'unknown'
+-                                      and b.get('lineup_status') == 'unannounced')
+-                if status in ('unknown', 'conflict') and not lineup_uncertainty:
++                if status in ('unknown', 'conflict'):
+                     raise ValueError(status + ': ' + b['summary'])
+                 if status == 'not_applicable' and category != 'public_information':
+                     raise ValueError('category cannot be waived; record unknown instead')
+@@ -114,18 +112,10 @@ def assess_decision(fixture):
+                     evidence_ok(e, fixture, category)
+                 if category == 'paths' and not b.get('counterargument'):
+                     raise ValueError('counterargument required for proposed path')
+-                if category == 'lineup':
+-                    if b.get('official_confirmed') is True:
+-                        if (not any(e['source_tier'] == 'L1' for e in evidence)
+-                                or len(b.get('starters', [])) != 11 or len(set(b['starters'])) != 11):
+-                            raise ValueError('eleven unique official starters required')
+-                    else:
+-                        if (b.get('lineup_status') not in ('unannounced', 'projected')
+-                                or not isinstance(b.get('scenario_analysis'), str)
+-                                or not b['scenario_analysis'].strip()
+-                                or not isinstance(b.get('uncertainty'), str) or not b['uncertainty'].strip()
+-                                or b.get('material_selection_risk') is not False):
+-                            raise ValueError('document lineup scenarios/uncertainty and resolve material selection risk')
++                if category == 'lineup' and (b.get('official_confirmed') is not True
++                        or not any(e['source_tier'] == 'L1' for e in evidence)
++                        or len(b.get('starters', [])) != 11 or len(set(b['starters'])) != 11):
++                    raise ValueError('eleven unique official starters required')
+                 if category == 'process' and b.get('xg_origin') == 'narrative_inference':
+                     raise ValueError('narrative-derived xG is not measured xG')
+                 blocks[side][category] = {'documented': True, 'status': status}
+diff --git a/runtime/v4/test_decision_diagnostics.py b/runtime/v4/test_decision_diagnostics.py
+index cc6d69b..8bedd27 100644
+--- a/runtime/v4/test_decision_diagnostics.py
++++ b/runtime/v4/test_decision_diagnostics.py
+@@ -93,12 +93,13 @@ class LineupUncertaintyTests(unittest.TestCase):
+             'evidence':[{'source_url':'https://example.org/team-news','source_tier':'L2',
+                          'query_time':f['cutoff_at'],'supports_field':['lineup']}]}
+         f['decision_evidence']={'home':{'lineup':b}}
+-        self.assertTrue(assess_decision(f)['blocks']['home']['lineup']['documented'])
++        from research.lineup_evidence import assess
++        self.assertTrue(assess(b,f)['documented'])
+         self.assertFalse(b['official_confirmed'])
+         b['material_selection_risk']=True
+-        self.assertFalse(assess_decision(f)['blocks']['home']['lineup']['documented'])
++        self.assertFalse(assess(b,f)['documented'])
+         b['material_selection_risk']=False;b.pop('scenario_analysis')
+-        self.assertFalse(assess_decision(f)['blocks']['home']['lineup']['documented'])
++        self.assertFalse(assess(b,f)['documented'])
+ 
+ 
+ class DiagnosticTests(unittest.TestCase):
+-- 
+2.52.0
+

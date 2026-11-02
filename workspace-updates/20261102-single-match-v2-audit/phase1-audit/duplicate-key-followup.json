@@ -1,0 +1,61 @@
+{
+  "sql": "select provider,count(*) duplicate_keys,sum(n) observation_rows,sum(score_variants>1) score_conflict_keys,sum(team_variants>1) identity_conflict_keys,sum(date_variants>1) date_conflict_keys from (select provider,source_key,competition,count(*) n,count(distinct coalesce(cast(h90 as text),'NULL')||':'||coalesce(cast(a90 as text),'NULL')) score_variants,count(distinct home_id||':'||away_id) team_variants,count(distinct date) date_variants from observations group by provider,source_key,competition having count(*)>1) group by provider",
+  "result": [
+    {
+      "provider": "5dollar",
+      "duplicate_keys": 220,
+      "observation_rows": 440,
+      "score_conflict_keys": 2,
+      "identity_conflict_keys": 218,
+      "date_conflict_keys": 0
+    },
+    {
+      "provider": "betexplorer",
+      "duplicate_keys": 1619,
+      "observation_rows": 3322,
+      "score_conflict_keys": 84,
+      "identity_conflict_keys": 601,
+      "date_conflict_keys": 0
+    },
+    {
+      "provider": "canonical",
+      "duplicate_keys": 9363,
+      "observation_rows": 19112,
+      "score_conflict_keys": 0,
+      "identity_conflict_keys": 9363,
+      "date_conflict_keys": 0
+    },
+    {
+      "provider": "espn",
+      "duplicate_keys": 27076,
+      "observation_rows": 58159,
+      "score_conflict_keys": 48,
+      "identity_conflict_keys": 0,
+      "date_conflict_keys": 0
+    },
+    {
+      "provider": "football-data",
+      "duplicate_keys": 11163,
+      "observation_rows": 22340,
+      "score_conflict_keys": 0,
+      "identity_conflict_keys": 0,
+      "date_conflict_keys": 0
+    },
+    {
+      "provider": "kleague",
+      "duplicate_keys": 1901,
+      "observation_rows": 4352,
+      "score_conflict_keys": 17,
+      "identity_conflict_keys": 12,
+      "date_conflict_keys": 12
+    },
+    {
+      "provider": "normalized",
+      "duplicate_keys": 7591,
+      "observation_rows": 18208,
+      "score_conflict_keys": 0,
+      "identity_conflict_keys": 7217,
+      "date_conflict_keys": 0
+    }
+  ]
+}
