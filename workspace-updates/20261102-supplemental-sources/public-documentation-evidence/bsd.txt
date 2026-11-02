@@ -1,0 +1,26 @@
+Football API — Docs | BSD Growing Discord community — direct access to the developer, live coverage & picks. Join the Discord Join now → × BSD Football The Edge Sports Tennis Padel CS2 Darts Hockey Basketball Horse Racing Get Sports Addon — $7/mo API Pricing More News Money Community Feedback Status Login Matches Leagues Predictions The Edge Money News Stats Coverage Menu ▾ Getting Started Overview Authentication Conventions & limits Data usage & license free Guides Quickstart: first request Build a league page Football player profile Tennis player profile Connect to live WebSockets Working with images Use BSD from AI agents Football API Overview free Events & live scores Leagues, seasons & standings Competition structure free Teams, players & transfers Managers, referees & venues Odds & predictions TV, broadcasts & social v1 API (legacy) More Sports APIs Tennis API pro Padel API pro CS2 API pro Darts API pro Hockey API pro Basketball API pro Horse Racing API pro Weight of Money Weight of Money API addon WebSockets Overview addon Football live channel Tennis live channel Arena 3D AI & Agents MCP servers Images & Data Image API Static datasets OpenAPI explorer Legal Terms of Service Privacy Policy Cookie Notice Refund Policy Data usage & license Docs / Football API free Football API # The football API is free — you only need a token
+( register here ). It covers 30+ leagues with deep match data:
+live scores, statistics with xG and shotmaps, lineups, standings,
+head-to-heads, player stats, transfers, multi-bookmaker odds (pre-match) and model
+predictions. Base URL:  https://sports.bzzoiro.com/api/v2/
+Auth:      Authorization: Token YOUR_API_KEY Two versions exist. Use v2 — it is the actively developed one. v1
+( /api/ ) remains for existing integrations: v1 API (legacy) . Resources # Area Endpoints Reference Events & live /events/ , /events/live/ , /events/{id}/ + 13 sub-resources (stats, lineups, incidents, commentary, h2h, odds…) Events & live scores Leagues & seasons /leagues/ , standings, seasons, leaderboards, best XI, venues Leagues, seasons & standings Teams & players /teams/ , /players/ , squads, fixtures, stats, transfers, World Cup squads Teams, players & transfers People & places /managers/ , /referees/ , /venues/ Managers, referees & venues Odds & predictions /odds/ , /odds/best/ , /bookmakers/ , /predictions/ Odds & predictions Media /tv-channels/ , /broadcasts/ , /social/ TV, broadcasts & social Coverage /coverage/ — what every sport holds right now, in one call see below What is there to poll # GET /api/v2/coverage/ answers, for every sport on the platform, whether it has
+fixtures ahead, how many of them are priced, and when the next and last events
+are. It needs no token. Worth one call before a polling loop decides what to ask
+for: hockey and basketball are out of season for months at a time, and their
+fixture endpoints can only answer that with an empty list. curl "https://sports.bzzoiro.com/api/v2/coverage/" {"generated_at": "2026-08-19T17:44:40+00:00", "sports": [
+  {"sport": "football", "status": "in_season", "events_next_7d": 527,
+   "events_next_30d": 1911, "priced_next_7d": 439, "live_now": 0,
+   "next_event_at": "2026-08-19T18:00:00+00:00",
+   "last_event_at": "2026-08-19T17:30:00+00:00", "docs_url": "/docs/football/"},
+  {"sport": "hockey", "status": "off_season", "events_next_7d": 0,
+   "events_next_30d": 0, "priced_next_7d": 0, "live_now": 0,
+   "next_event_at": null, "last_event_at": "2026-06-18T00:00:00+00:00",
+   "docs_url": "/docs/hockey/"}
+]} status is in_season , between_events , off_season or no_fixtures .
+Add ?sport=hockey for one sport. Quick example # # Live matches right now
+curl -H "Authorization: Token YOUR_API_KEY" \
+     "https://sports.bzzoiro.com/api/v2/events/live/" Conventions # Pagination ( limit / offset , default 50, max 200), UTC ISO-8601 dates,
+decimal odds and the uniform error shape are shared with every BSD API —
+see Conventions & limits . Hot endpoints ( events , leagues , teams ) are edge-cached ~5 s ( X-Cache-Status header). Interactive reference # OpenAPI explorer — browse every endpoint and
+  schema Swagger UI · ReDoc · raw schema at /openapi.json Typical workflows # Build a league page Get a player profile Live data via WebSocket (separate $7/mo addon, $3 on the Founder rate) ← Previous Use BSD from AI agents Next → Events & live scores View this page as Markdown · Found a mistake? Tell us On this page Resources What is there to poll Quick example Conventions Interactive reference Typical workflows Times shown in UTC Los Angeles New York São Paulo Lisbon London Madrid Paris Berlin Athens Moscow Dubai India Singapore Tokyo Sydney Set About Bzzoiro Sports Data (BSD) is a developer API for football and six other sports: 88 competitions, 8,500+ teams, 214,000+ players, live scores, odds from many bookmakers, and analytic forecasts. Football is free. [email protected] Quick Links Home Register Pricing Donate Showcase Status Feedback Football Leagues Teams Players Stats Free API API & Integrations API Hub Live WebSocket MCP Server Static Data Swagger UI ReDoc OpenAPI Schema llms.txt Terms of Service · Privacy · Cookies · Refunds · Data licence © 2026 Bzzoiro LLC — sports.bzzoiro.com Matches Leagues Search Predict Community More Cancel

@@ -1,0 +1,219 @@
+From 9d01ef5593fed0db140b105c5c44f4715d23bfcb Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E5=B8=85=E6=AF=94=E7=9A=84=20Iphone?=
+ <btysdxvp7j@privaterelay.appleid.com>
+Date: Mon, 2 Nov 2026 05:44:41 +0000
+Subject: [PATCH] Register supplemental xG sources and safe BSD/OpenFoot client
+ bindings
+
+---
+ .env.example                          |  3 +++
+ docs/data-sources.json                | 32 +++++++++++++++++++++++++-
+ docs/supplemental-sources-20261102.md | 26 +++++++++++++++++++++
+ runtime/data_sources/clients.py       |  8 +++++++
+ runtime/data_sources/registry.json    | 33 +++++++++++++++++++++++++++
+ runtime/data_sources/test_clients.py  | 13 +++++++++++
+ scripts/check_repository.py           |  2 +-
+ 7 files changed, 115 insertions(+), 2 deletions(-)
+ create mode 100644 docs/supplemental-sources-20261102.md
+
+diff --git a/.env.example b/.env.example
+index bac500c..44c6535 100644
+--- a/.env.example
++++ b/.env.example
+@@ -4,3 +4,6 @@ WCPP_FOOTBALL_DATA_API_KEY=
+ WCPP_API_FOOTBALL_KEY=
+ WCPP_APIFOOTBALLCOM_API_KEY=
+ WCPP_THE_ODDS_API_KEY=
++# Optional sources; values belong in secure settings, not this file.
++WCPP_BSD_API_KEY=
++WCPP_OPENFOOT_API_KEY=
+diff --git a/docs/data-sources.json b/docs/data-sources.json
+index 003dc9f..5d5c0e5 100644
+--- a/docs/data-sources.json
++++ b/docs/data-sources.json
+@@ -152,6 +152,35 @@
+       "audit_timezone": "Asia/Shanghai",
+       "audit_report": "/workspace/WCPP/reports/market-flow-reference-20261013/官网参考核查.md",
+       "bookmaker_scope": "UNVERIFIED"
++    },
++    {
++      "name": "BSD Football API",
++      "documentation": "https://sports.bzzoiro.com/docs/football/",
++      "credential_env": "WCPP_BSD_API_KEY",
++      "purpose": "候选赛程、过程、xG、射门图、阵容、赔率；按权限实测",
++      "role": "候选API，文档已核验；账户鉴权未验证",
++      "connection_verified_this_run": false
++    },
++    {
++      "name": "OpenFootAPI",
++      "documentation": "https://openfootapi.com/docs",
++      "credential_env": "WCPP_OPENFOOT_API_KEY",
++      "purpose": "候选赛程与高级xG/首发/赔率；高级字段依订阅",
++      "role": "候选API；完整新密钥已在聊天收到，未落盘/绑定/鉴权；与旧Open Football模拟器不同",
++      "connection_verified_this_run": false
++    },
++    {
++      "name": "FootyStats",
++      "url": "https://footystats.org/",
++      "purpose": "候选赛后xG及球队统计；公开页面不等于所有字段免费",
++      "role": "本轮首页HTTP访问失败，尚未验证字段覆盖",
++      "connection_verified_this_run": false
++    },
++    {
++      "name": "ScanGoal",
++      "purpose": "用户提供的实时列表团队xG候选",
++      "role": "官方域名与实际字段覆盖待核实，不猜API地址",
++      "connection_verified_this_run": false
+     }
+   ],
+   "betfair": {
+@@ -216,5 +245,6 @@
+       "matches_after": 41383,
+       "formal_kpi_added": 0
+     }
+-  }
++  },
++  "credential_storage_policy": "文档只登记来源、变量名、鉴权方式及状态；不存储密钥值。新源需求已登记到安全配置草稿，未填值/发布前不视为可用。"
+ }
+diff --git a/docs/supplemental-sources-20261102.md b/docs/supplemental-sources-20261102.md
+new file mode 100644
+index 0000000..e5f41bf
+--- /dev/null
++++ b/docs/supplemental-sources-20261102.md
+@@ -0,0 +1,26 @@
++# 2026-11-02 用户补充数据源登记
++
++密钥不写入公开源码或私有备份，本文只存变量名称、鉴权规则和状态。用户给出的BSD密钥已在聊天中收到但未落盘、未调用；OpenFootAPI最初值带省略号，后续已收到完整替换值；新值同样未落盘、未安全绑定或调用。当前工具只支持声明安全绑定需求，不能代填聊天密钥值。两项需求已保存至环境配置草稿的HTTP密钥：WCPP_BSD_API_KEY（sports.bzzoiro.com）、WCPP_OPENFOOT_API_KEY（openfootapi.com）。保存不等于填值/发布/当前进程已绑定；环境发布仍有既有失败，不能称已接通。
++
++|来源|本次核查与用途|实际状态|
++|---|---|---|
++|[BSD](https://sports.bzzoiro.com/docs/football/)|文档HTTP200；/api/v2/，Authorization: Token；文档宣称足球免费、30+联赛、xG/shotmap/阵容/赛前多机构赔率|只读客户端已适配；实际账户鉴权、日期/联赛字段覆盖、额度未验证|
++|[OpenFootAPI](https://openfootapi.com/docs)|文档HTTP200；/v1，Authorization: Bearer；Starter文档为赛程/赛事/积分/搜索，Developer增加事件、首发、xG射门图、赔率|只读客户端已适配；完整替换密钥已收到但未安全绑定；账户订阅和高级字段未验证|
++|[FootyStats](https://footystats.org/)|公开统计网页候选；不能假定所有xG字段均免费|本次主页HTTP请求失败；不能称实际取得字段|
++|[Sofascore](https://www.sofascore.com/)|逐次射门xG候选|不是所有赛事/每次射门都保证有xG，按比赛ID、射门事件和时间实取|
++|[FotMob](https://www.fotmob.com/)|团队总xG与shotmap候选；本项目此前已实际使用部分比赛|不按“团队级”限制其全部能力；逐场核查字段和低级别联赛覆盖|
++|ScanGoal|用户提供的实时列表团队xG候选|官方域名、免费覆盖、页面字段待核实；不采用猜测域名作已确认来源|
++|[Understat](https://understat.com/)|其覆盖联赛的历史赛后xG、xGA与射门过程|赛后数据只能用于之后赛事的历史特征；历史first-known时间不能补造|
++|[FBref](https://fbref.com/)|候选历史球队/球员统计|当前赛季、提供方与xG字段可用性需实测，不将过去覆盖永久视为现状|
++
++OpenFootAPI文档注明FotMob、ESPN、OpenLigaDB等上游。不能把同一FotMob快照经不同API转发当两份独立证据。它与此前指定open-football.org模拟器、openfootball/football.json归档分别登记，来源与许可不可混淆。
++
++## 接入与时点规则
++
++新客户端只发送GET到固定域名允许的路径；密钥只从运行时安全绑定读取，缺绑定返回ENV_BINDING_MISSING，不发带空密钥请求。文档公开示例/demo钥匙不当成用户账户鉴权，不用截断值碰运气。未启动轮询或消耗付费套餐。
++
++采集仍走API优先流程，原始响应先存staging，核验比赛身份、90分钟口径、提供方/许可、known_at与query_time、xG定义和盘口机构/盘线/quoted_at后才进入分析。xGA使用同提供方对手xG；不同提供方尺度不静默混算。当前比赛赛后xG不得回填赛前特征。
++
++来源可用、成功鉴权、字段覆盖、历史as-of合格、模型已训练为五种独立状态，不能互相替代。本站模型预测/AI概率不当成真实标签，也不未经比较直接合入主模型。
++
++验证：359项本地测试无失败，1组历史私有资产集成检查缺文件跳过；新服务鉴权头/缺绑定拒绝/凭据脱敏均使用合成值测试。未使用聊天密钥执行真实鉴权，不能以测试通过冒充账户权限通过。
+diff --git a/runtime/data_sources/clients.py b/runtime/data_sources/clients.py
+index 40ca1fb..3632e3d 100644
+--- a/runtime/data_sources/clients.py
++++ b/runtime/data_sources/clients.py
+@@ -8,6 +8,12 @@ from urllib.parse import urlencode
+ from urllib.request import Request, HTTPRedirectHandler, build_opener
+ 
+ PROVIDERS = {
++    'bsd': {'base': 'https://sports.bzzoiro.com/api/v2',
++            'env': 'WCPP_BSD_API_KEY', 'header': 'Authorization',
++            'prefix': 'Token ', 'probe': '/events/'},
++    'openfoot': {'base': 'https://openfootapi.com/v1',
++                 'env': 'WCPP_OPENFOOT_API_KEY', 'header': 'Authorization',
++                 'prefix': 'Bearer ', 'probe': '/matches'},
+     'apifootball-com': {'base': 'https://apiv3.apifootball.com',
+                        'env': 'WCPP_APIFOOTBALLCOM_API_KEY',
+                        'aliases': ['apifootball2'], 'query_key': 'APIkey',
+@@ -36,6 +42,8 @@ PROVIDERS = {
+ PRIVATE = {'key', 'api_key', 'apikey', 'token', 'authorization', 'access_token',
+            'secret', 'x-auth-token', 'x-apisports-key', 'x-rapidapi-key'}
+ ALLOWED = {
++    'bsd': ('/events', '/leagues', '/teams', '/players'),
++    'openfoot': ('/matches', '/competitions', '/standings', '/search'),
+     'apifootball-com': ('/',),
+     '5dollar': ('/status', '/fixtures', '/leagues'),
+     'the-odds-api': ('/sports',),
+diff --git a/runtime/data_sources/registry.json b/runtime/data_sources/registry.json
+index 945e0e7..86328ce 100644
+--- a/runtime/data_sources/registry.json
++++ b/runtime/data_sources/registry.json
+@@ -99,6 +99,39 @@
+       "api_required": false,
+       "credential_required": false,
+       "user_confirmed_website": "https://open-football.org/zh"
++    },
++    "bsd": {
++      "base_url": "https://sports.bzzoiro.com/api/v2",
++      "credential_env": "WCPP_BSD_API_KEY",
++      "documentation": "https://sports.bzzoiro.com/docs/football/",
++      "auth_scheme": "Authorization: Token <secret>",
++      "documentation_http_status_20261102": 200,
++      "credential_status": "RECEIVED_IN_CHAT_NOT_STORED_OR_BOUND",
++      "authenticated_status_verified": false,
++      "role": "candidate_fixture_process_xg_shotmap_lineup_odds",
++      "documented_scope_not_account_verified": true
++    },
++    "openfoot": {
++      "base_url": "https://openfootapi.com/v1",
++      "credential_env": "WCPP_OPENFOOT_API_KEY",
++      "documentation": "https://openfootapi.com/docs",
++      "auth_scheme": "Authorization: Bearer <secret>",
++      "documentation_http_status_20261102": 200,
++      "credential_status": "COMPLETE_REPLACEMENT_RECEIVED_IN_CHAT_NOT_STORED_OR_BOUND",
++      "authenticated_status_verified": false,
++      "documented_starter_scope": [
++        "fixtures",
++        "competitions",
++        "standings",
++        "search"
++      ],
++      "documented_developer_scope": [
++        "events",
++        "lineups",
++        "xg_shotmaps",
++        "odds"
++      ],
++      "source_dependency_notice": "Docs cite FotMob and other providers; overlapping data is not independent corroboration"
+     }
+   }
+ }
+diff --git a/runtime/data_sources/test_clients.py b/runtime/data_sources/test_clients.py
+index 3d01279..d84f565 100644
+--- a/runtime/data_sources/test_clients.py
++++ b/runtime/data_sources/test_clients.py
+@@ -14,6 +14,19 @@ class Response(io.BytesIO):
+ 
+ 
+ class Tests(unittest.TestCase):
++    def test_bsd_and_openfoot_header_schemes_and_missing_bindings(self):
++        for provider,binding,prefix in [('bsd','WCPP_BSD_API_KEY','Token '),('openfoot','WCPP_OPENFOOT_API_KEY','Bearer ')]:
++            with patch.dict(os.environ,{},clear=True):
++                r=fetch(provider,opener=lambda *a,**k:self.fail('network with missing secret'))
++                self.assertEqual(r['call']['error_code'],'ENV_BINDING_MISSING')
++            def opener(req,**kwargs):
++                self.assertEqual(req.get_header('Authorization'),prefix+'SYNTHETIC_CREDENTIAL_ONLY')
++                return Response({'data':[]})
++            with patch.dict(os.environ,{binding:'SYNTHETIC_CREDENTIAL_ONLY'},clear=True):
++                r=fetch(provider,opener=opener)
++            self.assertTrue(r['call']['authenticated'])
++            self.assertNotIn('SYNTHETIC_CREDENTIAL_ONLY',json.dumps(r))
++
+     def test_query_authenticated_services_never_persist_key_or_redirect_it(self):
+         for provider, binding, path, params, parameter in (
+                 ('the-odds-api', 'manyzhishu_theodds_sports', '/sports', {}, 'apiKey'),
+diff --git a/scripts/check_repository.py b/scripts/check_repository.py
+index 45e86a0..30bcfe3 100644
+--- a/scripts/check_repository.py
++++ b/scripts/check_repository.py
+@@ -6,7 +6,7 @@ import subprocess
+ import sys
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+-BINDINGS = ('WCPP_5DOLLAR_API_KEY', 'WCPP_FOOTBALL_DATA_API_KEY',
++BINDINGS = ('WCPP_BSD_API_KEY', 'WCPP_OPENFOOT_API_KEY', 'WCPP_5DOLLAR_API_KEY', 'WCPP_FOOTBALL_DATA_API_KEY',
+             'football_data', 'Football_data_api', 'WCPP_API_FOOTBALL_KEY',
+             '_apifootball', 'dashboard_api_football', 'Apifootballcom_APIKEY',
+             'apifootball', 'apifootball2', 'WCPP_APIFOOTBALLCOM_API_KEY',
+-- 
+2.52.0
+

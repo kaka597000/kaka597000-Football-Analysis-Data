@@ -1,0 +1,250 @@
+{
+  "provenance": "用户在当前聊天提供的登记清单；本轮未测试各源连接",
+  "timezone": "UTC+8",
+  "access_note": "大多通过公开网页查询，没有已配置的API密钥；不代表逐源连接已验证",
+  "sources": [
+    {
+      "name": "雷速体育",
+      "purpose": "竞彩身份、赛程、比分、阵容与指数",
+      "role": "竞彩核实优先来源",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "新球体育竞足板块",
+      "purpose": "竞彩编号、对阵、销售批次与时间",
+      "role": "竞彩核实优先来源",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "UEFA及其他赛事／足协官方",
+      "purpose": "国家队赛程、赛果、名单、停赛与规则",
+      "role": "L1优先",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "联赛、俱乐部官方",
+      "purpose": "首发、伤停、轮换、公开表态",
+      "role": "L1优先",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "FotMob、Sofascore",
+      "purpose": "赛果、过程数据、xG、阵容和近期表现",
+      "role": "L2交叉核验",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "Flashscore、ESPN、Sky Sports",
+      "purpose": "赛程、赛果与比赛资料",
+      "role": "补充核验",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "BetUS",
+      "purpose": "亚洲让球、大小球、1X2",
+      "role": "用户登记本次实际查询过；本云端未复验",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "PokerStars Sports",
+      "purpose": "大小球、1X2等",
+      "role": "用户登记本次实际查询过；三项让球不能当亚洲盘；本云端未复验",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "Oddschecker、SportyTrader",
+      "purpose": "多机构赔率比较",
+      "role": "辅助查询，须核机构与时间",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "AgentBets",
+      "purpose": "转引Pinnacle等机构盘口",
+      "role": "二手报价，明确标注",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "Sports Mole、Reuters等媒体",
+      "purpose": "前瞻、公开消息、比赛报道",
+      "role": "背景证据，不冒充官方首发",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "GitHub martj42/international_results",
+      "purpose": "国家队历史赛果扩库",
+      "role": "Raw staging；核实90分钟口径后才能训练",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "澳客",
+      "purpose": "第三方竞彩/北单身份清单发现",
+      "role": "备选公开网页，单源可读、未完成独立交叉核验",
+      "urls": [
+        "https://www.okooo.com/jingcai/",
+        "https://www.okooo.com/danchang/"
+      ],
+      "connection_verified_this_run": true,
+      "fixture_identity_cross_verified": false
+    },
+    {
+      "name": "JFA天皇杯官方比赛页与官方记录",
+      "purpose": "天皇杯赛程、分段比分、加时/点球、注册名单、首发与替补",
+      "role": "L1",
+      "connection_verified_this_run": true,
+      "verified_at": "2026-10-07T18:40:45.377567+08:00",
+      "database_manifest": "data/emperor-cup/manifest.json",
+      "scope": "2024–2026",
+      "historical_first_known_at_verified": false
+    },
+    {
+      "name": "AsianOdds.org",
+      "url": "https://www.asianodds.org/",
+      "purpose": "BetInAsia单来源胜平负、亚洲让球、大小球开盘与当前报价参考；非多机构共识",
+      "role": "赛前市场末端校验与有界重排的辅助网页来源",
+      "access_method": "public_web_reference",
+      "api_key_required_for_this_use": false,
+      "registered_by_user_date": "2026-10-13",
+      "connection_verified_this_run": true,
+      "verification_status": "PUBLIC_PRICE_REFERENCE_VERIFIED_SINGLE_BETINASIA",
+      "flow_volume_verified": false,
+      "odds_sample_verified_this_run": true,
+      "automated_integration_verified": false,
+      "full_timestamped_history_verified": false,
+      "audit_date": "2026-10-13",
+      "audit_timezone": "Asia/Shanghai",
+      "audit_report": "/workspace/WCPP/reports/market-flow-reference-20261013/官网参考核查.md",
+      "bookmaker_scope": "BetInAsia"
+    },
+    {
+      "name": "Odds.Directory",
+      "url": "https://odds.directory/en/football/markets/asian-handicap/",
+      "purpose": "亚洲让球及赛事详情胜平负、大小球聚合报价，开盘/当前/高低点参考；具体机构未核实",
+      "role": "赛前市场末端校验与有界重排的辅助网页来源",
+      "access_method": "public_web_reference",
+      "api_key_required_for_this_use": false,
+      "registered_by_user_date": "2026-10-13",
+      "connection_verified_this_run": true,
+      "verification_status": "PUBLIC_AGGREGATED_PRICE_REFERENCE_VERIFIED",
+      "flow_volume_verified": false,
+      "odds_sample_verified_this_run": true,
+      "automated_integration_verified": false,
+      "full_timestamped_history_verified": false,
+      "audit_date": "2026-10-13",
+      "audit_timezone": "Asia/Shanghai",
+      "audit_report": "/workspace/WCPP/reports/market-flow-reference-20261013/官网参考核查.md",
+      "bookmaker_scope": "UNKNOWN_AGGREGATED"
+    },
+    {
+      "name": "OddsPortal",
+      "url": "https://www.oddsportal.com/",
+      "purpose": "公开赛程导航与赔率比较候选；本轮未读取到可用比赛报价表",
+      "role": "赛前市场末端校验与有界重排的辅助网页来源",
+      "access_method": "public_web_reference",
+      "api_key_required_for_this_use": false,
+      "registered_by_user_date": "2026-10-13",
+      "connection_verified_this_run": true,
+      "verification_status": "PUBLIC_PAGES_REACHABLE_ODDS_FEED_UNVERIFIED",
+      "flow_volume_verified": false,
+      "odds_sample_verified_this_run": false,
+      "automated_integration_verified": false,
+      "full_timestamped_history_verified": false,
+      "audit_date": "2026-10-13",
+      "audit_timezone": "Asia/Shanghai",
+      "audit_report": "/workspace/WCPP/reports/market-flow-reference-20261013/官网参考核查.md",
+      "bookmaker_scope": "UNVERIFIED"
+    },
+    {
+      "name": "BSD Football API",
+      "documentation": "https://sports.bzzoiro.com/docs/football/",
+      "credential_env": "WCPP_BSD_API_KEY",
+      "purpose": "候选赛程、过程、xG、射门图、阵容、赔率；按权限实测",
+      "role": "候选API，文档已核验；账户鉴权未验证",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "OpenFootAPI",
+      "documentation": "https://openfootapi.com/docs",
+      "credential_env": "WCPP_OPENFOOT_API_KEY",
+      "purpose": "候选赛程与高级xG/首发/赔率；高级字段依订阅",
+      "role": "候选API；完整新密钥已在聊天收到，未落盘/绑定/鉴权；与旧Open Football模拟器不同",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "FootyStats",
+      "url": "https://footystats.org/",
+      "purpose": "候选赛后xG及球队统计；公开页面不等于所有字段免费",
+      "role": "本轮首页HTTP访问失败，尚未验证字段覆盖",
+      "connection_verified_this_run": false
+    },
+    {
+      "name": "ScanGoal",
+      "purpose": "用户提供的实时列表团队xG候选",
+      "role": "官方域名与实际字段覆盖待核实，不猜API地址",
+      "connection_verified_this_run": false
+    }
+  ],
+  "betfair": {
+    "status": "NOT_CONNECTED_UNVERIFIED",
+    "verified_connection_or_key": false,
+    "fields_not_available": [
+      "matched_volume",
+      "back",
+      "lay",
+      "correct_score_trading_data"
+    ]
+  },
+  "market_policy": "最后校验与有界重排；不直接修改永久Football λ，市场单独不得翻Primary",
+  "prohibited_sources": "中国体育彩票官网及镜像",
+  "api_5dollar_status": "七个联赛历史(events/stats)、各一场Bet365赔率及积分榜已实测；Community有效历史最近12个月。2014历史及批量赔率403；原始2175条已存统一库，过渡及矛盾记录隔离。",
+  "model_constraints_changed": false,
+  "api_5dollar_analysis_policy": {
+    "provider": "5DollarFootballAPI",
+    "base_url": "https://api.5dollarfootballapi.com/v1",
+    "documentation_url": "https://5dollarfootballapi.com/docs",
+    "credential_environment_variable": "WCPP_5DOLLAR_API_KEY",
+    "required_competitions": [
+      "日职联（J1）",
+      "日职乙（J2）",
+      "英超",
+      "西甲",
+      "德甲",
+      "意甲",
+      "法甲"
+    ],
+    "requirement": "分析上述赛事时实际调用接口；仅检查密钥存在或/status成功不能算已获取比赛数据。",
+    "workflow": [
+      "本次分析先验证/status，再依据官方文档使用适用且获授权的赛事数据端点。",
+      "核对赛事、球队、时间与比赛ID；取得可用赛程、近期赛果、过程、阵容与盘口字段，缺失项明确标注。",
+      "记录查询时间（UTC+8）、无密钥的请求定位、HTTP状态、取得字段、字段来源时间、缺失及失败原因。",
+      "明确区分数据已取得、已纳入分析和已作为模型输入；不宣称未运行的完整融合。",
+      "失败、权限不足或无赛事覆盖时记录事实并用官方或其他已验证来源补充。"
+    ],
+    "secrets": "密钥仅从环境变量读取，不写入文件或日志；审计去除认证信息及含密钥URL。",
+    "odds": "大小球使用实际取得且身份和时间可核验的盘口，缺失不补造；市场仍只用于最后校验和有界重排。",
+    "jingcai": "使用竞彩端点时固定types=jingcailottery；权限须实际验证。",
+    "status_verified_this_update": false,
+    "prior_connection_evidence": "此前任务/status验证成功；本次只保存调用要求，未重新调用或验证各联赛覆盖。",
+    "updated_at": "2026-10-10T19:34:02.077845+08:00",
+    "latest_smoke_test": {
+      "date_utc8": "2026-10-10",
+      "status_http": 200,
+      "fixture_http": 200,
+      "league_id": 3492701972,
+      "rows": 6,
+      "fixture_mapping_verified": false,
+      "model_ingestion_performed": false,
+      "scope": "J2 one-day fixture feed only"
+    },
+    "seven_league_history_verified": {
+      "date_utc8": "2026-10-10",
+      "raw_rows": 2175,
+      "net_new_matches": 24,
+      "history_window": "last_12_months",
+      "old_history_http": 403,
+      "batch_odds_http": 403,
+      "matches_after": 41383,
+      "formal_kpi_added": 0
+    }
+  },
+  "credential_storage_policy": "文档只登记来源、变量名、鉴权方式及状态；不存储密钥值。新源需求已登记到安全配置草稿，未填值/发布前不视为可用。"
+}
