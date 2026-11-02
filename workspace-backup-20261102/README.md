@@ -7,7 +7,7 @@
 使用平台提供的 GitHub 认证，检出本目录所在的固定提交；不要在聊天或命令参数中粘贴访问令牌。
 
 ```bash
-git clone --single-branch --branch backup/full-workspace-20261102 https://github.com/kaka597000/kaka597000-Football-Analysis-Data.git /workspace/recovery-repository
+git clone --single-branch --branch workspace-full-20261102-v1 https://github.com/kaka597000/kaka597000-Football-Analysis-Data.git /workspace/recovery-repository
 cd /workspace/recovery-repository/workspace-backup-20261102
 python restore.py --stage /workspace/recovered-workspace-20261102
 ```
@@ -39,3 +39,5 @@ python incoming-core/restore_incoming.py --stage /workspace/recovered-incoming-2
 ```
 
 此包为先前独立验收的1650文件、21队列42活动工件及两库，整包SHA256为8d6415a4d62a26edbe632620d76372e25eee61d038418ee96af3f155d8205e07。脚本验证分片和整体，解包并验证文件hash/工件hash及数据库，不覆盖原WCPP。两套一并保留供后续接入决策。除它以外的旧交接历史包仍在同一私有仓库原handoff分支中保留；完整旧工作区非工具资产已在本次主归档中覆盖。
+
+固定恢复标签：workspace-full-20261102-v1。私有仓库main中的latest-workspace-backup.json登记最终完整commit。
