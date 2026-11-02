@@ -23,8 +23,8 @@
 
 ## 新云端恢复步骤
 
-1. 先读取目标AGENTS并记录三个仓库分支、HEAD及未提交状态。保存截图提到的35项修改；不要替换它们。私有数据仓库在目标可能位于`/workspace/kaka597000-Football-Analysis-Data`，旧环境位置为`/workspace/Football-Analysis-Data`，须显式记录路径映射。
-2. 获取归档、每包manifest及files.csv。禁止从公开仓库下载密钥。现Data仓库实测为public，本轮不向其上传运行资产；仓库名不能证明私密性。
+1. 先读取目标AGENTS并记录三个仓库分支、HEAD及未提交状态。保存截图提到的35项修改；不要替换它们。数据仓库在目标可能位于`/workspace/kaka597000-Football-Analysis-Data`，旧环境位置为`/workspace/Football-Analysis-Data`，须显式记录路径映射。
+2. 获取归档、每包manifest及files.csv。密钥不在交接包中。Data仓库实测为public；按用户后续明确要求，凭据模式筛查后的运行资产已通过独立交接分支公开提供，main不变。
 3. 在全新暂存目录恢复，例如：
 
 ```bash
@@ -45,6 +45,6 @@ python restore.py --packages /path/to/packages --stage /workspace/wcpp-incoming-
 
 最近MLS批次`reports/mls-20261102-0853/`：LAFC—Minnesota综合2-1/主胜/小3.5；Portland—Houston精确比分待定/主胜倾向/大小观望；NE—Miami仅滚球观察。必须读取原冻结时间，不补追认。10月31日23场复盘已结算15场、仍有8场待更新，不能把旧阶段统计当全量最终赛果。
 
-GitHub鉴权恢复；最近私有定时任务韩K采集在联赛身份核验处失败，邮件未部署、SMTP未绑定；不要称自动任务全部正常。09:00复盘没有成功部署，不追认完成。
+GitHub鉴权恢复；最近定时任务韩K采集在联赛身份核验处失败，邮件未部署、SMTP未绑定；不要称自动任务全部正常。09:00复盘没有成功部署，不追认完成。
 
 原始数据库及旧环境不可删除。本次打包和暂存验证不是新云端实际恢复完成；只有在目标独立验收后才可确认交接成功。
