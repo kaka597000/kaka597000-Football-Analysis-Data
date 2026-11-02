@@ -14,3 +14,6 @@ python incoming-core/restore_incoming.py --stage /workspace/recovered-incoming-2
 密钥、授权许可、已安装依赖及活动进程需要独立恢复；依赖版本及安装脚本随包保存。数据库/注册表冲突副本均保留，接入前按说明比对。后续新增分析/训练必须另做增量备份，本次不是自动同步任务。
 
 固定备份之后的源码及规则增量见latest-source.json和workspace-updates/。恢复固定快照后还须检查这些增量；旧快照保持不可变。
+
+
+最新新环境恢复入口：[NEW-ENVIRONMENT.md](NEW-ENVIRONMENT.md)。请优先读取最终增量版；旧完整快照仍保持原样，勿遗漏后续增量。
