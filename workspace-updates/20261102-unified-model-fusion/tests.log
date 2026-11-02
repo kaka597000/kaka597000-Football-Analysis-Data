@@ -1,0 +1,626 @@
+Testing runtime
+test_active_anchor_still_matches_hash_locked_engine (test_active_route_engines.ActiveRouteEngineTests.test_active_anchor_still_matches_hash_locked_engine) ... ok
+test_afc_elite_route_is_phase_isolated (test_active_route_engines.ActiveRouteEngineTests.test_afc_elite_route_is_phase_isolated) ... ok
+test_four_requested_routes_are_hash_locked (test_active_route_engines.ActiveRouteEngineTests.test_four_requested_routes_are_hash_locked) ... ok
+test_today_afc_provider_team_map_has_no_cold_start_target (test_active_route_engines.ActiveRouteEngineTests.test_today_afc_provider_team_map_has_no_cold_start_target) ... ok
+test_zero_padding_preserves_all_probability_values (test_active_route_engines.ActiveRouteEngineTests.test_zero_padding_preserves_all_probability_values) ... ok
+test_big_five_and_four_ood_tracks_stay_disjoint (test_league_tracks.LeagueTrackTests.test_big_five_and_four_ood_tracks_stay_disjoint) ... ok
+test_ood_codes_cannot_be_promoted (test_league_tracks.LeagueTrackTests.test_ood_codes_cannot_be_promoted) ... ok
+test_ood_codes_cannot_enter_europe_training (test_league_tracks.LeagueTrackTests.test_ood_codes_cannot_enter_europe_training) ... ok
+test_analytic_probability (test_wcpp.Tests.test_analytic_probability) ... ok
+test_asian_integer_and_quarter (test_wcpp.Tests.test_asian_integer_and_quarter) ... ok
+test_bad_lambda (test_wcpp.Tests.test_bad_lambda) ... ok
+test_cohort_and_unknown_team (test_wcpp.Tests.test_cohort_and_unknown_team) ... ok
+test_cutoff_and_future_evidence (test_wcpp.Tests.test_cutoff_and_future_evidence) ... ok
+test_fit_excludes_unavailable_results (test_wcpp.Tests.test_fit_excludes_unavailable_results) ... ok
+test_freeze_and_evaluate (test_wcpp.Tests.test_freeze_and_evaluate) ... ok
+test_freeze_rejects_tampering_late_and_demo (test_wcpp.Tests.test_freeze_rejects_tampering_late_and_demo) ... ok
+test_matrix_tail_partition (test_wcpp.Tests.test_matrix_tail_partition) ... ok
+test_shadow_projection (test_wcpp.Tests.test_shadow_projection) ... ok
+test_symmetric_outcomes (test_wcpp.Tests.test_symmetric_outcomes) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.662s
+
+OK
+Testing runtime/aus_expert
+test_append_only_import_rollback_and_legal_repeat (test_expert.ExpertTests.test_append_only_import_rollback_and_legal_repeat) ... ok
+test_dc_probabilities_global_clamped_rates (test_expert.ExpertTests.test_dc_probabilities_global_clamped_rates) ... ok
+test_feature_origin_excludes_same_day_and_future (test_expert.ExpertTests.test_feature_origin_excludes_same_day_and_future) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.013s
+
+OK
+Testing runtime/automation
+test_budget_and_single_retry_are_bounded (test_collector.CollectorTests.test_budget_and_single_retry_are_bounded) ... ok
+test_collect_deduplicates_sources_and_results_and_keeps_private_raw (test_collector.CollectorTests.test_collect_deduplicates_sources_and_results_and_keeps_private_raw) ... ok
+test_exhausted_wallclock_starts_no_requests (test_collector.CollectorTests.test_exhausted_wallclock_starts_no_requests) ... ok
+test_missing_linescores_quarantined_without_label (test_collector.CollectorTests.test_missing_linescores_quarantined_without_label) ... ok
+test_only_regulation_periods_count_and_source_time_is_capture (test_collector.CollectorTests.test_only_regulation_periods_count_and_source_time_is_capture) ... ok
+test_stage_era_and_japanese_transition_rejected (test_collector.CollectorTests.test_stage_era_and_japanese_transition_rejected) ... ok
+test_wallclock_cutoff_preserves_already_verified_rows (test_collector.CollectorTests.test_wallclock_cutoff_preserves_already_verified_rows) ... ok
+test_authentication_failure_never_exposes_provider_text (test_email_notify.EmailTests.test_authentication_failure_never_exposes_provider_text) ... ok
+test_bjt_candidate_metrics_and_no_promotion_claim (test_email_notify.EmailTests.test_bjt_candidate_metrics_and_no_promotion_claim) ... ok
+test_header_injection_blocked_and_disabled_skip (test_email_notify.EmailTests.test_header_injection_blocked_and_disabled_skip) ... ok
+test_no_secret_never_opens_smtp (test_email_notify.EmailTests.test_no_secret_never_opens_smtp) ... ok
+test_only_intended_recipient_and_acceptance_not_delivery (test_email_notify.EmailTests.test_only_intended_recipient_and_acceptance_not_delivery) ... ok
+test_repo_branch_and_workflow_must_match (test_email_notify.EmailTests.test_repo_branch_and_workflow_must_match) ... ok
+test_rerun_does_not_use_previous_attempt (test_email_notify.EmailTests.test_rerun_does_not_use_previous_attempt) ... ok
+test_successful_collection_goes_in_digest_not_each_email (test_email_notify.EmailTests.test_successful_collection_goes_in_digest_not_each_email) ... ok
+test_timeout_without_persisted_record_not_previous_success (test_email_notify.EmailTests.test_timeout_without_persisted_record_not_previous_success) ... ok
+test_identity_time_neutral_and_no_overwrite (test_export_seed.SeedTests.test_identity_time_neutral_and_no_overwrite) ... ok
+test_bad_seed_stops_before_network (test_run.RunTests.test_bad_seed_stops_before_network) ... ok
+test_cloud_collection_budget_reaches_collector_and_audit (test_run.RunTests.test_cloud_collection_budget_reaches_collector_and_audit) ... ok
+test_invalid_budget_stops_before_side_effects (test_run.RunTests.test_invalid_budget_stops_before_side_effects) ... ok
+test_no_response_is_not_success_and_error_body_is_not_saved (test_run.RunTests.test_no_response_is_not_success_and_error_body_is_not_saved) ... ok
+test_fit_no_new_data_skip_and_no_activation_changes (test_trainer.TrainerTests.test_fit_no_new_data_skip_and_no_activation_changes) ... ok
+test_future_known_time_duplicate_and_conflict_are_not_trained (test_trainer.TrainerTests.test_future_known_time_duplicate_and_conflict_are_not_trained) ... ok
+test_retrospective_seed_can_use_registered_artifact_provenance (test_trainer.TrainerTests.test_retrospective_seed_can_use_registered_artifact_provenance) ... ok
+test_same_inputs_produce_same_numerical_refit_and_wrong_stage_excluded (test_trainer.TrainerTests.test_same_inputs_produce_same_numerical_refit_and_wrong_stage_excluded) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.451s
+
+OK
+{"run_id": "20261102T111509-collect", "mode": "collect", "status": "COMPLETED", "paid_api_calls": false}
+{"run_id": "20261102T111509-collect", "mode": "collect", "status": "FAILED_NO_USABLE_RESPONSE", "paid_api_calls": false}
+{"run_id": "20261102T111509-collect", "mode": "collect", "status": "FAILED", "paid_api_calls": false}
+Testing runtime/continental
+test_bad_version_cannot_load_as_ucl (test_ucl.Tests.test_bad_version_cannot_load_as_ucl) ... ok
+test_invalid_observed_process_rejected (test_ucl.Tests.test_invalid_observed_process_rejected) ... ok
+test_mixed_eras_stages_rejected (test_ucl.Tests.test_mixed_eras_stages_rejected) ... ok
+test_neutral_unknown_rejected (test_ucl.Tests.test_neutral_unknown_rejected) ... ok
+test_partial_process_preserves_real_sot_and_possession (test_ucl.Tests.test_partial_process_preserves_real_sot_and_possession) ... ok
+test_target_or_same_date_process_not_used (test_ucl.Tests.test_target_or_same_date_process_not_used) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.112s
+
+OK
+Testing runtime/data_sources
+test_5dollar_checks_status_once_before_fixtures (test_api_first.ApiFirstTests.test_5dollar_checks_status_once_before_fixtures) ... ok
+test_corrupt_or_future_cache_is_not_reused (test_api_first.ApiFirstTests.test_corrupt_or_future_cache_is_not_reused) ... ok
+test_dedup_cache_and_skip_unneeded_secondary_api (test_api_first.ApiFirstTests.test_dedup_cache_and_skip_unneeded_secondary_api) ... ok
+test_fallback_is_only_for_empty_field_after_api_alternatives (test_api_first.ApiFirstTests.test_fallback_is_only_for_empty_field_after_api_alternatives) ... ok
+test_no_web_fallback_without_api_candidates_or_identity (test_api_first.ApiFirstTests.test_no_web_fallback_without_api_candidates_or_identity) ... ok
+test_permission_denial_stops_same_provider_and_no_success_cache (test_api_first.ApiFirstTests.test_permission_denial_stops_same_provider_and_no_success_cache) ... ok
+test_quota_is_only_reserved_for_network_after_cache_and_dedup (test_api_first.ApiFirstTests.test_quota_is_only_reserved_for_network_after_cache_and_dedup) ... ok
+test_wrong_identity_or_stale_quote_does_not_fill_gap (test_api_first.ApiFirstTests.test_wrong_identity_or_stale_quote_does_not_fill_gap) ... ok
+test_5dollar_and_public_json_have_distinct_authentication (test_clients.Tests.test_5dollar_and_public_json_have_distinct_authentication) ... ok
+test_bsd_and_openfoot_header_schemes_and_missing_bindings (test_clients.Tests.test_bsd_and_openfoot_header_schemes_and_missing_bindings) ... ok
+test_configured_alias_is_used_when_standard_variable_absent (test_clients.Tests.test_configured_alias_is_used_when_standard_variable_absent) ... ok
+test_correct_header_success_and_no_secret_saved (test_clients.Tests.test_correct_header_success_and_no_secret_saved) ... ok
+test_credentials_cannot_be_sent_to_other_hosts_or_in_query (test_clients.Tests.test_credentials_cannot_be_sent_to_other_hosts_or_in_query) ... ok
+test_explicit_binding_is_used_and_cannot_cross_providers (test_clients.Tests.test_explicit_binding_is_used_and_cannot_cross_providers) ... ok
+test_http200_errors_and_http_denials_are_not_access (test_clients.Tests.test_http200_errors_and_http_denials_are_not_access) ... ok
+test_missing_binding_never_makes_request (test_clients.Tests.test_missing_binding_never_makes_request) ... ok
+test_new_runtime_variable_takes_priority_over_old_proxy_alias (test_clients.Tests.test_new_runtime_variable_takes_priority_over_old_proxy_alias) ... ok
+test_query_authenticated_services_never_persist_key_or_redirect_it (test_clients.Tests.test_query_authenticated_services_never_persist_key_or_redirect_it) ... ok
+test_verified_new_binding_takes_priority (test_clients.Tests.test_verified_new_binding_takes_priority) ... ok
+test_reconciles_provider_id_date_score_and_preserves_input (test_history_process.Tests.test_reconciles_provider_id_date_score_and_preserves_input) ... ok
+test_rejects_unapproved_archive_path (test_history_process.Tests.test_rejects_unapproved_archive_path) ... ok
+test_429_open_circuit_and_period_reset (test_quota.QuotaTests.test_429_open_circuit_and_period_reset) ... ok
+test_budget_policy_cannot_change_limit_or_period (test_quota.QuotaTests.test_budget_policy_cannot_change_limit_or_period) ... ok
+test_extra_actual_cost_and_provider_remaining_update (test_quota.QuotaTests.test_extra_actual_cost_and_provider_remaining_update) ... ok
+test_failure_does_not_refund_possibly_spent_request (test_quota.QuotaTests.test_failure_does_not_refund_possibly_spent_request) ... ok
+test_history_cannot_be_updated_or_deleted (test_quota.QuotaTests.test_history_cannot_be_updated_or_deleted) ... ok
+test_last_credit_only_one_process_reserves_it (test_quota.QuotaTests.test_last_credit_only_one_process_reserves_it) ... ok
+test_legacy_history_is_pinned_to_first_explicit_budget (test_quota.QuotaTests.test_legacy_history_is_pinned_to_first_explicit_budget) ... ok
+test_monthly_window_and_no_credential_fields_persisted (test_quota.QuotaTests.test_monthly_window_and_no_credential_fields_persisted) ... ok
+test_rate_limit_and_alias_share_account (test_quota.QuotaTests.test_rate_limit_and_alias_share_account) ... ok
+test_retry_after_survives_midnight (test_quota.QuotaTests.test_retry_after_survives_midnight) ... ok
+test_unknown_budget_blocks_without_calling_fetcher (test_quota.QuotaTests.test_unknown_budget_blocks_without_calling_fetcher) ... ok
+test_unknown_budget_does_not_lock_policy_and_zero_cost_is_rejected (test_quota.QuotaTests.test_unknown_budget_does_not_lock_policy_and_zero_cost_is_rejected) ... ok
+test_wrapper_records_safe_network_error (test_quota.QuotaTests.test_wrapper_records_safe_network_error) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.235s
+
+OK
+Testing runtime/database
+test_aet_period_conservation (test_database.DatabaseTests.test_aet_period_conservation) ... ok
+test_alias_does_not_merge_conflicting_provider_ids (test_database.DatabaseTests.test_alias_does_not_merge_conflicting_provider_ids) ... ok
+test_ambiguous_name_requires_identity (test_database.DatabaseTests.test_ambiguous_name_requires_identity) ... ok
+test_conflicting_sources_block_training (test_database.DatabaseTests.test_conflicting_sources_block_training) ... ok
+test_extra_time_score_not_mistaken_for_90 (test_database.DatabaseTests.test_extra_time_score_not_mistaken_for_90) ... ok
+test_idempotence_and_correction (test_database.DatabaseTests.test_idempotence_and_correction) ... ok
+test_legacy_result_resolution_requires_both_feeds (test_database.DatabaseTests.test_legacy_result_resolution_requires_both_feeds) ... ok
+test_listed_jfa_order_is_not_home_advantage (test_database.DatabaseTests.test_listed_jfa_order_is_not_home_advantage) ... ok
+test_missing_and_unresolved_results_not_zero (test_database.DatabaseTests.test_missing_and_unresolved_results_not_zero) ... ok
+test_official_final_overrides_legacy_without_erasing_it (test_database.DatabaseTests.test_official_final_overrides_legacy_without_erasing_it) ... ok
+test_penalty_display_not_regulation (test_database.DatabaseTests.test_penalty_display_not_regulation) ... ok
+test_reparse_preserves_time_but_corrects_stage (test_database.DatabaseTests.test_reparse_preserves_time_but_corrects_stage) ... ok
+test_scheduled_refresh_clock_uses_beijing (test_database.DatabaseTests.test_scheduled_refresh_clock_uses_beijing) ... ok
+test_season_mapping (test_database.DatabaseTests.test_season_mapping) ... ok
+test_two_fixture_bridge_requires_multiple_dates (test_database.DatabaseTests.test_two_fixture_bridge_requires_multiple_dates) ... ok
+test_two_leg_penalties_do_not_require_single_match_draw (test_database.DatabaseTests.test_two_leg_penalties_do_not_require_single_match_draw) ... ok
+test_unchanged_refetch_does_not_add_observations (test_database.DatabaseTests.test_unchanged_refetch_does_not_add_observations) ... ok
+test_cross_provider_bridge_requires_two_opponent_date_proofs (test_five_dollar_history.HistoryTests.test_cross_provider_bridge_requires_two_opponent_date_proofs) ... ok
+test_enrichment_survives_unchanged_score_observation (test_five_dollar_history.HistoryTests.test_enrichment_survives_unchanged_score_observation) ... ok
+test_idempotent_import_preserves_raw_statistics_and_identity_mapping (test_five_dollar_history.HistoryTests.test_idempotent_import_preserves_raw_statistics_and_identity_mapping) ... ok
+test_internally_inconsistent_full_time_retracts_certification (test_five_dollar_history.HistoryTests.test_internally_inconsistent_full_time_retracts_certification) ... ok
+test_japan_transition_and_bool_goals_quarantined (test_five_dollar_history.HistoryTests.test_japan_transition_and_bool_goals_quarantined) ... ok
+test_unknown_state_not_settled_even_if_feed_has_goals (test_five_dollar_history.HistoryTests.test_unknown_state_not_settled_even_if_feed_has_goals) ... ok
+test_wrong_league_does_not_enter_observations (test_five_dollar_history.HistoryTests.test_wrong_league_does_not_enter_observations) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.067s
+
+OK
+Testing runtime/emperor_cup
+test_database_idempotency_and_foreign_keys (test_ingest.Tests.test_database_idempotency_and_foreign_keys) ... ok
+test_future_unannounced_slot_not_real_fixture (test_ingest.Tests.test_future_unannounced_slot_not_real_fixture) ... ok
+test_historical_normal_score_and_timezone (test_ingest.Tests.test_historical_normal_score_and_timezone) ... ok
+test_identity_and_contradictory_score_rejected (test_ingest.Tests.test_identity_and_contradictory_score_rejected) ... ok
+test_live_partial_period_not_final (test_ingest.Tests.test_live_partial_period_not_final) ... ok
+test_official_starting_eleven_and_bench (test_ingest.Tests.test_official_starting_eleven_and_bench) ... ok
+test_penalties_and_extra_not_regulation (test_ingest.Tests.test_penalties_and_extra_not_regulation) ... ok
+test_registered_squad_not_starting_lineup (test_ingest.Tests.test_registered_squad_not_starting_lineup) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.008s
+
+OK
+Testing runtime/optimization
+test_actual_market_requires_identity_prices_and_cutoff (test_evaluate.EvaluationTests.test_actual_market_requires_identity_prices_and_cutoff) ... ok
+test_denominators_keep_rejected_and_pending (test_evaluate.EvaluationTests.test_denominators_keep_rejected_and_pending) ... ok
+test_duplicate_versions_and_mismatched_pair_labels_fail_closed (test_evaluate.EvaluationTests.test_duplicate_versions_and_mismatched_pair_labels_fail_closed) ... ok
+test_empty_scope_has_na_rates (test_evaluate.EvaluationTests.test_empty_scope_has_na_rates) ... ok
+test_integer_half_and_quarter_settlements (test_evaluate.EvaluationTests.test_integer_half_and_quarter_settlements) ... ok
+test_matrix_and_label_validation (test_evaluate.EvaluationTests.test_matrix_and_label_validation) ... ok
+test_matrix_metrics_have_known_values (test_evaluate.EvaluationTests.test_matrix_metrics_have_known_values) ... ok
+test_mode_and_expected_total_are_separate (test_evaluate.EvaluationTests.test_mode_and_expected_total_are_separate) ... ok
+test_out_of_support_labels_have_finite_loss_and_correct_crps (test_evaluate.EvaluationTests.test_out_of_support_labels_have_finite_loss_and_correct_crps) ... ok
+test_pairing_uses_same_matches_and_preserves_full_scopes (test_evaluate.EvaluationTests.test_pairing_uses_same_matches_and_preserves_full_scopes) ... ok
+test_week_blocks_share_cross_league_matches (test_evaluate.EvaluationTests.test_week_blocks_share_cross_league_matches) ... ok
+test_fixed_origin_all_audit_labels_invariant (test_integrity.Integrity.test_fixed_origin_all_audit_labels_invariant) ... ok
+test_fixture_rejects_postmatch (test_integrity.Integrity.test_fixture_rejects_postmatch) ... ok
+test_matrix_tail_and_receipt_tampering (test_integrity.Integrity.test_matrix_tail_and_receipt_tampering) ... ok
+test_providers_never_mixed_missing_nan (test_integrity.Integrity.test_providers_never_mixed_missing_nan) ... ok
+test_target_future_labels_facts_invariance (test_integrity.Integrity.test_target_future_labels_facts_invariance) ... ok
+test_unknown_venue_preserved (test_integrity.Integrity.test_unknown_venue_preserved) ... ok
+test_verified_unknown_rejects_and_lag (test_integrity.Integrity.test_verified_unknown_rejects_and_lag) ... ok
+test_actual_fitted_booster_target_future_matrix_invariance (test_integrity.LearnedResidualIntegrity.test_actual_fitted_booster_target_future_matrix_invariance) ... ok
+test_fixed_origin_audit_labels_facts_cannot_change_fitted_models (test_integrity.LearnedResidualIntegrity.test_fixed_origin_audit_labels_facts_cannot_change_fitted_models) ... ok
+test_production_pipeline_selection_is_fixed_before_audit_labels (test_integrity.LearnedResidualIntegrity.test_production_pipeline_selection_is_fixed_before_audit_labels) ... 2026-11-02T11:15:14.399528+00:00 synthetic START 500
+2026-11-02T11:15:14.569173+00:00 synthetic dev1 M2-h365-r30 n 50 top1 0.0
+2026-11-02T11:15:14.867851+00:00 synthetic dev1 M3-xg-a0.5 n 50 top1 0.0
+2026-11-02T11:15:15.112648+00:00 synthetic dev2 M2-h365-r30 n 50 top1 0.54
+2026-11-02T11:15:15.437980+00:00 synthetic dev2 M3-xg-a0.5 n 50 top1 0.54
+2026-11-02T11:15:15.939108+00:00 synthetic audit M2-h365-r30 n 100 top1 0.28
+2026-11-02T11:15:16.470925+00:00 synthetic audit M3-xg-a0.5 n 100 top1 0.28
+2026-11-02T11:15:17.978156+00:00 synthetic DONE seconds 3.6
+2026-11-02T11:15:18.004075+00:00 synthetic START 500
+2026-11-02T11:15:18.165005+00:00 synthetic dev1 M2-h365-r30 n 50 top1 0.0
+2026-11-02T11:15:18.463934+00:00 synthetic dev1 M3-xg-a0.5 n 50 top1 0.0
+2026-11-02T11:15:18.701239+00:00 synthetic dev2 M2-h365-r30 n 50 top1 0.54
+2026-11-02T11:15:19.016906+00:00 synthetic dev2 M3-xg-a0.5 n 50 top1 0.54
+2026-11-02T11:15:19.512376+00:00 synthetic audit M2-h365-r30 n 100 top1 0.0
+2026-11-02T11:15:20.037999+00:00 synthetic audit M3-xg-a0.5 n 100 top1 0.0
+2026-11-02T11:15:21.512022+00:00 synthetic DONE seconds 3.5
+ok
+test_features_exclude_own_and_later_labels (test_legacy.LegacyTests.test_features_exclude_own_and_later_labels) ... ok
+test_m0_exact_original_equation_and_source_unchanged (test_legacy.LegacyTests.test_m0_exact_original_equation_and_source_unchanged) ... ok
+test_m1_fixed_alpha_three_oof_folds_and_normalized_matrix (test_legacy.LegacyTests.test_m1_fixed_alpha_three_oof_folds_and_normalized_matrix) ... ok
+test_no_generic_module_or_sys_path_changes (test_legacy.LegacyTests.test_no_generic_module_or_sys_path_changes) ... ok
+test_too_small_explicit_abstention (test_legacy.LegacyTests.test_too_small_explicit_abstention) ... ok
+test_unknown_venue_and_labels_do_not_silently_pass (test_legacy.LegacyTests.test_unknown_venue_and_labels_do_not_silently_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 8.777s
+
+OK
+Testing runtime/optimization_tools
+test_reload_freeze_and_protection (test_candidate.Serving.test_reload_freeze_and_protection) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.019s
+
+OK
+Testing runtime/research
+test_default_cli_saves_exact_pair_before_output (test_analysis_freeze.FreezeTests.test_default_cli_saves_exact_pair_before_output) ... ok
+test_revisions_preserve_original_and_separate_stages (test_analysis_freeze.FreezeTests.test_revisions_preserve_original_and_separate_stages) ... ok
+test_tamper_blocks_next_revision (test_analysis_freeze.FreezeTests.test_tamper_blocks_next_revision) ... ok
+test_timing_and_credentials_rejected (test_analysis_freeze.FreezeTests.test_timing_and_credentials_rejected) ... ok
+test_coach_suspension_is_not_assigned_to_player_group (test_availability.AvailabilityTests.test_coach_suspension_is_not_assigned_to_player_group) ... ok
+test_empty_and_missing_remain_unknown (test_availability.AvailabilityTests.test_empty_and_missing_remain_unknown) ... ok
+test_same_raw_schema_does_not_create_new_injuries (test_availability.AvailabilityTests.test_same_raw_schema_does_not_create_new_injuries) ... ok
+test_suspended_coach_can_differ_from_current_standin (test_availability.AvailabilityTests.test_suspended_coach_can_differ_from_current_standin) ... ok
+test_unavailable_is_not_lost_when_legacy_arrays_are_empty (test_availability.AvailabilityTests.test_unavailable_is_not_lost_when_legacy_arrays_are_empty) ... ok
+test_time_boundary_round_scope_dedup_and_independent_artifacts (test_build_cup_pair.CupBuilderTests.test_time_boundary_round_scope_dedup_and_independent_artifacts) ... ok
+test_auditor_cannot_clear_objection_without_accepted_correction (test_evidence_agents.AgentTests.test_auditor_cannot_clear_objection_without_accepted_correction) ... ok
+test_future_evidence_rejected_before_any_call (test_evidence_agents.AgentTests.test_future_evidence_rejected_before_any_call) ... ok
+test_independent_first_round_hash_and_packet_immutability (test_evidence_agents.AgentTests.test_independent_first_round_hash_and_packet_immutability) ... ok
+test_invalid_fields_numeric_claim_fake_citation_and_hash_rejected (test_evidence_agents.AgentTests.test_invalid_fields_numeric_claim_fake_citation_and_hash_rejected) ... ok
+test_limits_and_secret_packet_fields (test_evidence_agents.AgentTests.test_limits_and_secret_packet_fields) ... ok
+test_no_caller_is_not_run (test_evidence_agents.AgentTests.test_no_caller_is_not_run) ... ok
+test_two_round_correction_is_bound_to_existing_objection (test_evidence_agents.AgentTests.test_two_round_correction_is_bound_to_existing_objection) ... ok
+test_unsolicited_correction_and_caller_errors_do_not_approve (test_evidence_agents.AgentTests.test_unsolicited_correction_and_caller_errors_do_not_approve) ... ok
+test_bad_score_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_bad_score_rejected) ... ok
+test_boolean_score_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_boolean_score_rejected) ... ok
+test_coverage_requires_date_inventory_and_verified_event_ids (test_fixed_recipe_refresh.PortableValidationTests.test_coverage_requires_date_inventory_and_verified_event_ids) ... ok
+test_cross_cohort_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_cross_cohort_rejected) ... ok
+test_duplicate_id_conflict_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_duplicate_id_conflict_rejected) ... ok
+test_fake_zero_xg_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_fake_zero_xg_rejected) ... ok
+test_ft_before_ninety_minutes_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_ft_before_ninety_minutes_rejected) ... ok
+test_future_observation_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_future_observation_rejected) ... ok
+test_not_regulation_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_not_regulation_rejected) ... ok
+test_query_before_finish_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_query_before_finish_rejected) ... ok
+test_raw_score_conflict_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_raw_score_conflict_rejected) ... ok
+test_synthetic_valid_label (test_fixed_recipe_refresh.PortableValidationTests.test_synthetic_valid_label) ... ok
+test_three_periods_rejected_even_when_hash_matches (test_fixed_recipe_refresh.PortableValidationTests.test_three_periods_rejected_even_when_hash_matches) ... ok
+test_unfinished_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_unfinished_rejected) ... ok
+test_unknown_neutral_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_unknown_neutral_rejected) ... ok
+test_unsupported_neutral_rejected (test_fixed_recipe_refresh.PortableValidationTests.test_unsupported_neutral_rejected) ... ok
+setUpClass (test_fixed_recipe_refresh.RefreshTests) ... skipped 'private integration assets unavailable: /workspace/WCPP/reports/auto-optimization-20261101/history/rows.json, /workspace/WCPP/reports/auto-optimization-20261101/history/coverage.json, /workspace/WCPP/reports/auto-optimization-20261101/history/raw'
+test_direction_conditional_band_can_sacrifice_joint_top1 (test_layered_selector.SelectorTests.test_direction_conditional_band_can_sacrifice_joint_top1) ... ok
+test_invalid_matrix_and_unresolved_tail_rejected (test_layered_selector.SelectorTests.test_invalid_matrix_and_unresolved_tail_rejected) ... ok
+test_pair_never_overrides_primary_or_uses_abstained_model (test_layered_selector.SelectorTests.test_pair_never_overrides_primary_or_uses_abstained_model) ... ok
+test_replay_uses_first_freeze_preserves_sources_and_counts_both_changes (test_layered_selector.SelectorTests.test_replay_uses_first_freeze_preserves_sources_and_counts_both_changes) ... ok
+test_tail_rectangular_axes_and_deterministic_ties (test_layered_selector.SelectorTests.test_tail_rectangular_axes_and_deterministic_ties) ... ok
+test_different_book_or_line_does_not_create_price_movement (test_market_movement.Tests.test_different_book_or_line_does_not_create_price_movement) ... ok
+test_observed_same_line_price_change_no_prediction_mutation (test_market_movement.Tests.test_observed_same_line_price_change_no_prediction_mutation) ... ok
+test_untimed_future_wrong_identity_or_invalid_odds_rejected (test_market_movement.Tests.test_untimed_future_wrong_identity_or_invalid_odds_rejected) ... ok
+test_all_modules_present_without_claiming_missing_data_or_agents_ran (test_match_analysis.Tests.test_all_modules_present_without_claiming_missing_data_or_agents_ran) ... ok
+test_identity_late_or_secret_source_rejected_without_echoing_input (test_match_analysis.Tests.test_identity_late_or_secret_source_rejected_without_echoing_input) ... ok
+test_latest_xg_evidence_does_not_relabel_training_or_change_matrix (test_match_analysis.Tests.test_latest_xg_evidence_does_not_relabel_training_or_change_matrix) ... ok
+test_minute_engine_called_only_for_matching_valid_prematch_request (test_match_analysis.Tests.test_minute_engine_called_only_for_matching_valid_prematch_request) ... ok
+test_event_card_counts_must_agree_with_explicit_card_state (test_minute_simulator.MinuteSimulatorTests.test_event_card_counts_must_agree_with_explicit_card_state) ... ok
+test_invalid_future_events_extra_time_and_negative_minutes_rejected (test_minute_simulator.MinuteSimulatorTests.test_invalid_future_events_extra_time_and_negative_minutes_rejected) ... ok
+test_observed_score_is_preserved_and_only_remaining_time_is_simulated (test_minute_simulator.MinuteSimulatorTests.test_observed_score_is_preserved_and_only_remaining_time_is_simulated) ... ok
+test_partial_live_events_cannot_hide_unknown_or_known_red_cards (test_minute_simulator.MinuteSimulatorTests.test_partial_live_events_cannot_hide_unknown_or_known_red_cards) ... ok
+test_seeded_minute_grid_matches_analytic_poisson (test_minute_simulator.MinuteSimulatorTests.test_seeded_minute_grid_matches_analytic_poisson) ... ok
+test_source_hash_future_artifact_and_missing_rate_provenance_rejected (test_minute_simulator.MinuteSimulatorTests.test_source_hash_future_artifact_and_missing_rate_provenance_rejected) ... ok
+test_state_parameters_require_fit_coverage_and_immutable_evidence (test_minute_simulator.MinuteSimulatorTests.test_state_parameters_require_fit_coverage_and_immutable_evidence) ... ok
+test_untrained_red_cards_never_get_arbitrary_multiplier (test_minute_simulator.MinuteSimulatorTests.test_untrained_red_cards_never_get_arbitrary_multiplier) ... ok
+test_missing_quote_time_not_silently_used (test_model_fusion.FusionTests.test_missing_quote_time_not_silently_used) ... ok
+test_wrong_cutoff_identity_or_matrix_tampering_rejected (test_model_fusion.FusionTests.test_wrong_cutoff_identity_or_matrix_tampering_rejected) ... ok
+test_zero_padding_arithmetic_and_original_preservation (test_model_fusion.FusionTests.test_zero_padding_arithmetic_and_original_preservation) ... ok
+test_late_record_rejected (test_prospective.LedgerTest.test_late_record_rejected) ... ok
+test_main12_missing_optional_input_hash_is_computed (test_prospective.LedgerTest.test_main12_missing_optional_input_hash_is_computed) ... ok
+test_matrix_or_input_hash_rejected (test_prospective.LedgerTest.test_matrix_or_input_hash_rejected) ... ok
+test_no_overwrite_and_detect_tamper (test_prospective.LedgerTest.test_no_overwrite_and_detect_tamper) ... ok
+test_pair_mismatch_rejected (test_prospective.LedgerTest.test_pair_mismatch_rejected) ... ok
+test_pending_denominator_and_no_formal_freeze (test_prospective.LedgerTest.test_pending_denominator_and_no_formal_freeze) ... ok
+test_away_credited_own_goal_belongs_to_home_player (test_review_events.GoalReviewTests.test_away_credited_own_goal_belongs_to_home_player) ... ok
+test_home_credited_own_goal_belongs_to_away_player (test_review_events.GoalReviewTests.test_home_credited_own_goal_belongs_to_away_player) ... ok
+test_invalid_scores_and_flags_rejected (test_review_events.GoalReviewTests.test_invalid_scores_and_flags_rejected) ... ok
+test_normal_goal_keeps_side_and_added_time (test_review_events.GoalReviewTests.test_normal_goal_keeps_side_and_added_time) ... ok
+test_null_event_flag_uses_explicit_shot_flag (test_review_events.GoalReviewTests.test_null_event_flag_uses_explicit_shot_flag) ... ok
+test_shootout_and_non_goal_rejected (test_review_events.GoalReviewTests.test_shootout_and_non_goal_rejected) ... ok
+test_wrong_actor_team_or_own_goal_flag_rejected (test_review_events.GoalReviewTests.test_wrong_actor_team_or_own_goal_flag_rejected) ... ok
+test_wrong_provider_side_rejected (test_review_events.GoalReviewTests.test_wrong_provider_side_rejected) ... ok
+test_comparison_gate_preserves_manual_independence (test_score_distribution_audit.DistributionAuditTests.test_comparison_gate_preserves_manual_independence) ... ok
+test_current_test_disagreement_is_diagnostic_only (test_score_distribution_audit.DistributionAuditTests.test_current_test_disagreement_is_diagnostic_only) ... ok
+test_disagreement_requires_common_support (test_score_distribution_audit.DistributionAuditTests.test_disagreement_requires_common_support) ... ok
+test_freeze_checks_reference_time_hash_identity_and_top3 (test_score_distribution_audit.DistributionAuditTests.test_freeze_checks_reference_time_hash_identity_and_top3) ... ok
+test_low_mode_is_not_small_total_distribution (test_score_distribution_audit.DistributionAuditTests.test_low_mode_is_not_small_total_distribution) ... ok
+test_missing_abstain_tamper_and_atomic_attach (test_score_distribution_audit.DistributionAuditTests.test_missing_abstain_tamper_and_atomic_attach) ... ok
+test_rectangular_axes_and_selected_zero_probability (test_score_distribution_audit.DistributionAuditTests.test_rectangular_axes_and_selected_zero_probability) ... ok
+test_capture_and_no_overwrite (test_snapshots.Tests.test_capture_and_no_overwrite) ... ok
+test_future_evidence_rejected (test_snapshots.Tests.test_future_evidence_rejected) ... ok
+test_secret_fields_rejected (test_snapshots.Tests.test_secret_fields_rejected) ... ok
+test_asymmetric_axes_means_marginals_and_key_probabilities (test_team_goal_analysis.TeamGoalTests.test_asymmetric_axes_means_marginals_and_key_probabilities) ... ok
+test_discrete_equal_tail_interval_has_actual_model_mass (test_team_goal_analysis.TeamGoalTests.test_discrete_equal_tail_interval_has_actual_model_mass) ... ok
+test_invalid_matrices_and_coverage_are_rejected (test_team_goal_analysis.TeamGoalTests.test_invalid_matrices_and_coverage_are_rejected) ... ok
+test_pair_is_independent_and_invalid_pair_cannot_partly_attach (test_team_goal_analysis.TeamGoalTests.test_pair_is_independent_and_invalid_pair_cannot_partly_attach) ... ok
+test_review_separates_teams_errors_interval_hit_and_width (test_team_goal_analysis.TeamGoalTests.test_review_separates_teams_errors_interval_hit_and_width) ... ok
+test_sidecar_cli_never_rewrites_source_or_existing_output (test_team_goal_analysis.TeamGoalTests.test_sidecar_cli_never_rewrites_source_or_existing_output) ... ok
+test_unavailable_abstain_observe_and_hash_validation (test_team_goal_analysis.TeamGoalTests.test_unavailable_abstain_observe_and_hash_validation) ... ok
+
+----------------------------------------------------------------------
+Ran 88 tests in 0.750s
+
+OK (skipped=1)
+Testing runtime/research/egidi_blend
+test_diagonal_inflation_increases_draw_mass (test_egidi_blend.DistributionTests.test_diagonal_inflation_increases_draw_mass) ... ok
+test_negative_rho_lifts_low_score_diagonal (test_egidi_blend.DistributionTests.test_negative_rho_lifts_low_score_diagonal) ... ok
+test_shared_poisson_raises_goal_covariance (test_egidi_blend.DistributionTests.test_shared_poisson_raises_goal_covariance) ... ok
+test_strength_gradient_matches_finite_difference (test_egidi_blend.DistributionTests.test_strength_gradient_matches_finite_difference) ... ok
+test_zero_nuisance_matches_renormalised_independent_poisson (test_egidi_blend.DistributionTests.test_zero_nuisance_matches_renormalised_independent_poisson) ... ok
+test_downloader_source_does_not_call_espn (test_egidi_blend.LoaderTests.test_downloader_source_does_not_call_espn) ... ok
+test_football_data_csv_prefers_closing_and_does_not_invent_scores_or_korea (test_egidi_blend.LoaderTests.test_football_data_csv_prefers_closing_and_does_not_invent_scores_or_korea) ... ok
+test_jsonl_calendar_and_cross_seasons (test_egidi_blend.LoaderTests.test_jsonl_calendar_and_cross_seasons) ... ok
+test_always_one_one_list_has_no_extra_scores (test_egidi_blend.MarketBlendTests.test_always_one_one_list_has_no_extra_scores) ... ok
+test_fair_book_is_unchanged (test_egidi_blend.MarketBlendTests.test_fair_book_is_unchanged) ... ok
+test_full_1x2_weight_moves_marginal_toward_market (test_egidi_blend.MarketBlendTests.test_full_1x2_weight_moves_marginal_toward_market) ... ok
+test_mcnemar_balanced_discordance (test_egidi_blend.MarketBlendTests.test_mcnemar_balanced_discordance) ... ok
+test_overround_sums_to_one_and_keeps_order (test_egidi_blend.MarketBlendTests.test_overround_sums_to_one_and_keeps_order) ... ok
+test_mls_cannot_enter_europe_weight_or_ranker_training (test_egidi_blend.WalkForwardTests.test_mls_cannot_enter_europe_weight_or_ranker_training) ... ok
+test_synthetic_origins_keep_asia_out_of_training (test_egidi_blend.WalkForwardTests.test_synthetic_origins_keep_asia_out_of_training) ... Fitting Europe out-of-fold Dixon-Coles blocks
+Out-of-fold rows 120; building score matrices once
+Europe origin 2015 cutoff 2015-09-01 test_candidates 30
+Europe origin 2015 scored 30 in 0.0s
+Europe origin 2016 cutoff 2016-09-01 test_candidates 30
+Europe origin 2016 scored 30 in 0.0s
+Europe origin 2017 cutoff 2017-09-01 test_candidates 30
+Europe origin 2017 scored 30 in 0.0s
+OOD aus.1 origin 2017 cutoff 2017-09-01 n_test 30
+ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.203s
+
+OK
+Testing runtime/score_adjustment
+test_cli_preserves_primary (test_calibration.CalibrationTests.test_cli_preserves_primary) ... ok
+test_day_grouped_chronology (test_calibration.CalibrationTests.test_day_grouped_chronology) ... ok
+test_identity_exact (test_calibration.CalibrationTests.test_identity_exact) ... ok
+test_invalid_matrices (test_calibration.CalibrationTests.test_invalid_matrices) ... ok
+test_missing_corrupt_artifact (test_calibration.CalibrationTests.test_missing_corrupt_artifact) ... ok
+test_save_reload_exact (test_calibration.CalibrationTests.test_save_reload_exact) ... ok
+test_scale_can_decrease (test_calibration.CalibrationTests.test_scale_can_decrease) ... ok
+test_target_not_apply_feature (test_calibration.CalibrationTests.test_target_not_apply_feature) ... ok
+test_unknown_base_rejected (test_calibration.CalibrationTests.test_unknown_base_rejected) ... ok
+test_variable_support_padding (test_calibration.CalibrationTests.test_variable_support_padding) ... ok
+test_zero_support_input_untouched (test_calibration.CalibrationTests.test_zero_support_input_untouched) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.427s
+
+OK
+Testing runtime/upset
+test_competition_and_duplicate_guards (test_classifier.Tests.test_competition_and_duplicate_guards) ... ok
+test_favorite_draw_and_weak_market_are_not_eligible (test_classifier.Tests.test_favorite_draw_and_weak_market_are_not_eligible) ... ok
+test_future_quote_and_postkickoff_are_rejected (test_classifier.Tests.test_future_quote_and_postkickoff_are_rejected) ... ok
+test_invalid_market_is_rejected (test_classifier.Tests.test_invalid_market_is_rejected) ... ok
+test_missing_information_is_not_claimed_as_zero (test_classifier.Tests.test_missing_information_is_not_claimed_as_zero) ... ok
+test_no_cross_league_fallback_or_missing_quote_probability (test_classifier.Tests.test_no_cross_league_fallback_or_missing_quote_probability) ... ok
+test_prediction_preserves_inputs_and_probabilities (test_classifier.Tests.test_prediction_preserves_inputs_and_probabilities) ... ok
+test_review_separates_draw_from_favorite_loss (test_classifier.Tests.test_review_separates_draw_from_favorite_loss) ... ok
+test_target_and_same_date_outcomes_do_not_leak_into_features (test_classifier.Tests.test_target_and_same_date_outcomes_do_not_leak_into_features) ... ok
+test_candidate_failure_does_not_change_either_main_output (test_dispatcher.DispatcherTests.test_candidate_failure_does_not_change_either_main_output) ... ok
+test_sidecar_failure_does_not_change_either_main_output (test_dispatcher.DispatcherTests.test_sidecar_failure_does_not_change_either_main_output) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.158s
+
+OK
+Testing runtime/upset_v2
+test_lagged_shots_and_missing (test_features.FeaturesTest.test_lagged_shots_and_missing) ... ok
+test_mixed_cohort_rejected (test_features.FeaturesTest.test_mixed_cohort_rejected) ... ok
+test_prior_venue_and_counts (test_features.FeaturesTest.test_prior_venue_and_counts) ... ok
+test_research_xg_does_not_fill_provider_xg (test_features.FeaturesTest.test_research_xg_does_not_fill_provider_xg) ... ok
+test_same_day_excluded (test_features.FeaturesTest.test_same_day_excluded) ... ok
+test_target_score_and_process_excluded (test_features.FeaturesTest.test_target_score_and_process_excluded) ... ok
+test_future_quote_or_bad_hash_rejected (test_predict.PredictionTest.test_future_quote_or_bad_hash_rejected) ... ok
+test_local_artifact_inference_and_input_isolation (test_predict.PredictionTest.test_local_artifact_inference_and_input_isolation) ... ok
+test_missing_and_untrained (test_predict.PredictionTest.test_missing_and_untrained) ... ok
+test_test_outcomes_do_not_select_models_blends_or_hyperparameters (test_validation.ValidationTest.test_test_outcomes_do_not_select_models_blends_or_hyperparameters) ... /workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/workspace/football-venv/lib/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 11.291s
+
+OK
+Testing runtime/v2
+test_context_coefficients_learned_and_leakage_rejected (test_model.Tests.test_context_coefficients_learned_and_leakage_rejected) ... ok
+test_duplicate_and_non90_rejected (test_model.Tests.test_duplicate_and_non90_rejected) ... ok
+test_freeze_needs_audit_and_cannot_overwrite (test_model.Tests.test_freeze_needs_audit_and_cannot_overwrite) ... ok
+test_market_is_bounded (test_model.Tests.test_market_is_bounded) ... ok
+test_market_time_and_validation_gate (test_model.Tests.test_market_time_and_validation_gate) ... ok
+test_postmatch_and_later_evidence_rejected (test_model.Tests.test_postmatch_and_later_evidence_rejected) ... ok
+test_probability_partition_and_bivariate_marginals (test_model.Tests.test_probability_partition_and_bivariate_marginals) ... ok
+test_quarter_settlement (test_model.Tests.test_quarter_settlement) ... ok
+test_strength_identifies_team_not_home_bias (test_model.Tests.test_strength_identifies_team_not_home_bias) ... ok
+test_temporal_blocks_do_not_share_dates (test_model.Tests.test_temporal_blocks_do_not_share_dates) ... ok
+test_unseen_future_team_requires_explicit_prior (test_model.Tests.test_unseen_future_team_requires_explicit_prior) ... ok
+test_untrained_context_rejected (test_model.Tests.test_untrained_context_rejected) ... ok
+test_zero_shared_matches_poisson (test_model.Tests.test_zero_shared_matches_poisson) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.075s
+
+OK
+Testing runtime/v2_test
+test_duplicate_missing_and_backfill_do_not_claim_no_leakage (test_audit.Tests.test_duplicate_missing_and_backfill_do_not_claim_no_leakage) ... ok
+test_unknown_history_not_invented (test_audit.Tests.test_unknown_history_not_invented) ... ok
+test_current_capture_can_support_future_without_inventing_first_known (test_data_contract.ContractTests.test_current_capture_can_support_future_without_inventing_first_known) ... ok
+test_different_bookmakers_not_collapsed_to_one_quote (test_data_contract.ContractTests.test_different_bookmakers_not_collapsed_to_one_quote) ... ok
+test_duplicate_or_conflicting_same_capture_is_not_two_matches (test_data_contract.ContractTests.test_duplicate_or_conflicting_same_capture_is_not_two_matches) ... ok
+test_early_first_known_does_not_backdate_late_download (test_data_contract.ContractTests.test_early_first_known_does_not_backdate_late_download) ... ok
+test_file_tampering_and_traversal_rejected (test_data_contract.ContractTests.test_file_tampering_and_traversal_rejected) ... ok
+test_market_requires_real_complete_prices_and_fresh_source_time (test_data_contract.ContractTests.test_market_requires_real_complete_prices_and_fresh_source_time) ... ok
+test_missing_mismatched_and_future_capture_rejected (test_data_contract.ContractTests.test_missing_mismatched_and_future_capture_rejected) ... ok
+test_negative_nonfinite_values_and_unreviewed_identity_rejected (test_data_contract.ContractTests.test_negative_nonfinite_values_and_unreviewed_identity_rejected) ... ok
+test_nonfinite_policy_cannot_disable_quote_expiry (test_data_contract.ContractTests.test_nonfinite_policy_cannot_disable_quote_expiry) ... ok
+test_own_match_future_and_too_early_full_time_rejected (test_data_contract.ContractTests.test_own_match_future_and_too_early_full_time_rejected) ... ok
+test_provider_and_competition_are_never_averaged_together (test_data_contract.ContractTests.test_provider_and_competition_are_never_averaged_together) ... ok
+test_revised_value_selected_only_after_revised_capture (test_data_contract.ContractTests.test_revised_value_selected_only_after_revised_capture) ... ok
+test_secret_urls_and_values_never_written_to_snapshot (test_data_contract.ContractTests.test_secret_urls_and_values_never_written_to_snapshot) ... ok
+test_unofficial_absence_cannot_become_confirmed_out (test_data_contract.ContractTests.test_unofficial_absence_cannot_become_confirmed_out) ... ok
+test_xga_requires_opposite_side_same_provider_same_match (test_data_contract.ContractTests.test_xga_requires_opposite_side_same_provider_same_match) ... ok
+test_future_diagnostic_labels_do_not_fit_gate_or_temperature (test_ensemble.Tests.test_future_diagnostic_labels_do_not_fit_gate_or_temperature) ... ok
+test_leakage_and_mixed_leagues_and_duplicates_rejected (test_ensemble.Tests.test_leakage_and_mixed_leagues_and_duplicates_rejected) ... ok
+test_normalization_and_invalid_weights (test_ensemble.Tests.test_normalization_and_invalid_weights) ... ok
+test_baseline_fallback_and_normalized_weights (test_ensemble_guarded.GuardTests.test_baseline_fallback_and_normalized_weights) ... ok
+test_end_labels_do_not_change_selected_policy (test_ensemble_guarded.GuardTests.test_end_labels_do_not_change_selected_policy) ... ok
+test_invalid_matrix_and_missing_scores_not_silently_dropped (test_evaluation.Tests.test_invalid_matrix_and_missing_scores_not_silently_dropped) ... ok
+test_known_matrix_and_primary_net_gain (test_evaluation.Tests.test_known_matrix_and_primary_net_gain) ... ok
+test_boolean_or_nonfinite_vendor_values_not_interpreted_as_xg (test_ingest_fotmob.IngestTests.test_boolean_or_nonfinite_vendor_values_not_interpreted_as_xg) ... ok
+test_duplicates_do_not_increase_sample_size (test_ingest_fotmob.IngestTests.test_duplicates_do_not_increase_sample_size) ... ok
+test_extra_time_not_imported_as_regulation (test_ingest_fotmob.IngestTests.test_extra_time_not_imported_as_regulation) ... ok
+test_missing_xg_is_not_imputed_zero (test_ingest_fotmob.IngestTests.test_missing_xg_is_not_imputed_zero) ... ok
+test_summary_and_shotmap_rounding_with_opposite_xga (test_ingest_fotmob.IngestTests.test_summary_and_shotmap_rounding_with_opposite_xga) ... ok
+test_summary_shotmap_conflict_quarantined_instead_of_selected (test_ingest_fotmob.IngestTests.test_summary_shotmap_conflict_quarantined_instead_of_selected) ... ok
+test_tampering_and_future_capture_not_imported (test_ingest_fotmob.IngestTests.test_tampering_and_future_capture_not_imported) ... ok
+test_wrong_identity_does_not_become_another_team (test_ingest_fotmob.IngestTests.test_wrong_identity_does_not_become_another_team) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.397s
+
+OK
+Testing runtime/v3
+test_complete_feature_extraction_includes_cup_and_next_match (test_pipeline.Tests.test_complete_feature_extraction_includes_cup_and_next_match) ... ok
+test_cup_missing_coverage_duplicate_and_unresolved_match (test_pipeline.Tests.test_cup_missing_coverage_duplicate_and_unresolved_match) ... ok
+test_evaluation_cannot_count_qualification_as90_win_and_tracks_push (test_pipeline.Tests.test_evaluation_cannot_count_qualification_as90_win_and_tracks_push) ... ok
+test_freeze_reproduces_matrix_and_never_overwrites (test_pipeline.Tests.test_freeze_reproduces_matrix_and_never_overwrites) ... ok
+test_incomplete_schedule_not_zero_filled_or_applied (test_pipeline.Tests.test_incomplete_schedule_not_zero_filled_or_applied) ... ok
+test_later_data_false_source_and_future_result_leakage (test_pipeline.Tests.test_later_data_false_source_and_future_result_leakage) ... ok
+test_manual_feature_overrides_rejected_and_market_conflict_observed (test_pipeline.Tests.test_manual_feature_overrides_rejected_and_market_conflict_observed) ... ok
+test_official_lineup_required_and_unknown_not_assumed_healthy (test_pipeline.Tests.test_official_lineup_required_and_unknown_not_assumed_healthy) ... ok
+test_training_refuses_empty_incomplete_and_non90_targets (test_pipeline.Tests.test_training_refuses_empty_incomplete_and_non90_targets) ... ok
+test_validated_context_changes_matrix_unvalidated_retains_baseline (test_pipeline.Tests.test_validated_context_changes_matrix_unvalidated_retains_baseline) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.084s
+
+OK
+Testing runtime/v4
+test_cup_rules_require_leg_aggregate_and_90_minute_target (test_competition_router.RouterTests.test_cup_rules_require_leg_aggregate_and_90_minute_target) ... ok
+test_explicit_women_and_youth_need_official_evidence (test_competition_router.RouterTests.test_explicit_women_and_youth_need_official_evidence) ... ok
+test_mixed_gender_age_level_or_stage_training_rejected (test_competition_router.RouterTests.test_mixed_gender_age_level_or_stage_training_rejected) ... ok
+test_prediction_rejects_wrong_stage_and_unknown_venue (test_competition_router.RouterTests.test_prediction_rejects_wrong_stage_and_unknown_venue) ... ok
+test_profile_excludes_future_same_day_late_observed_and_other_routes (test_competition_router.RouterTests.test_profile_excludes_future_same_day_late_observed_and_other_routes) ... ok
+test_provider_season_labels_not_stages_and_playoffs_not_assumed_regular (test_competition_router.RouterTests.test_provider_season_labels_not_stages_and_playoffs_not_assumed_regular) ... ok
+test_registered_categories_separate_levels_and_cups (test_competition_router.RouterTests.test_registered_categories_separate_levels_and_cups) ... ok
+test_registered_identity_cannot_be_overridden (test_competition_router.RouterTests.test_registered_identity_cannot_be_overridden) ... ok
+test_unknown_is_never_inferred_from_name (test_competition_router.RouterTests.test_unknown_is_never_inferred_from_name) ... ok
+test_youth_league_requires_edition_age_rules (test_competition_router.RouterTests.test_youth_league_requires_edition_age_rules) ... ok
+test_documentation_does_not_enable_numeric_fusion (test_decision_diagnostics.DecisionTests.test_documentation_does_not_enable_numeric_fusion) ... ok
+test_failure_requires_disclosed_fallback_and_unretrieved_inputs_rejected (test_decision_diagnostics.DecisionTests.test_failure_requires_disclosed_fallback_and_unretrieved_inputs_rejected) ... ok
+test_post_cutoff_and_credential_urls_rejected_without_echo (test_decision_diagnostics.DecisionTests.test_post_cutoff_and_credential_urls_rejected_without_echo) ... ok
+test_status_does_not_count_as_match_feed (test_decision_diagnostics.DecisionTests.test_status_does_not_count_as_match_feed) ... ok
+test_actual_quarter_line_half_win_is_not_full_win (test_decision_diagnostics.DiagnosticTests.test_actual_quarter_line_half_win_is_not_full_win) ... ok
+test_calibration_and_residuals_known_answer (test_decision_diagnostics.DiagnosticTests.test_calibration_and_residuals_known_answer) ... ok
+test_outside_matrix_and_future_generated_rejected (test_decision_diagnostics.DiagnosticTests.test_outside_matrix_and_future_generated_rejected) ... ok
+test_pending_duplicate_non90_and_tampered_matrix (test_decision_diagnostics.DiagnosticTests.test_pending_duplicate_non90_and_tampered_matrix) ... ok
+test_missing_key_does_not_make_network_request (test_decision_diagnostics.FeedTests.test_missing_key_does_not_make_network_request) ... ok
+test_status_then_feed_and_secret_redaction (test_decision_diagnostics.FeedTests.test_status_then_feed_and_secret_redaction) ... ok
+test_unannounced_lineup_with_scenarios_is_documented_not_official (test_decision_diagnostics.LineupUncertaintyTests.test_unannounced_lineup_with_scenarios_is_documented_not_official) ... ok
+test_acceptance_gate_rejects_no_improvement (test_main.Tests.test_acceptance_gate_rejects_no_improvement) ... ok
+test_actual_quarter_quote_and_fixture_mapping (test_main.Tests.test_actual_quarter_quote_and_fixture_mapping) ... ok
+test_all_recipes_probability_consistency (test_main.Tests.test_all_recipes_probability_consistency) ... ok
+test_context_training_rejects_empty_or_invented_samples (test_main.Tests.test_context_training_rejects_empty_or_invented_samples) ... ok
+test_decision_evidence_is_audit_only_and_feed_scope_is_required (test_main.Tests.test_decision_evidence_is_audit_only_and_feed_scope_is_required) ... ok
+test_features_exclude_target_and_same_day_results (test_main.Tests.test_features_exclude_target_and_same_day_results) ... ok
+test_later_sources_artifacts_and_code_rejected (test_main.Tests.test_later_sources_artifacts_and_code_rejected) ... ok
+test_real_sample_contract_and_temporal_context_learning (test_main.Tests.test_real_sample_contract_and_temporal_context_learning) ... ok
+test_research_freeze_tampering_and_overwrite (test_main.Tests.test_research_freeze_tampering_and_overwrite) ... ok
+test_review_90_minute_and_half_settlement_accounting (test_main.Tests.test_review_90_minute_and_half_settlement_accounting) ... ok
+test_selection_retains_baseline_without_positive_evidence (test_main.Tests.test_selection_retains_baseline_without_positive_evidence) ... ok
+test_training_offsets_strictly_prior (test_main.Tests.test_training_offsets_strictly_prior) ... ok
+test_unseen_and_manual_context_rejected (test_main.Tests.test_unseen_and_manual_context_rejected) ... ok
+test_unverified_total_never_falls_back_to_2_5 (test_main.Tests.test_unverified_total_never_falls_back_to_2_5) ... ok
+test_validated_context_applies_only_to_complete_official_evidence (test_main.Tests.test_validated_context_applies_only_to_complete_official_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.807s
+
+OK
+Testing runtime/v5
+test_dates_are_kept_together_and_ordered (test_weighted.WeightTests.test_dates_are_kept_together_and_ordered) ... ok
+test_explicit_test_track_is_independent_even_when_acceptance_failed (test_weighted.WeightTests.test_explicit_test_track_is_independent_even_when_acceptance_failed) ... ok
+test_failed_acceptance_preserves_base_primary_and_shows_candidate (test_weighted.WeightTests.test_failed_acceptance_preserves_base_primary_and_shows_candidate) ... ok
+test_invalid_weights_and_distributions_rejected (test_weighted.WeightTests.test_invalid_weights_and_distributions_rejected) ... ok
+test_learning_prefers_better_out_of_sample_predictions (test_weighted.WeightTests.test_learning_prefers_better_out_of_sample_predictions) ... ok
+test_mixture_preserves_distinct_score_cells_and_quarter_settlements (test_weighted.WeightTests.test_mixture_preserves_distinct_score_cells_and_quarter_settlements) ... ok
+test_paired_review_scores_each_model_independently (test_weighted.WeightTests.test_paired_review_scores_each_model_independently) ... ok
+test_review_does_not_pool_different_test_versions (test_weighted.WeightTests.test_review_does_not_pool_different_test_versions) ... ok
+test_rolling_does_not_use_target_or_future_results (test_weighted.WeightTests.test_rolling_does_not_use_target_or_future_results) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.044s
+
+OK
+Testing runtime/v6
+test_missing_evidence_is_unknown_and_no_agents_or_probability_changes (test_five_role_review.Tests.test_missing_evidence_is_unknown_and_no_agents_or_probability_changes) ... ok
+test_mock_or_unavailable_agent_can_never_enter_future_fusion (test_five_role_review.Tests.test_mock_or_unavailable_agent_can_never_enter_future_fusion) ... ok
+test_post_cutoff_or_wrong_match_evidence_is_rejected (test_five_role_review.Tests.test_post_cutoff_or_wrong_match_evidence_is_rejected) ... ok
+test_feature_builder_excludes_target_same_day_and_future_results (test_ml.Tests.test_feature_builder_excludes_target_same_day_and_future_results) ... ok
+test_historical_process_is_used_but_target_process_is_excluded (test_ml.Tests.test_historical_process_is_used_but_target_process_is_excluded) ... ok
+test_real_lightgbm_residual_serialization_and_probability_consistency (test_ml.Tests.test_real_lightgbm_residual_serialization_and_probability_consistency) ... ok
+test_target_xg_cannot_enter_features_and_unproven_past_xg_not_used (test_ml.Tests.test_target_xg_cannot_enter_features_and_unproven_past_xg_not_used) ... ok
+test_verified_past_xg_has_coverage_and_invalid_xg_rejected (test_ml.Tests.test_verified_past_xg_has_coverage_and_invalid_xg_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.008s
+
+OK
+Testing runtime/v7
+test_partial_shots_without_possession_can_enter_features (test_continued.Tests.test_partial_shots_without_possession_can_enter_features) ... ok
+test_target_and_future_partial_process_never_enter_features (test_continued.Tests.test_target_and_future_partial_process_never_enter_features) ... ok
+test_test_labels_do_not_select_parameters_or_blend (test_continued.Tests.test_test_labels_do_not_select_parameters_or_blend) ... ok
+test_wrong_artifact_version_is_rejected (test_continued.Tests.test_wrong_artifact_version_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.897s
+
+OK
+Failed suites: none
