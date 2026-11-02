@@ -1,0 +1,343 @@
+{
+  "schema": "WCPP-V2-GUARDED-ENSEMBLE-1",
+  "split": {
+    "fit_n": 182,
+    "calibration_n": 62,
+    "diagnostic_n": 67,
+    "gate_fit_before": "2022-11-06",
+    "temperature_fit_before": "2023-02-10"
+  },
+  "static_weights": [
+    0.7259046784890075,
+    0.0,
+    1.5869547540443257e-17,
+    0.2740953215109925
+  ],
+  "selected": {
+    "kind": "static",
+    "temperature": 0.95,
+    "calibration": {
+      "exact_top1": 0.14516129032258066,
+      "exact_top3": 0.3870967741935484,
+      "exact_top5": 0.532258064516129,
+      "score_log_loss": 2.905717371385151,
+      "score_brier": 0.9286252955099134,
+      "wdl_brier": 0.636237560087693,
+      "wdl_rps": 0.22203767367719554,
+      "wdl_accuracy": 0.46774193548387094
+    },
+    "eligible": true
+  },
+  "calibration_candidates": [
+    {
+      "kind": "baseline",
+      "temperature": 1.0,
+      "calibration": {
+        "exact_top1": 0.14516129032258066,
+        "exact_top3": 0.3548387096774194,
+        "exact_top5": 0.5161290322580645,
+        "score_log_loss": 2.927935012385769,
+        "score_brier": 0.9307604120026206,
+        "wdl_brier": 0.6407534784376497,
+        "wdl_rps": 0.22402406418203716,
+        "wdl_accuracy": 0.4838709677419355
+      },
+      "eligible": true
+    },
+    {
+      "kind": "static",
+      "temperature": 0.95,
+      "calibration": {
+        "exact_top1": 0.14516129032258066,
+        "exact_top3": 0.3870967741935484,
+        "exact_top5": 0.532258064516129,
+        "score_log_loss": 2.905717371385151,
+        "score_brier": 0.9286252955099134,
+        "wdl_brier": 0.636237560087693,
+        "wdl_rps": 0.22203767367719554,
+        "wdl_accuracy": 0.46774193548387094
+      },
+      "eligible": true
+    },
+    {
+      "kind": "static",
+      "temperature": 1.0,
+      "calibration": {
+        "exact_top1": 0.14516129032258066,
+        "exact_top3": 0.3870967741935484,
+        "exact_top5": 0.532258064516129,
+        "score_log_loss": 2.91130342517883,
+        "score_brier": 0.9291553291355502,
+        "wdl_brier": 0.6366760630895244,
+        "wdl_rps": 0.22217279728867315,
+        "wdl_accuracy": 0.46774193548387094
+      },
+      "eligible": true
+    },
+    {
+      "kind": "static",
+      "temperature": 1.05,
+      "calibration": {
+        "exact_top1": 0.14516129032258066,
+        "exact_top3": 0.3870967741935484,
+        "exact_top5": 0.532258064516129,
+        "score_log_loss": 2.91836272771158,
+        "score_brier": 0.9297411658926552,
+        "wdl_brier": 0.637153280822011,
+        "wdl_rps": 0.22231458757354683,
+        "wdl_accuracy": 0.46774193548387094
+      },
+      "eligible": true
+    },
+    {
+      "kind": "anchored_dynamic",
+      "temperature": 0.95,
+      "calibration": {
+        "exact_top1": 0.14516129032258066,
+        "exact_top3": 0.3387096774193548,
+        "exact_top5": 0.5483870967741935,
+        "score_log_loss": 2.9106920910192504,
+        "score_brier": 0.9291041466927927,
+        "wdl_brier": 0.6377401613232686,
+        "wdl_rps": 0.22273006822517064,
+        "wdl_accuracy": 0.46774193548387094
+      },
+      "eligible": true
+    },
+    {
+      "kind": "anchored_dynamic",
+      "temperature": 1.0,
+      "calibration": {
+        "exact_top1": 0.14516129032258066,
+        "exact_top3": 0.3387096774193548,
+        "exact_top5": 0.5483870967741935,
+        "score_log_loss": 2.9160132786087223,
+        "score_brier": 0.929609072556354,
+        "wdl_brier": 0.6381387655070141,
+        "wdl_rps": 0.22284120337465474,
+        "wdl_accuracy": 0.46774193548387094
+      },
+      "eligible": true
+    },
+    {
+      "kind": "anchored_dynamic",
+      "temperature": 1.05,
+      "calibration": {
+        "exact_top1": 0.14516129032258066,
+        "exact_top3": 0.3387096774193548,
+        "exact_top5": 0.5483870967741935,
+        "score_log_loss": 2.9228327519133637,
+        "score_brier": 0.930171589249089,
+        "wdl_brier": 0.6385787479513985,
+        "wdl_rps": 0.22296122628132536,
+        "wdl_accuracy": 0.46774193548387094
+      },
+      "eligible": true
+    }
+  ],
+  "diagnostic": {
+    "n": 67,
+    "metrics": {
+      "exact_top1": 0.1044776119402985,
+      "exact_top3": 0.3582089552238806,
+      "exact_top5": 0.4626865671641791,
+      "score_log_loss": 3.1567823656362575,
+      "score_brier": 0.9433727024298314,
+      "wdl_brier": 0.635076800503484,
+      "wdl_rps": 0.22989194351502085,
+      "wdl_accuracy": 0.47761194029850745
+    },
+    "calibration_bins": [
+      {
+        "n": 2,
+        "mean_probability": 0.09791508479389564,
+        "hit_rate": 0.5
+      },
+      {
+        "n": 65,
+        "mean_probability": 0.11750690492338606,
+        "hit_rate": 0.09230769230769231
+      }
+    ],
+    "primary": {
+      "n": 0,
+      "coverage": 0.0,
+      "accuracy": null,
+      "net_hits_vs_probability_top1_same_subset": 0
+    },
+    "market_paired_n": 0,
+    "market_paired_brier": null,
+    "tail": {
+      "away3+": {
+        "brier": 0.16873685480797038,
+        "observed_events": 14,
+        "recall_at_preregistered_half": 0.0
+      },
+      "away4+": {
+        "brier": 0.08354999370298975,
+        "observed_events": 6,
+        "recall_at_preregistered_half": 0.0
+      },
+      "home3+": {
+        "brier": 0.18420573725942713,
+        "observed_events": 16,
+        "recall_at_preregistered_half": 0.0
+      },
+      "home4+": {
+        "brier": 0.1334016818129752,
+        "observed_events": 10,
+        "recall_at_preregistered_half": 0.0
+      },
+      "total4+": {
+        "brier": 0.2483786903713608,
+        "observed_events": 28,
+        "recall_at_preregistered_half": 0.0
+      },
+      "total5+": {
+        "brier": 0.20332738499123013,
+        "observed_events": 18,
+        "recall_at_preregistered_half": 0.0
+      }
+    },
+    "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+  },
+  "baseline_diagnostic": {
+    "n": 67,
+    "metrics": {
+      "exact_top1": 0.11940298507462686,
+      "exact_top3": 0.373134328358209,
+      "exact_top5": 0.44776119402985076,
+      "score_log_loss": 3.152871483429509,
+      "score_brier": 0.9430765579804129,
+      "wdl_brier": 0.6380731317427463,
+      "wdl_rps": 0.23131025470992653,
+      "wdl_accuracy": 0.4626865671641791
+    },
+    "calibration_bins": [
+      {
+        "n": 14,
+        "mean_probability": 0.09627159600572717,
+        "hit_rate": 0.14285714285714285
+      },
+      {
+        "n": 53,
+        "mean_probability": 0.11502056673181094,
+        "hit_rate": 0.11320754716981132
+      }
+    ],
+    "primary": {
+      "n": 0,
+      "coverage": 0.0,
+      "accuracy": null,
+      "net_hits_vs_probability_top1_same_subset": 0
+    },
+    "market_paired_n": 0,
+    "market_paired_brier": null,
+    "tail": {
+      "away3+": {
+        "brier": 0.1678390987470008,
+        "observed_events": 14,
+        "recall_at_preregistered_half": 0.0
+      },
+      "away4+": {
+        "brier": 0.08311670956495314,
+        "observed_events": 6,
+        "recall_at_preregistered_half": 0.0
+      },
+      "home3+": {
+        "brier": 0.18520419147237546,
+        "observed_events": 16,
+        "recall_at_preregistered_half": 0.0
+      },
+      "home4+": {
+        "brier": 0.13277222228644375,
+        "observed_events": 10,
+        "recall_at_preregistered_half": 0.0
+      },
+      "total4+": {
+        "brier": 0.24469137062720345,
+        "observed_events": 28,
+        "recall_at_preregistered_half": 0.0
+      },
+      "total5+": {
+        "brier": 0.1987859384080576,
+        "observed_events": 18,
+        "recall_at_preregistered_half": 0.0
+      }
+    },
+    "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+  },
+  "old_dynamic_diagnostic": {
+    "n": 67,
+    "metrics": {
+      "exact_top1": 0.1044776119402985,
+      "exact_top3": 0.3283582089552239,
+      "exact_top5": 0.4626865671641791,
+      "score_log_loss": 3.194372794775109,
+      "score_brier": 0.9458595536093024,
+      "wdl_brier": 0.6376279360817017,
+      "wdl_rps": 0.23104228384151304,
+      "wdl_accuracy": 0.4626865671641791
+    },
+    "calibration_bins": [
+      {
+        "n": 67,
+        "mean_probability": 0.1318475772461829,
+        "hit_rate": 0.1044776119402985
+      }
+    ],
+    "primary": {
+      "n": 0,
+      "coverage": 0.0,
+      "accuracy": null,
+      "net_hits_vs_probability_top1_same_subset": 0
+    },
+    "market_paired_n": 0,
+    "market_paired_brier": null,
+    "tail": {
+      "away3+": {
+        "brier": 0.17302058960425915,
+        "observed_events": 14,
+        "recall_at_preregistered_half": 0.0
+      },
+      "away4+": {
+        "brier": 0.0851240152253796,
+        "observed_events": 6,
+        "recall_at_preregistered_half": 0.0
+      },
+      "home3+": {
+        "brier": 0.1853881426355054,
+        "observed_events": 16,
+        "recall_at_preregistered_half": 0.0
+      },
+      "home4+": {
+        "brier": 0.13575034218251208,
+        "observed_events": 10,
+        "recall_at_preregistered_half": 0.0
+      },
+      "total4+": {
+        "brier": 0.2593042663687815,
+        "observed_events": 28,
+        "recall_at_preregistered_half": 0.0
+      },
+      "total5+": {
+        "brier": 0.21431690759941466,
+        "observed_events": 18,
+        "recall_at_preregistered_half": 0.0
+      }
+    },
+    "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+  },
+  "policy": {
+    "baseline_anchor_in_dynamic": 0.75,
+    "temperature_grid": [
+      0.95,
+      1.0,
+      1.05
+    ],
+    "selection": "calibration Top1 then Log Loss, loss guard +.02, baseline eligible"
+  },
+  "promotion": "DO_NOT_PROMOTE",
+  "historical_asof_certified": false,
+  "notice": "Method changed after examining old diagnostic. All results are post-hoc development diagnostics, not fresh unseen validation."
+}
