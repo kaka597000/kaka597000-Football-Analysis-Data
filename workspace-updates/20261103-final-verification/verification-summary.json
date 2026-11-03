@@ -1,0 +1,70 @@
+{
+  "task": "KOR1 PR3 isolated live collection verification",
+  "state_dir": "/workspace/kor1-verification-20261103",
+  "collection_started_at_utc": "2026-11-03T08:18:04.683777+00:00",
+  "environment": {
+    "network_policy": "unrestricted/enforced",
+    "api_football_binding": "_apifootball ready",
+    "process_only_mapping": "_apifootball -> WCPP_API_FOOTBALL_KEY",
+    "primary_5dollar_key": "absent; no primary request issued"
+  },
+  "limits": {
+    "request_limit": 6,
+    "actual_requests": 2
+  },
+  "result": {
+    "ok": false,
+    "provider": "api-football",
+    "used_fallback": true,
+    "reason": "credential missing; current season blocked by provider plan",
+    "provider_competition_id": 292,
+    "fixtures_seen": 0,
+    "fixtures_added": 0,
+    "standings_saved": false,
+    "training_eligible": false
+  },
+  "calls": [
+    {
+      "url": "https://v3.football.api-sports.io/leagues?name=K+League+1&country=South-Korea",
+      "http_status": 200,
+      "collector_call_ok": true,
+      "raw_file": "kor1/raw/3c64ffbbed88cf47b456ffd8a526e82c9cc41a5e555d37a01d96768e16c43ba1.json.gz",
+      "sha256_response_body": "3c64ffbbed88cf47b456ffd8a526e82c9cc41a5e555d37a01d96768e16c43ba1",
+      "api_errors": [],
+      "api_results": 1,
+      "verified_identity": [
+        {
+          "league_id": 292,
+          "league_name": "K League 1",
+          "league_type": "League",
+          "country": "South-Korea",
+          "country_code": "KR",
+          "current_seasons": [
+            2026
+          ]
+        }
+      ],
+      "season_error": null
+    },
+    {
+      "url": "https://v3.football.api-sports.io/fixtures?league=292&season=2026",
+      "http_status": 200,
+      "collector_call_ok": true,
+      "raw_file": "kor1/raw/d5c4894b80779f874577e76b3b69d6146fc92746adbcb0df4db3a2e42f11aca5.json.gz",
+      "sha256_response_body": "d5c4894b80779f874577e76b3b69d6146fc92746adbcb0df4db3a2e42f11aca5",
+      "api_errors": {
+        "plan": "Free plans do not have access to this season, try from 2022 to 2024."
+      },
+      "api_results": 0,
+      "verified_identity": null,
+      "season_error": "Free plans do not have access to this season, try from 2022 to 2024."
+    }
+  ],
+  "effects": {
+    "normalized_training_file_created_or_changed": false,
+    "fixture_rows_saved": false,
+    "source_collector_modified": false,
+    "actions_restored": false
+  },
+  "raw_responses_retained": true
+}
