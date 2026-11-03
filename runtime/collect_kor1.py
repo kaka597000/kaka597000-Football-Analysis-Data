@@ -446,7 +446,9 @@ def collect_fallback(config, fetcher, budget, sink, secrets, now, captured_at):
     for item in response:
         info=item.get('league') or {};country=(item.get('country') or {}).get('name','')
         normalized_country=str(country).lower().replace('-','').replace(' ','')
-        if (_identity_ok(info.get('name'),country) and normalized_country in
+        normalized_name=str(info.get('name') or '').lower().replace(' ','').replace('-','').replace('_','')
+        if (normalized_name in {'kleague1','k리그1','k리그원'} and info.get('type')=='League'
+                and _identity_ok(info.get('name'),country) and normalized_country in
                 {'southkorea','republicofkorea','korearepublic'} and type(info.get('id')) is int and info['id']>0):
             matching.append(item)
     if len(matching)!=1:

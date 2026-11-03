@@ -27,7 +27,7 @@ def fixture(match_id=55, status="finished", code="full", round_name=30, goals=(2
     home, away = (goals if goals else (None, None))
     return {
         "id": match_id,
-        "league": {"id": 2270596712, "name": "K League 1"},
+        "league": {"id": 2270596712, "name": "K League 1", "type": "League"},
         "teams": {"home": {"id": 7, "name": "Ulsan"}, "away": {"id": 8, "name": "Pohang"}},
         "kickoff_utc": "2018-03-01T10:00:00+00:00" if match_id == 18 else "2026-10-31T10:00:00+00:00",
         "status": status, "status_code": code, "round": round_name,
@@ -137,7 +137,7 @@ class Kor1Tests(unittest.TestCase):
         http = FakeHttp({
             "/status": (401, {"success": 0, "error": {"code": "unauthorized"}}),
             "/leagues?name=K+League+1&country=South-Korea": (200, {"errors": [], "response": [{
-                "league": {"id": 777, "name": "K League 1"},
+                "league": {"id": 777, "name": "K League 1", "type": "League"},
                 "country": {"name": "South-Korea"},
             }]}),
             "/fixtures?": (200, {"errors": [], "response": [{
@@ -178,7 +178,7 @@ class Kor1Tests(unittest.TestCase):
             "/status": (200, {"success": 1}),
             "/leagues/2270596712": (200, league_body("K League 2")),
             "/leagues?name=K+League+1&country=South-Korea": (200, {"errors": [], "response": [{
-                "league": {"id": 777, "name": "K League 1"}, "country": {"name": "South-Korea"}}]}),
+                "league": {"id": 777, "name": "K League 1", "type": "League"}, "country": {"name": "South-Korea"}}]}),
             "/fixtures?": (200, {"errors": [], "response": []}),
             "/standings?": (200, {"errors": [], "response": []}),
             "/odds?": (200, {"errors": [], "response": []}),
@@ -190,8 +190,9 @@ class Kor1Tests(unittest.TestCase):
 
     def test_named_lookup_rejects_foreign_or_ambiguous_leagues(self):
         for response in ([{'league':{'id':219,'name':'2. Liga'},'country':{'name':'Austria'}}],
-                         [{'league':{'id':777,'name':'K League 1'},'country':{'name':'South-Korea'}},
-                          {'league':{'id':778,'name':'K League 1'},'country':{'name':'South-Korea'}}]):
+                         [{'league':{'id':777,'name':'K League 1 Women','type':'League'},'country':{'name':'South-Korea'}}],
+                         [{'league':{'id':777,'name':'K League 1','type':'League'},'country':{'name':'South-Korea'}},
+                          {'league':{'id':778,'name':'K League 1','type':'League'},'country':{'name':'South-Korea'}}]):
             http=FakeHttp({'/status':(403,{}),'/leagues?name=K+League+1&country=South-Korea':(200,{'errors':[],'response':response})})
             summary=collect(self.directory,{'WCPP_5DOLLAR_API_KEY':SECRET,'WCPP_API_FOOTBALL_KEY':'fallback-secret'},http,NOW)
             self.assertFalse(summary['ok'])
