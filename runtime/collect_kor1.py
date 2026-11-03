@@ -37,8 +37,9 @@ def load_config(state_dir):
     fallback = config["fallback"]
     if primary.get("provider") != "5dollar" or int(primary["competition_id"]) != 2270596712:
         raise ValueError("primary provider must be 5Dollar competition 2270596712")
-    if fallback.get("provider") != "api-football" or int(fallback["competition_id"]) != 219:
-        raise ValueError("fallback provider must be API-Football competition 219")
+    if (fallback.get("provider") != "api-football" or fallback.get("competition_id") is not None
+            or fallback.get("league_name") != "K League 1" or fallback.get("country") != "South-Korea"):
+        raise ValueError("fallback must resolve the unique South-Korea K League 1 identity")
     for item in (primary, fallback):
         host = urlsplit(item["base_url"]).hostname
         if host not in ALLOWED_HOSTS or urlsplit(item["base_url"]).scheme != "https":
@@ -427,11 +428,10 @@ def _bet365_by_fixture(payload, bookmaker_id):
 def collect_fallback(config, fetcher, budget, sink, secrets, now, captured_at):
     fallback = config["fallback"]
     base = fallback["base_url"].rstrip("/")
-    competition_id = int(fallback["competition_id"])
     headers = _api_football_headers(secrets["fallback"])
     season = now.year
     calls = []
-    league_url = f"{base}/leagues?{urlencode({'id': competition_id})}"
+    league_url = f"{base}/leagues?{urlencode({'name': fallback['league_name'], 'country': fallback['country']})}"
     league, error = _get(fetcher, budget, league_url, headers, sink, list(secrets.values()))
     calls.append(league or {"url": league_url, "ok": False, "error": error})
     if not league or not league["ok"]:
@@ -442,16 +442,27 @@ def collect_fallback(config, fetcher, budget, sink, secrets, now, captured_at):
     response = body.get("response") or []
     if not response:
         return _failed("api-football", "league missing", calls)
-    entry = response[0]
-    league_info = entry.get("league") or {}
-    country = (entry.get("country") or {}).get("name", "")
-    if not _identity_ok(league_info.get("name"), country):
-        return _failed("api-football", "competition is not K League 1", calls)
+    matching=[]
+    for item in response:
+        info=item.get('league') or {};country=(item.get('country') or {}).get('name','')
+        normalized_country=str(country).lower().replace('-','').replace(' ','')
+        normalized_name=str(info.get('name') or '').lower().replace(' ','').replace('-','').replace('_','')
+        if (normalized_name in {'kleague1','k리그1','k리그원'} and info.get('type')=='League'
+                and _identity_ok(info.get('name'),country) and normalized_country in
+                {'southkorea','republicofkorea','korearepublic'} and type(info.get('id')) is int and info['id']>0):
+            matching.append(item)
+    if len(matching)!=1:
+        return _failed('api-football','league lookup did not return one verified South-Korea K League 1 identity',calls)
+    entry=matching[0];competition_id=entry['league']['id']
     fixture_url = f"{base}/fixtures?{urlencode({'league': competition_id, 'season': season})}"
     fixtures, error = _get(fetcher, budget, fixture_url, headers, sink, list(secrets.values()))
     calls.append(fixtures or {"url": fixture_url, "ok": False, "error": error})
     if not fixtures or not fixtures["ok"] or fixtures["body"].get("errors"):
-        return _failed("api-football", "fixture lookup failed", calls)
+        failed=_failed('api-football','current-season fixture lookup unavailable',calls)
+        failed['competition_id']=competition_id
+        if fixtures and isinstance(fixtures.get('body',{}).get('errors'),dict) and 'plan' in fixtures['body']['errors']:
+            failed['reason']='current season blocked by provider plan'
+        return failed
     rows = api_football_rows(
         fixtures["body"].get("response"), competition_id, captured_at, fixture_url.split("?")[0])
     standings_url = f"{base}/standings?{urlencode({'league': competition_id, 'season': season})}"
@@ -540,6 +551,7 @@ def collect(state_dir, env, fetcher, now=None):
     summary = {
         "cohort": "kor.1", "espn": False, "ok": bool(result["ok"]), "provider": result["provider"],
         "used_fallback": used_fallback, "reason": result["reason"], "requests": budget.used,
+        "provider_competition_id":result.get("competition_id"),
         "fixtures_seen": len(result["rows"]), "fixtures_added": len(added),
         "standings_saved": result["standings"] is not None, "known_at": captured_at,
         "training_eligible": False, "calls": [_public_call(call) for call in result["calls"]],
