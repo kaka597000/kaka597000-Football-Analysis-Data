@@ -87,7 +87,8 @@ class Kor1Tests(unittest.TestCase):
         config = load_config(ROOT)
         self.assertFalse(config["espn"])
         self.assertEqual(config["primary"]["competition_id"], 2270596712)
-        self.assertEqual(config["fallback"]["competition_id"], 219)
+        self.assertIsNone(config["fallback"]["competition_id"])
+        self.assertEqual(config["fallback"]["league_name"],"K League 1")
         source = (ROOT / "runtime" / "collect_kor1.py").read_text()
         self.assertNotIn("site.api.espn.com", source)
         workflow = (ROOT / ".github" / "workflows" / "unattended.yml").read_text()
@@ -135,22 +136,22 @@ class Kor1Tests(unittest.TestCase):
     def test_primary_failure_uses_api_football_bet365_only(self):
         http = FakeHttp({
             "/status": (401, {"success": 0, "error": {"code": "unauthorized"}}),
-            "/leagues?id=219": (200, {"errors": [], "response": [{
-                "league": {"id": 219, "name": "K League 1"},
+            "/leagues?name=K+League+1&country=South-Korea": (200, {"errors": [], "response": [{
+                "league": {"id": 777, "name": "K League 1"},
                 "country": {"name": "South-Korea"},
             }]}),
             "/fixtures?": (200, {"errors": [], "response": [{
                 "fixture": {"id": 10, "date": "2026-10-31T10:00:00+00:00", "status": {"short": "FT"}},
-                "league": {"id": 219, "name": "K League 1", "round": "Regular Season - 30"},
+                "league": {"id": 777, "name": "K League 1", "round": "Regular Season - 30"},
                 "teams": {"home": {"id": 1, "name": "Ulsan"}, "away": {"id": 2, "name": "Pohang"}},
                 "score": {"fulltime": {"home": 1, "away": 0}},
             }, {
                 "fixture": {"id": 11, "date": "2026-11-20T10:00:00+00:00", "status": {"short": "NS"}},
-                "league": {"id": 219, "name": "K League 1", "round": "Relegation Round"},
+                "league": {"id": 777, "name": "K League 1", "round": "Relegation Round"},
                 "teams": {"home": {"id": 3, "name": "A"}, "away": {"id": 4, "name": "B"}},
                 "score": {"fulltime": {"home": None, "away": None}},
             }]}),
-            "/standings?": (200, {"errors": [], "response": [{"league": {"id": 219}}]}),
+            "/standings?": (200, {"errors": [], "response": [{"league": {"id": 777}}]}),
             "/odds?": (200, {"errors": [], "response": [{
                 "fixture": {"id": 10},
                 "bookmakers": [
@@ -169,15 +170,15 @@ class Kor1Tests(unittest.TestCase):
         self.assertEqual(rows[0]["goals"], {"home": 1, "away": 0})
         self.assertEqual(rows[0]["bookmaker"], "bet365")
         self.assertEqual([book["name"] for book in rows[0]["odds"]], ["Bet365"])
-        self.assertTrue(any("/leagues?id=219" in url for url in http.urls))
+        self.assertTrue(any("/leagues?name=K+League+1&country=South-Korea" in url for url in http.urls))
         self.assertFalse(any("espn" in url for url in http.urls))
 
     def test_wrong_primary_identity_does_not_save_those_rows(self):
         http = FakeHttp({
             "/status": (200, {"success": 1}),
             "/leagues/2270596712": (200, league_body("K League 2")),
-            "/leagues?id=219": (200, {"errors": [], "response": [{
-                "league": {"id": 219, "name": "K League 1"}, "country": {"name": "South-Korea"}}]}),
+            "/leagues?name=K+League+1&country=South-Korea": (200, {"errors": [], "response": [{
+                "league": {"id": 777, "name": "K League 1"}, "country": {"name": "South-Korea"}}]}),
             "/fixtures?": (200, {"errors": [], "response": []}),
             "/standings?": (200, {"errors": [], "response": []}),
             "/odds?": (200, {"errors": [], "response": []}),
@@ -186,6 +187,15 @@ class Kor1Tests(unittest.TestCase):
                           http, NOW)
         self.assertTrue(summary["used_fallback"])
         self.assertFalse(any("/leagues/2270596712/fixtures" in url for url in http.urls))
+
+    def test_named_lookup_rejects_foreign_or_ambiguous_leagues(self):
+        for response in ([{'league':{'id':219,'name':'2. Liga'},'country':{'name':'Austria'}}],
+                         [{'league':{'id':777,'name':'K League 1'},'country':{'name':'South-Korea'}},
+                          {'league':{'id':778,'name':'K League 1'},'country':{'name':'South-Korea'}}]):
+            http=FakeHttp({'/status':(403,{}),'/leagues?name=K+League+1&country=South-Korea':(200,{'errors':[],'response':response})})
+            summary=collect(self.directory,{'WCPP_5DOLLAR_API_KEY':SECRET,'WCPP_API_FOOTBALL_KEY':'fallback-secret'},http,NOW)
+            self.assertFalse(summary['ok'])
+            self.assertFalse(any('/fixtures?' in url for url in http.urls))
 
     def test_missing_credentials_make_no_requests(self):
         http = FakeHttp({})
