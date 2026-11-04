@@ -1,0 +1,105 @@
+{
+  "population": 2734,
+  "predicted": 1741,
+  "warmup": 993,
+  "matrices_verified": 6964,
+  "aggregate": {
+    "current_recipe": {
+      "hits": 184,
+      "n": 1741,
+      "accuracy": 0.10568638713383113,
+      "metrics": {
+        "score_log_loss": 3.0116766405162023,
+        "score_brier": 0.9356633274682489,
+        "wdl_accuracy": 0.5152211372774268,
+        "wdl_brier": 0.5968734661757988
+      },
+      "tail_brier": {
+        "home3+": 0.1618604920550575,
+        "away3+": 0.12207871638777477,
+        "total4+": 0.2141350319819028,
+        "total5+": 0.14405636687928997
+      }
+    },
+    "dynamic_poisson": {
+      "hits": 210,
+      "n": 1741,
+      "accuracy": 0.12062033314187248,
+      "metrics": {
+        "score_log_loss": 3.019201052593921,
+        "score_brier": 0.9359166019486845,
+        "wdl_accuracy": 0.5025847214244687,
+        "wdl_brier": 0.604341437274032
+      },
+      "tail_brier": {
+        "home3+": 0.16369724470285915,
+        "away3+": 0.12200752127415944,
+        "total4+": 0.2131302320062474,
+        "total5+": 0.1431218356937018
+      }
+    },
+    "negative_binomial_5": {
+      "hits": 175,
+      "n": 1741,
+      "accuracy": 0.10051694428489374,
+      "metrics": {
+        "score_log_loss": 3.0505500826783916,
+        "score_brier": 0.9390512479394336,
+        "wdl_accuracy": 0.5025847214244687,
+        "wdl_brier": 0.6075449006036981
+      },
+      "tail_brier": {
+        "home3+": 0.16449222207651598,
+        "away3+": 0.12210502641662918,
+        "total4+": 0.21342651623893533,
+        "total5+": 0.14326757469123835
+      }
+    },
+    "tempo_mixture": {
+      "hits": 188,
+      "n": 1741,
+      "accuracy": 0.10798391728891442,
+      "metrics": {
+        "score_log_loss": 3.0357549315378893,
+        "score_brier": 0.9380786016128823,
+        "wdl_accuracy": 0.5025847214244687,
+        "wdl_brier": 0.605277568644276
+      },
+      "tail_brier": {
+        "home3+": 0.16407011145258946,
+        "away3+": 0.1219935107396285,
+        "total4+": 0.2133979524309962,
+        "total5+": 0.1432809287639968
+      }
+    }
+  },
+  "paired": {
+    "dynamic_poisson": {
+      "n": 1741,
+      "net_hits": 26,
+      "date_cluster_bootstrap95": [
+        0.003777763213370666,
+        0.026318911685994643
+      ],
+      "notice": "Development diagnostic interval; not a repeated-selection promotion test."
+    },
+    "negative_binomial_5": {
+      "n": 1741,
+      "net_hits": -9,
+      "date_cluster_bootstrap95": [
+        -0.019843907379934918,
+        0.008308852180382988
+      ],
+      "notice": "Development diagnostic interval; not a repeated-selection promotion test."
+    },
+    "tempo_mixture": {
+      "n": 1741,
+      "net_hits": 4,
+      "date_cluster_bootstrap95": [
+        -0.009447926432549051,
+        0.012313042267225254
+      ],
+      "notice": "Development diagnostic interval; not a repeated-selection promotion test."
+    }
+  }
+}
