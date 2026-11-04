@@ -1,0 +1,170 @@
+{
+  "run_id": "20261104T114538-collect",
+  "started_at": "2026-11-04T11:45:38.613240+00:00",
+  "mode": "collect",
+  "policy": {
+    "max_cohorts": 16,
+    "historical_only_scopes_skipped": 0,
+    "max_requests": 100,
+    "lookback_days": 2,
+    "promotion": "NEVER",
+    "max_collection_seconds": 150,
+    "data_sources": "existing public JSON endpoints only",
+    "paid_api_calls": false
+  },
+  "github_run_id": "41823337099",
+  "github_run_attempt": "1",
+  "source_commit": "c52326438ecaaf999e67d61c7462f997071e946c",
+  "source_worktree_dirty": false,
+  "seed_sha256": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
+  "active_model_modified": false,
+  "result": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-11-04T11:45:38.655583+00:00",
+    "request_count": 73,
+    "successful_requests": 73,
+    "max_requests": 100,
+    "retry_used": false,
+    "events_seen": 43,
+    "new_result_observations": 1,
+    "quarantined": 23,
+    "market_snapshot_saved": true,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 150,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false,
+    "coverage_by_competition": {
+      "afc.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 16,
+        "new_rows": 0,
+        "quarantined": 14
+      },
+      "aus.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "eng.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "esp.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fifa.world": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ger.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ita.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 2,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "jpn.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ned.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "nor.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "swe.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "uefa.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 18,
+        "new_rows": 0,
+        "quarantined": 9
+      },
+      "uefa.europa": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.europa.conf": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "usa.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      }
+    },
+    "new_rows": [
+      {
+        "match_id": "espn:401842866",
+        "cohort": "swe.1",
+        "competition": "swe.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-03",
+        "kickoff_at": "2026-11-03T18:00:00+00:00",
+        "home": "espn:8547",
+        "away": "espn:3017",
+        "home_goals": 2,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-04T11:45:54.489387+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842866",
+        "provider_final_score": [
+          "2",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/8fb8df9b5056a97c8262c002076b2fc11d676a015b8cbf673d8905baef1cdccb.json.gz",
+          "sha256": "8fb8df9b5056a97c8262c002076b2fc11d676a015b8cbf673d8905baef1cdccb",
+          "captured_at": "2026-11-04T11:45:54.489387+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842866"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      }
+    ]
+  },
+  "status": "COMPLETED",
+  "finished_at": "2026-11-04T11:46:05.620814+00:00"
+}
