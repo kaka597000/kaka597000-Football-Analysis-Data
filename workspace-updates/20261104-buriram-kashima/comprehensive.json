@@ -1,0 +1,50 @@
+{
+  "primary": null,
+  "wdl": null,
+  "total": null,
+  "status": "OBSERVE_INSUFFICIENT_COMPREHENSIVE_EVIDENCE",
+  "current_test_reference": {
+    "freeze_id": "937796a697b67093-v000001",
+    "recorded_at": "2026-11-04T19:56:00.723190+08:00",
+    "path": "/workspace/WCPP/forecasts/issued-analyses/937796a697b670934dec0774563831db85cb091e3dd07f158c9c2ef5a97d8ab3/000001.json",
+    "sha256": "7e527b1d6a06e0cf7dc74cd31e2e6e2f2f6bd04959de59406012e905c03b9082",
+    "evaluation_slot": "FIRST_PREMATCH"
+  },
+  "qualitative_watch": "Draw/away-unbeaten scenario only, not an issued WDL recommendation",
+  "compared_scores": [
+    "1-1",
+    "1-2",
+    "2-1"
+  ],
+  "selection_evidence": {
+    "compared_scores": [
+      "1-1",
+      "1-2",
+      "2-1"
+    ],
+    "reasons": {
+      "1-1": "Both statistical modes; Buriram two draws in three available ACL records, but pooled Current cannot represent full team strength",
+      "1-2": "Kashima recent attacking output supports away-scoring alternative, but representative away xG and injuries unknown",
+      "2-1": "Both WDL marginals lean home, but Current is constant league baseline and actual recent Buriram chance quality missing"
+    },
+    "zero_vs_one": {
+      "home": {
+        "reason": "Not selecting a clean sheet",
+        "counterevidence": "Test home p0 .193 vs at least1 .807"
+      },
+      "away": {
+        "reason": "Not selecting a clean sheet",
+        "counterevidence": "Test away p0 .229 vs at least1 .771"
+      }
+    }
+  },
+  "missing": [
+    "recent provider xG/xGA",
+    "verified injuries and suspensions",
+    "timestamped real bookmaker market",
+    "complete Buriram domestic schedule"
+  ],
+  "training_cutoff": "2026-10-12",
+  "top3": [],
+  "formal_kpi_eligible": false
+}
