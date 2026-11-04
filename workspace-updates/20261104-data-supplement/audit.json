@@ -1,0 +1,90 @@
+{
+  "query_time_precision": "UTC timestamp in manifest per request",
+  "provider": "ESPN public API",
+  "collections": [
+    {
+      "file": "afc.champions-2025.json",
+      "raw_sha256": "ff80b99a972aaa42ed9c79d44040fa452f1749811941a69c7348ece1b35bec07",
+      "events": 119,
+      "status_counts": {
+        "STATUS_FULL_TIME": 115,
+        "STATUS_CANCELED": 2,
+        "STATUS_FINAL_AET": 2
+      },
+      "full_time_score_candidates": 115,
+      "explicit_neutral_count": 0,
+      "eligible_for_strict_training": 0,
+      "exclusion": "ESPN scoreboard has no explicit neutralSite for this corpus; FT status does not independently establish regulation-90 label or phase validity."
+    },
+    {
+      "file": "aus.1-2025.json",
+      "raw_sha256": "ba0facca3ccc82cd7f1c4fa9b1e6a60972acf5fdde20550679fc712c1b9ee71b",
+      "events": 175,
+      "status_counts": {
+        "STATUS_FULL_TIME": 175
+      },
+      "full_time_score_candidates": 175,
+      "explicit_neutral_count": 0,
+      "eligible_for_strict_training": 0,
+      "exclusion": "ESPN scoreboard has no explicit neutralSite for this corpus; FT status does not independently establish regulation-90 label or phase validity."
+    },
+    {
+      "file": "fifa.world-2026.json",
+      "raw_sha256": "231dea05810e3ebbaa4da91ebe84d0f0622a5215a56155f975ef8a097c5366fa",
+      "events": 104,
+      "status_counts": {
+        "STATUS_FULL_TIME": 95,
+        "STATUS_FINAL_PEN": 4,
+        "STATUS_FINAL_AET": 5
+      },
+      "full_time_score_candidates": 95,
+      "explicit_neutral_count": 0,
+      "eligible_for_strict_training": 0,
+      "exclusion": "ESPN scoreboard has no explicit neutralSite for this corpus; FT status does not independently establish regulation-90 label or phase validity."
+    },
+    {
+      "file": "fin.1-2025.json",
+      "raw_sha256": "bcfeaa3af903050bb2705653796f362fcb456fb437264c5d9dbcee6dc2272dee",
+      "events": 0,
+      "status_counts": {},
+      "full_time_score_candidates": 0,
+      "explicit_neutral_count": 0,
+      "eligible_for_strict_training": 0,
+      "exclusion": "ESPN scoreboard has no explicit neutralSite for this corpus; FT status does not independently establish regulation-90 label or phase validity."
+    },
+    {
+      "file": "uefa.europa-2025.json",
+      "raw_sha256": "f984b39ecf8c317b742392027aabc161266aea6cbc4ad978ed7aa22b2a4d8d2b",
+      "events": 189,
+      "status_counts": {
+        "STATUS_FULL_TIME": 184,
+        "STATUS_FINAL_AET": 3,
+        "STATUS_FINAL_PEN": 2
+      },
+      "full_time_score_candidates": 184,
+      "explicit_neutral_count": 0,
+      "eligible_for_strict_training": 0,
+      "exclusion": "ESPN scoreboard has no explicit neutralSite for this corpus; FT status does not independently establish regulation-90 label or phase validity."
+    },
+    {
+      "file": "uefa.europa.conf-2025.json",
+      "raw_sha256": "889ae43a9c0a7ae61195ab120ae2f2c9b118d7d8efb7ddca66bf86567d75ad70",
+      "events": 153,
+      "status_counts": {
+        "STATUS_FULL_TIME": 146,
+        "STATUS_FINAL_AET": 5,
+        "STATUS_FINAL_PEN": 2
+      },
+      "full_time_score_candidates": 146,
+      "explicit_neutral_count": 0,
+      "eligible_for_strict_training": 0,
+      "exclusion": "ESPN scoreboard has no explicit neutralSite for this corpus; FT status does not independently establish regulation-90 label or phase validity."
+    }
+  ],
+  "strict_eligible_rows": 0,
+  "notice": "Evidence-verified candidate rows are not automatically model-training eligible. Only A-League has a formal supported router and was run separately (168 inputs, 46 reconstruction predictions). Other collected cohorts remain blocked by competition router/route support or phase sample thresholds.",
+  "scoreboard_events_acquired": 740,
+  "summary_requests_completed": 725,
+  "identity_score_phase_neutral_verified_candidates": 708,
+  "strict_training_route_certified_rows": 168
+}

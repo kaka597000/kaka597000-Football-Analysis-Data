@@ -1,0 +1,1166 @@
+{
+  "provider": "ESPN public summary API",
+  "generated_at_utc": "2026-11-04T06:58:39.195282+00:00",
+  "requests": [
+    {
+      "competition": "afc.champions",
+      "event_id": "719137",
+      "expected_scoreboard_status": "STATUS_FULL_TIME",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/summary?event=719137",
+      "query_time_utc": "2026-11-04T06:58:23.750367+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:24 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/afc.champions-719137-summary.json",
+      "sha256": "aee9abd9a88663d51bb2b92935d78f9e58e37412652ea915f2b6c5dbb40353e7",
+      "bytes": 369186,
+      "json_parsed": true,
+      "top_level_keys": [
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "altGameNote": "AFC Champions League Elite, AFC Champions League Elite",
+        "notes": [
+          {
+            "type": "event-ingest-note",
+            "date": "2025-02-08T06:04Z",
+            "text": "Al Rayyan advances.",
+            "source": "38"
+          }
+        ]
+      },
+      "status": {
+        "id": "28",
+        "name": "STATUS_FULL_TIME",
+        "state": "post",
+        "completed": true,
+        "description": "Full Time",
+        "detail": "FT",
+        "shortDetail": "FT"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "Al Ain",
+          "1",
+          false
+        ],
+        [
+          "away",
+          "Al-Rayyan SC",
+          "2",
+          true
+        ]
+      ]
+    },
+    {
+      "competition": "afc.champions",
+      "event_id": "733182",
+      "expected_scoreboard_status": "STATUS_FINAL_AET",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/summary?event=733182",
+      "query_time_utc": "2026-11-04T06:58:25.758932+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:26 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/afc.champions-733182-summary.json",
+      "sha256": "2a552084efb9d59cb4ad65a3579c933894068adafe5cac5752b5bc855cfb7711",
+      "bytes": 403520,
+      "json_parsed": true,
+      "top_level_keys": [
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "series": [
+          {
+            "title": "Round of 16",
+            "completed": true,
+            "leg": 2,
+            "totalCompetitions": 2,
+            "competitors": [
+              {
+                "id": "22351",
+                "uid": "s:600~l:3902~t:22351",
+                "aggregateScore": 3,
+                "winner": true,
+                "team": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/afc.champions/seasons/2024/teams/22351?lang=en&region=us"
+                }
+              },
+              {
+                "id": "7477",
+                "uid": "s:600~l:750~t:7477",
+                "aggregateScore": 2,
+                "winner": false,
+                "team": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/jpn.1/seasons/2024/teams/7477?lang=en&region=us"
+                }
+              }
+            ],
+            "events": [
+              {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/afc.champions/events/733174?lang=en&region=us",
+                "id": "733174"
+              },
+              {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/afc.champions/events/733182?lang=en&region=us",
+                "id": "733182"
+              }
+            ]
+          }
+        ],
+        "leg": {
+          "value": 2,
+          "displayValue": "2nd Leg"
+        },
+        "altGameNote": "AFC Champions League Elite, Round of 16",
+        "notes": [
+          {
+            "type": "event",
+            "headline": "2nd Leg - Gwangju FC advance 3-2 on aggregate"
+          },
+          {
+            "type": "event-ingest-note",
+            "date": "2025-03-18T00:12Z",
+            "text": "Gwangju FC advances.",
+            "source": "38"
+          }
+        ]
+      },
+      "status": {
+        "id": "45",
+        "name": "STATUS_FINAL_AET",
+        "state": "post",
+        "completed": true,
+        "description": "Final Score - After Extra Time",
+        "detail": "AET",
+        "shortDetail": "AET"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "leg",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "series",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "Gwangju FC",
+          "3",
+          true
+        ],
+        [
+          "away",
+          "Vissel Kobe",
+          "0",
+          false
+        ]
+      ]
+    },
+    {
+      "competition": "aus.1",
+      "event_id": "717978",
+      "expected_scoreboard_status": "STATUS_FULL_TIME",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/summary?event=717978",
+      "query_time_utc": "2026-11-04T06:58:27.386951+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:27 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/aus.1-717978-summary.json",
+      "sha256": "5eae241eea350ab5f5e580943697d07b22ba9e134cdc6a3c1d1b135bd4b5e562",
+      "bytes": 298991,
+      "json_parsed": true,
+      "top_level_keys": [
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "altGameNote": "A-League Men",
+        "notes": []
+      },
+      "status": {
+        "id": "28",
+        "name": "STATUS_FULL_TIME",
+        "state": "post",
+        "completed": true,
+        "description": "Full Time",
+        "detail": "FT",
+        "shortDetail": "FT"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "Western Sydney Wanderers FC",
+          "2",
+          false
+        ],
+        [
+          "away",
+          "Macarthur FC",
+          "3",
+          true
+        ]
+      ]
+    },
+    {
+      "competition": "aus.1",
+      "event_id": "718066",
+      "expected_scoreboard_status": "STATUS_FULL_TIME",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/summary?event=718066",
+      "query_time_utc": "2026-11-04T06:58:28.975612+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:29 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/aus.1-718066-summary.json",
+      "sha256": "4d9f4709c37b533c54be86feb7c407a5e9c593a8a550221ae5f87ed7dceabe55",
+      "bytes": 333422,
+      "json_parsed": true,
+      "top_level_keys": [
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "altGameNote": "A-League Men",
+        "notes": []
+      },
+      "status": {
+        "id": "28",
+        "name": "STATUS_FULL_TIME",
+        "state": "post",
+        "completed": true,
+        "description": "Full Time",
+        "detail": "FT",
+        "shortDetail": "FT"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "Perth Glory FC",
+          "4",
+          true
+        ],
+        [
+          "away",
+          "Adelaide United FC",
+          "1",
+          false
+        ]
+      ]
+    },
+    {
+      "competition": "fifa.world",
+      "event_id": "760415",
+      "expected_scoreboard_status": "STATUS_FULL_TIME",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760415",
+      "query_time_utc": "2026-11-04T06:58:30.544657+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:30 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/fifa.world-760415-summary.json",
+      "sha256": "65f5b034fe217c67f2c161d8a0c501125d9952fa7826c8ab29da8e116c109f2b",
+      "bytes": 402671,
+      "json_parsed": true,
+      "top_level_keys": [
+        "article",
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "altGameNote": "FIFA World Cup, Final",
+        "notes": [
+          {
+            "type": "event-ingest-note",
+            "date": "2026-06-13T04:35Z",
+            "text": "Mexico advances.",
+            "source": "38"
+          }
+        ]
+      },
+      "status": {
+        "id": "28",
+        "name": "STATUS_FULL_TIME",
+        "state": "post",
+        "completed": true,
+        "description": "Full Time",
+        "detail": "FT",
+        "shortDetail": "FT"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "Mexico",
+          "2",
+          true
+        ],
+        [
+          "away",
+          "South Africa",
+          "0",
+          false
+        ]
+      ]
+    },
+    {
+      "competition": "fifa.world",
+      "event_id": "760489",
+      "expected_scoreboard_status": "STATUS_FINAL_PEN",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=760489",
+      "query_time_utc": "2026-11-04T06:58:31.983062+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:32 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/fifa.world-760489-summary.json",
+      "sha256": "d904a89e4035330e0719ecc76fe5f5a1e7c768b25868425b66d0960b16d92228",
+      "bytes": 456353,
+      "json_parsed": true,
+      "top_level_keys": [
+        "article",
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "shootout",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "altGameNote": "FIFA World Cup, Round of 32",
+        "notes": [
+          {
+            "type": "event",
+            "headline": "Paraguay advance 4-3 on penalties"
+          },
+          {
+            "type": "event-ingest-note",
+            "date": "2026-06-30T09:20Z",
+            "text": "Paraguay advances.",
+            "source": "38"
+          }
+        ]
+      },
+      "status": {
+        "id": "47",
+        "name": "STATUS_FINAL_PEN",
+        "state": "post",
+        "completed": true,
+        "description": "Final Score - After Penalties",
+        "detail": "FT-Pens",
+        "shortDetail": "FT-Pens"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "Germany",
+          "1",
+          false
+        ],
+        [
+          "away",
+          "Paraguay",
+          "1",
+          true
+        ]
+      ]
+    },
+    {
+      "competition": "uefa.europa",
+      "event_id": "720473",
+      "expected_scoreboard_status": "STATUS_FULL_TIME",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=720473",
+      "query_time_utc": "2026-11-04T06:58:33.446704+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:33 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/uefa.europa-720473-summary.json",
+      "sha256": "c14a71de3f0d096df4f33f331e0c3418ba671bdcc22178ad30b9014092da409c",
+      "bytes": 444472,
+      "json_parsed": true,
+      "top_level_keys": [
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "altGameNote": "UEFA Europa League, League Phase",
+        "notes": []
+      },
+      "status": {
+        "id": "28",
+        "name": "STATUS_FULL_TIME",
+        "state": "post",
+        "completed": true,
+        "description": "Full Time",
+        "detail": "FT",
+        "shortDetail": "FT"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "Galatasaray",
+          "3",
+          false
+        ],
+        [
+          "away",
+          "Dynamo Kyiv",
+          "3",
+          false
+        ]
+      ]
+    },
+    {
+      "competition": "uefa.europa",
+      "event_id": "732214",
+      "expected_scoreboard_status": "STATUS_FINAL_AET",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=732214",
+      "query_time_utc": "2026-11-04T06:58:34.980488+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:35 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/uefa.europa-732214-summary.json",
+      "sha256": "676b914f2fa02024b0cfcc8013656618b19c913bca0f50b9b93207c9db97170f",
+      "bytes": 395287,
+      "json_parsed": true,
+      "top_level_keys": [
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "series": [
+          {
+            "title": "Knockout Round Playoffs",
+            "completed": true,
+            "leg": 2,
+            "totalCompetitions": 2,
+            "competitors": [
+              {
+                "id": "2980",
+                "uid": "s:600~l:3960~t:2980",
+                "aggregateScore": 6,
+                "winner": true,
+                "team": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/nor.1/seasons/2024/teams/2980?lang=en&region=us"
+                }
+              },
+              {
+                "id": "152",
+                "uid": "s:600~l:725~t:152",
+                "aggregateScore": 4,
+                "winner": false,
+                "team": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/ned.1/seasons/2024/teams/152?lang=en&region=us"
+                }
+              }
+            ],
+            "events": [
+              {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.europa/events/732207?lang=en&region=us",
+                "id": "732207"
+              },
+              {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.europa/events/732214?lang=en&region=us",
+                "id": "732214"
+              }
+            ]
+          }
+        ],
+        "leg": {
+          "value": 2,
+          "displayValue": "2nd Leg"
+        },
+        "altGameNote": "UEFA Europa League, Knockout Round Playoffs",
+        "notes": [
+          {
+            "type": "event",
+            "headline": "2nd Leg - Bodo/Glimt advance 6-4 on aggregate"
+          },
+          {
+            "type": "event-ingest-note",
+            "date": "2025-02-21T07:56Z",
+            "text": "Bodo/Glimt advances.",
+            "source": "38"
+          }
+        ]
+      },
+      "status": {
+        "id": "45",
+        "name": "STATUS_FINAL_AET",
+        "state": "post",
+        "completed": true,
+        "description": "Final Score - After Extra Time",
+        "detail": "AET",
+        "shortDetail": "AET"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "leg",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "series",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "Bodo/Glimt",
+          "5",
+          true
+        ],
+        [
+          "away",
+          "FC Twente",
+          "2",
+          false
+        ]
+      ]
+    },
+    {
+      "competition": "uefa.europa.conf",
+      "event_id": "727375",
+      "expected_scoreboard_status": "STATUS_FULL_TIME",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=727375",
+      "query_time_utc": "2026-11-04T06:58:36.234640+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:36 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/uefa.europa.conf-727375-summary.json",
+      "sha256": "d90a2f5bde4adb7115994973db052415c9b2470266e3c4a736ec1cadeac4019b",
+      "bytes": 338855,
+      "json_parsed": true,
+      "top_level_keys": [
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "series": [
+          {
+            "title": "Knockout Round Playoffs",
+            "completed": false,
+            "leg": 1,
+            "totalCompetitions": 2,
+            "competitors": [
+              {
+                "id": "20713",
+                "uid": "s:600~l:20296~t:20713",
+                "aggregateScore": 1,
+                "team": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.europa.conf/seasons/2024/teams/20713?lang=en&region=us"
+                }
+              },
+              {
+                "id": "11505",
+                "uid": "s:600~l:776~t:11505",
+                "aggregateScore": 3,
+                "team": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.europa/seasons/2024/teams/11505?lang=en&region=us"
+                }
+              }
+            ],
+            "events": [
+              {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.europa.conf/events/727375?lang=en&region=us",
+                "id": "727375"
+              },
+              {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.europa.conf/events/727389?lang=en&region=us",
+                "id": "727389"
+              }
+            ]
+          }
+        ],
+        "leg": {
+          "value": 1,
+          "displayValue": "1st Leg"
+        },
+        "altGameNote": "UEFA Conference League, Knockout Round Playoffs",
+        "notes": [
+          {
+            "type": "event",
+            "headline": "1st Leg"
+          }
+        ]
+      },
+      "status": {
+        "id": "28",
+        "name": "STATUS_FULL_TIME",
+        "state": "post",
+        "completed": true,
+        "description": "Full Time",
+        "detail": "FT",
+        "shortDetail": "FT"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "leg",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "series",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "FK TSC",
+          "1",
+          false
+        ],
+        [
+          "away",
+          "Jagiellonia Bialystok",
+          "3",
+          true
+        ]
+      ]
+    },
+    {
+      "competition": "uefa.europa.conf",
+      "event_id": "727387",
+      "expected_scoreboard_status": "STATUS_FINAL_AET",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=727387",
+      "query_time_utc": "2026-11-04T06:58:37.820905+00:00",
+      "http_status": 200,
+      "response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Wed, 04 Nov 2026 06:58:38 GMT"
+      },
+      "raw_path": "/workspace/WCPP/research/all-scope-20261104/data-supplement/summary-raw/uefa.europa.conf-727387-summary.json",
+      "sha256": "a66750e7eba2fc578ff470bf5ba72063301f2a2594950e7f39dcb99951055731",
+      "bytes": 387649,
+      "json_parsed": true,
+      "top_level_keys": [
+        "boxscore",
+        "broadcasts",
+        "commentary",
+        "format",
+        "gameInfo",
+        "hasOdds",
+        "header",
+        "keyEvents",
+        "lastFiveGames",
+        "leaders",
+        "meta",
+        "news",
+        "odds",
+        "pickcenter",
+        "rosters",
+        "seasonseries",
+        "standings",
+        "videos",
+        "wallclockAvailable"
+      ],
+      "explicit_neutralSite": false,
+      "neutralSite_is_explicit_bool": true,
+      "competition_phase_fields": {
+        "series": [
+          {
+            "title": "Knockout Round Playoffs",
+            "completed": true,
+            "leg": 2,
+            "totalCompetitions": 2,
+            "competitors": [
+              {
+                "id": "6418",
+                "uid": "s:600~l:3927~t:6418",
+                "aggregateScore": 3,
+                "winner": false,
+                "team": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/ger.2/seasons/2024/teams/6418?lang=en&region=us"
+                }
+              },
+              {
+                "id": "909",
+                "uid": "s:600~l:3913~t:909",
+                "aggregateScore": 4,
+                "winner": true,
+                "team": {
+                  "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/den.1/seasons/2024/teams/909?lang=en&region=us"
+                }
+              }
+            ],
+            "events": [
+              {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.europa.conf/events/727381?lang=en&region=us",
+                "id": "727381"
+              },
+              {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.europa.conf/events/727387?lang=en&region=us",
+                "id": "727387"
+              }
+            ]
+          }
+        ],
+        "leg": {
+          "value": 2,
+          "displayValue": "2nd Leg"
+        },
+        "altGameNote": "UEFA Conference League, Knockout Round Playoffs",
+        "notes": [
+          {
+            "type": "event",
+            "headline": "2nd Leg - F.C. København advance 4-3 on aggregate"
+          },
+          {
+            "type": "event-ingest-note",
+            "date": "2025-02-28T05:27Z",
+            "text": "F.C. København advances.",
+            "source": "38"
+          }
+        ]
+      },
+      "status": {
+        "id": "45",
+        "name": "STATUS_FINAL_AET",
+        "state": "post",
+        "completed": true,
+        "description": "Final Score - After Extra Time",
+        "detail": "AET",
+        "shortDetail": "AET"
+      },
+      "scoreboard_competition_record_keys": [
+        "altGameNote",
+        "boxscoreAvailable",
+        "boxscoreMinutes",
+        "boxscoreSource",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "date",
+        "details",
+        "groups",
+        "id",
+        "isFinal",
+        "isThirdPlace",
+        "leg",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "onWatchESPN",
+        "playByPlaySource",
+        "recent",
+        "series",
+        "shotMapAvailable",
+        "status",
+        "uid",
+        "wallclockAvailable"
+      ],
+      "header_competitor_summary": [
+        [
+          "home",
+          "1. FC Heidenheim 1846",
+          "1",
+          false
+        ],
+        [
+          "away",
+          "F.C. København",
+          "3",
+          true
+        ]
+      ]
+    }
+  ],
+  "fin.1": "No event was returned by its sampled-year scoreboard, so no summary event ID could be queried."
+}

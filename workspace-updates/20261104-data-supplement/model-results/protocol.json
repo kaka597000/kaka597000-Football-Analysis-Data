@@ -1,0 +1,156 @@
+{
+  "protocol": {
+    "mode": "RESULT_DATE_RECONSTRUCTION",
+    "block": "calendar_month",
+    "minimum_training_rows": 120,
+    "families": [
+      "current_recipe",
+      "dynamic_poisson",
+      "negative_binomial_5",
+      "tempo_mixture"
+    ],
+    "selection": "none; all four fixed before execution",
+    "baseline": "per-group explicitly declared reference recipe refit on prior dates, not historical deployed weights",
+    "historical_asof_certified": false,
+    "prospective_validation": false,
+    "market_policy": "no guessed historical line or retrospective closing quote",
+    "xg_used": false,
+    "activation_modified": false
+  },
+  "inputs": [
+    {
+      "cohort": "aus.1",
+      "input_group": "aus.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/aus.1/merged-history.json",
+      "sha256": "127128da4757f107792e3e27e7667c0642f75192a148ba439736011d3cab1a38",
+      "reference_kind": "constant",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "f3e9e25f84a468ed937c0d82c041c4ba0f16cb641e36f63e7515a00b2415964a"
+    },
+    {
+      "cohort": "eng.1",
+      "input_group": "eng.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/eng.1/merged-history.json",
+      "sha256": "f82c93036292a280adc55d6a9ad29100008d6c98dfdbe23a706ad52ffe7431d9",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "ac5ef67c624da8913a2e3492b2fbae6b73776bf0f9e5157423c72e718dd72983"
+    },
+    {
+      "cohort": "esp.1",
+      "input_group": "esp.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/esp.1/merged-history.json",
+      "sha256": "22af4d34b7997614821976be36767a9476711fd2cd0160dcb58e1ae7ce0a35ee",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "3d4da662d2b671c368860f7786ce7d2b22ddab4f60efc1b61470230ce57234ec"
+    },
+    {
+      "cohort": "fra.1",
+      "input_group": "fra.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/fra.1/merged-history.json",
+      "sha256": "bb5d9b19d54e55d972d9beb2418348ea669c57f797550090110a32679978fc1a",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "403b79855abfe75a6fc05dfe0e4ddaf52f2204e933daadae6335df2ba9b816b8"
+    },
+    {
+      "cohort": "ger.1",
+      "input_group": "ger.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/ger.1/merged-history.json",
+      "sha256": "65ee2f6105c7c570e40a27d3864bb5ad18786d735f0b97a7a0e2ceae8f5e060b",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "d8e4e8edeb3b1be5bb3567496c5ff3f90de31de8bdf2e5ec00e68c38990c7691"
+    },
+    {
+      "cohort": "ita.1",
+      "input_group": "ita.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/ita.1/merged-history.json",
+      "sha256": "bca0ea63e74dd9a7739a4803542a59b0989d556f039fed736eedde965c21939a",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "ca69b767362958577e22a4157c23613cb9b6e12604ffb20fcaa2b624413e6dbd"
+    },
+    {
+      "cohort": "jpn.1",
+      "input_group": "jpn.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/jpn.1/merged-history.json",
+      "sha256": "3e534008ae112670d3e82f50ad5b2f09cfd532dd0745c5f7c7697714fe515c05",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "995f8686ff6348e5f0c6b40a8838a714c4118036968285d01e188e6db29f4ab2"
+    },
+    {
+      "cohort": "kor.1",
+      "input_group": "kor.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/kor.1/merged-history.json",
+      "sha256": "23f850602487e1d8f6048015d9df51e909a090dcbebf5efcd7785cdafbd51c80",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "f2c9a03bf4ddaa7bcb4eabaf2cb94434f9694e18d26dd6721af602e65aa9dd62"
+    },
+    {
+      "cohort": "ned.1",
+      "input_group": "ned.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/ned.1/merged-history.json",
+      "sha256": "515fad53a4084b561a4b39126dd1e66d4167e96a780305701b2738508f1c2889",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "1440e0242882cecc14d4486f88220270ae05d8bdbf00361384432f026e2d3738"
+    },
+    {
+      "cohort": "nor.1",
+      "input_group": "nor.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/nor.1/merged-history.json",
+      "sha256": "9e477dfbb6072564124e388664221899c0eceaad4c9c12097d730db1a3e0b031",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "7c980a4cf9f4a2c8f47f44eb761f5aa9b75e1933872406416c41e3840ce8ffd3"
+    },
+    {
+      "cohort": "swe.1",
+      "input_group": "swe.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/swe.1/merged-history.json",
+      "sha256": "518b8a2a4b4160c0724ef55c10ae4b13376f11aeb33cd456a386dee4926d78ac",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "ecaf574c2e639139a404ec1f30432c8b27576b310a285843455f2e264832dc27"
+    },
+    {
+      "cohort": "uefa.champions:NEW_FORMAT:league_phase",
+      "input_group": "uefa.champions:NEW_FORMAT:league_phase",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/uefa.champions:NEW_FORMAT:league_phase/merged-history.json",
+      "sha256": "22e315e3a3dbda4d9a24c48219c866a71e768d8e38532ed793f664b414861578",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759"
+    },
+    {
+      "cohort": "usa.1",
+      "input_group": "usa.1",
+      "path": "/workspace/WCPP/research/all-scope-20261104/numerical-inputs/usa.1/merged-history.json",
+      "sha256": "f9a5d0645e4bd9c26848df27c95c53ce1533694b8de1daf71c900d32370da3d9",
+      "reference_kind": "weighted_baseline",
+      "reference_label": "CURRENT_RECIPE_RECONSTRUCTED",
+      "current_artifact_sha256": "ff328c4edd392a31eb414ec0ba188290e56524506dd80cdd011e61da3b9188e7"
+    }
+  ],
+  "created_at": "2026-11-04T07:10:01.843265+00:00",
+  "dynamic_config": {
+    "learning_rate": 0.025,
+    "shrink_days": 365.0,
+    "season_retention": 0.5,
+    "max_log_strength": 1.5,
+    "minimum_rows": 120,
+    "max_goals": 80
+  },
+  "source_files_sha256": {
+    "runtime/research_program/walk_forward.py": "313565d1bd4c8f34ebf53f0073ad5d861bab4f62903d05db8d3842bd8573a3a8",
+    "runtime/research_program/challengers.py": "0153bc9d7e56382a53e0cc4079cafe2ea440b669ce31c178d22f5746d126b3f6",
+    "runtime/v4/main_model.py": "6a8f9b36c4cbb27240e9a2e3c067c9dc36d009e990f556910d35f8357fafcb2f",
+    "runtime/v2/model.py": "d11e5296500df41a149ae16eecb8a12f4c88bb613d05f35764cec62f613c7a9a",
+    "runtime/v2_test/evaluation.py": "9bd523d73be97c84703d07909c4029c302c367dbdd5c6d7f75b383c7ead08306"
+  },
+  "registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013"
+}
