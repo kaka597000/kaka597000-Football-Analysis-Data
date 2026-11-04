@@ -29,6 +29,17 @@ jobs:
           path: private-state
           # A queued dispatch carries an older event SHA; load latest serialized state.
           ref: main
+          # Runtime state only; large recovery archives stay in Git, not in runner checkout.
+          # Cone mode keeps root JSON/JSONL files automatically.
+          sparse-checkout: |
+            .github
+            config
+            runtime
+            seed
+            candidates
+            raw
+            runs
+            kor1
       - name: Read pinned public code
         uses: actions/checkout@v4
         with:
