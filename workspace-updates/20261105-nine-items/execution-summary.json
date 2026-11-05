@@ -1,0 +1,100 @@
+{
+  "date_beijing": "2026-11-05",
+  "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/20",
+  "source_merge_commit": "7e518a708457721ffbb53723fe931f31b6390863",
+  "active_registry_modified": false,
+  "automatic_promotion": false,
+  "items": [
+    {
+      "id": 1,
+      "name": "活动模型数据鲜度",
+      "status": "RESEARCH_EXECUTED_NOT_PROMOTED",
+      "evidence": "欧冠306→360条；原Current/Test配方重拟合；54场重建诊断Primary净增均为0。",
+      "path": "freshness/run-final-002"
+    },
+    {
+      "id": 2,
+      "name": "18赛事训练与验收",
+      "status": "PARTIAL_BLOCKED",
+      "evidence": "已按正式18项范围审计；不能把17项无人值守配置等同18项训练通过。世界杯新赛制历史不足，不混入旧赛制。",
+      "path": "data/competition-coverage-audit-v2.json"
+    },
+    {
+      "id": 3,
+      "name": "芬超历史证据",
+      "status": "BLOCKED_QUALIFICATION",
+      "evidence": "177条已取得；阶段及场地身份未认证，严格可训练数0。",
+      "path": "data/competition-coverage-audit-v2.json"
+    },
+    {
+      "id": 4,
+      "name": "韩职远端数据源",
+      "status": "FALLBACK_DEPLOYED_AUTH_UNRESOLVED",
+      "evidence": "新增FotMob男足KLeague1身份核验及候选隔离；228条候选不能充作合格训练集；保留认证失败。",
+      "path": "data/provider-scope-audit.json"
+    },
+    {
+      "id": 5,
+      "name": "历史盘口增量训练",
+      "status": "AUDITED_NOT_TRAINED",
+      "evidence": "599条总进球报价来自48场；原始响应核对并追加修正60条市场更新时间；结算范围及样本门槛未通过。",
+      "path": "data/retained-599-market-time-v2.json"
+    },
+    {
+      "id": 6,
+      "name": "人员与xG证据",
+      "status": "PARTIAL_EVIDENCE",
+      "evidence": "9场欧冠近期xG为81/90球队比赛记录；平台缺阵状态不等于官方医疗确认，不虚设人员影响系数。",
+      "path": "../next-stage-20261104"
+    },
+    {
+      "id": 7,
+      "name": "未来真实样本验证",
+      "status": "WAITING_REAL_OUTCOMES",
+      "evidence": "国内80场已全部赛前配对冻结，远端真实新增1场，缺失0；欧冠36场四路共144矩阵已冻结；两组已结算均为0。欧冠30场最低样本不能早于北京时间12月10日（受延期影响）。",
+      "path": "prospective"
+    },
+    {
+      "id": 8,
+      "name": "持续采集冻结复盘",
+      "status": "REMOTE_COLLECT_AND_TRAIN_VERIFIED",
+      "evidence": "真实GitHub采集41976436209、训练41976443099均成功并持久化；国内80/80、欧冠36/36配对。训练17项：1项新增候选、15项输入不变跳过、1项样本不足阻断；合格赛果7813条。未改活动模型。 采集78次请求76次成功，28条隔离，coverage_complete=false，任务成功不等于数据补齐。",
+      "path": "automation"
+    },
+    {
+      "id": 9,
+      "name": "综合选分对照",
+      "status": "REVIEW_EXECUTED_NOT_VALIDATED",
+      "evidence": "真实10场综合第一比分2/10；同场9场较Current/Test各净增1；小样本不能证明新方法有效。",
+      "path": "/workspace/WCPP/reports/review-europe-20261105/paired-review.json"
+    }
+  ],
+  "remote_collect_run": 41976436209,
+  "remote_train_run": 41976443099,
+  "private_state_commit": "e88e52b6c5622c8bb02a731cf791b4fcf19b1b33",
+  "remote_training": {
+    "scope_count": 17,
+    "accepted_rows": 7813,
+    "statuses": {
+      "SKIPPED_UNCHANGED": 15,
+      "BLOCKED_INSUFFICIENT_ROWS": 1,
+      "TRAINED_CANDIDATE": 1
+    }
+  },
+  "remote_collection": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-11-05T05:49:51.587255+00:00",
+    "request_count": 78,
+    "successful_requests": 76,
+    "max_requests": 100,
+    "retry_used": true,
+    "events_seen": 65,
+    "new_result_observations": 0,
+    "quarantined": 28,
+    "market_snapshot_saved": false,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 90,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false
+  }
+}
