@@ -11,13 +11,15 @@ import gzip
 import hashlib
 import json
 import os
+import re
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
-ALLOWED_HOSTS = {"api.5dollarfootballapi.com", "v3.football.api-sports.io"}
+ALLOWED_HOSTS = {"api.5dollarfootballapi.com", "v3.football.api-sports.io", "www.fotmob.com"}
 CONFIG_NAME = "kor1-sources.json"
 
 
@@ -44,6 +46,10 @@ def load_config(state_dir):
         host = urlsplit(item["base_url"]).hostname
         if host not in ALLOWED_HOSTS or urlsplit(item["base_url"]).scheme != "https":
             raise ValueError("unsupported provider host")
+    public=config.get('public_fallback')
+    if public and (public.get('provider')!='fotmob' or public.get('competition_id')!=9080
+                   or public.get('country')!='KOR' or public.get('gender')!='male'):
+        raise ValueError('public fallback must be verified FotMob K League 1 identity')
     return config
 
 
@@ -254,7 +260,7 @@ def _store_raw(root, raw, secrets):
     return f"kor1/raw/{path.name}"
 
 
-def live_fetch(url, headers, timeout=15):
+def live_fetch(url, headers, timeout=8):
     parts = urlsplit(url)
     if parts.scheme != "https" or parts.hostname not in ALLOWED_HOSTS:
         raise ValueError("unsupported provider url")
@@ -280,9 +286,10 @@ class Budget:
     def __init__(self, limit):
         self.limit = limit
         self.used = 0
+        self.deadline = time.monotonic()+55
 
     def allow(self):
-        if self.used >= self.limit:
+        if self.used >= self.limit or time.monotonic()>self.deadline-8:
             return False
         self.used += 1
         return True
@@ -487,6 +494,40 @@ def collect_fallback(config, fetcher, budget, sink, secrets, now, captured_at):
     }
 
 
+def collect_public(config, fetcher, budget, sink, secrets, now, captured_at):
+    """Public candidate fallback; never guesses K League phase or neutral venue."""
+    info=config['public_fallback']
+    url='https://www.fotmob.com/api/data/leagues?'+urlencode({'id':info['competition_id'],'ccode3':'KOR','season':now.year})
+    response,error=_get(fetcher,budget,url,{},sink,list(secrets.values()))
+    calls=[response or {'url':url,'ok':False,'error':error}]
+    if not response or not response['ok']:return _failed('fotmob','public fallback unavailable',calls)
+    body=response['body'];details=body.get('details',{})
+    if (details.get('id')!=9080 or details.get('country')!='KOR' or details.get('gender')!='male'
+            or not is_k_league_1(details.get('name')) or str(details.get('selectedSeason'))!=str(now.year)):
+        return _failed('fotmob','public competition identity mismatch',calls)
+    rows=[]
+    for item in body.get('fixtures',{}).get('allMatches',[]):
+        status=item.get('status')or{};home=item.get('home')or{};away=item.get('away')or{}
+        mid=str(item.get('id',''));hid=str(home.get('id',''));aid=str(away.get('id',''))
+        if not all(v.isdigit() for v in (mid,hid,aid)) or hid==aid:continue
+        kickoff=status.get('utcTime')
+        try:
+            parsed=datetime.fromisoformat(kickoff.replace('Z','+00:00'))
+            if parsed.tzinfo is None:continue
+        except (TypeError,AttributeError,ValueError):continue
+        code=(status.get('reason')or{}).get('short');goals=None
+        score=re.fullmatch(r'(\d+)\s*-\s*(\d+)',str(status.get('scoreStr','')))
+        if code=='FT' and status.get('finished')is True and score:
+            h,a=map(int,score.groups())
+            if max(h,a)<=30:goals={'home':h,'away':a}
+        row=_row('fotmob',9080,'fotmob:'+mid,kickoff,code,goals,'fotmob:'+hid,'fotmob:'+aid,home.get('name'),away.get('name'),None,None,None,captured_at,url)
+        row.update(stage='UNKNOWN',source_round=item.get('roundName',item.get('round')),
+                   neutral=None,phase_verified=False,coverage_status='CANDIDATE_ONLY_UNVERIFIED_PHASE_VENUE')
+        rows.append(row)
+    if not rows:return _failed('fotmob','no usable identified fixtures',calls)
+    return {'ok':True,'provider':'fotmob','competition_id':9080,'rows':rows,'standings':None,'cursor':None,'calls':calls,'reason':'authenticated sources unavailable; public candidates only'}
+
+
 def _failed(provider, reason, calls):
     return {"ok": False, "provider": provider, "rows": [], "standings": None, "cursor": None,
             "calls": calls, "reason": reason, "competition_id": None}
@@ -531,6 +572,11 @@ def collect(state_dir, env, fetcher, now=None):
                 result["reason"] = f"{primary_reason}; {result['reason']}"
         elif not secrets["primary"]:
             result = _failed("api-football", "credential missing", result["calls"])
+    authentication_failure = None
+    if not result['ok'] and config.get('public_fallback'):
+        authentication_failure=result['reason'];prior_calls=list(result['calls'])
+        result=collect_public(config,fetcher,budget,root,secrets,now,captured_at)
+        result['calls']=prior_calls+result['calls'];used_fallback=True
     secret_values = [value for value in secrets.values() if value]
     result["rows"] = [_scrub_value(row, secret_values) for row in result["rows"]]
     if result["standings"] is not None:
@@ -551,6 +597,9 @@ def collect(state_dir, env, fetcher, now=None):
     summary = {
         "cohort": "kor.1", "espn": False, "ok": bool(result["ok"]), "provider": result["provider"],
         "used_fallback": used_fallback, "reason": result["reason"], "requests": budget.used,
+        "authenticated_source_failure": authentication_failure,
+        "coverage_status": "CANDIDATE_ONLY_UNVERIFIED_PHASE_VENUE" if result['provider']=='fotmob' and result['ok'] else "PROVIDER_OBSERVATIONS_NOT_TRAINING",
+        "credential_issue_resolved": False if authentication_failure else None,
         "provider_competition_id":result.get("competition_id"),
         "fixtures_seen": len(result["rows"]), "fixtures_added": len(added),
         "standings_saved": result["standings"] is not None, "known_at": captured_at,
@@ -589,7 +638,8 @@ def main(argv=None):
     summary = collect(args.state_dir, os.environ, live_fetch)
     print(json.dumps({key: summary[key] for key in (
         "cohort", "espn", "ok", "provider", "used_fallback", "reason", "requests",
-        "fixtures_seen", "fixtures_added", "standings_saved")}, sort_keys=True))
+        "fixtures_seen", "fixtures_added", "standings_saved", "coverage_status",
+        "credential_issue_resolved", "authenticated_source_failure", "training_eligible")}, sort_keys=True))
     return 0 if summary["ok"] else 2
 
 

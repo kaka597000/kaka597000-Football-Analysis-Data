@@ -1,0 +1,1333 @@
+{
+  "schema": "WCPP-PORTABLE-UCL-REVIEW-BUNDLE-1",
+  "protocol": {
+    "schema": "WCPP-UCL-REFRESH-FORWARD-1",
+    "locked_at": "2026-11-05T00:51:19.788163+00:00",
+    "cohort": "uefa.champions:NEW_FORMAT:league_phase",
+    "stage": "NEW_FORMAT:league_phase",
+    "active_registry": "/workspace/recovered-workspace-20261102/WCPP/runtime/active-model.json",
+    "inactive_registry": "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/prospective/ucl-refresh-protocol-inactive-registry.json",
+    "fixed_refresh_id": "UCL-FIXED-REFRESH-20261105",
+    "files_sha256": {
+      "/workspace/recovered-workspace-20261102/WCPP/runtime/active-model.json": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+      "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/freshness/run-final-002/current-candidate.json": "07079b847869db39ad42eafc2bd127200b672aadcb9b18d1ed347b68dea55999",
+      "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/freshness/run-final-002/test-candidate.json": "8e6b8816ae714f36f666e08e95c18d4864159e3d940dad59735e95be5530c0fa",
+      "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/current-artifact.json": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759",
+      "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-artifact.json": "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e",
+      "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/prospective/ucl-refresh-protocol-inactive-registry.json": "046fcf96f5825b60793f5507752e0f12d48097edc5d6ae3b16f15f855d96dc9f",
+      "/workspace/Football-Analysis/runtime/research_program/ucl_refresh_forward.py": "6eb57fd40bb63b4d66734172858c7a29730123790d381fe093c439a4d19bae67",
+      "/workspace/Football-Analysis/runtime/prediction_engine.py": "aaa0bbb815293a41897abb2a715463f55095944b806e028af97d2e16769b5b31",
+      "/workspace/Football-Analysis/runtime/prediction_service.py": "2fd8481572da94b6b3081ee2e2c5d18384d6a64e1b2079b36890b0d767e4c1a5",
+      "/workspace/Football-Analysis/runtime/continental/ucl_ml.py": "1dcd9aa84070c9e1b0ff11262edd5f94112404d341cad09eaf67cc2139a17a3d",
+      "/workspace/Football-Analysis/runtime/research/ucl_fixed_refresh.py": "5b52dab928edb243c6d588ca7104f20f948ad7a23a1b033a8d7f0ce2171743ab"
+    },
+    "minimum_completed_per_comparison": 30,
+    "alpha": 0.05,
+    "quality_tolerances": "NO_REGRESSION",
+    "comparisons": [
+      "active_current_vs_refreshed_current",
+      "active_test_vs_refreshed_test"
+    ],
+    "population_rule": "ENTIRE_PREREGISTERED_UNSTARTED_UNLABELED_BATCH; FIRST_PAIRS; ALL_MISSING_RETAINED",
+    "primary_rule": "INDEPENDENT_STATISTICAL_PRIMARY_NOT_COMPREHENSIVE",
+    "automatic_promotion": false,
+    "active_assets_modified": false,
+    "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828"
+  },
+  "plan": {
+    "freeze_id": "b5fba7d142ef45e5-v000001",
+    "recorded_at": "2026-11-05T13:30:55.116939+08:00",
+    "path": "/workspace/WCPP/forecasts/issued-analyses/b5fba7d142ef45e5f53fa2d5b55b686d21d377ea6f25108966d24203d0a23106/000001.json",
+    "sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+    "evaluation_slot": "SEPARATE_REVISION_OR_STAGE"
+  },
+  "packages": [
+    {
+      "match_id": "espn:401915300",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "293d176ca96dc99f-v000001",
+        "recorded_at": "2026-11-05T13:30:57.381738+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/293d176ca96dc99f76369784b6cd02b089d2b73920250b7d00d264ffb4d733df/000001.json",
+        "sha256": "8fadca0c8e28cde470b69ced45ce5467df69f785cc289682ec677c5819d29dae",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "9a3b4fb95d7d7a94-v000001",
+        "recorded_at": "2026-11-05T13:30:57.390839+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/9a3b4fb95d7d7a94b1a6e08adac7225e8aa5274b413fdd527b3a886d27fffc0c/000001.json",
+        "sha256": "3194b612fc0292366ddb9ce4c5c4c1aba0e708ae0cb6751f93efee25791aa0c9",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915380",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "c1dde09d1a9e3206-v000001",
+        "recorded_at": "2026-11-05T13:30:59.382229+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/c1dde09d1a9e3206d5abd941ea3c67040a9dee441a01ebfccd8b69afcaf47429/000001.json",
+        "sha256": "0e1b057b3a2be83fdf351dc13671fa739dd49baddc3d3e1326796236f67d84df",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "87abf324fce047af-v000001",
+        "recorded_at": "2026-11-05T13:30:59.391034+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/87abf324fce047af6adee44d477418dae207948f6dbcabb0b9931c0d5556f2ae/000001.json",
+        "sha256": "6b9ca2dbde5b685be3ee280d0785cbe59623c99fc5d388f30fa6c924f24147cf",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915294",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "3c3be7928335d7e2-v000001",
+        "recorded_at": "2026-11-05T13:31:01.347916+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/3c3be7928335d7e2f71ee799703f1f14375ff71f2e4ab219ab1b2412d60aa5ca/000001.json",
+        "sha256": "f275b6a7dec01ec2a1b83fcb098a74da9f2b2264341dcd224a12339a77d71fde",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "ddcecf4233e30c3e-v000001",
+        "recorded_at": "2026-11-05T13:31:01.356661+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/ddcecf4233e30c3e8c84edf2d6faed34902f702946668f215ea65a090d232b56/000001.json",
+        "sha256": "c1bd5c73639aef0296ee93651b15290bfdbefbefa84f079f477b06949bb86c10",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915295",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "da6d6e0c760bac32-v000001",
+        "recorded_at": "2026-11-05T13:31:03.366861+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/da6d6e0c760bac3265761cfda57fad884f660971508372fffeabb1f4fcad83e5/000001.json",
+        "sha256": "49cdf3b1793a6d3803efbfb7499f1a24b9c00825c2dce706c33c3d075ce766b6",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "96b700e93eec7c9a-v000001",
+        "recorded_at": "2026-11-05T13:31:03.375469+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/96b700e93eec7c9a546559ff2bf41fb6ea001faacaa98b0103e98318a76f4b22/000001.json",
+        "sha256": "3937a1dcb0134ec9a5add532477f6fed77a986c75483ef2ff1be03a0bbc344af",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915296",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "057f99c0298fbd4f-v000001",
+        "recorded_at": "2026-11-05T13:31:05.356332+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/057f99c0298fbd4f03f4e50089ca03fb4729948697db776b2a58a0b16771e55b/000001.json",
+        "sha256": "5c94e317fbe79f48e88f257f62dd300dd02f3bb872f1eb09da4db4b4b25cabba",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "92371820c70d098a-v000001",
+        "recorded_at": "2026-11-05T13:31:05.365294+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/92371820c70d098aeb7895caca9f5ad06ee70d4ec6c9f6c0209873ec0dfb69b2/000001.json",
+        "sha256": "c8998e5db66f894014ee03fea9029ee6b8b46652e1fe154df4e04dabcecf00bf",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915297",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "86aa47df39ad88d0-v000001",
+        "recorded_at": "2026-11-05T13:31:07.432113+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/86aa47df39ad88d0d385bc22e8d7a6a02ae6b9458afde9fc8ba318c120fbff25/000001.json",
+        "sha256": "f5e5b81a6972cdc415578a0c5efa15903c37a81dd36c3fa0febe824a916e331e",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "fe164937f77d0d27-v000001",
+        "recorded_at": "2026-11-05T13:31:07.441426+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/fe164937f77d0d277dd4c9a5487b735c308148baf5a35a9ea8a8e0feb15fee50/000001.json",
+        "sha256": "a4b0679c56e78fe398a5ebbb61fe53596983234a16227981bea1197ddeee045c",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915298",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "a8b2f8d6da0a5c84-v000001",
+        "recorded_at": "2026-11-05T13:31:09.473987+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/a8b2f8d6da0a5c8402ff29561c5b0eef7a649d22499acc9cf044b3c314eaf128/000001.json",
+        "sha256": "9b4c0d94c49612664cea28c78d068bb7b553e6a5eaf693d7d08addc8f2836627",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "ac80d73ac15e5416-v000001",
+        "recorded_at": "2026-11-05T13:31:09.482704+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/ac80d73ac15e54168b855c1639c76c5266bab318b16eabb6216fedbb03224db1/000001.json",
+        "sha256": "7172a0ff071c2f2663ba244fdedec7238bfc3c184aaa805f904253ac41165894",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915299",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "5587d54be570f25f-v000001",
+        "recorded_at": "2026-11-05T13:31:11.573224+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/5587d54be570f25f24809949155aa642d2d2b8b680daf932951a6d0057d32b4c/000001.json",
+        "sha256": "af515e75027f2e484b1672ed7ee53714755839022048eed629e39d265361769a",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "a9e2bf7c1500f6a5-v000001",
+        "recorded_at": "2026-11-05T13:31:11.582143+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/a9e2bf7c1500f6a5f4e55b1ed4932abf050da17d8a3f31368a8d66b5cc1ef798/000001.json",
+        "sha256": "41b0082b8e08a7e86be9094d0af556700ac2e33c571a47c9fac7bf0c3f0c85ab",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915379",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "d2f2b7dd54b4b188-v000001",
+        "recorded_at": "2026-11-05T13:31:13.597161+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/d2f2b7dd54b4b1880d7cec739c8814f5cc09cf507eda9a0349df73bf7ac51822/000001.json",
+        "sha256": "ca934324e62081e06a1678d3995078d4490cb1ce4295731bb2100170cdd3b1c9",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "aed466a5ec91d916-v000001",
+        "recorded_at": "2026-11-05T13:31:13.605774+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/aed466a5ec91d9166729458e73dbf03a2aa0e704dd53bf4cdaf74b2a7ce1cbbf/000001.json",
+        "sha256": "09fefaf308435c3537dc70d2c94537fea8ae824b125679ff7df18114913c7077",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915293",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "ada9521e0070e50c-v000001",
+        "recorded_at": "2026-11-05T13:31:15.666544+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/ada9521e0070e50cbbb4680b05d5fbe90e7781d8121e9a5e162c13e07a27cb99/000001.json",
+        "sha256": "7a7e4347fb3a5b9a32da4b14d935ade2f1c885085c154891004ebee2497d9ab3",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "973b0fce7c2ba5c3-v000001",
+        "recorded_at": "2026-11-05T13:31:15.674926+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/973b0fce7c2ba5c3c1ed6dd39db7c1cecc85e5f5bc7729fa34b22f5227efd2f1/000001.json",
+        "sha256": "ac7be87be2067522ff6f84405822ecbb1efaa89d6df885d87b616ea760197235",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915378",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "02f6b5723d37f268-v000001",
+        "recorded_at": "2026-11-05T13:31:17.701643+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/02f6b5723d37f268f451bcb58457bb70aa630595919abe3c7753ea8b834ea355/000001.json",
+        "sha256": "228192b237343bb7308a04e7361d64c5e31090ca7a0ddbe2482bdde281732779",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "6e3b369716e32e1e-v000001",
+        "recorded_at": "2026-11-05T13:31:17.709899+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/6e3b369716e32e1e2a447841cd313a69df44fdc6ea79b9eadd031902824684aa/000001.json",
+        "sha256": "37e6e4c940cdcba8a9d01cd524a6868c20acfafe2d57d65aeca1a1df1ccc192b",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915291",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "e428af0253244221-v000001",
+        "recorded_at": "2026-11-05T13:31:19.888694+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/e428af0253244221e3f7a036f83c25983e72beb58aeef3efc3d0b4fe3940af1e/000001.json",
+        "sha256": "4c067680ad62c4536199a222929a068935d61edc218a0ba15dae884d25b27456",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "4e1a0051f8740dda-v000001",
+        "recorded_at": "2026-11-05T13:31:19.897319+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/4e1a0051f8740dda10b01d05bb316da07e3b57dc32f6ef11dfdf4e28773a4110/000001.json",
+        "sha256": "00c5ca031022f783ad81ba1a1d098fe180b185c46cb2d91d0955e6ea474b6470",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915292",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "40c00a017407c43e-v000001",
+        "recorded_at": "2026-11-05T13:31:22.024136+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/40c00a017407c43e78b25b2b24e07a55c70d85822c604de7194678497108ee98/000001.json",
+        "sha256": "92e3624e28788933beec0e220f621b0a7e9ca83245b232202b1da8f812e3ade8",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "1ea85b9cbd435108-v000001",
+        "recorded_at": "2026-11-05T13:31:22.033024+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/1ea85b9cbd435108fa0a952d2f47feaafed4e6c23839f1cf54a56e1cbef757d0/000001.json",
+        "sha256": "b3e58083e0e685e59747e53a27ed0f8117895e439bc9ecd01a5b3db269dcfff0",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915373",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "74bae8db79daadc7-v000001",
+        "recorded_at": "2026-11-05T13:31:24.097728+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/74bae8db79daadc7fc6efe37df87739386df823033a3c612fa9672ffdbe639fa/000001.json",
+        "sha256": "a2443f3869c887ea63e759d6c5f21ce609575a2ecd9d69a88e9c12ce0cc631b8",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "b8e502e7bb4cd544-v000001",
+        "recorded_at": "2026-11-05T13:31:24.106181+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/b8e502e7bb4cd544dd20393d015d5b5f552a3f1b4b45a28a949d67862058b3d7/000001.json",
+        "sha256": "0337b56bb5751116ce74c0bdb1c281922c5effe644931f9bacf535bf1d88d6c3",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915374",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "939a35d522fe27c4-v000001",
+        "recorded_at": "2026-11-05T13:31:26.234955+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/939a35d522fe27c45d8190a544c48b292ae33f2758b5bbd9219ae277a761d497/000001.json",
+        "sha256": "5d34a0e3b11c0f7922887c749949631272d6fd42aeadd0b565acafe8127c0a7e",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "ac22b7ba5b365bff-v000001",
+        "recorded_at": "2026-11-05T13:31:26.243602+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/ac22b7ba5b365bff8408380091ef9976dc1fa576c3a3df5193bacab53ec578bb/000001.json",
+        "sha256": "c53555cf6775f184c985b24d3d662a9d47734d03b3cb0664d68e1f549afd001e",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915375",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "9510a71ba974cde5-v000001",
+        "recorded_at": "2026-11-05T13:31:28.335730+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/9510a71ba974cde5c244963492fc6e80d965c315e33e0ef2a5dc4a7d141bdbb4/000001.json",
+        "sha256": "947bc965133400a8eff4896a3feaf8ede3b38e4c453df767d442f24a3a983cc5",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "7d3a2ab96ebe0d31-v000001",
+        "recorded_at": "2026-11-05T13:31:28.344250+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/7d3a2ab96ebe0d318eef6935cc197e2014dc43f331f1be94aa39f6df98c4fe8c/000001.json",
+        "sha256": "fbc28efd090d37ffc095a85d35852fe655348442637a942abe84b393fbd6b2e3",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915376",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "bd3f362f877343f3-v000001",
+        "recorded_at": "2026-11-05T13:31:30.541329+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/bd3f362f877343f30042cd4a39a6f156679f371104ff13c23300976eea7e20b2/000001.json",
+        "sha256": "8b69cfbd16713a98f0cd1ee4a23f0cdfca8a88c6464e404d3e79a748a75feeb9",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "f594e49cd3bc5a5a-v000001",
+        "recorded_at": "2026-11-05T13:31:30.550609+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/f594e49cd3bc5a5a31013fe1dd7698324a6cb8f46238f52ac2950a553b9f6817/000001.json",
+        "sha256": "dad9046702b3152c939a93c68f16baf07bc23a62cdedd8e5fb91d66f4c172425",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915377",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "66b9e555d9da6fc9-v000001",
+        "recorded_at": "2026-11-05T13:31:32.720528+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/66b9e555d9da6fc938fe291171e8e8818d840905b0f53b54e1dd4efc998776dc/000001.json",
+        "sha256": "eed683ee5aedc08eb9f3f22b2b84a26d7add09b6a89e136e52ae0174a17087c2",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "fdae13d38f382a59-v000001",
+        "recorded_at": "2026-11-05T13:31:32.729227+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/fdae13d38f382a592293f4c08e4f3f4d081a578610db0c27fcf136ab685f97ff/000001.json",
+        "sha256": "d0e3d45218b8ed5d29208f8f1b20a21f509de79e2160e376157cbe298b50b747",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915290",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "3a7b3be0cc3fb91c-v000001",
+        "recorded_at": "2026-11-05T13:31:34.994071+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/3a7b3be0cc3fb91c697bc7fda80633fb2467672ec4ed5931ee2d03b85edbc055/000001.json",
+        "sha256": "d7e6c00dc721fd6d4e12d1099b5497df5de538516b13eadeebefa1504c57625a",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "363fb983de919b95-v000001",
+        "recorded_at": "2026-11-05T13:31:35.003049+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/363fb983de919b95d8ce6dea7bb0791e3310f4ee5acaf0c933c38787ed6de1b6/000001.json",
+        "sha256": "f28549e54ec5570d93f5a84b2867c46c6a75280d2394acd6b7b9079d02b45f90",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915372",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "9d45e1433fd3b48c-v000001",
+        "recorded_at": "2026-11-05T13:31:37.133829+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/9d45e1433fd3b48cd9be1a27e80901f127285aaba6c0b57e130de9baac8c0379/000001.json",
+        "sha256": "33117624fba4212fa987a610f111181cbbddd74c4b5de4484c7cd944907b79cd",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "420bf8f029dd1e1d-v000001",
+        "recorded_at": "2026-11-05T13:31:37.142354+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/420bf8f029dd1e1deef5ecf5e6dbba6dc484ad46678c84a7b37ccec8469f85f8/000001.json",
+        "sha256": "dd6064d13a418b66e98b2296d7d4adc349b4ebb35a0dfaa416ad4ed08b643c8c",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915284",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "ae6d6ff8c4677d49-v000001",
+        "recorded_at": "2026-11-05T13:31:39.321853+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/ae6d6ff8c4677d4946a8bb7f3e6934a8a986bf33d798f2d9950c0c51eee30a46/000001.json",
+        "sha256": "06fcc33630a1be789b3e73d6728b43bb7e55bacdd20c9f42b11658e225826ff0",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "92db9062fc94c21d-v000001",
+        "recorded_at": "2026-11-05T13:31:39.330448+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/92db9062fc94c21d1886c3da3f651310ef6b97c52bc17382e8a04c096d712c1e/000001.json",
+        "sha256": "8487a8c5e1722a3b32dbba4ff80c3f709c3c3d5a22497dfb6905c3dc170de560",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915285",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "f2f86eb9f413c4c5-v000001",
+        "recorded_at": "2026-11-05T13:31:41.509756+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/f2f86eb9f413c4c5b4969a97bfd2bbd34597e566f871b1835fafa4173155fa96/000001.json",
+        "sha256": "e3483902bbd51b49e719be275f29cdf30d1cdfc1815b18fe24bfe92dc421987e",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "1002d4a83e0d9e37-v000001",
+        "recorded_at": "2026-11-05T13:31:41.518090+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/1002d4a83e0d9e37f5839a1094d54e2fb67eae3518b4d52944bb54136d602737/000001.json",
+        "sha256": "df6344f7742088026c3748a1bdb86da05a51c50e60fff29fa54f66a8b9a079e2",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915286",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "dd5b2e0921cdc8cb-v000001",
+        "recorded_at": "2026-11-05T13:31:43.664743+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/dd5b2e0921cdc8cb6b5c33a5909008d1b476c6c3aa2ff0500f8c3a9b777cec05/000001.json",
+        "sha256": "87c277889fa2455ed131c8ad050b62c7045f543baa08e4008cc2010f6fbeee47",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "0e2a6962744f33d6-v000001",
+        "recorded_at": "2026-11-05T13:31:43.673279+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/0e2a6962744f33d649824daedc49f0fd12dc25e80ccc1fb8374869d8a131c8fe/000001.json",
+        "sha256": "8141cc76920f587eb2a66b4b44d82160d3ce2fdb1dc33b1701e7cb74b1751231",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915287",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "e7ad131a25ae6cf8-v000001",
+        "recorded_at": "2026-11-05T13:31:45.916792+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/e7ad131a25ae6cf81feb17105e376ec9ae666734227824ae3a909361508afbfa/000001.json",
+        "sha256": "edc1c7084ab9ab5483577e64e81c0d1b2a4b19e1779af8c5208bd9e0f1baea49",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "fa7cc87f46638e5b-v000001",
+        "recorded_at": "2026-11-05T13:31:45.925944+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/fa7cc87f46638e5b3a0129a817034ec99154aeb488686eca1f7c1d8f9bad8471/000001.json",
+        "sha256": "5666b7153f1a3ff02b3f054142d7f1199163344466310cd1d41f0acd897143b0",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915288",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "fc826833ea8265d1-v000001",
+        "recorded_at": "2026-11-05T13:31:48.188571+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/fc826833ea8265d127b37f0799fb443f4ab6f1c412ca8f839cc3f0cefd89e024/000001.json",
+        "sha256": "29b35e5af9471d3b38c3295246ef7548c664ffee9232fc08422dfc9d96974283",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "1bdb6edf5c4cb2b3-v000001",
+        "recorded_at": "2026-11-05T13:31:48.197591+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/1bdb6edf5c4cb2b372996cc4586d4312cf05f76a2661085c43035c4d44a03717/000001.json",
+        "sha256": "1fa0c345148326033b2bf66aa23f82a271180c97351014e1dbf8fd8aec456393",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915289",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "e0b8f2bdf346c57b-v000001",
+        "recorded_at": "2026-11-05T13:31:50.454438+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/e0b8f2bdf346c57b4f4d774f6d6c5d016700b94bced701272aa0ab9280f00649/000001.json",
+        "sha256": "4c196d53b2d1382df0b22fa0e0654a17efb3e11672aec89915f8b8c2019244de",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "5f99e9189ac8199c-v000001",
+        "recorded_at": "2026-11-05T13:31:50.463600+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/5f99e9189ac8199c5b5026a6e4feb5554f961c71011be62f9cefc98a6a89b389/000001.json",
+        "sha256": "1d958df64d791359c87078d25e79d038ab396a278c127a8f382027cbbb74ef56",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915371",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "e03ce0e268626a56-v000001",
+        "recorded_at": "2026-11-05T13:31:52.659536+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/e03ce0e268626a568d369023f91666b75e71676e26c3b90e7731c1b3bb928b26/000001.json",
+        "sha256": "9806d433fea1ac4a8bb6ab1b695053955c69fa038a1d4e166b49b0638c5b2402",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "f880aeeef07dc0a9-v000001",
+        "recorded_at": "2026-11-05T13:31:52.668421+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/f880aeeef07dc0a9362b2749febb24f572cda3e3a461a503cdb62109b7f4d348/000001.json",
+        "sha256": "0692408b31cbd5d6b9918ebeb614f3875a20df45297190999588996b199bf104",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915282",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "e2986af4e9d7b1fc-v000001",
+        "recorded_at": "2026-11-05T13:31:55.013094+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/e2986af4e9d7b1fc8100eccba43e698912cad9c2e1b1fe2d8717bc68ce122f82/000001.json",
+        "sha256": "87edcc78ad19ab39deec26a91336638865a97315d949e281121503c7b5a79fd6",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "cea54b4f4df11249-v000001",
+        "recorded_at": "2026-11-05T13:31:55.021993+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/cea54b4f4df11249ef286a5a778e4d83c48b64c495e9825f18744e8877175e0c/000001.json",
+        "sha256": "e0c67f1ffb784d7c18476403624feb453a1d29ba86b74e5ccf3a11d9f686a229",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915283",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "c12be415af85503e-v000001",
+        "recorded_at": "2026-11-05T13:31:57.334123+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/c12be415af85503e4da7c7f58bf393d4801341e9bc33d263a8fc8982d970a654/000001.json",
+        "sha256": "fcd59f0200067d2e60761d455def320475b36887666cfce141d2bf04aa034697",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "6949c62f28503b2f-v000001",
+        "recorded_at": "2026-11-05T13:31:57.342891+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/6949c62f28503b2f01cb661118468ed68fff5e182a1d2933485c020acfcfa0a5/000001.json",
+        "sha256": "71de7bdd881fdeed17013aa55bf90f9325a5c18896088fc867d8b0fa8c839356",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915281",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "900af38a5e44defa-v000001",
+        "recorded_at": "2026-11-05T13:31:59.580033+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/900af38a5e44defaf2a82cb187de1d710b59810116ba3d8ea58ab49f6f5a07c4/000001.json",
+        "sha256": "9c144dc031d825e967a1ddfd1daa8dfe45000371cc7f01161c6a9e2d9d0de031",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "8d77a2c859c2c246-v000001",
+        "recorded_at": "2026-11-05T13:31:59.588970+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/8d77a2c859c2c2465b90b7d3c09fe6d5e9c79a1662c243f1f0b799c00faf7943/000001.json",
+        "sha256": "4045d9ede32e2ec75ead7e1064439217dec5d0b44df7dd22bd111c7a9846d371",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915365",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "113ff6d0fef40632-v000001",
+        "recorded_at": "2026-11-05T13:32:01.948507+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/113ff6d0fef406329a197b8840b2c2e654a821321c353cf09678d2a2fb6bfe54/000001.json",
+        "sha256": "5954cc6d47832726353e288e4ffeb5f2dc9316cb16106780264f561ae3462cc6",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "9e074d54a4a4de1d-v000001",
+        "recorded_at": "2026-11-05T13:32:01.957325+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/9e074d54a4a4de1d0ce5ba6864fba845b05e259420cb1653cd2a71999922a7f5/000001.json",
+        "sha256": "cefb7f588e865c42d705b2572cbbb37eea5312d853382e0315800afdcc69f48c",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915366",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "7bee05ae74fb7826-v000001",
+        "recorded_at": "2026-11-05T13:32:04.237222+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/7bee05ae74fb7826fa9b988be448327e502484f6f596e50db03d9d2ee4488992/000001.json",
+        "sha256": "9b62f102d83a86bc98929fc43b26de9a361b33bd6b602906add45161dd1ab7ca",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "25642dd0f382475b-v000001",
+        "recorded_at": "2026-11-05T13:32:04.245721+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/25642dd0f382475b923b1e70e73122142dac0751dd1bab95b9e34be1aff318d2/000001.json",
+        "sha256": "70f25d37dc9164952a6c2903085445185ecde12a65ac3285def7208305abe774",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915367",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "d06c803eced5106b-v000001",
+        "recorded_at": "2026-11-05T13:32:06.530697+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/d06c803eced5106b5bfc253c1e8727d6a94e96c5dca5aa118df03ada0279d135/000001.json",
+        "sha256": "a2da724dc6137e9218bcc719b34dc9118b50b1102a54df9b0c1097373a512609",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "451823a4dcea6665-v000001",
+        "recorded_at": "2026-11-05T13:32:06.539376+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/451823a4dcea6665557b5a1ef0944a84aaf9ebd5f5dcc5cefa8f75d8fdf85476/000001.json",
+        "sha256": "002740c8766ffe35c0f9f9373f485ef9c3661e895da79ad0d0202766a2f9acec",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915368",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "bc53370887529687-v000001",
+        "recorded_at": "2026-11-05T13:32:08.794979+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/bc5337088752968731063ee032deab6fff40249b80b9c467c7b85c7dd28f58e7/000001.json",
+        "sha256": "ddb0c84026c13467754df69a3fb2b7bcbcbdadb053e6d04b23837b0d79cf386d",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "5176a22330b332d1-v000001",
+        "recorded_at": "2026-11-05T13:32:08.803295+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/5176a22330b332d1f6e8a73cf709462515181da22d33f2085bfd1546c0ca0658/000001.json",
+        "sha256": "dd66c41e073d26ed9ea630ec09a13e2bd9c5ea6caa3d62983051140b543ebbc2",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915369",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "36bc9123295f7d81-v000001",
+        "recorded_at": "2026-11-05T13:32:11.116581+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/36bc9123295f7d81f3ba8078f9754767028192005702015797362766246b38f9/000001.json",
+        "sha256": "18e84eb5302863fe7d2950998a74d7099bc3a00aac6d4c5ed467adef8e06a33b",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "a639d320fad39b8a-v000001",
+        "recorded_at": "2026-11-05T13:32:11.125496+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/a639d320fad39b8ab9cce0a4c041c57bca7082ba5e4a64e07a035d8d70243e8e/000001.json",
+        "sha256": "db29a200c48afb0c15b1db2717f90aec09c62149edb319d55744355a39b4378d",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    },
+    {
+      "match_id": "espn:401915370",
+      "plan_sha256": "2a12e5f477e48f78776a093e72fdc8b712ec355a9e7e641665873cb97e5afccf",
+      "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+      "baseline": {
+        "freeze_id": "366229acf23bfa8d-v000001",
+        "recorded_at": "2026-11-05T13:32:13.444315+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/366229acf23bfa8d6237532bacb86b0806fbd8355a4d973fa03e62ae0f864023/000001.json",
+        "sha256": "c1e2becff0acfc9fae77c89e66daca2284cdfa82baee1303333420fa7501c927",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "refreshed": {
+        "freeze_id": "edb586795daf876c-v000001",
+        "recorded_at": "2026-11-05T13:32:13.453392+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/edb586795daf876c5cd8b43057b64d7a454679756be2f5f9623db04c782d7d73/000001.json",
+        "sha256": "1fe81285304090b961f5d79c0860de2e69dd1dedbf89a48ae344a8b0dfadec2c",
+        "evaluation_slot": "FIRST_PREMATCH"
+      }
+    }
+  ],
+  "objects": {
+    "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013": {
+      "path": "objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+      "bytes": 10170,
+      "sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013"
+    },
+    "07079b847869db39ad42eafc2bd127200b672aadcb9b18d1ed347b68dea55999": {
+      "path": "objects/07079b847869db39ad42eafc2bd127200b672aadcb9b18d1ed347b68dea55999",
+      "bytes": 3288859,
+      "sha256": "07079b847869db39ad42eafc2bd127200b672aadcb9b18d1ed347b68dea55999"
+    },
+    "8e6b8816ae714f36f666e08e95c18d4864159e3d940dad59735e95be5530c0fa": {
+      "path": "objects/8e6b8816ae714f36f666e08e95c18d4864159e3d940dad59735e95be5530c0fa",
+      "bytes": 1669555,
+      "sha256": "8e6b8816ae714f36f666e08e95c18d4864159e3d940dad59735e95be5530c0fa"
+    },
+    "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759": {
+      "path": "objects/30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759",
+      "bytes": 3174181,
+      "sha256": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759"
+    },
+    "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e": {
+      "path": "objects/82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e",
+      "bytes": 1612519,
+      "sha256": "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e"
+    },
+    "046fcf96f5825b60793f5507752e0f12d48097edc5d6ae3b16f15f855d96dc9f": {
+      "path": "objects/046fcf96f5825b60793f5507752e0f12d48097edc5d6ae3b16f15f855d96dc9f",
+      "bytes": 1646,
+      "sha256": "046fcf96f5825b60793f5507752e0f12d48097edc5d6ae3b16f15f855d96dc9f"
+    },
+    "6eb57fd40bb63b4d66734172858c7a29730123790d381fe093c439a4d19bae67": {
+      "path": "objects/6eb57fd40bb63b4d66734172858c7a29730123790d381fe093c439a4d19bae67",
+      "bytes": 11912,
+      "sha256": "6eb57fd40bb63b4d66734172858c7a29730123790d381fe093c439a4d19bae67"
+    },
+    "aaa0bbb815293a41897abb2a715463f55095944b806e028af97d2e16769b5b31": {
+      "path": "objects/aaa0bbb815293a41897abb2a715463f55095944b806e028af97d2e16769b5b31",
+      "bytes": 6445,
+      "sha256": "aaa0bbb815293a41897abb2a715463f55095944b806e028af97d2e16769b5b31"
+    },
+    "2fd8481572da94b6b3081ee2e2c5d18384d6a64e1b2079b36890b0d767e4c1a5": {
+      "path": "objects/2fd8481572da94b6b3081ee2e2c5d18384d6a64e1b2079b36890b0d767e4c1a5",
+      "bytes": 4167,
+      "sha256": "2fd8481572da94b6b3081ee2e2c5d18384d6a64e1b2079b36890b0d767e4c1a5"
+    },
+    "1dcd9aa84070c9e1b0ff11262edd5f94112404d341cad09eaf67cc2139a17a3d": {
+      "path": "objects/1dcd9aa84070c9e1b0ff11262edd5f94112404d341cad09eaf67cc2139a17a3d",
+      "bytes": 14930,
+      "sha256": "1dcd9aa84070c9e1b0ff11262edd5f94112404d341cad09eaf67cc2139a17a3d"
+    },
+    "5b52dab928edb243c6d588ca7104f20f948ad7a23a1b033a8d7f0ce2171743ab": {
+      "path": "objects/5b52dab928edb243c6d588ca7104f20f948ad7a23a1b033a8d7f0ce2171743ab",
+      "bytes": 13343,
+      "sha256": "5b52dab928edb243c6d588ca7104f20f948ad7a23a1b033a8d7f0ce2171743ab"
+    },
+    "5d85b994327aa62178496e298e06635d1f103b0cfb7d41c552feb038dec58d4f": {
+      "path": "objects/5d85b994327aa62178496e298e06635d1f103b0cfb7d41c552feb038dec58d4f",
+      "bytes": 8599,
+      "sha256": "5d85b994327aa62178496e298e06635d1f103b0cfb7d41c552feb038dec58d4f"
+    },
+    "daa5608f23524c6b57d5b88380f3127dfae83c7563b7ebcb9765b420892c3a27": {
+      "path": "objects/daa5608f23524c6b57d5b88380f3127dfae83c7563b7ebcb9765b420892c3a27",
+      "bytes": 184154,
+      "sha256": "daa5608f23524c6b57d5b88380f3127dfae83c7563b7ebcb9765b420892c3a27"
+    },
+    "79dfa6d1785d3416cbd75a19ef7d71dbaf29a73abcc310faf9ba69e866f0ea1d": {
+      "path": "objects/79dfa6d1785d3416cbd75a19ef7d71dbaf29a73abcc310faf9ba69e866f0ea1d",
+      "bytes": 184129,
+      "sha256": "79dfa6d1785d3416cbd75a19ef7d71dbaf29a73abcc310faf9ba69e866f0ea1d"
+    },
+    "708cb44150cee8c939263c2c70c7b52e0380a8a546c032bf45975163a52e0d74": {
+      "path": "objects/708cb44150cee8c939263c2c70c7b52e0380a8a546c032bf45975163a52e0d74",
+      "bytes": 183936,
+      "sha256": "708cb44150cee8c939263c2c70c7b52e0380a8a546c032bf45975163a52e0d74"
+    },
+    "064f8b1eb810af470cba9dfd2e32300ab0369db450d0b0be1c6e593b09163536": {
+      "path": "objects/064f8b1eb810af470cba9dfd2e32300ab0369db450d0b0be1c6e593b09163536",
+      "bytes": 183958,
+      "sha256": "064f8b1eb810af470cba9dfd2e32300ab0369db450d0b0be1c6e593b09163536"
+    },
+    "85a71f33eb0807778ca22fe91bc9ef8c2deb9d16a8b120304ad8ed1935827b48": {
+      "path": "objects/85a71f33eb0807778ca22fe91bc9ef8c2deb9d16a8b120304ad8ed1935827b48",
+      "bytes": 183774,
+      "sha256": "85a71f33eb0807778ca22fe91bc9ef8c2deb9d16a8b120304ad8ed1935827b48"
+    },
+    "92166651175612604799ae0381161728926cde879c345c86443054098220c879": {
+      "path": "objects/92166651175612604799ae0381161728926cde879c345c86443054098220c879",
+      "bytes": 184090,
+      "sha256": "92166651175612604799ae0381161728926cde879c345c86443054098220c879"
+    },
+    "45c44aba7dccbf55bc2cef3af0cfb583ef541d954898dd393213e9e51712b43b": {
+      "path": "objects/45c44aba7dccbf55bc2cef3af0cfb583ef541d954898dd393213e9e51712b43b",
+      "bytes": 183849,
+      "sha256": "45c44aba7dccbf55bc2cef3af0cfb583ef541d954898dd393213e9e51712b43b"
+    },
+    "4c312721bd02c8a0a4a3789bfc61309b27866fce5053af8a983e9caada5dcb3e": {
+      "path": "objects/4c312721bd02c8a0a4a3789bfc61309b27866fce5053af8a983e9caada5dcb3e",
+      "bytes": 183913,
+      "sha256": "4c312721bd02c8a0a4a3789bfc61309b27866fce5053af8a983e9caada5dcb3e"
+    },
+    "cfcc081c787088b04e284078d96b034f5668f2d6b3679fcb3c4a1645fe78a60e": {
+      "path": "objects/cfcc081c787088b04e284078d96b034f5668f2d6b3679fcb3c4a1645fe78a60e",
+      "bytes": 183791,
+      "sha256": "cfcc081c787088b04e284078d96b034f5668f2d6b3679fcb3c4a1645fe78a60e"
+    },
+    "ff6108af238e177c2032bd4862d2dfe29d06708765ba460eb4bb1303ac310606": {
+      "path": "objects/ff6108af238e177c2032bd4862d2dfe29d06708765ba460eb4bb1303ac310606",
+      "bytes": 183678,
+      "sha256": "ff6108af238e177c2032bd4862d2dfe29d06708765ba460eb4bb1303ac310606"
+    },
+    "9fa0fd4da25aafea00200d6e6ed85d2c7c5f8983014815bb6ba0740e4864b4fb": {
+      "path": "objects/9fa0fd4da25aafea00200d6e6ed85d2c7c5f8983014815bb6ba0740e4864b4fb",
+      "bytes": 183907,
+      "sha256": "9fa0fd4da25aafea00200d6e6ed85d2c7c5f8983014815bb6ba0740e4864b4fb"
+    },
+    "e04c9c9ae44ed56f9f5447ca681632098d140069bfdd94d63a11f5f04bcdbaa7": {
+      "path": "objects/e04c9c9ae44ed56f9f5447ca681632098d140069bfdd94d63a11f5f04bcdbaa7",
+      "bytes": 183954,
+      "sha256": "e04c9c9ae44ed56f9f5447ca681632098d140069bfdd94d63a11f5f04bcdbaa7"
+    },
+    "a475d19788686d42320048dfa13c2df0e663eb5617db8b894a902aa0686fa476": {
+      "path": "objects/a475d19788686d42320048dfa13c2df0e663eb5617db8b894a902aa0686fa476",
+      "bytes": 183967,
+      "sha256": "a475d19788686d42320048dfa13c2df0e663eb5617db8b894a902aa0686fa476"
+    },
+    "2f9f891f3addf2541c9230f8647dbcd825e16ed11d4410ee2cae7863a4cb7a37": {
+      "path": "objects/2f9f891f3addf2541c9230f8647dbcd825e16ed11d4410ee2cae7863a4cb7a37",
+      "bytes": 183921,
+      "sha256": "2f9f891f3addf2541c9230f8647dbcd825e16ed11d4410ee2cae7863a4cb7a37"
+    },
+    "62b4e891b1fa660555e7c0da9bd143c08430f9295c5987321c82660cd41fe881": {
+      "path": "objects/62b4e891b1fa660555e7c0da9bd143c08430f9295c5987321c82660cd41fe881",
+      "bytes": 183920,
+      "sha256": "62b4e891b1fa660555e7c0da9bd143c08430f9295c5987321c82660cd41fe881"
+    },
+    "08c642bf9304f254d6f79ac3dadfff6984531d9734ed41d3ba16f92f80b7410c": {
+      "path": "objects/08c642bf9304f254d6f79ac3dadfff6984531d9734ed41d3ba16f92f80b7410c",
+      "bytes": 183882,
+      "sha256": "08c642bf9304f254d6f79ac3dadfff6984531d9734ed41d3ba16f92f80b7410c"
+    },
+    "d8cda55acf4b7b8bb5c9126eeb3dd1b058997db9c2fc3ecb0ad004a12caeb9ae": {
+      "path": "objects/d8cda55acf4b7b8bb5c9126eeb3dd1b058997db9c2fc3ecb0ad004a12caeb9ae",
+      "bytes": 183987,
+      "sha256": "d8cda55acf4b7b8bb5c9126eeb3dd1b058997db9c2fc3ecb0ad004a12caeb9ae"
+    },
+    "e9bdc4748af301a30039ea990998f38759d6887b93fcf56a33e84dd72ba3984c": {
+      "path": "objects/e9bdc4748af301a30039ea990998f38759d6887b93fcf56a33e84dd72ba3984c",
+      "bytes": 183916,
+      "sha256": "e9bdc4748af301a30039ea990998f38759d6887b93fcf56a33e84dd72ba3984c"
+    },
+    "1cc63b553133879fd123c31d24ac5b5edc9ff98bf1973f3985c487bc725ee9d0": {
+      "path": "objects/1cc63b553133879fd123c31d24ac5b5edc9ff98bf1973f3985c487bc725ee9d0",
+      "bytes": 184127,
+      "sha256": "1cc63b553133879fd123c31d24ac5b5edc9ff98bf1973f3985c487bc725ee9d0"
+    },
+    "b1d53e458ff56acf6a3a751efc88addf4fb5538eaf6246abcac6db50b7c5e19f": {
+      "path": "objects/b1d53e458ff56acf6a3a751efc88addf4fb5538eaf6246abcac6db50b7c5e19f",
+      "bytes": 184009,
+      "sha256": "b1d53e458ff56acf6a3a751efc88addf4fb5538eaf6246abcac6db50b7c5e19f"
+    },
+    "dc0b3589e6253f3544c960ba61e4835651e9c5b415323a64e6e60d706a910c9f": {
+      "path": "objects/dc0b3589e6253f3544c960ba61e4835651e9c5b415323a64e6e60d706a910c9f",
+      "bytes": 183741,
+      "sha256": "dc0b3589e6253f3544c960ba61e4835651e9c5b415323a64e6e60d706a910c9f"
+    },
+    "f19ee61df7767aa3402d9b78e2aafa36c79e78778103c9661262beb6a82eaf0e": {
+      "path": "objects/f19ee61df7767aa3402d9b78e2aafa36c79e78778103c9661262beb6a82eaf0e",
+      "bytes": 183853,
+      "sha256": "f19ee61df7767aa3402d9b78e2aafa36c79e78778103c9661262beb6a82eaf0e"
+    },
+    "a83d530c9a23f9275ee5c18721ed12037e9d9f9ed4917d4722ad873b93d5abcf": {
+      "path": "objects/a83d530c9a23f9275ee5c18721ed12037e9d9f9ed4917d4722ad873b93d5abcf",
+      "bytes": 183795,
+      "sha256": "a83d530c9a23f9275ee5c18721ed12037e9d9f9ed4917d4722ad873b93d5abcf"
+    },
+    "9257289ef063105da94c42184eb07f1a5ddecd580e0873185625822ac35be5b7": {
+      "path": "objects/9257289ef063105da94c42184eb07f1a5ddecd580e0873185625822ac35be5b7",
+      "bytes": 183853,
+      "sha256": "9257289ef063105da94c42184eb07f1a5ddecd580e0873185625822ac35be5b7"
+    },
+    "f68b2dd8df7fb47a118cd1c191f42c91169478dfd2380b0e02f0bb9230d8a7c0": {
+      "path": "objects/f68b2dd8df7fb47a118cd1c191f42c91169478dfd2380b0e02f0bb9230d8a7c0",
+      "bytes": 184026,
+      "sha256": "f68b2dd8df7fb47a118cd1c191f42c91169478dfd2380b0e02f0bb9230d8a7c0"
+    },
+    "bc4f59ec129a96ea30f31e87e41a71fd4f2611c4f429e1785aee954f4903d3e4": {
+      "path": "objects/bc4f59ec129a96ea30f31e87e41a71fd4f2611c4f429e1785aee954f4903d3e4",
+      "bytes": 183745,
+      "sha256": "bc4f59ec129a96ea30f31e87e41a71fd4f2611c4f429e1785aee954f4903d3e4"
+    },
+    "a9e4e94c7f27bb9cc85c7c878228f688bab91feaeba13f5c0dd393dfd38a5ec1": {
+      "path": "objects/a9e4e94c7f27bb9cc85c7c878228f688bab91feaeba13f5c0dd393dfd38a5ec1",
+      "bytes": 184069,
+      "sha256": "a9e4e94c7f27bb9cc85c7c878228f688bab91feaeba13f5c0dd393dfd38a5ec1"
+    },
+    "6e2fc9afa2ad2ab1f78f450977cb07e8bac51a4a9020c246be93801d8389acf7": {
+      "path": "objects/6e2fc9afa2ad2ab1f78f450977cb07e8bac51a4a9020c246be93801d8389acf7",
+      "bytes": 183945,
+      "sha256": "6e2fc9afa2ad2ab1f78f450977cb07e8bac51a4a9020c246be93801d8389acf7"
+    },
+    "7c6db79c2d93b38953870a5320865d0e8a8498ad098b28e60adb72cb815fa6e6": {
+      "path": "objects/7c6db79c2d93b38953870a5320865d0e8a8498ad098b28e60adb72cb815fa6e6",
+      "bytes": 183728,
+      "sha256": "7c6db79c2d93b38953870a5320865d0e8a8498ad098b28e60adb72cb815fa6e6"
+    },
+    "32d3fb92d7b47776d611e5971084fea245f998e01f24a4aed43815e3cbe8d5c1": {
+      "path": "objects/32d3fb92d7b47776d611e5971084fea245f998e01f24a4aed43815e3cbe8d5c1",
+      "bytes": 184032,
+      "sha256": "32d3fb92d7b47776d611e5971084fea245f998e01f24a4aed43815e3cbe8d5c1"
+    },
+    "feb2ccf2a5f81c24ee73c3086f06c0c47801e8b5d7d46d5c2f16dbb3b2628483": {
+      "path": "objects/feb2ccf2a5f81c24ee73c3086f06c0c47801e8b5d7d46d5c2f16dbb3b2628483",
+      "bytes": 183958,
+      "sha256": "feb2ccf2a5f81c24ee73c3086f06c0c47801e8b5d7d46d5c2f16dbb3b2628483"
+    },
+    "9aeda9934340576c54e3304d98e74b6bdbae070da5ea9384435224d2fc4d4197": {
+      "path": "objects/9aeda9934340576c54e3304d98e74b6bdbae070da5ea9384435224d2fc4d4197",
+      "bytes": 183923,
+      "sha256": "9aeda9934340576c54e3304d98e74b6bdbae070da5ea9384435224d2fc4d4197"
+    },
+    "68ea21cefaeb53988e62808705227ca06beb2483f020bcdd28c23142fdf58a90": {
+      "path": "objects/68ea21cefaeb53988e62808705227ca06beb2483f020bcdd28c23142fdf58a90",
+      "bytes": 184031,
+      "sha256": "68ea21cefaeb53988e62808705227ca06beb2483f020bcdd28c23142fdf58a90"
+    },
+    "43c09d4f37604a68b803a22fa00fec3387756120a2745579701fc2519478543a": {
+      "path": "objects/43c09d4f37604a68b803a22fa00fec3387756120a2745579701fc2519478543a",
+      "bytes": 184303,
+      "sha256": "43c09d4f37604a68b803a22fa00fec3387756120a2745579701fc2519478543a"
+    },
+    "288f0a64b92263904d05916095719209f088a1e3c2b046cee1f68b158bfc4f76": {
+      "path": "objects/288f0a64b92263904d05916095719209f088a1e3c2b046cee1f68b158bfc4f76",
+      "bytes": 184075,
+      "sha256": "288f0a64b92263904d05916095719209f088a1e3c2b046cee1f68b158bfc4f76"
+    },
+    "c35b1351f46d491f572f5b5c00b2a7a96b18b6bbd5bc679abb920ebf676390ec": {
+      "path": "objects/c35b1351f46d491f572f5b5c00b2a7a96b18b6bbd5bc679abb920ebf676390ec",
+      "bytes": 184007,
+      "sha256": "c35b1351f46d491f572f5b5c00b2a7a96b18b6bbd5bc679abb920ebf676390ec"
+    },
+    "afcd045614185e8625f73acf882002a7ce3f96319055be2b7b9bc840955525f2": {
+      "path": "objects/afcd045614185e8625f73acf882002a7ce3f96319055be2b7b9bc840955525f2",
+      "bytes": 183928,
+      "sha256": "afcd045614185e8625f73acf882002a7ce3f96319055be2b7b9bc840955525f2"
+    },
+    "41ab627d56c13942e144199f1da471dd1d6d8389c507518a56a80c989ae249fc": {
+      "path": "objects/41ab627d56c13942e144199f1da471dd1d6d8389c507518a56a80c989ae249fc",
+      "bytes": 184139,
+      "sha256": "41ab627d56c13942e144199f1da471dd1d6d8389c507518a56a80c989ae249fc"
+    },
+    "ca45068e2d36014f483128713a04925133af52dda8e59248134bbdcd89433669": {
+      "path": "objects/ca45068e2d36014f483128713a04925133af52dda8e59248134bbdcd89433669",
+      "bytes": 183874,
+      "sha256": "ca45068e2d36014f483128713a04925133af52dda8e59248134bbdcd89433669"
+    },
+    "3ed6da8aff93692888c91fd05aa5403fe00a74e26d32543431004a28c0633088": {
+      "path": "objects/3ed6da8aff93692888c91fd05aa5403fe00a74e26d32543431004a28c0633088",
+      "bytes": 183938,
+      "sha256": "3ed6da8aff93692888c91fd05aa5403fe00a74e26d32543431004a28c0633088"
+    },
+    "d510dffacc72324847e811dfdab526d89d4d7ed7159dc9f51eaf3ed9eb62e77b": {
+      "path": "objects/d510dffacc72324847e811dfdab526d89d4d7ed7159dc9f51eaf3ed9eb62e77b",
+      "bytes": 183818,
+      "sha256": "d510dffacc72324847e811dfdab526d89d4d7ed7159dc9f51eaf3ed9eb62e77b"
+    },
+    "94d761dac3dc430cd5aa060fa7100a58ea7a115c35354a8f69837f423c3e0c4f": {
+      "path": "objects/94d761dac3dc430cd5aa060fa7100a58ea7a115c35354a8f69837f423c3e0c4f",
+      "bytes": 184017,
+      "sha256": "94d761dac3dc430cd5aa060fa7100a58ea7a115c35354a8f69837f423c3e0c4f"
+    },
+    "04bd7ed6b5e7f84b572253fcba95017b1c2ab50cf213727403562d9636f7c4d6": {
+      "path": "objects/04bd7ed6b5e7f84b572253fcba95017b1c2ab50cf213727403562d9636f7c4d6",
+      "bytes": 183767,
+      "sha256": "04bd7ed6b5e7f84b572253fcba95017b1c2ab50cf213727403562d9636f7c4d6"
+    },
+    "a706bc8359f788e0cfafcb5462dc82d29f60fdb9f92c2444298af0449f74bbc7": {
+      "path": "objects/a706bc8359f788e0cfafcb5462dc82d29f60fdb9f92c2444298af0449f74bbc7",
+      "bytes": 183877,
+      "sha256": "a706bc8359f788e0cfafcb5462dc82d29f60fdb9f92c2444298af0449f74bbc7"
+    },
+    "38e740f6fe4174db05f262507b12d519458b176e89e7b75c732b3f047d51cb11": {
+      "path": "objects/38e740f6fe4174db05f262507b12d519458b176e89e7b75c732b3f047d51cb11",
+      "bytes": 183945,
+      "sha256": "38e740f6fe4174db05f262507b12d519458b176e89e7b75c732b3f047d51cb11"
+    },
+    "21c32bd5f6d61af7a3e4db771a05286a51239edf4c42281511b569eeb933f261": {
+      "path": "objects/21c32bd5f6d61af7a3e4db771a05286a51239edf4c42281511b569eeb933f261",
+      "bytes": 183972,
+      "sha256": "21c32bd5f6d61af7a3e4db771a05286a51239edf4c42281511b569eeb933f261"
+    },
+    "766d6e4cb8fdc543920a1ed5453b086966b7139ecd109d5024b0cd109ee313f2": {
+      "path": "objects/766d6e4cb8fdc543920a1ed5453b086966b7139ecd109d5024b0cd109ee313f2",
+      "bytes": 183850,
+      "sha256": "766d6e4cb8fdc543920a1ed5453b086966b7139ecd109d5024b0cd109ee313f2"
+    },
+    "53919a81bdba61a1a8ff6509f67ee2cd74c8084c63af128455a066cf948f8f80": {
+      "path": "objects/53919a81bdba61a1a8ff6509f67ee2cd74c8084c63af128455a066cf948f8f80",
+      "bytes": 184115,
+      "sha256": "53919a81bdba61a1a8ff6509f67ee2cd74c8084c63af128455a066cf948f8f80"
+    },
+    "729e52e6a6b9ac6839bf569107f69221b3699986983e46307ff1500d1a2dc9a7": {
+      "path": "objects/729e52e6a6b9ac6839bf569107f69221b3699986983e46307ff1500d1a2dc9a7",
+      "bytes": 183888,
+      "sha256": "729e52e6a6b9ac6839bf569107f69221b3699986983e46307ff1500d1a2dc9a7"
+    },
+    "413b41cd72ab6e0eca4060473fc83739fa2600431be98dfb7340a94ac2dd808d": {
+      "path": "objects/413b41cd72ab6e0eca4060473fc83739fa2600431be98dfb7340a94ac2dd808d",
+      "bytes": 184008,
+      "sha256": "413b41cd72ab6e0eca4060473fc83739fa2600431be98dfb7340a94ac2dd808d"
+    },
+    "7949bdb742447adb57c91df9cf4bd3ed5da36870f7730ca75bef2e3e514dce71": {
+      "path": "objects/7949bdb742447adb57c91df9cf4bd3ed5da36870f7730ca75bef2e3e514dce71",
+      "bytes": 183982,
+      "sha256": "7949bdb742447adb57c91df9cf4bd3ed5da36870f7730ca75bef2e3e514dce71"
+    },
+    "8e9300eb416f358c1c18e83783cd93189036ee85a026a3cd5a4646d1e27d626a": {
+      "path": "objects/8e9300eb416f358c1c18e83783cd93189036ee85a026a3cd5a4646d1e27d626a",
+      "bytes": 184113,
+      "sha256": "8e9300eb416f358c1c18e83783cd93189036ee85a026a3cd5a4646d1e27d626a"
+    },
+    "3e4000831cae06eed8565b54c7ea478d9cfed1c0919c8187b5eb27dafc16e88e": {
+      "path": "objects/3e4000831cae06eed8565b54c7ea478d9cfed1c0919c8187b5eb27dafc16e88e",
+      "bytes": 183995,
+      "sha256": "3e4000831cae06eed8565b54c7ea478d9cfed1c0919c8187b5eb27dafc16e88e"
+    },
+    "052a58c20f60d6ca2172ff7f08fd7e79ca4930ac4368ff2613ad297a4fc63280": {
+      "path": "objects/052a58c20f60d6ca2172ff7f08fd7e79ca4930ac4368ff2613ad297a4fc63280",
+      "bytes": 183927,
+      "sha256": "052a58c20f60d6ca2172ff7f08fd7e79ca4930ac4368ff2613ad297a4fc63280"
+    },
+    "b58fc874b27f5b7ea0bbd8b4a77cb97d1737128a322d03b03e96e2017b030242": {
+      "path": "objects/b58fc874b27f5b7ea0bbd8b4a77cb97d1737128a322d03b03e96e2017b030242",
+      "bytes": 184042,
+      "sha256": "b58fc874b27f5b7ea0bbd8b4a77cb97d1737128a322d03b03e96e2017b030242"
+    },
+    "460771e3704147c83a0545c727544a3fa6082a03442a76cf3f1ab2e4a19751e3": {
+      "path": "objects/460771e3704147c83a0545c727544a3fa6082a03442a76cf3f1ab2e4a19751e3",
+      "bytes": 184111,
+      "sha256": "460771e3704147c83a0545c727544a3fa6082a03442a76cf3f1ab2e4a19751e3"
+    },
+    "9ecbbe3139b7814e819af413f39da1c059d5fd0f4954218ef983585bfb3af84c": {
+      "path": "objects/9ecbbe3139b7814e819af413f39da1c059d5fd0f4954218ef983585bfb3af84c",
+      "bytes": 183642,
+      "sha256": "9ecbbe3139b7814e819af413f39da1c059d5fd0f4954218ef983585bfb3af84c"
+    },
+    "a6625c759a5cafb0ca5cc399f7001f04be1897e92ebb973569b407b227917b05": {
+      "path": "objects/a6625c759a5cafb0ca5cc399f7001f04be1897e92ebb973569b407b227917b05",
+      "bytes": 183745,
+      "sha256": "a6625c759a5cafb0ca5cc399f7001f04be1897e92ebb973569b407b227917b05"
+    },
+    "92c3a235e84ae93fe95d2ecd880adbfc461bf12d8bc8db2fcdcb3d7ee0190533": {
+      "path": "objects/92c3a235e84ae93fe95d2ecd880adbfc461bf12d8bc8db2fcdcb3d7ee0190533",
+      "bytes": 183702,
+      "sha256": "92c3a235e84ae93fe95d2ecd880adbfc461bf12d8bc8db2fcdcb3d7ee0190533"
+    },
+    "e2ef726519c38149fa57f7611283ded7aab66ff2b9d76d4aad3edc217478b1ff": {
+      "path": "objects/e2ef726519c38149fa57f7611283ded7aab66ff2b9d76d4aad3edc217478b1ff",
+      "bytes": 183824,
+      "sha256": "e2ef726519c38149fa57f7611283ded7aab66ff2b9d76d4aad3edc217478b1ff"
+    },
+    "a3fa6d340507883f7dbdf70c48697ef0c0aa46ee07cb0f6cf9b082e0a352a9dc": {
+      "path": "objects/a3fa6d340507883f7dbdf70c48697ef0c0aa46ee07cb0f6cf9b082e0a352a9dc",
+      "bytes": 183779,
+      "sha256": "a3fa6d340507883f7dbdf70c48697ef0c0aa46ee07cb0f6cf9b082e0a352a9dc"
+    },
+    "51e8f56ea24f719d5508d282c45506ada87b80b7c054b03da4200ac6a6031174": {
+      "path": "objects/51e8f56ea24f719d5508d282c45506ada87b80b7c054b03da4200ac6a6031174",
+      "bytes": 184202,
+      "sha256": "51e8f56ea24f719d5508d282c45506ada87b80b7c054b03da4200ac6a6031174"
+    },
+    "83553e14ad8cf6a82ce1a56980614c4c81146d08f2df630aba21dcc216e22d18": {
+      "path": "objects/83553e14ad8cf6a82ce1a56980614c4c81146d08f2df630aba21dcc216e22d18",
+      "bytes": 183984,
+      "sha256": "83553e14ad8cf6a82ce1a56980614c4c81146d08f2df630aba21dcc216e22d18"
+    },
+    "8876871a35ee27edf950742888cfcd143b0aad716c9a9b8d6a43a95447152bf4": {
+      "path": "objects/8876871a35ee27edf950742888cfcd143b0aad716c9a9b8d6a43a95447152bf4",
+      "bytes": 184480,
+      "sha256": "8876871a35ee27edf950742888cfcd143b0aad716c9a9b8d6a43a95447152bf4"
+    },
+    "c1f11b7049f8ae7a84637df71abe6ab58c85a9dab0b5491e3b3ba13878bfd02c": {
+      "path": "objects/c1f11b7049f8ae7a84637df71abe6ab58c85a9dab0b5491e3b3ba13878bfd02c",
+      "bytes": 183821,
+      "sha256": "c1f11b7049f8ae7a84637df71abe6ab58c85a9dab0b5491e3b3ba13878bfd02c"
+    },
+    "d1a08aa767ba09ba9dbaf1915ed2112c24e87694d0cf8d009903bdf1255a05c4": {
+      "path": "objects/d1a08aa767ba09ba9dbaf1915ed2112c24e87694d0cf8d009903bdf1255a05c4",
+      "bytes": 183956,
+      "sha256": "d1a08aa767ba09ba9dbaf1915ed2112c24e87694d0cf8d009903bdf1255a05c4"
+    },
+    "16e24542167d90fa37761057be43e2bb0211b085dac4f15874a44eedc63241ca": {
+      "path": "objects/16e24542167d90fa37761057be43e2bb0211b085dac4f15874a44eedc63241ca",
+      "bytes": 184143,
+      "sha256": "16e24542167d90fa37761057be43e2bb0211b085dac4f15874a44eedc63241ca"
+    },
+    "1a9f9e0f8c300c35808bd2ebe298573da5c37d099fcfd775932d880718c19b64": {
+      "path": "objects/1a9f9e0f8c300c35808bd2ebe298573da5c37d099fcfd775932d880718c19b64",
+      "bytes": 184239,
+      "sha256": "1a9f9e0f8c300c35808bd2ebe298573da5c37d099fcfd775932d880718c19b64"
+    },
+    "6c50217c4d5880b2a61ea5c3ea8d16f89881bc95c6113aa8090fb00b23a4328a": {
+      "path": "objects/6c50217c4d5880b2a61ea5c3ea8d16f89881bc95c6113aa8090fb00b23a4328a",
+      "bytes": 183902,
+      "sha256": "6c50217c4d5880b2a61ea5c3ea8d16f89881bc95c6113aa8090fb00b23a4328a"
+    },
+    "77eca8ca2357f76adb77ca861f38a78755a11e6541328da0d07fe069f27153d5": {
+      "path": "objects/77eca8ca2357f76adb77ca861f38a78755a11e6541328da0d07fe069f27153d5",
+      "bytes": 183894,
+      "sha256": "77eca8ca2357f76adb77ca861f38a78755a11e6541328da0d07fe069f27153d5"
+    },
+    "22819b22b8e9de2c0fd8f0377a928a6159fa581b5892abafe16f2e91f52bea8a": {
+      "path": "objects/22819b22b8e9de2c0fd8f0377a928a6159fa581b5892abafe16f2e91f52bea8a",
+      "bytes": 183817,
+      "sha256": "22819b22b8e9de2c0fd8f0377a928a6159fa581b5892abafe16f2e91f52bea8a"
+    },
+    "b7504d37623c636be8526bbdb6326e534f11f36aeacd90d76a3eba6023f156e4": {
+      "path": "objects/b7504d37623c636be8526bbdb6326e534f11f36aeacd90d76a3eba6023f156e4",
+      "bytes": 183952,
+      "sha256": "b7504d37623c636be8526bbdb6326e534f11f36aeacd90d76a3eba6023f156e4"
+    }
+  },
+  "aliases": {
+    "/workspace/recovered-workspace-20261102/WCPP/runtime/active-model.json": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+    "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/freshness/run-final-002/current-candidate.json": "07079b847869db39ad42eafc2bd127200b672aadcb9b18d1ed347b68dea55999",
+    "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/freshness/run-final-002/test-candidate.json": "8e6b8816ae714f36f666e08e95c18d4864159e3d940dad59735e95be5530c0fa",
+    "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/current-artifact.json": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759",
+    "/workspace/recovered-workspace-20261102/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/current-artifact.json": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759",
+    "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-artifact.json": "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e",
+    "/workspace/recovered-workspace-20261102/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-artifact.json": "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e",
+    "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/prospective/ucl-refresh-protocol-inactive-registry.json": "046fcf96f5825b60793f5507752e0f12d48097edc5d6ae3b16f15f855d96dc9f",
+    "/workspace/Football-Analysis/runtime/research_program/ucl_refresh_forward.py": "6eb57fd40bb63b4d66734172858c7a29730123790d381fe093c439a4d19bae67",
+    "/workspace/Football-Analysis/runtime/prediction_engine.py": "aaa0bbb815293a41897abb2a715463f55095944b806e028af97d2e16769b5b31",
+    "/workspace/Football-Analysis/runtime/prediction_service.py": "2fd8481572da94b6b3081ee2e2c5d18384d6a64e1b2079b36890b0d767e4c1a5",
+    "/workspace/Football-Analysis/runtime/continental/ucl_ml.py": "1dcd9aa84070c9e1b0ff11262edd5f94112404d341cad09eaf67cc2139a17a3d",
+    "/workspace/Football-Analysis/runtime/research/ucl_fixed_refresh.py": "5b52dab928edb243c6d588ca7104f20f948ad7a23a1b033a8d7f0ce2171743ab",
+    "/workspace/WCPP/forecasts/issued-analyses/b5fba7d142ef45e5f53fa2d5b55b686d21d377ea6f25108966d24203d0a23106/000001.json": "5d85b994327aa62178496e298e06635d1f103b0cfb7d41c552feb038dec58d4f",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/b5fba7d142ef45e5f53fa2d5b55b686d21d377ea6f25108966d24203d0a23106/000001.json": "5d85b994327aa62178496e298e06635d1f103b0cfb7d41c552feb038dec58d4f",
+    "/workspace/WCPP/forecasts/issued-analyses/293d176ca96dc99f76369784b6cd02b089d2b73920250b7d00d264ffb4d733df/000001.json": "daa5608f23524c6b57d5b88380f3127dfae83c7563b7ebcb9765b420892c3a27",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/293d176ca96dc99f76369784b6cd02b089d2b73920250b7d00d264ffb4d733df/000001.json": "daa5608f23524c6b57d5b88380f3127dfae83c7563b7ebcb9765b420892c3a27",
+    "/workspace/WCPP/forecasts/issued-analyses/9a3b4fb95d7d7a94b1a6e08adac7225e8aa5274b413fdd527b3a886d27fffc0c/000001.json": "79dfa6d1785d3416cbd75a19ef7d71dbaf29a73abcc310faf9ba69e866f0ea1d",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/9a3b4fb95d7d7a94b1a6e08adac7225e8aa5274b413fdd527b3a886d27fffc0c/000001.json": "79dfa6d1785d3416cbd75a19ef7d71dbaf29a73abcc310faf9ba69e866f0ea1d",
+    "/workspace/WCPP/forecasts/issued-analyses/c1dde09d1a9e3206d5abd941ea3c67040a9dee441a01ebfccd8b69afcaf47429/000001.json": "708cb44150cee8c939263c2c70c7b52e0380a8a546c032bf45975163a52e0d74",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/c1dde09d1a9e3206d5abd941ea3c67040a9dee441a01ebfccd8b69afcaf47429/000001.json": "708cb44150cee8c939263c2c70c7b52e0380a8a546c032bf45975163a52e0d74",
+    "/workspace/WCPP/forecasts/issued-analyses/87abf324fce047af6adee44d477418dae207948f6dbcabb0b9931c0d5556f2ae/000001.json": "064f8b1eb810af470cba9dfd2e32300ab0369db450d0b0be1c6e593b09163536",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/87abf324fce047af6adee44d477418dae207948f6dbcabb0b9931c0d5556f2ae/000001.json": "064f8b1eb810af470cba9dfd2e32300ab0369db450d0b0be1c6e593b09163536",
+    "/workspace/WCPP/forecasts/issued-analyses/3c3be7928335d7e2f71ee799703f1f14375ff71f2e4ab219ab1b2412d60aa5ca/000001.json": "85a71f33eb0807778ca22fe91bc9ef8c2deb9d16a8b120304ad8ed1935827b48",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/3c3be7928335d7e2f71ee799703f1f14375ff71f2e4ab219ab1b2412d60aa5ca/000001.json": "85a71f33eb0807778ca22fe91bc9ef8c2deb9d16a8b120304ad8ed1935827b48",
+    "/workspace/WCPP/forecasts/issued-analyses/ddcecf4233e30c3e8c84edf2d6faed34902f702946668f215ea65a090d232b56/000001.json": "92166651175612604799ae0381161728926cde879c345c86443054098220c879",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/ddcecf4233e30c3e8c84edf2d6faed34902f702946668f215ea65a090d232b56/000001.json": "92166651175612604799ae0381161728926cde879c345c86443054098220c879",
+    "/workspace/WCPP/forecasts/issued-analyses/da6d6e0c760bac3265761cfda57fad884f660971508372fffeabb1f4fcad83e5/000001.json": "45c44aba7dccbf55bc2cef3af0cfb583ef541d954898dd393213e9e51712b43b",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/da6d6e0c760bac3265761cfda57fad884f660971508372fffeabb1f4fcad83e5/000001.json": "45c44aba7dccbf55bc2cef3af0cfb583ef541d954898dd393213e9e51712b43b",
+    "/workspace/WCPP/forecasts/issued-analyses/96b700e93eec7c9a546559ff2bf41fb6ea001faacaa98b0103e98318a76f4b22/000001.json": "4c312721bd02c8a0a4a3789bfc61309b27866fce5053af8a983e9caada5dcb3e",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/96b700e93eec7c9a546559ff2bf41fb6ea001faacaa98b0103e98318a76f4b22/000001.json": "4c312721bd02c8a0a4a3789bfc61309b27866fce5053af8a983e9caada5dcb3e",
+    "/workspace/WCPP/forecasts/issued-analyses/057f99c0298fbd4f03f4e50089ca03fb4729948697db776b2a58a0b16771e55b/000001.json": "cfcc081c787088b04e284078d96b034f5668f2d6b3679fcb3c4a1645fe78a60e",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/057f99c0298fbd4f03f4e50089ca03fb4729948697db776b2a58a0b16771e55b/000001.json": "cfcc081c787088b04e284078d96b034f5668f2d6b3679fcb3c4a1645fe78a60e",
+    "/workspace/WCPP/forecasts/issued-analyses/92371820c70d098aeb7895caca9f5ad06ee70d4ec6c9f6c0209873ec0dfb69b2/000001.json": "ff6108af238e177c2032bd4862d2dfe29d06708765ba460eb4bb1303ac310606",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/92371820c70d098aeb7895caca9f5ad06ee70d4ec6c9f6c0209873ec0dfb69b2/000001.json": "ff6108af238e177c2032bd4862d2dfe29d06708765ba460eb4bb1303ac310606",
+    "/workspace/WCPP/forecasts/issued-analyses/86aa47df39ad88d0d385bc22e8d7a6a02ae6b9458afde9fc8ba318c120fbff25/000001.json": "9fa0fd4da25aafea00200d6e6ed85d2c7c5f8983014815bb6ba0740e4864b4fb",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/86aa47df39ad88d0d385bc22e8d7a6a02ae6b9458afde9fc8ba318c120fbff25/000001.json": "9fa0fd4da25aafea00200d6e6ed85d2c7c5f8983014815bb6ba0740e4864b4fb",
+    "/workspace/WCPP/forecasts/issued-analyses/fe164937f77d0d277dd4c9a5487b735c308148baf5a35a9ea8a8e0feb15fee50/000001.json": "e04c9c9ae44ed56f9f5447ca681632098d140069bfdd94d63a11f5f04bcdbaa7",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/fe164937f77d0d277dd4c9a5487b735c308148baf5a35a9ea8a8e0feb15fee50/000001.json": "e04c9c9ae44ed56f9f5447ca681632098d140069bfdd94d63a11f5f04bcdbaa7",
+    "/workspace/WCPP/forecasts/issued-analyses/a8b2f8d6da0a5c8402ff29561c5b0eef7a649d22499acc9cf044b3c314eaf128/000001.json": "a475d19788686d42320048dfa13c2df0e663eb5617db8b894a902aa0686fa476",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/a8b2f8d6da0a5c8402ff29561c5b0eef7a649d22499acc9cf044b3c314eaf128/000001.json": "a475d19788686d42320048dfa13c2df0e663eb5617db8b894a902aa0686fa476",
+    "/workspace/WCPP/forecasts/issued-analyses/ac80d73ac15e54168b855c1639c76c5266bab318b16eabb6216fedbb03224db1/000001.json": "2f9f891f3addf2541c9230f8647dbcd825e16ed11d4410ee2cae7863a4cb7a37",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/ac80d73ac15e54168b855c1639c76c5266bab318b16eabb6216fedbb03224db1/000001.json": "2f9f891f3addf2541c9230f8647dbcd825e16ed11d4410ee2cae7863a4cb7a37",
+    "/workspace/WCPP/forecasts/issued-analyses/5587d54be570f25f24809949155aa642d2d2b8b680daf932951a6d0057d32b4c/000001.json": "62b4e891b1fa660555e7c0da9bd143c08430f9295c5987321c82660cd41fe881",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/5587d54be570f25f24809949155aa642d2d2b8b680daf932951a6d0057d32b4c/000001.json": "62b4e891b1fa660555e7c0da9bd143c08430f9295c5987321c82660cd41fe881",
+    "/workspace/WCPP/forecasts/issued-analyses/a9e2bf7c1500f6a5f4e55b1ed4932abf050da17d8a3f31368a8d66b5cc1ef798/000001.json": "08c642bf9304f254d6f79ac3dadfff6984531d9734ed41d3ba16f92f80b7410c",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/a9e2bf7c1500f6a5f4e55b1ed4932abf050da17d8a3f31368a8d66b5cc1ef798/000001.json": "08c642bf9304f254d6f79ac3dadfff6984531d9734ed41d3ba16f92f80b7410c",
+    "/workspace/WCPP/forecasts/issued-analyses/d2f2b7dd54b4b1880d7cec739c8814f5cc09cf507eda9a0349df73bf7ac51822/000001.json": "d8cda55acf4b7b8bb5c9126eeb3dd1b058997db9c2fc3ecb0ad004a12caeb9ae",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/d2f2b7dd54b4b1880d7cec739c8814f5cc09cf507eda9a0349df73bf7ac51822/000001.json": "d8cda55acf4b7b8bb5c9126eeb3dd1b058997db9c2fc3ecb0ad004a12caeb9ae",
+    "/workspace/WCPP/forecasts/issued-analyses/aed466a5ec91d9166729458e73dbf03a2aa0e704dd53bf4cdaf74b2a7ce1cbbf/000001.json": "e9bdc4748af301a30039ea990998f38759d6887b93fcf56a33e84dd72ba3984c",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/aed466a5ec91d9166729458e73dbf03a2aa0e704dd53bf4cdaf74b2a7ce1cbbf/000001.json": "e9bdc4748af301a30039ea990998f38759d6887b93fcf56a33e84dd72ba3984c",
+    "/workspace/WCPP/forecasts/issued-analyses/ada9521e0070e50cbbb4680b05d5fbe90e7781d8121e9a5e162c13e07a27cb99/000001.json": "1cc63b553133879fd123c31d24ac5b5edc9ff98bf1973f3985c487bc725ee9d0",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/ada9521e0070e50cbbb4680b05d5fbe90e7781d8121e9a5e162c13e07a27cb99/000001.json": "1cc63b553133879fd123c31d24ac5b5edc9ff98bf1973f3985c487bc725ee9d0",
+    "/workspace/WCPP/forecasts/issued-analyses/973b0fce7c2ba5c3c1ed6dd39db7c1cecc85e5f5bc7729fa34b22f5227efd2f1/000001.json": "b1d53e458ff56acf6a3a751efc88addf4fb5538eaf6246abcac6db50b7c5e19f",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/973b0fce7c2ba5c3c1ed6dd39db7c1cecc85e5f5bc7729fa34b22f5227efd2f1/000001.json": "b1d53e458ff56acf6a3a751efc88addf4fb5538eaf6246abcac6db50b7c5e19f",
+    "/workspace/WCPP/forecasts/issued-analyses/02f6b5723d37f268f451bcb58457bb70aa630595919abe3c7753ea8b834ea355/000001.json": "dc0b3589e6253f3544c960ba61e4835651e9c5b415323a64e6e60d706a910c9f",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/02f6b5723d37f268f451bcb58457bb70aa630595919abe3c7753ea8b834ea355/000001.json": "dc0b3589e6253f3544c960ba61e4835651e9c5b415323a64e6e60d706a910c9f",
+    "/workspace/WCPP/forecasts/issued-analyses/6e3b369716e32e1e2a447841cd313a69df44fdc6ea79b9eadd031902824684aa/000001.json": "f19ee61df7767aa3402d9b78e2aafa36c79e78778103c9661262beb6a82eaf0e",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/6e3b369716e32e1e2a447841cd313a69df44fdc6ea79b9eadd031902824684aa/000001.json": "f19ee61df7767aa3402d9b78e2aafa36c79e78778103c9661262beb6a82eaf0e",
+    "/workspace/WCPP/forecasts/issued-analyses/e428af0253244221e3f7a036f83c25983e72beb58aeef3efc3d0b4fe3940af1e/000001.json": "a83d530c9a23f9275ee5c18721ed12037e9d9f9ed4917d4722ad873b93d5abcf",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/e428af0253244221e3f7a036f83c25983e72beb58aeef3efc3d0b4fe3940af1e/000001.json": "a83d530c9a23f9275ee5c18721ed12037e9d9f9ed4917d4722ad873b93d5abcf",
+    "/workspace/WCPP/forecasts/issued-analyses/4e1a0051f8740dda10b01d05bb316da07e3b57dc32f6ef11dfdf4e28773a4110/000001.json": "9257289ef063105da94c42184eb07f1a5ddecd580e0873185625822ac35be5b7",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/4e1a0051f8740dda10b01d05bb316da07e3b57dc32f6ef11dfdf4e28773a4110/000001.json": "9257289ef063105da94c42184eb07f1a5ddecd580e0873185625822ac35be5b7",
+    "/workspace/WCPP/forecasts/issued-analyses/40c00a017407c43e78b25b2b24e07a55c70d85822c604de7194678497108ee98/000001.json": "f68b2dd8df7fb47a118cd1c191f42c91169478dfd2380b0e02f0bb9230d8a7c0",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/40c00a017407c43e78b25b2b24e07a55c70d85822c604de7194678497108ee98/000001.json": "f68b2dd8df7fb47a118cd1c191f42c91169478dfd2380b0e02f0bb9230d8a7c0",
+    "/workspace/WCPP/forecasts/issued-analyses/1ea85b9cbd435108fa0a952d2f47feaafed4e6c23839f1cf54a56e1cbef757d0/000001.json": "bc4f59ec129a96ea30f31e87e41a71fd4f2611c4f429e1785aee954f4903d3e4",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/1ea85b9cbd435108fa0a952d2f47feaafed4e6c23839f1cf54a56e1cbef757d0/000001.json": "bc4f59ec129a96ea30f31e87e41a71fd4f2611c4f429e1785aee954f4903d3e4",
+    "/workspace/WCPP/forecasts/issued-analyses/74bae8db79daadc7fc6efe37df87739386df823033a3c612fa9672ffdbe639fa/000001.json": "a9e4e94c7f27bb9cc85c7c878228f688bab91feaeba13f5c0dd393dfd38a5ec1",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/74bae8db79daadc7fc6efe37df87739386df823033a3c612fa9672ffdbe639fa/000001.json": "a9e4e94c7f27bb9cc85c7c878228f688bab91feaeba13f5c0dd393dfd38a5ec1",
+    "/workspace/WCPP/forecasts/issued-analyses/b8e502e7bb4cd544dd20393d015d5b5f552a3f1b4b45a28a949d67862058b3d7/000001.json": "6e2fc9afa2ad2ab1f78f450977cb07e8bac51a4a9020c246be93801d8389acf7",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/b8e502e7bb4cd544dd20393d015d5b5f552a3f1b4b45a28a949d67862058b3d7/000001.json": "6e2fc9afa2ad2ab1f78f450977cb07e8bac51a4a9020c246be93801d8389acf7",
+    "/workspace/WCPP/forecasts/issued-analyses/939a35d522fe27c45d8190a544c48b292ae33f2758b5bbd9219ae277a761d497/000001.json": "7c6db79c2d93b38953870a5320865d0e8a8498ad098b28e60adb72cb815fa6e6",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/939a35d522fe27c45d8190a544c48b292ae33f2758b5bbd9219ae277a761d497/000001.json": "7c6db79c2d93b38953870a5320865d0e8a8498ad098b28e60adb72cb815fa6e6",
+    "/workspace/WCPP/forecasts/issued-analyses/ac22b7ba5b365bff8408380091ef9976dc1fa576c3a3df5193bacab53ec578bb/000001.json": "32d3fb92d7b47776d611e5971084fea245f998e01f24a4aed43815e3cbe8d5c1",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/ac22b7ba5b365bff8408380091ef9976dc1fa576c3a3df5193bacab53ec578bb/000001.json": "32d3fb92d7b47776d611e5971084fea245f998e01f24a4aed43815e3cbe8d5c1",
+    "/workspace/WCPP/forecasts/issued-analyses/9510a71ba974cde5c244963492fc6e80d965c315e33e0ef2a5dc4a7d141bdbb4/000001.json": "feb2ccf2a5f81c24ee73c3086f06c0c47801e8b5d7d46d5c2f16dbb3b2628483",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/9510a71ba974cde5c244963492fc6e80d965c315e33e0ef2a5dc4a7d141bdbb4/000001.json": "feb2ccf2a5f81c24ee73c3086f06c0c47801e8b5d7d46d5c2f16dbb3b2628483",
+    "/workspace/WCPP/forecasts/issued-analyses/7d3a2ab96ebe0d318eef6935cc197e2014dc43f331f1be94aa39f6df98c4fe8c/000001.json": "9aeda9934340576c54e3304d98e74b6bdbae070da5ea9384435224d2fc4d4197",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/7d3a2ab96ebe0d318eef6935cc197e2014dc43f331f1be94aa39f6df98c4fe8c/000001.json": "9aeda9934340576c54e3304d98e74b6bdbae070da5ea9384435224d2fc4d4197",
+    "/workspace/WCPP/forecasts/issued-analyses/bd3f362f877343f30042cd4a39a6f156679f371104ff13c23300976eea7e20b2/000001.json": "68ea21cefaeb53988e62808705227ca06beb2483f020bcdd28c23142fdf58a90",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/bd3f362f877343f30042cd4a39a6f156679f371104ff13c23300976eea7e20b2/000001.json": "68ea21cefaeb53988e62808705227ca06beb2483f020bcdd28c23142fdf58a90",
+    "/workspace/WCPP/forecasts/issued-analyses/f594e49cd3bc5a5a31013fe1dd7698324a6cb8f46238f52ac2950a553b9f6817/000001.json": "43c09d4f37604a68b803a22fa00fec3387756120a2745579701fc2519478543a",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/f594e49cd3bc5a5a31013fe1dd7698324a6cb8f46238f52ac2950a553b9f6817/000001.json": "43c09d4f37604a68b803a22fa00fec3387756120a2745579701fc2519478543a",
+    "/workspace/WCPP/forecasts/issued-analyses/66b9e555d9da6fc938fe291171e8e8818d840905b0f53b54e1dd4efc998776dc/000001.json": "288f0a64b92263904d05916095719209f088a1e3c2b046cee1f68b158bfc4f76",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/66b9e555d9da6fc938fe291171e8e8818d840905b0f53b54e1dd4efc998776dc/000001.json": "288f0a64b92263904d05916095719209f088a1e3c2b046cee1f68b158bfc4f76",
+    "/workspace/WCPP/forecasts/issued-analyses/fdae13d38f382a592293f4c08e4f3f4d081a578610db0c27fcf136ab685f97ff/000001.json": "c35b1351f46d491f572f5b5c00b2a7a96b18b6bbd5bc679abb920ebf676390ec",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/fdae13d38f382a592293f4c08e4f3f4d081a578610db0c27fcf136ab685f97ff/000001.json": "c35b1351f46d491f572f5b5c00b2a7a96b18b6bbd5bc679abb920ebf676390ec",
+    "/workspace/WCPP/forecasts/issued-analyses/3a7b3be0cc3fb91c697bc7fda80633fb2467672ec4ed5931ee2d03b85edbc055/000001.json": "afcd045614185e8625f73acf882002a7ce3f96319055be2b7b9bc840955525f2",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/3a7b3be0cc3fb91c697bc7fda80633fb2467672ec4ed5931ee2d03b85edbc055/000001.json": "afcd045614185e8625f73acf882002a7ce3f96319055be2b7b9bc840955525f2",
+    "/workspace/WCPP/forecasts/issued-analyses/363fb983de919b95d8ce6dea7bb0791e3310f4ee5acaf0c933c38787ed6de1b6/000001.json": "41ab627d56c13942e144199f1da471dd1d6d8389c507518a56a80c989ae249fc",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/363fb983de919b95d8ce6dea7bb0791e3310f4ee5acaf0c933c38787ed6de1b6/000001.json": "41ab627d56c13942e144199f1da471dd1d6d8389c507518a56a80c989ae249fc",
+    "/workspace/WCPP/forecasts/issued-analyses/9d45e1433fd3b48cd9be1a27e80901f127285aaba6c0b57e130de9baac8c0379/000001.json": "ca45068e2d36014f483128713a04925133af52dda8e59248134bbdcd89433669",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/9d45e1433fd3b48cd9be1a27e80901f127285aaba6c0b57e130de9baac8c0379/000001.json": "ca45068e2d36014f483128713a04925133af52dda8e59248134bbdcd89433669",
+    "/workspace/WCPP/forecasts/issued-analyses/420bf8f029dd1e1deef5ecf5e6dbba6dc484ad46678c84a7b37ccec8469f85f8/000001.json": "3ed6da8aff93692888c91fd05aa5403fe00a74e26d32543431004a28c0633088",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/420bf8f029dd1e1deef5ecf5e6dbba6dc484ad46678c84a7b37ccec8469f85f8/000001.json": "3ed6da8aff93692888c91fd05aa5403fe00a74e26d32543431004a28c0633088",
+    "/workspace/WCPP/forecasts/issued-analyses/ae6d6ff8c4677d4946a8bb7f3e6934a8a986bf33d798f2d9950c0c51eee30a46/000001.json": "d510dffacc72324847e811dfdab526d89d4d7ed7159dc9f51eaf3ed9eb62e77b",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/ae6d6ff8c4677d4946a8bb7f3e6934a8a986bf33d798f2d9950c0c51eee30a46/000001.json": "d510dffacc72324847e811dfdab526d89d4d7ed7159dc9f51eaf3ed9eb62e77b",
+    "/workspace/WCPP/forecasts/issued-analyses/92db9062fc94c21d1886c3da3f651310ef6b97c52bc17382e8a04c096d712c1e/000001.json": "94d761dac3dc430cd5aa060fa7100a58ea7a115c35354a8f69837f423c3e0c4f",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/92db9062fc94c21d1886c3da3f651310ef6b97c52bc17382e8a04c096d712c1e/000001.json": "94d761dac3dc430cd5aa060fa7100a58ea7a115c35354a8f69837f423c3e0c4f",
+    "/workspace/WCPP/forecasts/issued-analyses/f2f86eb9f413c4c5b4969a97bfd2bbd34597e566f871b1835fafa4173155fa96/000001.json": "04bd7ed6b5e7f84b572253fcba95017b1c2ab50cf213727403562d9636f7c4d6",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/f2f86eb9f413c4c5b4969a97bfd2bbd34597e566f871b1835fafa4173155fa96/000001.json": "04bd7ed6b5e7f84b572253fcba95017b1c2ab50cf213727403562d9636f7c4d6",
+    "/workspace/WCPP/forecasts/issued-analyses/1002d4a83e0d9e37f5839a1094d54e2fb67eae3518b4d52944bb54136d602737/000001.json": "a706bc8359f788e0cfafcb5462dc82d29f60fdb9f92c2444298af0449f74bbc7",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/1002d4a83e0d9e37f5839a1094d54e2fb67eae3518b4d52944bb54136d602737/000001.json": "a706bc8359f788e0cfafcb5462dc82d29f60fdb9f92c2444298af0449f74bbc7",
+    "/workspace/WCPP/forecasts/issued-analyses/dd5b2e0921cdc8cb6b5c33a5909008d1b476c6c3aa2ff0500f8c3a9b777cec05/000001.json": "38e740f6fe4174db05f262507b12d519458b176e89e7b75c732b3f047d51cb11",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/dd5b2e0921cdc8cb6b5c33a5909008d1b476c6c3aa2ff0500f8c3a9b777cec05/000001.json": "38e740f6fe4174db05f262507b12d519458b176e89e7b75c732b3f047d51cb11",
+    "/workspace/WCPP/forecasts/issued-analyses/0e2a6962744f33d649824daedc49f0fd12dc25e80ccc1fb8374869d8a131c8fe/000001.json": "21c32bd5f6d61af7a3e4db771a05286a51239edf4c42281511b569eeb933f261",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/0e2a6962744f33d649824daedc49f0fd12dc25e80ccc1fb8374869d8a131c8fe/000001.json": "21c32bd5f6d61af7a3e4db771a05286a51239edf4c42281511b569eeb933f261",
+    "/workspace/WCPP/forecasts/issued-analyses/e7ad131a25ae6cf81feb17105e376ec9ae666734227824ae3a909361508afbfa/000001.json": "766d6e4cb8fdc543920a1ed5453b086966b7139ecd109d5024b0cd109ee313f2",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/e7ad131a25ae6cf81feb17105e376ec9ae666734227824ae3a909361508afbfa/000001.json": "766d6e4cb8fdc543920a1ed5453b086966b7139ecd109d5024b0cd109ee313f2",
+    "/workspace/WCPP/forecasts/issued-analyses/fa7cc87f46638e5b3a0129a817034ec99154aeb488686eca1f7c1d8f9bad8471/000001.json": "53919a81bdba61a1a8ff6509f67ee2cd74c8084c63af128455a066cf948f8f80",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/fa7cc87f46638e5b3a0129a817034ec99154aeb488686eca1f7c1d8f9bad8471/000001.json": "53919a81bdba61a1a8ff6509f67ee2cd74c8084c63af128455a066cf948f8f80",
+    "/workspace/WCPP/forecasts/issued-analyses/fc826833ea8265d127b37f0799fb443f4ab6f1c412ca8f839cc3f0cefd89e024/000001.json": "729e52e6a6b9ac6839bf569107f69221b3699986983e46307ff1500d1a2dc9a7",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/fc826833ea8265d127b37f0799fb443f4ab6f1c412ca8f839cc3f0cefd89e024/000001.json": "729e52e6a6b9ac6839bf569107f69221b3699986983e46307ff1500d1a2dc9a7",
+    "/workspace/WCPP/forecasts/issued-analyses/1bdb6edf5c4cb2b372996cc4586d4312cf05f76a2661085c43035c4d44a03717/000001.json": "413b41cd72ab6e0eca4060473fc83739fa2600431be98dfb7340a94ac2dd808d",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/1bdb6edf5c4cb2b372996cc4586d4312cf05f76a2661085c43035c4d44a03717/000001.json": "413b41cd72ab6e0eca4060473fc83739fa2600431be98dfb7340a94ac2dd808d",
+    "/workspace/WCPP/forecasts/issued-analyses/e0b8f2bdf346c57b4f4d774f6d6c5d016700b94bced701272aa0ab9280f00649/000001.json": "7949bdb742447adb57c91df9cf4bd3ed5da36870f7730ca75bef2e3e514dce71",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/e0b8f2bdf346c57b4f4d774f6d6c5d016700b94bced701272aa0ab9280f00649/000001.json": "7949bdb742447adb57c91df9cf4bd3ed5da36870f7730ca75bef2e3e514dce71",
+    "/workspace/WCPP/forecasts/issued-analyses/5f99e9189ac8199c5b5026a6e4feb5554f961c71011be62f9cefc98a6a89b389/000001.json": "8e9300eb416f358c1c18e83783cd93189036ee85a026a3cd5a4646d1e27d626a",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/5f99e9189ac8199c5b5026a6e4feb5554f961c71011be62f9cefc98a6a89b389/000001.json": "8e9300eb416f358c1c18e83783cd93189036ee85a026a3cd5a4646d1e27d626a",
+    "/workspace/WCPP/forecasts/issued-analyses/e03ce0e268626a568d369023f91666b75e71676e26c3b90e7731c1b3bb928b26/000001.json": "3e4000831cae06eed8565b54c7ea478d9cfed1c0919c8187b5eb27dafc16e88e",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/e03ce0e268626a568d369023f91666b75e71676e26c3b90e7731c1b3bb928b26/000001.json": "3e4000831cae06eed8565b54c7ea478d9cfed1c0919c8187b5eb27dafc16e88e",
+    "/workspace/WCPP/forecasts/issued-analyses/f880aeeef07dc0a9362b2749febb24f572cda3e3a461a503cdb62109b7f4d348/000001.json": "052a58c20f60d6ca2172ff7f08fd7e79ca4930ac4368ff2613ad297a4fc63280",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/f880aeeef07dc0a9362b2749febb24f572cda3e3a461a503cdb62109b7f4d348/000001.json": "052a58c20f60d6ca2172ff7f08fd7e79ca4930ac4368ff2613ad297a4fc63280",
+    "/workspace/WCPP/forecasts/issued-analyses/e2986af4e9d7b1fc8100eccba43e698912cad9c2e1b1fe2d8717bc68ce122f82/000001.json": "b58fc874b27f5b7ea0bbd8b4a77cb97d1737128a322d03b03e96e2017b030242",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/e2986af4e9d7b1fc8100eccba43e698912cad9c2e1b1fe2d8717bc68ce122f82/000001.json": "b58fc874b27f5b7ea0bbd8b4a77cb97d1737128a322d03b03e96e2017b030242",
+    "/workspace/WCPP/forecasts/issued-analyses/cea54b4f4df11249ef286a5a778e4d83c48b64c495e9825f18744e8877175e0c/000001.json": "460771e3704147c83a0545c727544a3fa6082a03442a76cf3f1ab2e4a19751e3",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/cea54b4f4df11249ef286a5a778e4d83c48b64c495e9825f18744e8877175e0c/000001.json": "460771e3704147c83a0545c727544a3fa6082a03442a76cf3f1ab2e4a19751e3",
+    "/workspace/WCPP/forecasts/issued-analyses/c12be415af85503e4da7c7f58bf393d4801341e9bc33d263a8fc8982d970a654/000001.json": "9ecbbe3139b7814e819af413f39da1c059d5fd0f4954218ef983585bfb3af84c",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/c12be415af85503e4da7c7f58bf393d4801341e9bc33d263a8fc8982d970a654/000001.json": "9ecbbe3139b7814e819af413f39da1c059d5fd0f4954218ef983585bfb3af84c",
+    "/workspace/WCPP/forecasts/issued-analyses/6949c62f28503b2f01cb661118468ed68fff5e182a1d2933485c020acfcfa0a5/000001.json": "a6625c759a5cafb0ca5cc399f7001f04be1897e92ebb973569b407b227917b05",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/6949c62f28503b2f01cb661118468ed68fff5e182a1d2933485c020acfcfa0a5/000001.json": "a6625c759a5cafb0ca5cc399f7001f04be1897e92ebb973569b407b227917b05",
+    "/workspace/WCPP/forecasts/issued-analyses/900af38a5e44defaf2a82cb187de1d710b59810116ba3d8ea58ab49f6f5a07c4/000001.json": "92c3a235e84ae93fe95d2ecd880adbfc461bf12d8bc8db2fcdcb3d7ee0190533",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/900af38a5e44defaf2a82cb187de1d710b59810116ba3d8ea58ab49f6f5a07c4/000001.json": "92c3a235e84ae93fe95d2ecd880adbfc461bf12d8bc8db2fcdcb3d7ee0190533",
+    "/workspace/WCPP/forecasts/issued-analyses/8d77a2c859c2c2465b90b7d3c09fe6d5e9c79a1662c243f1f0b799c00faf7943/000001.json": "e2ef726519c38149fa57f7611283ded7aab66ff2b9d76d4aad3edc217478b1ff",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/8d77a2c859c2c2465b90b7d3c09fe6d5e9c79a1662c243f1f0b799c00faf7943/000001.json": "e2ef726519c38149fa57f7611283ded7aab66ff2b9d76d4aad3edc217478b1ff",
+    "/workspace/WCPP/forecasts/issued-analyses/113ff6d0fef406329a197b8840b2c2e654a821321c353cf09678d2a2fb6bfe54/000001.json": "a3fa6d340507883f7dbdf70c48697ef0c0aa46ee07cb0f6cf9b082e0a352a9dc",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/113ff6d0fef406329a197b8840b2c2e654a821321c353cf09678d2a2fb6bfe54/000001.json": "a3fa6d340507883f7dbdf70c48697ef0c0aa46ee07cb0f6cf9b082e0a352a9dc",
+    "/workspace/WCPP/forecasts/issued-analyses/9e074d54a4a4de1d0ce5ba6864fba845b05e259420cb1653cd2a71999922a7f5/000001.json": "51e8f56ea24f719d5508d282c45506ada87b80b7c054b03da4200ac6a6031174",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/9e074d54a4a4de1d0ce5ba6864fba845b05e259420cb1653cd2a71999922a7f5/000001.json": "51e8f56ea24f719d5508d282c45506ada87b80b7c054b03da4200ac6a6031174",
+    "/workspace/WCPP/forecasts/issued-analyses/7bee05ae74fb7826fa9b988be448327e502484f6f596e50db03d9d2ee4488992/000001.json": "83553e14ad8cf6a82ce1a56980614c4c81146d08f2df630aba21dcc216e22d18",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/7bee05ae74fb7826fa9b988be448327e502484f6f596e50db03d9d2ee4488992/000001.json": "83553e14ad8cf6a82ce1a56980614c4c81146d08f2df630aba21dcc216e22d18",
+    "/workspace/WCPP/forecasts/issued-analyses/25642dd0f382475b923b1e70e73122142dac0751dd1bab95b9e34be1aff318d2/000001.json": "8876871a35ee27edf950742888cfcd143b0aad716c9a9b8d6a43a95447152bf4",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/25642dd0f382475b923b1e70e73122142dac0751dd1bab95b9e34be1aff318d2/000001.json": "8876871a35ee27edf950742888cfcd143b0aad716c9a9b8d6a43a95447152bf4",
+    "/workspace/WCPP/forecasts/issued-analyses/d06c803eced5106b5bfc253c1e8727d6a94e96c5dca5aa118df03ada0279d135/000001.json": "c1f11b7049f8ae7a84637df71abe6ab58c85a9dab0b5491e3b3ba13878bfd02c",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/d06c803eced5106b5bfc253c1e8727d6a94e96c5dca5aa118df03ada0279d135/000001.json": "c1f11b7049f8ae7a84637df71abe6ab58c85a9dab0b5491e3b3ba13878bfd02c",
+    "/workspace/WCPP/forecasts/issued-analyses/451823a4dcea6665557b5a1ef0944a84aaf9ebd5f5dcc5cefa8f75d8fdf85476/000001.json": "d1a08aa767ba09ba9dbaf1915ed2112c24e87694d0cf8d009903bdf1255a05c4",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/451823a4dcea6665557b5a1ef0944a84aaf9ebd5f5dcc5cefa8f75d8fdf85476/000001.json": "d1a08aa767ba09ba9dbaf1915ed2112c24e87694d0cf8d009903bdf1255a05c4",
+    "/workspace/WCPP/forecasts/issued-analyses/bc5337088752968731063ee032deab6fff40249b80b9c467c7b85c7dd28f58e7/000001.json": "16e24542167d90fa37761057be43e2bb0211b085dac4f15874a44eedc63241ca",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/bc5337088752968731063ee032deab6fff40249b80b9c467c7b85c7dd28f58e7/000001.json": "16e24542167d90fa37761057be43e2bb0211b085dac4f15874a44eedc63241ca",
+    "/workspace/WCPP/forecasts/issued-analyses/5176a22330b332d1f6e8a73cf709462515181da22d33f2085bfd1546c0ca0658/000001.json": "1a9f9e0f8c300c35808bd2ebe298573da5c37d099fcfd775932d880718c19b64",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/5176a22330b332d1f6e8a73cf709462515181da22d33f2085bfd1546c0ca0658/000001.json": "1a9f9e0f8c300c35808bd2ebe298573da5c37d099fcfd775932d880718c19b64",
+    "/workspace/WCPP/forecasts/issued-analyses/36bc9123295f7d81f3ba8078f9754767028192005702015797362766246b38f9/000001.json": "6c50217c4d5880b2a61ea5c3ea8d16f89881bc95c6113aa8090fb00b23a4328a",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/36bc9123295f7d81f3ba8078f9754767028192005702015797362766246b38f9/000001.json": "6c50217c4d5880b2a61ea5c3ea8d16f89881bc95c6113aa8090fb00b23a4328a",
+    "/workspace/WCPP/forecasts/issued-analyses/a639d320fad39b8ab9cce0a4c041c57bca7082ba5e4a64e07a035d8d70243e8e/000001.json": "77eca8ca2357f76adb77ca861f38a78755a11e6541328da0d07fe069f27153d5",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/a639d320fad39b8ab9cce0a4c041c57bca7082ba5e4a64e07a035d8d70243e8e/000001.json": "77eca8ca2357f76adb77ca861f38a78755a11e6541328da0d07fe069f27153d5",
+    "/workspace/WCPP/forecasts/issued-analyses/366229acf23bfa8d6237532bacb86b0806fbd8355a4d973fa03e62ae0f864023/000001.json": "22819b22b8e9de2c0fd8f0377a928a6159fa581b5892abafe16f2e91f52bea8a",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/366229acf23bfa8d6237532bacb86b0806fbd8355a4d973fa03e62ae0f864023/000001.json": "22819b22b8e9de2c0fd8f0377a928a6159fa581b5892abafe16f2e91f52bea8a",
+    "/workspace/WCPP/forecasts/issued-analyses/edb586795daf876c5cd8b43057b64d7a454679756be2f5f9623db04c782d7d73/000001.json": "b7504d37623c636be8526bbdb6326e534f11f36aeacd90d76a3eba6023f156e4",
+    "/workspace/recovered-workspace-20261102/WCPP/forecasts/issued-analyses/edb586795daf876c5cd8b43057b64d7a454679756be2f5f9623db04c782d7d73/000001.json": "b7504d37623c636be8526bbdb6326e534f11f36aeacd90d76a3eba6023f156e4"
+  },
+  "capture_assets": [
+    "/workspace/recovered-workspace-20261102/WCPP/runtime/active-model.json",
+    "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/freshness/run-final-002/current-candidate.json",
+    "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/freshness/run-final-002/test-candidate.json",
+    "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/current-artifact.json",
+    "/workspace/recovered-workspace-20261102/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/current-artifact.json",
+    "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-artifact.json",
+    "/workspace/recovered-workspace-20261102/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-artifact.json",
+    "/workspace/recovered-workspace-20261102/WCPP/research/nine-items-20261105/prospective/ucl-refresh-protocol-inactive-registry.json",
+    "/workspace/Football-Analysis/runtime/research_program/ucl_refresh_forward.py",
+    "/workspace/Football-Analysis/runtime/prediction_engine.py",
+    "/workspace/Football-Analysis/runtime/prediction_service.py",
+    "/workspace/Football-Analysis/runtime/continental/ucl_ml.py",
+    "/workspace/Football-Analysis/runtime/research/ucl_fixed_refresh.py"
+  ],
+  "state_directory": "ucl-state",
+  "review_source_sha256": "492616ed41eaea26057cc7b317d6e150870ddd08bbae5b98080b908b008262e7",
+  "automatic_promotion": false,
+  "created_at": "2026-11-05T05:39:21.754845+00:00",
+  "manifest_sha256": "c3e9ae11fda8279717b54bb2df4e3ec3bd3a09388901e7e4051118190517e9b6"
+}

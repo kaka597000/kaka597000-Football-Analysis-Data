@@ -63,12 +63,31 @@ class Kor1Tests(unittest.TestCase):
         config = self.directory / "config"
         config.mkdir(parents=True)
         shutil.copy(ROOT / "config" / "kor1-sources.json", config / "kor1-sources.json")
+        cfg=json.loads((config/'kor1-sources.json').read_text());cfg.pop('public_fallback',None);(config/'kor1-sources.json').write_text(json.dumps(cfg))
         scopes = json.loads((ROOT / "config" / "scopes.json").read_text())
         (config / "scopes.json").write_text(json.dumps(scopes, indent=2) + "\n")
         (self.directory / "normalized-results.jsonl").write_text('{"cohort":"aus.1"}\n')
 
     def tearDown(self):
         shutil.rmtree(self.directory, ignore_errors=True)
+
+
+    def test_public_fallback_keeps_auth_failure_and_quarantines_unknown_phase(self):
+        path=self.directory/'config'/'kor1-sources.json';cfg=json.loads(path.read_text())
+        cfg['public_fallback']={'provider':'fotmob','competition_id':9080,'country':'KOR','gender':'male'};path.write_text(json.dumps(cfg))
+        body={'details':{'id':9080,'name':'K League 1','country':'KOR','gender':'male','selectedSeason':'2026'},'fixtures':{'allMatches':[{'id':'123','round':'30','home':{'id':'1','name':'A'},'away':{'id':'2','name':'B'},'status':{'utcTime':'2026-10-31T10:00:00Z','finished':True,'reason':{'short':'FT'},'scoreStr':'2 - 1'}}]}}
+        fetched=FakeHttp({'/status':(403,{}),'v3.football.api-sports.io/leagues?':(200,{'errors':{'token':'invalid'}}),'fotmob.com':(200,body)})
+        result=collect(self.directory,{'WCPP_5DOLLAR_API_KEY':SECRET,'WCPP_API_FOOTBALL_KEY':'test-second'},fetched,now=datetime(2026,11,5,tzinfo=timezone.utc))
+        self.assertTrue(result['ok']);self.assertEqual(result['provider'],'fotmob');self.assertFalse(result['credential_issue_resolved']);self.assertIsNotNone(result['authenticated_source_failure']);self.assertFalse(result['training_eligible'])
+        row=json.loads((self.directory/'kor1'/'fixtures.jsonl').read_text().splitlines()[0]);self.assertEqual(row['stage'],'UNKNOWN');self.assertIsNone(row['neutral']);self.assertFalse(row['training_eligible']);self.assertEqual(row['goals'],{'home':2,'away':1})
+        self.assertEqual((self.directory/'normalized-results.jsonl').read_text(),'{"cohort":"aus.1"}\n')
+
+    def test_public_wrong_gender_identity_rejected(self):
+        from runtime.collect_kor1 import collect_public,Budget
+        cfg={'public_fallback':{'competition_id':9080}}
+        fetched=FakeHttp({'fotmob.com':(200,{'details':{'id':9080,'name':'K League 1','country':'KOR','gender':'female','selectedSeason':'2026'}})})
+        result=collect_public(cfg,fetched,Budget(1),self.directory,{},datetime(2026,11,5,tzinfo=timezone.utc),'2026-11-05T00:00:00Z')
+        self.assertFalse(result['ok']);self.assertIn('identity',result['reason'])
 
     def test_names(self):
         self.assertTrue(is_k_league_1("K League 1", "South Korea"))

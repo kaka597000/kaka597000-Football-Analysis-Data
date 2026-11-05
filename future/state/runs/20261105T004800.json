@@ -1,0 +1,78 @@
+{
+  "schema": "WCPP-AUTOMATED-FUTURE-CYCLE-1",
+  "reviewed_at": "2026-11-05T00:48:00.308487+00:00",
+  "bundle_sha256": "c90cbf948ed959ddb860abb6ab232e56beb3ee79fadb73b4fab9584c817178ef",
+  "population": 2,
+  "captured_population": 2,
+  "new_captures": [],
+  "result_requests": 0,
+  "completed": 0,
+  "pending": 2,
+  "missing_first_pairs": 0,
+  "failures": [],
+  "cohort_reviews": [
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 2,
+      "completed": 0,
+      "pending_results": [
+        "espn:401879242",
+        "espn:401879244"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {},
+        "probability_metrics": {},
+        "actual_primary_calibration": {
+          "current": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          },
+          "candidate": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    }
+  ],
+  "automatic_promotion": false,
+  "active_model_modified": false
+}

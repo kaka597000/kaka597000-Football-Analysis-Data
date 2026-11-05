@@ -1,0 +1,121 @@
+{
+  "schema_version": "1",
+  "created_at": "2026-11-04T06:01:06+00:00",
+  "scope": "two actual future fixtures cross-checked between ESPN scoreboard cache and fresh ESPN summary API response",
+  "counts": {
+    "fixtures": 2,
+    "explicit_neutral_boolean": 2,
+    "neutral_true": 0,
+    "neutral_false": 2,
+    "neutral_unknown": 0,
+    "bsd_api_calls": 0,
+    "5dollar_api_calls": 0
+  },
+  "fixtures": [
+    {
+      "status": "VERIFIED_EXPLICIT_FALSE",
+      "provider": "ESPN public API",
+      "league": "eng.1",
+      "league_name": "English Premier League",
+      "season": "2026-27 English Premier League",
+      "event_id": "401879242",
+      "date_utc": "2026-11-06T20:00Z",
+      "teams": [
+        {
+          "team_id": "368",
+          "name": "Everton",
+          "home_away": "home"
+        },
+        {
+          "team_id": "388",
+          "name": "Coventry City",
+          "home_away": "away"
+        }
+      ],
+      "neutralSite": false,
+      "evidence_field": "header.competitions[0].neutralSite",
+      "scoreboard_crosscheck": {
+        "captured_at": "2026-11-04T03:06:55.480050+00:00",
+        "raw_path": "/workspace/WCPP/research/all-scope-20261104/future-fixtures/eng.1-scoreboard-2026.json",
+        "sha256": "2cd0e50a3361d3692a36242260b4ef38e5657d4ae9e4c23b360420575923eb53",
+        "event_name": "Coventry City at Everton",
+        "event_date": "2026-11-06T20:00Z",
+        "event_id": "401879242",
+        "scoreboard_neutralSite": null,
+        "identity_check": "event id, UTC kickoff, ordered home/away ESPN team IDs and names all match summary"
+      },
+      "summary_evidence": {
+        "captured_at": "2026-11-04T05:59:50.479288+00:00",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879242",
+        "http_status": 200,
+        "raw_path": "/workspace/WCPP/research/all-scope-20261104/features/venue/raw/401879242-summary.json",
+        "sha256": "28e9161fe1a423b10e4a076cd0be34903fa3827e813543016ee80436903fbb41",
+        "event_header_id": "401879242",
+        "competition_id": "401879242",
+        "neutralSite": false
+      },
+      "venue_name": null,
+      "venue_policy": "venue is reported as metadata only; neutral state comes only from explicit neutralSite boolean"
+    },
+    {
+      "status": "VERIFIED_EXPLICIT_FALSE",
+      "provider": "ESPN public API",
+      "league": "eng.1",
+      "league_name": "English Premier League",
+      "season": "2026-27 English Premier League",
+      "event_id": "401879244",
+      "date_utc": "2026-11-08T14:00Z",
+      "teams": [
+        {
+          "team_id": "331",
+          "name": "Brighton & Hove Albion",
+          "home_away": "home"
+        },
+        {
+          "team_id": "337",
+          "name": "Brentford",
+          "home_away": "away"
+        }
+      ],
+      "neutralSite": false,
+      "evidence_field": "header.competitions[0].neutralSite",
+      "scoreboard_crosscheck": {
+        "captured_at": "2026-11-04T03:06:55.480050+00:00",
+        "raw_path": "/workspace/WCPP/research/all-scope-20261104/future-fixtures/eng.1-scoreboard-2026.json",
+        "sha256": "2cd0e50a3361d3692a36242260b4ef38e5657d4ae9e4c23b360420575923eb53",
+        "event_name": "Brentford at Brighton & Hove Albion",
+        "event_date": "2026-11-08T14:00Z",
+        "event_id": "401879244",
+        "scoreboard_neutralSite": null,
+        "identity_check": "event id, UTC kickoff, ordered home/away ESPN team IDs and names all match summary"
+      },
+      "summary_evidence": {
+        "captured_at": "2026-11-04T05:59:52.873553+00:00",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879244",
+        "http_status": 200,
+        "raw_path": "/workspace/WCPP/research/all-scope-20261104/features/venue/raw/401879244-summary.json",
+        "sha256": "8f450b3a6a288aace5fc99ccb88e3a24cb26cfb613834cbf6b3e19e05e37d366",
+        "event_header_id": "401879244",
+        "competition_id": "401879244",
+        "neutralSite": false
+      },
+      "venue_name": null,
+      "venue_policy": "venue is reported as metadata only; neutral state comes only from explicit neutralSite boolean"
+    }
+  ],
+  "provider_access": {
+    "BSD": {
+      "credential_env": "WCPP_BSD_API_KEY",
+      "credential_present": false,
+      "api_calls": 0,
+      "result": "BLOCKED_NO_BOUND_CREDENTIAL"
+    },
+    "5DollarFootballAPI": {
+      "credential_env": "WCPP_5DOLLAR_API_KEY",
+      "credential_present": false,
+      "api_calls": 0,
+      "result": "BLOCKED_NO_BOUND_CREDENTIAL; available archive did not match these future fixture IDs"
+    }
+  },
+  "limitation": "neutralSite=false is verified for the ESPN event at capture time, not a permanent assertion about any later rescheduling/venue change. BSD and 5Dollar were not queried because environment bindings were absent; no provider mapping claimed for them."
+}

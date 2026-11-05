@@ -1,0 +1,184 @@
+{
+  "schema": "WCPP-DYNAMIC-FORWARD-CANDIDATE-1",
+  "version": "WCPP-DYNAMIC-FORWARD-0.1",
+  "cohort": "ita.1",
+  "generated_at": "2026-11-03T06:01:02.553008+00:00",
+  "model": {
+    "schema": "WCPP-DYNAMIC-STRENGTH-1",
+    "cohort": "ita.1",
+    "stage": "regular",
+    "intercept": 0.29346943157452543,
+    "home_advantage": 0.25409789898127355,
+    "teams": {
+      "espn:113": {
+        "attack": -0.1535048770409355,
+        "defence": 0.13167172551967976,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:3997": {
+        "attack": 0.02297554543295582,
+        "defence": 0.2628033070218173,
+        "date": "2026-11-02",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:104": {
+        "attack": 0.3818924005491107,
+        "defence": -0.1336198355289642,
+        "date": "2026-10-31",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:110": {
+        "attack": 0.3793735309718431,
+        "defence": -0.09070948698818695,
+        "date": "2026-10-31",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:3956": {
+        "attack": -0.27265804887231965,
+        "defence": 0.3113053931623509,
+        "date": "2026-05-23",
+        "season": null
+      },
+      "espn:119": {
+        "attack": -0.28012591287799077,
+        "defence": 0.05750436833793168,
+        "date": "2026-05-24",
+        "season": null
+      },
+      "espn:239": {
+        "attack": 0.0016339314643758207,
+        "defence": 0.07271063157008108,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:114": {
+        "attack": 0.10854124042285584,
+        "defence": -0.10403971928138978,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:2925": {
+        "attack": -0.12502764556547147,
+        "defence": 0.037126422262912254,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:107": {
+        "attack": 0.008381638415340082,
+        "defence": -0.03726683243873562,
+        "date": "2026-10-31",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:105": {
+        "attack": 0.039514288278324275,
+        "defence": 0.08578215266862056,
+        "date": "2026-11-02",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:112": {
+        "attack": 0.16447972664007462,
+        "defence": -0.1287428427415922,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:103": {
+        "attack": 0.1341106714730806,
+        "defence": -0.07133720568064701,
+        "date": "2026-10-31",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:109": {
+        "attack": 0.0036451086434604735,
+        "defence": 0.10205953997227844,
+        "date": "2026-11-02",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:3263": {
+        "attack": -0.10930132169200504,
+        "defence": -0.035903270644053825,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:115": {
+        "attack": -0.208815437571122,
+        "defence": -0.04260478919670599,
+        "date": "2026-11-02",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:2572": {
+        "attack": 0.16461109718315267,
+        "defence": -0.23438655741305953,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:111": {
+        "attack": 0.031215551801972927,
+        "defence": -0.14393046603932033,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:4050": {
+        "attack": -0.20749553187132297,
+        "defence": 0.14055147315472596,
+        "date": "2026-05-24",
+        "season": null
+      },
+      "espn:118": {
+        "attack": -0.08641240186006706,
+        "defence": 0.13119507305442557,
+        "date": "2026-10-31",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:4007": {
+        "attack": 0.07264414618000545,
+        "defence": 0.17975628849170128,
+        "date": "2026-10-31",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:4057": {
+        "attack": 0.20620267524431768,
+        "defence": 0.01059172432841863,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      },
+      "espn:17530": {
+        "attack": -0.15466783313161214,
+        "defence": 0.07055874940231976,
+        "date": "2026-11-01",
+        "season": "espn:ita.1:2026"
+      }
+    },
+    "config": {
+      "learning_rate": 0.025,
+      "shrink_days": 365.0,
+      "season_retention": 0.5,
+      "max_log_strength": 1.5,
+      "minimum_rows": 120,
+      "max_goals": 80
+    },
+    "training_end": "2026-11-02",
+    "training_n": 420,
+    "training_ids_sha256": "91d70e9b0df9aad447f2285f6414a7abe9e4e3d4436cb78aca629bda76f516f7"
+  },
+  "distribution": {
+    "family": "poisson",
+    "parameter": null
+  },
+  "lineage": {
+    "forward_refit_uses_inspected_diagnostic_labels": true,
+    "diagnostic_metrics_belong_to_other_model": true,
+    "source_current_sha256": "ca69b767362958577e22a4157c23613cb9b6e12604ffb20fcaa2b624413e6dbd",
+    "new_collection_rows_sha256": "8d81a8c3a1fd6d646c4390547603afcf51b57951e33f71a842f4257bb08dcc58",
+    "source_identity": {
+      "commit": "b339dda010a27fc8cf9df5b550943beed9a29996",
+      "worktree_dirty": false,
+      "status": "GIT_IDENTIFIED"
+    },
+    "input_available_before_training": true,
+    "first_known_inferred": false
+  },
+  "status": "INACTIVE_FORWARD_ONLY_NOT_VALIDATED",
+  "promotion": false,
+  "historical_asof_certified": false
+}
