@@ -1,0 +1,165 @@
+{
+  "date_beijing": "2026-11-05",
+  "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/21",
+  "source_merge_commit": "7962527315ab221fd12a47ca28200567f9a3e42b",
+  "active_registry_modified": false,
+  "automatic_promotion": false,
+  "items": [
+    {
+      "id": 1,
+      "name": "活动模型数据鲜度",
+      "status": "RESEARCH_EXECUTED_NOT_PROMOTED",
+      "evidence": "欧冠306→360条；原Current/Test配方重拟合；54场重建诊断Primary净增均为0。",
+      "path": "freshness/run-final-002"
+    },
+    {
+      "id": 2,
+      "name": "18赛事训练与验收",
+      "status": "PARTIAL_BLOCKED",
+      "evidence": "已按正式18项范围审计；不能把17项无人值守配置等同18项训练通过。世界杯新赛制历史不足，不混入旧赛制。",
+      "path": "data/competition-coverage-audit-v2.json"
+    },
+    {
+      "id": 3,
+      "name": "芬超历史证据",
+      "status": "2025_AND_2026_PHASE_COMPLETE_VENUE_PENDING",
+      "evidence": "2025与2026两季各177场均已补齐阶段：各常规132、冠军30、保级15，共354条；2025逐场详情、2026球队页事件ID直接核验。neutral仍未知，原严格训练资格仍不通过。部分芬超响应精确抓取时刻缺失，明确保留未知并另记主代理实际核验时点，不认证历史asof。",
+      "path": "finland/main-verified-phase-2025.json"
+    },
+    {
+      "id": 4,
+      "name": "韩职远端数据源",
+      "status": "2026_PHASE_REG90_COMPLETE_VENUE_AUTH_PENDING",
+      "evidence": "韩职228场已按官方规则和源分组表认证阶段：常规198、FinalA15、FinalB15；204FT90分钟，24未赛。neutral仍未知，不进入严格trainer；认证API故障仍未解除。",
+      "path": "korea/audit.json"
+    },
+    {
+      "id": 5,
+      "name": "历史盘口增量训练",
+      "status": "INCREMENTAL_MARKET_TRAINING_EXECUTED_NOT_PROMOTED",
+      "evidence": "独立closing重建实验实际100次GLM拟合，2024/25月扩窗1723配对：统计Top1 207→227，净20；日期块95%区间[-0.35,+2.66]pp跨0。相对不使用显式场地的进失球基线，非Current/Test改善；单独599live快照不混入。",
+      "path": "market-ablation/run-002/report.json"
+    },
+    {
+      "id": 6,
+      "name": "人员与xG证据",
+      "status": "PARTIAL_EVIDENCE",
+      "evidence": "9场欧冠近期xG为81/90球队比赛记录；平台缺阵状态不等于官方医疗确认，不虚设人员影响系数。",
+      "path": "../next-stage-20261104"
+    },
+    {
+      "id": 7,
+      "name": "未来真实样本验证",
+      "status": "WAITING_REAL_OUTCOMES",
+      "evidence": "国内80场已全部赛前配对冻结，远端真实新增1场，缺失0；欧冠36场四路共144矩阵已冻结；两组已结算均为0。欧冠30场最低样本不能早于北京时间12月10日（受延期影响）。",
+      "path": "prospective"
+    },
+    {
+      "id": 8,
+      "name": "持续采集冻结复盘",
+      "status": "REMOTE_COLLECT_AND_TRAIN_VERIFIED",
+      "evidence": "真实GitHub采集41976436209、训练41976443099均成功并持久化；国内80/80、欧冠36/36配对。训练17项：1项新增候选、15项输入不变跳过、1项样本不足阻断；合格赛果7813条。未改活动模型。 采集78次请求76次成功，28条隔离，coverage_complete=false，任务成功不等于数据补齐。",
+      "path": "automation"
+    },
+    {
+      "id": 9,
+      "name": "综合选分对照",
+      "status": "REVIEW_EXECUTED_NOT_VALIDATED",
+      "evidence": "真实10场综合第一比分2/10；同场9场较Current/Test各净增1；小样本不能证明新方法有效。",
+      "path": "/workspace/WCPP/reports/review-europe-20261105/paired-review.json"
+    }
+  ],
+  "remote_collect_run": 41976436209,
+  "remote_train_run": 41976443099,
+  "private_state_commit": "e88e52b6c5622c8bb02a731cf791b4fcf19b1b33",
+  "remote_training": {
+    "scope_count": 17,
+    "accepted_rows": 7813,
+    "statuses": {
+      "SKIPPED_UNCHANGED": 15,
+      "BLOCKED_INSUFFICIENT_ROWS": 1,
+      "TRAINED_CANDIDATE": 1
+    }
+  },
+  "remote_collection": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-11-05T05:49:51.587255+00:00",
+    "request_count": 78,
+    "successful_requests": 76,
+    "max_requests": 100,
+    "retry_used": true,
+    "events_seen": 65,
+    "new_result_observations": 0,
+    "quarantined": 28,
+    "market_snapshot_saved": false,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 90,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false
+  },
+  "supersedes": "nine-items-20261105/nine-item-acceptance-ledger.json",
+  "updated_at_beijing": "2026-11-05T22:04:55.232940+08:00",
+  "new_market_experiment": {
+    "n": 1723,
+    "holdout": true,
+    "top1_net_hits": 20.0,
+    "baseline_top1_hits": 207.0,
+    "treatment_top1_hits": 227.0,
+    "changed_correct": 97,
+    "changed_wrong": 77,
+    "top1_net_rate_ci95": [
+      -0.003506772483517385,
+      0.026586102719033233
+    ],
+    "baseline": {
+      "top1": 0.12013929193267557,
+      "score_logloss": 2.9541536210767885,
+      "wdl_acc": 0.4968078932095183,
+      "wdl_brier": 0.6134492398130871,
+      "wdl_logloss": 1.023216565179443,
+      "wdl_rps": 0.2129290415355058,
+      "ou_acc": 0.5618107951247824,
+      "ou_brier": 0.24527580154388912,
+      "tail4_probability": 0.31310893832809045,
+      "tail4_actual": 0.3168891468369124,
+      "tail4_brier": 0.2114586523103044
+    },
+    "treatment": {
+      "top1": 0.1317469529889727,
+      "score_logloss": 2.8754499424895448,
+      "wdl_acc": 0.5420777713290772,
+      "wdl_brier": 0.5767767513657933,
+      "wdl_logloss": 0.9704865471292518,
+      "wdl_rps": 0.19562826312367868,
+      "ou_acc": 0.587928032501451,
+      "ou_brier": 0.23809535359584233,
+      "tail4_probability": 0.31545507455413396,
+      "tail4_actual": 0.3168891468369124,
+      "tail4_brier": 0.20406343239960353
+    },
+    "market_untrained": {
+      "wdl_acc": 0.543238537434707,
+      "wdl_brier": 0.5744558644455687,
+      "wdl_logloss": 0.9660385067791111,
+      "wdl_rps": 0.1947978301113071,
+      "ou_acc": 0.6006964596633778,
+      "ou_brier": 0.23711696861671128
+    }
+  },
+  "scope_notes": [
+    "Rolling temporal evaluation, not a static never-trained season holdout.",
+    "No explicit venue input; market indirectly carries venue information. Unknown neutral is not labeled verified.",
+    "Historical closing availability lacks quoted_at/first_known certification; not an as-of backtest.",
+    "No activity promotion and no parameter tuning after evaluation."
+  ],
+  "previous_source_pr": "https://github.com/kaka597000/Football-Analysis/pull/20",
+  "previous_source_merge_commit": "7e518a708457721ffbb53723fe931f31b6390863",
+  "strict_local_tests": {
+    "suites": 22,
+    "tests": 569,
+    "skips": 0
+  },
+  "remote_ci": "All six checks successful",
+  "implementation_merge_commit": "7962527315ab221fd12a47ca28200567f9a3e42b",
+  "latest_source_commit": "463f3c9c53149ec35c0a0483c1d2a0af6bf38042"
+}
