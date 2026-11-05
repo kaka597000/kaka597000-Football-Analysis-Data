@@ -1,7 +1,7 @@
 {
   "schema": "WCPP-UNATTENDED-CANDIDATE-1",
-  "run_id": "20261104T115134Z-207f8cb0",
-  "created_at": "2026-11-04T11:51:34.907460+00:00",
+  "run_id": "20261105T055049Z-07180ffd",
+  "created_at": "2026-11-05T05:50:49.418034+00:00",
   "code_sha256": "c40721371ee45f965dfed466b63830392adc57a72d13aebcbd743b0649831943",
   "configuration": {
     "half_life": 365,
@@ -15,10 +15,10 @@
     "config/scopes.json": "100e87301817e200878e78e60e96af017a918235d00a59509a8f3c5171ccf61d",
     "seed/training.json.gz": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
     "seed/manifest.json": "9b2f21041001710584f9bc7c45c53caecdc050a4c31983454850bc977605cb77",
-    "normalized-results.jsonl": "5124807dad9d8491f13e60ea39dd39c7e9981a52cec6add2e636623ebb9573c4"
+    "normalized-results.jsonl": "000df968169023dcd4ed4732c7e2e8b18ad70681c44f4660ee65eb1a5167fd97"
   },
   "scope_count": 17,
-  "accepted_rows": 7812,
+  "accepted_rows": 7813,
   "quarantined": 0,
   "excluded_by_time": [
     {
@@ -9728,13 +9728,7 @@
       "cohort": "aus.1",
       "rows": 2981,
       "input_sha256": "2a5348423783252749af5846a59c3e1279300a644b256ce27ef32cd4aa4d0c6f",
-      "status": "TRAINED_CANDIDATE",
-      "artifact": "candidates/20261104T115134Z-207f8cb0/aus.1-19929ab0/artifact.json",
-      "artifact_sha256": "d33bf9929c405ff82f0b819c5eb557b92b10a0b96d45fb0ad4fdae118008d1bb",
-      "fit_end": "2026-11-01",
-      "audit_n": 963,
-      "baseline_top1_hits": 98,
-      "candidate_top1_hits": 96
+      "status": "SKIPPED_UNCHANGED"
     },
     {
       "cohort": "eng.1",
@@ -9776,13 +9770,7 @@
       "cohort": "jpn.1",
       "rows": 472,
       "input_sha256": "4435ac7c273efc351a48cc50c6324b2ae1052c712e294e6f89e13b55821590c1",
-      "status": "TRAINED_CANDIDATE",
-      "artifact": "candidates/20261104T115134Z-207f8cb0/jpn.1-e968f412/artifact.json",
-      "artifact_sha256": "f10a2f2a44eebb8b582a695bb64fa3a72a8703484600f1424d11482dbcda5065",
-      "fit_end": "2026-11-01",
-      "audit_n": 117,
-      "baseline_top1_hits": 13,
-      "candidate_top1_hits": 18
+      "status": "SKIPPED_UNCHANGED"
     },
     {
       "cohort": "kor.1",
@@ -9816,27 +9804,21 @@
     },
     {
       "cohort": "uefa.europa",
-      "rows": 144,
-      "input_sha256": "ba93ae930c51ad4c06083d6980526e6994734f2a3d68e7275330232a1f778a64",
+      "rows": 145,
+      "input_sha256": "e89812eaad90daee4eb8ca4e5e1071258eacf6e2f21e3b346517cfff0d6e2102",
       "status": "TRAINED_CANDIDATE",
-      "artifact": "candidates/20261104T115134Z-207f8cb0/uefa.europa-905ff26d/artifact.json",
-      "artifact_sha256": "d1e1e6e352d75a766e7e91d0ad22a8578ffb03437e14e5a2048609a707e74625",
-      "fit_end": "2025-12-11",
-      "audit_n": 54,
-      "baseline_top1_hits": 4,
-      "candidate_top1_hits": 5
+      "artifact": "candidates/20261105T055049Z-07180ffd/uefa.europa-905ff26d/artifact.json",
+      "artifact_sha256": "f70b5c99c250c9a981d1a537df0efd80283a1301285bab1c1b03c70ec5c17b26",
+      "fit_end": "2026-11-04",
+      "audit_n": 37,
+      "baseline_top1_hits": 3,
+      "candidate_top1_hits": 4
     },
     {
       "cohort": "uefa.europa.conf",
       "rows": 216,
       "input_sha256": "11d56c267c396a30bb7bd9915594b252c51e875c4471300b8f1f4ea3bb0faf1b",
-      "status": "TRAINED_CANDIDATE",
-      "artifact": "candidates/20261104T115134Z-207f8cb0/uefa.europa.conf-dfb47525/artifact.json",
-      "artifact_sha256": "4c97f4ec0e2eae114373e566abeec4138e4b563c3a42d69f0cda9749748d9a3f",
-      "fit_end": "2025-12-18",
-      "audit_n": 72,
-      "baseline_top1_hits": 8,
-      "candidate_top1_hits": 7
+      "status": "SKIPPED_UNCHANGED"
     },
     {
       "cohort": "usa.1",
