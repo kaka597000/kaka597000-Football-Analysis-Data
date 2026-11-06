@@ -1,7 +1,7 @@
 {
   "schema": "WCPP-UNATTENDED-CANDIDATE-1",
-  "run_id": "20261105T094925Z-5b93aedd",
-  "created_at": "2026-11-05T09:49:25.857334+00:00",
+  "run_id": "20261106T094815Z-266f71d1",
+  "created_at": "2026-11-06T09:48:15.891534+00:00",
   "code_sha256": "c40721371ee45f965dfed466b63830392adc57a72d13aebcbd743b0649831943",
   "configuration": {
     "half_life": 365,
@@ -15,10 +15,10 @@
     "config/scopes.json": "100e87301817e200878e78e60e96af017a918235d00a59509a8f3c5171ccf61d",
     "seed/training.json.gz": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
     "seed/manifest.json": "9b2f21041001710584f9bc7c45c53caecdc050a4c31983454850bc977605cb77",
-    "normalized-results.jsonl": "000df968169023dcd4ed4732c7e2e8b18ad70681c44f4660ee65eb1a5167fd97"
+    "normalized-results.jsonl": "bb68604407eb45ea483f644bf3a4040a3bae51e7743ca4126f2b802d37b9d2d6"
   },
   "scope_count": 17,
-  "accepted_rows": 7813,
+  "accepted_rows": 7848,
   "quarantined": 0,
   "excluded_by_time": [
     {
@@ -9804,15 +9804,27 @@
     },
     {
       "cohort": "uefa.europa",
-      "rows": 145,
-      "input_sha256": "e89812eaad90daee4eb8ca4e5e1071258eacf6e2f21e3b346517cfff0d6e2102",
-      "status": "SKIPPED_UNCHANGED"
+      "rows": 162,
+      "input_sha256": "d7f540f99e44c28fcb580c9f4292a7b84ffc7c25a56fb673d35db119d7450180",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261106T094815Z-266f71d1/uefa.europa-905ff26d/artifact.json",
+      "artifact_sha256": "6e6e36b6ebc47cbd3cbdbcdb9ad4fba1fa91145ae3e9196083de6625c93e8647",
+      "fit_end": "2026-11-05",
+      "audit_n": 54,
+      "baseline_top1_hits": 5,
+      "candidate_top1_hits": 6
     },
     {
       "cohort": "uefa.europa.conf",
-      "rows": 216,
-      "input_sha256": "11d56c267c396a30bb7bd9915594b252c51e875c4471300b8f1f4ea3bb0faf1b",
-      "status": "SKIPPED_UNCHANGED"
+      "rows": 234,
+      "input_sha256": "1c1d56e0470b500a3e5cc0ae91553e756783922dc00f6ecda93aee4cd805936f",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261106T094815Z-266f71d1/uefa.europa.conf-dfb47525/artifact.json",
+      "artifact_sha256": "292097dce07ddfef92add389aaf07ca0c3a155c6609e127f091dc26ac503702b",
+      "fit_end": "2026-11-05",
+      "audit_n": 72,
+      "baseline_top1_hits": 7,
+      "candidate_top1_hits": 10
     },
     {
       "cohort": "usa.1",
