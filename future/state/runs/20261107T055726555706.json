@@ -1,0 +1,913 @@
+{
+  "schema": "WCPP-AUTOMATED-FUTURE-CYCLE-1",
+  "reviewed_at": "2026-11-07T05:57:26.555627+00:00",
+  "bundle_sha256": "cd90fe5d4e8c6ef33b50079e932a41017fc2430c8b73f9a9286d3feac361e952",
+  "population": 80,
+  "captured_population": 80,
+  "new_captures": [],
+  "result_requests": 2,
+  "completed": 2,
+  "pending": 78,
+  "missing_first_pairs": 0,
+  "failures": [],
+  "cohort_reviews": [
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 2,
+      "completed": 0,
+      "pending_results": [
+        "espn:401879242",
+        "espn:401879244"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {},
+        "probability_metrics": {},
+        "actual_primary_calibration": {
+          "current": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          },
+          "candidate": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 8,
+      "completed": 1,
+      "pending_results": [
+        "espn:401842878",
+        "espn:401842881",
+        "espn:401842875",
+        "espn:401842877",
+        "espn:401842874",
+        "espn:401842879",
+        "espn:401842880"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 1,
+          "primary_n": 1,
+          "primary_hits": 0,
+          "wdl_n": 1,
+          "wdl_hits": 1,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 1,
+          "primary_n": 1,
+          "primary_hits": 0,
+          "wdl_n": 1,
+          "wdl_hits": 1,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401842876",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "QUALITY_REGRESSION:score_log_loss",
+          "QUALITY_REGRESSION:score_brier",
+          "QUALITY_REGRESSION:wdl_brier",
+          "QUALITY_REGRESSION:wdl_rps",
+          "PRIMARY_CONFIDENCE_CALIBRATION_REGRESSION",
+          "TAIL_CALIBRATION_REGRESSION:away3+",
+          "TAIL_CALIBRATION_REGRESSION:away4+",
+          "TAIL_CALIBRATION_REGRESSION:home3+",
+          "TAIL_CALIBRATION_REGRESSION:home4+",
+          "TAIL_CALIBRATION_REGRESSION:total4+",
+          "TAIL_CALIBRATION_REGRESSION:total5+",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 1,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_primary_hits": 0,
+          "paired_one_sided_pvalue": 1.0
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 1,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 3.623027204977548,
+              "score_brier": 1.0172544669411945,
+              "wdl_brier": 0.26509333109341204,
+              "wdl_rps": 0.10633398236336603,
+              "wdl_accuracy": 1.0
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.11727018954295905,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 1,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.004577804351749615,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.0002226827682078581,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.5317053000364992,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.792859201630219,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total4+": {
+                "brier": 0.49924560331937834,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.7358216957748642,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 1,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 4.098244941088802,
+              "score_brier": 1.0434562157543812,
+              "wdl_brier": 0.3955077206768608,
+              "wdl_rps": 0.16324307971008567,
+              "wdl_accuracy": 1.0
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.12676069007462448,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 1,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.005850135261923383,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.0003143422257321546,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.6642862575286709,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.878770136078399,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total4+": {
+                "brier": 0.5887572364524749,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.804973489930189,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 1,
+            "ece": 0.11727018954295905,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.11727018954295905,
+                "hit_rate": 0.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 1,
+            "ece": 0.12676069007462448,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.12676069007462448,
+                "hit_rate": 0.0
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 8,
+      "completed": 0,
+      "pending_results": [
+        "espn:401884739",
+        "espn:401884737",
+        "espn:401884740",
+        "espn:401884744",
+        "espn:401884745",
+        "espn:401884743",
+        "espn:401884738",
+        "espn:401884741"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {},
+        "probability_metrics": {},
+        "actual_primary_calibration": {
+          "current": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          },
+          "candidate": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 8,
+      "completed": 0,
+      "pending_results": [
+        "espn:401876405",
+        "espn:401876411",
+        "espn:401876407",
+        "espn:401876406",
+        "espn:401876408",
+        "espn:401876409",
+        "espn:401876410",
+        "espn:401876412"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {},
+        "probability_metrics": {},
+        "actual_primary_calibration": {
+          "current": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          },
+          "candidate": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 9,
+      "completed": 1,
+      "pending_results": [
+        "espn:401874791",
+        "espn:401874811",
+        "espn:401874974",
+        "espn:401874803",
+        "espn:401874810",
+        "espn:401874800",
+        "espn:401875018",
+        "espn:401874808"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 1,
+          "primary_n": 1,
+          "primary_hits": 0,
+          "wdl_n": 1,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 1,
+          "primary_n": 1,
+          "primary_hits": 0,
+          "wdl_n": 1,
+          "wdl_hits": 1,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401874815",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "PRIMARY_CONFIDENCE_CALIBRATION_REGRESSION",
+          "TAIL_CALIBRATION_REGRESSION:home3+",
+          "TAIL_CALIBRATION_REGRESSION:home4+",
+          "TAIL_CALIBRATION_REGRESSION:total4+",
+          "TAIL_CALIBRATION_REGRESSION:total5+",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 1,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_primary_hits": 0,
+          "paired_one_sided_pvalue": 1.0
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 1,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 1.0,
+              "score_log_loss": 2.7015964960170336,
+              "score_brier": 0.9266398286345833,
+              "wdl_brier": 0.8375589975143755,
+              "wdl_rps": 0.3911378894448346,
+              "wdl_accuracy": 0.0
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.10939729955710804,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 1,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.06555605837131008,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.010163769775395745,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.015964779412791775,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home4+": {
+                "brier": 0.001305418781116596,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.12079336349960375,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total5+": {
+                "brier": 0.032703428120367826,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 1,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 1.0,
+              "exact_top5": 1.0,
+              "score_log_loss": 2.3764047160706605,
+              "score_brier": 0.8736637769416162,
+              "wdl_brier": 0.43711837612828,
+              "wdl_rps": 0.1901985561231104,
+              "wdl_accuracy": 1.0
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.10999532707406376,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 1,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.02180078022018987,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.0020408653103648425,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.05752405674397365,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home4+": {
+                "brier": 0.008378047654043432,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.1259422903095707,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total5+": {
+                "brier": 0.03471729814903799,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 1,
+            "ece": 0.10939729955710804,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.10939729955710804,
+                "hit_rate": 0.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 1,
+            "ece": 0.10999532707406376,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.10999532707406376,
+                "hit_rate": 0.0
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 9,
+      "completed": 0,
+      "pending_results": [
+        "espn:401882809",
+        "espn:401882812",
+        "espn:401882813",
+        "espn:401882811",
+        "espn:401882808",
+        "espn:401882814",
+        "espn:401882810",
+        "espn:401882807",
+        "espn:401882815"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {},
+        "probability_metrics": {},
+        "actual_primary_calibration": {
+          "current": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          },
+          "candidate": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 28,
+      "completed": 0,
+      "pending_results": [
+        "espn:401878758",
+        "espn:401878760",
+        "espn:401879241",
+        "espn:401878757",
+        "espn:401878759",
+        "espn:401879239",
+        "espn:401879243",
+        "espn:401879240",
+        "espn:401879233",
+        "espn:401878754",
+        "espn:401878756",
+        "espn:401879235",
+        "espn:401879236",
+        "espn:401879238",
+        "espn:401879232",
+        "espn:401879234",
+        "espn:401878755",
+        "espn:401879237",
+        "espn:401879225",
+        "espn:401879226",
+        "espn:401879227",
+        "espn:401878752",
+        "espn:401879229",
+        "espn:401879224",
+        "espn:401879228",
+        "espn:401879230",
+        "espn:401879231",
+        "espn:401878753"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {},
+        "probability_metrics": {},
+        "actual_primary_calibration": {
+          "current": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          },
+          "candidate": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 8,
+      "completed": 0,
+      "pending_results": [
+        "espn:401843480",
+        "espn:401843478",
+        "espn:401843476",
+        "espn:401843477",
+        "espn:401843479",
+        "espn:401843481",
+        "espn:401843482",
+        "espn:401843475"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 0,
+          "primary_n": 0,
+          "primary_hits": 0,
+          "wdl_n": 0,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {},
+        "probability_metrics": {},
+        "actual_primary_calibration": {
+          "current": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          },
+          "candidate": {
+            "n": 0,
+            "ece": null,
+            "bins": []
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    }
+  ],
+  "automatic_promotion": false,
+  "active_model_modified": false
+}
