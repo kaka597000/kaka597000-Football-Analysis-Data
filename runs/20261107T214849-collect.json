@@ -1,0 +1,821 @@
+{
+  "run_id": "20261107T214849-collect",
+  "started_at": "2026-11-07T21:48:49.726901+00:00",
+  "mode": "collect",
+  "policy": {
+    "max_cohorts": 16,
+    "historical_only_scopes_skipped": 0,
+    "max_requests": 100,
+    "lookback_days": 2,
+    "promotion": "NEVER",
+    "max_collection_seconds": 90,
+    "data_sources": "existing public JSON endpoints only",
+    "paid_api_calls": false
+  },
+  "github_run_id": "42417604657",
+  "github_run_attempt": "1",
+  "source_commit": "7e518a708457721ffbb53723fe931f31b6390863",
+  "source_worktree_dirty": false,
+  "seed_sha256": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
+  "active_model_modified": false,
+  "result": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-11-07T21:48:49.763048+00:00",
+    "request_count": 72,
+    "successful_requests": 70,
+    "max_requests": 100,
+    "retry_used": true,
+    "events_seen": 93,
+    "new_result_observations": 22,
+    "quarantined": 0,
+    "market_snapshot_saved": false,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 90,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false,
+    "coverage_by_competition": {
+      "afc.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "aus.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "eng.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 4,
+        "quarantined": 0
+      },
+      "esp.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 3,
+        "quarantined": 0
+      },
+      "fifa.world": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "ger.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 6,
+        "new_rows": 5,
+        "quarantined": 0
+      },
+      "ita.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 4,
+        "quarantined": 0
+      },
+      "jpn.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 6,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ned.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 4,
+        "new_rows": 2,
+        "quarantined": 0
+      },
+      "nor.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "swe.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 2,
+        "quarantined": 0
+      },
+      "uefa.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.europa": {
+        "scoreboards_ok": 3,
+        "events_seen": 17,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.europa.conf": {
+        "scoreboards_ok": 3,
+        "events_seen": 18,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "usa.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 15,
+        "new_rows": 0,
+        "quarantined": 0
+      }
+    },
+    "new_rows": [
+      {
+        "match_id": "espn:401878758",
+        "cohort": "eng.1",
+        "competition": "eng.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T12:30:00+00:00",
+        "home": "espn:357",
+        "away": "espn:367",
+        "home_goals": 1,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:53.334807+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878758",
+        "provider_final_score": [
+          "1",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/71bf84527adc553b96d71568306a33a779f41e7e0631815ee17a7cf5c0420e15.json.gz",
+          "sha256": "71bf84527adc553b96d71568306a33a779f41e7e0631815ee17a7cf5c0420e15",
+          "captured_at": "2026-11-07T21:48:53.334807+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878758"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401878760",
+        "cohort": "eng.1",
+        "competition": "eng.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T15:00:00+00:00",
+        "home": "espn:359",
+        "away": "espn:306",
+        "home_goals": 1,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:53.607764+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878760",
+        "provider_final_score": [
+          "1",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/4b9cb9772f500793ebfbb5e80bd4692e0d483be02032ba6fb108967e5bf1f818.json.gz",
+          "sha256": "4b9cb9772f500793ebfbb5e80bd4692e0d483be02032ba6fb108967e5bf1f818",
+          "captured_at": "2026-11-07T21:48:53.607764+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878760"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401879241",
+        "cohort": "eng.1",
+        "competition": "eng.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T15:00:00+00:00",
+        "home": "espn:370",
+        "away": "espn:361",
+        "home_goals": 1,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:53.909828+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879241",
+        "provider_final_score": [
+          "1",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/98aac219618f8e35c4d7aee6ab0b04c2d0a21e0225e79e28f8935c1707b38436.json.gz",
+          "sha256": "98aac219618f8e35c4d7aee6ab0b04c2d0a21e0225e79e28f8935c1707b38436",
+          "captured_at": "2026-11-07T21:48:53.909828+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879241"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401878757",
+        "cohort": "eng.1",
+        "competition": "eng.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T17:30:00+00:00",
+        "home": "espn:393",
+        "away": "espn:382",
+        "home_goals": 3,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:54.195485+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878757",
+        "provider_final_score": [
+          "3",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/7248b1905026aed6b7c5c3136c37cf5204acf1dd17e57ad6a21e727330cc0ec1.json.gz",
+          "sha256": "7248b1905026aed6b7c5c3136c37cf5204acf1dd17e57ad6a21e727330cc0ec1",
+          "captured_at": "2026-11-07T21:48:54.195485+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878757"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401882812",
+        "cohort": "esp.1",
+        "competition": "esp.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T13:00:00+00:00",
+        "home": "espn:99",
+        "away": "espn:87",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:55.358441+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882812",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/eed591252e7afb9826c6a829f486a90e59dfc73accd75bf4fcd2123fcd60c1f9.json.gz",
+          "sha256": "eed591252e7afb9826c6a829f486a90e59dfc73accd75bf4fcd2123fcd60c1f9",
+          "captured_at": "2026-11-07T21:48:55.358441+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882812"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401882813",
+        "cohort": "esp.1",
+        "competition": "esp.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T15:15:00+00:00",
+        "home": "espn:88",
+        "away": "espn:90",
+        "home_goals": 0,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:55.673065+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882813",
+        "provider_final_score": [
+          "0",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/d8c83dcb86d95ac4bc2a3d12dbd2bc2ed568fa22049c4970c5a2f8247e6e87c0.json.gz",
+          "sha256": "d8c83dcb86d95ac4bc2a3d12dbd2bc2ed568fa22049c4970c5a2f8247e6e87c0",
+          "captured_at": "2026-11-07T21:48:55.673065+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882813"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401882811",
+        "cohort": "esp.1",
+        "competition": "esp.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T17:30:00+00:00",
+        "home": "espn:97",
+        "away": "espn:93",
+        "home_goals": 1,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:55.968389+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882811",
+        "provider_final_score": [
+          "1",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/6e5007b1b1368ab1ea14677dc02c8406e65257c3b93b0e326d401d22f4b72506.json.gz",
+          "sha256": "6e5007b1b1368ab1ea14677dc02c8406e65257c3b93b0e326d401d22f4b72506",
+          "captured_at": "2026-11-07T21:48:55.968389+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882811"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401876411",
+        "cohort": "fra.1",
+        "competition": "fra.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T18:00:00+00:00",
+        "home": "espn:172",
+        "away": "espn:6851",
+        "home_goals": 0,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:57.919076+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876411",
+        "provider_final_score": [
+          "0",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/610fe38037216401bbb8154d07a8346f9fc6f83ac781f270de33ea811f41ad47.json.gz",
+          "sha256": "610fe38037216401bbb8154d07a8346f9fc6f83ac781f270de33ea811f41ad47",
+          "captured_at": "2026-11-07T21:48:57.919076+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876411"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401884745",
+        "cohort": "ger.1",
+        "competition": "ger.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T14:30:00+00:00",
+        "home": "espn:124",
+        "away": "espn:10388",
+        "home_goals": 2,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:59.088171+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884745",
+        "provider_final_score": [
+          "2",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/0be61641be469864e04ee53f66be58304ce20ae947abcbd268cf08f3c89d9b66.json.gz",
+          "sha256": "0be61641be469864e04ee53f66be58304ce20ae947abcbd268cf08f3c89d9b66",
+          "captured_at": "2026-11-07T21:48:59.088171+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884745"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401884740",
+        "cohort": "ger.1",
+        "competition": "ger.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T14:30:00+00:00",
+        "home": "espn:2950",
+        "away": "espn:132",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:59.384255+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884740",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/54a75cc7f3a62a8131020ea293a5320ed145c9633699659a76fc7409053ced9c.json.gz",
+          "sha256": "54a75cc7f3a62a8131020ea293a5320ed145c9633699659a76fc7409053ced9c",
+          "captured_at": "2026-11-07T21:48:59.384255+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884740"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401884744",
+        "cohort": "ger.1",
+        "competition": "ger.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T14:30:00+00:00",
+        "home": "espn:11420",
+        "away": "espn:3841",
+        "home_goals": 5,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:59.689282+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884744",
+        "provider_final_score": [
+          "5",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/ec2683627161a66544c6bf96aecca0d65f82bb768cafb9fa955dba4dbd9d2c5f.json.gz",
+          "sha256": "ec2683627161a66544c6bf96aecca0d65f82bb768cafb9fa955dba4dbd9d2c5f",
+          "captured_at": "2026-11-07T21:48:59.689282+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884744"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401884737",
+        "cohort": "ger.1",
+        "competition": "ger.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T14:30:00+00:00",
+        "home": "espn:3307",
+        "away": "espn:125",
+        "home_goals": 2,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:48:59.997328+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884737",
+        "provider_final_score": [
+          "2",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/078d9120b25b2fe572b74ff0184749b51bea0fe6358a262d95cfd6f94d7263fe.json.gz",
+          "sha256": "078d9120b25b2fe572b74ff0184749b51bea0fe6358a262d95cfd6f94d7263fe",
+          "captured_at": "2026-11-07T21:48:59.997328+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884737"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401884743",
+        "cohort": "ger.1",
+        "competition": "ger.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T17:30:00+00:00",
+        "home": "espn:134",
+        "away": "espn:137",
+        "home_goals": 1,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:00.256914+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884743",
+        "provider_final_score": [
+          "1",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/3c9463821dde332308afec567e5f80a7254d46eece0e017411f34bbb04a8644e.json.gz",
+          "sha256": "3c9463821dde332308afec567e5f80a7254d46eece0e017411f34bbb04a8644e",
+          "captured_at": "2026-11-07T21:49:00.256914+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884743"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401874791",
+        "cohort": "ita.1",
+        "competition": "ita.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T14:00:00+00:00",
+        "home": "espn:2925",
+        "away": "espn:4057",
+        "home_goals": 1,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:01.400653+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874791",
+        "provider_final_score": [
+          "1",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/d089acc7e6769da7a9fae7aeddd231cd288c4db02527a962e6a743255c76f7de.json.gz",
+          "sha256": "d089acc7e6769da7a9fae7aeddd231cd288c4db02527a962e6a743255c76f7de",
+          "captured_at": "2026-11-07T21:49:01.400653+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874791"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401874811",
+        "cohort": "ita.1",
+        "competition": "ita.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T14:00:00+00:00",
+        "home": "espn:239",
+        "away": "espn:113",
+        "home_goals": 1,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:01.709025+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874811",
+        "provider_final_score": [
+          "1",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/332583a9ec5c608d61a9cf4d6b560d119cd3171a31536e7e59ea277d6dad8e14.json.gz",
+          "sha256": "332583a9ec5c608d61a9cf4d6b560d119cd3171a31536e7e59ea277d6dad8e14",
+          "captured_at": "2026-11-07T21:49:01.709025+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874811"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401874974",
+        "cohort": "ita.1",
+        "competition": "ita.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T17:00:00+00:00",
+        "home": "espn:115",
+        "away": "espn:107",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:02.009172+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874974",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/670571944b33e61fd369540fc7e39caf3426aa70a5b87b3c9776b36996fc01d7.json.gz",
+          "sha256": "670571944b33e61fd369540fc7e39caf3426aa70a5b87b3c9776b36996fc01d7",
+          "captured_at": "2026-11-07T21:49:02.009172+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874974"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401874803",
+        "cohort": "ita.1",
+        "competition": "ita.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T19:45:00+00:00",
+        "home": "espn:104",
+        "away": "espn:3997",
+        "home_goals": 3,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:02.311932+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874803",
+        "provider_final_score": [
+          "3",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/0d7f85b84c38bdf52ccbc0df09e0e95d70a44ebc8c1baada0259eced5dc6aee5.json.gz",
+          "sha256": "0d7f85b84c38bdf52ccbc0df09e0e95d70a44ebc8c1baada0259eced5dc6aee5",
+          "captured_at": "2026-11-07T21:49:02.311932+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874803"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401875555",
+        "cohort": "ned.1",
+        "competition": "ned.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T15:30:00+00:00",
+        "home": "espn:143",
+        "away": "espn:3735",
+        "home_goals": 2,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:04.353894+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/summary?event=401875555",
+        "provider_final_score": [
+          "2",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/f431f6d645cc3c47ba13d9b6826ddc44b363d1b7eebd8cff0910b0acb2dbfdae.json.gz",
+          "sha256": "f431f6d645cc3c47ba13d9b6826ddc44b363d1b7eebd8cff0910b0acb2dbfdae",
+          "captured_at": "2026-11-07T21:49:04.353894+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/summary?event=401875555"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401875552",
+        "cohort": "ned.1",
+        "competition": "ned.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T17:45:00+00:00",
+        "home": "espn:2726",
+        "away": "espn:151",
+        "home_goals": 3,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:04.656141+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/summary?event=401875552",
+        "provider_final_score": [
+          "3",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/f979f61b3afd2ff3730a8a64de1d1b800eba8d119a979796287579132cb68a46.json.gz",
+          "sha256": "f979f61b3afd2ff3730a8a64de1d1b800eba8d119a979796287579132cb68a46",
+          "captured_at": "2026-11-07T21:49:04.656141+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/summary?event=401875552"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401843478",
+        "cohort": "nor.1",
+        "competition": "nor.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T17:00:00+00:00",
+        "home": "espn:438",
+        "away": "espn:6750",
+        "home_goals": 4,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:05.984449+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/nor.1/summary?event=401843478",
+        "provider_final_score": [
+          "4",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/ff9772fde12bf35479b949c2768554bb79cb42b6b2bae80c4857b6a07656a182.json.gz",
+          "sha256": "ff9772fde12bf35479b949c2768554bb79cb42b6b2bae80c4857b6a07656a182",
+          "captured_at": "2026-11-07T21:49:05.984449+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/nor.1/summary?event=401843478"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401842878",
+        "cohort": "swe.1",
+        "competition": "swe.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T16:30:00+00:00",
+        "home": "espn:20856",
+        "away": "espn:8222",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:07.157519+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842878",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/3e48b157b3ce57f490282f4c851fc17d6cfc95859fb6f79c7614bfcd5d7c80f3.json.gz",
+          "sha256": "3e48b157b3ce57f490282f4c851fc17d6cfc95859fb6f79c7614bfcd5d7c80f3",
+          "captured_at": "2026-11-07T21:49:07.157519+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842878"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401842881",
+        "cohort": "swe.1",
+        "competition": "swe.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-07",
+        "kickoff_at": "2026-11-07T16:30:00+00:00",
+        "home": "espn:131552",
+        "away": "espn:22163",
+        "home_goals": 0,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-07T21:49:07.429790+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842881",
+        "provider_final_score": [
+          "0",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/cff4fc8889f897231793a5cd9a73fd85ce4b706c86216421693cb00aa9f1aa60.json.gz",
+          "sha256": "cff4fc8889f897231793a5cd9a73fd85ce4b706c86216421693cb00aa9f1aa60",
+          "captured_at": "2026-11-07T21:49:07.429790+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842881"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      }
+    ]
+  },
+  "status": "COMPLETED",
+  "finished_at": "2026-11-07T21:49:12.395362+00:00"
+}
