@@ -1,0 +1,289 @@
+{
+  "created_at": "2026-11-10T14:11:48.220462+08:00",
+  "decision": "KEEP_ACTIVE_MODELS_NO_PROMOTION",
+  "mode": "RETROSPECTIVE_TIME_HOLDOUT_NOT_ASOF_NOT_PROSPECTIVE",
+  "new_rows": 181,
+  "holdout_rows": 102,
+  "inactive_final_candidates": 8,
+  "coverage": "PARTIAL_BLOCKED",
+  "cutoffs": [
+    {
+      "cohort": "eng.1",
+      "league": "英超",
+      "new_matches": 50,
+      "fit_new_matches": 21,
+      "holdout_matches": 29,
+      "final_history_matches": 410,
+      "first_added_kickoff_bjt": "2026-10-10T19:30:00+08:00",
+      "latest_added_kickoff_bjt": "2026-11-09T00:30:00+08:00"
+    },
+    {
+      "cohort": "ita.1",
+      "league": "意甲",
+      "new_matches": 60,
+      "fit_new_matches": 25,
+      "holdout_matches": 35,
+      "final_history_matches": 430,
+      "first_added_kickoff_bjt": "2026-10-10T21:00:00+08:00",
+      "latest_added_kickoff_bjt": "2026-11-09T03:45:00+08:00"
+    },
+    {
+      "cohort": "swe.1",
+      "league": "瑞典超",
+      "new_matches": 48,
+      "fit_new_matches": 22,
+      "holdout_matches": 26,
+      "final_history_matches": 448,
+      "first_added_kickoff_bjt": "2026-10-10T01:00:00+08:00",
+      "latest_added_kickoff_bjt": "2026-11-08T23:30:00+08:00"
+    },
+    {
+      "cohort": "aus.1",
+      "league": "澳超",
+      "new_matches": 23,
+      "fit_new_matches": 11,
+      "holdout_matches": 12,
+      "final_history_matches": 2830,
+      "first_added_kickoff_bjt": "2026-10-16T17:00:00+08:00",
+      "latest_added_kickoff_bjt": "2026-11-08T14:00:00+08:00"
+    }
+  ],
+  "metrics": [
+    {
+      "cohort": "eng.1",
+      "league": "英超",
+      "track": "current",
+      "n": 29,
+      "old_scored": 29,
+      "new_scored": 29,
+      "old_primary_hits": 5,
+      "new_primary_hits": 5,
+      "old_wdl_hits": 14,
+      "new_wdl_hits": 12,
+      "old_score_log_loss": 2.8076378724353535,
+      "new_score_log_loss": 2.8069877968964763,
+      "old_wdl_brier": 0.6335527370657911,
+      "new_wdl_brier": 0.6324918729243284,
+      "old_wdl_rps": 0.23401261502595186,
+      "new_wdl_rps": 0.23484179793430177
+    },
+    {
+      "cohort": "eng.1",
+      "league": "英超",
+      "track": "test",
+      "n": 29,
+      "old_scored": 29,
+      "new_scored": 29,
+      "old_primary_hits": 4,
+      "new_primary_hits": 4,
+      "old_wdl_hits": 15,
+      "new_wdl_hits": 12,
+      "old_score_log_loss": 2.8397172752074717,
+      "new_score_log_loss": 2.8540173489741067,
+      "old_wdl_brier": 0.6456252942599359,
+      "new_wdl_brier": 0.6507093261321398,
+      "old_wdl_rps": 0.23961654172974686,
+      "new_wdl_rps": 0.24258341209763826
+    },
+    {
+      "cohort": "ita.1",
+      "league": "意甲",
+      "track": "current",
+      "n": 35,
+      "old_scored": 35,
+      "new_scored": 35,
+      "old_primary_hits": 2,
+      "new_primary_hits": 3,
+      "old_wdl_hits": 22,
+      "new_wdl_hits": 21,
+      "old_score_log_loss": 3.303909081054104,
+      "new_score_log_loss": 3.2603952804119856,
+      "old_wdl_brier": 0.5386202527630015,
+      "new_wdl_brier": 0.5402423565724062,
+      "old_wdl_rps": 0.19870842218873233,
+      "new_wdl_rps": 0.19934132092965787
+    },
+    {
+      "cohort": "ita.1",
+      "league": "意甲",
+      "track": "test",
+      "n": 35,
+      "old_scored": 35,
+      "new_scored": 35,
+      "old_primary_hits": 2,
+      "new_primary_hits": 2,
+      "old_wdl_hits": 22,
+      "new_wdl_hits": 21,
+      "old_score_log_loss": 3.2844863102846578,
+      "new_score_log_loss": 3.281378073604809,
+      "old_wdl_brier": 0.5319139871850131,
+      "new_wdl_brier": 0.5320515417039987,
+      "old_wdl_rps": 0.19617029055133584,
+      "new_wdl_rps": 0.19570942532917984
+    },
+    {
+      "cohort": "swe.1",
+      "league": "瑞典超",
+      "track": "current",
+      "n": 26,
+      "old_scored": 26,
+      "new_scored": 26,
+      "old_primary_hits": 3,
+      "new_primary_hits": 4,
+      "old_wdl_hits": 16,
+      "new_wdl_hits": 15,
+      "old_score_log_loss": 2.7011872684492584,
+      "new_score_log_loss": 2.691616220176716,
+      "old_wdl_brier": 0.5669643014965466,
+      "new_wdl_brier": 0.5792631214730369,
+      "old_wdl_rps": 0.17672333537249882,
+      "new_wdl_rps": 0.18262234097179506
+    },
+    {
+      "cohort": "swe.1",
+      "league": "瑞典超",
+      "track": "test",
+      "n": 26,
+      "old_scored": 26,
+      "new_scored": 26,
+      "old_primary_hits": 3,
+      "new_primary_hits": 3,
+      "old_wdl_hits": 16,
+      "new_wdl_hits": 15,
+      "old_score_log_loss": 2.687239430120574,
+      "new_score_log_loss": 2.684703046681252,
+      "old_wdl_brier": 0.5629485419474055,
+      "new_wdl_brier": 0.5734160028054476,
+      "old_wdl_rps": 0.17562900873397205,
+      "new_wdl_rps": 0.18048129022563947
+    },
+    {
+      "cohort": "aus.1",
+      "league": "澳超",
+      "track": "current",
+      "n": 12,
+      "old_scored": 12,
+      "new_scored": 12,
+      "old_primary_hits": 2,
+      "new_primary_hits": 2,
+      "old_wdl_hits": 5,
+      "new_wdl_hits": 5,
+      "old_score_log_loss": 2.8998149683695704,
+      "new_score_log_loss": 2.8996179612096267,
+      "old_wdl_brier": 0.6771714319214389,
+      "new_wdl_brier": 0.6770587400637008,
+      "old_wdl_rps": 0.2021643043016652,
+      "new_wdl_rps": 0.20209599678652293
+    },
+    {
+      "cohort": "aus.1",
+      "league": "澳超",
+      "track": "test",
+      "n": 12,
+      "old_scored": 12,
+      "new_scored": 12,
+      "old_primary_hits": 2,
+      "new_primary_hits": 2,
+      "old_wdl_hits": 3,
+      "new_wdl_hits": 3,
+      "old_score_log_loss": 3.023531688892953,
+      "new_score_log_loss": 3.015197942466681,
+      "old_wdl_brier": 0.7508070763448501,
+      "new_wdl_brier": 0.7411780494982892,
+      "old_wdl_rps": 0.23683914206969173,
+      "new_wdl_rps": 0.2318430202480952
+    }
+  ],
+  "comparisons": [
+    {
+      "cohort": "eng.1",
+      "track": "current",
+      "net_primary_hits": 0,
+      "old_wrong_new_right": 0,
+      "old_right_new_wrong": 0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cohort": "eng.1",
+      "track": "test",
+      "net_primary_hits": 0,
+      "old_wrong_new_right": 0,
+      "old_right_new_wrong": 0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cohort": "ita.1",
+      "track": "current",
+      "net_primary_hits": 1,
+      "old_wrong_new_right": 2,
+      "old_right_new_wrong": 1,
+      "ci95_pp": [
+        -6.451612903225806,
+        11.428571428571429
+      ]
+    },
+    {
+      "cohort": "ita.1",
+      "track": "test",
+      "net_primary_hits": 0,
+      "old_wrong_new_right": 0,
+      "old_right_new_wrong": 0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cohort": "swe.1",
+      "track": "current",
+      "net_primary_hits": 1,
+      "old_wrong_new_right": 1,
+      "old_right_new_wrong": 0,
+      "ci95_pp": [
+        0.0,
+        13.793103448275861
+      ]
+    },
+    {
+      "cohort": "swe.1",
+      "track": "test",
+      "net_primary_hits": 0,
+      "old_wrong_new_right": 0,
+      "old_right_new_wrong": 0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cohort": "aus.1",
+      "track": "current",
+      "net_primary_hits": 0,
+      "old_wrong_new_right": 0,
+      "old_right_new_wrong": 0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cohort": "aus.1",
+      "track": "test",
+      "net_primary_hits": 0,
+      "old_wrong_new_right": 0,
+      "old_right_new_wrong": 0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "actual_market_ou_evaluated": false,
+  "statistical_reference_not_comprehensive_primary": true
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "WCPP-FOUR-COHORT-REFRESH-20261110-1",
+  "locked_at": "2026-11-10T13:53:32.130185+08:00",
+  "cohorts": [
+    "eng.1",
+    "ita.1",
+    "swe.1",
+    "aus.1"
+  ],
+  "end_date_utc": "2026-11-09",
+  "source_start_utc": {
+    "eng.1": "2026-09-21",
+    "ita.1": "2026-09-21",
+    "swe.1": "2026-09-21",
+    "aus.1": "2026-04-27"
+  },
+  "active_hashes": {
+    "/workspace/WCPP/runtime/active-model.json": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+    "/workspace/WCPP/models/weighted-20261012/eng.1/artifact.json": "ac5ef67c624da8913a2e3492b2fbae6b73776bf0f9e5157423c72e718dd72983",
+    "/workspace/WCPP/models/ml-20261012/eng.1/artifact.json": "9f78989414419514a23f669aa9648e341a4899890101f363cc47bff5057b03e0",
+    "/workspace/WCPP/models/weighted-20261012/ita.1/artifact.json": "ca69b767362958577e22a4157c23613cb9b6e12604ffb20fcaa2b624413e6dbd",
+    "/workspace/WCPP/models/ml-20261012/ita.1/artifact.json": "f005920710f0124a37ab75e448a96c141bb9b3024d40b444a6445bc6dea34cb5",
+    "/workspace/WCPP/models/weighted-20261012/swe.1/artifact.json": "ecaf574c2e639139a404ec1f30432c8b27576b310a285843455f2e264832dc27",
+    "/workspace/WCPP/models/ml-20261012/swe.1/artifact.json": "f540e29e1f11457061b332118412145d8e3d9966c06d23eb9564acbcf34ec5d2",
+    "/workspace/WCPP/models/active-routes-20261027/aus.1/current-artifact.json": "f3e9e25f84a468ed937c0d82c041c4ba0f16cb641e36f63e7515a00b2415964a",
+    "/workspace/WCPP/models/aus-expert-20261016-boundary-refit-v1/artifact.json": "6cd38d5fa0dc9d5413ec4e062bcb209a598763b419f8bab54f60352dd26bef5d"
+  },
+  "fixed_recipe": true,
+  "selection_policy": "Per-cohort first floor(50% of unique eligible new UTC match dates) for refresh fit; remaining whole dates for one locked holdout. Require at least 2 unique dates. No tuning. Same holdout across original and refreshed current/test.",
+  "metrics": [
+    "statistical_primary_top1",
+    "wdl_top1",
+    "score_log_loss",
+    "wdl_brier",
+    "wdl_rps",
+    "coverage"
+  ],
+  "uncertainty": "Paired date-block bootstrap 10000 draws seed 20261110; intervals descriptive, not multiplicity-adjusted.",
+  "actual_market_totals": "Only if independently verified prematch same-book/line quotes exist; never replace by fixed 2.5.",
+  "evaluation_mode": "RETROSPECTIVE_LABEL_TIME_SPLIT_NOT_HISTORICAL_ASOF_NOT_PROSPECTIVE",
+  "final_candidates": "Refit all eligible new rows separately AFTER holdout comparison, never evaluate final candidates on the same labels.",
+  "historical_first_known": "Unknown or late evidence does not become historically available through date sorting.",
+  "automatic_promotion": false,
+  "code_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+  "publication": "Append-only freeze/evidence manifest and sync to source/data repositories after validation."
+}

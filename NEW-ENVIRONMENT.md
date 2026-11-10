@@ -1,5 +1,7 @@
 # 新环境从这里恢复（最终增量版）
 
+**2026-11-10 四联赛刷新研究：** [最新独立刷新增量](workspace-updates/20261110-four-cohort-refresh/README.md)保存181条新增、102场时间留出、8份未晋级候选及冻结报告；活动模型保持。恢复时核验其独立归档与清单，不能将最终候选当作活动版本。
+
 **2026-11-10补充：** 用户已接受公开数据仓库及赛事数据上传，覆盖下文旧私有要求；凭据仍不入库。本轮源码以 `latest-source.json` 为准，最新复盘/冻结/审计增量见 `workspace-updates/20261110-review-and-audit/`，须在旧快照恢复后另行核验应用。旧冻结字节不得覆盖修改。
 
 **2026-11-03补充：** 主快照有意去重排除了旧交接历史。固定配方原始证据与incoming数据集manifest还需从固定旧交接commit的`audit-history-parts/`和`models-history-parts/`恢复。已在新环境找回并完成严格集成469项零跳过验证，具体来源、路径与步骤见[资产恢复验收](workspace-updates/20261103-asset-recovery/README.md)。
