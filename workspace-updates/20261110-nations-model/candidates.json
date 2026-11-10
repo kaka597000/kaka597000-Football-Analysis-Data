@@ -1,0 +1,623 @@
+{
+  "schema": "WCPP-NATIONS-PAIRED-CANDIDATES-1",
+  "created_at": "2026-11-10T08:11:26.618033+00:00",
+  "routes": {
+    "A": {
+      "current": {
+        "path": "/workspace/nations-model-20261110/models/A/current-artifact.json",
+        "sha256": "5f8a96dfc7b0713971f935a6078d3e794e1fad9f1e5f9ce32c74739f9b5b29ec"
+      },
+      "test": {
+        "path": "/workspace/nations-model-20261110/models/A/test-artifact.json",
+        "sha256": "69fa5c7ef71a21ff262dbcc87c995237cca5c1b99fecb3168becd8dc4bf3e9ba"
+      }
+    },
+    "B": {
+      "current": {
+        "path": "/workspace/nations-model-20261110/models/B/current-artifact.json",
+        "sha256": "ca86d58d2584084535884d5a0ed2f90a3605a210f62b6fe7291e3fe6cae44daf"
+      },
+      "test": {
+        "path": "/workspace/nations-model-20261110/models/B/test-artifact.json",
+        "sha256": "007a07cf47611fcd94d2cc735054e538596d5251d31f8e98ef2ad960f0e87b0e"
+      }
+    },
+    "C": {
+      "current": {
+        "path": "/workspace/nations-model-20261110/models/C/current-artifact.json",
+        "sha256": "3a2f3f6ca4b611b1a00f22e8881abb471f3f6fc43e85fe2444a9cc42744cfc0d"
+      },
+      "test": {
+        "path": "/workspace/nations-model-20261110/models/C/test-artifact.json",
+        "sha256": "95921be94765987fa81fd105e9f17b2da777174da9d24f837023af73b007d727"
+      }
+    },
+    "D": {
+      "current": {
+        "path": "/workspace/nations-model-20261110/models/D/current-artifact.json",
+        "sha256": "433cdd94ef2042f9a64861a2e51e6544d1603d572fa0d7fbeb3b10a3368f0fd8"
+      },
+      "test": {
+        "path": "/workspace/nations-model-20261110/models/D/test-artifact.json",
+        "sha256": "37c473f9e88a67cb30eb53434dcbb1db720b43b3f97fdf2cfab9d4d578182f6f"
+      }
+    }
+  },
+  "summary": [
+    {
+      "level": "A",
+      "n": 109,
+      "fit_n": 77,
+      "holdout_n": 32,
+      "fit_end": "2022-09-27",
+      "holdout_start": "2026-09-24",
+      "train_end": "2026-10-06",
+      "current": {
+        "n": 32,
+        "metrics": {
+          "exact_top1": 0.0625,
+          "exact_top3": 0.1875,
+          "exact_top5": 0.40625,
+          "score_log_loss": 3.185742607166449,
+          "score_brier": 0.9450838331954747,
+          "wdl_brier": 0.656107541324008,
+          "wdl_rps": 0.2670074102763766,
+          "wdl_accuracy": 0.40625
+        },
+        "calibration_bins": [
+          {
+            "n": 32,
+            "mean_probability": 0.11091579452388266,
+            "hit_rate": 0.0625
+          }
+        ],
+        "primary": {
+          "n": 32,
+          "hits": 2,
+          "coverage": 1.0,
+          "accuracy": 0.0625,
+          "full_population_accuracy": 0.0625,
+          "net_hits_vs_probability_top1_same_subset": 0
+        },
+        "market_paired_n": 0,
+        "market_paired_brier": null,
+        "tail": {
+          "away3+": {
+            "brier": 0.10938350627676037,
+            "observed_events": 4,
+            "recall_at_preregistered_half": 0.0
+          },
+          "away4+": {
+            "brier": 0.08820740205298438,
+            "observed_events": 3,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home3+": {
+            "brier": 0.17167142007445083,
+            "observed_events": 7,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home4+": {
+            "brier": 0.05967208629427992,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total4+": {
+            "brier": 0.21566350353575442,
+            "observed_events": 10,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total5+": {
+            "brier": 0.17271876246168058,
+            "observed_events": 7,
+            "recall_at_preregistered_half": 0.0
+          }
+        },
+        "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+      },
+      "test": {
+        "n": 32,
+        "metrics": {
+          "exact_top1": 0.0625,
+          "exact_top3": 0.25,
+          "exact_top5": 0.4375,
+          "score_log_loss": 3.1018757372723766,
+          "score_brier": 0.937907284670483,
+          "wdl_brier": 0.5575574177811354,
+          "wdl_rps": 0.21642620662030468,
+          "wdl_accuracy": 0.5625
+        },
+        "calibration_bins": [
+          {
+            "n": 2,
+            "mean_probability": 0.09726213972330239,
+            "hit_rate": 0.0
+          },
+          {
+            "n": 30,
+            "mean_probability": 0.114943961306263,
+            "hit_rate": 0.06666666666666667
+          }
+        ],
+        "primary": {
+          "n": 32,
+          "hits": 2,
+          "coverage": 1.0,
+          "accuracy": 0.0625,
+          "full_population_accuracy": 0.0625,
+          "net_hits_vs_probability_top1_same_subset": 0
+        },
+        "market_paired_n": 0,
+        "market_paired_brier": null,
+        "tail": {
+          "away3+": {
+            "brier": 0.10780506680912927,
+            "observed_events": 4,
+            "recall_at_preregistered_half": 0.0
+          },
+          "away4+": {
+            "brier": 0.08758777239192904,
+            "observed_events": 3,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home3+": {
+            "brier": 0.15929286798195505,
+            "observed_events": 7,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home4+": {
+            "brier": 0.05444325547849221,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total4+": {
+            "brier": 0.22595083491097273,
+            "observed_events": 10,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total5+": {
+            "brier": 0.17948489070952311,
+            "observed_events": 7,
+            "recall_at_preregistered_half": 0.0
+          }
+        },
+        "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+      },
+      "net_primary_hits": 0,
+      "quality_reasons": [
+        "NO_STRICT_PRIMARY_IMPROVEMENT"
+      ],
+      "formal_acceptance_passed": false
+    },
+    {
+      "level": "B",
+      "n": 139,
+      "fit_n": 107,
+      "holdout_n": 32,
+      "fit_end": "2022-09-27",
+      "holdout_start": "2026-09-24",
+      "train_end": "2026-10-06",
+      "current": {
+        "n": 32,
+        "metrics": {
+          "exact_top1": 0.09375,
+          "exact_top3": 0.28125,
+          "exact_top5": 0.53125,
+          "score_log_loss": 2.94975903041671,
+          "score_brier": 0.9326647830970152,
+          "wdl_brier": 0.6759954803654163,
+          "wdl_rps": 0.22998051526418423,
+          "wdl_accuracy": 0.34375
+        },
+        "calibration_bins": [
+          {
+            "n": 32,
+            "mean_probability": 0.13027572338152774,
+            "hit_rate": 0.09375
+          }
+        ],
+        "primary": {
+          "n": 32,
+          "hits": 3,
+          "coverage": 1.0,
+          "accuracy": 0.09375,
+          "full_population_accuracy": 0.09375,
+          "net_hits_vs_probability_top1_same_subset": 0
+        },
+        "market_paired_n": 0,
+        "market_paired_brier": null,
+        "tail": {
+          "away3+": {
+            "brier": 0.13658941045678014,
+            "observed_events": 5,
+            "recall_at_preregistered_half": 0.0
+          },
+          "away4+": {
+            "brier": 0.030371122225143637,
+            "observed_events": 1,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home3+": {
+            "brier": 0.1320202905329459,
+            "observed_events": 5,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home4+": {
+            "brier": 0.030411552705618242,
+            "observed_events": 1,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total4+": {
+            "brier": 0.15276825708918837,
+            "observed_events": 6,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total5+": {
+            "brier": 0.05924751519982253,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          }
+        },
+        "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+      },
+      "test": {
+        "n": 32,
+        "metrics": {
+          "exact_top1": 0.15625,
+          "exact_top3": 0.3125,
+          "exact_top5": 0.46875,
+          "score_log_loss": 2.979108282337485,
+          "score_brier": 0.9345946434067427,
+          "wdl_brier": 0.6879536161491067,
+          "wdl_rps": 0.23700801009834785,
+          "wdl_accuracy": 0.34375
+        },
+        "calibration_bins": [
+          {
+            "n": 32,
+            "mean_probability": 0.1299877233918031,
+            "hit_rate": 0.15625
+          }
+        ],
+        "primary": {
+          "n": 32,
+          "hits": 5,
+          "coverage": 1.0,
+          "accuracy": 0.15625,
+          "full_population_accuracy": 0.15625,
+          "net_hits_vs_probability_top1_same_subset": 0
+        },
+        "market_paired_n": 0,
+        "market_paired_brier": null,
+        "tail": {
+          "away3+": {
+            "brier": 0.13960463829615444,
+            "observed_events": 5,
+            "recall_at_preregistered_half": 0.0
+          },
+          "away4+": {
+            "brier": 0.02976275917766522,
+            "observed_events": 1,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home3+": {
+            "brier": 0.13021698136768187,
+            "observed_events": 5,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home4+": {
+            "brier": 0.029990333509546444,
+            "observed_events": 1,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total4+": {
+            "brier": 0.153204772071177,
+            "observed_events": 6,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total5+": {
+            "brier": 0.05880881728235407,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          }
+        },
+        "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+      },
+      "net_primary_hits": 2,
+      "quality_reasons": [
+        "QUALITY_REGRESSION:score_log_loss",
+        "QUALITY_REGRESSION:score_brier",
+        "QUALITY_REGRESSION:wdl_brier",
+        "QUALITY_REGRESSION:wdl_rps"
+      ],
+      "formal_acceptance_passed": false
+    },
+    {
+      "level": "C",
+      "n": 174,
+      "fit_n": 142,
+      "holdout_n": 32,
+      "fit_end": "2024-11-19",
+      "holdout_start": "2026-09-25",
+      "train_end": "2026-10-06",
+      "current": {
+        "n": 32,
+        "metrics": {
+          "exact_top1": 0.125,
+          "exact_top3": 0.1875,
+          "exact_top5": 0.5,
+          "score_log_loss": 3.017978912204473,
+          "score_brier": 0.9293327988180846,
+          "wdl_brier": 0.6599329083560768,
+          "wdl_rps": 0.22197437547053267,
+          "wdl_accuracy": 0.40625
+        },
+        "calibration_bins": [
+          {
+            "n": 32,
+            "mean_probability": 0.1304121583001352,
+            "hit_rate": 0.125
+          }
+        ],
+        "primary": {
+          "n": 32,
+          "hits": 4,
+          "coverage": 1.0,
+          "accuracy": 0.125,
+          "full_population_accuracy": 0.125,
+          "net_hits_vs_probability_top1_same_subset": 0
+        },
+        "market_paired_n": 0,
+        "market_paired_brier": null,
+        "tail": {
+          "away3+": {
+            "brier": 0.1368337078366105,
+            "observed_events": 5,
+            "recall_at_preregistered_half": 0.0
+          },
+          "away4+": {
+            "brier": 0.06033562987348218,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home3+": {
+            "brier": 0.06490058173913085,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home4+": {
+            "brier": 0.030403967204812376,
+            "observed_events": 1,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total4+": {
+            "brier": 0.13426528490577724,
+            "observed_events": 5,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total5+": {
+            "brier": 0.059173331506092185,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          }
+        },
+        "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+      },
+      "test": {
+        "n": 32,
+        "metrics": {
+          "exact_top1": 0.09375,
+          "exact_top3": 0.28125,
+          "exact_top5": 0.5625,
+          "score_log_loss": 3.0078501690483033,
+          "score_brier": 0.9282206500835711,
+          "wdl_brier": 0.6672802944771491,
+          "wdl_rps": 0.22448982764716963,
+          "wdl_accuracy": 0.34375
+        },
+        "calibration_bins": [
+          {
+            "n": 32,
+            "mean_probability": 0.1296432954313212,
+            "hit_rate": 0.09375
+          }
+        ],
+        "primary": {
+          "n": 32,
+          "hits": 3,
+          "coverage": 1.0,
+          "accuracy": 0.09375,
+          "full_population_accuracy": 0.09375,
+          "net_hits_vs_probability_top1_same_subset": 0
+        },
+        "market_paired_n": 0,
+        "market_paired_brier": null,
+        "tail": {
+          "away3+": {
+            "brier": 0.13467215012289938,
+            "observed_events": 5,
+            "recall_at_preregistered_half": 0.0
+          },
+          "away4+": {
+            "brier": 0.05972380852944801,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home3+": {
+            "brier": 0.06982756570215441,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          },
+          "home4+": {
+            "brier": 0.03135064935505841,
+            "observed_events": 1,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total4+": {
+            "brier": 0.13802325192076118,
+            "observed_events": 5,
+            "recall_at_preregistered_half": 0.0
+          },
+          "total5+": {
+            "brier": 0.06013524028721174,
+            "observed_events": 2,
+            "recall_at_preregistered_half": 0.0
+          }
+        },
+        "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+      },
+      "net_primary_hits": -1,
+      "quality_reasons": [
+        "NO_STRICT_PRIMARY_IMPROVEMENT",
+        "QUALITY_REGRESSION:wdl_brier",
+        "QUALITY_REGRESSION:wdl_rps",
+        "WDL_ACCURACY_REGRESSION"
+      ],
+      "formal_acceptance_passed": false
+    },
+    {
+      "level": "D",
+      "n": 80,
+      "fit_n": 72,
+      "holdout_n": 8,
+      "fit_end": "2022-09-26",
+      "holdout_start": "2026-09-24",
+      "train_end": "2026-10-04",
+      "current": {
+        "n": 8,
+        "metrics": {
+          "exact_top1": 0.25,
+          "exact_top3": 0.5,
+          "exact_top5": 0.75,
+          "score_log_loss": 2.334525747073275,
+          "score_brier": 0.8759724356520822,
+          "wdl_brier": 0.7033908008440154,
+          "wdl_rps": 0.20147778110956477,
+          "wdl_accuracy": 0.25
+        },
+        "calibration_bins": [
+          {
+            "n": 8,
+            "mean_probability": 0.1300453192541488,
+            "hit_rate": 0.25
+          }
+        ],
+        "primary": {
+          "n": 8,
+          "hits": 2,
+          "coverage": 1.0,
+          "accuracy": 0.25,
+          "full_population_accuracy": 0.25,
+          "net_hits_vs_probability_top1_same_subset": 0
+        },
+        "market_paired_n": 0,
+        "market_paired_brier": null,
+        "tail": {
+          "away3+": {
+            "brier": 0.010955675062990274,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "away4+": {
+            "brier": 0.0007632960257785066,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "home3+": {
+            "brier": 0.0189891053541689,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "home4+": {
+            "brier": 0.0016736348442109189,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "total4+": {
+            "brier": 0.04922091780716252,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "total5+": {
+            "brier": 0.00925776211088257,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          }
+        },
+        "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+      },
+      "test": {
+        "n": 8,
+        "metrics": {
+          "exact_top1": 0.25,
+          "exact_top3": 0.625,
+          "exact_top5": 1.0,
+          "score_log_loss": 2.1892811111584516,
+          "score_brier": 0.8560150599250973,
+          "wdl_brier": 0.6456380684618439,
+          "wdl_rps": 0.17498002876690516,
+          "wdl_accuracy": 0.375
+        },
+        "calibration_bins": [
+          {
+            "n": 8,
+            "mean_probability": 0.13511854420619257,
+            "hit_rate": 0.25
+          }
+        ],
+        "primary": {
+          "n": 8,
+          "hits": 2,
+          "coverage": 1.0,
+          "accuracy": 0.25,
+          "full_population_accuracy": 0.25,
+          "net_hits_vs_probability_top1_same_subset": 0
+        },
+        "market_paired_n": 0,
+        "market_paired_brier": null,
+        "tail": {
+          "away3+": {
+            "brier": 0.012711154688447256,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "away4+": {
+            "brier": 0.0010138306680126947,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "home3+": {
+            "brier": 0.012274116370903839,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "home4+": {
+            "brier": 0.0009518565277717521,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "total4+": {
+            "brier": 0.038303449803830186,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          },
+          "total5+": {
+            "brier": 0.00656476905787797,
+            "observed_events": 0,
+            "recall_at_preregistered_half": null
+          }
+        },
+        "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+      },
+      "net_primary_hits": 0,
+      "quality_reasons": [
+        "INSUFFICIENT_DIAGNOSTIC_SAMPLE",
+        "NO_STRICT_PRIMARY_IMPROVEMENT"
+      ],
+      "formal_acceptance_passed": false
+    }
+  ],
+  "active_registry_modified": false,
+  "automatic_activation": false,
+  "acceptance_status": "AWAITING_REAL_FUTURE_FREEZES_AND_INDEPENDENT_REVIEW"
+}

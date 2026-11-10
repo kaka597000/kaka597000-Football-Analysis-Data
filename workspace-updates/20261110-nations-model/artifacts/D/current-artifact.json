@@ -1,0 +1,41 @@
+{
+  "schema": "WCPP-NATIONS-POISSON-1",
+  "version": "WCPP-NATIONS-D-CURRENT-0.1",
+  "role": "current",
+  "cohort": "uefa.nations:D:league-phase",
+  "league_level": "D",
+  "stage": "league-phase",
+  "competition": "uefa.nations",
+  "core": {
+    "intercept": 0.08387887308073837,
+    "home_advantage": 0.10880523213509977,
+    "training_n": 80,
+    "train_end": "2026-10-04"
+  },
+  "created_at": "2026-11-10T08:11:26.611868+00:00",
+  "train_end": "2026-10-04",
+  "training_n": 80,
+  "dataset_path": "/workspace/nations-model-20261110/models/D/dataset.json",
+  "dataset_sha256": "9ecec2a8e52d7f93762f2946dd23be3fcba3e3f1c370fbfe3870458cc4488a07",
+  "protocol_path": "/workspace/nations-model-20261110/models/protocol.json",
+  "protocol_sha256": "15003768847d58067ed1cb70f06b608e573f47376dce77f8a39913046574d227",
+  "engine_path": "/workspace/Football-Analysis/runtime/nations_league/model.py",
+  "engine_sha256": "ae412b2120605bc702b2836b727568289cb637a1f89426b343661749ca7141e5",
+  "validation_status": "TRAINED_RESEARCH_PENDING_PROSPECTIVE_ACCEPTANCE",
+  "formal_acceptance_passed": false,
+  "activation_allowed": false,
+  "retrospective_quality_passed": false,
+  "trained_features": [
+    "historical_regulation_goals",
+    "home_indicator"
+  ],
+  "untrained_features": [
+    "xg",
+    "injuries",
+    "lineup",
+    "motivation",
+    "full_rest",
+    "market"
+  ],
+  "historical_asof_certified": false
+}
