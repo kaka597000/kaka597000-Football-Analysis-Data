@@ -1,0 +1,36 @@
+{
+  "time_beijing": "2026-11-10T14:38:39+08:00",
+  "request": {
+    "method": "GET",
+    "url": "https://therundown.io/api/v1/sports/11/schedule",
+    "params": {
+      "limit": 5,
+      "from": "2026-11-10",
+      "include": "teams"
+    },
+    "auth": "X-TheRundown-Key header (value omitted)",
+    "timeout_seconds": 10
+  },
+  "http": {
+    "status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "response_bytes": 4834,
+    "response_sha256": "464dd31ae43daa8dba7813467841eaa20a2741823c1f2fbe6aab3c0cde377444",
+    "headers": {
+      "content-type": "text/html; charset=UTF-8",
+      "date": "Tue, 10 Nov 2026 06:38:39 GMT",
+      "x-at-upstream-error": "true",
+      "x-frame-options": "SAMEORIGIN",
+      "x-envoy-upstream-service-time": "15"
+    },
+    "application_error": "No JSON API error received; response is Cloudflare HTML block page.",
+    "cloudflare_summary": "Attention Required; Sorry, you have been blocked; unable to access therundown.io.",
+    "application_json_received": false,
+    "response_body_retained": "Only safe non-secret HTML summary retained; raw block page omitted."
+  },
+  "elapsed_seconds": 0.158,
+  "body": {
+    "body_type": "non_json",
+    "preview": "<!DOCTYPE html> <!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]--> <!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]--> <!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]--> <!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!--<![endif]--> <head> <title>Attention Required! |"
+  }
+}
