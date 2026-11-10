@@ -1,0 +1,121 @@
+# Installed only in the private data repository. Football-Analysis checkout uses no token.
+# kor.1 reads WCPP_5DOLLAR_API_KEY and WCPP_API_FOOTBALL_KEY from repository secrets.
+name: WCPP private unattended research
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [collect, train]
+        default: collect
+  schedule:
+    - cron: '17 */6 * * *'
+    - cron: '37 2 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: wcpp-private-research-state
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: private-state
+          # A queued dispatch carries an older event SHA; load latest serialized state.
+          ref: main
+          # Runtime state only; large recovery archives stay in Git, not in runner checkout.
+          # Cone mode keeps root JSON/JSONL files automatically.
+          sparse-checkout: |
+            .github
+            config
+            runtime
+            seed
+            candidates
+            raw
+            runs
+            kor1
+            future
+      - name: Read pinned public code
+        uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 7e518a708457721ffbb53723fe931f31b6390863
+          path: code
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Select bounded job
+        id: mode
+        env:
+          REQUESTED_MODE: ${{ inputs.mode }}
+          SCHEDULE_SPEC: ${{ github.event.schedule }}
+        run: |
+          mode=collect
+          if [ "$REQUESTED_MODE" = train ] || [ "$SCHEDULE_SPEC" = '37 2 * * *' ]; then mode=train; fi
+          echo "value=$mode" >> "$GITHUB_OUTPUT"
+      - name: Install CPU inference and training dependencies
+        run: python -m pip install -r code/requirements.txt lightgbm==4.6.0
+      - name: Collect or train candidate only
+        working-directory: code
+        env:
+          JOB_MODE: ${{ steps.mode.outputs.value }}
+        run: |
+          set -euo pipefail
+          # The pinned collector uses the competition code as an ESPN path.
+          # kor.1 stays in scopes.json and is removed only for this call.
+          if [ "$JOB_MODE" = collect ]; then
+            python ../private-state/runtime/collect_kor1.py omit-espn --state-dir ../private-state
+          fi
+          set +e
+          python -m runtime.automation.run "$JOB_MODE" --state-dir ../private-state --max-collection-seconds 90
+          status=$?
+          set -e
+          if [ "$JOB_MODE" = collect ]; then
+            git -C ../private-state checkout -- config/scopes.json
+          fi
+          exit "$status"
+      - name: Restore scopes.json
+        if: always()
+        working-directory: private-state
+        run: git checkout -- config/scopes.json
+      - name: Collect kor.1 with audited public candidate fallback
+        if: steps.mode.outputs.value == 'collect'
+        working-directory: private-state
+        timeout-minutes: 1
+        env:
+          WCPP_5DOLLAR_API_KEY: ${{ secrets.WCPP_5DOLLAR_API_KEY }}
+          WCPP_API_FOOTBALL_KEY: ${{ secrets.WCPP_API_FOOTBALL_KEY }}
+        run: python runtime/collect_kor1.py collect --state-dir .
+      - name: Capture and review locked future populations
+        if: always() && steps.mode.outputs.value == 'collect'
+        working-directory: code
+        timeout-minutes: 1
+        run: |
+          set -euo pipefail
+          # Restore only protocol-allowlisted model paths; source bytes stay pinned.
+          sudo install -d -m 0755 -o "$(id -u)" -g "$(id -g)" /workspace
+          if [ -e /workspace/Football-Analysis ]; then
+            test "$(readlink -f /workspace/Football-Analysis)" = "$GITHUB_WORKSPACE/code"
+          else
+            ln -s "$GITHUB_WORKSPACE/code" /workspace/Football-Analysis
+          fi
+          python -m runtime.automation.prospective_cycle cycle --bundle ../private-state/future/bundle-v2 --max-captures 1 --max-result-requests 2 --max-seconds 20
+          python -m runtime.automation.prospective_cycle review-ucl --bundle ../private-state/future/ucl-bundle-v2 --max-result-requests 2 --max-seconds 20
+      - name: Save private audit and data
+        if: always()
+        working-directory: private-state
+        run: |
+          git config user.name 'WCPP automation'
+          git config user.email 'wcpp-automation@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update private research state'
+            git push origin HEAD:main
+          fi

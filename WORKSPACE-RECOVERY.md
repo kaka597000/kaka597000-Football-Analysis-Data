@@ -1,6 +1,8 @@
 # 完整工作区恢复入口
 
-仓库必须保持私有。完整备份固定提交见latest-workspace-backup.json，恢复标签workspace-full-20261102-v1，目录workspace-backup-20261102。
+2026-11-10 用户已接受公开数据仓库，并授权赛事数据及冻结复盘同步；旧私有要求不再适用，密钥仍不入库。完整备份固定提交见latest-workspace-backup.json，恢复标签workspace-full-20261102-v1，目录workspace-backup-20261102。
+
+最新审计与11月8日复盘增量见 `workspace-updates/20261110-review-and-audit/manifest.json`。恢复须校验清单与冻结凭证，原有不同内容不得覆盖。
 
 ```bash
 git clone --single-branch --branch workspace-full-20261102-v1 https://github.com/kaka597000/kaka597000-Football-Analysis-Data.git /workspace/recovery-repository

@@ -1,4 +1,4 @@
-# Installed only in the private data repository. Football-Analysis checkout uses no token.
+# Installed in the user-authorized data repository. Football-Analysis checkout uses no token.
 # kor.1 reads WCPP_5DOLLAR_API_KEY and WCPP_API_FOOTBALL_KEY from repository secrets.
 name: WCPP private unattended research
 on:
@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 7e518a708457721ffbb53723fe931f31b6390863
+          ref: 6639867d502a2dfe53a9a235c8761f8ee6b91533
           path: code
           persist-credentials: false
       - uses: actions/setup-python@v5
