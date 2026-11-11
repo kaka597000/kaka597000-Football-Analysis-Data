@@ -1,0 +1,170 @@
+{
+  "audit_type": "LOAD_DIAGNOSTIC_NOT_MATCH_FORECAST_NOT_PERFORMANCE_TEST",
+  "created_at": "2026-11-11T01:48:36.503669+00:00",
+  "j1": {
+    "route_present": true,
+    "formal_promotion": false,
+    "artifacts": {
+      "current": {
+        "path": "/workspace/WCPP/reports/japan-korea-20261010/jpn.1-artifact.json",
+        "sha256": "995f8686ff6348e5f0c6b40a8838a714c4118036968285d01e188e6db29f4ab2",
+        "training_cutoff": "2026-10-09",
+        "acceptance": {
+          "acceptance_gate_passed": false,
+          "status": "BASELINE_ONLY_NOT_FULL_CANDIDATE_VALIDATION"
+        },
+        "configuration": null,
+        "fit_n": 82
+      },
+      "test_": {
+        "path": "/workspace/WCPP/models/systematic-20261015-final-extended-003/jpn.1/artifact.json",
+        "sha256": "f5532bb519983e04eb44c6778df405aaa7420790f78c84b8b6047ea13011b12a",
+        "training_cutoff": "2026-10-10",
+        "acceptance": null,
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "fit_n": 1152
+      }
+    },
+    "runs": [
+      {
+        "ids": "canonical",
+        "status": "ERROR",
+        "error": "ValueError: unseen teams unsupported for main-model prediction"
+      },
+      {
+        "ids": "numeric",
+        "status": "ERROR",
+        "error": "ValueError: research model source changed"
+      },
+      {
+        "test_only_ids": "canonical",
+        "error": "research model source changed"
+      },
+      {
+        "test_only_ids": "numeric",
+        "error": "research model source changed"
+      }
+    ]
+  },
+  "nations": {
+    "active_routes": [],
+    "candidates": [
+      {
+        "level": "A",
+        "role": "current",
+        "artifact_sha256": "5f8a96dfc7b0713971f935a6078d3e794e1fad9f1e5f9ce32c74739f9b5b29ec",
+        "loaded": true,
+        "acceptance_passed": false,
+        "training_cutoff": "2026-10-06",
+        "matrix_sum": 1.0,
+        "basis": "existing Nov10 frozen fixture reloaded; no new prediction published"
+      },
+      {
+        "level": "A",
+        "role": "test",
+        "artifact_sha256": "69fa5c7ef71a21ff262dbcc87c995237cca5c1b99fecb3168becd8dc4bf3e9ba",
+        "loaded": true,
+        "acceptance_passed": false,
+        "training_cutoff": "2026-10-06",
+        "matrix_sum": 1.0,
+        "basis": "existing Nov10 frozen fixture reloaded; no new prediction published"
+      },
+      {
+        "level": "B",
+        "role": "current",
+        "artifact_sha256": "ca86d58d2584084535884d5a0ed2f90a3605a210f62b6fe7291e3fe6cae44daf",
+        "loaded": true,
+        "acceptance_passed": false,
+        "training_cutoff": "2026-10-06",
+        "matrix_sum": 0.9999999999999999,
+        "basis": "existing Nov10 frozen fixture reloaded; no new prediction published"
+      },
+      {
+        "level": "B",
+        "role": "test",
+        "artifact_sha256": "007a07cf47611fcd94d2cc735054e538596d5251d31f8e98ef2ad960f0e87b0e",
+        "loaded": true,
+        "acceptance_passed": false,
+        "training_cutoff": "2026-10-06",
+        "matrix_sum": 0.9999999999999999,
+        "basis": "existing Nov10 frozen fixture reloaded; no new prediction published"
+      },
+      {
+        "level": "C",
+        "role": "current",
+        "artifact_sha256": "3a2f3f6ca4b611b1a00f22e8881abb471f3f6fc43e85fe2444a9cc42744cfc0d",
+        "loaded": true,
+        "acceptance_passed": false,
+        "training_cutoff": "2026-10-06",
+        "matrix_sum": 1.0,
+        "basis": "existing Nov10 frozen fixture reloaded; no new prediction published"
+      },
+      {
+        "level": "C",
+        "role": "test",
+        "artifact_sha256": "95921be94765987fa81fd105e9f17b2da777174da9d24f837023af73b007d727",
+        "loaded": true,
+        "acceptance_passed": false,
+        "training_cutoff": "2026-10-06",
+        "matrix_sum": 1.0,
+        "basis": "existing Nov10 frozen fixture reloaded; no new prediction published"
+      },
+      {
+        "level": "D",
+        "role": "current",
+        "artifact_sha256": "433cdd94ef2042f9a64861a2e51e6544d1603d572fa0d7fbeb3b10a3368f0fd8",
+        "loaded": true,
+        "acceptance_passed": false,
+        "training_cutoff": "2026-10-04",
+        "matrix_sum": 1.0,
+        "basis": "existing Nov10 frozen fixture reloaded; no new prediction published"
+      },
+      {
+        "level": "D",
+        "role": "test",
+        "artifact_sha256": "37c473f9e88a67cb30eb53434dcbb1db720b43b3f97fdf2cfab9d4d578182f6f",
+        "loaded": true,
+        "acceptance_passed": false,
+        "training_cutoff": "2026-10-04",
+        "matrix_sum": 1.0,
+        "basis": "existing Nov10 frozen fixture reloaded; no new prediction published"
+      }
+    ],
+    "acceptance_summary": [
+      {
+        "level": "A",
+        "fit_n": 77,
+        "holdout_n": 32,
+        "current_hits": 2,
+        "test_hits": 2
+      },
+      {
+        "level": "B",
+        "fit_n": 107,
+        "holdout_n": 32,
+        "current_hits": 3,
+        "test_hits": 5
+      },
+      {
+        "level": "C",
+        "fit_n": 142,
+        "holdout_n": 32,
+        "current_hits": 4,
+        "test_hits": 3
+      },
+      {
+        "level": "D",
+        "fit_n": 72,
+        "holdout_n": 8,
+        "current_hits": 2,
+        "test_hits": 2
+      }
+    ]
+  }
+}
