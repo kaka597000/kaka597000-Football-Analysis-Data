@@ -1,0 +1,20 @@
+{
+  "schema": "WCPP-JCUP-MODEL-PROTOCOL-1",
+  "minimum_history": 20,
+  "minimum_fit": 12,
+  "holdout_date_fraction": 0.75,
+  "minimum_acceptance_sample": 30,
+  "ridge": 20.0,
+  "candidate_families": [
+    "constant_poisson",
+    "team_poisson"
+  ],
+  "neutral_policy": "explicit unknown indicator; never fill unknown as false",
+  "selection": "none; fixed current/test candidate roles before evaluation",
+  "grouping": "edition, exact phase, tie format, leg; no J1 or cross-era pooling",
+  "historical_asof_certified": false,
+  "automatic_activation": false,
+  "created_at": "2026-11-11T00:41:34.251566+00:00",
+  "database_sha256": "d047f9981c58cffdf4c59eca5506dc2dc2a36d8cfbf2cd5c8eaabd1fb93f7979",
+  "engine_sha256": "041815a70a4e475544a079b2e1fa0b6589ce083ca9875616f9f025f03aad11f7"
+}
