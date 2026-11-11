@@ -1,0 +1,4038 @@
+[
+  {
+    "fixture": {
+      "match_id": "jleague:111101",
+      "competition": "jpn.league_cup",
+      "cohort": "jpn.league_cup:edition-2026-27:quarterfinals:two-leg:1",
+      "home": "jleague:kobe",
+      "away": "jleague:machida",
+      "home_name": "神戸",
+      "away_name": "町田",
+      "gender": "men",
+      "age": "senior",
+      "stage": "quarterfinals",
+      "leg": 1,
+      "tie_format": "two-leg",
+      "phase": "PreMatch",
+      "score_basis": "regulation_90",
+      "kickoff_at": "2026-11-11T10:00:00.000Z",
+      "cutoff_at": "2026-11-11T01:00:41.679219+00:00",
+      "neutral": null,
+      "date": "2026-11-11"
+    },
+    "payload": {
+      "version": "JLEAGUE-CUP-COMPREHENSIVE-RESEARCH-20261111-v1",
+      "primary": null,
+      "wdl": null,
+      "total_line": null,
+      "total_direction": null,
+      "status": "ABSTAIN_CRITICAL_UNCERTAINTY",
+      "current_test_reference": {
+        "freeze_id": "0c2859c5e3523850-v000001",
+        "recorded_at": "2026-11-11T08:53:30.324364+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/0c2859c5e352385073006288563d8e7c6fc95419ece572dd0ff2507c5af8838e/000001.json",
+        "sha256": "d8473adfd18fcb52248a5b565af8bc4a5dab8e4964298e4f394be36b75884123",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "selection_evidence": {
+        "compared_scores": [
+          "0-0",
+          "1-0",
+          "1-1"
+        ],
+        "reason_and_counterevidence_in": "issued_text",
+        "total_reason": "No verified current line/bookmaker/source quote time; ABSTAIN"
+      },
+      "issued_text": "HELLO BOSS，这版先看赛前研究判断：川崎—柏倾向柏胜，横滨—鹿岛倾向平局；神户—町田和浦和—大阪樱花暂不定唯一比分。四场均为2026年11月11日日联杯八强首回合，以下只判断90分钟，不等于两回合晋级判断。\n\n| 北京时间 | 对阵 | 综合胜平负 | 综合第一比分 | 实际盘口大小球 |\n|---|---|---|---|---|\n| 18:00 | 神户胜利船—町田泽维亚 | 待定；观察神户不败路径 | 待定 | 未取得合格实盘，观望 |\n| 18:00 | 横滨水手—鹿岛鹿角 | 平局，研究倾向 | 1–1 | 未取得合格实盘，观望 |\n| 18:00 | 川崎前锋—柏太阳神 | 客胜，研究倾向 | 1–2 | 未取得合格实盘，观望 |\n| 18:30 | 浦和红钻—大阪樱花 | 待定 | 待定 | 未取得合格实盘，观望 |\n\n当前模型和test模型四场均实际检查后拒绝：本届八强没有适用活动工件。没有数值矩阵、进球均值、中央80%区间或零球/两球/三球概率；这两个比分属于综合人工研究选择，不是模型预测或已验证推荐。近期J1战绩只作为杯赛赛前事实参考，没有调用J1工件预测杯赛。\n\n**神户—町田：主队有攻击人员优势，但町田的防守证据不能忽略。**\n\n神户近五轮联赛2胜2平1负，进9失5；町田2胜3平，进8失0，最近三轮全是0–0。官方预览确认武藤嘉纪近两轮3球2助攻；町田相马勇纪、小川航基和Tete Yengi被国家队征召，攻击端可用人手减少，西村拓真承担更多任务。两队上轮均在11月8日比赛，恢复时间短，官方也明确提示轮换不透明。\n\n主路径是神户争取主场先手、町田减少失误并寻找反击，观察神户不败有依据，但暂不能把它压成主胜。比较0–0、1–0和1–1：町田五轮零封支持僵局；武藤状态与神户最近两轮5球反驳“神户必然零进球”；町田连续哑火及征调支持客队零球，但最近对广岛仍有13次射门、4次射正，神户上轮被浦和射门20次、射正9次，不能把町田零球当确定。两队10月24日0–0时合计33次射门，也说明比分为零不等于毫无机会。首回合若出现早球，神户追求扩大优势与町田追分均可能增加总球，不能仅凭最近0–0判断实际盘口小球。唯一比分保留待定。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111101/)，ESPN八队赛程及401877554、401877559两份完赛summary。\n\n**横滨—鹿岛：倾向1–1，比直接追鹿岛客胜更有支撑。**\n\n横滨近五轮1胜4平，进8失6，最近四轮均有进球也有失球。鹿岛近五轮2胜1平2负，进10失8，但官方预览指出其正处于长期密集赛程，本场是连续20场安排中的第10场；最近亚冠0–0、联赛0–2。最近对东京只有7次射门、1次射正，进攻表现低于球队名气给人的预期。此项只是一场过程，不能代替长期xG。\n\n横滨也有三井寺真、Jordy Croux伤情；角田凉太朗、远野大弥则处于恢复状态。官方预览认为本阶段可能增加主力使用，但这不是已确认首发。鹿岛疲劳与横滨主场提供抗衡路径；横滨频繁平局及自身持续失球，使直接判主胜也缺足够优势。\n\n比较1–1、2–1和1–0：选择1–1作为人工研究首选。横滨攻入第二球需要把近期进攻表现转成稳定压制，尚无近期xG和当场阵容确认；鹿岛最近两场不进球支持1–0路径，但其五轮联赛此前仍有10球，而横滨近四轮均失球，零封反证明显。鹿岛早失球后投入追分可能打开三球以上路径，故1–1点比分不能自动推出小球。主要风险是鹿岛轮换效果，以及横滨伤员对实际创造机会的影响。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111103/)，ESPN两队赛程及401877556完赛summary。\n\n**川崎—柏：本批对胜负的研究倾向最明确，柏客胜，首选1–2。**\n\n川崎近五轮3胜2负，进11失10，五场全部双方进球，最近两轮连败。柏近五轮3胜1平1负，近三轮连胜，合计进9失3。四天前柏主场2–1击败川崎，射门22–9、射正9–3，过程支持柏的胜利，而不只是从赛果推断。官方预览还具体记载柏的高位抢断得分，以及川崎通过角球扳平。\n\n主要路径是柏持续施压川崎后场组织，川崎以主场进攻和定位球回应。比较1–2、2–2和2–1：柏近期连续得分及刚发生的过程优势，令1–2暂列第一；川崎近五场场场进球、近两个联赛主场均2–1获胜，反驳柏轻松零封，也使2–2和主场反转2–1成为实际风险。主客场已与11月7日对调，柏不能照搬上一场优势。若川崎早领先，柏追分和川崎反击都有四球以上路径；本场偏向双方有进球的比赛形态，但没有可核实实盘，不能写成已推荐大2.5或大3。\n\n双方完整伤停名单尚未取得，未公布首发本身不阻断研究；若后续确认柏进攻核心或川崎关键防守人员发生重大变化，应另追加版本，不覆盖本次1–2。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111104/)，ESPN两队赛程及401877560完赛summary。\n\n**浦和—大阪樱花：双方得分路径都有依据，胜负暂不押。**\n\n浦和近五轮3胜1平1负，进7失8；樱花1胜2平2负，进9失13。两队上轮分别2–2神户、3–2大阪钢巴，都从前一轮大败中回升。浦和对神户射门20次、射正9次，是进攻恢复的实际证据；但近期联赛三场胜利的对手为水户、千叶、长崎，不能不考虑对手差异便断言对樱花占优。樱花近五轮场场进球也场场失球，支持双向得分路径。\n\n人员方面，浦和笹修大因U21代表队离队，长沼洋一状态不明，片山瑛一刚伤愈；樱花横山梦树也被U21征召。浦和边后卫安排属于可能改变比赛路径的未解决风险。\n\n比较1–1、2–1和1–2：浦和主场和进攻回升支持2–1，但防线问题与樱花持续进球构成反证；樱花德比取胜不能消除五轮失13球的问题，也不足以直接选1–2。1–1只是平衡路径，不能因为难选胜负就自动定为首选。暂不确定唯一比分与胜平负。两队若延续转换节奏可能三球以上，若人员调整压低出球质量也可能收紧；无真实盘口不作大小球推荐。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111102/)，ESPN两队赛程及401877554完赛summary。\n\n八队“近五场”均严格指已核实的最近五轮J1常规赛，不是全赛事；未证明完整14天/7天全赛事负荷。射门与射正仅为已核实单场过程，不能称为xG或等价机会质量，也未学习进模型。当前真实xG/xGA未取得；官方预览中的人员信息按报道使用，完整伤停/停赛名单及真实首发仍不全。双方球员0球、1球、2球以上均仅作条件路径比较，没有虚构概率。\n\n本批合格TOP3：0场。缺少适用双模型矩阵及完整实盘，两个研究比分均不满足项目TOP3门槛，保留四场完整分母。未来复盘：横滨1–1、川崎1–2分别结算人工研究比分及平/负方向；另外两场待定不补命中；全部大小球观望。当前/test拒绝记录独立保留，不能事后选取研究比分计入模型成绩。\n",
+      "sources_manifest": {
+        "request_count": 21,
+        "budget_max": 30,
+        "collection_window_utc": [
+          "2026-11-11T00:53:34.044610+00:00",
+          "2026-11-11T00:57:35.295536+00:00"
+        ],
+        "sources": [
+          {
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=20261111",
+            "requested_at_utc": "2026-11-11T00:53:34.044610+00:00",
+            "http_status": 200,
+            "sha256": "0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4",
+            "raw_path": "raw/0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4.json",
+            "bytes": 3210,
+            "provider": "ESPN public JSON",
+            "note": "J1 scoreboard endpoint; response does not cover League Cup fixtures."
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams?limit=100",
+            "requested_at_utc": "2026-11-11T00:54:52.430422+00:00",
+            "http_status": 200,
+            "sha256": "202acd14b4838188e7b3afd651eb9176930e34128cb55430fadc605207e940f3",
+            "bytes": 24861,
+            "raw_path": "raw/espn-teams-directory-2026.json",
+            "content_type": "application/json",
+            "note": "映射赛事参与队ESPN team IDs。"
+          },
+          {
+            "team": "Kobe",
+            "espn_id": "7477",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7477/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.028141+00:00",
+            "http_status": 200,
+            "sha256": "ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2",
+            "bytes": 309616,
+            "raw_path": "raw/ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Machida",
+            "espn_id": "22167",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/22167/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.399233+00:00",
+            "http_status": 200,
+            "sha256": "a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef",
+            "bytes": 311821,
+            "raw_path": "raw/a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Urawa",
+            "espn_id": "3385",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/3385/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.785214+00:00",
+            "http_status": 200,
+            "sha256": "39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833",
+            "bytes": 312039,
+            "raw_path": "raw/39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Cerezo",
+            "espn_id": "7109",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7109/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.159765+00:00",
+            "http_status": 200,
+            "sha256": "b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29",
+            "bytes": 310112,
+            "raw_path": "raw/b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "YokohamaFM",
+            "espn_id": "7116",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7116/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.427080+00:00",
+            "http_status": 200,
+            "sha256": "49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223",
+            "bytes": 311787,
+            "raw_path": "raw/49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kashima",
+            "espn_id": "7115",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7115/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.781974+00:00",
+            "http_status": 200,
+            "sha256": "c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53",
+            "bytes": 310763,
+            "raw_path": "raw/c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kawasaki",
+            "espn_id": "7112",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7112/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.152805+00:00",
+            "http_status": 200,
+            "sha256": "373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b",
+            "bytes": 311971,
+            "raw_path": "raw/373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kashiwa",
+            "espn_id": "7476",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7476/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.423893+00:00",
+            "http_status": 200,
+            "sha256": "d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c",
+            "bytes": 310326,
+            "raw_path": "raw/d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111104/",
+            "requested_at_utc": "2026-11-11T00:54:23.086450+00:00",
+            "http_status": 200,
+            "sha256": "0dc5c4f847dec3b27c42e2741b41d94ad7b549da89c115fe056df230e99d8a05",
+            "bytes": 1045153,
+            "raw_path": "raw/0dc5c4f847dec3b27c42e2741b41d94ad7b549da89c115fe056df230e99d8a05.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111103/",
+            "requested_at_utc": "2026-11-11T00:54:21.699279+00:00",
+            "http_status": 200,
+            "sha256": "4bf446e889a5b553f58a700a04fc413a4f1f47c87123940ac3ac55a515130754",
+            "bytes": 1042054,
+            "raw_path": "raw/4bf446e889a5b553f58a700a04fc413a4f1f47c87123940ac3ac55a515130754.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111101/",
+            "requested_at_utc": "2026-11-11T00:54:19.387416+00:00",
+            "http_status": 200,
+            "sha256": "9b3fb64c24883f9f1a70e147790e68179ee606fff345dd5f82d44e3e7b1c1d15",
+            "bytes": 1035781,
+            "raw_path": "raw/9b3fb64c24883f9f1a70e147790e68179ee606fff345dd5f82d44e3e7b1c1d15.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111102/",
+            "requested_at_utc": "2026-11-11T00:54:20.865740+00:00",
+            "http_status": 200,
+            "sha256": "13456dd1ce1862761adf60b54ea07152dc17af69cdcd3d08b4f755b9fcd3d538",
+            "bytes": 1049346,
+            "raw_path": "raw/13456dd1ce1862761adf60b54ea07152dc17af69cdcd3d08b4f755b9fcd3d538.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "Public odds web page",
+            "url": "https://www.asianodds.org/",
+            "requested_at_utc": "2026-11-11T00:56:15.406518+00:00",
+            "http_status": 200,
+            "sha256": "50ed386e37e959c3f5fd8d8f3c47348eb4f2adf778089def5952942b34139dac",
+            "bytes": 650,
+            "raw_path": "raw/50ed386e37e959c3f5fd8d8f3c47348eb4f2adf778089def5952942b34139dac.html",
+            "content_type": "text/html",
+            "note": "页面响应未发现四场具有同机构、明确盘口线和报价时点的当前赔率。"
+          },
+          {
+            "provider": "Public odds web page",
+            "url": "https://www.oddsportal.com/football/japan/league-cup/",
+            "requested_at_utc": "2026-11-11T00:56:16.054691+00:00",
+            "http_status": 200,
+            "sha256": "25147e1add2ab940451bcd72971ebbd12cfb7c62aa5afb09247e3106e1e83a95",
+            "bytes": 336213,
+            "raw_path": "raw/25147e1add2ab940451bcd72971ebbd12cfb7c62aa5afb09247e3106e1e83a95.html",
+            "content_type": "text/html",
+            "note": "页面响应未发现四场具有同机构、明确盘口线和报价时点的当前赔率。"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877554",
+            "requested_at_utc": "2026-11-11T00:57:33.652439+00:00",
+            "http_status": 200,
+            "sha256": "54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360",
+            "bytes": 328464,
+            "raw_path": "raw/54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877560",
+            "requested_at_utc": "2026-11-11T00:57:34.055660+00:00",
+            "http_status": 200,
+            "sha256": "5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9",
+            "bytes": 326966,
+            "raw_path": "raw/5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877559",
+            "requested_at_utc": "2026-11-11T00:57:34.581355+00:00",
+            "http_status": 200,
+            "sha256": "40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888",
+            "bytes": 317901,
+            "raw_path": "raw/40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877556",
+            "requested_at_utc": "2026-11-11T00:57:34.900882+00:00",
+            "http_status": 200,
+            "sha256": "694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541",
+            "bytes": 331387,
+            "raw_path": "raw/694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "FotMob public API",
+            "url": "https://www.fotmob.com/api/matches?date=20261111",
+            "requested_at_utc": "2026-11-11T00:57:35.295536+00:00",
+            "http_status": 404,
+            "sha256": null,
+            "raw_path": null,
+            "note": "HTTPError 404; body was not captured by urllib exception handler; no retry."
+          }
+        ],
+        "window_definition": "request_start_times; individual response completion times not separately recorded"
+      },
+      "recent_j1_evidence": [
+        {
+          "team": "Kobe",
+          "team_id": "7477",
+          "actual_name": "Vissel Kobe",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877598",
+              "date_bjt": "2026-10-18T12:55:00+08:00",
+              "home_away": "away",
+              "opponent": "Fagiano Okayama",
+              "gf": 3,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877594",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kawasaki Frontale",
+              "gf": 1,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877584",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Machida Zelvia",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877561",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Nagoya Grampus",
+              "gf": 3,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877554",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Urawa Red Diamonds",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 9,
+          "ga": 5,
+          "w": 2,
+          "d": 2,
+          "l": 1,
+          "source": {
+            "team": "Kobe",
+            "espn_id": "7477",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7477/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.028141+00:00",
+            "http_status": 200,
+            "sha256": "ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2",
+            "bytes": 309616,
+            "raw_path": "raw/ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2.json"
+          }
+        },
+        {
+          "team": "Machida",
+          "team_id": "22167",
+          "actual_name": "Machida Zelvia",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877601",
+              "date_bjt": "2026-10-18T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Avispa Fukuoka",
+              "gf": 3,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877592",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Shimizu S-Pulse",
+              "gf": 5,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877584",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Vissel Kobe",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877581",
+              "date_bjt": "2026-11-01T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Gamba Osaka",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877559",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Sanfrecce Hiroshima",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 8,
+          "ga": 0,
+          "w": 2,
+          "d": 3,
+          "l": 0,
+          "source": {
+            "team": "Machida",
+            "espn_id": "22167",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/22167/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.399233+00:00",
+            "http_status": 200,
+            "sha256": "a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef",
+            "bytes": 311821,
+            "raw_path": "raw/a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef.json"
+          }
+        },
+        {
+          "team": "Urawa",
+          "team_id": "3385",
+          "actual_name": "Urawa Red Diamonds",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877603",
+              "date_bjt": "2026-10-17T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Mito Hollyhock",
+              "gf": 1,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877596",
+              "date_bjt": "2026-10-21T18:30:00+08:00",
+              "home_away": "home",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877586",
+              "date_bjt": "2026-10-25T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "V-Varen Nagasaki",
+              "gf": 1,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877563",
+              "date_bjt": "2026-10-31T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashiwa Reysol",
+              "gf": 0,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877554",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Vissel Kobe",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 7,
+          "ga": 8,
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "source": {
+            "team": "Urawa",
+            "espn_id": "3385",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/3385/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.785214+00:00",
+            "http_status": 200,
+            "sha256": "39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833",
+            "bytes": 312039,
+            "raw_path": "raw/39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833.json"
+          }
+        },
+        {
+          "team": "Cerezo",
+          "team_id": "7109",
+          "actual_name": "Cerezo Osaka",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877599",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 2,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877571",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877566",
+              "date_bjt": "2026-10-25T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877583",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashima Antlers",
+              "gf": 1,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877555",
+              "date_bjt": "2026-11-08T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Gamba Osaka",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 9,
+          "ga": 13,
+          "w": 1,
+          "d": 2,
+          "l": 2,
+          "source": {
+            "team": "Cerezo",
+            "espn_id": "7109",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7109/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.159765+00:00",
+            "http_status": 200,
+            "sha256": "b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29",
+            "bytes": 310112,
+            "raw_path": "raw/b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29.json"
+          }
+        },
+        {
+          "team": "YokohamaFM",
+          "team_id": "7116",
+          "actual_name": "Yokohama F. Marinos",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877573",
+              "date_bjt": "2026-10-17T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877593",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Tokyo Verdy 1969",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877568",
+              "date_bjt": "2026-10-25T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877580",
+              "date_bjt": "2026-11-01T12:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 4,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877558",
+              "date_bjt": "2026-11-07T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Fagiano Okayama",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 8,
+          "ga": 6,
+          "w": 1,
+          "d": 4,
+          "l": 0,
+          "source": {
+            "team": "YokohamaFM",
+            "espn_id": "7116",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7116/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.427080+00:00",
+            "http_status": 200,
+            "sha256": "49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223",
+            "bytes": 311787,
+            "raw_path": "raw/49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223.json"
+          }
+        },
+        {
+          "team": "Kashima",
+          "team_id": "7115",
+          "actual_name": "Kashima Antlers",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877604",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "V-Varen Nagasaki",
+              "gf": 2,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877591",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kyoto Sanga",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877587",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kashiwa Reysol",
+              "gf": 2,
+              "ga": 3,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877583",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Cerezo Osaka",
+              "gf": 4,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877556",
+              "date_bjt": "2026-11-07T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "FC Tokyo",
+              "gf": 0,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 10,
+          "ga": 8,
+          "w": 2,
+          "d": 1,
+          "l": 2,
+          "source": {
+            "team": "Kashima",
+            "espn_id": "7115",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7115/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.781974+00:00",
+            "http_status": 200,
+            "sha256": "c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53",
+            "bytes": 310763,
+            "raw_path": "raw/c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53.json"
+          }
+        },
+        {
+          "team": "Kawasaki",
+          "team_id": "7112",
+          "actual_name": "Kawasaki Frontale",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877599",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Cerezo Osaka",
+              "gf": 4,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877594",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Vissel Kobe",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877569",
+              "date_bjt": "2026-10-25T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Fagiano Okayama",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877580",
+              "date_bjt": "2026-11-01T12:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Yokohama F. Marinos",
+              "gf": 2,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877560",
+              "date_bjt": "2026-11-07T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashiwa Reysol",
+              "gf": 1,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 11,
+          "ga": 10,
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "source": {
+            "team": "Kawasaki",
+            "espn_id": "7112",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7112/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.152805+00:00",
+            "http_status": 200,
+            "sha256": "373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b",
+            "bytes": 311971,
+            "raw_path": "raw/373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b.json"
+          }
+        },
+        {
+          "team": "Kashiwa",
+          "team_id": "7476",
+          "actual_name": "Kashiwa Reysol",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877602",
+              "date_bjt": "2026-10-17T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 3,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877595",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "FC Tokyo",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877587",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashima Antlers",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877563",
+              "date_bjt": "2026-10-31T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Urawa Red Diamonds",
+              "gf": 4,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877560",
+              "date_bjt": "2026-11-07T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 10,
+          "ga": 6,
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "source": {
+            "team": "Kashiwa",
+            "espn_id": "7476",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7476/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.423893+00:00",
+            "http_status": 200,
+            "sha256": "d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c",
+            "bytes": 310326,
+            "raw_path": "raw/d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c.json"
+          }
+        }
+      ],
+      "process_evidence": [
+        {
+          "id": "401877559",
+          "date": "2026-11-08T05:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "22167",
+              "name": "Machida Zelvia",
+              "shots": "13",
+              "shots_on_target": "4",
+              "xg": null,
+              "possession": "54.8"
+            },
+            {
+              "id": "7114",
+              "name": "Sanfrecce Hiroshima",
+              "shots": "19",
+              "shots_on_target": "7",
+              "xg": null,
+              "possession": "45.2"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888.json",
+          "sha256": "40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877554",
+          "date": "2026-11-08T05:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "7477",
+              "name": "Vissel Kobe",
+              "shots": "19",
+              "shots_on_target": "5",
+              "xg": null,
+              "possession": "42.7"
+            },
+            {
+              "id": "3385",
+              "name": "Urawa Red Diamonds",
+              "shots": "20",
+              "shots_on_target": "9",
+              "xg": null,
+              "possession": "57.3"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360.json",
+          "sha256": "54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877556",
+          "date": "2026-11-07T06:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "3384",
+              "name": "FC Tokyo",
+              "shots": "11",
+              "shots_on_target": "3",
+              "xg": null,
+              "possession": "38.4"
+            },
+            {
+              "id": "7115",
+              "name": "Kashima Antlers",
+              "shots": "7",
+              "shots_on_target": "1",
+              "xg": null,
+              "possession": "61.6"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541.json",
+          "sha256": "694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877560",
+          "date": "2026-11-07T07:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "7476",
+              "name": "Kashiwa Reysol",
+              "shots": "22",
+              "shots_on_target": "9",
+              "xg": null,
+              "possession": "46.7"
+            },
+            {
+              "id": "7112",
+              "name": "Kawasaki Frontale",
+              "shots": "9",
+              "shots_on_target": "3",
+              "xg": null,
+              "possession": "53.3"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9.json",
+          "sha256": "5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        }
+      ],
+      "xg_status": "NOT_OBTAINED_ESPN_FIELD_ABSENT_FOTMOB_404",
+      "injury_status": "OFFICIAL_PREVIEW_PARTIAL_NOT_COMPLETE_SQUAD_AVAILABILITY",
+      "numerical_matrix": null,
+      "team_goal_distribution": null,
+      "formal_kpi_eligible": false,
+      "future_review_policy": "Preserve all four; score and WDL denominators independent; pending never counted as hits; current/test refusal separate",
+      "model_promotion": false,
+      "top3_eligible": false
+    },
+    "freeze_receipt": {
+      "freeze_id": "2d1229e58f186637-v000001",
+      "recorded_at": "2026-11-11T09:00:41.743156+08:00",
+      "path": "/workspace/WCPP/forecasts/issued-analyses/2d1229e58f18663719f38b2a7b7d90a08e1a7fc8bb0e844bab903848a104a442/000001.json",
+      "sha256": "f081adb47f4f645e98c658406be2174c54454ea67d2a081e48b73d4aec97b702",
+      "evaluation_slot": "FIRST_PREMATCH"
+    }
+  },
+  {
+    "fixture": {
+      "match_id": "jleague:111102",
+      "competition": "jpn.league_cup",
+      "cohort": "jpn.league_cup:edition-2026-27:quarterfinals:two-leg:1",
+      "home": "jleague:urawa",
+      "away": "jleague:cosaka",
+      "home_name": "浦和",
+      "away_name": "Ｃ大阪",
+      "gender": "men",
+      "age": "senior",
+      "stage": "quarterfinals",
+      "leg": 1,
+      "tie_format": "two-leg",
+      "phase": "PreMatch",
+      "score_basis": "regulation_90",
+      "kickoff_at": "2026-11-11T10:30:00.000Z",
+      "cutoff_at": "2026-11-11T01:00:41.679219+00:00",
+      "neutral": null,
+      "date": "2026-11-11"
+    },
+    "payload": {
+      "version": "JLEAGUE-CUP-COMPREHENSIVE-RESEARCH-20261111-v1",
+      "primary": null,
+      "wdl": null,
+      "total_line": null,
+      "total_direction": null,
+      "status": "ABSTAIN_CRITICAL_UNCERTAINTY",
+      "current_test_reference": {
+        "freeze_id": "e08b5673c1ab4c0c-v000001",
+        "recorded_at": "2026-11-11T08:53:30.332317+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/e08b5673c1ab4c0c602b110cf1d3e6aab43ca52980c395e037f55a8bbab9591b/000001.json",
+        "sha256": "fcb7502d0fcdf2f46ac832ee7e1bdbf876ea61afd6be87ebc921f4108791a18c",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "selection_evidence": {
+        "compared_scores": [
+          "1-1",
+          "2-1",
+          "1-2"
+        ],
+        "reason_and_counterevidence_in": "issued_text",
+        "total_reason": "No verified current line/bookmaker/source quote time; ABSTAIN"
+      },
+      "issued_text": "HELLO BOSS，这版先看赛前研究判断：川崎—柏倾向柏胜，横滨—鹿岛倾向平局；神户—町田和浦和—大阪樱花暂不定唯一比分。四场均为2026年11月11日日联杯八强首回合，以下只判断90分钟，不等于两回合晋级判断。\n\n| 北京时间 | 对阵 | 综合胜平负 | 综合第一比分 | 实际盘口大小球 |\n|---|---|---|---|---|\n| 18:00 | 神户胜利船—町田泽维亚 | 待定；观察神户不败路径 | 待定 | 未取得合格实盘，观望 |\n| 18:00 | 横滨水手—鹿岛鹿角 | 平局，研究倾向 | 1–1 | 未取得合格实盘，观望 |\n| 18:00 | 川崎前锋—柏太阳神 | 客胜，研究倾向 | 1–2 | 未取得合格实盘，观望 |\n| 18:30 | 浦和红钻—大阪樱花 | 待定 | 待定 | 未取得合格实盘，观望 |\n\n当前模型和test模型四场均实际检查后拒绝：本届八强没有适用活动工件。没有数值矩阵、进球均值、中央80%区间或零球/两球/三球概率；这两个比分属于综合人工研究选择，不是模型预测或已验证推荐。近期J1战绩只作为杯赛赛前事实参考，没有调用J1工件预测杯赛。\n\n**神户—町田：主队有攻击人员优势，但町田的防守证据不能忽略。**\n\n神户近五轮联赛2胜2平1负，进9失5；町田2胜3平，进8失0，最近三轮全是0–0。官方预览确认武藤嘉纪近两轮3球2助攻；町田相马勇纪、小川航基和Tete Yengi被国家队征召，攻击端可用人手减少，西村拓真承担更多任务。两队上轮均在11月8日比赛，恢复时间短，官方也明确提示轮换不透明。\n\n主路径是神户争取主场先手、町田减少失误并寻找反击，观察神户不败有依据，但暂不能把它压成主胜。比较0–0、1–0和1–1：町田五轮零封支持僵局；武藤状态与神户最近两轮5球反驳“神户必然零进球”；町田连续哑火及征调支持客队零球，但最近对广岛仍有13次射门、4次射正，神户上轮被浦和射门20次、射正9次，不能把町田零球当确定。两队10月24日0–0时合计33次射门，也说明比分为零不等于毫无机会。首回合若出现早球，神户追求扩大优势与町田追分均可能增加总球，不能仅凭最近0–0判断实际盘口小球。唯一比分保留待定。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111101/)，ESPN八队赛程及401877554、401877559两份完赛summary。\n\n**横滨—鹿岛：倾向1–1，比直接追鹿岛客胜更有支撑。**\n\n横滨近五轮1胜4平，进8失6，最近四轮均有进球也有失球。鹿岛近五轮2胜1平2负，进10失8，但官方预览指出其正处于长期密集赛程，本场是连续20场安排中的第10场；最近亚冠0–0、联赛0–2。最近对东京只有7次射门、1次射正，进攻表现低于球队名气给人的预期。此项只是一场过程，不能代替长期xG。\n\n横滨也有三井寺真、Jordy Croux伤情；角田凉太朗、远野大弥则处于恢复状态。官方预览认为本阶段可能增加主力使用，但这不是已确认首发。鹿岛疲劳与横滨主场提供抗衡路径；横滨频繁平局及自身持续失球，使直接判主胜也缺足够优势。\n\n比较1–1、2–1和1–0：选择1–1作为人工研究首选。横滨攻入第二球需要把近期进攻表现转成稳定压制，尚无近期xG和当场阵容确认；鹿岛最近两场不进球支持1–0路径，但其五轮联赛此前仍有10球，而横滨近四轮均失球，零封反证明显。鹿岛早失球后投入追分可能打开三球以上路径，故1–1点比分不能自动推出小球。主要风险是鹿岛轮换效果，以及横滨伤员对实际创造机会的影响。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111103/)，ESPN两队赛程及401877556完赛summary。\n\n**川崎—柏：本批对胜负的研究倾向最明确，柏客胜，首选1–2。**\n\n川崎近五轮3胜2负，进11失10，五场全部双方进球，最近两轮连败。柏近五轮3胜1平1负，近三轮连胜，合计进9失3。四天前柏主场2–1击败川崎，射门22–9、射正9–3，过程支持柏的胜利，而不只是从赛果推断。官方预览还具体记载柏的高位抢断得分，以及川崎通过角球扳平。\n\n主要路径是柏持续施压川崎后场组织，川崎以主场进攻和定位球回应。比较1–2、2–2和2–1：柏近期连续得分及刚发生的过程优势，令1–2暂列第一；川崎近五场场场进球、近两个联赛主场均2–1获胜，反驳柏轻松零封，也使2–2和主场反转2–1成为实际风险。主客场已与11月7日对调，柏不能照搬上一场优势。若川崎早领先，柏追分和川崎反击都有四球以上路径；本场偏向双方有进球的比赛形态，但没有可核实实盘，不能写成已推荐大2.5或大3。\n\n双方完整伤停名单尚未取得，未公布首发本身不阻断研究；若后续确认柏进攻核心或川崎关键防守人员发生重大变化，应另追加版本，不覆盖本次1–2。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111104/)，ESPN两队赛程及401877560完赛summary。\n\n**浦和—大阪樱花：双方得分路径都有依据，胜负暂不押。**\n\n浦和近五轮3胜1平1负，进7失8；樱花1胜2平2负，进9失13。两队上轮分别2–2神户、3–2大阪钢巴，都从前一轮大败中回升。浦和对神户射门20次、射正9次，是进攻恢复的实际证据；但近期联赛三场胜利的对手为水户、千叶、长崎，不能不考虑对手差异便断言对樱花占优。樱花近五轮场场进球也场场失球，支持双向得分路径。\n\n人员方面，浦和笹修大因U21代表队离队，长沼洋一状态不明，片山瑛一刚伤愈；樱花横山梦树也被U21征召。浦和边后卫安排属于可能改变比赛路径的未解决风险。\n\n比较1–1、2–1和1–2：浦和主场和进攻回升支持2–1，但防线问题与樱花持续进球构成反证；樱花德比取胜不能消除五轮失13球的问题，也不足以直接选1–2。1–1只是平衡路径，不能因为难选胜负就自动定为首选。暂不确定唯一比分与胜平负。两队若延续转换节奏可能三球以上，若人员调整压低出球质量也可能收紧；无真实盘口不作大小球推荐。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111102/)，ESPN两队赛程及401877554完赛summary。\n\n八队“近五场”均严格指已核实的最近五轮J1常规赛，不是全赛事；未证明完整14天/7天全赛事负荷。射门与射正仅为已核实单场过程，不能称为xG或等价机会质量，也未学习进模型。当前真实xG/xGA未取得；官方预览中的人员信息按报道使用，完整伤停/停赛名单及真实首发仍不全。双方球员0球、1球、2球以上均仅作条件路径比较，没有虚构概率。\n\n本批合格TOP3：0场。缺少适用双模型矩阵及完整实盘，两个研究比分均不满足项目TOP3门槛，保留四场完整分母。未来复盘：横滨1–1、川崎1–2分别结算人工研究比分及平/负方向；另外两场待定不补命中；全部大小球观望。当前/test拒绝记录独立保留，不能事后选取研究比分计入模型成绩。\n",
+      "sources_manifest": {
+        "request_count": 21,
+        "budget_max": 30,
+        "collection_window_utc": [
+          "2026-11-11T00:53:34.044610+00:00",
+          "2026-11-11T00:57:35.295536+00:00"
+        ],
+        "sources": [
+          {
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=20261111",
+            "requested_at_utc": "2026-11-11T00:53:34.044610+00:00",
+            "http_status": 200,
+            "sha256": "0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4",
+            "raw_path": "raw/0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4.json",
+            "bytes": 3210,
+            "provider": "ESPN public JSON",
+            "note": "J1 scoreboard endpoint; response does not cover League Cup fixtures."
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams?limit=100",
+            "requested_at_utc": "2026-11-11T00:54:52.430422+00:00",
+            "http_status": 200,
+            "sha256": "202acd14b4838188e7b3afd651eb9176930e34128cb55430fadc605207e940f3",
+            "bytes": 24861,
+            "raw_path": "raw/espn-teams-directory-2026.json",
+            "content_type": "application/json",
+            "note": "映射赛事参与队ESPN team IDs。"
+          },
+          {
+            "team": "Kobe",
+            "espn_id": "7477",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7477/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.028141+00:00",
+            "http_status": 200,
+            "sha256": "ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2",
+            "bytes": 309616,
+            "raw_path": "raw/ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Machida",
+            "espn_id": "22167",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/22167/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.399233+00:00",
+            "http_status": 200,
+            "sha256": "a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef",
+            "bytes": 311821,
+            "raw_path": "raw/a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Urawa",
+            "espn_id": "3385",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/3385/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.785214+00:00",
+            "http_status": 200,
+            "sha256": "39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833",
+            "bytes": 312039,
+            "raw_path": "raw/39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Cerezo",
+            "espn_id": "7109",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7109/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.159765+00:00",
+            "http_status": 200,
+            "sha256": "b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29",
+            "bytes": 310112,
+            "raw_path": "raw/b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "YokohamaFM",
+            "espn_id": "7116",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7116/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.427080+00:00",
+            "http_status": 200,
+            "sha256": "49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223",
+            "bytes": 311787,
+            "raw_path": "raw/49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kashima",
+            "espn_id": "7115",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7115/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.781974+00:00",
+            "http_status": 200,
+            "sha256": "c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53",
+            "bytes": 310763,
+            "raw_path": "raw/c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kawasaki",
+            "espn_id": "7112",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7112/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.152805+00:00",
+            "http_status": 200,
+            "sha256": "373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b",
+            "bytes": 311971,
+            "raw_path": "raw/373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kashiwa",
+            "espn_id": "7476",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7476/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.423893+00:00",
+            "http_status": 200,
+            "sha256": "d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c",
+            "bytes": 310326,
+            "raw_path": "raw/d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111104/",
+            "requested_at_utc": "2026-11-11T00:54:23.086450+00:00",
+            "http_status": 200,
+            "sha256": "0dc5c4f847dec3b27c42e2741b41d94ad7b549da89c115fe056df230e99d8a05",
+            "bytes": 1045153,
+            "raw_path": "raw/0dc5c4f847dec3b27c42e2741b41d94ad7b549da89c115fe056df230e99d8a05.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111103/",
+            "requested_at_utc": "2026-11-11T00:54:21.699279+00:00",
+            "http_status": 200,
+            "sha256": "4bf446e889a5b553f58a700a04fc413a4f1f47c87123940ac3ac55a515130754",
+            "bytes": 1042054,
+            "raw_path": "raw/4bf446e889a5b553f58a700a04fc413a4f1f47c87123940ac3ac55a515130754.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111101/",
+            "requested_at_utc": "2026-11-11T00:54:19.387416+00:00",
+            "http_status": 200,
+            "sha256": "9b3fb64c24883f9f1a70e147790e68179ee606fff345dd5f82d44e3e7b1c1d15",
+            "bytes": 1035781,
+            "raw_path": "raw/9b3fb64c24883f9f1a70e147790e68179ee606fff345dd5f82d44e3e7b1c1d15.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111102/",
+            "requested_at_utc": "2026-11-11T00:54:20.865740+00:00",
+            "http_status": 200,
+            "sha256": "13456dd1ce1862761adf60b54ea07152dc17af69cdcd3d08b4f755b9fcd3d538",
+            "bytes": 1049346,
+            "raw_path": "raw/13456dd1ce1862761adf60b54ea07152dc17af69cdcd3d08b4f755b9fcd3d538.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "Public odds web page",
+            "url": "https://www.asianodds.org/",
+            "requested_at_utc": "2026-11-11T00:56:15.406518+00:00",
+            "http_status": 200,
+            "sha256": "50ed386e37e959c3f5fd8d8f3c47348eb4f2adf778089def5952942b34139dac",
+            "bytes": 650,
+            "raw_path": "raw/50ed386e37e959c3f5fd8d8f3c47348eb4f2adf778089def5952942b34139dac.html",
+            "content_type": "text/html",
+            "note": "页面响应未发现四场具有同机构、明确盘口线和报价时点的当前赔率。"
+          },
+          {
+            "provider": "Public odds web page",
+            "url": "https://www.oddsportal.com/football/japan/league-cup/",
+            "requested_at_utc": "2026-11-11T00:56:16.054691+00:00",
+            "http_status": 200,
+            "sha256": "25147e1add2ab940451bcd72971ebbd12cfb7c62aa5afb09247e3106e1e83a95",
+            "bytes": 336213,
+            "raw_path": "raw/25147e1add2ab940451bcd72971ebbd12cfb7c62aa5afb09247e3106e1e83a95.html",
+            "content_type": "text/html",
+            "note": "页面响应未发现四场具有同机构、明确盘口线和报价时点的当前赔率。"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877554",
+            "requested_at_utc": "2026-11-11T00:57:33.652439+00:00",
+            "http_status": 200,
+            "sha256": "54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360",
+            "bytes": 328464,
+            "raw_path": "raw/54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877560",
+            "requested_at_utc": "2026-11-11T00:57:34.055660+00:00",
+            "http_status": 200,
+            "sha256": "5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9",
+            "bytes": 326966,
+            "raw_path": "raw/5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877559",
+            "requested_at_utc": "2026-11-11T00:57:34.581355+00:00",
+            "http_status": 200,
+            "sha256": "40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888",
+            "bytes": 317901,
+            "raw_path": "raw/40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877556",
+            "requested_at_utc": "2026-11-11T00:57:34.900882+00:00",
+            "http_status": 200,
+            "sha256": "694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541",
+            "bytes": 331387,
+            "raw_path": "raw/694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "FotMob public API",
+            "url": "https://www.fotmob.com/api/matches?date=20261111",
+            "requested_at_utc": "2026-11-11T00:57:35.295536+00:00",
+            "http_status": 404,
+            "sha256": null,
+            "raw_path": null,
+            "note": "HTTPError 404; body was not captured by urllib exception handler; no retry."
+          }
+        ],
+        "window_definition": "request_start_times; individual response completion times not separately recorded"
+      },
+      "recent_j1_evidence": [
+        {
+          "team": "Kobe",
+          "team_id": "7477",
+          "actual_name": "Vissel Kobe",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877598",
+              "date_bjt": "2026-10-18T12:55:00+08:00",
+              "home_away": "away",
+              "opponent": "Fagiano Okayama",
+              "gf": 3,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877594",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kawasaki Frontale",
+              "gf": 1,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877584",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Machida Zelvia",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877561",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Nagoya Grampus",
+              "gf": 3,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877554",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Urawa Red Diamonds",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 9,
+          "ga": 5,
+          "w": 2,
+          "d": 2,
+          "l": 1,
+          "source": {
+            "team": "Kobe",
+            "espn_id": "7477",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7477/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.028141+00:00",
+            "http_status": 200,
+            "sha256": "ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2",
+            "bytes": 309616,
+            "raw_path": "raw/ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2.json"
+          }
+        },
+        {
+          "team": "Machida",
+          "team_id": "22167",
+          "actual_name": "Machida Zelvia",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877601",
+              "date_bjt": "2026-10-18T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Avispa Fukuoka",
+              "gf": 3,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877592",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Shimizu S-Pulse",
+              "gf": 5,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877584",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Vissel Kobe",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877581",
+              "date_bjt": "2026-11-01T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Gamba Osaka",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877559",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Sanfrecce Hiroshima",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 8,
+          "ga": 0,
+          "w": 2,
+          "d": 3,
+          "l": 0,
+          "source": {
+            "team": "Machida",
+            "espn_id": "22167",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/22167/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.399233+00:00",
+            "http_status": 200,
+            "sha256": "a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef",
+            "bytes": 311821,
+            "raw_path": "raw/a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef.json"
+          }
+        },
+        {
+          "team": "Urawa",
+          "team_id": "3385",
+          "actual_name": "Urawa Red Diamonds",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877603",
+              "date_bjt": "2026-10-17T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Mito Hollyhock",
+              "gf": 1,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877596",
+              "date_bjt": "2026-10-21T18:30:00+08:00",
+              "home_away": "home",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877586",
+              "date_bjt": "2026-10-25T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "V-Varen Nagasaki",
+              "gf": 1,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877563",
+              "date_bjt": "2026-10-31T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashiwa Reysol",
+              "gf": 0,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877554",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Vissel Kobe",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 7,
+          "ga": 8,
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "source": {
+            "team": "Urawa",
+            "espn_id": "3385",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/3385/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.785214+00:00",
+            "http_status": 200,
+            "sha256": "39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833",
+            "bytes": 312039,
+            "raw_path": "raw/39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833.json"
+          }
+        },
+        {
+          "team": "Cerezo",
+          "team_id": "7109",
+          "actual_name": "Cerezo Osaka",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877599",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 2,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877571",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877566",
+              "date_bjt": "2026-10-25T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877583",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashima Antlers",
+              "gf": 1,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877555",
+              "date_bjt": "2026-11-08T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Gamba Osaka",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 9,
+          "ga": 13,
+          "w": 1,
+          "d": 2,
+          "l": 2,
+          "source": {
+            "team": "Cerezo",
+            "espn_id": "7109",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7109/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.159765+00:00",
+            "http_status": 200,
+            "sha256": "b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29",
+            "bytes": 310112,
+            "raw_path": "raw/b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29.json"
+          }
+        },
+        {
+          "team": "YokohamaFM",
+          "team_id": "7116",
+          "actual_name": "Yokohama F. Marinos",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877573",
+              "date_bjt": "2026-10-17T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877593",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Tokyo Verdy 1969",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877568",
+              "date_bjt": "2026-10-25T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877580",
+              "date_bjt": "2026-11-01T12:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 4,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877558",
+              "date_bjt": "2026-11-07T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Fagiano Okayama",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 8,
+          "ga": 6,
+          "w": 1,
+          "d": 4,
+          "l": 0,
+          "source": {
+            "team": "YokohamaFM",
+            "espn_id": "7116",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7116/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.427080+00:00",
+            "http_status": 200,
+            "sha256": "49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223",
+            "bytes": 311787,
+            "raw_path": "raw/49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223.json"
+          }
+        },
+        {
+          "team": "Kashima",
+          "team_id": "7115",
+          "actual_name": "Kashima Antlers",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877604",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "V-Varen Nagasaki",
+              "gf": 2,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877591",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kyoto Sanga",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877587",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kashiwa Reysol",
+              "gf": 2,
+              "ga": 3,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877583",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Cerezo Osaka",
+              "gf": 4,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877556",
+              "date_bjt": "2026-11-07T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "FC Tokyo",
+              "gf": 0,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 10,
+          "ga": 8,
+          "w": 2,
+          "d": 1,
+          "l": 2,
+          "source": {
+            "team": "Kashima",
+            "espn_id": "7115",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7115/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.781974+00:00",
+            "http_status": 200,
+            "sha256": "c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53",
+            "bytes": 310763,
+            "raw_path": "raw/c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53.json"
+          }
+        },
+        {
+          "team": "Kawasaki",
+          "team_id": "7112",
+          "actual_name": "Kawasaki Frontale",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877599",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Cerezo Osaka",
+              "gf": 4,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877594",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Vissel Kobe",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877569",
+              "date_bjt": "2026-10-25T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Fagiano Okayama",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877580",
+              "date_bjt": "2026-11-01T12:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Yokohama F. Marinos",
+              "gf": 2,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877560",
+              "date_bjt": "2026-11-07T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashiwa Reysol",
+              "gf": 1,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 11,
+          "ga": 10,
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "source": {
+            "team": "Kawasaki",
+            "espn_id": "7112",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7112/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.152805+00:00",
+            "http_status": 200,
+            "sha256": "373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b",
+            "bytes": 311971,
+            "raw_path": "raw/373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b.json"
+          }
+        },
+        {
+          "team": "Kashiwa",
+          "team_id": "7476",
+          "actual_name": "Kashiwa Reysol",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877602",
+              "date_bjt": "2026-10-17T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 3,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877595",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "FC Tokyo",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877587",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashima Antlers",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877563",
+              "date_bjt": "2026-10-31T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Urawa Red Diamonds",
+              "gf": 4,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877560",
+              "date_bjt": "2026-11-07T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 10,
+          "ga": 6,
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "source": {
+            "team": "Kashiwa",
+            "espn_id": "7476",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7476/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.423893+00:00",
+            "http_status": 200,
+            "sha256": "d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c",
+            "bytes": 310326,
+            "raw_path": "raw/d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c.json"
+          }
+        }
+      ],
+      "process_evidence": [
+        {
+          "id": "401877559",
+          "date": "2026-11-08T05:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "22167",
+              "name": "Machida Zelvia",
+              "shots": "13",
+              "shots_on_target": "4",
+              "xg": null,
+              "possession": "54.8"
+            },
+            {
+              "id": "7114",
+              "name": "Sanfrecce Hiroshima",
+              "shots": "19",
+              "shots_on_target": "7",
+              "xg": null,
+              "possession": "45.2"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888.json",
+          "sha256": "40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877554",
+          "date": "2026-11-08T05:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "7477",
+              "name": "Vissel Kobe",
+              "shots": "19",
+              "shots_on_target": "5",
+              "xg": null,
+              "possession": "42.7"
+            },
+            {
+              "id": "3385",
+              "name": "Urawa Red Diamonds",
+              "shots": "20",
+              "shots_on_target": "9",
+              "xg": null,
+              "possession": "57.3"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360.json",
+          "sha256": "54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877556",
+          "date": "2026-11-07T06:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "3384",
+              "name": "FC Tokyo",
+              "shots": "11",
+              "shots_on_target": "3",
+              "xg": null,
+              "possession": "38.4"
+            },
+            {
+              "id": "7115",
+              "name": "Kashima Antlers",
+              "shots": "7",
+              "shots_on_target": "1",
+              "xg": null,
+              "possession": "61.6"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541.json",
+          "sha256": "694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877560",
+          "date": "2026-11-07T07:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "7476",
+              "name": "Kashiwa Reysol",
+              "shots": "22",
+              "shots_on_target": "9",
+              "xg": null,
+              "possession": "46.7"
+            },
+            {
+              "id": "7112",
+              "name": "Kawasaki Frontale",
+              "shots": "9",
+              "shots_on_target": "3",
+              "xg": null,
+              "possession": "53.3"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9.json",
+          "sha256": "5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        }
+      ],
+      "xg_status": "NOT_OBTAINED_ESPN_FIELD_ABSENT_FOTMOB_404",
+      "injury_status": "OFFICIAL_PREVIEW_PARTIAL_NOT_COMPLETE_SQUAD_AVAILABILITY",
+      "numerical_matrix": null,
+      "team_goal_distribution": null,
+      "formal_kpi_eligible": false,
+      "future_review_policy": "Preserve all four; score and WDL denominators independent; pending never counted as hits; current/test refusal separate",
+      "model_promotion": false,
+      "top3_eligible": false
+    },
+    "freeze_receipt": {
+      "freeze_id": "dc179983601cd49f-v000001",
+      "recorded_at": "2026-11-11T09:00:41.746530+08:00",
+      "path": "/workspace/WCPP/forecasts/issued-analyses/dc179983601cd49f3b1c442e2eb1421993a062863c57dab5a9eed593a2f43420/000001.json",
+      "sha256": "416a3088d83b82af875ba27cbc03332c9e20efd9553720a48aa72db3f993ce58",
+      "evaluation_slot": "FIRST_PREMATCH"
+    }
+  },
+  {
+    "fixture": {
+      "match_id": "jleague:111103",
+      "competition": "jpn.league_cup",
+      "cohort": "jpn.league_cup:edition-2026-27:quarterfinals:two-leg:1",
+      "home": "jleague:yokohamafm",
+      "away": "jleague:kashima",
+      "home_name": "横浜FM",
+      "away_name": "鹿島",
+      "gender": "men",
+      "age": "senior",
+      "stage": "quarterfinals",
+      "leg": 1,
+      "tie_format": "two-leg",
+      "phase": "PreMatch",
+      "score_basis": "regulation_90",
+      "kickoff_at": "2026-11-11T10:00:00.000Z",
+      "cutoff_at": "2026-11-11T01:00:41.679219+00:00",
+      "neutral": null,
+      "date": "2026-11-11"
+    },
+    "payload": {
+      "version": "JLEAGUE-CUP-COMPREHENSIVE-RESEARCH-20261111-v1",
+      "primary": "1-1",
+      "wdl": "平",
+      "total_line": null,
+      "total_direction": null,
+      "status": "RESEARCH_SELECTION",
+      "current_test_reference": {
+        "freeze_id": "2b7b4a7474e13c07-v000001",
+        "recorded_at": "2026-11-11T08:53:30.327577+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/2b7b4a7474e13c075787631df5c7b731f204c1ed9748b16962fd56af030a11cc/000001.json",
+        "sha256": "b81422d1edee19d99f4b45dce018b1cd1bf447814f0869cb7ea12b9050d3c367",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "selection_evidence": {
+        "compared_scores": [
+          "1-1",
+          "2-1",
+          "1-0"
+        ],
+        "reason_and_counterevidence_in": "issued_text",
+        "total_reason": "No verified current line/bookmaker/source quote time; ABSTAIN"
+      },
+      "issued_text": "HELLO BOSS，这版先看赛前研究判断：川崎—柏倾向柏胜，横滨—鹿岛倾向平局；神户—町田和浦和—大阪樱花暂不定唯一比分。四场均为2026年11月11日日联杯八强首回合，以下只判断90分钟，不等于两回合晋级判断。\n\n| 北京时间 | 对阵 | 综合胜平负 | 综合第一比分 | 实际盘口大小球 |\n|---|---|---|---|---|\n| 18:00 | 神户胜利船—町田泽维亚 | 待定；观察神户不败路径 | 待定 | 未取得合格实盘，观望 |\n| 18:00 | 横滨水手—鹿岛鹿角 | 平局，研究倾向 | 1–1 | 未取得合格实盘，观望 |\n| 18:00 | 川崎前锋—柏太阳神 | 客胜，研究倾向 | 1–2 | 未取得合格实盘，观望 |\n| 18:30 | 浦和红钻—大阪樱花 | 待定 | 待定 | 未取得合格实盘，观望 |\n\n当前模型和test模型四场均实际检查后拒绝：本届八强没有适用活动工件。没有数值矩阵、进球均值、中央80%区间或零球/两球/三球概率；这两个比分属于综合人工研究选择，不是模型预测或已验证推荐。近期J1战绩只作为杯赛赛前事实参考，没有调用J1工件预测杯赛。\n\n**神户—町田：主队有攻击人员优势，但町田的防守证据不能忽略。**\n\n神户近五轮联赛2胜2平1负，进9失5；町田2胜3平，进8失0，最近三轮全是0–0。官方预览确认武藤嘉纪近两轮3球2助攻；町田相马勇纪、小川航基和Tete Yengi被国家队征召，攻击端可用人手减少，西村拓真承担更多任务。两队上轮均在11月8日比赛，恢复时间短，官方也明确提示轮换不透明。\n\n主路径是神户争取主场先手、町田减少失误并寻找反击，观察神户不败有依据，但暂不能把它压成主胜。比较0–0、1–0和1–1：町田五轮零封支持僵局；武藤状态与神户最近两轮5球反驳“神户必然零进球”；町田连续哑火及征调支持客队零球，但最近对广岛仍有13次射门、4次射正，神户上轮被浦和射门20次、射正9次，不能把町田零球当确定。两队10月24日0–0时合计33次射门，也说明比分为零不等于毫无机会。首回合若出现早球，神户追求扩大优势与町田追分均可能增加总球，不能仅凭最近0–0判断实际盘口小球。唯一比分保留待定。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111101/)，ESPN八队赛程及401877554、401877559两份完赛summary。\n\n**横滨—鹿岛：倾向1–1，比直接追鹿岛客胜更有支撑。**\n\n横滨近五轮1胜4平，进8失6，最近四轮均有进球也有失球。鹿岛近五轮2胜1平2负，进10失8，但官方预览指出其正处于长期密集赛程，本场是连续20场安排中的第10场；最近亚冠0–0、联赛0–2。最近对东京只有7次射门、1次射正，进攻表现低于球队名气给人的预期。此项只是一场过程，不能代替长期xG。\n\n横滨也有三井寺真、Jordy Croux伤情；角田凉太朗、远野大弥则处于恢复状态。官方预览认为本阶段可能增加主力使用，但这不是已确认首发。鹿岛疲劳与横滨主场提供抗衡路径；横滨频繁平局及自身持续失球，使直接判主胜也缺足够优势。\n\n比较1–1、2–1和1–0：选择1–1作为人工研究首选。横滨攻入第二球需要把近期进攻表现转成稳定压制，尚无近期xG和当场阵容确认；鹿岛最近两场不进球支持1–0路径，但其五轮联赛此前仍有10球，而横滨近四轮均失球，零封反证明显。鹿岛早失球后投入追分可能打开三球以上路径，故1–1点比分不能自动推出小球。主要风险是鹿岛轮换效果，以及横滨伤员对实际创造机会的影响。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111103/)，ESPN两队赛程及401877556完赛summary。\n\n**川崎—柏：本批对胜负的研究倾向最明确，柏客胜，首选1–2。**\n\n川崎近五轮3胜2负，进11失10，五场全部双方进球，最近两轮连败。柏近五轮3胜1平1负，近三轮连胜，合计进9失3。四天前柏主场2–1击败川崎，射门22–9、射正9–3，过程支持柏的胜利，而不只是从赛果推断。官方预览还具体记载柏的高位抢断得分，以及川崎通过角球扳平。\n\n主要路径是柏持续施压川崎后场组织，川崎以主场进攻和定位球回应。比较1–2、2–2和2–1：柏近期连续得分及刚发生的过程优势，令1–2暂列第一；川崎近五场场场进球、近两个联赛主场均2–1获胜，反驳柏轻松零封，也使2–2和主场反转2–1成为实际风险。主客场已与11月7日对调，柏不能照搬上一场优势。若川崎早领先，柏追分和川崎反击都有四球以上路径；本场偏向双方有进球的比赛形态，但没有可核实实盘，不能写成已推荐大2.5或大3。\n\n双方完整伤停名单尚未取得，未公布首发本身不阻断研究；若后续确认柏进攻核心或川崎关键防守人员发生重大变化，应另追加版本，不覆盖本次1–2。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111104/)，ESPN两队赛程及401877560完赛summary。\n\n**浦和—大阪樱花：双方得分路径都有依据，胜负暂不押。**\n\n浦和近五轮3胜1平1负，进7失8；樱花1胜2平2负，进9失13。两队上轮分别2–2神户、3–2大阪钢巴，都从前一轮大败中回升。浦和对神户射门20次、射正9次，是进攻恢复的实际证据；但近期联赛三场胜利的对手为水户、千叶、长崎，不能不考虑对手差异便断言对樱花占优。樱花近五轮场场进球也场场失球，支持双向得分路径。\n\n人员方面，浦和笹修大因U21代表队离队，长沼洋一状态不明，片山瑛一刚伤愈；樱花横山梦树也被U21征召。浦和边后卫安排属于可能改变比赛路径的未解决风险。\n\n比较1–1、2–1和1–2：浦和主场和进攻回升支持2–1，但防线问题与樱花持续进球构成反证；樱花德比取胜不能消除五轮失13球的问题，也不足以直接选1–2。1–1只是平衡路径，不能因为难选胜负就自动定为首选。暂不确定唯一比分与胜平负。两队若延续转换节奏可能三球以上，若人员调整压低出球质量也可能收紧；无真实盘口不作大小球推荐。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111102/)，ESPN两队赛程及401877554完赛summary。\n\n八队“近五场”均严格指已核实的最近五轮J1常规赛，不是全赛事；未证明完整14天/7天全赛事负荷。射门与射正仅为已核实单场过程，不能称为xG或等价机会质量，也未学习进模型。当前真实xG/xGA未取得；官方预览中的人员信息按报道使用，完整伤停/停赛名单及真实首发仍不全。双方球员0球、1球、2球以上均仅作条件路径比较，没有虚构概率。\n\n本批合格TOP3：0场。缺少适用双模型矩阵及完整实盘，两个研究比分均不满足项目TOP3门槛，保留四场完整分母。未来复盘：横滨1–1、川崎1–2分别结算人工研究比分及平/负方向；另外两场待定不补命中；全部大小球观望。当前/test拒绝记录独立保留，不能事后选取研究比分计入模型成绩。\n",
+      "sources_manifest": {
+        "request_count": 21,
+        "budget_max": 30,
+        "collection_window_utc": [
+          "2026-11-11T00:53:34.044610+00:00",
+          "2026-11-11T00:57:35.295536+00:00"
+        ],
+        "sources": [
+          {
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=20261111",
+            "requested_at_utc": "2026-11-11T00:53:34.044610+00:00",
+            "http_status": 200,
+            "sha256": "0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4",
+            "raw_path": "raw/0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4.json",
+            "bytes": 3210,
+            "provider": "ESPN public JSON",
+            "note": "J1 scoreboard endpoint; response does not cover League Cup fixtures."
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams?limit=100",
+            "requested_at_utc": "2026-11-11T00:54:52.430422+00:00",
+            "http_status": 200,
+            "sha256": "202acd14b4838188e7b3afd651eb9176930e34128cb55430fadc605207e940f3",
+            "bytes": 24861,
+            "raw_path": "raw/espn-teams-directory-2026.json",
+            "content_type": "application/json",
+            "note": "映射赛事参与队ESPN team IDs。"
+          },
+          {
+            "team": "Kobe",
+            "espn_id": "7477",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7477/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.028141+00:00",
+            "http_status": 200,
+            "sha256": "ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2",
+            "bytes": 309616,
+            "raw_path": "raw/ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Machida",
+            "espn_id": "22167",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/22167/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.399233+00:00",
+            "http_status": 200,
+            "sha256": "a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef",
+            "bytes": 311821,
+            "raw_path": "raw/a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Urawa",
+            "espn_id": "3385",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/3385/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.785214+00:00",
+            "http_status": 200,
+            "sha256": "39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833",
+            "bytes": 312039,
+            "raw_path": "raw/39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Cerezo",
+            "espn_id": "7109",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7109/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.159765+00:00",
+            "http_status": 200,
+            "sha256": "b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29",
+            "bytes": 310112,
+            "raw_path": "raw/b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "YokohamaFM",
+            "espn_id": "7116",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7116/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.427080+00:00",
+            "http_status": 200,
+            "sha256": "49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223",
+            "bytes": 311787,
+            "raw_path": "raw/49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kashima",
+            "espn_id": "7115",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7115/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.781974+00:00",
+            "http_status": 200,
+            "sha256": "c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53",
+            "bytes": 310763,
+            "raw_path": "raw/c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kawasaki",
+            "espn_id": "7112",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7112/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.152805+00:00",
+            "http_status": 200,
+            "sha256": "373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b",
+            "bytes": 311971,
+            "raw_path": "raw/373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kashiwa",
+            "espn_id": "7476",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7476/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.423893+00:00",
+            "http_status": 200,
+            "sha256": "d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c",
+            "bytes": 310326,
+            "raw_path": "raw/d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111104/",
+            "requested_at_utc": "2026-11-11T00:54:23.086450+00:00",
+            "http_status": 200,
+            "sha256": "0dc5c4f847dec3b27c42e2741b41d94ad7b549da89c115fe056df230e99d8a05",
+            "bytes": 1045153,
+            "raw_path": "raw/0dc5c4f847dec3b27c42e2741b41d94ad7b549da89c115fe056df230e99d8a05.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111103/",
+            "requested_at_utc": "2026-11-11T00:54:21.699279+00:00",
+            "http_status": 200,
+            "sha256": "4bf446e889a5b553f58a700a04fc413a4f1f47c87123940ac3ac55a515130754",
+            "bytes": 1042054,
+            "raw_path": "raw/4bf446e889a5b553f58a700a04fc413a4f1f47c87123940ac3ac55a515130754.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111101/",
+            "requested_at_utc": "2026-11-11T00:54:19.387416+00:00",
+            "http_status": 200,
+            "sha256": "9b3fb64c24883f9f1a70e147790e68179ee606fff345dd5f82d44e3e7b1c1d15",
+            "bytes": 1035781,
+            "raw_path": "raw/9b3fb64c24883f9f1a70e147790e68179ee606fff345dd5f82d44e3e7b1c1d15.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111102/",
+            "requested_at_utc": "2026-11-11T00:54:20.865740+00:00",
+            "http_status": 200,
+            "sha256": "13456dd1ce1862761adf60b54ea07152dc17af69cdcd3d08b4f755b9fcd3d538",
+            "bytes": 1049346,
+            "raw_path": "raw/13456dd1ce1862761adf60b54ea07152dc17af69cdcd3d08b4f755b9fcd3d538.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "Public odds web page",
+            "url": "https://www.asianodds.org/",
+            "requested_at_utc": "2026-11-11T00:56:15.406518+00:00",
+            "http_status": 200,
+            "sha256": "50ed386e37e959c3f5fd8d8f3c47348eb4f2adf778089def5952942b34139dac",
+            "bytes": 650,
+            "raw_path": "raw/50ed386e37e959c3f5fd8d8f3c47348eb4f2adf778089def5952942b34139dac.html",
+            "content_type": "text/html",
+            "note": "页面响应未发现四场具有同机构、明确盘口线和报价时点的当前赔率。"
+          },
+          {
+            "provider": "Public odds web page",
+            "url": "https://www.oddsportal.com/football/japan/league-cup/",
+            "requested_at_utc": "2026-11-11T00:56:16.054691+00:00",
+            "http_status": 200,
+            "sha256": "25147e1add2ab940451bcd72971ebbd12cfb7c62aa5afb09247e3106e1e83a95",
+            "bytes": 336213,
+            "raw_path": "raw/25147e1add2ab940451bcd72971ebbd12cfb7c62aa5afb09247e3106e1e83a95.html",
+            "content_type": "text/html",
+            "note": "页面响应未发现四场具有同机构、明确盘口线和报价时点的当前赔率。"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877554",
+            "requested_at_utc": "2026-11-11T00:57:33.652439+00:00",
+            "http_status": 200,
+            "sha256": "54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360",
+            "bytes": 328464,
+            "raw_path": "raw/54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877560",
+            "requested_at_utc": "2026-11-11T00:57:34.055660+00:00",
+            "http_status": 200,
+            "sha256": "5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9",
+            "bytes": 326966,
+            "raw_path": "raw/5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877559",
+            "requested_at_utc": "2026-11-11T00:57:34.581355+00:00",
+            "http_status": 200,
+            "sha256": "40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888",
+            "bytes": 317901,
+            "raw_path": "raw/40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877556",
+            "requested_at_utc": "2026-11-11T00:57:34.900882+00:00",
+            "http_status": 200,
+            "sha256": "694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541",
+            "bytes": 331387,
+            "raw_path": "raw/694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "FotMob public API",
+            "url": "https://www.fotmob.com/api/matches?date=20261111",
+            "requested_at_utc": "2026-11-11T00:57:35.295536+00:00",
+            "http_status": 404,
+            "sha256": null,
+            "raw_path": null,
+            "note": "HTTPError 404; body was not captured by urllib exception handler; no retry."
+          }
+        ],
+        "window_definition": "request_start_times; individual response completion times not separately recorded"
+      },
+      "recent_j1_evidence": [
+        {
+          "team": "Kobe",
+          "team_id": "7477",
+          "actual_name": "Vissel Kobe",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877598",
+              "date_bjt": "2026-10-18T12:55:00+08:00",
+              "home_away": "away",
+              "opponent": "Fagiano Okayama",
+              "gf": 3,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877594",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kawasaki Frontale",
+              "gf": 1,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877584",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Machida Zelvia",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877561",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Nagoya Grampus",
+              "gf": 3,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877554",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Urawa Red Diamonds",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 9,
+          "ga": 5,
+          "w": 2,
+          "d": 2,
+          "l": 1,
+          "source": {
+            "team": "Kobe",
+            "espn_id": "7477",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7477/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.028141+00:00",
+            "http_status": 200,
+            "sha256": "ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2",
+            "bytes": 309616,
+            "raw_path": "raw/ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2.json"
+          }
+        },
+        {
+          "team": "Machida",
+          "team_id": "22167",
+          "actual_name": "Machida Zelvia",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877601",
+              "date_bjt": "2026-10-18T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Avispa Fukuoka",
+              "gf": 3,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877592",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Shimizu S-Pulse",
+              "gf": 5,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877584",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Vissel Kobe",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877581",
+              "date_bjt": "2026-11-01T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Gamba Osaka",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877559",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Sanfrecce Hiroshima",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 8,
+          "ga": 0,
+          "w": 2,
+          "d": 3,
+          "l": 0,
+          "source": {
+            "team": "Machida",
+            "espn_id": "22167",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/22167/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.399233+00:00",
+            "http_status": 200,
+            "sha256": "a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef",
+            "bytes": 311821,
+            "raw_path": "raw/a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef.json"
+          }
+        },
+        {
+          "team": "Urawa",
+          "team_id": "3385",
+          "actual_name": "Urawa Red Diamonds",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877603",
+              "date_bjt": "2026-10-17T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Mito Hollyhock",
+              "gf": 1,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877596",
+              "date_bjt": "2026-10-21T18:30:00+08:00",
+              "home_away": "home",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877586",
+              "date_bjt": "2026-10-25T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "V-Varen Nagasaki",
+              "gf": 1,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877563",
+              "date_bjt": "2026-10-31T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashiwa Reysol",
+              "gf": 0,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877554",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Vissel Kobe",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 7,
+          "ga": 8,
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "source": {
+            "team": "Urawa",
+            "espn_id": "3385",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/3385/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.785214+00:00",
+            "http_status": 200,
+            "sha256": "39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833",
+            "bytes": 312039,
+            "raw_path": "raw/39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833.json"
+          }
+        },
+        {
+          "team": "Cerezo",
+          "team_id": "7109",
+          "actual_name": "Cerezo Osaka",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877599",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 2,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877571",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877566",
+              "date_bjt": "2026-10-25T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877583",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashima Antlers",
+              "gf": 1,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877555",
+              "date_bjt": "2026-11-08T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Gamba Osaka",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 9,
+          "ga": 13,
+          "w": 1,
+          "d": 2,
+          "l": 2,
+          "source": {
+            "team": "Cerezo",
+            "espn_id": "7109",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7109/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.159765+00:00",
+            "http_status": 200,
+            "sha256": "b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29",
+            "bytes": 310112,
+            "raw_path": "raw/b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29.json"
+          }
+        },
+        {
+          "team": "YokohamaFM",
+          "team_id": "7116",
+          "actual_name": "Yokohama F. Marinos",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877573",
+              "date_bjt": "2026-10-17T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877593",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Tokyo Verdy 1969",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877568",
+              "date_bjt": "2026-10-25T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877580",
+              "date_bjt": "2026-11-01T12:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 4,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877558",
+              "date_bjt": "2026-11-07T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Fagiano Okayama",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 8,
+          "ga": 6,
+          "w": 1,
+          "d": 4,
+          "l": 0,
+          "source": {
+            "team": "YokohamaFM",
+            "espn_id": "7116",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7116/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.427080+00:00",
+            "http_status": 200,
+            "sha256": "49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223",
+            "bytes": 311787,
+            "raw_path": "raw/49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223.json"
+          }
+        },
+        {
+          "team": "Kashima",
+          "team_id": "7115",
+          "actual_name": "Kashima Antlers",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877604",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "V-Varen Nagasaki",
+              "gf": 2,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877591",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kyoto Sanga",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877587",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kashiwa Reysol",
+              "gf": 2,
+              "ga": 3,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877583",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Cerezo Osaka",
+              "gf": 4,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877556",
+              "date_bjt": "2026-11-07T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "FC Tokyo",
+              "gf": 0,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 10,
+          "ga": 8,
+          "w": 2,
+          "d": 1,
+          "l": 2,
+          "source": {
+            "team": "Kashima",
+            "espn_id": "7115",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7115/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.781974+00:00",
+            "http_status": 200,
+            "sha256": "c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53",
+            "bytes": 310763,
+            "raw_path": "raw/c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53.json"
+          }
+        },
+        {
+          "team": "Kawasaki",
+          "team_id": "7112",
+          "actual_name": "Kawasaki Frontale",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877599",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Cerezo Osaka",
+              "gf": 4,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877594",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Vissel Kobe",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877569",
+              "date_bjt": "2026-10-25T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Fagiano Okayama",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877580",
+              "date_bjt": "2026-11-01T12:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Yokohama F. Marinos",
+              "gf": 2,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877560",
+              "date_bjt": "2026-11-07T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashiwa Reysol",
+              "gf": 1,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 11,
+          "ga": 10,
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "source": {
+            "team": "Kawasaki",
+            "espn_id": "7112",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7112/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.152805+00:00",
+            "http_status": 200,
+            "sha256": "373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b",
+            "bytes": 311971,
+            "raw_path": "raw/373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b.json"
+          }
+        },
+        {
+          "team": "Kashiwa",
+          "team_id": "7476",
+          "actual_name": "Kashiwa Reysol",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877602",
+              "date_bjt": "2026-10-17T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 3,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877595",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "FC Tokyo",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877587",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashima Antlers",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877563",
+              "date_bjt": "2026-10-31T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Urawa Red Diamonds",
+              "gf": 4,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877560",
+              "date_bjt": "2026-11-07T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 10,
+          "ga": 6,
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "source": {
+            "team": "Kashiwa",
+            "espn_id": "7476",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7476/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.423893+00:00",
+            "http_status": 200,
+            "sha256": "d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c",
+            "bytes": 310326,
+            "raw_path": "raw/d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c.json"
+          }
+        }
+      ],
+      "process_evidence": [
+        {
+          "id": "401877559",
+          "date": "2026-11-08T05:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "22167",
+              "name": "Machida Zelvia",
+              "shots": "13",
+              "shots_on_target": "4",
+              "xg": null,
+              "possession": "54.8"
+            },
+            {
+              "id": "7114",
+              "name": "Sanfrecce Hiroshima",
+              "shots": "19",
+              "shots_on_target": "7",
+              "xg": null,
+              "possession": "45.2"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888.json",
+          "sha256": "40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877554",
+          "date": "2026-11-08T05:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "7477",
+              "name": "Vissel Kobe",
+              "shots": "19",
+              "shots_on_target": "5",
+              "xg": null,
+              "possession": "42.7"
+            },
+            {
+              "id": "3385",
+              "name": "Urawa Red Diamonds",
+              "shots": "20",
+              "shots_on_target": "9",
+              "xg": null,
+              "possession": "57.3"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360.json",
+          "sha256": "54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877556",
+          "date": "2026-11-07T06:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "3384",
+              "name": "FC Tokyo",
+              "shots": "11",
+              "shots_on_target": "3",
+              "xg": null,
+              "possession": "38.4"
+            },
+            {
+              "id": "7115",
+              "name": "Kashima Antlers",
+              "shots": "7",
+              "shots_on_target": "1",
+              "xg": null,
+              "possession": "61.6"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541.json",
+          "sha256": "694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877560",
+          "date": "2026-11-07T07:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "7476",
+              "name": "Kashiwa Reysol",
+              "shots": "22",
+              "shots_on_target": "9",
+              "xg": null,
+              "possession": "46.7"
+            },
+            {
+              "id": "7112",
+              "name": "Kawasaki Frontale",
+              "shots": "9",
+              "shots_on_target": "3",
+              "xg": null,
+              "possession": "53.3"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9.json",
+          "sha256": "5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        }
+      ],
+      "xg_status": "NOT_OBTAINED_ESPN_FIELD_ABSENT_FOTMOB_404",
+      "injury_status": "OFFICIAL_PREVIEW_PARTIAL_NOT_COMPLETE_SQUAD_AVAILABILITY",
+      "numerical_matrix": null,
+      "team_goal_distribution": null,
+      "formal_kpi_eligible": false,
+      "future_review_policy": "Preserve all four; score and WDL denominators independent; pending never counted as hits; current/test refusal separate",
+      "model_promotion": false,
+      "top3_eligible": false
+    },
+    "freeze_receipt": {
+      "freeze_id": "76c8d53d9990b70c-v000001",
+      "recorded_at": "2026-11-11T09:00:41.749810+08:00",
+      "path": "/workspace/WCPP/forecasts/issued-analyses/76c8d53d9990b70cb0c2fc31dca6c06c25513254e16b19de3adf43842699a47f/000001.json",
+      "sha256": "c8c2a564c32e8226ba60e0f4981d87a951f56ff531b198bd787953abc3fc66b1",
+      "evaluation_slot": "FIRST_PREMATCH"
+    }
+  },
+  {
+    "fixture": {
+      "match_id": "jleague:111104",
+      "competition": "jpn.league_cup",
+      "cohort": "jpn.league_cup:edition-2026-27:quarterfinals:two-leg:1",
+      "home": "jleague:kawasakif",
+      "away": "jleague:kashiwa",
+      "home_name": "川崎Ｆ",
+      "away_name": "柏",
+      "gender": "men",
+      "age": "senior",
+      "stage": "quarterfinals",
+      "leg": 1,
+      "tie_format": "two-leg",
+      "phase": "PreMatch",
+      "score_basis": "regulation_90",
+      "kickoff_at": "2026-11-11T10:00:00.000Z",
+      "cutoff_at": "2026-11-11T01:00:41.679219+00:00",
+      "neutral": null,
+      "date": "2026-11-11"
+    },
+    "payload": {
+      "version": "JLEAGUE-CUP-COMPREHENSIVE-RESEARCH-20261111-v1",
+      "primary": "1-2",
+      "wdl": "负",
+      "total_line": null,
+      "total_direction": null,
+      "status": "RESEARCH_SELECTION",
+      "current_test_reference": {
+        "freeze_id": "09f0b4a19051d7d6-v000001",
+        "recorded_at": "2026-11-11T08:53:30.329601+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/09f0b4a19051d7d6743617262fce049638a9fa1439ed88c32a9fbaec1b37a8e6/000001.json",
+        "sha256": "071e7abef1969c70ff7ecdf728072bd1f1867f11d834c4a5c932d6c7e751ed79",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "selection_evidence": {
+        "compared_scores": [
+          "1-2",
+          "2-2",
+          "2-1"
+        ],
+        "reason_and_counterevidence_in": "issued_text",
+        "total_reason": "No verified current line/bookmaker/source quote time; ABSTAIN"
+      },
+      "issued_text": "HELLO BOSS，这版先看赛前研究判断：川崎—柏倾向柏胜，横滨—鹿岛倾向平局；神户—町田和浦和—大阪樱花暂不定唯一比分。四场均为2026年11月11日日联杯八强首回合，以下只判断90分钟，不等于两回合晋级判断。\n\n| 北京时间 | 对阵 | 综合胜平负 | 综合第一比分 | 实际盘口大小球 |\n|---|---|---|---|---|\n| 18:00 | 神户胜利船—町田泽维亚 | 待定；观察神户不败路径 | 待定 | 未取得合格实盘，观望 |\n| 18:00 | 横滨水手—鹿岛鹿角 | 平局，研究倾向 | 1–1 | 未取得合格实盘，观望 |\n| 18:00 | 川崎前锋—柏太阳神 | 客胜，研究倾向 | 1–2 | 未取得合格实盘，观望 |\n| 18:30 | 浦和红钻—大阪樱花 | 待定 | 待定 | 未取得合格实盘，观望 |\n\n当前模型和test模型四场均实际检查后拒绝：本届八强没有适用活动工件。没有数值矩阵、进球均值、中央80%区间或零球/两球/三球概率；这两个比分属于综合人工研究选择，不是模型预测或已验证推荐。近期J1战绩只作为杯赛赛前事实参考，没有调用J1工件预测杯赛。\n\n**神户—町田：主队有攻击人员优势，但町田的防守证据不能忽略。**\n\n神户近五轮联赛2胜2平1负，进9失5；町田2胜3平，进8失0，最近三轮全是0–0。官方预览确认武藤嘉纪近两轮3球2助攻；町田相马勇纪、小川航基和Tete Yengi被国家队征召，攻击端可用人手减少，西村拓真承担更多任务。两队上轮均在11月8日比赛，恢复时间短，官方也明确提示轮换不透明。\n\n主路径是神户争取主场先手、町田减少失误并寻找反击，观察神户不败有依据，但暂不能把它压成主胜。比较0–0、1–0和1–1：町田五轮零封支持僵局；武藤状态与神户最近两轮5球反驳“神户必然零进球”；町田连续哑火及征调支持客队零球，但最近对广岛仍有13次射门、4次射正，神户上轮被浦和射门20次、射正9次，不能把町田零球当确定。两队10月24日0–0时合计33次射门，也说明比分为零不等于毫无机会。首回合若出现早球，神户追求扩大优势与町田追分均可能增加总球，不能仅凭最近0–0判断实际盘口小球。唯一比分保留待定。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111101/)，ESPN八队赛程及401877554、401877559两份完赛summary。\n\n**横滨—鹿岛：倾向1–1，比直接追鹿岛客胜更有支撑。**\n\n横滨近五轮1胜4平，进8失6，最近四轮均有进球也有失球。鹿岛近五轮2胜1平2负，进10失8，但官方预览指出其正处于长期密集赛程，本场是连续20场安排中的第10场；最近亚冠0–0、联赛0–2。最近对东京只有7次射门、1次射正，进攻表现低于球队名气给人的预期。此项只是一场过程，不能代替长期xG。\n\n横滨也有三井寺真、Jordy Croux伤情；角田凉太朗、远野大弥则处于恢复状态。官方预览认为本阶段可能增加主力使用，但这不是已确认首发。鹿岛疲劳与横滨主场提供抗衡路径；横滨频繁平局及自身持续失球，使直接判主胜也缺足够优势。\n\n比较1–1、2–1和1–0：选择1–1作为人工研究首选。横滨攻入第二球需要把近期进攻表现转成稳定压制，尚无近期xG和当场阵容确认；鹿岛最近两场不进球支持1–0路径，但其五轮联赛此前仍有10球，而横滨近四轮均失球，零封反证明显。鹿岛早失球后投入追分可能打开三球以上路径，故1–1点比分不能自动推出小球。主要风险是鹿岛轮换效果，以及横滨伤员对实际创造机会的影响。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111103/)，ESPN两队赛程及401877556完赛summary。\n\n**川崎—柏：本批对胜负的研究倾向最明确，柏客胜，首选1–2。**\n\n川崎近五轮3胜2负，进11失10，五场全部双方进球，最近两轮连败。柏近五轮3胜1平1负，近三轮连胜，合计进9失3。四天前柏主场2–1击败川崎，射门22–9、射正9–3，过程支持柏的胜利，而不只是从赛果推断。官方预览还具体记载柏的高位抢断得分，以及川崎通过角球扳平。\n\n主要路径是柏持续施压川崎后场组织，川崎以主场进攻和定位球回应。比较1–2、2–2和2–1：柏近期连续得分及刚发生的过程优势，令1–2暂列第一；川崎近五场场场进球、近两个联赛主场均2–1获胜，反驳柏轻松零封，也使2–2和主场反转2–1成为实际风险。主客场已与11月7日对调，柏不能照搬上一场优势。若川崎早领先，柏追分和川崎反击都有四球以上路径；本场偏向双方有进球的比赛形态，但没有可核实实盘，不能写成已推荐大2.5或大3。\n\n双方完整伤停名单尚未取得，未公布首发本身不阻断研究；若后续确认柏进攻核心或川崎关键防守人员发生重大变化，应另追加版本，不覆盖本次1–2。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111104/)，ESPN两队赛程及401877560完赛summary。\n\n**浦和—大阪樱花：双方得分路径都有依据，胜负暂不押。**\n\n浦和近五轮3胜1平1负，进7失8；樱花1胜2平2负，进9失13。两队上轮分别2–2神户、3–2大阪钢巴，都从前一轮大败中回升。浦和对神户射门20次、射正9次，是进攻恢复的实际证据；但近期联赛三场胜利的对手为水户、千叶、长崎，不能不考虑对手差异便断言对樱花占优。樱花近五轮场场进球也场场失球，支持双向得分路径。\n\n人员方面，浦和笹修大因U21代表队离队，长沼洋一状态不明，片山瑛一刚伤愈；樱花横山梦树也被U21征召。浦和边后卫安排属于可能改变比赛路径的未解决风险。\n\n比较1–1、2–1和1–2：浦和主场和进攻回升支持2–1，但防线问题与樱花持续进球构成反证；樱花德比取胜不能消除五轮失13球的问题，也不足以直接选1–2。1–1只是平衡路径，不能因为难选胜负就自动定为首选。暂不确定唯一比分与胜平负。两队若延续转换节奏可能三球以上，若人员调整压低出球质量也可能收紧；无真实盘口不作大小球推荐。\n\n来源：[J联赛官方预览](https://www.jleague.jp/match/leaguecup/2026/111102/)，ESPN两队赛程及401877554完赛summary。\n\n八队“近五场”均严格指已核实的最近五轮J1常规赛，不是全赛事；未证明完整14天/7天全赛事负荷。射门与射正仅为已核实单场过程，不能称为xG或等价机会质量，也未学习进模型。当前真实xG/xGA未取得；官方预览中的人员信息按报道使用，完整伤停/停赛名单及真实首发仍不全。双方球员0球、1球、2球以上均仅作条件路径比较，没有虚构概率。\n\n本批合格TOP3：0场。缺少适用双模型矩阵及完整实盘，两个研究比分均不满足项目TOP3门槛，保留四场完整分母。未来复盘：横滨1–1、川崎1–2分别结算人工研究比分及平/负方向；另外两场待定不补命中；全部大小球观望。当前/test拒绝记录独立保留，不能事后选取研究比分计入模型成绩。\n",
+      "sources_manifest": {
+        "request_count": 21,
+        "budget_max": 30,
+        "collection_window_utc": [
+          "2026-11-11T00:53:34.044610+00:00",
+          "2026-11-11T00:57:35.295536+00:00"
+        ],
+        "sources": [
+          {
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=20261111",
+            "requested_at_utc": "2026-11-11T00:53:34.044610+00:00",
+            "http_status": 200,
+            "sha256": "0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4",
+            "raw_path": "raw/0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4.json",
+            "bytes": 3210,
+            "provider": "ESPN public JSON",
+            "note": "J1 scoreboard endpoint; response does not cover League Cup fixtures."
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams?limit=100",
+            "requested_at_utc": "2026-11-11T00:54:52.430422+00:00",
+            "http_status": 200,
+            "sha256": "202acd14b4838188e7b3afd651eb9176930e34128cb55430fadc605207e940f3",
+            "bytes": 24861,
+            "raw_path": "raw/espn-teams-directory-2026.json",
+            "content_type": "application/json",
+            "note": "映射赛事参与队ESPN team IDs。"
+          },
+          {
+            "team": "Kobe",
+            "espn_id": "7477",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7477/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.028141+00:00",
+            "http_status": 200,
+            "sha256": "ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2",
+            "bytes": 309616,
+            "raw_path": "raw/ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Machida",
+            "espn_id": "22167",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/22167/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.399233+00:00",
+            "http_status": 200,
+            "sha256": "a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef",
+            "bytes": 311821,
+            "raw_path": "raw/a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Urawa",
+            "espn_id": "3385",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/3385/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.785214+00:00",
+            "http_status": 200,
+            "sha256": "39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833",
+            "bytes": 312039,
+            "raw_path": "raw/39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Cerezo",
+            "espn_id": "7109",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7109/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.159765+00:00",
+            "http_status": 200,
+            "sha256": "b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29",
+            "bytes": 310112,
+            "raw_path": "raw/b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "YokohamaFM",
+            "espn_id": "7116",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7116/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.427080+00:00",
+            "http_status": 200,
+            "sha256": "49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223",
+            "bytes": 311787,
+            "raw_path": "raw/49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kashima",
+            "espn_id": "7115",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7115/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.781974+00:00",
+            "http_status": 200,
+            "sha256": "c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53",
+            "bytes": 310763,
+            "raw_path": "raw/c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kawasaki",
+            "espn_id": "7112",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7112/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.152805+00:00",
+            "http_status": 200,
+            "sha256": "373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b",
+            "bytes": 311971,
+            "raw_path": "raw/373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "team": "Kashiwa",
+            "espn_id": "7476",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7476/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.423893+00:00",
+            "http_status": 200,
+            "sha256": "d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c",
+            "bytes": 310326,
+            "raw_path": "raw/d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c.json",
+            "provider": "ESPN public JSON",
+            "content_type": "application/json",
+            "note": "team season 2026 schedule; J1 only"
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111104/",
+            "requested_at_utc": "2026-11-11T00:54:23.086450+00:00",
+            "http_status": 200,
+            "sha256": "0dc5c4f847dec3b27c42e2741b41d94ad7b549da89c115fe056df230e99d8a05",
+            "bytes": 1045153,
+            "raw_path": "raw/0dc5c4f847dec3b27c42e2741b41d94ad7b549da89c115fe056df230e99d8a05.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111103/",
+            "requested_at_utc": "2026-11-11T00:54:21.699279+00:00",
+            "http_status": 200,
+            "sha256": "4bf446e889a5b553f58a700a04fc413a4f1f47c87123940ac3ac55a515130754",
+            "bytes": 1042054,
+            "raw_path": "raw/4bf446e889a5b553f58a700a04fc413a4f1f47c87123940ac3ac55a515130754.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111101/",
+            "requested_at_utc": "2026-11-11T00:54:19.387416+00:00",
+            "http_status": 200,
+            "sha256": "9b3fb64c24883f9f1a70e147790e68179ee606fff345dd5f82d44e3e7b1c1d15",
+            "bytes": 1035781,
+            "raw_path": "raw/9b3fb64c24883f9f1a70e147790e68179ee606fff345dd5f82d44e3e7b1c1d15.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "J.League official",
+            "url": "https://www.jleague.jp/match/leaguecup/2026/111102/",
+            "requested_at_utc": "2026-11-11T00:54:20.865740+00:00",
+            "http_status": 200,
+            "sha256": "13456dd1ce1862761adf60b54ea07152dc17af69cdcd3d08b4f755b9fcd3d538",
+            "bytes": 1049346,
+            "raw_path": "raw/13456dd1ce1862761adf60b54ea07152dc17af69cdcd3d08b4f755b9fcd3d538.html",
+            "content_type": "text/html; charset=utf-8",
+            "note": "Official event page with preview (見どころ); raw response retained."
+          },
+          {
+            "provider": "Public odds web page",
+            "url": "https://www.asianodds.org/",
+            "requested_at_utc": "2026-11-11T00:56:15.406518+00:00",
+            "http_status": 200,
+            "sha256": "50ed386e37e959c3f5fd8d8f3c47348eb4f2adf778089def5952942b34139dac",
+            "bytes": 650,
+            "raw_path": "raw/50ed386e37e959c3f5fd8d8f3c47348eb4f2adf778089def5952942b34139dac.html",
+            "content_type": "text/html",
+            "note": "页面响应未发现四场具有同机构、明确盘口线和报价时点的当前赔率。"
+          },
+          {
+            "provider": "Public odds web page",
+            "url": "https://www.oddsportal.com/football/japan/league-cup/",
+            "requested_at_utc": "2026-11-11T00:56:16.054691+00:00",
+            "http_status": 200,
+            "sha256": "25147e1add2ab940451bcd72971ebbd12cfb7c62aa5afb09247e3106e1e83a95",
+            "bytes": 336213,
+            "raw_path": "raw/25147e1add2ab940451bcd72971ebbd12cfb7c62aa5afb09247e3106e1e83a95.html",
+            "content_type": "text/html",
+            "note": "页面响应未发现四场具有同机构、明确盘口线和报价时点的当前赔率。"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877554",
+            "requested_at_utc": "2026-11-11T00:57:33.652439+00:00",
+            "http_status": 200,
+            "sha256": "54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360",
+            "bytes": 328464,
+            "raw_path": "raw/54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877560",
+            "requested_at_utc": "2026-11-11T00:57:34.055660+00:00",
+            "http_status": 200,
+            "sha256": "5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9",
+            "bytes": 326966,
+            "raw_path": "raw/5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877559",
+            "requested_at_utc": "2026-11-11T00:57:34.581355+00:00",
+            "http_status": 200,
+            "sha256": "40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888",
+            "bytes": 317901,
+            "raw_path": "raw/40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "ESPN public JSON",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877556",
+            "requested_at_utc": "2026-11-11T00:57:34.900882+00:00",
+            "http_status": 200,
+            "sha256": "694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541",
+            "bytes": 331387,
+            "raw_path": "raw/694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541.json",
+            "content_type": "application/json;charset=UTF-8"
+          },
+          {
+            "provider": "FotMob public API",
+            "url": "https://www.fotmob.com/api/matches?date=20261111",
+            "requested_at_utc": "2026-11-11T00:57:35.295536+00:00",
+            "http_status": 404,
+            "sha256": null,
+            "raw_path": null,
+            "note": "HTTPError 404; body was not captured by urllib exception handler; no retry."
+          }
+        ],
+        "window_definition": "request_start_times; individual response completion times not separately recorded"
+      },
+      "recent_j1_evidence": [
+        {
+          "team": "Kobe",
+          "team_id": "7477",
+          "actual_name": "Vissel Kobe",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877598",
+              "date_bjt": "2026-10-18T12:55:00+08:00",
+              "home_away": "away",
+              "opponent": "Fagiano Okayama",
+              "gf": 3,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877594",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kawasaki Frontale",
+              "gf": 1,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877584",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Machida Zelvia",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877561",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Nagoya Grampus",
+              "gf": 3,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877554",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Urawa Red Diamonds",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 9,
+          "ga": 5,
+          "w": 2,
+          "d": 2,
+          "l": 1,
+          "source": {
+            "team": "Kobe",
+            "espn_id": "7477",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7477/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.028141+00:00",
+            "http_status": 200,
+            "sha256": "ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2",
+            "bytes": 309616,
+            "raw_path": "raw/ae590d826d492e9deba653d31b519a3e8fe5aae8fee48bd47159001ea45831a2.json"
+          }
+        },
+        {
+          "team": "Machida",
+          "team_id": "22167",
+          "actual_name": "Machida Zelvia",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877601",
+              "date_bjt": "2026-10-18T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Avispa Fukuoka",
+              "gf": 3,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877592",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Shimizu S-Pulse",
+              "gf": 5,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877584",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Vissel Kobe",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877581",
+              "date_bjt": "2026-11-01T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Gamba Osaka",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877559",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Sanfrecce Hiroshima",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 8,
+          "ga": 0,
+          "w": 2,
+          "d": 3,
+          "l": 0,
+          "source": {
+            "team": "Machida",
+            "espn_id": "22167",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/22167/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.399233+00:00",
+            "http_status": 200,
+            "sha256": "a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef",
+            "bytes": 311821,
+            "raw_path": "raw/a7b32ee27b40289d6c468da8c7fedd67301d0c5a52631edc520f276a8f6e1cef.json"
+          }
+        },
+        {
+          "team": "Urawa",
+          "team_id": "3385",
+          "actual_name": "Urawa Red Diamonds",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877603",
+              "date_bjt": "2026-10-17T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Mito Hollyhock",
+              "gf": 1,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877596",
+              "date_bjt": "2026-10-21T18:30:00+08:00",
+              "home_away": "home",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877586",
+              "date_bjt": "2026-10-25T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "V-Varen Nagasaki",
+              "gf": 1,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877563",
+              "date_bjt": "2026-10-31T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashiwa Reysol",
+              "gf": 0,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877554",
+              "date_bjt": "2026-11-08T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Vissel Kobe",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 7,
+          "ga": 8,
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "source": {
+            "team": "Urawa",
+            "espn_id": "3385",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/3385/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:09.785214+00:00",
+            "http_status": 200,
+            "sha256": "39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833",
+            "bytes": 312039,
+            "raw_path": "raw/39967f413e90a79246bf2d3d1cdd27e22e30eca8a8277fb285fbc3d199a8c833.json"
+          }
+        },
+        {
+          "team": "Cerezo",
+          "team_id": "7109",
+          "actual_name": "Cerezo Osaka",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877599",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 2,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877571",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877566",
+              "date_bjt": "2026-10-25T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877583",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashima Antlers",
+              "gf": 1,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877555",
+              "date_bjt": "2026-11-08T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Gamba Osaka",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 9,
+          "ga": 13,
+          "w": 1,
+          "d": 2,
+          "l": 2,
+          "source": {
+            "team": "Cerezo",
+            "espn_id": "7109",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7109/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.159765+00:00",
+            "http_status": 200,
+            "sha256": "b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29",
+            "bytes": 310112,
+            "raw_path": "raw/b95a73a4c82f8a8e9ed02ebeb8e53819e31f4a195b441d6c5708ec6d47480e29.json"
+          }
+        },
+        {
+          "team": "YokohamaFM",
+          "team_id": "7116",
+          "actual_name": "Yokohama F. Marinos",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877573",
+              "date_bjt": "2026-10-17T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "JEF United Ichihara-Chiba",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877593",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Tokyo Verdy 1969",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877568",
+              "date_bjt": "2026-10-25T13:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877580",
+              "date_bjt": "2026-11-01T12:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 4,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877558",
+              "date_bjt": "2026-11-07T13:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Fagiano Okayama",
+              "gf": 1,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 8,
+          "ga": 6,
+          "w": 1,
+          "d": 4,
+          "l": 0,
+          "source": {
+            "team": "YokohamaFM",
+            "espn_id": "7116",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7116/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.427080+00:00",
+            "http_status": 200,
+            "sha256": "49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223",
+            "bytes": 311787,
+            "raw_path": "raw/49e030ab98448218cdebd05b9f98bd201ea958b78931ecd6ea5638e278063223.json"
+          }
+        },
+        {
+          "team": "Kashima",
+          "team_id": "7115",
+          "actual_name": "Kashima Antlers",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877604",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "V-Varen Nagasaki",
+              "gf": 2,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877591",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kyoto Sanga",
+              "gf": 2,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877587",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kashiwa Reysol",
+              "gf": 2,
+              "ga": 3,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877583",
+              "date_bjt": "2026-10-31T14:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Cerezo Osaka",
+              "gf": 4,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877556",
+              "date_bjt": "2026-11-07T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "FC Tokyo",
+              "gf": 0,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 10,
+          "ga": 8,
+          "w": 2,
+          "d": 1,
+          "l": 2,
+          "source": {
+            "team": "Kashima",
+            "espn_id": "7115",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7115/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:10.781974+00:00",
+            "http_status": 200,
+            "sha256": "c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53",
+            "bytes": 310763,
+            "raw_path": "raw/c42e2fb3d52a77f274294a65231496a0275bad43bfdb829b580f09fda8d5fa53.json"
+          }
+        },
+        {
+          "team": "Kawasaki",
+          "team_id": "7112",
+          "actual_name": "Kawasaki Frontale",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877599",
+              "date_bjt": "2026-10-17T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Cerezo Osaka",
+              "gf": 4,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877594",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Vissel Kobe",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877569",
+              "date_bjt": "2026-10-25T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Fagiano Okayama",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877580",
+              "date_bjt": "2026-11-01T12:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Yokohama F. Marinos",
+              "gf": 2,
+              "ga": 4,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877560",
+              "date_bjt": "2026-11-07T15:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashiwa Reysol",
+              "gf": 1,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 11,
+          "ga": 10,
+          "w": 3,
+          "d": 0,
+          "l": 2,
+          "source": {
+            "team": "Kawasaki",
+            "espn_id": "7112",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7112/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.152805+00:00",
+            "http_status": 200,
+            "sha256": "373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b",
+            "bytes": 311971,
+            "raw_path": "raw/373534eb4127c811dbb519bf5958d265427001d21ef43cf1678df1527d43835b.json"
+          }
+        },
+        {
+          "team": "Kashiwa",
+          "team_id": "7476",
+          "actual_name": "Kashiwa Reysol",
+          "window": "last5completedJ1only_not_all_competitions",
+          "matches": [
+            {
+              "event_id": "401877602",
+              "date_bjt": "2026-10-17T18:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Nagoya Grampus",
+              "gf": 1,
+              "ga": 3,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877595",
+              "date_bjt": "2026-10-21T18:00:00+08:00",
+              "home_away": "away",
+              "opponent": "FC Tokyo",
+              "gf": 0,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877587",
+              "date_bjt": "2026-10-24T14:00:00+08:00",
+              "home_away": "away",
+              "opponent": "Kashima Antlers",
+              "gf": 3,
+              "ga": 2,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877563",
+              "date_bjt": "2026-10-31T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Urawa Red Diamonds",
+              "gf": 4,
+              "ga": 0,
+              "status": "FT",
+              "competition": "jpn.1"
+            },
+            {
+              "event_id": "401877560",
+              "date_bjt": "2026-11-07T15:00:00+08:00",
+              "home_away": "home",
+              "opponent": "Kawasaki Frontale",
+              "gf": 2,
+              "ga": 1,
+              "status": "FT",
+              "competition": "jpn.1"
+            }
+          ],
+          "gf": 10,
+          "ga": 6,
+          "w": 3,
+          "d": 1,
+          "l": 1,
+          "source": {
+            "team": "Kashiwa",
+            "espn_id": "7476",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/teams/7476/schedule?season=2026",
+            "requested_at_utc": "2026-11-11T00:55:11.423893+00:00",
+            "http_status": 200,
+            "sha256": "d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c",
+            "bytes": 310326,
+            "raw_path": "raw/d2a2860fb3fc495f5d824499876227b33a41fb3ca445cc921f4831de91bdff1c.json"
+          }
+        }
+      ],
+      "process_evidence": [
+        {
+          "id": "401877559",
+          "date": "2026-11-08T05:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "22167",
+              "name": "Machida Zelvia",
+              "shots": "13",
+              "shots_on_target": "4",
+              "xg": null,
+              "possession": "54.8"
+            },
+            {
+              "id": "7114",
+              "name": "Sanfrecce Hiroshima",
+              "shots": "19",
+              "shots_on_target": "7",
+              "xg": null,
+              "possession": "45.2"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888.json",
+          "sha256": "40d7677b75786738a8a3745e8650a06c83d66cf967b6552882962922a5a8e888",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877554",
+          "date": "2026-11-08T05:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "7477",
+              "name": "Vissel Kobe",
+              "shots": "19",
+              "shots_on_target": "5",
+              "xg": null,
+              "possession": "42.7"
+            },
+            {
+              "id": "3385",
+              "name": "Urawa Red Diamonds",
+              "shots": "20",
+              "shots_on_target": "9",
+              "xg": null,
+              "possession": "57.3"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360.json",
+          "sha256": "54797485945efd63e820ed21dda680675b399e588bea2c0ef73eae1577cf0360",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877556",
+          "date": "2026-11-07T06:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "3384",
+              "name": "FC Tokyo",
+              "shots": "11",
+              "shots_on_target": "3",
+              "xg": null,
+              "possession": "38.4"
+            },
+            {
+              "id": "7115",
+              "name": "Kashima Antlers",
+              "shots": "7",
+              "shots_on_target": "1",
+              "xg": null,
+              "possession": "61.6"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541.json",
+          "sha256": "694deff561f25c5cec4e3223ade1129f50539d6f5fffda95153cf02aada8e541",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        },
+        {
+          "id": "401877560",
+          "date": "2026-11-07T07:00Z",
+          "status": "STATUS_FULL_TIME",
+          "teams": [
+            {
+              "id": "7476",
+              "name": "Kashiwa Reysol",
+              "shots": "22",
+              "shots_on_target": "9",
+              "xg": null,
+              "possession": "46.7"
+            },
+            {
+              "id": "7112",
+              "name": "Kawasaki Frontale",
+              "shots": "9",
+              "shots_on_target": "3",
+              "xg": null,
+              "possession": "53.3"
+            }
+          ],
+          "raw_path": "/workspace/jleague-cup-today-20261111/staging/raw/5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9.json",
+          "sha256": "5b5c75a5ab90703d59ed7ad59a1daed8d985038096ded634ee3c130806a8a4a9",
+          "use": "qualitative_only_not_model_features",
+          "scope": "single_recent_match_not_5game_xg"
+        }
+      ],
+      "xg_status": "NOT_OBTAINED_ESPN_FIELD_ABSENT_FOTMOB_404",
+      "injury_status": "OFFICIAL_PREVIEW_PARTIAL_NOT_COMPLETE_SQUAD_AVAILABILITY",
+      "numerical_matrix": null,
+      "team_goal_distribution": null,
+      "formal_kpi_eligible": false,
+      "future_review_policy": "Preserve all four; score and WDL denominators independent; pending never counted as hits; current/test refusal separate",
+      "model_promotion": false,
+      "top3_eligible": false
+    },
+    "freeze_receipt": {
+      "freeze_id": "7a97e89f9c386a4c-v000001",
+      "recorded_at": "2026-11-11T09:00:41.753002+08:00",
+      "path": "/workspace/WCPP/forecasts/issued-analyses/7a97e89f9c386a4cc79df4d3d38d3b091e6885e6f18ba7748eb0d4a4395e6119/000001.json",
+      "sha256": "a941dff219547fe34584872d30f2032b64b512c42ecf1c01636245ff6bc7e305",
+      "evaluation_slot": "FIRST_PREMATCH"
+    }
+  }
+]
