@@ -1,0 +1,61 @@
+name: PR32 deployed collector verification
+on:
+  push:
+    branches: [ops/pr32-collector-diagnostics-20261112]
+    paths: [.github/workflows/pr32-dispatch-once.yml]
+permissions:
+  contents: read
+  actions: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Diagnose TLS without disabling verification
+        run: |
+          python - <<'PY'
+          import ssl,json,hashlib
+          from datetime import datetime,timezone
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import URLError
+          target='https://asianodds.org/d/events?sport=fb';results=[]
+          contexts=[('system',ssl.create_default_context())]
+          try:
+              from pip._vendor import certifi
+              contexts.append(('pip_mozilla_bundle',ssl.create_default_context(cafile=certifi.where())))
+          except ImportError:pass
+          for name,context in contexts:
+              row={'trust_store':name,'captured_at':datetime.now(timezone.utc).isoformat(),'hostname_verification':context.check_hostname,'certificate_verification':context.verify_mode==ssl.CERT_REQUIRED}
+              try:
+                  with urlopen(Request(target,headers={'User-Agent':'WCPP-research','X-AO':'1','Referer':'https://asianodds.org/'}),timeout=10,context=context) as r:
+                      content=r.read(12000001)
+                      row.update(http_status=r.status,response_bytes=len(content),response_sha256=hashlib.sha256(content).hexdigest())
+              except Exception as exc:
+                  reason=exc.reason if isinstance(exc,URLError) else exc
+                  message=getattr(reason,'verify_message','')
+                  allowed={'certificate has expired':'CERTIFICATE_EXPIRED','certificate is not yet valid':'CERTIFICATE_NOT_YET_VALID','unable to get local issuer certificate':'ISSUER_UNAVAILABLE','self-signed certificate':'SELF_SIGNED'}
+                  code=getattr(reason,'verify_code',None)
+                  row.update(error_type=type(reason).__name__,verification_code=code if type(code) is int else None,
+                             diagnosis=allowed.get(message,'OTHER_TRANSPORT_FAILURE'))
+              results.append(row)
+          Path('/tmp/tls-diagnostic.json').write_text(json.dumps({'source':target,'attempts':results,'verification_disabled':False},indent=2))
+          print(json.dumps(results))
+          PY
+      - name: Dispatch existing workflow once after checking deployed file
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: kaka597000/kaka597000-Football-Analysis-Data
+        run: |
+          test "$(gh api repos/$GH_REPO/contents/.github/workflows/unattended.yml --jq .sha)" = b49f5afe450cda84461b2b1b5a91a76364e4c0c6
+          gh workflow run unattended.yml --ref main -f mode=collect
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pr32-tls-diagnostic
+          path: /tmp/tls-diagnostic.json
+          retention-days: 1
+          if-no-files-found: error
