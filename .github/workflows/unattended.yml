@@ -1,5 +1,6 @@
 # Existing user-authorized schedule. Collector diagnostics have their own immutable pin.
-# Training and locked prospective prediction stay on the original code revision.
+# Training and locked inference stay on the original code revision.
+# Only the bounded result-polling transport receives the two-file overlay below.
 name: WCPP private unattended research
 on:
   workflow_dispatch:
@@ -63,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 1190765a272dbe2721cada81ebbe2ee09c40c77d
+          ref: 705d1fe2866cbdb55f6099351f9092db03f6a554
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -115,8 +116,39 @@ jobs:
         if: always() && steps.mode.outputs.value == 'collect'
         working-directory: code
         timeout-minutes: 1
+        env:
+          RUNTIME_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
         run: |
           set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil,subprocess
+          from pathlib import Path
+          base=Path.cwd(); overlay=base.parent/'collector-code'; state=base.parent/'private-state'
+          def revision(path):
+              return subprocess.check_output(['git','-C',str(path),'rev-parse','HEAD'],text=True).strip()
+          # Assert locked inference identities before changing transport only.
+          domestic=json.loads((state/'future/bundle-v2/manifest.json').read_text())
+          ucl=json.loads((state/'future/ucl-bundle-v2/manifest.json').read_text())
+          hashes=dict(domestic['protocol']['source_files_sha256'])
+          hashes.update({k:v for k,v in ucl['protocol']['files_sha256'].items() if '/Football-Analysis/runtime/' in k})
+          hashes['/workspace/Football-Analysis/runtime/research_program/ucl_refresh_review.py']=ucl['review_source_sha256']
+          for path,expected in hashes.items():
+              actual=base/'runtime'/path.split('/runtime/',1)[1]
+              if hashlib.sha256(actual.read_bytes()).hexdigest()!=expected:
+                  raise ValueError('locked inference/review source differs from protocol')
+          files={}
+          for name in ('prospective_cycle.py','result_queue.py'):
+              relative=Path('runtime/automation')/name
+              shutil.copyfile(overlay/relative,base/relative)
+              files[str(relative)]=hashlib.sha256((base/relative).read_bytes()).hexdigest()
+          receipt={'base_commit':revision(base),'polling_overlay_commit':revision(overlay),
+                   'overlay_files_sha256':files,'locked_protocol_sources_verified':True,
+                   'inference_source_changed':False,'active_model_changed':False}
+          out=state/'future/runtime-revisions';out.mkdir(exist_ok=True)
+          with (out/(os.environ['RUNTIME_RUN_ID']+'.json')).open('x') as f:
+              json.dump(receipt,f,indent=2)
+          print(json.dumps(receipt))
+          PY
           sudo install -d -m 0755 -o "$(id -u)" -g "$(id -g)" /workspace
           if [ -e /workspace/Football-Analysis ]; then
             test "$(readlink -f /workspace/Football-Analysis)" = "$GITHUB_WORKSPACE/code"
