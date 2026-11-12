@@ -1,16 +1,20 @@
 name: Post32 durable archive integrity
 on:
   push:
-    branches: [main, feat/post32-durable-evidence-20261112]
+    branches: [main, feat/post32-durable-evidence-20261112, fix/followup-polling-audit-20261112]
     paths:
       - workspace-updates/20261112-post32/**
       - runtime/verify_post32_archive.py
       - .github/workflows/post32-archive.yml
+      - .github/workflows/unattended.yml
+      - workspace-updates/20261112-followup-audit/**
   pull_request:
     paths:
       - workspace-updates/20261112-post32/**
       - runtime/verify_post32_archive.py
       - .github/workflows/post32-archive.yml
+      - .github/workflows/unattended.yml
+      - workspace-updates/20261112-followup-audit/**
   workflow_dispatch:
 permissions:
   contents: read
@@ -23,9 +27,28 @@ jobs:
         with:
           sparse-checkout: |
             workspace-updates/20261112-post32
+            workspace-updates/20261112-followup-audit
             runtime/verify_post32_archive.py
           sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python runtime/verify_post32_archive.py
+      - name: Verify followup audit evidence
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('workspace-updates/20261112-followup-audit')
+          manifest=json.loads((root/'manifest.json').read_text())
+          for name,expected in manifest['files'].items():
+              path=(root/name).resolve()
+              if not path.is_relative_to(root.resolve()):
+                  raise ValueError('evidence outside audit root')
+              body=path.read_bytes()
+              assert len(body)==expected['bytes']
+              assert hashlib.sha256(body).hexdigest()==expected['sha256']
+          tests=json.loads((root/'test-summary.json').read_text())
+          assert tests['failed']==tests['skipped']==0
+          print(json.dumps({'verified_files':len(manifest['files']),'source_commit':manifest['source_commit'],'tests':tests}))
+          PY
