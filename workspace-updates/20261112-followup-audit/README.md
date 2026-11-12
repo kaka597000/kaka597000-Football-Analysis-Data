@@ -23,3 +23,9 @@
 源码变更仍归入 PR #33；数据仓库提交保存部署配置与追加验收材料。实际部署回执、CI、文件哈希见数据仓库 `workspace-updates/20261112-followup-audit/`。回滚通过撤销对应数据仓库配置提交恢复原 collector pin、移除调度覆盖；尝试日志可保留，旧代码不会读取它。不得删除任何历史预测或赛果。
 
 GitHub Actions 的盘口密钥缺失和 AsianOdds 证书域名不匹配仍独立存在；本轮不关闭 TLS 或将缺失数据记成采集成功。真实未来效果仍须等待已冻结比赛结算。
+
+## 实际部署回执
+
+数据 PR #8 已合并，main 运行 [43227627601](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/43227627601) 成功。实际调度与 collector 为 `705d1fe`，锁定推理/评分仍是 `6639867`。本轮查询 2 场，无失败，已结算从 24 增至 26/80，待结算/缺证 54；欧冠本轮尚无合格查询时点，零请求。盘口仍为 `MISSING_CREDENTIAL`，零请求零报价。
+
+源码 CI [43227192354](https://github.com/kaka597000/Football-Analysis/actions/runs/43227192354) 成功；数据分支 CI [43227452612](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/43227452612) 成功。源码 PR #33 保持打开；本次数据部署没有切换任何活动模型。19 条路由、38 份活动工件哈希复核全部匹配。完整版本和回滚点见 `delivery-receipt.json`。

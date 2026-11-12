@@ -1,0 +1,54 @@
+{
+  "schema": "WCPP-FOLLOWUP-DEPLOYMENT-1",
+  "verified_at": "2026-11-12T21:31:02.022403+08:00",
+  "source_commit": "705d1fe2866cbdb55f6099351f9092db03f6a554",
+  "data_deployment_merge_commit": "7e10356347b887fcff5a4dc9a70d1e1a7b526953",
+  "data_production_state_commit": "35db4dbb65b2924d4101c7b207e20d13a6eb6b7c",
+  "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/33",
+  "source_pr_status": "OPEN",
+  "data_pr": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/8",
+  "data_pr_status": "MERGED",
+  "live_run": 43227627601,
+  "runtime": {
+    "base_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+    "polling_overlay_commit": "705d1fe2866cbdb55f6099351f9092db03f6a554",
+    "overlay_files_sha256": {
+      "runtime/automation/prospective_cycle.py": "c51d79e0323ac859376a7c294d15d00491f30062058b5a357d87b0219bc83b72",
+      "runtime/automation/result_queue.py": "d59c606c63f33a4fb2e732c5c4f6adb140a4d35a54615d25e5b2f9c146e18b4d"
+    },
+    "locked_protocol_sources_verified": true,
+    "inference_source_changed": false,
+    "active_model_changed": false
+  },
+  "cycle_file": "future/state/runs/20261112T132914482422.json",
+  "cycle_sha256": "0e0bff73607583918c898e0988868745edd4303de7a28d8ef7301e87ec267871",
+  "cycle": {
+    "population": 80,
+    "completed": 26,
+    "pending": 54,
+    "result_requests": 2,
+    "result_attempted_ids": [
+      "espn:401884739",
+      "espn:401882809"
+    ],
+    "failures": []
+  },
+  "previous_completed": 24,
+  "ucl_cycle_file": "future/ucl-state/runs/20261112T132917317672.json",
+  "ucl_requests": 0,
+  "ucl_failures": [],
+  "market": {
+    "market_model_ready": false,
+    "verified_quote_count": 0,
+    "status": "MISSING_CREDENTIAL",
+    "required_secret": "WCPP_ODDS_API_KEY",
+    "requests": 0
+  },
+  "rollbacks": {
+    "source_before": "03ada482440681c421bdd8216a4f1c4b4eaf8a0e",
+    "data_workflow_before": "70d774bc3c4a8f85d75f1f98097c1beae721eed8",
+    "instructions": "Revert deployment workflow changes; preserve all result and freeze records. No registry/artifact rollback needed."
+  },
+  "accuracy_improvement_claimed": false,
+  "active_model_changed": false
+}
