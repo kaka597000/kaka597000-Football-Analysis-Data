@@ -14,6 +14,72 @@
     "registry_verified_artifacts": 38,
     "independent_review_source_changes": []
   },
-  "data_rollout_status": "PREPARED_PENDING_MAIN_VERIFICATION",
-  "active_model_changed": false
+  "data_rollout_status": "DEPLOYED_ON_MAIN_AND_RUNTIME_VERIFIED",
+  "active_model_changed": false,
+  "verified_at": "2026-11-12T23:33:17.497328+08:00",
+  "data_pr": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/9",
+  "data_change_commit": "c6960a7fa9b1fbea65de1ef5a34817f51b0ab120",
+  "data_merge_commit": "50b8e26b81a0e15ad42a22cbddeed3cab0190903",
+  "data_archive_ci_run": 43248243370,
+  "data_archive_ci_status": "SUCCESS",
+  "live_run": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/43248325143",
+  "live_run_id": 43248325143,
+  "live_run_status": "success",
+  "runtime_state_commit": "2d6716f0d80ed856efde0def2510b1828d532bba",
+  "runtime": {
+    "base_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+    "polling_overlay_commit": "e5a32d901d690cccadab258435586464103fbbc6",
+    "evaluation_overlay_commit": "e5a32d901d690cccadab258435586464103fbbc6",
+    "overlay_files_sha256": {
+      "runtime/automation/prospective_cycle.py": "c51d79e0323ac859376a7c294d15d00491f30062058b5a357d87b0219bc83b72",
+      "runtime/automation/result_queue.py": "d59c606c63f33a4fb2e732c5c4f6adb140a4d35a54615d25e5b2f9c146e18b4d",
+      "runtime/research_program/promotion_review.py": "51552372240a0afc04a02683353491d3e039ac7146f6a422b0d696bc20a4d592",
+      "runtime/v2_test/evaluation.py": "053f8e43427a52daad5920d2d6600b581daf52c029d9f1152f72bf7f94e23724"
+    },
+    "locked_protocol_sources_verified": true,
+    "inference_source_changed": false,
+    "active_model_changed": false
+  },
+  "market": {
+    "market_model_ready": false,
+    "verified_quote_count": 0,
+    "status": "MISSING_CREDENTIAL",
+    "required_secret": "WCPP_ODDS_API_KEY",
+    "requests": 0
+  },
+  "future_population": 80,
+  "completed": 30,
+  "pending": 50,
+  "cohort_failures": [],
+  "forward_diagnostic_totals": {
+    "current": {
+      "primary_n": 30,
+      "primary_hits": 3,
+      "wdl_n": 30,
+      "wdl_hits": 16,
+      "actual_line_n": 0
+    },
+    "candidate": {
+      "primary_n": 30,
+      "primary_hits": 3,
+      "wdl_n": 30,
+      "wdl_hits": 15,
+      "actual_line_n": 0
+    }
+  },
+  "all_cohort_promotions_blocked": true,
+  "evidence": [
+    {
+      "path": "future/runtime-revisions/43248325143-1.json",
+      "sha256": "cceedf3ff9a64f5716da5664e9e3c3f5cbdef2317a415a6aae52c5fea773bf57"
+    },
+    {
+      "path": "future/state/runs/20261112T153005206414.json",
+      "sha256": "e02041fdcd8ea46627119f25d7755ae824c905303c128ba834eebda73723ae4a"
+    },
+    {
+      "path": "market/runs/43248325143-1/market-channel.json",
+      "sha256": "8b7ca718821faeebfcc346f4dee8202be7cdc98a5de83a39d86c730a95b79f1e"
+    }
+  ]
 }
