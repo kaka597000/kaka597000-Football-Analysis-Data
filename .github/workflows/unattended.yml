@@ -1,6 +1,6 @@
 # Existing user-authorized schedule. Collector diagnostics have their own immutable pin.
 # Training and locked inference stay on the original code revision.
-# Only the bounded result-polling transport receives the two-file overlay below.
+# Only result polling and outcome accounting receive the explicit overlay below.
 name: WCPP private unattended research
 on:
   workflow_dispatch:
@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 705d1fe2866cbdb55f6099351f9092db03f6a554
+          ref: e5a32d901d690cccadab258435586464103fbbc6
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -126,7 +126,7 @@ jobs:
           base=Path.cwd(); overlay=base.parent/'collector-code'; state=base.parent/'private-state'
           def revision(path):
               return subprocess.check_output(['git','-C',str(path),'rev-parse','HEAD'],text=True).strip()
-          # Assert locked inference identities before changing transport only.
+          # Assert locked inference identities before updating transport/accounting.
           domestic=json.loads((state/'future/bundle-v2/manifest.json').read_text())
           ucl=json.loads((state/'future/ucl-bundle-v2/manifest.json').read_text())
           hashes=dict(domestic['protocol']['source_files_sha256'])
@@ -136,12 +136,24 @@ jobs:
               actual=base/'runtime'/path.split('/runtime/',1)[1]
               if hashlib.sha256(actual.read_bytes()).hexdigest()!=expected:
                   raise ValueError('locked inference/review source differs from protocol')
+          paths=('runtime/automation/prospective_cycle.py',
+                 'runtime/automation/result_queue.py',
+                 'runtime/research_program/promotion_review.py',
+                 'runtime/v2_test/evaluation.py')
+          locked={'runtime/'+path.split('/runtime/',1)[1] for path in hashes}
+          if locked.intersection(paths):
+              raise ValueError('accounting overlay must not replace locked protocol sources')
           files={}
-          for name in ('prospective_cycle.py','result_queue.py'):
-              relative=Path('runtime/automation')/name
+          for name in paths:
+              relative=Path(name)
               shutil.copyfile(overlay/relative,base/relative)
               files[str(relative)]=hashlib.sha256((base/relative).read_bytes()).hexdigest()
+          for path,expected in hashes.items():
+              actual=base/'runtime'/path.split('/runtime/',1)[1]
+              if hashlib.sha256(actual.read_bytes()).hexdigest()!=expected:
+                  raise ValueError('locked source changed after accounting overlay')
           receipt={'base_commit':revision(base),'polling_overlay_commit':revision(overlay),
+                   'evaluation_overlay_commit':revision(overlay),
                    'overlay_files_sha256':files,'locked_protocol_sources_verified':True,
                    'inference_source_changed':False,'active_model_changed':False}
           out=state/'future/runtime-revisions';out.mkdir(exist_ok=True)

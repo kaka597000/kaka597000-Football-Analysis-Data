@@ -1,0 +1,49 @@
+{
+  "schema": "WCPP-INDEPENDENT-DEPLOYMENT-REVIEW-1",
+  "reviewed_at": "2026-11-12T15:26:20.488853+00:00",
+  "verdict": "NO_BLOCKING_FINDING",
+  "workflow_sha256": "1593334f91cf7b1acfa56ce88e6bf3af065271b8009fde83a2d1469452c2a489",
+  "archive_workflow_sha256": "b8ed7d85f278bf28888f65abbfd8ae05d5377ba258c7d7eed52972c0a45b2b26",
+  "verifier_sha256": "cb5794d315f4075fb390305f27edab29480ff1aeec2122fd9bd9fc4f28446438",
+  "archive_index_sha256": "629cb1e5742daf55dddfde30d706c49f9a451674641d2dae43f32d1c8a3c4765",
+  "base_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+  "collector_and_accounting_commit": "e5a32d901d690cccadab258435586464103fbbc6",
+  "overlay_files_sha256": {
+    "runtime/automation/prospective_cycle.py": "c51d79e0323ac859376a7c294d15d00491f30062058b5a357d87b0219bc83b72",
+    "runtime/automation/result_queue.py": "d59c606c63f33a4fb2e732c5c4f6adb140a4d35a54615d25e5b2f9c146e18b4d",
+    "runtime/research_program/promotion_review.py": "51552372240a0afc04a02683353491d3e039ac7146f6a422b0d696bc20a4d592",
+    "runtime/v2_test/evaluation.py": "053f8e43427a52daad5920d2d6600b581daf52c029d9f1152f72bf7f94e23724"
+  },
+  "locked_source_files_verified": {
+    "runtime/research_program/future_validation.py": "c188e3c20eb9afbe8df90c83b56d2d81a8930b776b9a77577789995dc622e990",
+    "runtime/research_program/challengers.py": "0153bc9d7e56382a53e0cc4079cafe2ea440b669ce31c178d22f5746d126b3f6",
+    "runtime/research_program/ucl_refresh_forward.py": "6eb57fd40bb63b4d66734172858c7a29730123790d381fe093c439a4d19bae67",
+    "runtime/prediction_engine.py": "aaa0bbb815293a41897abb2a715463f55095944b806e028af97d2e16769b5b31",
+    "runtime/prediction_service.py": "2fd8481572da94b6b3081ee2e2c5d18384d6a64e1b2079b36890b0d767e4c1a5",
+    "runtime/continental/ucl_ml.py": "1dcd9aa84070c9e1b0ff11262edd5f94112404d341cad09eaf67cc2139a17a3d",
+    "runtime/research/ucl_fixed_refresh.py": "5b52dab928edb243c6d588ca7104f20f948ad7a23a1b033a8d7f0ce2171743ab",
+    "runtime/research_program/ucl_refresh_review.py": "492616ed41eaea26057cc7b317d6e150870ddd08bbae5b98080b908b008262e7"
+  },
+  "locked_sources_unchanged_after_sandbox_overlay": true,
+  "locked_overlay_intersection": [],
+  "reused_asset_hashes_verified": {
+    "workspace-updates/20261112-post32/xg-numerical-evidence.tar.gz": "22350bbfcfb8fbc99a4d422ca251b794907fab03a89138150404bbac6098b187",
+    "workspace-updates/20261112-post32/execution-index.json": "9755518d434ee60cd451aa63fec3dc76afa1ee7d1a24666b9d92a8f0efd1af9b",
+    "workspace-updates/20261112-post32/execution-recovery-catalog.json": "b37b8ab5760dfbc037056e0a9419ca13651e00f0698e0bd030fb2f41b02e189a",
+    "workspace-updates/20261112-nations-prematch/manifest.json": "2895a182676464049788863aa438758902ea73dccd1f4bebe1021a20ded213ff",
+    "workspace-updates/20261107-perth-lineup-revision/manifest.json": "de10903402e74d99ab3d5b1fc96ffae66b6ec954747225f652989db5fd0a9de7"
+  },
+  "archive_members_verified": 95,
+  "archive_test_executions": 831,
+  "yaml_parsed": true,
+  "archive_ci_trigger_and_sparse_paths_verified": true,
+  "embedded_python_ast_parsed": true,
+  "production_or_network_collection_executed": false,
+  "archive_repacked": false,
+  "limitations": [
+    "This is a predeployment review. Actual Actions completion and persisted runtime receipt remain to be verified.",
+    "Missing API repository Secrets still prevent scheduled odds acquisition; this review does not remove that gap.",
+    "No inference/model update or accuracy improvement is certified."
+  ],
+  "blocking_findings": []
+}
