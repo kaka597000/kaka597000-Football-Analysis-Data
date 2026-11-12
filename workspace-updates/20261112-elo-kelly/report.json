@@ -1,0 +1,526 @@
+{
+  "status": "COMPLETED_RETROSPECTIVE_NOT_ASOF",
+  "coverage": {
+    "raw_labeled": 10707,
+    "diagnostic_labeled_population": 1752,
+    "prior_features": 10448,
+    "complete_panel": 9960,
+    "diagnostic_predictions": 1299
+  },
+  "summary": {
+    "all": {
+      "arms": {
+        "goals": {
+          "n": 1299,
+          "hits": 153.0,
+          "score_logloss": 2.968415340672281,
+          "wdl_brier": 0.6142132662775587,
+          "wdl_acc": 0.49884526558891457,
+          "tail4_brier": 0.21224155705052686,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 999
+        },
+        "goals_elo": {
+          "n": 1299,
+          "hits": 164.0,
+          "score_logloss": 2.938818827245742,
+          "wdl_brier": 0.5993516433881015,
+          "wdl_acc": 0.5165511932255581,
+          "tail4_brier": 0.21170328554721782,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 794
+        },
+        "goals_market": {
+          "n": 1299,
+          "hits": 168.0,
+          "score_logloss": 2.89019823495441,
+          "wdl_brier": 0.5793028777409751,
+          "wdl_acc": 0.5342571208622017,
+          "tail4_brier": 0.20592812681965136,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 677
+        },
+        "goals_market_kelly": {
+          "n": 1299,
+          "hits": 163.0,
+          "score_logloss": 2.890468096317074,
+          "wdl_brier": 0.5791949999374875,
+          "wdl_acc": 0.5311778290993071,
+          "tail4_brier": 0.20572431611335176,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 673
+        },
+        "goals_market_kelly_elo": {
+          "n": 1299,
+          "hits": 162.0,
+          "score_logloss": 2.890483862940087,
+          "wdl_brier": 0.5792976472696225,
+          "wdl_acc": 0.5327174749807544,
+          "tail4_brier": 0.20571833782150079,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 656
+        }
+      },
+      "comparisons": {
+        "goals_elo_vs_goals": {
+          "net_hits": 11.0,
+          "net_rate_ci95_date_blocks": [
+            -0.006211609963678566,
+            0.022270752655257835
+          ]
+        },
+        "goals_market_vs_goals": {
+          "net_hits": 15.0,
+          "net_rate_ci95_date_blocks": [
+            -0.006200882061781102,
+            0.028481012658227847
+          ]
+        },
+        "goals_market_kelly_vs_goals_market": {
+          "net_hits": -5.0,
+          "net_rate_ci95_date_blocks": [
+            -0.008172514458370389,
+            0.0
+          ]
+        },
+        "goals_market_kelly_elo_vs_goals_market_kelly": {
+          "net_hits": -1.0,
+          "net_rate_ci95_date_blocks": [
+            -0.005451926020966072,
+            0.003843345469435188
+          ]
+        }
+      }
+    },
+    "E0": {
+      "arms": {
+        "goals": {
+          "n": 283,
+          "hits": 35.0,
+          "score_logloss": 3.0235048152090034,
+          "wdl_brier": 0.610874310015796,
+          "wdl_acc": 0.4911660777385159,
+          "tail4_brier": 0.23063891417362742,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 236
+        },
+        "goals_elo": {
+          "n": 283,
+          "hits": 31.0,
+          "score_logloss": 3.000461063131265,
+          "wdl_brier": 0.5987261542624532,
+          "wdl_acc": 0.5229681978798587,
+          "tail4_brier": 0.23098294165154065,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 189
+        },
+        "goals_market": {
+          "n": 283,
+          "hits": 37.0,
+          "score_logloss": 2.978400688441912,
+          "wdl_brier": 0.5892688990255708,
+          "wdl_acc": 0.5265017667844523,
+          "tail4_brier": 0.2293354135904909,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 175
+        },
+        "goals_market_kelly": {
+          "n": 283,
+          "hits": 36.0,
+          "score_logloss": 2.977410645868503,
+          "wdl_brier": 0.5892348373308307,
+          "wdl_acc": 0.5265017667844523,
+          "tail4_brier": 0.22799767512189936,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 175
+        },
+        "goals_market_kelly_elo": {
+          "n": 283,
+          "hits": 34.0,
+          "score_logloss": 2.9781142932187863,
+          "wdl_brier": 0.5895215698499794,
+          "wdl_acc": 0.5159010600706714,
+          "tail4_brier": 0.22808674939189885,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 165
+        }
+      },
+      "comparisons": {
+        "goals_elo_vs_goals": {
+          "net_hits": -4.0,
+          "net_rate_ci95_date_blocks": [
+            -0.04026907097376896,
+            0.010679036841701002
+          ]
+        },
+        "goals_market_vs_goals": {
+          "net_hits": 2.0,
+          "net_rate_ci95_date_blocks": [
+            -0.02672269524368761,
+            0.0392174369747899
+          ]
+        },
+        "goals_market_kelly_vs_goals_market": {
+          "net_hits": -1.0,
+          "net_rate_ci95_date_blocks": [
+            -0.01577411851615222,
+            0.007547884505431672
+          ]
+        },
+        "goals_market_kelly_elo_vs_goals_market_kelly": {
+          "net_hits": -2.0,
+          "net_rate_ci95_date_blocks": [
+            -0.022306913388448094,
+            0.006622516556291391
+          ]
+        }
+      }
+    },
+    "D1": {
+      "arms": {
+        "goals": {
+          "n": 220,
+          "hits": 18.0,
+          "score_logloss": 3.1616889930167615,
+          "wdl_brier": 0.6318636873475495,
+          "wdl_acc": 0.4727272727272727,
+          "tail4_brier": 0.23936229978260493,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 173
+        },
+        "goals_elo": {
+          "n": 220,
+          "hits": 18.0,
+          "score_logloss": 3.1433920654355005,
+          "wdl_brier": 0.620027618780469,
+          "wdl_acc": 0.4863636363636364,
+          "tail4_brier": 0.23849617953631247,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 146
+        },
+        "goals_market": {
+          "n": 220,
+          "hits": 19.0,
+          "score_logloss": 3.0725989785946215,
+          "wdl_brier": 0.5950362586914997,
+          "wdl_acc": 0.5363636363636364,
+          "tail4_brier": 0.22896196946729494,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 134
+        },
+        "goals_market_kelly": {
+          "n": 220,
+          "hits": 19.0,
+          "score_logloss": 3.073276223686978,
+          "wdl_brier": 0.5956555659900651,
+          "wdl_acc": 0.5272727272727272,
+          "tail4_brier": 0.22904750506767774,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 132
+        },
+        "goals_market_kelly_elo": {
+          "n": 220,
+          "hits": 19.0,
+          "score_logloss": 3.073966611140629,
+          "wdl_brier": 0.5959921067642213,
+          "wdl_acc": 0.5318181818181819,
+          "tail4_brier": 0.22896149479589234,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 132
+        }
+      },
+      "comparisons": {
+        "goals_elo_vs_goals": {
+          "net_hits": 0.0,
+          "net_rate_ci95_date_blocks": [
+            -0.024756070005340785,
+            0.0196078431372549
+          ]
+        },
+        "goals_market_vs_goals": {
+          "net_hits": 1.0,
+          "net_rate_ci95_date_blocks": [
+            -0.018867924528301886,
+            0.028000934579439248
+          ]
+        },
+        "goals_market_kelly_vs_goals_market": {
+          "net_hits": 0.0,
+          "net_rate_ci95_date_blocks": [
+            0.0,
+            0.0
+          ]
+        },
+        "goals_market_kelly_elo_vs_goals_market_kelly": {
+          "net_hits": 0.0,
+          "net_rate_ci95_date_blocks": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "SP1": {
+      "arms": {
+        "goals": {
+          "n": 276,
+          "hits": 37.0,
+          "score_logloss": 2.8051228680776616,
+          "wdl_brier": 0.6203302308527624,
+          "wdl_acc": 0.4855072463768116,
+          "tail4_brier": 0.1723487922044716,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 185
+        },
+        "goals_elo": {
+          "n": 276,
+          "hits": 43.0,
+          "score_logloss": 2.779446058373125,
+          "wdl_brier": 0.6096283252873382,
+          "wdl_acc": 0.5,
+          "tail4_brier": 0.172607914993855,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 155
+        },
+        "goals_market": {
+          "n": 276,
+          "hits": 43.0,
+          "score_logloss": 2.6979958676811333,
+          "wdl_brier": 0.5719115267963665,
+          "wdl_acc": 0.5398550724637681,
+          "tail4_brier": 0.1616695773737359,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 81
+        },
+        "goals_market_kelly": {
+          "n": 276,
+          "hits": 41.0,
+          "score_logloss": 2.700313182256365,
+          "wdl_brier": 0.5710888012177197,
+          "wdl_acc": 0.532608695652174,
+          "tail4_brier": 0.16274220477569631,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 84
+        },
+        "goals_market_kelly_elo": {
+          "n": 276,
+          "hits": 42.0,
+          "score_logloss": 2.7007824688393045,
+          "wdl_brier": 0.5720414224870636,
+          "wdl_acc": 0.5434782608695652,
+          "tail4_brier": 0.16276209278989315,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 83
+        }
+      },
+      "comparisons": {
+        "goals_elo_vs_goals": {
+          "net_hits": 6.0,
+          "net_rate_ci95_date_blocks": [
+            -0.007274059274059274,
+            0.05245215311004782
+          ]
+        },
+        "goals_market_vs_goals": {
+          "net_hits": 6.0,
+          "net_rate_ci95_date_blocks": [
+            -0.024913256227758005,
+            0.0706713780918728
+          ]
+        },
+        "goals_market_kelly_vs_goals_market": {
+          "net_hits": -2.0,
+          "net_rate_ci95_date_blocks": [
+            -0.019083969465648856,
+            0.0
+          ]
+        },
+        "goals_market_kelly_elo_vs_goals_market_kelly": {
+          "net_hits": 1.0,
+          "net_rate_ci95_date_blocks": [
+            -0.0075764777048047014,
+            0.016950593796840763
+          ]
+        }
+      }
+    },
+    "I1": {
+      "arms": {
+        "goals": {
+          "n": 287,
+          "hits": 36.0,
+          "score_logloss": 2.8818340968274097,
+          "wdl_brier": 0.6125290196917649,
+          "wdl_acc": 0.5087108013937283,
+          "tail4_brier": 0.19907729729769788,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 213
+        },
+        "goals_elo": {
+          "n": 287,
+          "hits": 44.0,
+          "score_logloss": 2.8385653885245787,
+          "wdl_brier": 0.5894326016173452,
+          "wdl_acc": 0.5296167247386759,
+          "tail4_brier": 0.19769925245714876,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 151
+        },
+        "goals_market": {
+          "n": 287,
+          "hits": 43.0,
+          "score_logloss": 2.80062102317284,
+          "wdl_brier": 0.5734270186573948,
+          "wdl_acc": 0.519163763066202,
+          "tail4_brier": 0.1939611450409578,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 150
+        },
+        "goals_market_kelly": {
+          "n": 287,
+          "hits": 42.0,
+          "score_logloss": 2.8012753611606844,
+          "wdl_brier": 0.5730595982452016,
+          "wdl_acc": 0.519163763066202,
+          "tail4_brier": 0.19409302032220885,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 148
+        },
+        "goals_market_kelly_elo": {
+          "n": 287,
+          "hits": 42.0,
+          "score_logloss": 2.799714863993296,
+          "wdl_brier": 0.5720042607342857,
+          "wdl_acc": 0.5226480836236934,
+          "tail4_brier": 0.19403166343471212,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 142
+        }
+      },
+      "comparisons": {
+        "goals_elo_vs_goals": {
+          "net_hits": 8.0,
+          "net_rate_ci95_date_blocks": [
+            -0.0074087893864013266,
+            0.06625042196794206
+          ]
+        },
+        "goals_market_vs_goals": {
+          "net_hits": 7.0,
+          "net_rate_ci95_date_blocks": [
+            -0.01384083044982699,
+            0.06312292358803986
+          ]
+        },
+        "goals_market_kelly_vs_goals_market": {
+          "net_hits": -1.0,
+          "net_rate_ci95_date_blocks": [
+            -0.01079136690647482,
+            0.0
+          ]
+        },
+        "goals_market_kelly_elo_vs_goals_market_kelly": {
+          "net_hits": 0.0,
+          "net_rate_ci95_date_blocks": [
+            -0.010309278350515464,
+            0.010310167081407745
+          ]
+        }
+      }
+    },
+    "F1": {
+      "arms": {
+        "goals": {
+          "n": 233,
+          "hits": 27.0,
+          "score_logloss": 3.0190892231182684,
+          "wdl_brier": 0.5964318436769036,
+          "wdl_acc": 0.5364806866952789,
+          "tail4_brier": 0.2277588539590185,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 192
+        },
+        "goals_elo": {
+          "n": 233,
+          "hits": 28.0,
+          "score_logloss": 2.9830624150760703,
+          "wdl_brier": 0.5806336160072234,
+          "wdl_acc": 0.5407725321888412,
+          "tail4_brier": 0.22654835170367182,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 153
+        },
+        "goals_market": {
+          "n": 233,
+          "hits": 26.0,
+          "score_logloss": 2.948855124271686,
+          "wdl_brier": 0.5683357386209906,
+          "wdl_acc": 0.5536480686695279,
+          "tail4_brier": 0.2229160061283574,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 137
+        },
+        "goals_market_kelly": {
+          "n": 233,
+          "hits": 25.0,
+          "score_logloss": 2.9473717088758993,
+          "wdl_brier": 0.5686180583858087,
+          "wdl_acc": 0.5536480686695279,
+          "tail4_brier": 0.22189076440468306,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 134
+        },
+        "goals_market_kelly_elo": {
+          "n": 233,
+          "hits": 25.0,
+          "score_logloss": 2.947319361208561,
+          "wdl_brier": 0.5686957966111466,
+          "wdl_acc": 0.5536480686695279,
+          "tail4_brier": 0.2218824758856349,
+          "rates_gt_10": 0,
+          "one_one_recommendations": 134
+        }
+      },
+      "comparisons": {
+        "goals_elo_vs_goals": {
+          "net_hits": 1.0,
+          "net_rate_ci95_date_blocks": [
+            -0.02643464192429145,
+            0.03433846381530263
+          ]
+        },
+        "goals_market_vs_goals": {
+          "net_hits": -1.0,
+          "net_rate_ci95_date_blocks": [
+            -0.04000401606425703,
+            0.0300461558383898
+          ]
+        },
+        "goals_market_kelly_vs_goals_market": {
+          "net_hits": -1.0,
+          "net_rate_ci95_date_blocks": [
+            -0.014221410916347309,
+            0.0
+          ]
+        },
+        "goals_market_kelly_elo_vs_goals_market_kelly": {
+          "net_hits": 0.0,
+          "net_rate_ci95_date_blocks": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "active_modified": false,
+  "future_validated": false,
+  "promotion": false,
+  "limitations": [
+    "Previously examined diagnostic season; not pristine holdout.",
+    "Retained closing odds have no certified quoted/first-known times.",
+    "Statistics are research matrix modes, not comprehensive Primary or active Current/Test.",
+    "No explicit home advantage; neutral venue unknown.",
+    "Kelly is a deterministic representation of the same bookmaker panel, not independent evidence."
+  ]
+}
