@@ -1,13 +1,15 @@
 name: Post32 durable archive integrity
 on:
   push:
-    branches: [main, feat/post32-durable-evidence-20261112, fix/followup-polling-audit-20261112]
+    branches: [main, feat/post32-durable-evidence-20261112, fix/followup-polling-audit-20261112, feat/metric-optimization-20261112]
     paths:
       - workspace-updates/20261112-post32/**
       - runtime/verify_post32_archive.py
       - .github/workflows/post32-archive.yml
       - .github/workflows/unattended.yml
       - workspace-updates/20261112-followup-audit/**
+      - workspace-updates/20261112-metric-optimization/**
+      - runtime/verify_metric_optimization.py
   pull_request:
     paths:
       - workspace-updates/20261112-post32/**
@@ -15,6 +17,8 @@ on:
       - .github/workflows/post32-archive.yml
       - .github/workflows/unattended.yml
       - workspace-updates/20261112-followup-audit/**
+      - workspace-updates/20261112-metric-optimization/**
+      - runtime/verify_metric_optimization.py
   workflow_dispatch:
 permissions:
   contents: read
@@ -28,12 +32,16 @@ jobs:
           sparse-checkout: |
             workspace-updates/20261112-post32
             workspace-updates/20261112-followup-audit
+            workspace-updates/20261112-metric-optimization
             runtime/verify_post32_archive.py
+            runtime/verify_metric_optimization.py
           sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python runtime/verify_post32_archive.py
+      - name: Verify metric optimization evidence and asset checks
+        run: python runtime/verify_metric_optimization.py
       - name: Verify followup audit evidence
         run: |
           python - <<'PY'
