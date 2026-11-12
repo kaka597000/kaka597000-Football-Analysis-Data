@@ -38,6 +38,7 @@ jobs:
             runs
             kor1
             future
+            market
       - name: Read pinned public code
         uses: actions/checkout@v4
         with:
@@ -62,7 +63,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 46017f3795e41eef4c38692ad4809fe4b589dde9
+          ref: 1190765a272dbe2721cada81ebbe2ee09c40c77d
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -101,6 +102,15 @@ jobs:
           WCPP_5DOLLAR_API_KEY: ${{ secrets.WCPP_5DOLLAR_API_KEY }}
           WCPP_API_FOOTBALL_KEY: ${{ secrets.WCPP_API_FOOTBALL_KEY }}
         run: python runtime/collect_kor1.py collect --state-dir .
+      - name: Validate bounded source-timed Nations League market snapshots
+        if: always() && steps.mode.outputs.value == 'collect'
+        working-directory: collector-code
+        timeout-minutes: 1
+        env:
+          WCPP_ODDS_API_KEY: ${{ secrets.WCPP_ODDS_API_KEY }}
+          THE_ODDS: ${{ secrets.THE_ODDS }}
+          MARKET_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: python -m runtime.automation.market_snapshot --out "../private-state/market/runs/$MARKET_RUN_ID"
       - name: Capture and review locked future populations
         if: always() && steps.mode.outputs.value == 'collect'
         working-directory: code

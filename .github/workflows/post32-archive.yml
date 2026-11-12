@@ -1,0 +1,31 @@
+name: Post32 durable archive integrity
+on:
+  push:
+    branches: [main, feat/post32-durable-evidence-20261112]
+    paths:
+      - workspace-updates/20261112-post32/**
+      - runtime/verify_post32_archive.py
+      - .github/workflows/post32-archive.yml
+  pull_request:
+    paths:
+      - workspace-updates/20261112-post32/**
+      - runtime/verify_post32_archive.py
+      - .github/workflows/post32-archive.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            workspace-updates/20261112-post32
+            runtime/verify_post32_archive.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python runtime/verify_post32_archive.py
