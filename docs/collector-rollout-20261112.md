@@ -1,0 +1,9 @@
+# 采集诊断受控部署
+
+本变更仅将现有unattended工作流的collect步骤固定到源码`46017f3795e41eef4c38692ad4809fe4b589dde9`。train、未来冻结cycle和欧冠review继续固定`6639867d502a2dfe53a9a235c8761f8ee6b91533`。没有新增定时器，没有修改活动工件、注册表、模型参数或已有冻结。
+
+合并前真实隔离验证：Actions `43210124853` success；使用当前数据仓库实际config和seed的只读副本。16个ESPN采集队列、49次请求：历史请求48次成功，但此次返回0赛事；盘口1次TLS失败，0合格报价。不能把这些结果称为数据完整或盘口就绪。
+
+输出同时记录`status_scope=REQUEST_EXECUTION_NOT_MODEL_READINESS`、`data_status=PARTIAL_NO_VERIFIED_MARKET`和`market_model_ready=false`。韩K单独采集器及原密钥绑定不变。最多100次请求、生产collect预算90秒、已有两条cron与串行并发组均保持。
+
+合并前一次性检查工作流已从最终diff删除。生产实际执行回执另行登记；本文件中的隔离检查不代替生产执行。回滚仅还原collect调用到旧固定源码，不删除已留存采集记录。
