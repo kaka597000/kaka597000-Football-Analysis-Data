@@ -1,0 +1,57 @@
+name: PR32 numerical evidence retention
+on:
+  push:
+    branches: [research/pr32-evidence-20261112]
+    paths: [.github/workflows/pr32-evidence.yml]
+permissions:
+  contents: write
+  actions: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+            workspace-updates/20261112-elo-kelly
+      - name: Retrieve already completed source-repository validation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 43208854973 -R kaka597000/Football-Analysis -n pr32-xg-scale-validation -D /tmp/xg
+          gh run download 43205546047 -R kaka597000/Football-Analysis -n pr32-real-validation -D /tmp/validated
+      - name: Verify and persist numerical evidence only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,tarfile,shutil,urllib.request
+          root=Path('workspace-updates/20261112-elo-kelly')
+          xg=root/'xg';xg.mkdir(exist_ok=False)
+          source=Path('/tmp/xg/numerical-evidence.tar.gz')
+          expected='22350bbfcfb8fbc99a4d422ca251b794907fab03a89138150404bbac6098b187'
+          if hashlib.sha256(source.read_bytes()).hexdigest()!=expected:raise ValueError('xG archive identity mismatch')
+          shutil.copyfile(source,xg/'numerical-evidence.tar.gz')
+          shutil.copyfile('/tmp/xg/delivery.json',xg/'delivery.json')
+          with tarfile.open(source) as t:
+              for name in ('comparison.json','predeclared-protocol.json'):
+                  (xg/name).write_bytes(t.extractfile(name).read())
+          ref='https://raw.githubusercontent.com/kaka597000/Football-Analysis/9828f06c1c7100c2533a983a20b6953b8c5c234e/runtime/research_program/xg_comparison.py'
+          with urllib.request.urlopen(ref,timeout=30) as f:b=f.read()
+          if hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()!='7115767937a8d815aeeec5548f187780908b3621':raise ValueError('reference code identity mismatch')
+          (xg/'reference-xg-comparison.py').write_bytes(b)
+          validation=root/'validation';validation.mkdir(exist_ok=False)
+          for name in ('integration.log','j1-smoke.json','restore-receipt.json','live-probe-summary.json'):
+              shutil.copyfile(Path('/tmp/validated')/name,validation/name)
+          shutil.copyfile('/tmp/validated/live-probe/requests.jsonl',validation/'probe-requests.jsonl')
+          (root/'validation-delivery.json').write_text(json.dumps({'source_integration_commit':'46017f3795e41eef4c38692ad4809fe4b589dde9',
+              'integration_run':43205546047,'xg_source_commit':'c2fc59ba484879a145c9ecc5ff9a56e491e84625','xg_run':43208854973,
+              'xg_archive_sha256':expected,'active_modified':False,'future_validated':False,
+              'files':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for folder in (xg,validation) for p in sorted(folder.rglob('*')) if p.is_file()}},indent=2)+'\n')
+          PY
+          git config user.name 'WCPP research validation'
+          git config user.email 'wcpp-automation@users.noreply.github.com'
+          git add workspace-updates/20261112-elo-kelly
+          git commit -m 'Retain real J1 integration and original/native xG numerical evidence'
+          git push origin HEAD:research/pr32-evidence-20261112
