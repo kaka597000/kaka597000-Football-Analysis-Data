@@ -1,0 +1,49 @@
+{
+  "schema": "WCPP-MARKET-FALLBACK-DELIVERY-1",
+  "verified_at": "2026-11-13T00:15:29.392993+08:00",
+  "source_code_commit": "8488660427610e0fbf6df9a6d356e84f6ec66b7b",
+  "source_main_merge_commit": "ddfbc43197df8944072c70135e2a2831ae1a3ef5",
+  "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/35",
+  "data_change_commit": "a64fe7c219c5035209d9f462acbbaeb6c6386f29",
+  "data_merge_commit": "56f4e67cb16ec2d0f6067c6ba0cd9568a5a54ff7",
+  "data_actual_runtime_commit": "9828d2bcbd1332726e3ae190296329c1f7d1d3b3",
+  "data_pr": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/10",
+  "live_workflow_run": 43256073350,
+  "live_workflow_url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/43256073350",
+  "runtime_receipt": "future/runtime-revisions/43256073350-1.json",
+  "market_run_receipt": "market/runs/43256073350-1/market-channel.json",
+  "stages": {
+    "code": "COMPLETE: 24 suites / 867 executions / zero skips or failures",
+    "deployment": "MARKET_ATTACHMENT_OVERLAY_DEPLOYED_AND_HASH_VERIFIED; CONTINUOUS_QUOTES_BLOCKED_MISSING_ACTIONS_CREDENTIAL",
+    "real_data_acceptance": "CHAT_ENV: 93 bookmaker totals / 8 Nations fixtures / 8 input attachments",
+    "historical_effect_validation": "NOT_RUN; NO_WEIGHT_OR_ACTIVE_ARTIFACT_CHANGE",
+    "future_effect_validation": "NOT_COMPLETE; NO_NEW_FREEZE; ACTUAL_LINE_N=0"
+  },
+  "original_first_records_verified_unchanged": 160,
+  "active_artifacts_verified": 38,
+  "active_registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+  "supplemental_receipts": {
+    "source-ci.json": {
+      "bytes": 3489,
+      "sha256": "8e46164ec6fcc04994aaa9b7c71260f4e7691fea2b0b82844ab11a769a6b5590"
+    },
+    "data-ci.json": {
+      "bytes": 1506,
+      "sha256": "c08cba52e6fc0960eb2f1718d9ee1bfa020669944979f6f14fa4bedea6238da0"
+    },
+    "live-workflow.json": {
+      "bytes": 2292,
+      "sha256": "f2dee161455e4dce5b76722eef23078d57bb9aa88db7f1078f9ee5cbcd105bba"
+    },
+    "freeze-preservation.json": {
+      "bytes": 26966,
+      "sha256": "de34f8019d70119bea33ff76369171e21603fe9a83f558651b5f49dc82312477"
+    }
+  },
+  "rollback": {
+    "source_commit": "bea7d44594cafc90af806d50768aaa7e8d92a5a8",
+    "data_commit": "affe345d2f06e911fc9cd6a5ca9176ade70296f0",
+    "collector_overlay_pin": "e5a32d901d690cccadab258435586464103fbbc6",
+    "method": "append revert of source/transport config; retain old and new evidence; no freeze deletion"
+  }
+}
