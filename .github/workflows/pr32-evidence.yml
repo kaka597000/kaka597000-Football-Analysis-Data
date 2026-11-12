@@ -1,0 +1,84 @@
+name: PR32 fixed diagnostic evidence
+on:
+  push:
+    branches: [research/pr32-evidence-20261112]
+    paths: [.github/workflows/pr32-evidence.yml]
+permissions:
+  contents: write
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: state
+          sparse-checkout: |
+            .github
+            workspace-updates/20261105-remaining-nine-market
+            workspace-updates/20261112-elo-kelly
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 46017f3795e41eef4c38692ad4809fe4b589dde9
+          path: code
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r code/requirements.txt
+      - name: Restore retained input, never fetch a new bookmaker quote
+        run: |
+          sudo install -d -m 0755 -o "$(id -u)" -g "$(id -g)" /workspace
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,tarfile
+          root=Path('state/workspace-updates/20261105-remaining-nine-market')
+          m=json.loads((root/'manifest.json').read_text())
+          expected='ebe1acee81f2909b8d0c5f9cf6c535c543ef3c656c502b1aecbc0c194366b655'
+          archive=Path('/tmp/market-research.tar.gz');h=hashlib.sha256()
+          with archive.open('xb') as f:
+              for item in m['ordered_parts']:
+                  b=(root/item['path']).read_bytes()
+                  if len(b)!=item['bytes'] or hashlib.sha256(b).hexdigest()!=item['sha256']:raise ValueError('part checksum')
+                  f.write(b);h.update(b)
+          if h.hexdigest()!=expected or m['archive_sha256']!=expected:raise ValueError('archive checksum')
+          with tarfile.open(archive) as t:
+              for member in t:
+                  rel=Path(member.name)
+                  if not member.isfile() or not member.name.startswith('WCPP/research/remaining-nine-20261105/'):continue
+                  if rel.is_absolute() or '..' in rel.parts:raise ValueError('unsafe archive')
+                  path=Path('/workspace')/rel;path.parent.mkdir(parents=True,exist_ok=True)
+                  with path.open('xb') as f:f.write(t.extractfile(member).read())
+          PY
+      - name: Execute unchanged five-arm protocol
+        working-directory: code
+        env:
+          PYTHONPATH: runtime
+        run: python -m research_program.elo_kelly_ablation --manifest /workspace/WCPP/research/remaining-nine-20261105/market-ablation-input-manifest.json --out /tmp/elo-kelly-results
+      - name: Retain actual predictions, coefficients and receipts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,tarfile,shutil,importlib.metadata
+          source=Path('/tmp/elo-kelly-results')
+          out=Path('state/workspace-updates/20261112-elo-kelly');out.mkdir(parents=True,exist_ok=False)
+          with tarfile.open(out/'diagnostic-results.tar.gz','w:gz') as t:
+              for p in sorted(source.iterdir()):t.add(p,arcname=p.name)
+          for name in ('report.json','protocol.json','manifest.json'):shutil.copyfile(source/name,out/name)
+          receipt={'schema':'WCPP-ELO-KELLY-DIAGNOSTIC-DELIVERY-1','source_commit':'46017f3795e41eef4c38692ad4809fe4b589dde9',
+              'input_archive_sha256':'ebe1acee81f2909b8d0c5f9cf6c535c543ef3c656c502b1aecbc0c194366b655',
+              'archive_sha256':hashlib.sha256((out/'diagnostic-results.tar.gz').read_bytes()).hexdigest(),
+              'dependencies':{name:importlib.metadata.version(name) for name in ('numpy','scipy')},
+              'active_modified':False,'future_validated':False,'asof_certified':False,'promotion':False}
+          (out/'delivery.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          (out/'README.md').write_text('# Elo／凯利真实数据研究\n\n五组固定配方、同一日期隔离样本；完整系数、逐场预测、排除分母在归档中，先核验delivery与manifest。不是活动Current/Test，不是综合Primary，不是未见未来验证。收盘报价缺可靠quoted_at，不认证赛前时点回放。活动模型、旧冻结及定时任务不变。\n',encoding='utf-8')
+          PY
+          git -C state config user.name 'WCPP research validation'
+          git -C state config user.email 'wcpp-automation@users.noreply.github.com'
+          git -C state add workspace-updates/20261112-elo-kelly
+          git -C state commit -m 'Retain actual Elo/Kelly diagnostic predictions and inactive models'
+          git -C state push origin HEAD:research/pr32-evidence-20261112
