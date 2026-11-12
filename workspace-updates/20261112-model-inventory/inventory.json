@@ -1,0 +1,4890 @@
+{
+  "observed_at": "2026-11-12T08:52:01.197763+08:00",
+  "registry_routes": 19,
+  "models": [
+    {
+      "id": "2b590d6cc282",
+      "赛事": "墨超Apertura常规赛",
+      "cohort": "mex.1:apertura:regular",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-09-28",
+      "训练行数": 237,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.634139236977456,
+        "away_mean": 1.3639073041442937,
+        "stored_inactive_weights": {
+          "baseline": 0.0600424480295514,
+          "strength365": 0.2375353741235148,
+          "strength180": 0.2149839092680539,
+          "dc365": 0.23460067229561057,
+          "bivariate365": 0.25283759628326924
+        }
+      },
+      "效果": {
+        "n": 52,
+        "primary_hits": 10,
+        "top1": 0.19230769230769232,
+        "wdl_hits": 24,
+        "wdl_accuracy": 0.46153846153846156,
+        "score_log_loss": 3.072260469636956,
+        "wdl_brier": 0.6346406462335493
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/mex-apertura-dual/artifact.json",
+      "SHA256": "9614858205e8d3dcc56951d957f012e1c4ca603198a8acf79036037ed65e017e",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/mex.1-apertura-regular/report.json",
+      "验收": {
+        "top1_difference": -0.038461538461538464,
+        "date_cluster_bootstrap95": [
+          -0.08513389581804842,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "b29a121fccb2",
+      "赛事": "墨超Apertura常规赛",
+      "cohort": "mex.1:apertura:regular",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-09-28",
+      "训练行数": 237,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.28270701272141113,
+          "home_advantage": 0.20735145705462363,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": 0.005994314801323737,
+            "bivariate": 0.16990183657058416
+          }
+        }
+      },
+      "效果": {
+        "n": 52,
+        "primary_hits": 9,
+        "top1": 0.17307692307692307,
+        "wdl_hits": 24,
+        "wdl_accuracy": 0.46153846153846156,
+        "score_log_loss": 3.0587670154622897,
+        "wdl_brier": 0.6384746626556779
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/mex.1-apertura-regular/artifact.json",
+      "SHA256": "70d7e66f72c30717327223c47a49c5c3e6998e56a9dbc16fa111f0667cfcad9a",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/mex.1-apertura-regular/report.json",
+      "验收": {
+        "top1_difference": -0.019230769230769246,
+        "date_cluster_bootstrap95": [
+          -0.058823529411764705,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "ac936617ddc3",
+      "赛事": "英超",
+      "cohort": "eng.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 360,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.5233416356770633,
+        "away_mean": 1.256807745060626,
+        "stored_inactive_weights": {
+          "baseline": 0.2300598607568977,
+          "strength365": 0.18293084665412768,
+          "strength180": 0.22297417312587292,
+          "dc365": 0.15273564520289207,
+          "bivariate365": 0.21129947426020967
+        }
+      },
+      "效果": {
+        "n": 86,
+        "primary_hits": 11,
+        "top1": 0.12790697674418605,
+        "wdl_hits": 39,
+        "wdl_accuracy": 0.45348837209302323,
+        "score_log_loss": 2.9373578985003523,
+        "wdl_brier": 0.631661247941118
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/eng.1/artifact.json",
+      "SHA256": "ac5ef67c624da8913a2e3492b2fbae6b73776bf0f9e5157423c72e718dd72983",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/eng.1/report.json",
+      "验收": {
+        "top1_difference": 0.023255813953488358,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.05434782608695652
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "2b1b7362b2be",
+      "赛事": "英超",
+      "cohort": "eng.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 360,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.5,
+        "DC_weight": 0.5,
+        "ML_weight": 0.5,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.2012581330304976,
+          "home_advantage": 0.1949574166672443,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07999431480132373,
+            "bivariate": 0.13186188466943574
+          }
+        }
+      },
+      "效果": {
+        "n": 86,
+        "primary_hits": 13,
+        "top1": 0.1511627906976744,
+        "wdl_hits": 40,
+        "wdl_accuracy": 0.46511627906976744,
+        "score_log_loss": 2.943836133639237,
+        "wdl_brier": 0.6186647679081355
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/eng.1/artifact.json",
+      "SHA256": "9f78989414419514a23f669aa9648e341a4899890101f363cc47bff5057b03e0",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/eng.1/report.json",
+      "验收": {
+        "top1_difference": 0.023255813953488358,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.05434782608695652
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "11a476551c5b",
+      "赛事": "西甲",
+      "cohort": "esp.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 369,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.6335948576658572,
+        "away_mean": 1.189148114634613,
+        "stored_inactive_weights": {
+          "baseline": 0.10789471822971723,
+          "strength365": 0.20944965573339336,
+          "strength180": 0.22266321377026416,
+          "dc365": 0.1901797568259922,
+          "bivariate365": 0.2698126554406331
+        }
+      },
+      "效果": {
+        "n": 97,
+        "primary_hits": 20,
+        "top1": 0.20618556701030927,
+        "wdl_hits": 49,
+        "wdl_accuracy": 0.5051546391752577,
+        "score_log_loss": 2.9748130234520267,
+        "wdl_brier": 0.5985224847123212
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/esp.1/artifact.json",
+      "SHA256": "3d4da662d2b671c368860f7786ce7d2b22ddab4f60efc1b61470230ce57234ec",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/esp.1/report.json",
+      "验收": {
+        "top1_difference": 0.010309278350515483,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.029710396039603917
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "da569778fdec",
+      "赛事": "西甲",
+      "cohort": "esp.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 369,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.12740880444304756,
+          "home_advantage": 0.3252392881089966,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.0314435093992678,
+            "bivariate": 0.079365390278839
+          }
+        }
+      },
+      "效果": {
+        "n": 97,
+        "primary_hits": 18,
+        "top1": 0.18556701030927836,
+        "wdl_hits": 50,
+        "wdl_accuracy": 0.5154639175257731,
+        "score_log_loss": 2.968261379309565,
+        "wdl_brier": 0.5958887427734294
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/esp.1/artifact.json",
+      "SHA256": "dc1c4071478cabd7de2861e31edfe9decad328ebdf174c3c8cf639dbc4fd5682",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/esp.1/report.json",
+      "验收": {
+        "top1_difference": -0.02061855670103091,
+        "date_cluster_bootstrap95": [
+          -0.04706159822419534,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "c13fb603d456",
+      "赛事": "德甲",
+      "cohort": "ger.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 289,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.9474145273117454,
+        "away_mean": 1.446102122250313,
+        "stored_inactive_weights": {
+          "baseline": 0.15499918871373697,
+          "strength365": 0.2889606112092006,
+          "strength180": 0.18598339942702372,
+          "dc365": 0.08108944249936458,
+          "bivariate365": 0.28896735815067426
+        }
+      },
+      "效果": {
+        "n": 81,
+        "primary_hits": 7,
+        "top1": 0.08641975308641975,
+        "wdl_hits": 43,
+        "wdl_accuracy": 0.5308641975308642,
+        "score_log_loss": 3.2609105422972147,
+        "wdl_brier": 0.60123308584156
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/ger.1/artifact.json",
+      "SHA256": "d8e4e8edeb3b1be5bb3567496c5ff3f90de31de8bdf2e5ec00e68c38990c7691",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/ger.1/report.json",
+      "验收": {
+        "top1_difference": 0.0,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "710cbdd01f70",
+      "赛事": "德甲",
+      "cohort": "ger.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 289,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.3148206117832889,
+          "home_advantage": 0.27434510417788466,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.06008328584088075,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 81,
+        "primary_hits": 8,
+        "top1": 0.09876543209876543,
+        "wdl_hits": 41,
+        "wdl_accuracy": 0.5061728395061729,
+        "score_log_loss": 3.257578144028399,
+        "wdl_brier": 0.6016123550417151
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/ger.1/artifact.json",
+      "SHA256": "9d81229e3699c648596e4545e6670cf705ecfb92385c35f7f19444b641edc740",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/ger.1/report.json",
+      "验收": {
+        "top1_difference": 0.012345679012345678,
+        "date_cluster_bootstrap95": [
+          -0.03260869565217391,
+          0.05263157894736842
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "84467f2158c5",
+      "赛事": "意甲",
+      "cohort": "ita.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 370,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.3287957813858151,
+        "away_mean": 1.2361870541086368,
+        "stored_inactive_weights": {
+          "baseline": 0.3344323656447485,
+          "strength365": 0.16668887661159598,
+          "strength180": 0.15852797558992404,
+          "dc365": 0.17913366653092774,
+          "bivariate365": 0.1612171156228037
+        }
+      },
+      "效果": {
+        "n": 99,
+        "primary_hits": 10,
+        "top1": 0.10101010101010101,
+        "wdl_hits": 52,
+        "wdl_accuracy": 0.5252525252525253,
+        "score_log_loss": 2.839981074773154,
+        "wdl_brier": 0.6010128602924893
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/ita.1/artifact.json",
+      "SHA256": "ca69b767362958577e22a4157c23613cb9b6e12604ffb20fcaa2b624413e6dbd",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/ita.1/report.json",
+      "验收": {
+        "top1_difference": 0.030303030303030318,
+        "date_cluster_bootstrap95": [
+          -0.010752688172043012,
+          0.07526881720430108
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "d112800355ce",
+      "赛事": "意甲",
+      "cohort": "ita.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 370,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.5,
+        "DC_weight": 0.5,
+        "ML_weight": 0.5,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.17385648729619493,
+          "home_advantage": 0.08740520766032944,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": 0.005994314801323737,
+            "bivariate": 0.06762777919840852
+          }
+        }
+      },
+      "效果": {
+        "n": 99,
+        "primary_hits": 11,
+        "top1": 0.1111111111111111,
+        "wdl_hits": 49,
+        "wdl_accuracy": 0.494949494949495,
+        "score_log_loss": 2.8495823557943627,
+        "wdl_brier": 0.6041328720675526
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/ita.1/artifact.json",
+      "SHA256": "f005920710f0124a37ab75e448a96c141bb9b3024d40b444a6445bc6dea34cb5",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/ita.1/report.json",
+      "验收": {
+        "top1_difference": 0.010101010101010097,
+        "date_cluster_bootstrap95": [
+          -0.03847087378640777,
+          0.06796668137687552
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "6ecdb8edbf8c",
+      "赛事": "法甲",
+      "cohort": "fra.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 287,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.541241580471769,
+        "away_mean": 1.2962007142364325,
+        "stored_inactive_weights": {
+          "baseline": 0.35787717467210195,
+          "strength365": 0.08677547319645972,
+          "strength180": 0.20783271214157917,
+          "dc365": 0.06305009711638494,
+          "bivariate365": 0.2844645428734742
+        }
+      },
+      "效果": {
+        "n": 79,
+        "primary_hits": 5,
+        "top1": 0.06329113924050633,
+        "wdl_hits": 36,
+        "wdl_accuracy": 0.45569620253164556,
+        "score_log_loss": 3.039515656194784,
+        "wdl_brier": 0.641921532011371
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/fra.1/artifact.json",
+      "SHA256": "403b79855abfe75a6fc05dfe0e4ddaf52f2204e933daadae6335df2ba9b816b8",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/fra.1/report.json",
+      "验收": {
+        "top1_difference": -0.01265822784810127,
+        "date_cluster_bootstrap95": [
+          -0.04054054054054054,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "17a7c6962443",
+      "赛事": "法甲",
+      "cohort": "fra.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 287,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 1.0,
+        "DC_weight": 0.0,
+        "ML_weight": 1.0,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.23776483509196844,
+          "home_advantage": 0.1867257435176849,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.05856364620089226,
+            "bivariate": 0.10640984346547298
+          }
+        }
+      },
+      "效果": {
+        "n": 79,
+        "primary_hits": 7,
+        "top1": 0.08860759493670886,
+        "wdl_hits": 33,
+        "wdl_accuracy": 0.4177215189873418,
+        "score_log_loss": 3.0396408517147386,
+        "wdl_brier": 0.6452378542554034
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/fra.1/artifact.json",
+      "SHA256": "1b6567b71fbbdb0f0e03669bf37c732b9f73ceda0bc66f30bf905d6a5298b9e9",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/fra.1/report.json",
+      "验收": {
+        "top1_difference": 0.025316455696202528,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.058838089691321996
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "4767e6b7454f",
+      "赛事": "荷甲",
+      "cohort": "ned.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 298,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.7682034061914866,
+        "away_mean": 1.5933467020031697,
+        "stored_inactive_weights": {
+          "baseline": 0.1954899736825749,
+          "strength365": 0.1056669110577717,
+          "strength180": 0.17336611824405104,
+          "dc365": 0.41982450581665826,
+          "bivariate365": 0.10565249119894414
+        }
+      },
+      "效果": {
+        "n": 64,
+        "primary_hits": 2,
+        "top1": 0.03125,
+        "wdl_hits": 31,
+        "wdl_accuracy": 0.484375,
+        "score_log_loss": 3.4069913480961636,
+        "wdl_brier": 0.6412199106271695
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/ned.1/artifact.json",
+      "SHA256": "1440e0242882cecc14d4486f88220270ae05d8bdbf00361384432f026e2d3738",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/ned.1/report.json",
+      "验收": {
+        "top1_difference": 0.0,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "b6798970c0a3",
+      "赛事": "荷甲",
+      "cohort": "ned.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 298,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.75,
+        "DC_weight": 0.25,
+        "ML_weight": 0.75,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.40301320395497453,
+          "home_advantage": 0.14065093994514985,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07999431480132373,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 64,
+        "primary_hits": 4,
+        "top1": 0.0625,
+        "wdl_hits": 32,
+        "wdl_accuracy": 0.5,
+        "score_log_loss": 3.4715051565199797,
+        "wdl_brier": 0.6570542886374547
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/ned.1/artifact.json",
+      "SHA256": "2442f03bbe7da265d546af20b9097ca52efbb2435f49a9479d1a88da699f30aa",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/ned.1/report.json",
+      "验收": {
+        "top1_difference": 0.03125,
+        "date_cluster_bootstrap95": [
+          -0.03078125,
+          0.09090909090909091
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "103a2a567a90",
+      "赛事": "葡超",
+      "cohort": "por.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 298,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.4454171004559735,
+        "away_mean": 1.2621138669354393,
+        "stored_inactive_weights": {
+          "baseline": 3.135171062552856e-18,
+          "strength365": 0.23841707806751494,
+          "strength180": 0.26938392450873105,
+          "dc365": 0.25106583910492536,
+          "bivariate365": 0.24113315831882864
+        }
+      },
+      "效果": {
+        "n": 82,
+        "primary_hits": 14,
+        "top1": 0.17073170731707318,
+        "wdl_hits": 40,
+        "wdl_accuracy": 0.4878048780487805,
+        "score_log_loss": 2.8272836002647006,
+        "wdl_brier": 0.593483473083944
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/por.1/artifact.json",
+      "SHA256": "860c6244fed26c1685d5487797b243bc9873ac66fa7f747afe7c6d9b45290746",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/por.1/report.json",
+      "验收": {
+        "top1_difference": 0.0,
+        "date_cluster_bootstrap95": [
+          -0.04445692883895131,
+          0.04938271604938271
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "ca1fcdee27b1",
+      "赛事": "葡超",
+      "cohort": "por.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 298,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.1707636427707226,
+          "home_advantage": 0.16953960998598408,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": 0.005994314801323737,
+            "bivariate": 0.0015081527293891728
+          }
+        }
+      },
+      "效果": {
+        "n": 82,
+        "primary_hits": 14,
+        "top1": 0.17073170731707318,
+        "wdl_hits": 41,
+        "wdl_accuracy": 0.5,
+        "score_log_loss": 2.831269141019745,
+        "wdl_brier": 0.598048091932967
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/por.1/artifact.json",
+      "SHA256": "86e67de8d9244522e988439ab64041455ba08777d21fdd05558b6c2678999f56",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/por.1/report.json",
+      "验收": {
+        "top1_difference": 0.0,
+        "date_cluster_bootstrap95": [
+          -0.03297619047619048,
+          0.03614457831325301
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "86f3e2d77085",
+      "赛事": "巴甲",
+      "cohort": "bra.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 405,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.5610491405208011,
+        "away_mean": 1.1329706638970802,
+        "stored_inactive_weights": {
+          "baseline": 0.13302773606238824,
+          "strength365": 0.2110139431586356,
+          "strength180": 0.24224028197676484,
+          "dc365": 0.20425984952641849,
+          "bivariate365": 0.20945818927579282
+        }
+      },
+      "效果": {
+        "n": 100,
+        "primary_hits": 17,
+        "top1": 0.17,
+        "wdl_hits": 43,
+        "wdl_accuracy": 0.43,
+        "score_log_loss": 2.8205206841033457,
+        "wdl_brier": 0.6251256281174563
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/bra.1/artifact.json",
+      "SHA256": "6fa5b60cec4cc1a51b6ff019072da029cd7d558a33a203ab8c2846b97efdf318",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/bra.1/report.json",
+      "验收": {
+        "top1_difference": 0.009999999999999981,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.03193002940667696
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "e52f80b1d004",
+      "赛事": "巴甲",
+      "cohort": "bra.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 405,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.10403453523054852,
+          "home_advantage": 0.3367687818183059,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.05262715246309353,
+            "bivariate": 0.012138778285889164
+          }
+        }
+      },
+      "效果": {
+        "n": 100,
+        "primary_hits": 15,
+        "top1": 0.15,
+        "wdl_hits": 45,
+        "wdl_accuracy": 0.45,
+        "score_log_loss": 2.814126388584784,
+        "wdl_brier": 0.6253977842520263
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/bra.1/artifact.json",
+      "SHA256": "bfb1ec1472a7503c7f70bd69bbd349d88df652d7ecaac436b4e36fdeef415191",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/bra.1/report.json",
+      "验收": {
+        "top1_difference": -0.020000000000000018,
+        "date_cluster_bootstrap95": [
+          -0.059833333333333336,
+          0.017391304347826087
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "76e4f2cf3ad4",
+      "赛事": "瑞典超",
+      "cohort": "swe.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 400,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.5536506229855622,
+        "away_mean": 1.321526192054646,
+        "stored_inactive_weights": {
+          "baseline": 0.26555087393120647,
+          "strength365": 0.15804440728559782,
+          "strength180": 0.278622466505111,
+          "dc365": 0.19178115060428558,
+          "bivariate365": 0.10600110167379916
+        }
+      },
+      "效果": {
+        "n": 87,
+        "primary_hits": 10,
+        "top1": 0.11494252873563218,
+        "wdl_hits": 48,
+        "wdl_accuracy": 0.5517241379310345,
+        "score_log_loss": 3.0255189922191774,
+        "wdl_brier": 0.5978145430315287
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/swe.1/artifact.json",
+      "SHA256": "ecaf574c2e639139a404ec1f30432c8b27576b310a285843455f2e264832dc27",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/swe.1/report.json",
+      "验收": {
+        "top1_difference": -0.022988505747126436,
+        "date_cluster_bootstrap95": [
+          -0.056179775280898875,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "36f4e37cbe0a",
+      "赛事": "瑞典超",
+      "cohort": "swe.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 400,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.2658263520249297,
+          "home_advantage": 0.1471924655257158,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.06676333871213132,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 87,
+        "primary_hits": 7,
+        "top1": 0.08045977011494253,
+        "wdl_hits": 47,
+        "wdl_accuracy": 0.5402298850574713,
+        "score_log_loss": 3.0354074018335266,
+        "wdl_brier": 0.6037376938584924
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/swe.1/artifact.json",
+      "SHA256": "f540e29e1f11457061b332118412145d8e3d9966c06d23eb9564acbcf34ec5d2",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/swe.1/report.json",
+      "验收": {
+        "top1_difference": -0.034482758620689655,
+        "date_cluster_bootstrap95": [
+          -0.07142857142857142,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "5ffe812cca44",
+      "赛事": "沙特联",
+      "cohort": "ksa.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 336,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.5175682648361837,
+        "away_mean": 1.419000241234639,
+        "stored_inactive_weights": {
+          "baseline": 0.23626903542929648,
+          "strength365": 0.270389067317162,
+          "strength180": 0.17348508255851372,
+          "dc365": 0.2615149491301814,
+          "bivariate365": 0.05834186556484645
+        }
+      },
+      "效果": {
+        "n": 86,
+        "primary_hits": 11,
+        "top1": 0.12790697674418605,
+        "wdl_hits": 44,
+        "wdl_accuracy": 0.5116279069767442,
+        "score_log_loss": 3.0117568200486464,
+        "wdl_brier": 0.575502593188997
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/ksa.1/artifact.json",
+      "SHA256": "4a59e33f7acce4da67b35b9dcee9d94abfd798bbb80fc9c25ef472fa8fba8dec",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/ksa.1/report.json",
+      "验收": {
+        "top1_difference": -0.011627906976744193,
+        "date_cluster_bootstrap95": [
+          -0.053763440860215055,
+          0.025324569944823065
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "fb227728708e",
+      "赛事": "沙特联",
+      "cohort": "ksa.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 336,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.26453107419247396,
+          "home_advantage": 0.09785764047084816,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07999431480132373,
+            "bivariate": 0.1313106635294438
+          }
+        }
+      },
+      "效果": {
+        "n": 86,
+        "primary_hits": 11,
+        "top1": 0.12790697674418605,
+        "wdl_hits": 44,
+        "wdl_accuracy": 0.5116279069767442,
+        "score_log_loss": 2.984971335348249,
+        "wdl_brier": 0.5713164112967332
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/ksa.1/artifact.json",
+      "SHA256": "f3e45a331a3a0e7ad3cb0221ff3cb0cf45ea2a4bd6c6df55a5a4a58df96f1759",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/ksa.1/report.json",
+      "验收": {
+        "top1_difference": 0.0,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "231345fca580",
+      "赛事": "英冠",
+      "cohort": "eng.2",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 540,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.504554086987362,
+        "away_mean": 1.2223612972099784,
+        "stored_inactive_weights": {
+          "baseline": 0.19781851162384267,
+          "strength365": 0.16534567859700225,
+          "strength180": 0.20902553893228154,
+          "dc365": 0.26247131776221705,
+          "bivariate365": 0.1653389530846566
+        }
+      },
+      "效果": {
+        "n": 132,
+        "primary_hits": 12,
+        "top1": 0.09090909090909091,
+        "wdl_hits": 55,
+        "wdl_accuracy": 0.4166666666666667,
+        "score_log_loss": 2.959132048362213,
+        "wdl_brier": 0.6491912017833095
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/eng.2/artifact.json",
+      "SHA256": "72beee6485c2c700219ab800fc1ce20794b6b41f096dea3b13214f9b8d283fcc",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/eng.2/report.json",
+      "验收": {
+        "top1_difference": 0.015151515151515152,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.03871092773193298
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "57aaaf0199f4",
+      "赛事": "英冠",
+      "cohort": "eng.2",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 540,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.19157955104915736,
+          "home_advantage": 0.20375497844968124,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07999431480132373,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 132,
+        "primary_hits": 14,
+        "top1": 0.10606060606060606,
+        "wdl_hits": 57,
+        "wdl_accuracy": 0.4318181818181818,
+        "score_log_loss": 2.958421240889571,
+        "wdl_brier": 0.647297077852537
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/eng.2/artifact.json",
+      "SHA256": "8b5450da4931868d9e352c06937a762546f0a08b30cf055be3f809f2ea7cea54",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/eng.2/report.json",
+      "验收": {
+        "top1_difference": 0.015151515151515152,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.03871092773193298
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "cea6e00a2ad0",
+      "赛事": "挪超",
+      "cohort": "nor.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 390,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.836036384112795,
+        "away_mean": 1.3606126391219773,
+        "stored_inactive_weights": {
+          "baseline": 0.1290924840876396,
+          "strength365": 0.3466329963489984,
+          "strength180": 3.0442963254214973e-19,
+          "dc365": 0.18267838092667069,
+          "bivariate365": 0.34159613863669136
+        }
+      },
+      "效果": {
+        "n": 93,
+        "primary_hits": 9,
+        "top1": 0.0967741935483871,
+        "wdl_hits": 47,
+        "wdl_accuracy": 0.5053763440860215,
+        "score_log_loss": 3.179001856556557,
+        "wdl_brier": 0.5904548296864852
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/nor.1/artifact.json",
+      "SHA256": "7c980a4cf9f4a2c8f47f44eb761f5aa9b75e1933872406416c41e3840ce8ffd3",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/nor.1/report.json",
+      "验收": {
+        "top1_difference": 0.0,
+        "date_cluster_bootstrap95": [
+          -0.02857142857142857,
+          0.030935889175257688
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "7b36d9989b59",
+      "赛事": "挪超",
+      "cohort": "nor.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 390,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.75,
+        "DC_weight": 0.25,
+        "ML_weight": 0.75,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.2730868020754987,
+          "home_advantage": 0.29976468779791016,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07451242418286708,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 93,
+        "primary_hits": 11,
+        "top1": 0.11827956989247312,
+        "wdl_hits": 49,
+        "wdl_accuracy": 0.5268817204301075,
+        "score_log_loss": 3.1442423648213724,
+        "wdl_brier": 0.5764941546933227
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/nor.1/artifact.json",
+      "SHA256": "086fd30bf2ba48fd246af72cd30476007f2e5684f2555f017463d210dbaf31af",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/nor.1/report.json",
+      "验收": {
+        "top1_difference": 0.02150537634408603,
+        "date_cluster_bootstrap95": [
+          -0.02971039603960396,
+          0.07692307692307693
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "156fb1fb02f1",
+      "赛事": "美职联",
+      "cohort": "usa.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-10-07",
+      "训练行数": 426,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.8184854775432562,
+        "away_mean": 1.4154388774776752,
+        "stored_inactive_weights": {
+          "baseline": 0.07171031968998101,
+          "strength365": 0.12467767452466916,
+          "strength180": 0.371254458185386,
+          "dc365": 0.12799233690980685,
+          "bivariate365": 0.304365210690157
+        }
+      },
+      "效果": {
+        "n": 100,
+        "primary_hits": 12,
+        "top1": 0.12,
+        "wdl_hits": 42,
+        "wdl_accuracy": 0.42,
+        "score_log_loss": 3.223969707698994,
+        "wdl_brier": 0.6623441217547535
+      },
+      "工件": "/workspace/WCPP/models/weighted-20261012/usa.1/artifact.json",
+      "SHA256": "ff328c4edd392a31eb414ec0ba188290e56524506dd80cdd011e61da3b9188e7",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/usa.1/report.json",
+      "验收": {
+        "top1_difference": -0.009999999999999995,
+        "date_cluster_bootstrap95": [
+          -0.03125,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "98182c0f7609",
+      "赛事": "美职联",
+      "cohort": "usa.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-10-07",
+      "训练行数": 426,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 0.75,
+        "DC_weight": 0.25,
+        "ML_weight": 0.75,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.33262048911595554,
+          "home_advantage": 0.26064690488660874,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.016143792098708042,
+            "bivariate": 0.09716748293304515
+          }
+        }
+      },
+      "效果": {
+        "n": 100,
+        "primary_hits": 8,
+        "top1": 0.08,
+        "wdl_hits": 39,
+        "wdl_accuracy": 0.39,
+        "score_log_loss": 3.208737066020151,
+        "wdl_brier": 0.6642564353018244
+      },
+      "工件": "/workspace/WCPP/models/ml-20261012/usa.1/artifact.json",
+      "SHA256": "15d3c0f5d570792545b6659590a4be49666944af9be9248f26fcffde98620478",
+      "评估来源": "/workspace/WCPP/models/ml-20261012/usa.1/report.json",
+      "验收": {
+        "top1_difference": -0.039999999999999994,
+        "date_cluster_bootstrap95": [
+          -0.08163265306122448,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "2cbc77178460",
+      "赛事": "欧冠新制联赛阶段",
+      "cohort": "uefa.champions:NEW_FORMAT:league_phase",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-09-10",
+      "训练行数": 306,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 2.0678990844873075,
+        "away_mean": 1.3967796876969147,
+        "stored_inactive_weights": {
+          "baseline": 0.025654318314884062,
+          "strength365": 0.32879424573653593,
+          "strength180": 7.414023646541061e-19,
+          "dc365": 0.3167775635697477,
+          "bivariate365": 0.32877387237883227
+        }
+      },
+      "效果": {
+        "n": 81,
+        "primary_hits": 4,
+        "top1": 0.04938271604938271,
+        "wdl_hits": 45,
+        "wdl_accuracy": 0.5555555555555556,
+        "score_log_loss": 3.2167378682196675,
+        "wdl_brier": 0.5428643800177759
+      },
+      "工件": "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/current-artifact.json",
+      "SHA256": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759",
+      "评估来源": "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-report.json",
+      "验收": {
+        "top1_difference": 0.0,
+        "date_cluster_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "acceptance_gate_passed": false,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "78474b7ddf9b",
+      "赛事": "欧冠新制联赛阶段",
+      "cohort": "uefa.champions:NEW_FORMAT:league_phase",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-ML-UCL-0.1",
+      "训练截止": "2026-09-10",
+      "训练行数": 306,
+      "评估口径": "历史开发时间留出/滚动拟合诊断；不是未来实绩，也不是最终全历史工件的未见测试",
+      "参数": {
+        "alpha": 1.0,
+        "DC_weight": 0.0,
+        "ML_weight": 1.0,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.32653219814406126,
+          "home_advantage": 0.32715611748368506,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": 0.005994314801323737,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 81,
+        "primary_hits": 8,
+        "top1": 0.09876543209876543,
+        "wdl_hits": 48,
+        "wdl_accuracy": 0.5925925925925926,
+        "score_log_loss": 3.1888298588182202,
+        "wdl_brier": 0.5263396524976691
+      },
+      "工件": "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-artifact.json",
+      "SHA256": "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e",
+      "评估来源": "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-report.json",
+      "验收": {
+        "top1_difference": 0.04938271604938271,
+        "date_cluster_bootstrap95": [
+          0.013888888888888888,
+          0.08641975308641975
+        ],
+        "acceptance_gate_passed": true,
+        "draws": 2000,
+        "rule": "positive lower Top1 interval, nonworse score log loss and WDL Brier; no test-based reselection",
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "aeeed863b907",
+      "赛事": "日职联",
+      "cohort": "jpn.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-MAIN-1.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 82,
+      "评估口径": "未找到该工件独立评分；不借其他版本成绩",
+      "参数": {
+        "method": "v01_baseline",
+        "home_mean": 1.6252762823598759,
+        "away_mean": 1.356785205290889,
+        "nuisance": {
+          "poisson": 0.0
+        },
+        "half_life_days": 180,
+        "smoothing_prior": 8
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/reports/japan-korea-20261010/jpn.1-artifact.json",
+      "SHA256": "995f8686ff6348e5f0c6b40a8838a714c4118036968285d01e188e6db29f4ab2",
+      "评估来源": null,
+      "验收": {
+        "acceptance_gate_passed": false,
+        "status": "BASELINE_ONLY_NOT_FULL_CANDIDATE_VALIDATION"
+      }
+    },
+    {
+      "id": "8ae69048d9df",
+      "赛事": "日职联",
+      "cohort": "jpn.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-10",
+      "训练行数": 1152,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 86,
+        "scored": 86,
+        "primary_hits": 10,
+        "wdl_hits": 48,
+        "score_log_loss": 3.0573417794528592,
+        "top1": 0.11627906976744186,
+        "wdl_accuracy": 0.5581395348837209
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-extended-003/jpn.1/artifact.json",
+      "SHA256": "f5532bb519983e04eb44c6778df405aaa7420790f78c84b8b6047ea13011b12a",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-extended-001/jpn.1/audit-M2-h180-r10-scores.json",
+      "验收": {
+        "formal_promotion": false
+      },
+      "运行备注": "源码依赖须匹配；J1昨日实测失败，不能仅凭登记称可用"
+    },
+    {
+      "id": "1ec23a2ed9d6",
+      "赛事": "韩K1",
+      "cohort": "kor.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-MAIN-1.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 181,
+      "评估口径": "未找到该工件独立评分；不借其他版本成绩",
+      "参数": {
+        "method": "v01_baseline",
+        "home_mean": 1.2135452779305849,
+        "away_mean": 1.2908978030503564,
+        "nuisance": {
+          "poisson": 0.0
+        },
+        "half_life_days": 180,
+        "smoothing_prior": 8
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/reports/japan-korea-20261010/kor.1-artifact.json",
+      "SHA256": "f2c9a03bf4ddaa7bcb4eabaf2cb94434f9694e18d26dd6721af602e65aa9dd62",
+      "评估来源": null,
+      "验收": {
+        "acceptance_gate_passed": false,
+        "status": "BASELINE_ONLY_NOT_FULL_CANDIDATE_VALIDATION"
+      }
+    },
+    {
+      "id": "c21649f75634",
+      "赛事": "韩K1",
+      "cohort": "kor.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 777,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h365-r30",
+          "half_life": 365,
+          "ridge": 30,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 365,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 148,
+        "scored": 148,
+        "primary_hits": 19,
+        "wdl_hits": 48,
+        "score_log_loss": 2.934144392380279,
+        "top1": 0.12837837837837837,
+        "wdl_accuracy": 0.32432432432432434
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-extended-003/kor.1/artifact.json",
+      "SHA256": "6b6d9bd66bb2f7dcb1f214407ed027f720d6cd4f823c120061ed1b172631014c",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-extended-001/kor.1/audit-M2-h365-r30-scores.json",
+      "验收": {
+        "formal_promotion": false
+      },
+      "运行备注": "源码依赖须匹配；J1昨日实测失败，不能仅凭登记称可用"
+    },
+    {
+      "id": "231abfdea80a",
+      "赛事": "澳超",
+      "cohort": "aus.1",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-AUS-CURRENT-CONSTANT-0.1",
+      "训练截止": "2026-04-26",
+      "训练行数": 2807,
+      "评估口径": "未找到该工件独立评分；不借其他版本成绩",
+      "参数": {
+        "constant": [
+          1.602778767367296,
+          1.3152832205201284
+        ],
+        "fit_end": "2026-04-26",
+        "fit_n": 2807
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/models/active-routes-20261027/aus.1/current-artifact.json",
+      "SHA256": "f3e9e25f84a468ed937c0d82c041c4ba0f16cb641e36f63e7515a00b2415964a",
+      "评估来源": null,
+      "验收": {
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "fc3b59d1e13a",
+      "赛事": "澳超",
+      "cohort": "aus.1",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-AUS-EXPERT-0.1.1-DATAFIX",
+      "训练截止": "2026-04-26",
+      "训练行数": 2807,
+      "评估口径": "未找到该工件独立评分；不借其他版本成绩",
+      "参数": {
+        "configuration": "poisson",
+        "half_life": 365,
+        "ridge": 20,
+        "rho": 0.0
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/models/aus-expert-20261016-boundary-refit-v1/artifact.json",
+      "SHA256": "6cd38d5fa0dc9d5413ec4e062bcb209a598763b419f8bab54f60352dd26bef5d",
+      "评估来源": null,
+      "验收": {
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "c8dc4e8e8c7b",
+      "赛事": "亚冠精英联赛阶段",
+      "cohort": "afc.champions:ELITE:league_phase",
+      "角色": "current",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+      "训练截止": "2026-10-12",
+      "训练行数": 207,
+      "评估口径": "未找到该工件独立评分；不借其他版本成绩",
+      "参数": {
+        "constant": [
+          1.7004830917874396,
+          1.21256038647343
+        ],
+        "fit_end": "2026-10-12",
+        "fit_n": 207
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/models/active-routes-20261027/afc.champions-ELITE-league_phase/current-artifact.json",
+      "SHA256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+      "评估来源": null,
+      "验收": {
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "2c2092491f00",
+      "赛事": "亚冠精英联赛阶段",
+      "cohort": "afc.champions:ELITE:league_phase",
+      "角色": "test",
+      "状态": "当前默认研究路由；非正式晋级",
+      "版本": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+      "训练截止": "2026-10-12",
+      "训练行数": 207,
+      "评估口径": "未找到该工件独立评分；不借其他版本成绩",
+      "参数": {
+        "half_life": 365,
+        "ridge": 20,
+        "fit_end": "2026-10-12",
+        "fit_n": 207
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/models/active-routes-20261027/afc.champions-ELITE-league_phase/test-artifact.json",
+      "SHA256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+      "评估来源": null,
+      "验收": {
+        "formal_promotion": false
+      }
+    },
+    {
+      "id": "5b43aa8ee7bd",
+      "赛事": "英超",
+      "cohort": "eng.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 2330,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r30",
+          "half_life": 180,
+          "ridge": 30,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 480,
+        "scored": 480,
+        "primary_hits": 59,
+        "wdl_hits": 225,
+        "score_log_loss": 2.923065381291207,
+        "top1": 0.12291666666666666,
+        "wdl_accuracy": 0.46875
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-003/eng.1/artifact.json",
+      "SHA256": "c2c88d343fa68f150d8b043e703c7de974a4286ddbaf846254744400e7916db3",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-run-003/eng.1/audit-M2-h180-r30-scores.json"
+    },
+    {
+      "id": "ee9ae52a8e5a",
+      "赛事": "英冠",
+      "cohort": "eng.2",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 3408,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 696,
+        "scored": 696,
+        "primary_hits": 88,
+        "wdl_hits": 300,
+        "score_log_loss": 2.8968955924069073,
+        "top1": 0.12643678160919541,
+        "wdl_accuracy": 0.43103448275862066
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-003/eng.2/artifact.json",
+      "SHA256": "328c85a962b0a1f230476bb4c501f370c0a5a95ea2cecd4da70fa1305ef98892",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-run-003/eng.2/audit-M2-h180-r10-scores.json"
+    },
+    {
+      "id": "2ababe8d1eb8",
+      "赛事": "西甲",
+      "cohort": "esp.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 1967,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h365-r30",
+          "half_life": 365,
+          "ridge": 30,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 365,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 382,
+        "scored": 382,
+        "primary_hits": 61,
+        "wdl_hits": 197,
+        "score_log_loss": 2.837077276852995,
+        "top1": 0.15968586387434555,
+        "wdl_accuracy": 0.5157068062827225
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-003/esp.1/artifact.json",
+      "SHA256": "2ddc62c9ce232e655e04f19af73ce96bb85cf835cf3a9776d1a921c5038807c9",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-run-003/esp.1/audit-M2-h365-r30-scores.json"
+    },
+    {
+      "id": "3110e4f362b4",
+      "赛事": "法甲",
+      "cohort": "fra.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 2100,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 394,
+        "scored": 394,
+        "primary_hits": 41,
+        "wdl_hits": 188,
+        "score_log_loss": 3.0580737522610124,
+        "top1": 0.10406091370558376,
+        "wdl_accuracy": 0.47715736040609136
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-003/fra.1/artifact.json",
+      "SHA256": "d777d5e81a12dcba692dbf73efe5bc263fcd7712270ffa6c3508f5d7fe89ca76",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-run-003/fra.1/audit-M2-h180-r10-scores.json"
+    },
+    {
+      "id": "6e77817d74ac",
+      "赛事": "德甲",
+      "cohort": "ger.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 1567,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M3-process-a0.5",
+          "half_life": 365,
+          "ridge": 30,
+          "group": "process",
+          "alpha": 0.5
+        },
+        "half_life": 365,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 316,
+        "scored": 316,
+        "primary_hits": 27,
+        "wdl_hits": 150,
+        "score_log_loss": 3.1692110275525045,
+        "top1": 0.08544303797468354,
+        "wdl_accuracy": 0.47468354430379744
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-003/ger.1/artifact.json",
+      "SHA256": "076a898f901a01e8ba14c1085167893ce6700da3ac885bb8f1422b2d934fdb31",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-run-003/ger.1/audit-M3-process-a0.5-scores.json"
+    },
+    {
+      "id": "963fdada85a3",
+      "赛事": "意甲",
+      "cohort": "ita.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-09-20",
+      "训练行数": 2330,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h365-r10",
+          "half_life": 365,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 365,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 450,
+        "scored": 450,
+        "primary_hits": 57,
+        "wdl_hits": 230,
+        "score_log_loss": 2.8140995150773214,
+        "top1": 0.12666666666666668,
+        "wdl_accuracy": 0.5111111111111111
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-003/ita.1/artifact.json",
+      "SHA256": "b99e613f5b076a79598810483aaafa440d15e9a7988e3cfdeaf09c09d3ae84b5",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-run-003/ita.1/audit-M2-h365-r10-scores.json"
+    },
+    {
+      "id": "c0fbd6a9f70e",
+      "赛事": "荷甲",
+      "cohort": "ned.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 1288,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h365-r10",
+          "half_life": 365,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 365,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 235,
+        "scored": 235,
+        "primary_hits": 30,
+        "wdl_hits": 117,
+        "score_log_loss": 3.1131149879507105,
+        "top1": 0.1276595744680851,
+        "wdl_accuracy": 0.4978723404255319
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-003/ned.1/artifact.json",
+      "SHA256": "701cc69905f019c55bdafa5788d55eb6f9d2476d46f5697ad390d4c272bfb8f1",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-run-003/ned.1/audit-M2-h365-r10-scores.json"
+    },
+    {
+      "id": "bdfcc8fa3973",
+      "赛事": "葡超",
+      "cohort": "por.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 1900,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M3-process-a0.5",
+          "half_life": 365,
+          "ridge": 30,
+          "group": "process",
+          "alpha": 0.5
+        },
+        "half_life": 365,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 397,
+        "scored": 397,
+        "primary_hits": 51,
+        "wdl_hits": 212,
+        "score_log_loss": 2.7976193055282255,
+        "top1": 0.12846347607052896,
+        "wdl_accuracy": 0.5340050377833753
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-003/por.1/artifact.json",
+      "SHA256": "229234eaf5aa7707ef952d1fc09c312724a1e4ea42afa858771c9dd8f46cee60",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-run-003/por.1/audit-M3-process-a0.5-scores.json"
+    },
+    {
+      "id": "aa1b8f5adbd5",
+      "赛事": "德乙",
+      "cohort": "ger.2",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 1892,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h365-r30",
+          "half_life": 365,
+          "ridge": 30,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 365,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 110,
+        "scored": 110,
+        "primary_hits": 12,
+        "wdl_hits": 50,
+        "score_log_loss": 3.1919821836983377,
+        "top1": 0.10909090909090909,
+        "wdl_accuracy": 0.45454545454545453
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-extended-003/ger.2/artifact.json",
+      "SHA256": "d1bd5666de0c271861c21326ec9b562fe2308e8a10b3e6a35c8e46216f90fb76",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-extended-001/ger.2/audit-M2-h365-r30-scores.json"
+    },
+    {
+      "id": "8ae69048d9df",
+      "赛事": "日职联",
+      "cohort": "jpn.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-10",
+      "训练行数": 1152,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 86,
+        "scored": 86,
+        "primary_hits": 10,
+        "wdl_hits": 48,
+        "score_log_loss": 3.0573417794528592,
+        "top1": 0.11627906976744186,
+        "wdl_accuracy": 0.5581395348837209
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-extended-003/jpn.1/artifact.json",
+      "SHA256": "f5532bb519983e04eb44c6778df405aaa7420790f78c84b8b6047ea13011b12a",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-extended-001/jpn.1/audit-M2-h180-r10-scores.json"
+    },
+    {
+      "id": "1f5b9e18478b",
+      "赛事": "日职乙",
+      "cohort": "jpn.2",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-10",
+      "训练行数": 1318,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h365-r10",
+          "half_life": 365,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 365,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 96,
+        "scored": 96,
+        "primary_hits": 14,
+        "wdl_hits": 40,
+        "score_log_loss": 2.9518315113903744,
+        "top1": 0.14583333333333334,
+        "wdl_accuracy": 0.4166666666666667
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-extended-003/jpn.2/artifact.json",
+      "SHA256": "aaeffc37b44703f6667248e871175ccf869a7952658ba71a788647b630b10bf8",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-extended-001/jpn.2/audit-M2-h365-r10-scores.json"
+    },
+    {
+      "id": "c21649f75634",
+      "赛事": "韩K1",
+      "cohort": "kor.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 777,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h365-r30",
+          "half_life": 365,
+          "ridge": 30,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 365,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 148,
+        "scored": 148,
+        "primary_hits": 19,
+        "wdl_hits": 48,
+        "score_log_loss": 2.934144392380279,
+        "top1": 0.12837837837837837,
+        "wdl_accuracy": 0.32432432432432434
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-extended-003/kor.1/artifact.json",
+      "SHA256": "6b6d9bd66bb2f7dcb1f214407ed027f720d6cd4f823c120061ed1b172631014c",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-extended-001/kor.1/audit-M2-h365-r30-scores.json"
+    },
+    {
+      "id": "6131fc1e7f40",
+      "赛事": "韩K2",
+      "cohort": "kor.2",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2025-11-23",
+      "训练行数": 741,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 189,
+        "scored": 189,
+        "primary_hits": 27,
+        "wdl_hits": 84,
+        "score_log_loss": 2.866138592875876,
+        "top1": 0.14285714285714285,
+        "wdl_accuracy": 0.4444444444444444
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-extended-003/kor.2/artifact.json",
+      "SHA256": "735ba4d3a41faf76b955a949786562f13762e2d18bb9a7e1b3a41662847fc91d",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-extended-001/kor.2/audit-M2-h180-r10-scores.json"
+    },
+    {
+      "id": "0a567309d86c",
+      "赛事": "荷乙",
+      "cohort": "ned.2",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 1444,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r30",
+          "half_life": 180,
+          "ridge": 30,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 131,
+        "scored": 131,
+        "primary_hits": 12,
+        "wdl_hits": 71,
+        "score_log_loss": 3.257734925219218,
+        "top1": 0.0916030534351145,
+        "wdl_accuracy": 0.5419847328244275
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-extended-003/ned.2/artifact.json",
+      "SHA256": "37b2415e801e702ebbc69a1a2e423cad4cad246845dee5a8d80669a35cd3db0e",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-extended-001/ned.2/audit-M2-h180-r30-scores.json"
+    },
+    {
+      "id": "e790efbcf547",
+      "赛事": "沙特联",
+      "cohort": "ksa.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 1138,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r30",
+          "half_life": 180,
+          "ridge": 30,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 30,
+        "rho": null
+      },
+      "效果": {
+        "n": 126,
+        "scored": 126,
+        "primary_hits": 15,
+        "wdl_hits": 67,
+        "score_log_loss": 2.996191359725745,
+        "top1": 0.11904761904761904,
+        "wdl_accuracy": 0.5317460317460317
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-repair-001/ksa.1/artifact.json",
+      "SHA256": "bc7a8f9c665e838ebe5f9a7294fa0b52629631afa33dc53d31dad7c4eefd9546",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-repair-001/ksa.1/audit-M2-h180-r30-scores.json"
+    },
+    {
+      "id": "c7075bdfc9bd",
+      "赛事": "美职联",
+      "cohort": "usa.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-07",
+      "训练行数": 1902,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 317,
+        "scored": 317,
+        "primary_hits": 31,
+        "wdl_hits": 139,
+        "score_log_loss": 3.14340352603193,
+        "top1": 0.09779179810725552,
+        "wdl_accuracy": 0.4384858044164038
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-repair-001/usa.1/artifact.json",
+      "SHA256": "3d5248a05033dcc39f33ed2f7257259474840d606e0c6ce110fdbb6182894e2a",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-repair-001/usa.1/audit-M2-h180-r10-scores.json"
+    },
+    {
+      "id": "011024257602",
+      "赛事": "巴甲",
+      "cohort": "bra.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2025-12-07",
+      "训练行数": 1140,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h365-r10",
+          "half_life": 365,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 365,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 270,
+        "scored": 270,
+        "primary_hits": 36,
+        "wdl_hits": 140,
+        "score_log_loss": 2.882090405098831,
+        "top1": 0.13333333333333333,
+        "wdl_accuracy": 0.5185185185185185
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-secondary-004/bra.1/artifact.json",
+      "SHA256": "598c27b4ba8c3369328d3404d6b5653dfcd03c4519e3d404436de03dec41d47a",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-secondary-002/bra.1/audit-M2-h365-r10-scores.json"
+    },
+    {
+      "id": "66f9de26b56c",
+      "赛事": "挪超",
+      "cohort": "nor.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 889,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 148,
+        "scored": 148,
+        "primary_hits": 18,
+        "wdl_hits": 83,
+        "score_log_loss": 3.088365040761012,
+        "top1": 0.12162162162162163,
+        "wdl_accuracy": 0.5608108108108109
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-secondary-004/nor.1/artifact.json",
+      "SHA256": "c01c5ca22bf5272f56c83e2a36ad5380842e35a0c19b35f2bab1393bb4311b71",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-secondary-002/nor.1/audit-M2-h180-r10-scores.json"
+    },
+    {
+      "id": "29b9c3da0c98",
+      "赛事": "瑞典超",
+      "cohort": "swe.1",
+      "角色": "systematic候选",
+      "状态": "独立候选；是否被当前入口引用以默认表为准",
+      "版本": "WCPP-SYSTEMATIC-RESEARCH-0.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 897,
+      "评估口径": "评分属于此前audit拟合；最终全历史工件已含audit标签，不能移植为其未见成绩",
+      "参数": {
+        "configuration": {
+          "name": "M2-h180-r10",
+          "half_life": 180,
+          "ridge": 10,
+          "group": "core",
+          "alpha": 0.0
+        },
+        "half_life": 180,
+        "ridge": 10,
+        "rho": null
+      },
+      "效果": {
+        "n": 169,
+        "scored": 169,
+        "primary_hits": 18,
+        "wdl_hits": 79,
+        "score_log_loss": 3.080189134637319,
+        "top1": 0.10650887573964497,
+        "wdl_accuracy": 0.46745562130177515
+      },
+      "工件": "/workspace/WCPP/models/systematic-20261015-final-secondary-004/swe.1/artifact.json",
+      "SHA256": "6b77bf497d0d852d03f79ba9516348edbfbf2ec4c607b1de2e97b366f56662fd",
+      "评估来源": "/workspace/WCPP/models/systematic-20261015-secondary-002/swe.1/audit-M2-h180-r10-scores.json"
+    },
+    {
+      "id": "9b6850edd673",
+      "赛事": "墨超Apertura常规赛",
+      "cohort": "mex.1:apertura:regular",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-09-28",
+      "训练行数": 237,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.75,
+        "DC_weight": 0.25,
+        "ML_weight": 0.75,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.28270701272141113,
+          "home_advantage": 0.20735145705462363,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": 0.005994314801323737,
+            "bivariate": 0.16990183657058416
+          }
+        }
+      },
+      "效果": {
+        "n": 52,
+        "primary_hits": 9,
+        "top1": 0.17307692307692307,
+        "wdl_hits": 24,
+        "wdl_accuracy": 0.46153846153846156,
+        "score_log_loss": 3.067531526799097,
+        "wdl_brier": 0.6401980870354266
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/mex.1-apertura-regular/artifact.json",
+      "SHA256": "d4f5813e2ec7b32e2c831d815fc89016f0d32ed01ee300d912ff90475e9795d8",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/mex.1-apertura-regular/report.json"
+    },
+    {
+      "id": "8f03708d8ea4",
+      "赛事": "英超",
+      "cohort": "eng.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-09-20",
+      "训练行数": 2330,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 1.0,
+        "DC_weight": 0.0,
+        "ML_weight": 1.0,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.2468375022751042,
+          "home_advantage": 0.1714235914540679,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.023302450046455245,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 86,
+        "primary_hits": 13,
+        "top1": 0.1511627906976744,
+        "wdl_hits": 34,
+        "wdl_accuracy": 0.3953488372093023,
+        "score_log_loss": 2.9637063567361763,
+        "wdl_brier": 0.636952234548487
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/eng.1/artifact.json",
+      "SHA256": "9c25ffb820541d5a69b539e6d726a4e3f1eb76dcd06a5e112e6b43c74b6d8daf",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/eng.1/report.json"
+    },
+    {
+      "id": "b3fc6d9fb2d2",
+      "赛事": "西甲",
+      "cohort": "esp.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-09",
+      "训练行数": 369,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.12740880444304756,
+          "home_advantage": 0.3252392881089966,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.0314435093992678,
+            "bivariate": 0.079365390278839
+          }
+        }
+      },
+      "效果": {
+        "n": 97,
+        "primary_hits": 19,
+        "top1": 0.1958762886597938,
+        "wdl_hits": 51,
+        "wdl_accuracy": 0.5257731958762887,
+        "score_log_loss": 2.9670641850897757,
+        "wdl_brier": 0.5985937932327378
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/esp.1/artifact.json",
+      "SHA256": "f0c8aa183cc816470167188dd5ec2493699bd24143b0a5fc25fbb07b22aa04c6",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/esp.1/report.json"
+    },
+    {
+      "id": "dcefbf7330db",
+      "赛事": "德甲",
+      "cohort": "ger.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-09",
+      "训练行数": 289,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.5,
+        "DC_weight": 0.5,
+        "ML_weight": 0.5,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.3148206117832889,
+          "home_advantage": 0.27434510417788466,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.06008328584088075,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 81,
+        "primary_hits": 7,
+        "top1": 0.08641975308641975,
+        "wdl_hits": 41,
+        "wdl_accuracy": 0.5061728395061729,
+        "score_log_loss": 3.2616842700269104,
+        "wdl_brier": 0.6028265469758598
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/ger.1/artifact.json",
+      "SHA256": "872993cfa3da70e7614b57df6060076826e00760d2c0cf949bd1eff1f099308e",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/ger.1/report.json"
+    },
+    {
+      "id": "7775324dd7b4",
+      "赛事": "意甲",
+      "cohort": "ita.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-09-20",
+      "训练行数": 370,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.5,
+        "DC_weight": 0.5,
+        "ML_weight": 0.5,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.17385648729619493,
+          "home_advantage": 0.08740520766032944,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": 0.005994314801323737,
+            "bivariate": 0.06762777919840852
+          }
+        }
+      },
+      "效果": {
+        "n": 99,
+        "primary_hits": 12,
+        "top1": 0.12121212121212122,
+        "wdl_hits": 50,
+        "wdl_accuracy": 0.5050505050505051,
+        "score_log_loss": 2.836617869451229,
+        "wdl_brier": 0.6025501277115721
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/ita.1/artifact.json",
+      "SHA256": "c79d1bbfe257e393c1ae4fd175964e2e434bc6664931fa2d8202897398d289cb",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/ita.1/report.json"
+    },
+    {
+      "id": "c80d0682cc13",
+      "赛事": "法甲",
+      "cohort": "fra.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-09",
+      "训练行数": 287,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 1.0,
+        "DC_weight": 0.0,
+        "ML_weight": 1.0,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.23776483509196844,
+          "home_advantage": 0.1867257435176849,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.05856364620089226,
+            "bivariate": 0.10640984346547298
+          }
+        }
+      },
+      "效果": {
+        "n": 79,
+        "primary_hits": 6,
+        "top1": 0.0759493670886076,
+        "wdl_hits": 40,
+        "wdl_accuracy": 0.5063291139240507,
+        "score_log_loss": 3.0424764826297044,
+        "wdl_brier": 0.6413493797938422
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/fra.1/artifact.json",
+      "SHA256": "ecda45ffd48d37840434c916938306e353e191c587fc0658f2691115ff81a112",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/fra.1/report.json"
+    },
+    {
+      "id": "9858b5e0c781",
+      "赛事": "荷甲",
+      "cohort": "ned.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-09",
+      "训练行数": 298,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.0,
+        "DC_weight": 1.0,
+        "ML_weight": 0.0,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.40301320395497453,
+          "home_advantage": 0.14065093994514985,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07999431480132373,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 64,
+        "primary_hits": 2,
+        "top1": 0.03125,
+        "wdl_hits": 31,
+        "wdl_accuracy": 0.484375,
+        "score_log_loss": 3.4233390908566523,
+        "wdl_brier": 0.6445163620687234
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/ned.1/artifact.json",
+      "SHA256": "80c547b4e6f7d66126de9d902211e1159549c768e4c95b144b478997a04ccfd7",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/ned.1/report.json"
+    },
+    {
+      "id": "453e947c6f54",
+      "赛事": "葡超",
+      "cohort": "por.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-09",
+      "训练行数": 298,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.1707636427707226,
+          "home_advantage": 0.16953960998598408,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": 0.005994314801323737,
+            "bivariate": 0.0015081527293891728
+          }
+        }
+      },
+      "效果": {
+        "n": 82,
+        "primary_hits": 16,
+        "top1": 0.1951219512195122,
+        "wdl_hits": 41,
+        "wdl_accuracy": 0.5,
+        "score_log_loss": 2.8355324903657344,
+        "wdl_brier": 0.5976277259671229
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/por.1/artifact.json",
+      "SHA256": "ba42c5eaa15da48231b114105e275079832b2ec2938284e85f02386ee26b215a",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/por.1/report.json"
+    },
+    {
+      "id": "75ecff80341b",
+      "赛事": "巴甲",
+      "cohort": "bra.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-09",
+      "训练行数": 405,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.10403453523054852,
+          "home_advantage": 0.3367687818183059,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.05262715246309353,
+            "bivariate": 0.012138778285889164
+          }
+        }
+      },
+      "效果": {
+        "n": 100,
+        "primary_hits": 14,
+        "top1": 0.14,
+        "wdl_hits": 45,
+        "wdl_accuracy": 0.45,
+        "score_log_loss": 2.8135723371609695,
+        "wdl_brier": 0.624563233560577
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/bra.1/artifact.json",
+      "SHA256": "bbf44c2cb930badfac5e7e709f095a682a5478dd3ac97eaf162c57afc17330e0",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/bra.1/report.json"
+    },
+    {
+      "id": "579ac3229002",
+      "赛事": "瑞典超",
+      "cohort": "swe.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-09-20",
+      "训练行数": 400,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.0,
+        "DC_weight": 1.0,
+        "ML_weight": 0.0,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.2658263520249297,
+          "home_advantage": 0.1471924655257158,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.06676333871213132,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 87,
+        "primary_hits": 7,
+        "top1": 0.08045977011494253,
+        "wdl_hits": 47,
+        "wdl_accuracy": 0.5402298850574713,
+        "score_log_loss": 3.0355983310085475,
+        "wdl_brier": 0.6013047321707633
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/swe.1/artifact.json",
+      "SHA256": "6a9cedbe022f598b9e4ec7676f865d4559082db41e0b0ec6772e9dfaf6fd0ad6",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/swe.1/report.json"
+    },
+    {
+      "id": "e670c3b7fc5b",
+      "赛事": "沙特联",
+      "cohort": "ksa.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-09",
+      "训练行数": 336,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.75,
+        "DC_weight": 0.25,
+        "ML_weight": 0.75,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.26453107419247396,
+          "home_advantage": 0.09785764047084816,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07999431480132373,
+            "bivariate": 0.1313106635294438
+          }
+        }
+      },
+      "效果": {
+        "n": 86,
+        "primary_hits": 11,
+        "top1": 0.12790697674418605,
+        "wdl_hits": 44,
+        "wdl_accuracy": 0.5116279069767442,
+        "score_log_loss": 2.97548655659745,
+        "wdl_brier": 0.5717929402844605
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/ksa.1/artifact.json",
+      "SHA256": "087cd246d239af8cff1918d03261adab25fc2efda580e88973585e8f2bc6c87c",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/ksa.1/report.json"
+    },
+    {
+      "id": "9990113f225a",
+      "赛事": "英冠",
+      "cohort": "eng.2",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-09-20",
+      "训练行数": 540,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.19157955104915736,
+          "home_advantage": 0.20375497844968124,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07999431480132373,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 132,
+        "primary_hits": 14,
+        "top1": 0.10606060606060606,
+        "wdl_hits": 58,
+        "wdl_accuracy": 0.4393939393939394,
+        "score_log_loss": 2.956986813633879,
+        "wdl_brier": 0.6470778042433593
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/eng.2/artifact.json",
+      "SHA256": "24df9301ff4ab4f8915c59079e05cdf2b39e76eb8a96b7441b8dbecf2243cd1e",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/eng.2/report.json"
+    },
+    {
+      "id": "4cceb5e175b1",
+      "赛事": "挪超",
+      "cohort": "nor.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-09",
+      "训练行数": 390,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.75,
+        "DC_weight": 0.25,
+        "ML_weight": 0.75,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.2730868020754987,
+          "home_advantage": 0.29976468779791016,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07451242418286708,
+            "bivariate": 4.469534883430863e-06
+          }
+        }
+      },
+      "效果": {
+        "n": 93,
+        "primary_hits": 11,
+        "top1": 0.11827956989247312,
+        "wdl_hits": 49,
+        "wdl_accuracy": 0.5268817204301075,
+        "score_log_loss": 3.1442423648213724,
+        "wdl_brier": 0.5764941546933227
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/nor.1/artifact.json",
+      "SHA256": "7a90cd93cdf89a8f3391954066a2d3e8e70cb5b860dea2ff42fe5a32b2d93cc4",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/nor.1/report.json"
+    },
+    {
+      "id": "f7a529e646ea",
+      "赛事": "美职联",
+      "cohort": "usa.1",
+      "角色": "ML0.2候选",
+      "状态": "未启用候选",
+      "版本": "WCPP-ML-0.2",
+      "训练截止": "2026-10-07",
+      "训练行数": 1902,
+      "评估口径": "历史开发诊断；未通过替换",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "alpha_candidates": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "residual_cap": 0.4,
+          "seed": 20261012,
+          "candidates": [
+            {
+              "name": "shallow",
+              "num_leaves": 4,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 20.0,
+              "rounds": 60
+            },
+            {
+              "name": "regular",
+              "num_leaves": 7,
+              "min_data_in_leaf": 25,
+              "lambda_l2": 5.0,
+              "rounds": 70
+            },
+            {
+              "name": "regularized",
+              "num_leaves": 7,
+              "min_data_in_leaf": 50,
+              "lambda_l2": 20.0,
+              "rounds": 100
+            },
+            {
+              "name": "flexible",
+              "num_leaves": 15,
+              "min_data_in_leaf": 40,
+              "lambda_l2": 10.0,
+              "rounds": 100
+            }
+          ],
+          "selection": "calibration Top1, then score log loss; final test never selects"
+        },
+        "long": {
+          "intercept": 0.3155077752458083,
+          "home_advantage": 0.24241017849429308,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07074271885351872,
+            "bivariate": 0.07573413526456305
+          }
+        }
+      },
+      "效果": {
+        "n": 100,
+        "primary_hits": 9,
+        "top1": 0.09,
+        "wdl_hits": 41,
+        "wdl_accuracy": 0.41,
+        "score_log_loss": 3.1887178358095323,
+        "wdl_brier": 0.659453548554223
+      },
+      "工件": "/workspace/WCPP/models/ml-continued-20261012/usa.1/artifact.json",
+      "SHA256": "a002bebfdc2ce2d8260f7bfffcce7968f1279d0d0080df853645b4a992705b1f",
+      "评估来源": "/workspace/WCPP/models/ml-continued-20261012/usa.1/report.json"
+    },
+    {
+      "id": "7a0b8be20260",
+      "赛事": "欧国联A级联赛阶段",
+      "cohort": "欧国联A级联赛阶段",
+      "角色": "current",
+      "状态": "独立候选；未通过验收",
+      "版本": "WCPP-NATIONS-A-CURRENT-0.1",
+      "训练截止": "2026-10-06",
+      "训练行数": 109,
+      "评估口径": "2026历史留出；不是未来冻结实绩",
+      "参数": {
+        "intercept": 0.27846543749210995,
+        "home_advantage": 0.22314348993270514,
+        "training_n": 109,
+        "train_end": "2026-10-06"
+      },
+      "效果": {
+        "exact_top1": 0.0625,
+        "wdl_accuracy": 0.40625,
+        "score_log_loss": 3.185742607166449,
+        "score_brier": 0.9450838331954747,
+        "wdl_brier": 0.656107541324008,
+        "wdl_rps": 0.2670074102763766,
+        "n": 32
+      },
+      "工件": "/workspace/nations-model-20261110/models/A/current-artifact.json",
+      "SHA256": "5f8a96dfc7b0713971f935a6078d3e794e1fad9f1e5f9ce32c74739f9b5b29ec",
+      "评估来源": "/workspace/nations-model-20261110/models/A/diagnostic.json"
+    },
+    {
+      "id": "2ea4be2e0d16",
+      "赛事": "欧国联A级联赛阶段",
+      "cohort": "欧国联A级联赛阶段",
+      "角色": "test",
+      "状态": "独立候选；未通过验收",
+      "版本": "WCPP-NATIONS-A-TEST-0.1",
+      "训练截止": "2026-10-06",
+      "训练行数": 109,
+      "评估口径": "2026历史留出；不是未来冻结实绩",
+      "参数": {
+        "version": "WCPP-CLOUD-CHALLENGER-0.2",
+        "cohort": "uefa.nations:A:league-phase",
+        "intercept": 0.35060705282540344,
+        "home_advantage": 0.05124515043647313,
+        "half_life_days": 730.0,
+        "ridge": 8.0,
+        "train_rows": 109,
+        "train_end": "2026-10-06",
+        "observed_at": "2026-11-10T07:02:20.805290+00:00",
+        "dataset_hash": "f35a38157366191024c4f228924e0eb2d21776522f28525aa1fb90648ae9ca99",
+        "nuisance": {},
+        "context_coefficients": null,
+        "context_status": "UNTRAINED_NO_VERIFIED_FEATURE_HISTORY",
+        "champion_unchanged": "V21.5",
+        "formal_validation": false
+      },
+      "效果": {
+        "exact_top1": 0.0625,
+        "wdl_accuracy": 0.5625,
+        "score_log_loss": 3.1018757372723766,
+        "score_brier": 0.937907284670483,
+        "wdl_brier": 0.5575574177811354,
+        "wdl_rps": 0.21642620662030468,
+        "n": 32
+      },
+      "工件": "/workspace/nations-model-20261110/models/A/test-artifact.json",
+      "SHA256": "69fa5c7ef71a21ff262dbcc87c995237cca5c1b99fecb3168becd8dc4bf3e9ba",
+      "评估来源": "/workspace/nations-model-20261110/models/A/diagnostic.json"
+    },
+    {
+      "id": "9fa451b05c04",
+      "赛事": "欧国联B级联赛阶段",
+      "cohort": "欧国联B级联赛阶段",
+      "角色": "current",
+      "状态": "独立候选；未通过验收",
+      "版本": "WCPP-NATIONS-B-CURRENT-0.1",
+      "训练截止": "2026-10-06",
+      "训练行数": 139,
+      "评估口径": "2026历史留出；不是未来冻结实绩",
+      "参数": {
+        "intercept": 0.049131793158400536,
+        "home_advantage": 0.1811797326056532,
+        "training_n": 139,
+        "train_end": "2026-10-06"
+      },
+      "效果": {
+        "exact_top1": 0.09375,
+        "wdl_accuracy": 0.34375,
+        "score_log_loss": 2.94975903041671,
+        "score_brier": 0.9326647830970152,
+        "wdl_brier": 0.6759954803654163,
+        "wdl_rps": 0.22998051526418423,
+        "n": 32
+      },
+      "工件": "/workspace/nations-model-20261110/models/B/current-artifact.json",
+      "SHA256": "ca86d58d2584084535884d5a0ed2f90a3605a210f62b6fe7291e3fe6cae44daf",
+      "评估来源": "/workspace/nations-model-20261110/models/B/diagnostic.json"
+    },
+    {
+      "id": "8b48e5a38701",
+      "赛事": "欧国联B级联赛阶段",
+      "cohort": "欧国联B级联赛阶段",
+      "角色": "test",
+      "状态": "独立候选；未通过验收",
+      "版本": "WCPP-NATIONS-B-TEST-0.1",
+      "训练截止": "2026-10-06",
+      "训练行数": 139,
+      "评估口径": "2026历史留出；不是未来冻结实绩",
+      "参数": {
+        "version": "WCPP-CLOUD-CHALLENGER-0.2",
+        "cohort": "uefa.nations:B:league-phase",
+        "intercept": 0.07415532523728535,
+        "home_advantage": 0.09629231078923227,
+        "half_life_days": 730.0,
+        "ridge": 8.0,
+        "train_rows": 139,
+        "train_end": "2026-10-06",
+        "observed_at": "2026-11-10T07:02:26.834021+00:00",
+        "dataset_hash": "28b1da7973534eacf40c3deaaea7287420cfe2bdcf3d0c9f2abf30fa913c466e",
+        "nuisance": {},
+        "context_coefficients": null,
+        "context_status": "UNTRAINED_NO_VERIFIED_FEATURE_HISTORY",
+        "champion_unchanged": "V21.5",
+        "formal_validation": false
+      },
+      "效果": {
+        "exact_top1": 0.15625,
+        "wdl_accuracy": 0.34375,
+        "score_log_loss": 2.979108282337485,
+        "score_brier": 0.9345946434067427,
+        "wdl_brier": 0.6879536161491067,
+        "wdl_rps": 0.23700801009834785,
+        "n": 32
+      },
+      "工件": "/workspace/nations-model-20261110/models/B/test-artifact.json",
+      "SHA256": "007a07cf47611fcd94d2cc735054e538596d5251d31f8e98ef2ad960f0e87b0e",
+      "评估来源": "/workspace/nations-model-20261110/models/B/diagnostic.json"
+    },
+    {
+      "id": "6e1f4d3679a2",
+      "赛事": "欧国联C级联赛阶段",
+      "cohort": "欧国联C级联赛阶段",
+      "角色": "current",
+      "状态": "独立候选；未通过验收",
+      "版本": "WCPP-NATIONS-C-CURRENT-0.1",
+      "训练截止": "2026-10-06",
+      "训练行数": 174,
+      "评估口径": "2026历史留出；不是未来冻结实绩",
+      "参数": {
+        "intercept": 0.06129990356783969,
+        "home_advantage": 0.18232169346695806,
+        "training_n": 174,
+        "train_end": "2026-10-06"
+      },
+      "效果": {
+        "exact_top1": 0.125,
+        "wdl_accuracy": 0.40625,
+        "score_log_loss": 3.017978912204473,
+        "score_brier": 0.9293327988180846,
+        "wdl_brier": 0.6599329083560768,
+        "wdl_rps": 0.22197437547053267,
+        "n": 32
+      },
+      "工件": "/workspace/nations-model-20261110/models/C/current-artifact.json",
+      "SHA256": "3a2f3f6ca4b611b1a00f22e8881abb471f3f6fc43e85fe2444a9cc42744cfc0d",
+      "评估来源": "/workspace/nations-model-20261110/models/C/diagnostic.json"
+    },
+    {
+      "id": "d3962cd43283",
+      "赛事": "欧国联C级联赛阶段",
+      "cohort": "欧国联C级联赛阶段",
+      "角色": "test",
+      "状态": "独立候选；未通过验收",
+      "版本": "WCPP-NATIONS-C-TEST-0.1",
+      "训练截止": "2026-10-06",
+      "训练行数": 174,
+      "评估口径": "2026历史留出；不是未来冻结实绩",
+      "参数": {
+        "version": "WCPP-CLOUD-CHALLENGER-0.2",
+        "cohort": "uefa.nations:C:league-phase",
+        "intercept": 0.15418555389520056,
+        "home_advantage": 0.10520214398521574,
+        "half_life_days": 730.0,
+        "ridge": 8.0,
+        "train_rows": 174,
+        "train_end": "2026-10-06",
+        "observed_at": "2026-11-10T07:02:24.284941+00:00",
+        "dataset_hash": "af83dbc72453be6bde8950f6d888e88d8c33e7c17be70cd6ea811e9a9edb503c",
+        "nuisance": {},
+        "context_coefficients": null,
+        "context_status": "UNTRAINED_NO_VERIFIED_FEATURE_HISTORY",
+        "champion_unchanged": "V21.5",
+        "formal_validation": false
+      },
+      "效果": {
+        "exact_top1": 0.09375,
+        "wdl_accuracy": 0.34375,
+        "score_log_loss": 3.0078501690483033,
+        "score_brier": 0.9282206500835711,
+        "wdl_brier": 0.6672802944771491,
+        "wdl_rps": 0.22448982764716963,
+        "n": 32
+      },
+      "工件": "/workspace/nations-model-20261110/models/C/test-artifact.json",
+      "SHA256": "95921be94765987fa81fd105e9f17b2da777174da9d24f837023af73b007d727",
+      "评估来源": "/workspace/nations-model-20261110/models/C/diagnostic.json"
+    },
+    {
+      "id": "64dd550f0eb7",
+      "赛事": "欧国联D级联赛阶段",
+      "cohort": "欧国联D级联赛阶段",
+      "角色": "current",
+      "状态": "独立候选；未通过验收",
+      "版本": "WCPP-NATIONS-D-CURRENT-0.1",
+      "训练截止": "2026-10-04",
+      "训练行数": 80,
+      "评估口径": "2026历史留出；不是未来冻结实绩",
+      "参数": {
+        "intercept": 0.08387887308073837,
+        "home_advantage": 0.10880523213509977,
+        "training_n": 80,
+        "train_end": "2026-10-04"
+      },
+      "效果": {
+        "exact_top1": 0.25,
+        "wdl_accuracy": 0.25,
+        "score_log_loss": 2.334525747073275,
+        "score_brier": 0.8759724356520822,
+        "wdl_brier": 0.7033908008440154,
+        "wdl_rps": 0.20147778110956477,
+        "n": 8
+      },
+      "工件": "/workspace/nations-model-20261110/models/D/current-artifact.json",
+      "SHA256": "433cdd94ef2042f9a64861a2e51e6544d1603d572fa0d7fbeb3b10a3368f0fd8",
+      "评估来源": "/workspace/nations-model-20261110/models/D/diagnostic.json"
+    },
+    {
+      "id": "ec15301c3b10",
+      "赛事": "欧国联D级联赛阶段",
+      "cohort": "欧国联D级联赛阶段",
+      "角色": "test",
+      "状态": "独立候选；未通过验收",
+      "版本": "WCPP-NATIONS-D-TEST-0.1",
+      "训练截止": "2026-10-04",
+      "训练行数": 80,
+      "评估口径": "2026历史留出；不是未来冻结实绩",
+      "参数": {
+        "version": "WCPP-CLOUD-CHALLENGER-0.2",
+        "cohort": "uefa.nations:D:league-phase",
+        "intercept": 0.0013464663426237648,
+        "home_advantage": -0.09784219477036024,
+        "half_life_days": 730.0,
+        "ridge": 8.0,
+        "train_rows": 80,
+        "train_end": "2026-10-04",
+        "observed_at": "2026-11-10T07:01:58.523060+00:00",
+        "dataset_hash": "bef27eb327ad54c8f4bb3403805abbb9845b1086c1fb31bba132749f0305afa2",
+        "nuisance": {},
+        "context_coefficients": null,
+        "context_status": "UNTRAINED_NO_VERIFIED_FEATURE_HISTORY",
+        "champion_unchanged": "V21.5",
+        "formal_validation": false
+      },
+      "效果": {
+        "exact_top1": 0.25,
+        "wdl_accuracy": 0.375,
+        "score_log_loss": 2.1892811111584516,
+        "score_brier": 0.8560150599250973,
+        "wdl_brier": 0.6456380684618439,
+        "wdl_rps": 0.17498002876690516,
+        "n": 8
+      },
+      "工件": "/workspace/nations-model-20261110/models/D/test-artifact.json",
+      "SHA256": "37c473f9e88a67cb30eb53434dcbb1db720b43b3f97fdf2cfab9d4d578182f6f",
+      "评估来源": "/workspace/nations-model-20261110/models/D/diagnostic.json"
+    },
+    {
+      "id": "dea34d4ba2bb",
+      "赛事": "日联杯四分之一决赛第1回合",
+      "cohort": "日联杯四分之一决赛第1回合",
+      "角色": "current",
+      "状态": "独立迁移研究候选；未验收",
+      "版本": "WCPP-JCUP-QF-CURRENT-0.1",
+      "训练截止": "2025-09-03",
+      "训练行数": 12,
+      "评估口径": "历史跨届留出；首回合另有2026-11-11未来冻结各0/4，不合并",
+      "参数": {
+        "role": "current",
+        "fit_n": 12,
+        "fit_end": "2025-09-03",
+        "unknown_venue_n": 12
+      },
+      "效果": {
+        "exact_top1": 0.25,
+        "wdl_accuracy": 0.25,
+        "score_log_loss": 3.193867127053003,
+        "score_brier": 0.9529191084249031,
+        "wdl_brier": 0.6562515252545876,
+        "wdl_rps": 0.23437525420909794,
+        "n": 4
+      },
+      "工件": "/workspace/jcup-qf-expansion-20261111/final-models/leg1/current-artifact.json",
+      "SHA256": "cedba0a57587b3b2dac2b070b5d11fcff88132f9e263094d2795bb2310c1d9d9",
+      "评估来源": "/workspace/jcup-qf-expansion-20261111/final-models/candidates.json"
+    },
+    {
+      "id": "f98292fd83e4",
+      "赛事": "日联杯四分之一决赛第1回合",
+      "cohort": "日联杯四分之一决赛第1回合",
+      "角色": "test",
+      "状态": "独立迁移研究候选；未验收",
+      "版本": "WCPP-JCUP-QF-TEST-0.1",
+      "训练截止": "2025-09-03",
+      "训练行数": 12,
+      "评估口径": "历史跨届留出；首回合另有2026-11-11未来冻结各0/4，不合并",
+      "参数": {
+        "role": "test",
+        "fit_n": 12,
+        "fit_end": "2025-09-03",
+        "unknown_venue_n": 12
+      },
+      "效果": {
+        "exact_top1": 0.25,
+        "wdl_accuracy": 0.0,
+        "score_log_loss": 3.231130454750288,
+        "score_brier": 0.9530289343415967,
+        "wdl_brier": 0.6803072912358663,
+        "wdl_rps": 0.24939461694223403,
+        "n": 4
+      },
+      "工件": "/workspace/jcup-qf-expansion-20261111/final-models/leg1/test-artifact.json",
+      "SHA256": "8de1e64679a8e31d97819ec718363222c812622d78534139a97258455a2ca827",
+      "评估来源": "/workspace/jcup-qf-expansion-20261111/final-models/candidates.json"
+    },
+    {
+      "id": "d726fd8c2c9c",
+      "赛事": "日联杯四分之一决赛第2回合",
+      "cohort": "日联杯四分之一决赛第2回合",
+      "角色": "current",
+      "状态": "独立迁移研究候选；未验收",
+      "版本": "WCPP-JCUP-QF-CURRENT-0.1",
+      "训练截止": "2025-09-07",
+      "训练行数": 12,
+      "评估口径": "历史跨届留出；首回合另有2026-11-11未来冻结各0/4，不合并",
+      "参数": {
+        "role": "current",
+        "fit_n": 12,
+        "fit_end": "2025-09-07",
+        "unknown_venue_n": 12
+      },
+      "效果": {
+        "exact_top1": 0.0,
+        "wdl_accuracy": 0.0,
+        "score_log_loss": 3.0435024379019353,
+        "score_brier": 0.9393228538482467,
+        "wdl_brier": 0.6574549902498739,
+        "wdl_rps": 0.23457583170831223,
+        "n": 4
+      },
+      "工件": "/workspace/jcup-qf-expansion-20261111/final-models/leg2/current-artifact.json",
+      "SHA256": "9b6bf9a599b0b4a39f9207d895e92f85f41858a94585e0cc6d8509a27ef5a07d",
+      "评估来源": "/workspace/jcup-qf-expansion-20261111/final-models/candidates.json"
+    },
+    {
+      "id": "e12fd9f743fe",
+      "赛事": "日联杯四分之一决赛第2回合",
+      "cohort": "日联杯四分之一决赛第2回合",
+      "角色": "test",
+      "状态": "独立迁移研究候选；未验收",
+      "版本": "WCPP-JCUP-QF-TEST-0.1",
+      "训练截止": "2025-09-07",
+      "训练行数": 12,
+      "评估口径": "历史跨届留出；首回合另有2026-11-11未来冻结各0/4，不合并",
+      "参数": {
+        "role": "test",
+        "fit_n": 12,
+        "fit_end": "2025-09-07",
+        "unknown_venue_n": 12
+      },
+      "效果": {
+        "exact_top1": 0.0,
+        "wdl_accuracy": 0.0,
+        "score_log_loss": 3.1050316427245512,
+        "score_brier": 0.9438270484760287,
+        "wdl_brier": 0.6715566669279474,
+        "wdl_rps": 0.241306235395511,
+        "n": 4
+      },
+      "工件": "/workspace/jcup-qf-expansion-20261111/final-models/leg2/test-artifact.json",
+      "SHA256": "e18a9fd6f18becfda061a027aa7ed1d0cd83a26e80cc636bf11510bb50175c7d",
+      "评估来源": "/workspace/jcup-qf-expansion-20261111/final-models/candidates.json"
+    },
+    {
+      "id": "410aaa8c1616",
+      "赛事": "jpn.league_cup:edition-2023:group-stage:group-home-away:0",
+      "cohort": "jpn.league_cup:edition-2023:group-stage:group-home-away:0",
+      "角色": "current",
+      "状态": "旧届阶段专用候选；不能套当前四分之一决赛",
+      "版本": "WCPP-JCUP-CURRENT-0.1",
+      "训练截止": "2023-06-18",
+      "训练行数": 60,
+      "评估口径": "旧届留出诊断，不能转用于当前赛制",
+      "参数": {
+        "role": "current",
+        "fit_n": 60,
+        "fit_end": "2023-06-18",
+        "unknown_venue_n": 60
+      },
+      "效果": {
+        "exact_top1": 0.05,
+        "wdl_accuracy": 0.4,
+        "score_log_loss": 3.0404521684807895,
+        "score_brier": 0.9384813291425388,
+        "wdl_brier": 0.6238816170237899,
+        "wdl_rps": 0.2539802695039649,
+        "n": 20
+      },
+      "工件": "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/current-artifact.json",
+      "SHA256": "c267b997bb8d8d9a48beb8aa7a01a918583a72630c98b8e61d12b3f9b2bb872f",
+      "评估来源": "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/diagnostic.json"
+    },
+    {
+      "id": "ffc644a21770",
+      "赛事": "jpn.league_cup:edition-2023:group-stage:group-home-away:0",
+      "cohort": "jpn.league_cup:edition-2023:group-stage:group-home-away:0",
+      "角色": "test",
+      "状态": "旧届阶段专用候选；不能套当前四分之一决赛",
+      "版本": "WCPP-JCUP-TEST-0.1",
+      "训练截止": "2023-06-18",
+      "训练行数": 60,
+      "评估口径": "旧届留出诊断，不能转用于当前赛制",
+      "参数": {
+        "role": "test",
+        "fit_n": 60,
+        "fit_end": "2023-06-18",
+        "unknown_venue_n": 60
+      },
+      "效果": {
+        "exact_top1": 0.05,
+        "wdl_accuracy": 0.35,
+        "score_log_loss": 3.0927759193398185,
+        "score_brier": 0.947437769137854,
+        "wdl_brier": 0.6686374383147285,
+        "wdl_rps": 0.2769603362177217,
+        "n": 20
+      },
+      "工件": "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/test-artifact.json",
+      "SHA256": "7406614e5a441b63d69674bf41998dfba6d5f4680c5d0401d55662355dedfb04",
+      "评估来源": "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/diagnostic.json"
+    },
+    {
+      "id": "902c49d3af4a",
+      "赛事": "jpn.league_cup:edition-2025:round-of-128:single:0",
+      "cohort": "jpn.league_cup:edition-2025:round-of-128:single:0",
+      "角色": "current",
+      "状态": "旧届阶段专用候选；不能套当前四分之一决赛",
+      "版本": "WCPP-JCUP-CURRENT-0.1",
+      "训练截止": "2025-04-09",
+      "训练行数": 27,
+      "评估口径": "旧届留出诊断，不能转用于当前赛制",
+      "参数": {
+        "role": "current",
+        "fit_n": 27,
+        "fit_end": "2025-04-09",
+        "unknown_venue_n": 27
+      },
+      "效果": {
+        "exact_top1": 0.0,
+        "wdl_accuracy": 1.0,
+        "score_log_loss": 2.571538708210962,
+        "score_brier": 0.927327229375575,
+        "wdl_brier": 0.6202444543901868,
+        "wdl_rps": 0.2700407423983644,
+        "n": 1
+      },
+      "工件": "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/current-artifact.json",
+      "SHA256": "2dc3843e47ba0361f26e42e2716e809a6e59afa28b3dd749ee1f3caebe245c03",
+      "评估来源": "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/diagnostic.json"
+    },
+    {
+      "id": "6f6dbad76fe4",
+      "赛事": "jpn.league_cup:edition-2025:round-of-128:single:0",
+      "cohort": "jpn.league_cup:edition-2025:round-of-128:single:0",
+      "角色": "test",
+      "状态": "旧届阶段专用候选；不能套当前四分之一决赛",
+      "版本": "WCPP-JCUP-TEST-0.1",
+      "训练截止": "2025-04-09",
+      "训练行数": 27,
+      "评估口径": "旧届留出诊断，不能转用于当前赛制",
+      "参数": {
+        "role": "test",
+        "fit_n": 27,
+        "fit_end": "2025-04-09",
+        "unknown_venue_n": 27
+      },
+      "效果": {
+        "exact_top1": 0.0,
+        "wdl_accuracy": 1.0,
+        "score_log_loss": 2.5754500758063235,
+        "score_brier": 0.9284594284073071,
+        "wdl_brier": 0.6210478091632363,
+        "wdl_rps": 0.27017463486053933,
+        "n": 1
+      },
+      "工件": "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/test-artifact.json",
+      "SHA256": "6543091cb57b7dc71fac35a5da476f91fcea4305cb73bbb5f1100fe2c6856047",
+      "评估来源": "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/diagnostic.json"
+    },
+    {
+      "id": "d6a15ce08f0f",
+      "赛事": "亚冠二级小组赛",
+      "cohort": "afc.cup:CHAMPIONS_TWO:group_stage",
+      "角色": "current",
+      "状态": "工件存在，当前默认注册表未登记",
+      "版本": "WCPP-AFC2-CUP-CURRENT-0.1",
+      "训练截止": "2026-09-17",
+      "训练行数": 197,
+      "评估口径": "旧文档有历史评分，但当前工件不可冒称默认已接入；见覆盖文档",
+      "参数": {
+        "constant": [
+          1.7106598984771573,
+          1.3553299492385786
+        ],
+        "fit_end": "2026-09-17",
+        "fit_n": 197
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/models/afc2-group-20261029-r2/current-artifact.json",
+      "SHA256": "ae388db40e998bb0d9ca935e1ca403b414da68c1a07855d313e23d758dbe4665",
+      "评估来源": null
+    },
+    {
+      "id": "d21f42999577",
+      "赛事": "亚冠二级小组赛",
+      "cohort": "afc.cup:CHAMPIONS_TWO:group_stage",
+      "角色": "test",
+      "状态": "工件存在，当前默认注册表未登记",
+      "版本": "WCPP-AFC2-CUP-TEST-0.1",
+      "训练截止": "2026-09-17",
+      "训练行数": 197,
+      "评估口径": "旧文档有历史评分，但当前工件不可冒称默认已接入；见覆盖文档",
+      "参数": {
+        "half_life": 365,
+        "ridge": 20,
+        "fit_end": "2026-09-17",
+        "fit_n": 197
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/models/afc2-group-20261029-r2/test-artifact.json",
+      "SHA256": "75c2c77b99cc366651c146eef95e92498035762dafaf122b641700cc97efc9e3",
+      "评估来源": null
+    },
+    {
+      "id": "523d834b8d0a",
+      "赛事": "英联杯单回合",
+      "cohort": "eng.league_cup:single_leg",
+      "角色": "current",
+      "状态": "工件存在，当前默认注册表未登记",
+      "版本": "WCPP-EFL-CUP-CURRENT-0.1",
+      "训练截止": "2026-10-28",
+      "训练行数": 342,
+      "评估口径": "旧文档有历史评分，但当前工件不可冒称默认已接入；见覆盖文档",
+      "参数": {
+        "constant": [
+          1.5555555555555556,
+          1.4502923976608186
+        ],
+        "fit_end": "2026-10-28",
+        "fit_n": 342
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/models/efl-cup-20261029-r3/current-artifact.json",
+      "SHA256": "3e608caf414d3c68b4100894a18cbaf196123110826f54a9c8d48c3fe5a5efad",
+      "评估来源": null
+    },
+    {
+      "id": "76e65d8fe530",
+      "赛事": "英联杯单回合",
+      "cohort": "eng.league_cup:single_leg",
+      "角色": "test",
+      "状态": "工件存在，当前默认注册表未登记",
+      "版本": "WCPP-EFL-CUP-TEST-0.1",
+      "训练截止": "2026-10-28",
+      "训练行数": 342,
+      "评估口径": "旧文档有历史评分，但当前工件不可冒称默认已接入；见覆盖文档",
+      "参数": {
+        "half_life": 365,
+        "ridge": 20,
+        "fit_end": "2026-10-28",
+        "fit_n": 342
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/models/efl-cup-20261029-r3/test-artifact.json",
+      "SHA256": "e2fcdebe8bf984abb8bacee4f722a746ca4d57e9ef79b0239d2782371f6c23fb",
+      "评估来源": null
+    },
+    {
+      "id": "933aa41ef8f2",
+      "赛事": "日职乙",
+      "cohort": "jpn.2",
+      "角色": "current基线",
+      "状态": "工件存在，默认未登记",
+      "版本": "WCPP-MAIN-1.1",
+      "训练截止": "2026-10-04",
+      "训练行数": 87,
+      "评估口径": "未取得该工件独立评分",
+      "参数": {
+        "method": "v01_baseline",
+        "home_mean": 1.4558511859078191,
+        "away_mean": 1.1622363153077173,
+        "nuisance": {
+          "poisson": 0.0
+        },
+        "half_life_days": 180,
+        "smoothing_prior": 8
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/reports/japan-korea-20261010/jpn.2-artifact.json",
+      "SHA256": "f95151062184efb21d888651953942640d5c62aaeda41f4a4b0b46dada8b04a5",
+      "评估来源": null
+    },
+    {
+      "id": "a862bbf016a7",
+      "赛事": "韩K2",
+      "cohort": "kor.2",
+      "角色": "current基线",
+      "状态": "工件存在，默认未登记",
+      "版本": "WCPP-MAIN-1.1",
+      "训练截止": "2026-10-09",
+      "训练行数": 219,
+      "评估口径": "未取得该工件独立评分",
+      "参数": {
+        "method": "v01_baseline",
+        "home_mean": 1.3588704352969612,
+        "away_mean": 1.268414843949363,
+        "nuisance": {
+          "poisson": 0.0
+        },
+        "half_life_days": 180,
+        "smoothing_prior": 8
+      },
+      "效果": {},
+      "工件": "/workspace/WCPP/reports/japan-korea-20261010/kor.2-artifact.json",
+      "SHA256": "ff2b7ab733297c1fabb8b722c19442e10ed81d714c938e464bd17f8de61344c4",
+      "评估来源": null
+    },
+    {
+      "id": "9d9d3645c437",
+      "赛事": "英超",
+      "cohort": "eng.1",
+      "角色": "11月10日刷新current",
+      "状态": "全量刷新候选未启用",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-11-08",
+      "训练行数": 410,
+      "评估口径": "已含留出标签；评价候选成绩另列，不能移植",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.5264130633136384,
+        "away_mean": 1.217602361262655,
+        "stored_inactive_weights": {
+          "baseline": 0.2300598607568977,
+          "strength365": 0.18293084665412768,
+          "strength180": 0.22297417312587292,
+          "dc365": 0.15273564520289207,
+          "bivariate365": 0.21129947426020967
+        }
+      },
+      "效果": {},
+      "工件": "/workspace/refresh-20261110/europe-final/eng.1/final/current-artifact.json",
+      "SHA256": "2cb513a3fadb6786b4052299dbbde6fbfbd31695b6b95ac23c19a89ea75a309f",
+      "评估来源": null
+    },
+    {
+      "id": "365f0ec2f219",
+      "赛事": "英超",
+      "cohort": "eng.1",
+      "角色": "11月10日刷新test",
+      "状态": "全量刷新候选未启用",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-11-08",
+      "训练行数": 410,
+      "评估口径": "已含留出标签；评价候选成绩另列，不能移植",
+      "参数": {
+        "alpha": 0.5,
+        "DC_weight": 0.5,
+        "ML_weight": 0.5,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.1868168841441117,
+          "home_advantage": 0.2213699206296784,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07440051517744536,
+            "bivariate": 0.08934648291721937
+          }
+        }
+      },
+      "效果": {},
+      "工件": "/workspace/refresh-20261110/europe-final/eng.1/final/test-artifact.json",
+      "SHA256": "63a8390796287bff0ef3b3e06ea888af695ebb0403e8b53711dd6eb11d31ae32",
+      "评估来源": null
+    },
+    {
+      "id": "54b12638842f",
+      "赛事": "意甲",
+      "cohort": "ita.1",
+      "角色": "11月10日刷新current",
+      "状态": "全量刷新候选未启用",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-11-08",
+      "训练行数": 430,
+      "评估口径": "已含留出标签；评价候选成绩另列，不能移植",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.4289453885400176,
+        "away_mean": 1.3315590601520781,
+        "stored_inactive_weights": {
+          "baseline": 0.3344323656447485,
+          "strength365": 0.16668887661159598,
+          "strength180": 0.15852797558992404,
+          "dc365": 0.17913366653092774,
+          "bivariate365": 0.1612171156228037
+        }
+      },
+      "效果": {},
+      "工件": "/workspace/refresh-20261110/europe-final/ita.1/final/current-artifact.json",
+      "SHA256": "a19c9cc854f27f78c415e242a38800fb92b7061f290ac1a23b999091decc074b",
+      "评估来源": null
+    },
+    {
+      "id": "265877277a9b",
+      "赛事": "意甲",
+      "cohort": "ita.1",
+      "角色": "11月10日刷新test",
+      "状态": "全量刷新候选未启用",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-11-08",
+      "训练行数": 430,
+      "评估口径": "已含留出标签；评价候选成绩另列，不能移植",
+      "参数": {
+        "alpha": 0.5,
+        "DC_weight": 0.5,
+        "ML_weight": 0.5,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.2273757438615125,
+          "home_advantage": 0.08511104323333352,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": 0.005994314801323737,
+            "bivariate": 0.07046613261208139
+          }
+        }
+      },
+      "效果": {},
+      "工件": "/workspace/refresh-20261110/europe-final/ita.1/final/test-artifact.json",
+      "SHA256": "b40afc64be443a60eb502d36ab25eb95c526b877f15189506a196f92639329c6",
+      "评估来源": null
+    },
+    {
+      "id": "dbe0055bd8b5",
+      "赛事": "瑞典超",
+      "cohort": "swe.1",
+      "角色": "11月10日刷新current",
+      "状态": "全量刷新候选未启用",
+      "版本": "WCPP-WEIGHTED-0.1",
+      "训练截止": "2026-11-08",
+      "训练行数": 448,
+      "评估口径": "已含留出标签；评价候选成绩另列，不能移植",
+      "参数": {
+        "实际执行": "anchor.baseline",
+        "baseline_weight": 1.0,
+        "half_life_days": 180,
+        "smoothing_prior": 8,
+        "home_mean": 1.4896464996350538,
+        "away_mean": 1.2825338426751833,
+        "stored_inactive_weights": {
+          "baseline": 0.26555087393120647,
+          "strength365": 0.15804440728559782,
+          "strength180": 0.278622466505111,
+          "dc365": 0.19178115060428558,
+          "bivariate365": 0.10600110167379916
+        }
+      },
+      "效果": {},
+      "工件": "/workspace/refresh-20261110/europe-final/swe.1/final/current-artifact.json",
+      "SHA256": "86a596ea81ffdfdf96eac986a537ecfc05f0fb5712f5d3024b11fdfad27177d9",
+      "评估来源": null
+    },
+    {
+      "id": "58587a9782eb",
+      "赛事": "瑞典超",
+      "cohort": "swe.1",
+      "角色": "11月10日刷新test",
+      "状态": "全量刷新候选未启用",
+      "版本": "WCPP-ML-0.1",
+      "训练截止": "2026-11-08",
+      "训练行数": 448,
+      "评估口径": "已含留出标签；评价候选成绩另列，不能移植",
+      "参数": {
+        "alpha": 0.25,
+        "DC_weight": 0.75,
+        "ML_weight": 0.25,
+        "config": {
+          "warmup_matches": 60,
+          "num_boost_round": 70,
+          "residual_cap": 0.4,
+          "learning_rate": 0.03,
+          "num_leaves": 7,
+          "min_data_in_leaf": 25,
+          "lambda_l2": 5.0,
+          "blend_candidates": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "objective": "poisson",
+          "seed": 20261012
+        },
+        "long": {
+          "intercept": 0.24110400891312284,
+          "home_advantage": 0.1434751138207085,
+          "half_life_days": 365.0,
+          "ridge": 8.0,
+          "nuisance": {
+            "poisson": 0.0,
+            "dixon_coles": -0.07152163255574068,
+            "bivariate": 0.0297924306993059
+          }
+        }
+      },
+      "效果": {},
+      "工件": "/workspace/refresh-20261110/europe-final/swe.1/final/test-artifact.json",
+      "SHA256": "f2cafc89fd2991f4c4a29b1c63779b13d4492a9050b8bc34ed0ba42cbd475857",
+      "评估来源": null
+    },
+    {
+      "id": "ef21424fd44f",
+      "赛事": "澳超",
+      "cohort": "aus.1",
+      "角色": "11月10日刷新current",
+      "状态": "全量刷新候选未启用",
+      "版本": "WCPP-AUS-FIXED-REFRESH-20261110-current",
+      "训练截止": "2026-11-08",
+      "训练行数": 2830,
+      "评估口径": "已含留出标签；评价候选成绩另列，不能移植",
+      "参数": {
+        "constant": [
+          1.6042402826855124,
+          1.3130742049469966
+        ],
+        "fit_n": 2830,
+        "fit_end": "2026-11-08"
+      },
+      "效果": {},
+      "工件": "/workspace/refresh-20261110/aus/result/final-current-artifact.json",
+      "SHA256": "23d863b06af0d67e801f047540165ac394790984a9b3c5dbacb5862803d91160",
+      "评估来源": null
+    },
+    {
+      "id": "07586ca3b091",
+      "赛事": "澳超",
+      "cohort": "aus.1",
+      "角色": "11月10日刷新test",
+      "状态": "全量刷新候选未启用",
+      "版本": "WCPP-AUS-FIXED-REFRESH-20261110-test",
+      "训练截止": "2026-11-08",
+      "训练行数": 2830,
+      "评估口径": "已含留出标签；评价候选成绩另列，不能移植",
+      "参数": {
+        "half_life": 365,
+        "ridge": 20,
+        "fit_end": "2026-11-08",
+        "fit_n": 2830
+      },
+      "效果": {},
+      "工件": "/workspace/refresh-20261110/aus/result/final-test-artifact.json",
+      "SHA256": "205f48b755ad37186a58d6b4ee74fa3cd61b4ac15177769d7fa42d24a8dbb507",
+      "评估来源": null
+    }
+  ],
+  "source_hashes": {
+    "/workspace/WCPP/models/weighted-20261012/mex-apertura-dual/artifact.json": "9614858205e8d3dcc56951d957f012e1c4ca603198a8acf79036037ed65e017e",
+    "/workspace/WCPP/models/ml-20261012/mex.1-apertura-regular/report.json": "e878f6bae7280e62f62ab29e32cefe47558e9f5c20fbd09799a7252f2c4b49dc",
+    "/workspace/WCPP/models/ml-20261012/mex.1-apertura-regular/artifact.json": "70d7e66f72c30717327223c47a49c5c3e6998e56a9dbc16fa111f0667cfcad9a",
+    "/workspace/WCPP/models/weighted-20261012/eng.1/artifact.json": "ac5ef67c624da8913a2e3492b2fbae6b73776bf0f9e5157423c72e718dd72983",
+    "/workspace/WCPP/models/ml-20261012/eng.1/report.json": "f008a9da3ac69e629705cb7e0b0c2b4b5f121ff13b4f38a2f839bf1abf3ad552",
+    "/workspace/WCPP/models/ml-20261012/eng.1/artifact.json": "9f78989414419514a23f669aa9648e341a4899890101f363cc47bff5057b03e0",
+    "/workspace/WCPP/models/weighted-20261012/esp.1/artifact.json": "3d4da662d2b671c368860f7786ce7d2b22ddab4f60efc1b61470230ce57234ec",
+    "/workspace/WCPP/models/ml-20261012/esp.1/report.json": "146b837b22e302970af487226f4a4c50f19583b761a557f83d783ce605aa4135",
+    "/workspace/WCPP/models/ml-20261012/esp.1/artifact.json": "dc1c4071478cabd7de2861e31edfe9decad328ebdf174c3c8cf639dbc4fd5682",
+    "/workspace/WCPP/models/weighted-20261012/ger.1/artifact.json": "d8e4e8edeb3b1be5bb3567496c5ff3f90de31de8bdf2e5ec00e68c38990c7691",
+    "/workspace/WCPP/models/ml-20261012/ger.1/report.json": "8ef21484cc12bb8465d7196dec0aed4e8eda699b20708ea4515f10625d62ce88",
+    "/workspace/WCPP/models/ml-20261012/ger.1/artifact.json": "9d81229e3699c648596e4545e6670cf705ecfb92385c35f7f19444b641edc740",
+    "/workspace/WCPP/models/weighted-20261012/ita.1/artifact.json": "ca69b767362958577e22a4157c23613cb9b6e12604ffb20fcaa2b624413e6dbd",
+    "/workspace/WCPP/models/ml-20261012/ita.1/report.json": "14e8f741b393e24878625b8b0dd63242b0c8feebd0e41ce9668e858893b4fbe7",
+    "/workspace/WCPP/models/ml-20261012/ita.1/artifact.json": "f005920710f0124a37ab75e448a96c141bb9b3024d40b444a6445bc6dea34cb5",
+    "/workspace/WCPP/models/weighted-20261012/fra.1/artifact.json": "403b79855abfe75a6fc05dfe0e4ddaf52f2204e933daadae6335df2ba9b816b8",
+    "/workspace/WCPP/models/ml-20261012/fra.1/report.json": "9c2855f090b61a7faa43d3dc23481bd4cd5c6f252389afbc2f56b28fb493b40b",
+    "/workspace/WCPP/models/ml-20261012/fra.1/artifact.json": "1b6567b71fbbdb0f0e03669bf37c732b9f73ceda0bc66f30bf905d6a5298b9e9",
+    "/workspace/WCPP/models/weighted-20261012/ned.1/artifact.json": "1440e0242882cecc14d4486f88220270ae05d8bdbf00361384432f026e2d3738",
+    "/workspace/WCPP/models/ml-20261012/ned.1/report.json": "96381478f1982ea0c529ced16cac65f59428131536ab3289ba46017be12036d1",
+    "/workspace/WCPP/models/ml-20261012/ned.1/artifact.json": "2442f03bbe7da265d546af20b9097ca52efbb2435f49a9479d1a88da699f30aa",
+    "/workspace/WCPP/models/weighted-20261012/por.1/artifact.json": "860c6244fed26c1685d5487797b243bc9873ac66fa7f747afe7c6d9b45290746",
+    "/workspace/WCPP/models/ml-20261012/por.1/report.json": "3e5d87c64df8e3e4817ffbcde658dfa689f1f170ec9169fec1bc3effef7f1e65",
+    "/workspace/WCPP/models/ml-20261012/por.1/artifact.json": "86e67de8d9244522e988439ab64041455ba08777d21fdd05558b6c2678999f56",
+    "/workspace/WCPP/models/weighted-20261012/bra.1/artifact.json": "6fa5b60cec4cc1a51b6ff019072da029cd7d558a33a203ab8c2846b97efdf318",
+    "/workspace/WCPP/models/ml-20261012/bra.1/report.json": "cf5297e390f06e66605214971ce06c302fe9d2f3713533778ff4e9b742a1524e",
+    "/workspace/WCPP/models/ml-20261012/bra.1/artifact.json": "bfb1ec1472a7503c7f70bd69bbd349d88df652d7ecaac436b4e36fdeef415191",
+    "/workspace/WCPP/models/weighted-20261012/swe.1/artifact.json": "ecaf574c2e639139a404ec1f30432c8b27576b310a285843455f2e264832dc27",
+    "/workspace/WCPP/models/ml-20261012/swe.1/report.json": "4f43197682251800fa984eb98347e574ea1e987e5949016232fe648b966eb2c9",
+    "/workspace/WCPP/models/ml-20261012/swe.1/artifact.json": "f540e29e1f11457061b332118412145d8e3d9966c06d23eb9564acbcf34ec5d2",
+    "/workspace/WCPP/models/weighted-20261012/ksa.1/artifact.json": "4a59e33f7acce4da67b35b9dcee9d94abfd798bbb80fc9c25ef472fa8fba8dec",
+    "/workspace/WCPP/models/ml-20261012/ksa.1/report.json": "e3ef9dec43bf5f81a7d3f1697e87b94201ad139541d0c96ca57f4f8efd0cef4c",
+    "/workspace/WCPP/models/ml-20261012/ksa.1/artifact.json": "f3e45a331a3a0e7ad3cb0221ff3cb0cf45ea2a4bd6c6df55a5a4a58df96f1759",
+    "/workspace/WCPP/models/weighted-20261012/eng.2/artifact.json": "72beee6485c2c700219ab800fc1ce20794b6b41f096dea3b13214f9b8d283fcc",
+    "/workspace/WCPP/models/ml-20261012/eng.2/report.json": "b0f34022cc02e0b376bcb690e92d4614899c774fe22df9c1805f535646b09288",
+    "/workspace/WCPP/models/ml-20261012/eng.2/artifact.json": "8b5450da4931868d9e352c06937a762546f0a08b30cf055be3f809f2ea7cea54",
+    "/workspace/WCPP/models/weighted-20261012/nor.1/artifact.json": "7c980a4cf9f4a2c8f47f44eb761f5aa9b75e1933872406416c41e3840ce8ffd3",
+    "/workspace/WCPP/models/ml-20261012/nor.1/report.json": "9a4fd95f07cf37986f0eec826ac59c0096c37cfd5432a187af7a07ff926f8a55",
+    "/workspace/WCPP/models/ml-20261012/nor.1/artifact.json": "086fd30bf2ba48fd246af72cd30476007f2e5684f2555f017463d210dbaf31af",
+    "/workspace/WCPP/models/weighted-20261012/usa.1/artifact.json": "ff328c4edd392a31eb414ec0ba188290e56524506dd80cdd011e61da3b9188e7",
+    "/workspace/WCPP/models/ml-20261012/usa.1/report.json": "dc267798a18fc873544062b988b7af06d8549d3384edfa01f56dd2508eb6b9d1",
+    "/workspace/WCPP/models/ml-20261012/usa.1/artifact.json": "15d3c0f5d570792545b6659590a4be49666944af9be9248f26fcffde98620478",
+    "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/current-artifact.json": "30e1baf7f24f9db3ccf683179162d994a87f20f5048b5eb6ecb3d6e011589759",
+    "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-report.json": "baa623cc7e31ed569f05310669812e835c9e56df9ff0e1e4a976aa4108333639",
+    "/workspace/WCPP/models/ucl-dual-20261013/uefa.champions-NEW_FORMAT-league_phase/test-artifact.json": "82180940b19757779ea06c192a2600bd45a8c832ddf9fd08e6ea5a620cc4dd6e",
+    "/workspace/WCPP/reports/japan-korea-20261010/jpn.1-artifact.json": "995f8686ff6348e5f0c6b40a8838a714c4118036968285d01e188e6db29f4ab2",
+    "/workspace/WCPP/models/systematic-20261015-final-extended-003/jpn.1/artifact.json": "f5532bb519983e04eb44c6778df405aaa7420790f78c84b8b6047ea13011b12a",
+    "/workspace/WCPP/reports/japan-korea-20261010/kor.1-artifact.json": "f2c9a03bf4ddaa7bcb4eabaf2cb94434f9694e18d26dd6721af602e65aa9dd62",
+    "/workspace/WCPP/models/systematic-20261015-final-extended-003/kor.1/artifact.json": "6b6d9bd66bb2f7dcb1f214407ed027f720d6cd4f823c120061ed1b172631014c",
+    "/workspace/WCPP/models/active-routes-20261027/aus.1/current-artifact.json": "f3e9e25f84a468ed937c0d82c041c4ba0f16cb641e36f63e7515a00b2415964a",
+    "/workspace/WCPP/models/aus-expert-20261016-boundary-refit-v1/artifact.json": "6cd38d5fa0dc9d5413ec4e062bcb209a598763b419f8bab54f60352dd26bef5d",
+    "/workspace/WCPP/models/active-routes-20261027/afc.champions-ELITE-league_phase/current-artifact.json": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+    "/workspace/WCPP/models/active-routes-20261027/afc.champions-ELITE-league_phase/test-artifact.json": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+    "/workspace/WCPP/models/systematic-20261015-final-003/eng.1/artifact.json": "c2c88d343fa68f150d8b043e703c7de974a4286ddbaf846254744400e7916db3",
+    "/workspace/WCPP/models/systematic-20261015-run-003/eng.1/audit-M2-h180-r30-scores.json": "309a67073baface0e1f22e05588e7c8887de35f389779fbeb000f3e067136677",
+    "/workspace/WCPP/models/systematic-20261015-final-003/eng.2/artifact.json": "328c85a962b0a1f230476bb4c501f370c0a5a95ea2cecd4da70fa1305ef98892",
+    "/workspace/WCPP/models/systematic-20261015-run-003/eng.2/audit-M2-h180-r10-scores.json": "223da7ec1d6657c2e93a95df77eb80f2128a139e72fdefacd06de5fceb52fd70",
+    "/workspace/WCPP/models/systematic-20261015-final-003/esp.1/artifact.json": "2ddc62c9ce232e655e04f19af73ce96bb85cf835cf3a9776d1a921c5038807c9",
+    "/workspace/WCPP/models/systematic-20261015-run-003/esp.1/audit-M2-h365-r30-scores.json": "2282f3ca203bb7209fe375ece73eb4592ecce13668ffbf9ea9328daab7d03f2e",
+    "/workspace/WCPP/models/systematic-20261015-final-003/fra.1/artifact.json": "d777d5e81a12dcba692dbf73efe5bc263fcd7712270ffa6c3508f5d7fe89ca76",
+    "/workspace/WCPP/models/systematic-20261015-run-003/fra.1/audit-M2-h180-r10-scores.json": "50708282b6f52e45a0b30f360d38f4bbee77e5f1be28d953234924118bb54326",
+    "/workspace/WCPP/models/systematic-20261015-final-003/ger.1/artifact.json": "076a898f901a01e8ba14c1085167893ce6700da3ac885bb8f1422b2d934fdb31",
+    "/workspace/WCPP/models/systematic-20261015-run-003/ger.1/audit-M3-process-a0.5-scores.json": "cf4e4166fbea9d5c6bab210103303366bb2dda526df002c802ebb0959eb4e981",
+    "/workspace/WCPP/models/systematic-20261015-final-003/ita.1/artifact.json": "b99e613f5b076a79598810483aaafa440d15e9a7988e3cfdeaf09c09d3ae84b5",
+    "/workspace/WCPP/models/systematic-20261015-run-003/ita.1/audit-M2-h365-r10-scores.json": "8e72f4a9ae59ae94513273d9ec4e9a26ce14f1ba594c23f0dfcab4f9cc715c3c",
+    "/workspace/WCPP/models/systematic-20261015-final-003/ned.1/artifact.json": "701cc69905f019c55bdafa5788d55eb6f9d2476d46f5697ad390d4c272bfb8f1",
+    "/workspace/WCPP/models/systematic-20261015-run-003/ned.1/audit-M2-h365-r10-scores.json": "8b9e50a5a029d50e71f0efb640c8ec61aca510ce6c199c70d404fec7b4de21b1",
+    "/workspace/WCPP/models/systematic-20261015-final-003/por.1/artifact.json": "229234eaf5aa7707ef952d1fc09c312724a1e4ea42afa858771c9dd8f46cee60",
+    "/workspace/WCPP/models/systematic-20261015-run-003/por.1/audit-M3-process-a0.5-scores.json": "418e27f5dea46b469a0c0b8b3b99c7f360cfc9034b3025bcff4898d85ba9be18",
+    "/workspace/WCPP/models/systematic-20261015-final-extended-003/ger.2/artifact.json": "d1bd5666de0c271861c21326ec9b562fe2308e8a10b3e6a35c8e46216f90fb76",
+    "/workspace/WCPP/models/systematic-20261015-extended-001/ger.2/audit-M2-h365-r30-scores.json": "f119ce905e0d696f7571077c118eb6210c1df39a2bce1c3e3c44c1640f52ff36",
+    "/workspace/WCPP/models/systematic-20261015-extended-001/jpn.1/audit-M2-h180-r10-scores.json": "07bbea3aab7b1096d5db28ab58ae3924219565ff0ec149eb15fe8e1c867a35b8",
+    "/workspace/WCPP/models/systematic-20261015-final-extended-003/jpn.2/artifact.json": "aaeffc37b44703f6667248e871175ccf869a7952658ba71a788647b630b10bf8",
+    "/workspace/WCPP/models/systematic-20261015-extended-001/jpn.2/audit-M2-h365-r10-scores.json": "88f41f782374d3c77f7ebe52893f4201fa79b8a3f8201d234f784b934af2e322",
+    "/workspace/WCPP/models/systematic-20261015-extended-001/kor.1/audit-M2-h365-r30-scores.json": "aaea3467892f99849621b4c6630adb10f8245b8e12c128d192aa381572ab0de4",
+    "/workspace/WCPP/models/systematic-20261015-final-extended-003/kor.2/artifact.json": "735ba4d3a41faf76b955a949786562f13762e2d18bb9a7e1b3a41662847fc91d",
+    "/workspace/WCPP/models/systematic-20261015-extended-001/kor.2/audit-M2-h180-r10-scores.json": "39a80e02d6336591d7cb5b04dab3d40bdb1865904bcf87b6bde68d787866ab8d",
+    "/workspace/WCPP/models/systematic-20261015-final-extended-003/ned.2/artifact.json": "37b2415e801e702ebbc69a1a2e423cad4cad246845dee5a8d80669a35cd3db0e",
+    "/workspace/WCPP/models/systematic-20261015-extended-001/ned.2/audit-M2-h180-r30-scores.json": "5ae85ec595c635f580fd083b9405993f15c8f13fdb616b9ea67e84d817a78c84",
+    "/workspace/WCPP/models/systematic-20261015-final-repair-001/ksa.1/artifact.json": "bc7a8f9c665e838ebe5f9a7294fa0b52629631afa33dc53d31dad7c4eefd9546",
+    "/workspace/WCPP/models/systematic-20261015-repair-001/ksa.1/audit-M2-h180-r30-scores.json": "ef7ec70ba1eb856a0c75a97de08ade17feb2cdb55760d49649d9aeadb4a56223",
+    "/workspace/WCPP/models/systematic-20261015-final-repair-001/usa.1/artifact.json": "3d5248a05033dcc39f33ed2f7257259474840d606e0c6ce110fdbb6182894e2a",
+    "/workspace/WCPP/models/systematic-20261015-repair-001/usa.1/audit-M2-h180-r10-scores.json": "6e273cbfe6a71a336eb0a58b7c76b8ba4af6e3b2fb81636cf632a5e2568df302",
+    "/workspace/WCPP/models/systematic-20261015-final-secondary-004/bra.1/artifact.json": "598c27b4ba8c3369328d3404d6b5653dfcd03c4519e3d404436de03dec41d47a",
+    "/workspace/WCPP/models/systematic-20261015-secondary-002/bra.1/audit-M2-h365-r10-scores.json": "1712c714f32a7d4fa5899fa916ae2595dd26cf2484aaf54c7a2797502c8b751e",
+    "/workspace/WCPP/models/systematic-20261015-final-secondary-004/nor.1/artifact.json": "c01c5ca22bf5272f56c83e2a36ad5380842e35a0c19b35f2bab1393bb4311b71",
+    "/workspace/WCPP/models/systematic-20261015-secondary-002/nor.1/audit-M2-h180-r10-scores.json": "4a1c53f9b15d631090ad5bbcbae70583c27e4807cb30fedc0ce3f1d3a8e866fc",
+    "/workspace/WCPP/models/systematic-20261015-final-secondary-004/swe.1/artifact.json": "6b77bf497d0d852d03f79ba9516348edbfbf2ec4c607b1de2e97b366f56662fd",
+    "/workspace/WCPP/models/systematic-20261015-secondary-002/swe.1/audit-M2-h180-r10-scores.json": "bd55521e655eb2a8c6ab3fc8469b83e438e7013d7a74ada524925c61ea3ca166",
+    "/workspace/WCPP/runtime/training-candidates.json": "487abbbc538fd5b86a40e1d65f9666ae6cc3877839c6542a084047297061f9d5",
+    "/workspace/WCPP/models/ml-continued-20261012/mex.1-apertura-regular/artifact.json": "d4f5813e2ec7b32e2c831d815fc89016f0d32ed01ee300d912ff90475e9795d8",
+    "/workspace/WCPP/models/ml-continued-20261012/mex.1-apertura-regular/report.json": "199704d87d180df2752d9728857ccb76d6bd69c90cdd8982d9b436f0b0f7254c",
+    "/workspace/WCPP/models/ml-continued-20261012/eng.1/artifact.json": "9c25ffb820541d5a69b539e6d726a4e3f1eb76dcd06a5e112e6b43c74b6d8daf",
+    "/workspace/WCPP/models/ml-continued-20261012/eng.1/report.json": "44330b2ce0dd38a5d181ffa635ae6f6ab4adabdc9be143ec100bdf14910b9a42",
+    "/workspace/WCPP/models/ml-continued-20261012/esp.1/artifact.json": "f0c8aa183cc816470167188dd5ec2493699bd24143b0a5fc25fbb07b22aa04c6",
+    "/workspace/WCPP/models/ml-continued-20261012/esp.1/report.json": "4b3192a623d4f4d702815f99cc56becde3c4037f21dac4b718f0325265a16fe6",
+    "/workspace/WCPP/models/ml-continued-20261012/ger.1/artifact.json": "872993cfa3da70e7614b57df6060076826e00760d2c0cf949bd1eff1f099308e",
+    "/workspace/WCPP/models/ml-continued-20261012/ger.1/report.json": "281f298b7fb87a9a9c6c0c9c01a71549627553145616776adafc30c9ea937b00",
+    "/workspace/WCPP/models/ml-continued-20261012/ita.1/artifact.json": "c79d1bbfe257e393c1ae4fd175964e2e434bc6664931fa2d8202897398d289cb",
+    "/workspace/WCPP/models/ml-continued-20261012/ita.1/report.json": "a05c32d6215935d3a05a37d5073a88bcc801f88f194bb16d23d0767a2e11ae7b",
+    "/workspace/WCPP/models/ml-continued-20261012/fra.1/artifact.json": "ecda45ffd48d37840434c916938306e353e191c587fc0658f2691115ff81a112",
+    "/workspace/WCPP/models/ml-continued-20261012/fra.1/report.json": "3342e6425b6c9ad8c10f39996b1723a8e222940775d0217fd10ffb41c69be2cc",
+    "/workspace/WCPP/models/ml-continued-20261012/ned.1/artifact.json": "80c547b4e6f7d66126de9d902211e1159549c768e4c95b144b478997a04ccfd7",
+    "/workspace/WCPP/models/ml-continued-20261012/ned.1/report.json": "efe34014393ebe27ee9d6950d317bc3a689d7db62fa978cf68760e1d9f2afa33",
+    "/workspace/WCPP/models/ml-continued-20261012/por.1/artifact.json": "ba42c5eaa15da48231b114105e275079832b2ec2938284e85f02386ee26b215a",
+    "/workspace/WCPP/models/ml-continued-20261012/por.1/report.json": "b1f69479efdc9bb8f08e65ca5c2990f95c1469fc831de87b85123fbbceca6f21",
+    "/workspace/WCPP/models/ml-continued-20261012/bra.1/artifact.json": "bbf44c2cb930badfac5e7e709f095a682a5478dd3ac97eaf162c57afc17330e0",
+    "/workspace/WCPP/models/ml-continued-20261012/bra.1/report.json": "e5835ca40c52e783ce72d7217e52e0056b4a9389b6141fe386cd07dd1507095f",
+    "/workspace/WCPP/models/ml-continued-20261012/swe.1/artifact.json": "6a9cedbe022f598b9e4ec7676f865d4559082db41e0b0ec6772e9dfaf6fd0ad6",
+    "/workspace/WCPP/models/ml-continued-20261012/swe.1/report.json": "b7646801ad7618304101e06ad5481790e438d149ac353cac6abd59f2f19f3f71",
+    "/workspace/WCPP/models/ml-continued-20261012/ksa.1/artifact.json": "087cd246d239af8cff1918d03261adab25fc2efda580e88973585e8f2bc6c87c",
+    "/workspace/WCPP/models/ml-continued-20261012/ksa.1/report.json": "eb7db8ccb17a246a55e046be8271cc67ca401cd7271630be3b79b06c7dbd6cfe",
+    "/workspace/WCPP/models/ml-continued-20261012/eng.2/artifact.json": "24df9301ff4ab4f8915c59079e05cdf2b39e76eb8a96b7441b8dbecf2243cd1e",
+    "/workspace/WCPP/models/ml-continued-20261012/eng.2/report.json": "f0f755a68364355d0c3b962948b739baea9c4685be273758dc93dae124097222",
+    "/workspace/WCPP/models/ml-continued-20261012/nor.1/artifact.json": "7a90cd93cdf89a8f3391954066a2d3e8e70cb5b860dea2ff42fe5a32b2d93cc4",
+    "/workspace/WCPP/models/ml-continued-20261012/nor.1/report.json": "7d3f63b86d6aaddab900e73e4bbfcd2a68c1eb2d98dbd00274fa47b566fdeb1c",
+    "/workspace/WCPP/models/ml-continued-20261012/usa.1/artifact.json": "a002bebfdc2ce2d8260f7bfffcce7968f1279d0d0080df853645b4a992705b1f",
+    "/workspace/WCPP/models/ml-continued-20261012/usa.1/report.json": "eb98c459f87f47e1b644b29f0b33a44ae9aa945b8846627c75b93e51e896a720",
+    "/workspace/nations-model-20261110/models/candidates.json": "9c60bfc468c4b04dc3343d3ba5f621ff559cc534de9f5e93afa9c4fcb8081520",
+    "/workspace/nations-model-20261110/models/A/current-artifact.json": "5f8a96dfc7b0713971f935a6078d3e794e1fad9f1e5f9ce32c74739f9b5b29ec",
+    "/workspace/nations-model-20261110/models/A/diagnostic.json": "978c3506f6bb9ab93eedd1944c25e59bf9649ced13a89dc273a74aab16aed670",
+    "/workspace/nations-model-20261110/models/A/test-artifact.json": "69fa5c7ef71a21ff262dbcc87c995237cca5c1b99fecb3168becd8dc4bf3e9ba",
+    "/workspace/nations-model-20261110/models/B/current-artifact.json": "ca86d58d2584084535884d5a0ed2f90a3605a210f62b6fe7291e3fe6cae44daf",
+    "/workspace/nations-model-20261110/models/B/diagnostic.json": "9f7afe333f099e05058658faf2880c4b32d251706b4c475f9e1238511d265040",
+    "/workspace/nations-model-20261110/models/B/test-artifact.json": "007a07cf47611fcd94d2cc735054e538596d5251d31f8e98ef2ad960f0e87b0e",
+    "/workspace/nations-model-20261110/models/C/current-artifact.json": "3a2f3f6ca4b611b1a00f22e8881abb471f3f6fc43e85fe2444a9cc42744cfc0d",
+    "/workspace/nations-model-20261110/models/C/diagnostic.json": "287e5b103ac1b8a896e2c9b36128c5dde131d7182158b410cbdb7981b1593734",
+    "/workspace/nations-model-20261110/models/C/test-artifact.json": "95921be94765987fa81fd105e9f17b2da777174da9d24f837023af73b007d727",
+    "/workspace/nations-model-20261110/models/D/current-artifact.json": "433cdd94ef2042f9a64861a2e51e6544d1603d572fa0d7fbeb3b10a3368f0fd8",
+    "/workspace/nations-model-20261110/models/D/diagnostic.json": "08d8b0be422f999fb9bb1f7e97c04d18bf59ce857caf412632413d0caa6243b1",
+    "/workspace/nations-model-20261110/models/D/test-artifact.json": "37c473f9e88a67cb30eb53434dcbb1db720b43b3f97fdf2cfab9d4d578182f6f",
+    "/workspace/jcup-qf-expansion-20261111/final-models/candidates.json": "17b0d487c7c4fe64cbd6c6cf8f7617f080b5185ef70e45e7c60260928991db21",
+    "/workspace/jcup-qf-expansion-20261111/final-models/leg1/current-artifact.json": "cedba0a57587b3b2dac2b070b5d11fcff88132f9e263094d2795bb2310c1d9d9",
+    "/workspace/jcup-qf-expansion-20261111/final-models/leg1/test-artifact.json": "8de1e64679a8e31d97819ec718363222c812622d78534139a97258455a2ca827",
+    "/workspace/jcup-qf-expansion-20261111/final-models/leg2/current-artifact.json": "9b6bf9a599b0b4a39f9207d895e92f85f41858a94585e0cc6d8509a27ef5a07d",
+    "/workspace/jcup-qf-expansion-20261111/final-models/leg2/test-artifact.json": "e18a9fd6f18becfda061a027aa7ed1d0cd83a26e80cc636bf11510bb50175c7d",
+    "/workspace/jleague-cup-20261111/final-models/candidates.json": "b5f45a8ee13f23be000b49cb87dc4b37feb321800355a6753f6598ab08c6f1ea",
+    "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/current-artifact.json": "c267b997bb8d8d9a48beb8aa7a01a918583a72630c98b8e61d12b3f9b2bb872f",
+    "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/diagnostic.json": "85043665c68eec7493269649c2916509564b548836f82710def1f9a82f96c2d2",
+    "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/test-artifact.json": "7406614e5a441b63d69674bf41998dfba6d5f4680c5d0401d55662355dedfb04",
+    "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/current-artifact.json": "2dc3843e47ba0361f26e42e2716e809a6e59afa28b3dd749ee1f3caebe245c03",
+    "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/diagnostic.json": "8e14827ef1bcf264f6b02998294402e5d60691af593006b5ac521d58e04c5129",
+    "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/test-artifact.json": "6543091cb57b7dc71fac35a5da476f91fcea4305cb73bbb5f1100fe2c6856047",
+    "/workspace/WCPP/models/afc2-group-20261029-r2/current-artifact.json": "ae388db40e998bb0d9ca935e1ca403b414da68c1a07855d313e23d758dbe4665",
+    "/workspace/WCPP/models/afc2-group-20261029-r2/test-artifact.json": "75c2c77b99cc366651c146eef95e92498035762dafaf122b641700cc97efc9e3",
+    "/workspace/WCPP/models/efl-cup-20261029-r3/current-artifact.json": "3e608caf414d3c68b4100894a18cbaf196123110826f54a9c8d48c3fe5a5efad",
+    "/workspace/WCPP/models/efl-cup-20261029-r3/test-artifact.json": "e2fcdebe8bf984abb8bacee4f722a746ca4d57e9ef79b0239d2782371f6c23fb",
+    "/workspace/WCPP/reports/japan-korea-20261010/jpn.2-artifact.json": "f95151062184efb21d888651953942640d5c62aaeda41f4a4b0b46dada8b04a5",
+    "/workspace/WCPP/reports/japan-korea-20261010/kor.2-artifact.json": "ff2b7ab733297c1fabb8b722c19442e10ed81d714c938e464bd17f8de61344c4",
+    "/workspace/refresh-20261110/europe-final/eng.1/final/current-artifact.json": "2cb513a3fadb6786b4052299dbbde6fbfbd31695b6b95ac23c19a89ea75a309f",
+    "/workspace/refresh-20261110/europe-final/eng.1/final/test-artifact.json": "63a8390796287bff0ef3b3e06ea888af695ebb0403e8b53711dd6eb11d31ae32",
+    "/workspace/refresh-20261110/europe-final/ita.1/final/current-artifact.json": "a19c9cc854f27f78c415e242a38800fb92b7061f290ac1a23b999091decc074b",
+    "/workspace/refresh-20261110/europe-final/ita.1/final/test-artifact.json": "b40afc64be443a60eb502d36ab25eb95c526b877f15189506a196f92639329c6",
+    "/workspace/refresh-20261110/europe-final/swe.1/final/current-artifact.json": "86a596ea81ffdfdf96eac986a537ecfc05f0fb5712f5d3024b11fdfad27177d9",
+    "/workspace/refresh-20261110/europe-final/swe.1/final/test-artifact.json": "f2cafc89fd2991f4c4a29b1c63779b13d4492a9050b8bc34ed0ba42cbd475857",
+    "/workspace/refresh-20261110/aus/result/final-current-artifact.json": "23d863b06af0d67e801f047540165ac394790984a9b3c5dbacb5862803d91160",
+    "/workspace/refresh-20261110/aus/result/final-test-artifact.json": "205f48b755ad37186a58d6b4ee74fa3cd61b4ac15177769d7fa42d24a8dbb507",
+    "/workspace/WCPP/runtime/active-model.json": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+    "/workspace/Football-Analysis/runtime/prediction_engine.py": "aaa0bbb815293a41897abb2a715463f55095944b806e028af97d2e16769b5b31",
+    "/workspace/Football-Analysis/runtime/v6/ml_model.py": "9ebbc3594ac96edd57ea58672eb48cea2d59892de45cb63a27a56bf68b4fda98",
+    "/workspace/Football-Analysis/runtime/v2/model.py": "d11e5296500df41a149ae16eecb8a12f4c88bb613d05f35764cec62f613c7a9a",
+    "/workspace/WCPP/runtime/upset-classifier.json": "f7fa04da338388a715d044e1fde0f06ecfd1624e4d3102289942333c1b66e5cc",
+    "/workspace/WCPP/models/upset-20261013/eng.1/report.json": "660b650e8baf348b78f899011142809b134177f94c24cdc2cd6f0f64391793c5",
+    "/workspace/WCPP/models/upset-20261013/esp.1/report.json": "37312a524e276e5c937fdd9f74993013b11d4831da38b45bb8aee05164e645c4",
+    "/workspace/WCPP/models/upset-20261013/ger.1/report.json": "5fbc4e9db6fc465370cbb6117d24a6ada78170a4bc3c34c95fd444b74fd28c90",
+    "/workspace/WCPP/models/upset-20261013/ita.1/report.json": "7102cc13ff4892c452fc0814dbf1b09b81916e325717b52df7e84d234f91601f",
+    "/workspace/WCPP/models/upset-20261013/fra.1/report.json": "c630cdc9b201e58ae7f2fb1c21ef9b38a4da6d7921b07900b4e21ec55222f6c9",
+    "/workspace/WCPP/models/upset-20261013/eng.2/report.json": "572692169303bd1282ba4f7886fee2360d33de1d1956f22bf6d7bef15f49eee0",
+    "/workspace/WCPP/models/upset-20261013/ger.2/report.json": "37686021f6c29fb4caf7f888c5c29a749b7c56d11c336ad34bd1be423a092727",
+    "/workspace/WCPP/models/upset-20261013/ned.1/report.json": "010fdc00c21c4f907bcc82ee7fbe4915c64913fbb6feb0cbc72f3bc8365ec578",
+    "/workspace/WCPP/models/upset-20261013/por.1/report.json": "655c22cc523ca5480be3e5835295b92b14723b1db3c14abeafc7fcff3acbcf55",
+    "/workspace/WCPP/runtime/upset-candidates.json": "0f906535153f5b7eb3eb95be8f48d66b705895aae4f2090f8b8753421eb005f6",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/eng.1/report.json": "b99a4b382eae36928cf7b4395388a3305210f370797002e1ccac5d17630982ad",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/eng.2/report.json": "62ef6c23449c47603d58d4b14045ccbb1d83e6c98f3250023eb5e45455fa7486",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/esp.1/report.json": "3dac0866018063b10d618e46b81d196be053f355c1d422390be42d76d21dbfac",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/fra.1/report.json": "88efc6d87075c494ab040136a198b8fe5ea365f9d4be6e31986e55678afa9895",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/ger.1/report.json": "f6887c6e13cbf6848d6ae7067ffa2d59d86c393798c51df2c3696276ea958788",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/ger.2/report.json": "7180ddb8dfa59f272614da0c3592f1d6901a74adbed0088962a05790484fb1d4",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/ita.1/report.json": "6a29d64a902ff51ac0f6b9de9b1bd54e37dcb8c7ab68eb8e83c2153127f9322e",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/ned.1/report.json": "fece12b45287545e5d86b322a5c32decb53e89c4de438b665f2731350266af57",
+    "/workspace/WCPP/models/upset-0.2-20261013-r4/por.1/report.json": "3cc295bbde4e259224e1c8ff55619a440c881734dbefd353d8c0ed5174979a31"
+  },
+  "auxiliary_models": 18,
+  "unique_primary_artifacts": 99
+}
