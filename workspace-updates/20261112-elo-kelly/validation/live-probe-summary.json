@@ -1,0 +1,49 @@
+{
+  "schema": "WCPP-AUTOMATION-COLLECTION-1",
+  "captured_at": "2026-11-12T11:03:42.045058+00:00",
+  "request_count": 2,
+  "successful_requests": 1,
+  "max_requests": 100,
+  "retry_used": false,
+  "events_seen": 0,
+  "new_result_observations": 0,
+  "quarantined": 0,
+  "market_snapshot_saved": false,
+  "all_sources_free_public": true,
+  "wallclock_limit_seconds": 30,
+  "budget_status": "BOUNDED_SCAN_FINISHED",
+  "coverage_complete": false,
+  "coverage_by_competition": {
+    "eng.1": {
+      "scoreboards_ok": 1,
+      "events_seen": 0,
+      "new_rows": 0,
+      "quarantined": 0
+    }
+  },
+  "channels": {
+    "history": {
+      "requests": 1,
+      "successful_requests": 1,
+      "failures": {},
+      "status": "RESPONSE_RECEIVED",
+      "new_result_observations": 0,
+      "quarantined": 0,
+      "training_eligibility": "SEPARATE_RAW_EVIDENCE_AND_VENUE_AUDIT_REQUIRED"
+    },
+    "market": {
+      "requests": 1,
+      "successful_requests": 0,
+      "failures": {
+        "TLS": 1
+      },
+      "status": "FAILED",
+      "raw_snapshot_saved": false,
+      "verified_quote_count": 0,
+      "model_ready": false,
+      "quote_status": "NO_RESPONSE"
+    }
+  },
+  "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+  "market_model_ready": false
+}

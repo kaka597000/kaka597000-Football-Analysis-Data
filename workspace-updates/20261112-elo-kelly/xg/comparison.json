@@ -1,0 +1,81 @@
+{
+  "input_sha256": "8bf576f99b286b1cc084bfa69b2dc2aea3206d00ae5ba16aee4b8950dbe500bf",
+  "paired_n": 8685,
+  "arms": {
+    "goals_only": {
+      "original": {
+        "n": 8685,
+        "hits": 1061,
+        "mean_score_log_loss": 2.961349088025742,
+        "rates_gt_10": 0,
+        "max_lambda": 4.128313604161602
+      },
+      "native": {
+        "n": 8685,
+        "hits": 1061,
+        "mean_score_log_loss": 2.961349088025742,
+        "rates_gt_10": 0,
+        "max_lambda": 4.128313604161602
+      }
+    },
+    "original_xg": {
+      "original": {
+        "n": 8685,
+        "hits": 1074,
+        "mean_score_log_loss": 2.9453136061137104,
+        "rates_gt_10": 0,
+        "max_lambda": 5.814647746380288
+      },
+      "native": {
+        "n": 8685,
+        "hits": 1074,
+        "mean_score_log_loss": 2.9453136061137104,
+        "rates_gt_10": 0,
+        "max_lambda": 5.814647746380288
+      }
+    },
+    "fresh_missingness": {
+      "original": {
+        "n": 8685,
+        "hits": 1039,
+        "mean_score_log_loss": 3.1923972873827866,
+        "rates_gt_10": 21,
+        "max_lambda": 102.05982410551992
+      },
+      "native": {
+        "n": 8685,
+        "hits": 1041,
+        "mean_score_log_loss": 2.9552999676602156,
+        "rates_gt_10": 0,
+        "max_lambda": 7.673291737224066
+      }
+    },
+    "opponent_residual": {
+      "original": {
+        "n": 8685,
+        "hits": 1052,
+        "mean_score_log_loss": 3.173302674982138,
+        "rates_gt_10": 21,
+        "max_lambda": 103.66410525760419
+      },
+      "native": {
+        "n": 8685,
+        "hits": 1060,
+        "mean_score_log_loss": 2.9551648946415474,
+        "rates_gt_10": 0,
+        "max_lambda": 7.651298899488952
+      }
+    }
+  },
+  "same_control_predictions": true,
+  "asof_certified": false,
+  "prospective": false,
+  "active_modified": false,
+  "promotion": false,
+  "limits": [
+    "Previously inspected development data; not pristine holdout.",
+    "Real timestamps still incomplete.",
+    "Numerical stability is not proof of future accuracy.",
+    "No post-prediction lambda clipping."
+  ]
+}

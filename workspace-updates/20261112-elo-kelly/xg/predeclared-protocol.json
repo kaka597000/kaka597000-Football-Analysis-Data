@@ -1,0 +1,31 @@
+{
+  "version": "WCPP-XG-NATIVE-SCALE-20261112-1",
+  "competitions": [
+    "eng.1",
+    "esp.1",
+    "fra.1",
+    "ger.1",
+    "ita.1"
+  ],
+  "window_matches": 10,
+  "min_history_matches": 3,
+  "max_xg_age_days": 90,
+  "half_life_days": 30,
+  "min_training_fixtures": 200,
+  "ridge_alpha": 0.1,
+  "max_iter": 500,
+  "tol": 1e-09,
+  "fit_schedule": "UTC month start, expanding, labels known strictly before fit",
+  "grouping": "exact (cohort, competition, stage), no identity or phase alias collapse",
+  "selection": "fixed development hypothesis; no candidate selection; no promotion",
+  "deployment": "INACTIVE_SHADOW_ONLY",
+  "original": "same prior-goal and prior-Understat-xG recipe as feature_ablation",
+  "fresh": "same fixed freshness/missingness recipe; native availability scales",
+  "residual": "same opponent residual recipe; native availability scales",
+  "common_cohort": "all four arms use identical fixtures, labels, and monthly training IDs",
+  "primary": "statistical joint Poisson Top1, NOT comprehensive or active Current/Test Primary",
+  "scaling": "bounded availability features use physical range; continuous goal/xG use training std",
+  "native_scale_module_sha256": "cfc3c0b6a587d505b6ee3ddea090ccd8f7934779c628f9805d9ff625e1a78634",
+  "post_prediction_rate_clipping": false,
+  "prior_failed_protocol_preserved": true
+}
