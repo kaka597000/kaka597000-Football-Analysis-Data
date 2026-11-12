@@ -1,6 +1,6 @@
 # Existing user-authorized schedule. Collector diagnostics have their own immutable pin.
 # Training and locked inference stay on the original code revision.
-# Only result polling and outcome accounting receive the explicit overlay below.
+# Only market input attachment, polling and accounting receive the overlay below.
 name: WCPP private unattended research
 on:
   workflow_dispatch:
@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: e5a32d901d690cccadab258435586464103fbbc6
+          ref: 8488660427610e0fbf6df9a6d356e84f6ec66b7b
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -111,7 +111,7 @@ jobs:
           WCPP_ODDS_API_KEY: ${{ secrets.WCPP_ODDS_API_KEY }}
           THE_ODDS: ${{ secrets.THE_ODDS }}
           MARKET_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
-        run: python -m runtime.automation.market_snapshot --out "../private-state/market/runs/$MARKET_RUN_ID"
+        run: python -m runtime.automation.market_snapshot --market-max-age-seconds 3600 --out "../private-state/market/runs/$MARKET_RUN_ID"
       - name: Capture and review locked future populations
         if: always() && steps.mode.outputs.value == 'collect'
         working-directory: code
@@ -137,6 +137,7 @@ jobs:
               if hashlib.sha256(actual.read_bytes()).hexdigest()!=expected:
                   raise ValueError('locked inference/review source differs from protocol')
           paths=('runtime/automation/prospective_cycle.py',
+                 'runtime/automation/market_bridge.py',
                  'runtime/automation/result_queue.py',
                  'runtime/research_program/promotion_review.py',
                  'runtime/v2_test/evaluation.py')
@@ -167,7 +168,7 @@ jobs:
           else
             ln -s "$GITHUB_WORKSPACE/code" /workspace/Football-Analysis
           fi
-          python -m runtime.automation.prospective_cycle cycle --bundle ../private-state/future/bundle-v2 --max-captures 1 --max-result-requests 2 --max-seconds 20
+          python -m runtime.automation.prospective_cycle cycle --bundle ../private-state/future/bundle-v2 --market-dir ../private-state/market --market-provider the-odds-api --market-provider infersports --market-bookmaker pinnacle --max-captures 1 --max-result-requests 2 --max-seconds 20
           python -m runtime.automation.prospective_cycle review-ucl --bundle ../private-state/future/ucl-bundle-v2 --max-result-requests 2 --max-seconds 20
       - name: Save private audit and data
         if: always()

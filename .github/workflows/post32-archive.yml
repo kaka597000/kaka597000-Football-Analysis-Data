@@ -1,7 +1,7 @@
 name: Post32 durable archive integrity
 on:
   push:
-    branches: [main, feat/post32-durable-evidence-20261112, fix/followup-polling-audit-20261112, feat/metric-optimization-20261112]
+    branches: [main, feat/post32-durable-evidence-20261112, fix/followup-polling-audit-20261112, feat/metric-optimization-20261112, feat/market-bridge-rollout-20261112]
     paths:
       - workspace-updates/20261112-post32/**
       - runtime/verify_post32_archive.py
@@ -10,6 +10,8 @@ on:
       - workspace-updates/20261112-followup-audit/**
       - workspace-updates/20261112-metric-optimization/**
       - runtime/verify_metric_optimization.py
+      - workspace-updates/20261112-market-fallback/**
+      - runtime/verify_market_fallback.py
   pull_request:
     paths:
       - workspace-updates/20261112-post32/**
@@ -19,6 +21,8 @@ on:
       - workspace-updates/20261112-followup-audit/**
       - workspace-updates/20261112-metric-optimization/**
       - runtime/verify_metric_optimization.py
+      - workspace-updates/20261112-market-fallback/**
+      - runtime/verify_market_fallback.py
   workflow_dispatch:
 permissions:
   contents: read
@@ -35,6 +39,8 @@ jobs:
             workspace-updates/20261112-metric-optimization
             runtime/verify_post32_archive.py
             runtime/verify_metric_optimization.py
+            workspace-updates/20261112-market-fallback
+            runtime/verify_market_fallback.py
           sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
@@ -42,6 +48,8 @@ jobs:
       - run: python runtime/verify_post32_archive.py
       - name: Verify metric optimization evidence and asset checks
         run: python runtime/verify_metric_optimization.py
+      - name: Verify live market probe evidence and unchanged model boundary
+        run: python runtime/verify_market_fallback.py
       - name: Verify followup audit evidence
         run: |
           python - <<'PY'
