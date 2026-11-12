@@ -42,8 +42,22 @@ def verify(root):
                 assert len(body) == item['bytes'] and hashlib.sha256(body).hexdigest() == item['sha256']
                 seen.add(member.name)
         assert seen == set(wanted)
+    supplements = 0
+    for path in root.glob('*-supplement-index.json'):
+        extra = json.loads(path.read_text()); archive = root / extra['archive']
+        assert archive.stat().st_size == extra['bytes'] and sha(archive) == extra['sha256']
+        wanted = {x['path']: x for x in extra['members']}; extra_seen = set()
+        assert len(wanted) == len(extra['members'])
+        with tarfile.open(archive) as t:
+            for member in t:
+                assert member.isfile() and member.name in wanted and member.name not in extra_seen
+                body = t.extractfile(member).read(); item = wanted[member.name]
+                assert len(body) == item['bytes'] and hashlib.sha256(body).hexdigest() == item['sha256']
+                extra_seen.add(member.name)
+        assert extra_seen == set(wanted)
+        supplements += len(extra_seen)
     print(json.dumps({'archive_files_verified': len(index['files']), 'execution_members_verified': len(seen),
-                      'actions_artifact_downloads': 0}))
+                      'supplement_members_verified': supplements, 'actions_artifact_downloads': 0}))
 
 
 if __name__ == '__main__':

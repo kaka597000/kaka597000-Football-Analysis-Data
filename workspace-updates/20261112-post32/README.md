@@ -10,3 +10,7 @@
 运行版本分别记录：源码最新提交、采集任务固定源码、训练/前向任务固定源码、活动注册表/工件。候选和新源码不自动晋级模型。`latest-source.json` 与后续执行报告记录这些身份。
 
 盘口任务沿用现有每六小时采集调度，最多两次请求、一个地区的 h2h/totals，不重试；需要既有 GitHub Secret `WCPP_ODDS_API_KEY` 或 `THE_ODDS`，缺失会保存 `MISSING_CREDENTIAL`。从云端成功采集不推断 GitHub 的密钥可用，绝不复制云端凭据。模型可用报价要求来源市场时间、完整同线价格及 ESPN 主客/开球匹配，60 秒窗口不随结果放宽。
+
+PR #7 已合并；main 实际部署运行 `43223434033` 成功，盘口业务状态仍为 `MISSING_CREDENTIAL`。原前向队列在该次运行中为 24/80 已核验完赛、56 待定；欧冠独立 36 场尚无已通过核验的完赛结果。
+
+补充 `elo-independent-temporal.tar.gz` / `elo-supplement-index.json`：盘口缺失没有阻断独立 goals/Elo 对照，固定旧系数在 2526 的 1,737 场合格目标均命中 208 次、净增 0，不晋级。`elo-independent-report.json` 可直接查看分联赛和不确定性。它仍不是活动 Current/Test 同场增量或历史 as-of 认证。前一执行包零覆盖专指五臂共同盘口面板，保留原版本，不覆盖旧结果。

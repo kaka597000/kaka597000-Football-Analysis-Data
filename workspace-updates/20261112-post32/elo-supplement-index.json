@@ -1,0 +1,49 @@
+{
+  "archive": "elo-independent-temporal.tar.gz",
+  "sha256": "c9459338e52c09aef54015dc8cd4f5986693444b3fbbda186eec2825a4c6cf1a",
+  "bytes": 522807,
+  "members": [
+    {
+      "path": "elo-fixed-temporal-v3/protocol.json",
+      "sha256": "463eb87f007f773b760f24f0ef3449d41172593c1682c4e43d4c2ab123a21923",
+      "bytes": 2411
+    },
+    {
+      "path": "elo-fixed-temporal-v3/exclusions.json",
+      "sha256": "293f92fbf0e68747bc600f2fcc971a87ada6c3ab529239aa7294be5ad755249f",
+      "bytes": 226026
+    },
+    {
+      "path": "elo-fixed-temporal-v3/goals-only-predictions.json",
+      "sha256": "3b580e86cfb92595941eb72422f85217f84587fca40b3bfe83f52b10bbc29ebe",
+      "bytes": 2670429
+    },
+    {
+      "path": "elo-fixed-temporal-v3/goals-only-report.json",
+      "sha256": "3df1f8a25edf8ba640d3186bcb5b77a0c77fbddd7ae005252aa6ab8e6f067323",
+      "bytes": 3257
+    },
+    {
+      "path": "elo-fixed-temporal-v3/predictions.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "elo-fixed-temporal-v3/report.json",
+      "sha256": "ff58829fbe3bd16a9c53d76f483602c6b6cfc60a98afe8e0a294aac844fff579",
+      "bytes": 580
+    },
+    {
+      "path": "scripts/evaluate_locked_elo_kelly.py",
+      "sha256": "3e7de330149fcc38ba113ea7c7236a913717c9d5aa522cf4a690206d6b12a4be",
+      "bytes": 6774
+    }
+  ],
+  "execution_base_source_commit": "277fed07b3353a8882b0a9971ed04649263d0615",
+  "execution_worktree_dirty": true,
+  "entrypoint_sha256": "3e7de330149fcc38ba113ea7c7236a913717c9d5aa522cf4a690206d6b12a4be",
+  "input_archives": "source-index.json",
+  "models": "pr32-acceptance.tar.gz / elo-kelly/candidate-models.json",
+  "primary_scope": "STATISTICAL_TOP1_NOT_COMPREHENSIVE",
+  "promotion": false
+}
