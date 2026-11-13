@@ -1,0 +1,191 @@
+{
+  "schema": "WCPP-API-403-DIAGNOSIS-1",
+  "generated_at_beijing": "2026-11-13T10:22:25.795336+08:00",
+  "source_commit": "a342384242140c613033bd7f830569f3ae92babd",
+  "tested_source_commit": "a54325639952912cb6c62f60b163e5b70a1611a6",
+  "same_git_tree_verified": true,
+  "rollback_source_commit": "ddfbc43197df8944072c70135e2a2831ae1a3ef5",
+  "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/36",
+  "source_pr_state": "MERGED",
+  "source_ci": "https://github.com/kaka597000/Football-Analysis/actions/runs/43350976984",
+  "physical_api_requests_this_task": 4,
+  "public_research_requests_this_task": 21,
+  "api_football": {
+    "status": "BLOCKED_CLOUDFLARE_HTML",
+    "current_key_api_probes": 1,
+    "other_controls_executed": false,
+    "authentication": "UNVERIFIED",
+    "plan": "UNVERIFIED",
+    "exact_rule_known": false,
+    "response_evidence": "apifootball/probe-results-api-host.json"
+  },
+  "therundown": {
+    "status": "BLOCKED_CLOUDFLARE_HTML",
+    "protected_api_probes": 3,
+    "all_controls_returned_403_html": true,
+    "authentication": "UNVERIFIED",
+    "plan": "UNVERIFIED",
+    "exact_rule_known": false,
+    "response_evidence": "therundown/probe-results.json"
+  },
+  "implementation": "COMPLETED_AND_MERGED",
+  "workspace_code": "UPDATED",
+  "environment_published": false,
+  "scheduled_collector_deployment_changed": false,
+  "actual_provider_data_acceptance": "BLOCKED",
+  "service_access_restored": false,
+  "historical_prediction_effect": "NOT_APPLICABLE",
+  "forward_prediction_effect": "NOT_APPLICABLE",
+  "active_model_or_database_changed": false,
+  "service_support_request_sent": false,
+  "support_draft": "support-request-unsent.md",
+  "validation": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python scripts/run_tests.py --layer integration",
+    "test_groups": 24,
+    "test_executions": 869,
+    "skipped": 0,
+    "failed_suites_none": true,
+    "active_registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+    "active_registry_unchanged": true,
+    "live_service_access_restored": false,
+    "repository_check": {
+      "checked_source_files": 495,
+      "findings": 0
+    },
+    "diff_check": "PASS",
+    "integration_exit_code": 0,
+    "rollback_source_commit": "ddfbc43197df8944072c70135e2a2831ae1a3ef5",
+    "source_candidate_commit": "a54325639952912cb6c62f60b163e5b70a1611a6",
+    "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/36"
+  },
+  "ci_test_summary": {
+    "run_id": 43350976984,
+    "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/43350976984",
+    "full_log_sha256": "734183f059746642f3457e699892d3a780c45bc4d7e105abe813962c7c2f8477",
+    "full_log_in_archive": false,
+    "public_ci_tests_run": 839,
+    "public_ci_reported_skips": 16,
+    "public_ci_suite_count": 24,
+    "public_ci_suite_results": [
+      {
+        "suite": "runtime",
+        "reported_tests_run": 59
+      },
+      {
+        "suite": "runtime/aus_expert",
+        "reported_tests_run": 3
+      },
+      {
+        "suite": "runtime/automation",
+        "reported_tests_run": 117
+      },
+      {
+        "suite": "runtime/continental",
+        "reported_tests_run": 6
+      },
+      {
+        "suite": "runtime/data_sources",
+        "reported_tests_run": 45
+      },
+      {
+        "suite": "runtime/database",
+        "reported_tests_run": 24
+      },
+      {
+        "suite": "runtime/emperor_cup",
+        "reported_tests_run": 8
+      },
+      {
+        "suite": "runtime/jleague_cup",
+        "reported_tests_run": 17
+      },
+      {
+        "suite": "runtime/nations_league",
+        "reported_tests_run": 32
+      },
+      {
+        "suite": "runtime/optimization",
+        "reported_tests_run": 28
+      },
+      {
+        "suite": "runtime/optimization_tools",
+        "reported_tests_run": 1
+      },
+      {
+        "suite": "runtime/research",
+        "reported_tests_run": 127
+      },
+      {
+        "suite": "runtime/research/egidi_blend",
+        "reported_tests_run": 15
+      },
+      {
+        "suite": "runtime/research_program",
+        "reported_tests_run": 189
+      },
+      {
+        "suite": "runtime/score_adjustment",
+        "reported_tests_run": 11
+      },
+      {
+        "suite": "runtime/upset",
+        "reported_tests_run": 11
+      },
+      {
+        "suite": "runtime/upset_v2",
+        "reported_tests_run": 10
+      },
+      {
+        "suite": "runtime/v2",
+        "reported_tests_run": 19
+      },
+      {
+        "suite": "runtime/v2_test",
+        "reported_tests_run": 35
+      },
+      {
+        "suite": "runtime/v3",
+        "reported_tests_run": 15
+      },
+      {
+        "suite": "runtime/v4",
+        "reported_tests_run": 36
+      },
+      {
+        "suite": "runtime/v5",
+        "reported_tests_run": 19
+      },
+      {
+        "suite": "runtime/v6",
+        "reported_tests_run": 8
+      },
+      {
+        "suite": "runtime/v7",
+        "reported_tests_run": 4
+      }
+    ],
+    "public_ci_skip_messages": [
+      "2026-11-13T02:17:07.2118798Z test_active_anchor_still_matches_hash_locked_engine (test_active_route_engines.ActiveRouteEngineTests.test_active_anchor_still_matches_hash_locked_engine) ... skipped 'external active registry required'",
+      "2026-11-13T02:17:07.2119984Z test_afc_elite_route_is_phase_isolated (test_active_route_engines.ActiveRouteEngineTests.test_afc_elite_route_is_phase_isolated) ... skipped 'external active registry required'",
+      "2026-11-13T02:17:07.2120911Z test_four_requested_routes_are_hash_locked (test_active_route_engines.ActiveRouteEngineTests.test_four_requested_routes_are_hash_locked) ... skipped 'external active registry required'",
+      "2026-11-13T02:17:07.2122257Z test_today_afc_provider_team_map_has_no_cold_start_target (test_active_route_engines.ActiveRouteEngineTests.test_today_afc_provider_team_map_has_no_cold_start_target) ... skipped 'external AFC artifacts required'",
+      "2026-11-13T02:17:13.9633922Z test_append_only_import_rollback_and_legal_repeat (test_expert.ExpertTests.test_append_only_import_rollback_and_legal_repeat) ... skipped 'external Australian historical database required'",
+      "2026-11-13T02:17:18.5337880Z test_invalid_observed_process_rejected (test_ucl.Tests.test_invalid_observed_process_rejected) ... skipped 'external UCL historical dataset required'",
+      "2026-11-13T02:17:18.5338864Z test_mixed_eras_stages_rejected (test_ucl.Tests.test_mixed_eras_stages_rejected) ... skipped 'external UCL historical dataset required'",
+      "2026-11-13T02:17:18.5339542Z test_neutral_unknown_rejected (test_ucl.Tests.test_neutral_unknown_rejected) ... skipped 'external UCL historical dataset required'",
+      "2026-11-13T02:17:18.5340348Z test_partial_process_preserves_real_sot_and_possession (test_ucl.Tests.test_partial_process_preserves_real_sot_and_possession) ... skipped 'external UCL historical dataset required'",
+      "2026-11-13T02:17:18.5341178Z test_target_or_same_date_process_not_used (test_ucl.Tests.test_target_or_same_date_process_not_used) ... skipped 'external UCL historical dataset required'",
+      "2026-11-13T02:17:46.4579169Z setUpClass (test_fixed_recipe_refresh.RefreshTests) ... skipped 'private integration assets unavailable: /workspace/WCPP/models/weighted-20261012/ita.1/artifact.json, /workspace/WCPP/models/ml-20261012/ita.1/artifact.json, /workspace/WCPP/reports/auto-optimization-20261101/history/rows.json, /workspace/WCPP/reports/auto-optimization-20261101/history/coverage.json, /workspace/WCPP/reports/auto-optimization-20261101/history/raw'",
+      "2026-11-13T02:17:46.9136155Z setUpClass (test_refresh_holdout.RetainedModelTests) ... skipped 'retained model integration assets unavailable'",
+      "2026-11-13T02:17:54.3696811Z test_future_quote_or_bad_hash_rejected (test_predict.PredictionTest.test_future_quote_or_bad_hash_rejected) ... skipped 'external upset model registry required'",
+      "2026-11-13T02:17:54.3698303Z test_local_artifact_inference_and_input_isolation (test_predict.PredictionTest.test_local_artifact_inference_and_input_isolation) ... skipped 'external upset model registry required'",
+      "2026-11-13T02:17:54.3699614Z test_missing_and_untrained (test_predict.PredictionTest.test_missing_and_untrained) ... skipped 'external upset model registry required'",
+      "2026-11-13T02:17:54.3701144Z test_test_outcomes_do_not_select_models_blends_or_hyperparameters (test_validation.ValidationTest.test_test_outcomes_do_not_select_models_blends_or_hyperparameters) ... skipped 'external upset training history and prior report required'"
+    ],
+    "portable_ubuntu_tests": 11,
+    "portable_windows_tests": 11,
+    "local_strict_tests_run": 869,
+    "local_strict_skips": 0,
+    "count_difference_explanation": "Public CI skips 27 RefreshTests and 3 RetainedModelTests at setUpClass, which unittest records as two class skips rather than 30 test executions. Local strict integration executes all 30."
+  }
+}
