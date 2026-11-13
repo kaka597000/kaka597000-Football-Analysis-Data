@@ -1,0 +1,2582 @@
+{
+  "schema": "WCPP-AUTOMATED-FUTURE-CYCLE-1",
+  "reviewed_at": "2026-11-13T06:43:52.527509+00:00",
+  "bundle_sha256": "cd90fe5d4e8c6ef33b50079e932a41017fc2430c8b73f9a9286d3feac361e952",
+  "population": 80,
+  "captured_population": 80,
+  "new_captures": [],
+  "result_requests": 2,
+  "result_attempted_ids": [
+    "espn:401879241",
+    "espn:401882813"
+  ],
+  "completed": 35,
+  "pending": 45,
+  "missing_first_pairs": 0,
+  "failures": [],
+  "cohort_reviews": [
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 2,
+      "completed": 1,
+      "pending_results": [
+        "espn:401879244"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 1,
+          "primary_n": 1,
+          "primary_hits": 0,
+          "wdl_n": 1,
+          "wdl_hits": 1,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 1,
+          "primary_n": 1,
+          "primary_hits": 0,
+          "wdl_n": 1,
+          "wdl_hits": 1,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401879242",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "QUALITY_REGRESSION:score_log_loss",
+          "QUALITY_REGRESSION:score_brier",
+          "QUALITY_REGRESSION:wdl_brier",
+          "QUALITY_REGRESSION:wdl_rps",
+          "TAIL_CALIBRATION_REGRESSION:away3+",
+          "TAIL_CALIBRATION_REGRESSION:away4+",
+          "TAIL_CALIBRATION_REGRESSION:home3+",
+          "TAIL_CALIBRATION_REGRESSION:total5+",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 1,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_primary_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "paired_frozen_wdl": {
+            "n": 1,
+            "current_hits": 1,
+            "candidate_hits": 1
+          }
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 1,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 2.9777144108075944,
+              "score_brier": 0.9801434882685788,
+              "wdl_brier": 0.2765246953820269,
+              "wdl_rps": 0.10804064398136398,
+              "wdl_accuracy": 1.0
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.1436421294974141,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 1,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 1,
+              "hits": 1,
+              "coverage": 1.0,
+              "accuracy": 1.0,
+              "full_population_accuracy": 1.0,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.0022234411622866924,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 8.114677908962022e-05,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.6005967126046549,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.0069432585204171025,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.5965128613313674,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.0099443082236792,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 1,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 3.103094040993004,
+              "score_brier": 0.9813009618965176,
+              "wdl_brier": 0.44269858263359374,
+              "wdl_rps": 0.18770675500874906,
+              "wdl_accuracy": 1.0
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.12336127344439608,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 1,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 1,
+              "hits": 1,
+              "coverage": 1.0,
+              "accuracy": 1.0,
+              "full_population_accuracy": 1.0,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.010200369654523709,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.0006896729520290774,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.6631866543328073,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.003957008363747745,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.5465264036818764,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.014509522921184173,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 1,
+            "ece": 0.1436421294974141,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.1436421294974141,
+                "hit_rate": 0.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 1,
+            "ece": 0.12336127344439608,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.12336127344439608,
+                "hit_rate": 0.0
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 8,
+      "completed": 8,
+      "pending_results": [],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 8,
+          "primary_n": 8,
+          "primary_hits": 0,
+          "wdl_n": 8,
+          "wdl_hits": 3,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 8,
+          "primary_n": 8,
+          "primary_hits": 0,
+          "wdl_n": 8,
+          "wdl_hits": 2,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401842876",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401842878",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401842881",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401842875",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401842877",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401842874",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401842879",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401842880",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "WDL_DIRECTION_REGRESSION",
+          "PRIMARY_CONFIDENCE_CALIBRATION_REGRESSION",
+          "TAIL_CALIBRATION_REGRESSION:home3+",
+          "TAIL_CALIBRATION_REGRESSION:home4+",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 8,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_primary_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "paired_frozen_wdl": {
+            "n": 8,
+            "current_hits": 3,
+            "candidate_hits": 2
+          }
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 8,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 3.124030322984309,
+              "score_brier": 0.9731672845950974,
+              "wdl_brier": 0.7641689840292476,
+              "wdl_rps": 0.2562312344603831,
+              "wdl_accuracy": 0.375
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.09873548016614446,
+                "hit_rate": 0.0
+              },
+              {
+                "n": 7,
+                "mean_probability": 0.1203972196337433,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 8,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 8,
+              "hits": 3,
+              "coverage": 1.0,
+              "accuracy": 0.375,
+              "full_population_accuracy": 0.375,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.05204312341637241,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.008546527461952627,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.16310544041624842,
+                "observed_events": 2,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.10117029456345711,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total4+": {
+                "brier": 0.19794377525300338,
+                "observed_events": 2,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.1984048213059538,
+                "observed_events": 2,
+                "recall_at_preregistered_half": 0.0
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 8,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.25,
+              "score_log_loss": 2.9486836813912687,
+              "score_brier": 0.953077710689117,
+              "wdl_brier": 0.7411287853408235,
+              "wdl_rps": 0.24789988323422119,
+              "wdl_accuracy": 0.25
+            },
+            "calibration_bins": [
+              {
+                "n": 8,
+                "mean_probability": 0.127057303511787,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 8,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 8,
+              "hits": 2,
+              "coverage": 1.0,
+              "accuracy": 0.25,
+              "full_population_accuracy": 0.25,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.029506601695278908,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.003558828912472451,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.18512382736935462,
+                "observed_events": 2,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.1108979908322414,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total4+": {
+                "brier": 0.17749382127239954,
+                "observed_events": 2,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.19813762305712965,
+                "observed_events": 2,
+                "recall_at_preregistered_half": 0.0
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 8,
+            "ece": 0.11768950220029344,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.09873548016614446,
+                "hit_rate": 0.0
+              },
+              {
+                "n": 7,
+                "probability": 0.1203972196337433,
+                "hit_rate": 0.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 8,
+            "ece": 0.127057303511787,
+            "bins": [
+              {
+                "n": 8,
+                "probability": 0.127057303511787,
+                "hit_rate": 0.0
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 8,
+      "completed": 5,
+      "pending_results": [
+        "espn:401884743",
+        "espn:401884738",
+        "espn:401884741"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 5,
+          "primary_n": 5,
+          "primary_hits": 2,
+          "wdl_n": 5,
+          "wdl_hits": 4,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 5,
+          "primary_n": 5,
+          "primary_hits": 2,
+          "wdl_n": 5,
+          "wdl_hits": 4,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401884739",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401884737",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401884740",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401884744",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401884745",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "PRIMARY_CONFIDENCE_CALIBRATION_REGRESSION",
+          "TAIL_CALIBRATION_REGRESSION:away3+",
+          "TAIL_CALIBRATION_REGRESSION:away4+",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 5,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_primary_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "paired_frozen_wdl": {
+            "n": 5,
+            "current_hits": 4,
+            "candidate_hits": 4
+          }
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 5,
+            "metrics": {
+              "exact_top1": 0.4,
+              "exact_top3": 0.4,
+              "exact_top5": 0.4,
+              "score_log_loss": 3.006364767455595,
+              "score_brier": 0.9294176812232926,
+              "wdl_brier": 0.42929450438558375,
+              "wdl_rps": 0.13829284313521914,
+              "wdl_accuracy": 0.8
+            },
+            "calibration_bins": [
+              {
+                "n": 3,
+                "mean_probability": 0.09440654311516167,
+                "hit_rate": 0.6666666666666666
+              },
+              {
+                "n": 2,
+                "mean_probability": 0.10605524993954059,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 5,
+              "hits": 2,
+              "coverage": 1.0,
+              "accuracy": 0.4,
+              "full_population_accuracy": 0.4,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 5,
+              "hits": 4,
+              "coverage": 1.0,
+              "accuracy": 0.8,
+              "full_population_accuracy": 0.8,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.04724846792835436,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.008907148413078098,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.24578799085299424,
+                "observed_events": 2,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.1471983852109796,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total4+": {
+                "brier": 0.30387359027215116,
+                "observed_events": 3,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.15740565589916006,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 5,
+            "metrics": {
+              "exact_top1": 0.4,
+              "exact_top3": 0.4,
+              "exact_top5": 0.4,
+              "score_log_loss": 2.918735891962284,
+              "score_brier": 0.9282380842938046,
+              "wdl_brier": 0.41071111427620083,
+              "wdl_rps": 0.13021301838264243,
+              "wdl_accuracy": 0.8
+            },
+            "calibration_bins": [
+              {
+                "n": 3,
+                "mean_probability": 0.08846394364527188,
+                "hit_rate": 0.6666666666666666
+              },
+              {
+                "n": 2,
+                "mean_probability": 0.1043167833788524,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 5,
+              "hits": 2,
+              "coverage": 1.0,
+              "accuracy": 0.4,
+              "full_population_accuracy": 0.4,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 5,
+              "hits": 4,
+              "coverage": 1.0,
+              "accuracy": 0.8,
+              "full_population_accuracy": 0.8,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.05234590294364928,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.01163373249360755,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.20852873620136275,
+                "observed_events": 2,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.11905066972632025,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total4+": {
+                "brier": 0.300479954345012,
+                "observed_events": 3,
+                "recall_at_preregistered_half": 0.3333333333333333
+              },
+              "total5+": {
+                "brier": 0.14165547819064134,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 5,
+            "ece": 0.3857781741067193,
+            "bins": [
+              {
+                "n": 3,
+                "probability": 0.09440654311516167,
+                "hit_rate": 0.6666666666666666
+              },
+              {
+                "n": 2,
+                "probability": 0.10605524993954059,
+                "hit_rate": 0.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 5,
+            "ece": 0.3886483471643778,
+            "bins": [
+              {
+                "n": 3,
+                "probability": 0.08846394364527188,
+                "hit_rate": 0.6666666666666666
+              },
+              {
+                "n": 2,
+                "probability": 0.1043167833788524,
+                "hit_rate": 0.0
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 8,
+      "completed": 1,
+      "pending_results": [
+        "espn:401876411",
+        "espn:401876407",
+        "espn:401876406",
+        "espn:401876408",
+        "espn:401876409",
+        "espn:401876410",
+        "espn:401876412"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 1,
+          "primary_n": 1,
+          "primary_hits": 0,
+          "wdl_n": 1,
+          "wdl_hits": 1,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 1,
+          "primary_n": 1,
+          "primary_hits": 0,
+          "wdl_n": 1,
+          "wdl_hits": 1,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401876405",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "PRIMARY_CONFIDENCE_CALIBRATION_REGRESSION",
+          "TAIL_CALIBRATION_REGRESSION:home4+",
+          "TAIL_CALIBRATION_REGRESSION:total4+",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 1,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_primary_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "paired_frozen_wdl": {
+            "n": 1,
+            "current_hits": 1,
+            "candidate_hits": 1
+          }
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 1,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 3.048922432033094,
+              "score_brier": 0.9583390281782539,
+              "wdl_brier": 0.5507858786333506,
+              "wdl_rps": 0.24885333751598637,
+              "wdl_accuracy": 1.0
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.10065301053455669,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 1,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 1,
+              "hits": 1,
+              "coverage": 1.0,
+              "accuracy": 1.0,
+              "full_population_accuracy": 1.0,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.048257213652463986,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.006470176842006381,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.580949151192047,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.00816941072408552,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.3386323831440001,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.05574556821013939,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 1,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 2.928798326011085,
+              "score_brier": 0.9480069038623256,
+              "wdl_brier": 0.4536412107858626,
+              "wdl_rps": 0.20023478488749327,
+              "wdl_accuracy": 1.0
+            },
+            "calibration_bins": [
+              {
+                "n": 1,
+                "mean_probability": 0.10271041822589169,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 1,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 1,
+              "hits": 1,
+              "coverage": 1.0,
+              "accuracy": 1.0,
+              "full_population_accuracy": 1.0,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.03182332697634262,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.0035248108845090283,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.5466902645073043,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.010711810368629202,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.3587762694569775,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.04938476116766058,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 1,
+            "ece": 0.10065301053455669,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.10065301053455669,
+                "hit_rate": 0.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 1,
+            "ece": 0.10271041822589169,
+            "bins": [
+              {
+                "n": 1,
+                "probability": 0.10271041822589169,
+                "hit_rate": 0.0
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 9,
+      "completed": 7,
+      "pending_results": [
+        "espn:401874974",
+        "espn:401875018"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 7,
+          "primary_n": 7,
+          "primary_hits": 1,
+          "wdl_n": 7,
+          "wdl_hits": 3,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 7,
+          "primary_n": 7,
+          "primary_hits": 2,
+          "wdl_n": 7,
+          "wdl_hits": 3,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401874815",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401874791",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401874811",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401874803",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401874810",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401874800",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401874808",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "QUALITY_REGRESSION:score_log_loss",
+          "QUALITY_REGRESSION:score_brier",
+          "PRIMARY_CONFIDENCE_CALIBRATION_REGRESSION",
+          "TAIL_CALIBRATION_REGRESSION:away3+",
+          "TAIL_CALIBRATION_REGRESSION:away4+",
+          "TAIL_CALIBRATION_REGRESSION:home3+",
+          "TAIL_CALIBRATION_REGRESSION:home4+",
+          "TAIL_CALIBRATION_REGRESSION:total4+",
+          "TAIL_CALIBRATION_REGRESSION:total5+",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 7,
+          "coverage": 1.0,
+          "changed_right": 1,
+          "changed_wrong": 0,
+          "net_primary_hits": 1,
+          "paired_one_sided_pvalue": 0.5,
+          "paired_frozen_wdl": {
+            "n": 7,
+            "current_hits": 3,
+            "candidate_hits": 3
+          }
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 7,
+            "metrics": {
+              "exact_top1": 0.14285714285714285,
+              "exact_top3": 0.5714285714285714,
+              "exact_top5": 0.8571428571428571,
+              "score_log_loss": 2.4277849963824205,
+              "score_brier": 0.8853559609360574,
+              "wdl_brier": 0.6277593915136813,
+              "wdl_rps": 0.2187035336888769,
+              "wdl_accuracy": 0.42857142857142855
+            },
+            "calibration_bins": [
+              {
+                "n": 7,
+                "mean_probability": 0.11766216925170335,
+                "hit_rate": 0.14285714285714285
+              }
+            ],
+            "primary": {
+              "n": 7,
+              "hits": 1,
+              "coverage": 1.0,
+              "accuracy": 0.14285714285714285,
+              "full_population_accuracy": 0.14285714285714285,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 7,
+              "hits": 3,
+              "coverage": 1.0,
+              "accuracy": 0.42857142857142855,
+              "full_population_accuracy": 0.42857142857142855,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.026032535331622038,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.0031732257255974376,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.08543005394942053,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.0053443476701569,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.08952248818475132,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total5+": {
+                "brier": 0.022910173365326646,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 7,
+            "metrics": {
+              "exact_top1": 0.2857142857142857,
+              "exact_top3": 0.5714285714285714,
+              "exact_top5": 0.5714285714285714,
+              "score_log_loss": 2.6253992129982073,
+              "score_brier": 0.9012520232198147,
+              "wdl_brier": 0.586597895670246,
+              "wdl_rps": 0.1922442842102434,
+              "wdl_accuracy": 0.42857142857142855
+            },
+            "calibration_bins": [
+              {
+                "n": 4,
+                "mean_probability": 0.08916393280906967,
+                "hit_rate": 0.25
+              },
+              {
+                "n": 3,
+                "mean_probability": 0.10630152848106776,
+                "hit_rate": 0.3333333333333333
+              }
+            ],
+            "primary": {
+              "n": 7,
+              "hits": 2,
+              "coverage": 1.0,
+              "accuracy": 0.2857142857142857,
+              "full_population_accuracy": 0.2857142857142857,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 7,
+              "hits": 3,
+              "coverage": 1.0,
+              "accuracy": 0.42857142857142855,
+              "full_population_accuracy": 0.42857142857142855,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.032521964202223926,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.003952032694484355,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.08610115997446091,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 1.0
+              },
+              "home4+": {
+                "brier": 0.03585875748706337,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.21058446943763065,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total5+": {
+                "brier": 0.07918747061247298,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 7,
+            "ece": 0.025194973605439503,
+            "bins": [
+              {
+                "n": 7,
+                "probability": 0.11766216925170335,
+                "hit_rate": 0.14285714285714285
+              }
+            ]
+          },
+          "candidate": {
+            "n": 7,
+            "ece": 0.18920566904578826,
+            "bins": [
+              {
+                "n": 4,
+                "probability": 0.08916393280906967,
+                "hit_rate": 0.25
+              },
+              {
+                "n": 3,
+                "probability": 0.10630152848106776,
+                "hit_rate": 0.3333333333333333
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 9,
+      "completed": 3,
+      "pending_results": [
+        "espn:401882811",
+        "espn:401882808",
+        "espn:401882814",
+        "espn:401882810",
+        "espn:401882807",
+        "espn:401882815"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 3,
+          "primary_n": 3,
+          "primary_hits": 0,
+          "wdl_n": 3,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 3,
+          "primary_n": 3,
+          "primary_hits": 0,
+          "wdl_n": 3,
+          "wdl_hits": 0,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401882809",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401882812",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401882813",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "QUALITY_REGRESSION:score_log_loss",
+          "QUALITY_REGRESSION:score_brier",
+          "QUALITY_REGRESSION:wdl_brier",
+          "QUALITY_REGRESSION:wdl_rps",
+          "TAIL_CALIBRATION_REGRESSION:home3+",
+          "TAIL_CALIBRATION_REGRESSION:home4+",
+          "TAIL_CALIBRATION_REGRESSION:total4+",
+          "TAIL_CALIBRATION_REGRESSION:total5+",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 3,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_primary_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "paired_frozen_wdl": {
+            "n": 3,
+            "current_hits": 0,
+            "candidate_hits": 0
+          }
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 3,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.6666666666666666,
+              "score_log_loss": 2.5853783034484814,
+              "score_brier": 0.9159159976164163,
+              "wdl_brier": 0.7938025295631636,
+              "wdl_rps": 0.20721307344283516,
+              "wdl_accuracy": 0.0
+            },
+            "calibration_bins": [
+              {
+                "n": 3,
+                "mean_probability": 0.12012355633463186,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 3,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 3,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.01743531381359211,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.001508215829469062,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.03673480991116727,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home4+": {
+                "brier": 0.004622142002170752,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.08808119428201644,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total5+": {
+                "brier": 0.021676864483320697,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 3,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.6666666666666666,
+              "score_log_loss": 2.679844307143425,
+              "score_brier": 0.9256985885082933,
+              "wdl_brier": 0.8223266463241429,
+              "wdl_rps": 0.21748646716189515,
+              "wdl_accuracy": 0.0
+            },
+            "calibration_bins": [
+              {
+                "n": 3,
+                "mean_probability": 0.11729836942540689,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 3,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 3,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.016463591401477844,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.0013867933046550899,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.04461675768114754,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home4+": {
+                "brier": 0.00606325028475548,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.09632845057711732,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total5+": {
+                "brier": 0.02447773957838986,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 3,
+            "ece": 0.12012355633463186,
+            "bins": [
+              {
+                "n": 3,
+                "probability": 0.12012355633463186,
+                "hit_rate": 0.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 3,
+            "ece": 0.11729836942540689,
+            "bins": [
+              {
+                "n": 3,
+                "probability": 0.11729836942540689,
+                "hit_rate": 0.0
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 28,
+      "completed": 3,
+      "pending_results": [
+        "espn:401878757",
+        "espn:401878759",
+        "espn:401879239",
+        "espn:401879243",
+        "espn:401879240",
+        "espn:401879233",
+        "espn:401878754",
+        "espn:401878756",
+        "espn:401879235",
+        "espn:401879236",
+        "espn:401879238",
+        "espn:401879232",
+        "espn:401879234",
+        "espn:401878755",
+        "espn:401879237",
+        "espn:401879225",
+        "espn:401879226",
+        "espn:401879227",
+        "espn:401878752",
+        "espn:401879229",
+        "espn:401879224",
+        "espn:401879228",
+        "espn:401879230",
+        "espn:401879231",
+        "espn:401878753"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 3,
+          "primary_n": 3,
+          "primary_hits": 3,
+          "wdl_n": 3,
+          "wdl_hits": 2,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 3,
+          "primary_n": 3,
+          "primary_hits": 2,
+          "wdl_n": 3,
+          "wdl_hits": 2,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401878758",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401878760",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401879241",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": true,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "QUALITY_REGRESSION:score_log_loss",
+          "QUALITY_REGRESSION:score_brier",
+          "QUALITY_REGRESSION:wdl_brier",
+          "QUALITY_REGRESSION:wdl_rps",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 3,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 1,
+          "net_primary_hits": -1,
+          "paired_one_sided_pvalue": 1.0,
+          "paired_frozen_wdl": {
+            "n": 3,
+            "current_hits": 2,
+            "candidate_hits": 2
+          }
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 3,
+            "metrics": {
+              "exact_top1": 1.0,
+              "exact_top3": 1.0,
+              "exact_top5": 1.0,
+              "score_log_loss": 2.0300158439794083,
+              "score_brier": 0.8110178566325651,
+              "wdl_brier": 0.4837766807937456,
+              "wdl_rps": 0.12734997458184202,
+              "wdl_accuracy": 0.6666666666666666
+            },
+            "calibration_bins": [
+              {
+                "n": 3,
+                "mean_probability": 0.13178434534028835,
+                "hit_rate": 1.0
+              }
+            ],
+            "primary": {
+              "n": 3,
+              "hits": 3,
+              "coverage": 1.0,
+              "accuracy": 1.0,
+              "full_population_accuracy": 1.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 3,
+              "hits": 2,
+              "coverage": 1.0,
+              "accuracy": 0.6666666666666666,
+              "full_population_accuracy": 0.6666666666666666,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.009382205252111147,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.00078216982802321,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.04379304913536977,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home4+": {
+                "brier": 0.005693622705226589,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.06863447828086172,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total5+": {
+                "brier": 0.015170876065722193,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 3,
+            "metrics": {
+              "exact_top1": 0.6666666666666666,
+              "exact_top3": 1.0,
+              "exact_top5": 1.0,
+              "score_log_loss": 2.058955995600542,
+              "score_brier": 0.8205396065140569,
+              "wdl_brier": 0.5373383022756868,
+              "wdl_rps": 0.1545179090220071,
+              "wdl_accuracy": 0.6666666666666666
+            },
+            "calibration_bins": [
+              {
+                "n": 3,
+                "mean_probability": 0.12791355589803802,
+                "hit_rate": 0.6666666666666666
+              }
+            ],
+            "primary": {
+              "n": 3,
+              "hits": 2,
+              "coverage": 1.0,
+              "accuracy": 0.6666666666666666,
+              "full_population_accuracy": 0.6666666666666666,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 3,
+              "hits": 2,
+              "coverage": 1.0,
+              "accuracy": 0.6666666666666666,
+              "full_population_accuracy": 0.6666666666666666,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.007062953664184358,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "away4+": {
+                "brier": 0.00042863755703096773,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home3+": {
+                "brier": 0.03492173895538878,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "home4+": {
+                "brier": 0.00414194061828898,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total4+": {
+                "brier": 0.05732418782902638,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              },
+              "total5+": {
+                "brier": 0.011527464986612985,
+                "observed_events": 0,
+                "recall_at_preregistered_half": null
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 3,
+            "ece": 0.8682156546597116,
+            "bins": [
+              {
+                "n": 3,
+                "probability": 0.13178434534028835,
+                "hit_rate": 1.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 3,
+            "ece": 0.5387531107686286,
+            "bins": [
+              {
+                "n": 3,
+                "probability": 0.12791355589803802,
+                "hit_rate": 0.6666666666666666
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    },
+    {
+      "schema": "WCPP-REAL-FUTURE-PAIRED-REVIEW-1",
+      "population": 8,
+      "completed": 7,
+      "pending_results": [
+        "espn:401843480"
+      ],
+      "missing_first_pairs": [],
+      "independent_denominators": {
+        "current": {
+          "settled_population": 7,
+          "primary_n": 7,
+          "primary_hits": 0,
+          "wdl_n": 7,
+          "wdl_hits": 5,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        },
+        "candidate": {
+          "settled_population": 7,
+          "primary_n": 7,
+          "primary_hits": 0,
+          "wdl_n": 7,
+          "wdl_hits": 5,
+          "actual_line_n": 0,
+          "actual_line_five_way": {}
+        }
+      },
+      "rows": [
+        {
+          "match_id": "espn:401843478",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401843476",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401843477",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401843479",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401843481",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401843482",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": true,
+              "total_settlement": null
+            }
+          }
+        },
+        {
+          "match_id": "espn:401843475",
+          "models": {
+            "current": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            },
+            "candidate": {
+              "primary_selected": true,
+              "primary_hit": false,
+              "wdl_hit": false,
+              "total_settlement": null
+            }
+          }
+        }
+      ],
+      "promotion_review": {
+        "schema": "WCPP-PROSPECTIVE-REVIEW-GATE-1",
+        "status": "BLOCKED",
+        "reasons": [
+          "INSUFFICIENT_PREDECLARED_SAMPLE",
+          "INCOMPLETE_PREDECLARED_POPULATION",
+          "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+          "INDEPENDENT_ACTUAL_LINE_FIVE_WAY_AUDIT_REQUIRED",
+          "INDEPENDENT_SOURCE_ASOF_AUDIT_REQUIRED"
+        ],
+        "paired_primary": {
+          "n": 7,
+          "coverage": 1.0,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_primary_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "paired_frozen_wdl": {
+            "n": 7,
+            "current_hits": 5,
+            "candidate_hits": 5
+          }
+        },
+        "probability_metrics": {
+          "current": {
+            "n": 7,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 3.9276320064048376,
+              "score_brier": 0.9823907646023475,
+              "wdl_brier": 0.45371033261268007,
+              "wdl_rps": 0.13138771785775533,
+              "wdl_accuracy": 0.7142857142857143
+            },
+            "calibration_bins": [
+              {
+                "n": 3,
+                "mean_probability": 0.09761150844754556,
+                "hit_rate": 0.0
+              },
+              {
+                "n": 4,
+                "mean_probability": 0.11527470369387625,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 7,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 7,
+              "hits": 5,
+              "coverage": 1.0,
+              "accuracy": 0.7142857142857143,
+              "full_population_accuracy": 0.7142857142857143,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.11823148689429326,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "away4+": {
+                "brier": 0.1295467986214339,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home3+": {
+                "brier": 0.3401902614354625,
+                "observed_events": 5,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home4+": {
+                "brier": 0.2862614743150858,
+                "observed_events": 3,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total4+": {
+                "brier": 0.30904667992380064,
+                "observed_events": 5,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total5+": {
+                "brier": 0.35135963895404354,
+                "observed_events": 4,
+                "recall_at_preregistered_half": 0.0
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          },
+          "candidate": {
+            "n": 7,
+            "metrics": {
+              "exact_top1": 0.0,
+              "exact_top3": 0.0,
+              "exact_top5": 0.0,
+              "score_log_loss": 3.695701554966803,
+              "score_brier": 0.9678546531703801,
+              "wdl_brier": 0.4535372043370253,
+              "wdl_rps": 0.128869837602795,
+              "wdl_accuracy": 0.7142857142857143
+            },
+            "calibration_bins": [
+              {
+                "n": 6,
+                "mean_probability": 0.09289972003836773,
+                "hit_rate": 0.0
+              },
+              {
+                "n": 1,
+                "mean_probability": 0.10726779013816269,
+                "hit_rate": 0.0
+              }
+            ],
+            "primary": {
+              "n": 7,
+              "hits": 0,
+              "coverage": 1.0,
+              "accuracy": 0.0,
+              "full_population_accuracy": 0.0,
+              "net_hits_vs_probability_top1_same_subset": 0
+            },
+            "frozen_wdl": {
+              "n": 7,
+              "hits": 5,
+              "coverage": 1.0,
+              "accuracy": 0.7142857142857143,
+              "full_population_accuracy": 0.7142857142857143,
+              "net_hits_vs_probability_direction_same_subset": 0
+            },
+            "market_paired_n": 0,
+            "market_paired_brier": null,
+            "tail": {
+              "away3+": {
+                "brier": 0.10664832862786164,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "away4+": {
+                "brier": 0.11875938955632719,
+                "observed_events": 1,
+                "recall_at_preregistered_half": 0.0
+              },
+              "home3+": {
+                "brier": 0.28997437087957395,
+                "observed_events": 5,
+                "recall_at_preregistered_half": 0.2
+              },
+              "home4+": {
+                "brier": 0.2643465198911233,
+                "observed_events": 3,
+                "recall_at_preregistered_half": 0.0
+              },
+              "total4+": {
+                "brier": 0.2532244523694636,
+                "observed_events": 5,
+                "recall_at_preregistered_half": 0.4
+              },
+              "total5+": {
+                "brier": 0.29884025401826364,
+                "observed_events": 4,
+                "recall_at_preregistered_half": 0.0
+              }
+            },
+            "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+          }
+        },
+        "actual_primary_calibration": {
+          "current": {
+            "n": 7,
+            "ece": 0.10770476287402023,
+            "bins": [
+              {
+                "n": 3,
+                "probability": 0.09761150844754556,
+                "hit_rate": 0.0
+              },
+              {
+                "n": 4,
+                "probability": 0.11527470369387625,
+                "hit_rate": 0.0
+              }
+            ]
+          },
+          "candidate": {
+            "n": 7,
+            "ece": 0.09495230148119559,
+            "bins": [
+              {
+                "n": 6,
+                "probability": 0.09289972003836773,
+                "hit_rate": 0.0
+              },
+              {
+                "n": 1,
+                "probability": 0.10726779013816269,
+                "hit_rate": 0.0
+              }
+            ]
+          }
+        },
+        "automatic_promotion": false,
+        "activation_modified": false,
+        "notice": "Receipt references and supplied source facts require independent review. Passing this software gate never certifies truth or authorizes a registry switch."
+      },
+      "automatic_promotion": false,
+      "activation_modified": false,
+      "notice": "No missing or live result is scored; direction and real-line denominators are independent. Software checks do not substitute independent source or market audit."
+    }
+  ],
+  "automatic_promotion": false,
+  "active_model_modified": false
+}
