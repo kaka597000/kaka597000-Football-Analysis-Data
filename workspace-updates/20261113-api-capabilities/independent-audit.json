@@ -1,0 +1,567 @@
+{
+  "schema": "WCPP-API-INDEPENDENT-AUDIT-1",
+  "status": "PASS_WITH_QUALIFICATIONS",
+  "reviewed_at": "2026-11-13T09:46:19.597448+08:00",
+  "scope_count": 20,
+  "provider_count": 8,
+  "collection_is_still_running": false,
+  "network_calls_by_reviewer": 0,
+  "secret_reads_by_reviewer": 0,
+  "source_code_changes_by_reviewer": 0,
+  "provider_scope_snapshot": [
+    {
+      "provider": "apifootball",
+      "capability_sha256": "16036d6288dc698380d143b6fdea39a970e3cd7485376e1e9340fb6b87740d33",
+      "competition_count": 20,
+      "status_counts": {
+        "BLOCKED": 20
+      }
+    },
+    {
+      "provider": "therundown",
+      "capability_sha256": "d6d8d2a07603f887eaf966a1ebd0a4eb584e49de5ce9924372d874f6ac239d18",
+      "competition_count": 20,
+      "status_counts": {
+        "BLOCKED": 20
+      }
+    },
+    {
+      "provider": "5dollar",
+      "capability_sha256": "b06450654825079bc422ac8f6780cc3827911fc7b3cc12d288f718e2e2b5a517",
+      "competition_count": 20,
+      "status_counts": {
+        "LIVE_VERIFIED": 3,
+        "CATALOG_LISTED": 3,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 14
+      }
+    },
+    {
+      "provider": "football-data",
+      "capability_sha256": "f256865721dc6bbbef4403e56eefceed509e8fa9543820c8214cb5870a7acb7f",
+      "competition_count": 20,
+      "status_counts": {
+        "LIVE_VERIFIED": 6,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 12,
+        "UNVERIFIED": 1,
+        "CATALOG_LISTED": 1
+      }
+    },
+    {
+      "provider": "bsd",
+      "capability_sha256": "cf00483966439a04e743c15f0ad6835f371c12fda74586e54452578504b5eca6",
+      "competition_count": 20,
+      "status_counts": {
+        "CATALOG_LISTED": 17,
+        "LIVE_VERIFIED": 1,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 2
+      }
+    },
+    {
+      "provider": "openfoot",
+      "capability_sha256": "190e88d9b20b5cb478dc0b9a17f43e1f10491bcb5aabd6d1fc4b8cd831115aa3",
+      "competition_count": 20,
+      "status_counts": {
+        "LIVE_VERIFIED": 1,
+        "CATALOG_LISTED": 17,
+        "UNVERIFIED": 1,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 1
+      }
+    },
+    {
+      "provider": "the-odds",
+      "capability_sha256": "a143dceae1b834c7f235640274f17a32893e07bacff9a1a673febae1458df3d8",
+      "competition_count": 20,
+      "status_counts": {
+        "LIVE_VERIFIED": 3,
+        "CATALOG_LISTED": 15,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 2
+      }
+    },
+    {
+      "provider": "infersports",
+      "capability_sha256": "a3950067ad08b6d8b3c2a355f90eeb395779a27813ecf6b2efc24e2157698374",
+      "competition_count": 20,
+      "status_counts": {
+        "UNVERIFIED": 19,
+        "LIVE_VERIFIED": 1
+      }
+    }
+  ],
+  "checks": [
+    "apifootball:20scope_complete",
+    "therundown:20scope_complete",
+    "5dollar:20scope_complete",
+    "football-data:20scope_complete",
+    "bsd:20scope_complete",
+    "openfoot:20scope_complete",
+    "the-odds:20scope_complete",
+    "infersports:20scope_complete",
+    "openfoot_generic_afc_unresolved_not_absent",
+    "openfoot_xg_derived_only",
+    "5dollar_odds_historical_only",
+    "actual_request_counts10_and12",
+    "football_data_lost_CL_not_verified",
+    "the_odds18_catalog_keys_and_responses_file_corrected",
+    "sensitive_account_field_scan_no_unredacted_values",
+    "all_saved_payload_hashes_recomputed",
+    "all_utc_beijing_pairs_same_instant",
+    "bsd_actual_xg_lineups_incidents_sample",
+    "bsd_no_bookmaker_quote_claim",
+    "openfoot_actual_derived_xg_and_403_stop",
+    "the_odds_samples_market_source_time_and_prices_exact",
+    "the_odds_scores35_rows8_completed",
+    "infer_individual_quote_times_and_ages_exact",
+    "all52_retained_nations_first_freeze_hashes_verified",
+    "NED_GRE_SRB_GER_and_Austria_Ireland_local_crosswalk",
+    "all47_infer_quotes_independently_recomputed_against3600second_rule",
+    "openfoot_live_score_sample_outside20scope_not_claimed_target_coverage"
+  ],
+  "prior_findings_and_resolution": [
+    {
+      "id": "A01",
+      "provider": "bsd",
+      "severity": "high",
+      "status": "PASS_FINAL_RECHECK",
+      "issue": "Initial live_scores, events and teams_players capability labels overclaimed actual returned notstarted schedules, event metadata and team identities.",
+      "action": "Split schedules vs in-play scores, match timeline vs fixture objects, teams vs player rosters; label only actual field samples verified.",
+      "evidence": "bsd/capability.json; bsd/responses.json requests 001-003"
+    },
+    {
+      "id": "A02",
+      "provider": "openfoot",
+      "severity": "medium",
+      "status": "PASS_FINAL_RECHECK",
+      "issue": "AFC Champions League catalog row exists but target AFC Elite coverage says NOT_LISTED. Generic provider name alone does not resolve Elite stage identity.",
+      "action": "Record listed generic AFC candidate with Elite identity UNVERIFIED, or prove correct phase from actual fixture response.",
+      "evidence": "openfoot/responses.json catalog id comp_afc_champions_league"
+    },
+    {
+      "id": "A03",
+      "provider": "the-odds,infersports",
+      "severity": "high",
+      "status": "PASS_FINAL_RECHECK",
+      "issue": "requested_at_beijing advanced 8 hours but retained +00:00 offset, changing actual instant.",
+      "action": "Correct serialization to Asia/Shanghai +08:00 with correction note; do not change original source quote timestamps.",
+      "evidence": "both responses.json requested_at_utc/requested_at_beijing"
+    },
+    {
+      "id": "A04",
+      "provider": "football-data",
+      "severity": "medium",
+      "status": "RESOLVED_WITH_QUALIFICATIONS",
+      "issue": "Request count exceeded original max10; preserved request011 precedes010 by2.118 seconds, below stated6-second spacing; capability references and lost CL request numbers inconsistent.",
+      "action": "Record true counts and deviations; reconcile request IDs with retained files and lost-response metadata; do not rewrite original times.",
+      "evidence": "football-data/plan.json; request-010.json; request-011.json; capability.json"
+    },
+    {
+      "id": "A05",
+      "provider": "5dollar",
+      "severity": "high",
+      "status": "PASS_FINAL_RECHECK",
+      "issue": "odds LIVE_VERIFIED label based solely on completed EPL historical opening/closing quotes; auth evidence copied football-data request references.",
+      "action": "Classify historical-only odds, state absent closing quote timestamp/current odds verification separately; restrict auth evidence to own provider.",
+      "evidence": "5dollar/request-007.json; capability.json"
+    },
+    {
+      "id": "A06",
+      "provider": "the-odds",
+      "severity": "high",
+      "status": "RESOLVED_WITH_QUALIFICATIONS",
+      "issue": "Same Austria team scheduled at identical2026-11-14T19:45Z against Iceland and Republic of Ireland with separate eventIDs in odds and scores responses.",
+      "action": "Retain both raw rows but quarantine those identities pending independent resolution; do not claim every returned event identity verified.",
+      "evidence": "odds-002 and odds-005 IDs30b32c194d8c2ae2bc5a209be5df44a9,c745f84500717bc671c4cd864624cca8"
+    },
+    {
+      "id": "A07",
+      "provider": "infersports",
+      "severity": "high",
+      "status": "RESOLVED_WITH_QUALIFICATIONS",
+      "issue": "UEFANLA list includes all4 C-level fixtures, duplicated underUEFANLC with different provider IDs.",
+      "action": "Do not use provider alias alone for A/C routing; preserve duplicates and establish canonical competition/stage crosswalk.",
+      "evidence": "infer-002-uefna-events and infer-003-uefnc-events"
+    },
+    {
+      "id": "A08",
+      "provider": "infersports",
+      "severity": "high",
+      "status": "RESOLVED_WITH_QUALIFICATIONS",
+      "issue": "Future-event response top-levelas_of01:19:30/stale=false coexists with older individual quoteas_of22:07:37.",
+      "action": "Use individual market quote timestamps and enforce freshness; top-level timestamp is not quote time.",
+      "evidence": "infer-006-future-unl-odds crown1x2"
+    },
+    {
+      "id": "A09",
+      "provider": "all",
+      "severity": "info",
+      "status": "PASS_FINAL_RECHECK",
+      "issue": "Each of8 provider coverage tables contains exactly20 project scope codes with no missing, extra or duplicate codes.",
+      "action": "Recheck after final collection edits.",
+      "evidence": "analysis-scope.json and8 capability.json"
+    },
+    {
+      "id": "A10",
+      "provider": "apifootball,therundown",
+      "severity": "info",
+      "status": "PASS_FINAL_RECHECK",
+      "issue": "API403 HTML and browser403 denial correctly treated as access block; credential validity and league entitlement remain unverified.",
+      "action": "Keep current conclusion; no workaround/repeated requests authorized by this audit.",
+      "evidence": "apifootball/request-001-status.json; therundown/capability.json; browser/browser-results.json; browser/therundown-browser.json"
+    }
+  ],
+  "payload_hash_checks": [
+    {
+      "file": "bsd/responses.json",
+      "entry": 0,
+      "sha256": "0a29b7e78390751297507596621085374883f85ffe4a9b2b89c8a4d39dc4d41c",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "bsd/responses.json",
+      "entry": 1,
+      "sha256": "ab3be423314434dac1a272406d43fa3342b1ffc0af06e27bfd971a0021ebc7f9",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "bsd/responses.json",
+      "entry": 2,
+      "sha256": "ea7c3f7ee37964cd548204d11e392ad773661e24b09c19b383377f2cba358f4e",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "bsd/responses.json",
+      "entry": 3,
+      "sha256": "c37b049d8a19f87dd74e4097046fd38d0cccbaa2ffa3a0a99336af91d61a7806",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "bsd/responses.json",
+      "entry": 4,
+      "sha256": "b763ca72a6602261bd3e1f6ea85d28752fe5fcadf1666a669c23431001f1350d",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "bsd/responses.json",
+      "entry": 5,
+      "sha256": "62c5c3437912af223f4ecc8201fef69e973215a6a2a437d4df9122fb809068d1",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "bsd/responses.json",
+      "entry": 6,
+      "sha256": "95635452f7502c8093c432d73bf98ccefa2fc80d50a710940e3c5806594fb644",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "bsd/responses.json",
+      "entry": 7,
+      "sha256": "62b70d66edae6e9404336fb8066be5c6a74e9a176e1d3f8bc3d5faf6c97a651b",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "bsd/responses.json",
+      "entry": 8,
+      "sha256": "102637e059838f4f5e2c2731f01b23a65500d147ff131599fe0bf5fa22d1fa19",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-003.json",
+      "entry": 0,
+      "sha256": "85f88193d7b4e709a4103d59f537587c4f15f5d3e7ab9f5176630d1224528de7",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-005.json",
+      "entry": 0,
+      "sha256": "bd0b6e81208a4a0b0b934bab0f4b3ea45740d4f2133c674650ac80529907965b",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-009.json",
+      "entry": 0,
+      "sha256": "85f88193d7b4e709a4103d59f537587c4f15f5d3e7ab9f5176630d1224528de7",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-010.json",
+      "entry": 0,
+      "sha256": "43f48cb7d3bd70e3aab7d276dae8788257fa0f0d18d0e3395d703d3f936deac8",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-007.json",
+      "entry": 0,
+      "sha256": "99cfdf7d6c7deaf4105b489281b8384646888bca3d5e9c6408e248a741007621",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-001.json",
+      "entry": 0,
+      "sha256": "38e50fdaf7329f58ecfa61ab660406cbf9b54cadb38f0199fa03fe0d697375ea",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-008.json",
+      "entry": 0,
+      "sha256": "f903e0769370a90cf32b9c077d543241ba7d0a44696bdacb0249f44e723cbbde",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-002.json",
+      "entry": 0,
+      "sha256": "03bbc01a6453fae43c448ae41b37fae7b380ade2574ed7e6e61e4c70162dcfc0",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-006.json",
+      "entry": 0,
+      "sha256": "e9034316565d683edff08ec21f23f42f24f30ccb7778ce828a910c98052e250a",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "5dollar/request-004.json",
+      "entry": 0,
+      "sha256": "3dfd3fac2bceaac7cd31d6eaf4034c877c278d92cea14df16c6d92d0952b9b85",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "openfoot/feature-responses.json",
+      "entry": 0,
+      "sha256": "6edf5ae3f442f20952e5cfb9d0f1054471a05de09ad862c0c32bef3400145a43",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "openfoot/feature-responses.json",
+      "entry": 1,
+      "sha256": "4b137c9046b42e5a6633f0517ce307e41d4c00c781ceb374ebbf6736daa981df",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "openfoot/responses.json",
+      "entry": 0,
+      "sha256": "78cb3f348d414ef7e01a726b584564e45f05f56dacb067c9915c071d874163dd",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "openfoot/responses.json",
+      "entry": 1,
+      "sha256": "3434fb794c0a2a23e0f00203ec8c244e5b1e7d2734f1b4173858f2e41605c803",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "openfoot/responses.json",
+      "entry": 2,
+      "sha256": "64013fccf5aedc89e64924276d703246265d5f33f0cc3dce564deab1b43afd62",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-005.json",
+      "entry": 0,
+      "sha256": "789f0cd3931cce4f8941e554b1debdf4443653159e759461c46cc90ea086ca84",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-009.json",
+      "entry": 0,
+      "sha256": "4f5eb860600ef669b73b02e18c71bdfa7865892de7d652a5a8056d288027c9ea",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-007.json",
+      "entry": 0,
+      "sha256": "b1ec979a7a5fc1907da87d1cc591062cbd933c035860d7dbdc9335a0579d4677",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-001.json",
+      "entry": 0,
+      "sha256": "53ef05a2337c55ae2977bf9343d0d768e837ac076fe648eeda7b30b6ecdadbdf",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-012.json",
+      "entry": 0,
+      "sha256": "15cad15912088d2daf3ab347f401c38ec310719e4a301e219ef17143b062de8c",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-008.json",
+      "entry": 0,
+      "sha256": "301b5d03369a0777778583750651343967fdabfce29b1e1de0cafea86bc7f734",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-002.json",
+      "entry": 0,
+      "sha256": "c84bd5f446c35515571dd3458287c62c13a94d4eade8611e9df521d40d59abb4",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-006.json",
+      "entry": 0,
+      "sha256": "5891946ce57b192040f8e471319b038ab494d9b7d992c1519e5c29f6fcea66f0",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-011.json",
+      "entry": 0,
+      "sha256": "d500ccec834172ac011301e7ce24d1395bd9d4e7c17e222d840c8f09f1806afe",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    },
+    {
+      "file": "football-data/request-004.json",
+      "entry": 0,
+      "sha256": "f86990e5c998b43d05948aea1f9e645b9df8b24d3e5de59d2fb59a39c66204ad",
+      "encoding": "JSON sorted keys, Unicode, default separators"
+    }
+  ],
+  "payload_hash_checks_passed": 34,
+  "utc_beijing_timestamp_pairs_checked": 33,
+  "unredacted_account_field_findings": [],
+  "the_odds_catalog_mapped_competitions": 18,
+  "the_odds_scores": {
+    "response_rows": 35,
+    "completed_scored": 8,
+    "future_or_uncompleted": 27
+  },
+  "local_future_freeze_crosswalk": [
+    {
+      "match_id": "espn:401861159",
+      "home": "Netherlands",
+      "away": "Greece",
+      "kickoff_at": "2026-11-13T19:45:00+00:00",
+      "grade": "A",
+      "freeze_id": "c4c32836ff8fdc79-v000001",
+      "freeze_sha256": "ef1ebe70e526e90ab4cc8ca983f5420b1ff18bb2cf76998848d614129fc6948c",
+      "freeze_path": "/workspace/WCPP/forecasts/issued-analyses/c4c32836ff8fdc792ab3e85220b1db1560a786a8c490e52e5359a7a6094b3f79/000001.json",
+      "the_odds_ids": [
+        "0010d3b2b15a2b8cb04053b0b1407cc5"
+      ],
+      "infer_ids": [
+        "evt_CGDCJKP3"
+      ]
+    },
+    {
+      "match_id": "espn:401861158",
+      "home": "Serbia",
+      "away": "Germany",
+      "kickoff_at": "2026-11-13T19:45:00+00:00",
+      "grade": "A",
+      "freeze_id": "5481a13d358c39ba-v000001",
+      "freeze_sha256": "26e523922423771ff84b33720d57dc22c616bbb6d9d190a02d401e08fdb0dbb5",
+      "freeze_path": "/workspace/WCPP/forecasts/issued-analyses/5481a13d358c39ba030d5a9fd5c82db8b341e3bc79b371c33762959e1ef58282/000001.json",
+      "the_odds_ids": [
+        "d0ee3d2f44cf592797f6ecae8de62edd"
+      ],
+      "infer_ids": [
+        "evt_CGDCJHP3"
+      ]
+    },
+    {
+      "match_id": "espn:401861170",
+      "home": "Austria",
+      "away": "Republic of Ireland",
+      "kickoff_at": "2026-11-14T19:45:00+00:00",
+      "grade": "B",
+      "freeze_id": "4d69f100d4fb6c82-v000001",
+      "freeze_sha256": "2a604d755c42863ea2eb5855450be06702df4054a9ba382a20686228134e1570",
+      "freeze_path": "/workspace/WCPP/forecasts/issued-analyses/4d69f100d4fb6c82a450719fbff5dec5ff38ec7a81aab4b7c5bea5b19b0e720c/000001.json",
+      "the_odds_ids": [
+        "c745f84500717bc671c4cd864624cca8"
+      ],
+      "infer_ids": []
+    }
+  ],
+  "infer_sample_quote_freshness": [
+    {
+      "market": "1x2",
+      "age_minutes": 198.38,
+      "within_existing60minute_rule": false
+    },
+    {
+      "market": "asian_handicap",
+      "age_minutes": 14.74,
+      "within_existing60minute_rule": true
+    },
+    {
+      "market": "totals",
+      "age_minutes": 64.31,
+      "within_existing60minute_rule": false
+    }
+  ],
+  "root_corrections_sha256": "c99f01faf559c5c02d8209b40f1b1ba102d0bd485bc1ae9de655b81eedf83fd7",
+  "evidence_files_sha256": {
+    "5dollar/plan.json": "edbbac013b81b4d962e08db78cf8c7c183d5363c477403d72e52a53aa9443e30",
+    "5dollar/request-001.json": "2af94f8842bc6156b1af3fdefb0c7e38ba3e61c73307cdc5b72a5d9cee33db30",
+    "5dollar/request-002.json": "824dff1a99fb8c546c46f3a5a27c4712a9cd5b158028774b5f4cda7120e60637",
+    "5dollar/request-003.json": "f20c707a5931b7649d2a943a572380ba349281bdedbf0494baf48a960f176de2",
+    "5dollar/request-004.json": "5411e637a1f04903b718d6d52621b0e5c05bae0a0512ea41c0b4c10f10a8e88e",
+    "5dollar/request-005.json": "9320c6e5b2a1d8e7978ea1af6fc5e211aa508b460fc9513408adb2f14105bca8",
+    "5dollar/request-006.json": "8c8dbf6cde2565eeb34f6632870bfd1fbdb627bf9cabc29d8d261dd6509864b1",
+    "5dollar/request-007.json": "2ef8f2997b4ef3a880c5887f8295fa8e18bd33871565e7dcb628a4a8569236a0",
+    "5dollar/request-008.json": "759cc2bc615bff53683d3d6f37f344b67a552776b5e2368444e51a787af90cc0",
+    "5dollar/request-009.json": "7ae8596f5f906ca9545e2eec85f43a4968b5036d0f264b452590987ddd83f097",
+    "5dollar/request-010.json": "47d456c819eee3fc9bb16a11a9264fa3c20c5c676f345724a725c67ed51cfcd5",
+    "apifootball/plan.json": "426fe7b53c1991d170ebd87ad3a143cfff0e4f6afc5f196d51565faca00b367c",
+    "apifootball/request-001-status.json": "903bf2d98fec1729d618448ea8b2d7698797b911e8a87272f635cf42df2235d1",
+    "browser/browser-results.json": "80e2ca10983ffbe0d05aada68abb7660c1b8745f88bc0587ca3b3142e3543cc8",
+    "browser/plan.json": "ccf24f066ea109d6ffdd94092c02f777ee1022f8cb59927f22f3c73036dc7b42",
+    "browser/therundown-browser.json": "fc58548e8f79595ffd2aec1b035c5d850dcdb0e4fe00998169f023d33298bc73",
+    "bsd/plan.json": "5dd3a8856ec6379add7bc10229194fb04c0c68a71658f98e9079e63ac1486d27",
+    "bsd/responses.json": "d38727cd8b14a7606fb0b41852d14008e385f3fbeba04edf06823061c59e0a4d",
+    "football-data/plan.json": "60f92b8470eb5e50472f75d9b2d7bc30b82518f08ff515ad0201b61ccc4b048d",
+    "football-data/request-001.json": "fdab05c5d6f83b6e6bbdf6c31a8d15841411e3ab9dd44bb4d8cf33cf5fa5f7b4",
+    "football-data/request-002.json": "5d74aa7c9e41d59faf3a68becefd9fd35efa098c8efdae1b9561fe935c3b4079",
+    "football-data/request-003.json": "854ec2b867d9a819e63b658b4e3f0c45ccebff45b845a55f6588090734ee2322",
+    "football-data/request-004.json": "c60b3301364030a2141b61b73e48b519029f4202e74750237673f1b5c43413ca",
+    "football-data/request-005.json": "1f99917d62d60dd6608169653ac35f47b5a4ab53ff55406725af877ae6b17826",
+    "football-data/request-006.json": "778800e4cc6ed6b3cb55775e314bb664c595e1f97bf215931ad3c7416eb28988",
+    "football-data/request-007.json": "53d25e11250221ca159e4bad3ac28de39069e7a869042af35596bb2c13a76723",
+    "football-data/request-008.json": "be82a19679bf707a317c801b525c1d682de074c8e129cddd4859d4dbe97a5213",
+    "football-data/request-009.json": "bdd8d152da71c9dceef6fb2ede6e2f400c1dc3d5c3c2636bb02bc8f038c8975f",
+    "football-data/request-010.json": "a8757a893f9652a694537e815d5e7a5a7e783c615ee043aabdbc63e973940fed",
+    "football-data/request-011.json": "e94f8c76f578528408db0e355f45555dc728a75c07b59c604177a72a75e5f8f6",
+    "football-data/request-012.json": "1c45f826691cf4ecd2e17847b652714ee07cc25f21aa888c7d3623a229924bbf",
+    "infersports/integrity-review.json": "44b9bf49d561dfd47e890c2068f91837874fe4df18d64c9303033d1462eaa31f",
+    "infersports/market-evidence.json": "8e88f96a595a6c806eb40472561f6ff9e7ac58773ba7a409dcdca07a6daaba3d",
+    "infersports/plan.json": "bea50d6184da70384c1e22b2ea6525f70da0524bd76ad5855db2932eb25f5b05",
+    "infersports/quote-freshness-audit.json": "1ab7eb454451f19f8160e6540464b17e4645f0e45a4f6406a5939c490e3cdf6c",
+    "infersports/responses.json": "3fcf1b229a22975341965881f54fe56f1697cf01bd0b75e82cd00cfaa7647bc8",
+    "openfoot/feature-responses.json": "a1779eb04e9b917a5a9c4251c04110ca2dbf468a6f292acab5df90ccd047d27b",
+    "openfoot/plan.json": "740ab286b1bad4fe4535be148832132708a14431bfd8e8efbca34f0213f363ca",
+    "openfoot/responses.json": "9be36125b80ae4907335047f1dcc402836081d4890ee4dc5ac6eb2bad594e82d",
+    "the-odds/integrity-review.json": "ca7d68e5a9314921fe530e16bad161fc35ea90a8a31db8d667dca552d9821cee",
+    "the-odds/market-evidence.json": "ff2583d0faa0cd25558659fc263316aee3737482c90f12947547cfe02050b3bd",
+    "the-odds/plan.json": "c095751a6846a946d560345189f5c7c4c494b9ed26d88851bf7bb8721cbcc139",
+    "the-odds/responses.json": "7f42aaadea55d6a67683d0e3dc6ce0ae08dca7277fdbbd8608a0d2c61f3cf18d",
+    "therundown/plan.json": "fc9d895d473d77001669e7ede3788e0e8dac81907f2b4f60d2c79bd6319dd3b2"
+  },
+  "qualifications": [
+    "API-Football and TheRundown access is BLOCKED by403 HTML, including public browser fallback; credential validity and subscriptions are not established.",
+    "Coverage describes returned catalog/actual sample fields only. Current-season completed samples do not prove future lineup/xG access or every league feature.",
+    "football-data made12 calls against plan10; CL response was overwritten and remains unverified; two calls only2.118331seconds apart. This execution defect is disclosed, not erased.",
+    "TheOdds two simultaneous Austria fixtures remain quarantined; local frozen fixture supports Austria-Ireland but this audit did not fetch new official confirmation.",
+    "InferSportsA/C aliases duplicate fourC-level fixtures with different IDs; exclude contaminated rows from grade-specific modeling. NED-GRE andSRB-GER matched retainedA-level fixtures.",
+    "Infer odds stale=false is not market freshness; sampled1X2 age198.4min and totals64.3min exceed existing60-minute rule, while AH14.7min passes. This does not enable model ingestion.",
+    "BSD nonzero provider-native xG and confirmed22 starters verified on one completedUCL fixture; broader native-xG/lineup reliability still needs independent source and historical validation.",
+    "OpenFoot xG is explicitly derived; fair odds are model benchmarks. Events endpoint403 is a plan restriction, not a transport or whole-key failure. No injury data verified.",
+    "5Dollar historical opening quotes exist for one completedEPL sample; closing quote time missing, no current bookmaker quote established.",
+    "34 retained payload hashes are reproducible canonical JSON hashes, not original network byte hashes. Eleven TheOdds/Infer original raw-byte hashes are recorded provenance only because original response bytes were not retained; do not claim independently reproduced raw-byte integrity.",
+    "Sensitive field-name audit found no unredacted account identifiers; exact secret-value scan remains the root responsibility and was not performed here.",
+    "Full47-row Infer quote audit verified: only2 AH quotes pass60-minute/open/positive-price checks at capture; all6 1X2 and21 totals fail. Infer is not established as a fresh OU fallback in this run. OpenFoot only observed live score is Colombian, outside the20 target scope."
+  ],
+  "infer_full_quote_freshness": {
+    "total_rows": 47,
+    "all_rows_by_market": {
+      "1x2": 6,
+      "asian_handicap": 20,
+      "totals": 21
+    },
+    "fresh_open_by_market": {
+      "asian_handicap": 2
+    },
+    "one_x_two_fresh": 0,
+    "totals_fresh": 0,
+    "valid_at_capture_only": true,
+    "file_sha256": "1ab7eb454451f19f8160e6540464b17e4645f0e45a4f6406a5939c490e3cdf6c"
+  }
+}

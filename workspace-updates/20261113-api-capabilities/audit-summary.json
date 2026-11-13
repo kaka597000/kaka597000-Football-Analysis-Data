@@ -1,0 +1,395 @@
+{
+  "schema": "WCPP-API-CAPABILITY-AUDIT-1",
+  "generated_at": "2026-11-13T09:48:03.587165+08:00",
+  "scope_count": 20,
+  "provider_count": 8,
+  "api_requests_reported": 49,
+  "browser_navigations": 2,
+  "additional_public_therundown_request": 1,
+  "providers_returning_some_data": 6,
+  "fully_blocked_providers": [
+    "apifootball",
+    "therundown"
+  ],
+  "count_does_not_imply_all_fields_or_competitions_available": true,
+  "source_commit": "ddfbc43197df8944072c70135e2a2831ae1a3ef5",
+  "scope_sha256": "ebcba3abb1ee89a8d737b34a2ae39bf6fd59ef85728be6999422514c62748320",
+  "provider_summaries": {
+    "bsd": {
+      "name": "BSD",
+      "request_count": 9,
+      "connection": "可调用，9次200",
+      "observed_data": "赛程、赛果；单场欧冠样本有统计、xG、22条事件及双方确认首发",
+      "observed_scope": "欧冠赛后样本；18项在目录（含欧冠）",
+      "limitations": "xG来源仅按供应商返回，未独立认证；赔率缺机构/明确盘线；伤停未验证",
+      "recommended_role": "候选过程数据源，逐联赛核验后使用",
+      "competition_status_counts": {
+        "CATALOG_LISTED": 17,
+        "LIVE_VERIFIED": 1,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 2
+      },
+      "capability_path": "bsd/capability.json",
+      "capability_sha256": "cf00483966439a04e743c15f0ad6835f371c12fda74586e54452578504b5eca6"
+    },
+    "openfoot": {
+      "name": "OpenFootAPI",
+      "request_count": 5,
+      "connection": "基础接口可用；高级事件403",
+      "observed_data": "英超当前赛程/赛果、球队、比赛上下文、派生xG、公允赔率参考",
+      "observed_scope": "英超实取；另17项目录；泛亚冠存在但精英阶段未核",
+      "limitations": "Starter事件权限不足；派生xG不是原生xG，fair odds不是机构报价；范围内滚球未验证",
+      "recommended_role": "赛程/比赛背景补充，不替代真实盘口",
+      "competition_status_counts": {
+        "LIVE_VERIFIED": 1,
+        "CATALOG_LISTED": 17,
+        "UNVERIFIED": 1,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 1
+      },
+      "capability_path": "openfoot/capability.json",
+      "capability_sha256": "190e88d9b20b5cb478dc0b9a17f43e1f10491bcb5aabd6d1fc4b8cd831115aa3"
+    },
+    "5dollar": {
+      "name": "5Dollar",
+      "request_count": 10,
+      "connection": "可调用，10次200",
+      "observed_data": "英超/西甲/德甲赛程；英超完赛统计、事件；单场Bet365历史开/关盘",
+      "observed_scope": "3项当前赛程，另意甲/法甲/J1目录；J1当前窗口为空",
+      "limitations": "本轮无xG/首发/伤停实证；取得的赔率是历史，closing缺报价时间",
+      "recommended_role": "已验证联赛赛程及赛后过程备用",
+      "competition_status_counts": {
+        "LIVE_VERIFIED": 3,
+        "CATALOG_LISTED": 3,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 14
+      },
+      "capability_path": "5dollar/capability.json",
+      "capability_sha256": "b06450654825079bc422ac8f6780cc3827911fc7b3cc12d288f718e2e2b5a517"
+    },
+    "football-data": {
+      "name": "football-data.org",
+      "request_count": 12,
+      "connection": "授权基础数据可用",
+      "observed_data": "五大联赛及荷甲当前赛程、球队/赛季/轮次；英超积分榜",
+      "observed_scope": "6项当前赛程；世界杯仅目录；欧冠响应遗失故未验证",
+      "limitations": "Odds-Package未启用；未来比赛空比分不能当赛果；采集偏差详见审计",
+      "recommended_role": "赛程、比赛身份和积分榜基准",
+      "competition_status_counts": {
+        "LIVE_VERIFIED": 6,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 12,
+        "UNVERIFIED": 1,
+        "CATALOG_LISTED": 1
+      },
+      "capability_path": "football-data/capability.json",
+      "capability_sha256": "f256865721dc6bbbef4403e56eefceed509e8fa9543820c8214cb5870a7acb7f"
+    },
+    "the-odds": {
+      "name": "The Odds API",
+      "request_count": 5,
+      "connection": "可调用，5次200",
+      "observed_data": "欧国联/英超/德甲机构1X2、大小球、spreads及真实报价时间；欧国联8场完赛比分",
+      "observed_scope": "18项目录，3项赔率实取；8完赛比分+27未来/未完赛行",
+      "limitations": "欧国联2条奥地利同时间对阵冲突需隔离；spreads不直接认证为亚洲盘；history未测",
+      "recommended_role": "当前盘口主候选，先核身份与逐市场鲜度",
+      "competition_status_counts": {
+        "LIVE_VERIFIED": 3,
+        "CATALOG_LISTED": 15,
+        "NOT_LISTED_IN_RETURNED_CATALOG": 2
+      },
+      "capability_path": "the-odds/capability.json",
+      "capability_sha256": "a143dceae1b834c7f235640274f17a32893e07bacff9a1a673febae1458df3d8"
+    },
+    "infersports": {
+      "name": "InferSports",
+      "request_count": 6,
+      "connection": "本轮6次200，旧401未重现",
+      "observed_data": "欧国联赛程及1X2、亚洲让球、大小球报价记录",
+      "observed_scope": "仅欧国联实取；其他19项未核",
+      "limitations": "47条样本仅2条让球满足60分钟鲜度，1X2/大小球均无合格新报价；有A/C分级冲突",
+      "recommended_role": "有条件备用；当前样本不能接替新鲜大小球",
+      "competition_status_counts": {
+        "UNVERIFIED": 19,
+        "LIVE_VERIFIED": 1
+      },
+      "capability_path": "infersports/capability.json",
+      "capability_sha256": "a3950067ad08b6d8b3c2a355f90eeb395779a27813ecf6b2efc24e2157698374"
+    },
+    "apifootball": {
+      "name": "API-Football",
+      "request_count": 1,
+      "connection": "API403；浏览器也403",
+      "observed_data": "本轮未取得赛事数据或套餐额度",
+      "observed_scope": "20项本轮均受阻，非断言服务不覆盖",
+      "limitations": "Cloudflare HTML；不能据此认定密钥无效",
+      "recommended_role": "暂不可用，保留CF-Ray诊断",
+      "competition_status_counts": {
+        "BLOCKED": 20
+      },
+      "capability_path": "apifootball/capability.json",
+      "capability_sha256": "16036d6288dc698380d143b6fdea39a970e3cd7485376e1e9340fb6b87740d33"
+    },
+    "therundown": {
+      "name": "TheRundown",
+      "request_count": 1,
+      "connection": "API403；浏览器也403",
+      "observed_data": "本轮未取得赛事数据或套餐额度",
+      "observed_scope": "20项本轮均受阻，非断言服务不覆盖",
+      "limitations": "官方授权域端点及官网均Cloudflare403；未跨域发送密钥",
+      "recommended_role": "暂不可用，保留CF-Ray诊断",
+      "competition_status_counts": {
+        "BLOCKED": 20
+      },
+      "capability_path": "therundown/capability.json",
+      "capability_sha256": "d6d8d2a07603f887eaf966a1ebd0a4eb584e49de5ce9924372d874f6ac239d18"
+    }
+  },
+  "matrix": [
+    {
+      "code": "eng.1",
+      "赛事": "英超",
+      "BSD": "目录列出",
+      "OpenFootAPI": "实取赛程/上下文",
+      "5Dollar": "实取赛程",
+      "football-data.org": "实取赛程",
+      "The Odds API": "实取赔率*",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "esp.1",
+      "赛事": "西甲",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "实取赛程",
+      "football-data.org": "实取赛程",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "ger.1",
+      "赛事": "德甲",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "实取赛程",
+      "football-data.org": "实取赛程",
+      "The Odds API": "实取赔率*",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "ita.1",
+      "赛事": "意甲",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "目录列出",
+      "football-data.org": "实取赛程",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "fra.1",
+      "赛事": "法甲",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "目录列出",
+      "football-data.org": "实取赛程",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "jpn.1",
+      "赛事": "日职J1",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "目录列出",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "kor.1",
+      "赛事": "韩K1",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "aus.1",
+      "赛事": "澳超",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "usa.1",
+      "赛事": "美职联MLS",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "fin.1",
+      "赛事": "芬超",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "nor.1",
+      "赛事": "挪超",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "swe.1",
+      "赛事": "瑞典超",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "ned.1",
+      "赛事": "荷甲",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "实取赛程",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "uefa.champions",
+      "赛事": "欧冠",
+      "BSD": "实取赛后样本",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "未验证",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "uefa.europa",
+      "赛事": "欧联杯",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "uefa.europa.conf",
+      "赛事": "欧协联",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "afc.champions",
+      "赛事": "亚冠精英",
+      "BSD": "返回目录未列",
+      "OpenFootAPI": "泛亚冠有目录/精英未核",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "返回目录未列",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "fifa.world",
+      "赛事": "世界杯正赛",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "目录列出",
+      "The Odds API": "目录列出",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "uefa.nations",
+      "赛事": "欧国联",
+      "BSD": "目录列出",
+      "OpenFootAPI": "目录列出",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "实取赔率*",
+      "InferSports": "实取报价*",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    },
+    {
+      "code": "jpn.league_cup",
+      "赛事": "日本联赛杯（日联杯）",
+      "BSD": "返回目录未列",
+      "OpenFootAPI": "返回目录未列",
+      "5Dollar": "返回目录未列",
+      "football-data.org": "返回目录未列",
+      "The Odds API": "返回目录未列",
+      "InferSports": "未验证",
+      "API-Football": "请求受阻",
+      "TheRundown": "请求受阻"
+    }
+  ],
+  "database_or_model_modified": false,
+  "environment_published": false,
+  "important_gaps": [
+    "No J.League Cup data verified in any of8 providers in this run",
+    "AFC Elite phase identity unresolved",
+    "No native xG across all20 competitions",
+    "No fresh InferSports1x2/totals in sampled event under60min policy",
+    "Football-data CL response lost; remains unverified"
+  ]
+}

@@ -1,0 +1,93 @@
+﻿provider,field,status,evidence,limitations
+BSD,competition_catalog,LIVE_VERIFIED,bsd-request-003 GET /leagues/?limit=100 returned 100 rows and next=null; provider ids/current season stage metadata available.,Directory records do not prove all target scope mappings or actual fixture features.
+BSD,fixtures_schedule_results,LIVE_VERIFIED,"bsd-request-002 returned 20/45 current-day events; bsd-request-004 returned 37 finished events from 2026-10-14; bsd-request-005 confirms UCL 2026/27 League phase, Man City 2–4 PSG.",Only one scoped competition detailed; date-batch results cover many competitions.
+BSD,live_scores,UNVERIFIED,Date batch includes event status fields; no active match was independently verified as genuinely live during the sampled event-detail calls.,A nonstarted or finished score is not live-score proof.
+BSD,standings,UNVERIFIED,No standings request was made.,Listed docs do not prove standings values returned in this run.
+BSD,historical_matches,HISTORICAL_ONLY,bsd-request-004 list and request-005 detail provide one finished current-season 2026/27 match.,Deep archive seasons not queried.
+BSD,teams_verified,LIVE_VERIFIED,bsd-request-005 returned Manchester City and Paris Saint-Germain team identities in the UCL event detail.,Single event sample.
+BSD,players_verified,LIVE_VERIFIED,bsd-request-007 confirmed lineups returned 11 players per side for event 601031.,Confirmed starters only; no broad player profile or roster sample.
+BSD,confirmed_lineups,LIVE_VERIFIED,bsd-request-007 lineups.lineup_status=confirmed; home and away each list 11 players.,One completed event sample.
+BSD,injuries_suspensions,UNVERIFIED,Not requested; lineup response does not establish injury/suspension coverage.,No injury/suspension sample.
+BSD,match_events,LIVE_VERIFIED,"bsd-request-009 returned 22 incidents for event 601031, including FT and substitutions.",One completed UCL event sample.
+BSD,statistics_xg,LIVE_VERIFIED,"bsd-request-006 stats returned shots, possession and xG; xg_estimated=false and home expected_goals=2.57, away=1.83.","One event; source meaning is provider field, no independent upstream verification."
+BSD,odds_payload,LIVE_VERIFIED,bsd-request-008 returned home_win/draw/away_win and over/under goal values; last_update_at=2026-10-14T20:50:11Z.,"No bookmaker identity, explicit market name/line metadata, or source attribution; cannot validate as a real bookmaker quote."
+BSD,bookmaker_quotes,UNVERIFIED,bsd-request-008 odds object has only aggregate-style named prices and timestamps; no bookmaker/source field.,Do not present as actual bookmaker quote; no source quote provenance.
+BSD,odds_history,UNVERIFIED,Only one response snapshot with last_change_at and last_update_at; no price history series fetched.,A single timestamp does not establish historical quote coverage.
+OpenFootAPI,competition_catalog,LIVE_VERIFIED,"openfoot-request-001 returned 120 competition rows, including currentSeason and availableSeasons metadata.","Catalog coverage flags are advertised metadata, not proof all features work."
+OpenFootAPI,fixtures_schedule_results,LIVE_VERIFIED,openfoot-request-002 returned 25 matches on 2026-11-13; request-003 returned 50 of total_count 380 for EPL 2026/27.,"Batch records may include null scores/venue and are provider responses, not independently cross-checked."
+OpenFootAPI,live_scores,OUT_OF_SCOPE_SAMPLE_ONLY,"openfoot-request-002 included live match status, score and minute in one current-date record.",Observed live match belongs to Colombian competition outside the20 target competitions; no target-scope live score coverage was verified.
+OpenFootAPI,standings,UNVERIFIED,"No standings endpoint call was made. Request-005 /events returned HTTP 403 and triggered the stop rule; the preceding context had null table positions. The API docs and request-003 metadata state Starter access includes standings, but this run did not verify standings data.","Docs and request-003 plan metadata state Starter includes standings, but endpoint behavior was not tested after 403."
+OpenFootAPI,historical_matches,HISTORICAL_ONLY,openfoot-request-003 returned finished fixtures from the current 2026/27 season; request-004 context matched finished Arsenal 3–0 Coventry. Catalog advertises 17 seasons.,No older season query was made.
+OpenFootAPI,teams_verified,LIVE_VERIFIED,"Request-003 and request-004 return nested team names, IDs and sourceRefs.",Team identity not independently cross-checked.
+OpenFootAPI,players_verified,UNVERIFIED,Match list and context contain no player roster; no lineups endpoint reached.,Feature sampling stopped after 403.
+OpenFootAPI,confirmed_lineups,UNVERIFIED,Not fetched; requests stopped immediately after request-005 HTTP 403.,"Docs claim Developer access, but this binding’s entitlement was not tested."
+OpenFootAPI,injuries_suspensions,UNVERIFIED,Not returned or fetched.,No endpoint evidence.
+OpenFootAPI,match_events,NOT_ENTITLED,"openfoot-request-005 /matches/{id}/events returned HTTP 403 `plan_upgrade_required`, stating Starter includes fixtures/scores/standings and Developer unlocks events/commentary.",Exact restriction applies to the events endpoint; do not infer unrelated endpoint results.
+OpenFootAPI,derived_xg,DERIVED_ESTIMATE_ONLY,"openfoot-request-004 context.analytics.expectedGoals returned homeXG=2.3, awayXG=0.65 for the completed sample.",Match context explicitly marks xG derived. This is not a verified native observed xG source and must not be mixed into native-xG training without separate provenance/scale validation.
+OpenFootAPI,fair_odds_benchmark,LIVE_VERIFIED,openfoot-request-004 context.analytics.oddsBenchmark returned implied win percentages and projected fair odds.,"Model benchmark only, not bookmaker prices, no market line or source quote time."
+OpenFootAPI,bookmaker_quotes,UNVERIFIED,"No response included a bookmaker, market/line and paired operator prices with source quote time.",Fair odds benchmark is not an operator quote.
+OpenFootAPI,odds_history,UNVERIFIED,No historical price series fetched.,No quote timeline.
+5Dollar,competition directory,VERIFIED,request-002,8 entries total; only matching names shown; no assertion beyond returned catalog.
+5Dollar,current fixtures/results,LIVE_VERIFIED,request-004; request-005,English Premier League sample: 20 future fixtures and completed matches in current season. Other leagues not sampled this run.
+5Dollar,scores/teams/status/kickoff,LIVE_VERIFIED,request-004; request-005,Finished 2026-11-08 match returned 4-4; scheduled sample includes teams and UTC kickoff.
+5Dollar,statistics/events,LIVE_VERIFIED,request-006,Finished EPL match has attacks/dangerous attacks/shots/possession/corners/cards and event timeline; not xG.
+5Dollar,lineups/players/injuries,UNVERIFIED,request-006 returned fixture object lacks lineups/player arrays; no dedicated documented interface queried within budget.,Cannot infer no access from absent fields.
+5Dollar,standings,UNVERIFIED,Directory has has_standings flag in request-002 but no standings endpoint tested this run.,Catalog flag is not an actual standings response.
+5Dollar,odds,HISTORICAL_ONLY,request-007,"Single completed EPL fixture Bet 365 historical opening/closing 1X2, Asian handicap and goal line. Opening quote time is 2026-10-24; closing has no quote timestamp. Not current/future quote."
+5Dollar,historical access,HISTORICAL_ONLY,request-006; request-007,Only one finished current-season EPL fixture in this batch; older seasons not tested.
+football-data.org,competitions directory,UNVERIFIED_PUBLIC_CATALOG,request-002,Public catalogue returned 13 competitions; it does not prove authentication.
+football-data.org,authorized matches/current schedule,LIVE_VERIFIED,"request-001 (TIER_ONE BSA authenticated); request-004..009 (PL, PD, BL1, SA, FL1, DED). CL request 10 is lost and WC request 11 returned no in-scope fixture.","Only PL, PD, BL1, SA, FL1, DED current fixture responses retained; CL response was lost; WC returned no fixture in the queried window. Future fixtures do not verify final results."
+football-data.org,teams and match metadata,LIVE_VERIFIED,request-004..009 (six individual competition endpoints).,"Matches contain home/away team identities, competition, season, stage, matchday, UTC date, status and score object. Person roster not returned."
+football-data.org,results/history,UNVERIFIED,request-001; request-004..009,All returned sample fixtures were future TIMED with null fullTime scores; historical date range not queried.
+football-data.org,standings,LIVE_VERIFIED,request-012,Current Premier League table only; no other competition standings endpoint tested.
+football-data.org,players/lineups/events/statistics/injuries,UNVERIFIED,request-001 and request-004..009 match payload field inventory,"No returned match payload exposed rosters, starting XI, event timeline, statistics, injuries or xG."
+football-data.org,odds,NOT_ENTITLED,request-001 returned odds.msg = Activate Odds-Package in User-Panel to retrieve odds.,Response embedded upsell in otherwise authorized match JSON; no odds package access.
+football-data.org,filter query experiment,BLOCKED,request-003 HTTP 400 for multi-competition query,Do not retry this parameter pattern; per-competition endpoints succeeded.
+The Odds API,competition_catalog,VERIFIED,"odds-001-catalog; 187 total catalog records, with exact adult-men competition mapping in competition_coverage",active flag is catalogue metadata only; not proof of current fixtures/markets
+The Odds API,fixtures_and_pre_event_odds,LIVE_VERIFIED,odds-002/003/004 actual events with bookmaker markets; see market-evidence.json,"Only UEFA Nations League, EPL and Bundesliga queried; fixture odds snapshots, not full fixture endpoint. API return has scheduled event kickoff time and bookmaker quote time."
+The Odds API,h2h,LIVE_VERIFIED,market-evidence.json and odds-002/003/004: actual bookmaker quotes and market last_update,Availability varies by event/bookmaker.
+The Odds API,totals,LIVE_VERIFIED,market-evidence.json; actual over/under prices with point total and last_update,Line may vary by provider and event.
+The Odds API,spreads,LIVE_VERIFIED,market-evidence.json; actual two-sided point spreads,"Provider market key is spreads, not independently validated as Asian handicap."
+The Odds API,recent_scores_results,LIVE_VERIFIED_SAMPLE,"odds-005 scores, daysFrom=1, 35 events; some completed and scored",One competition only; not equivalent to in-play live score coverage.
+The Odds API,standings_squads_lineups_injuries_events_stats_xg,UNVERIFIED,No such endpoint/field probed in this run,Do not infer support from odds responses.
+The Odds API,historical_odds,UNVERIFIED_NOT_PROBED,No historical endpoint called,"At current observed remaining units (276), a historical call likely exceeds total 14-unit work budget; availability/entitlement not established."
+InferSports,event_directory,VERIFIED,"infer-002/003/005 returned provider aliases UEFANLA/UEFANLC, current finished and scheduled fixtures",Exact public name query returned no rows; use provider aliases verified against the requested competition scope.
+InferSports,current_fixtures,LIVE_VERIFIED,infer-005 event list schedules two adult men UEFA Nations League fixtures for 2026-11-13T19:45Z,No other competitions queried.
+InferSports,current_h2h_totals_asian_handicap_quotes,LIVE_VERIFIED_WITH_MIXED_QUOTE_AGE,infer-006 and market-evidence.json: open market rows with bookmaker/line/side prices and as_of,Response stale=false but quote timestamps differ; newest of extracted markets is market-specific. Enforce caller freshness cutoff.
+InferSports,past_fixture_odds,STALE_OR_SUSPENDED,infer-004; stale=true and odds for finished Turkey–Belgium suspended at zero; not valid quotes,"Returned zeros are placeholder/suspended quotes, not prices."
+InferSports,standings_squads_lineups_injuries_events_stats_xg,UNVERIFIED,No such endpoints queried,Not evidenced.
+InferSports,market_history,UNVERIFIED,No history endpoint queried,Current odds responses are snapshots only.
+InferSports,fundflow,NOT_PROVIDED_IN_OBSERVED_RESPONSE,Market records provide price/status/line/as_of only,"Prices are not betting volume, stake, or money flow."
+API-Football,leagues_directory,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,fixtures_schedule,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,live_scores,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,results,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,standings,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,historical_results,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,teams,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,players,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,lineups,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,injuries_suspensions,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,events,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,team_statistics,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,player_statistics,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,xg,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,odds_1x2,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,odds_totals,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,odds_handicap,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,odds_history,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,fixture_statistics,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+API-Football,season_2026_data,BLOCKED,"[""request-001-status.json""]",Not tested because initial /status returned HTTP 403 and batch was stopped.
+TheRundown,sports_competitions,BLOCKED,Official docs describe /api/v1/sports listing; no catalog response obtained in this run.,Could not map TheRundown provider IDs for project scope.
+TheRundown,schedule_events_scores,BLOCKED,Official docs confirm GET /api/v1/sports/{sportID}/schedule; authorized request R2 returned HTTP 403 Cloudflare HTML.,"No events, scores, or actual timestamp fields available to inspect."
+TheRundown,standings,UNVERIFIED,No API response inspected.,
+TheRundown,historical_results,UNVERIFIED,No API response inspected.,
+TheRundown,teams_players,UNVERIFIED,No API response inspected.,
+TheRundown,lineups,UNVERIFIED,No API response inspected.,
+TheRundown,injuries_suspensions,UNVERIFIED,No API response inspected.,
+TheRundown,match_events,UNVERIFIED,No API response inspected.,
+TheRundown,team_player_statistics_xg,UNVERIFIED,No API response inspected.,Cannot assert presence of real stats/xG fields.
+TheRundown,odds_1x2,UNVERIFIED,No API response inspected.,No actual sportsbook quote or source timestamp inspected.
+TheRundown,odds_totals,UNVERIFIED,No API response inspected.,"No actual sportsbook quote, line, two-sided prices, or source timestamp inspected."
+TheRundown,odds_spreads,UNVERIFIED,No API response inspected.,"No actual sportsbook quote, line, two-sided prices, or source timestamp inspected."
+TheRundown,odds_history,UNVERIFIED,No API response inspected.,No historical/opening/closing quote data inspected.
