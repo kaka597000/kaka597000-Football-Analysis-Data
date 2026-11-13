@@ -1,0 +1,39 @@
+{
+  "observed_at_beijing": "2026-11-13T10:32:59.748+08:00",
+  "spec_revision": "4",
+  "observed_spec_revision": "4",
+  "observations_current": true,
+  "network_policy": {
+    "mode": "unrestricted",
+    "state": "enforced"
+  },
+  "credentials": [
+    {
+      "name": "apifootball",
+      "target": {
+        "environment_variable": "apifootball",
+        "allowed_domains": [
+          "dashboard.api-football.com",
+          "v3.football.api-sports.io",
+          "www.api-football.com"
+        ]
+      },
+      "optional": false,
+      "state": "ready"
+    },
+    {
+      "name": "therundown",
+      "target": {
+        "environment_variable": "therundown",
+        "allowed_domains": [
+          "therundown.io"
+        ]
+      },
+      "optional": false,
+      "state": "ready"
+    }
+  ],
+  "cloudflare_zone_management_binding_available": false,
+  "cloudflare_zone_permission_test_performed": false,
+  "api_requests_this_followup": 0
+}

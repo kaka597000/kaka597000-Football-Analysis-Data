@@ -1,0 +1,61 @@
+{
+  "schema": "WCPP-CLOUDFLARE-REMEDIATION-EVIDENCE-1",
+  "members": [
+    {
+      "path": "delivery.json",
+      "sha256": "edcab8fee9d45a270e77cea0512bd57ef27ea0f19d803a10146cd5b8595c8660",
+      "bytes": 513
+    },
+    {
+      "path": "environment-observation.json",
+      "sha256": "767e71951d90563025ad1370eac51aa7e47aac74638fbe463ecd4ab423d7edb2",
+      "bytes": 940
+    },
+    {
+      "path": "findings.md",
+      "sha256": "97ce6d3df8f92097a5a4a83e6344916ab3199e8c7adf85d19d2a35afddb46964",
+      "bytes": 3612
+    },
+    {
+      "path": "freeze/000002.json",
+      "sha256": "17f4b167a93f00c7d785e914ceba6f31ab00929277c0389538a5d4d91acc8923",
+      "bytes": 5863
+    },
+    {
+      "path": "freeze_and_archive.py",
+      "sha256": "737f2a5a8b6e9633416f72247217e139c831c09daa3c37ce145ae79df9de6190",
+      "bytes": 3677
+    },
+    {
+      "path": "report.md",
+      "sha256": "8e8e428aef49cdbdb647316a7d7380d3b6d1c668d0fc4d7d0859a182588835fd",
+      "bytes": 4263
+    },
+    {
+      "path": "search-log.json",
+      "sha256": "daf4085502b07588048d89de68711237ee1a91f587219ff8e89be04f4fb5277f",
+      "bytes": 2820
+    },
+    {
+      "path": "sources.json",
+      "sha256": "e0b64c0e236df968bec741fccccdc954292358f6e9ab44be7a5bdfa5163d6d66",
+      "bytes": 8940
+    }
+  ],
+  "freeze_receipt": {
+    "freeze_id": "8cb6f28a707daf65-v000002",
+    "recorded_at": "2026-11-13T10:39:13.218132+08:00",
+    "path": "/workspace/WCPP/forecasts/issued-analyses/8cb6f28a707daf6564a8714c966f453ac1fc5510efca9768c5d1932e3916545c/000002.json",
+    "sha256": "3d367468599740f526680d0ad4819dd7c80d9e045397d2996939026f8c6f1174",
+    "evaluation_slot": "SEPARATE_REVISION_OR_STAGE"
+  },
+  "configured_credential_matches": 0,
+  "source_commit": "a342384242140c613033bd7f830569f3ae92babd",
+  "business_api_requests": 0,
+  "data_parent_commit": "3301a33f751b0cf935c7a83f2a1c10d3bc3d086f",
+  "archive": "frozen-evidence.tar.gz",
+  "archive_sha256": "0bb64622aff52323d7787327292e3a90cd6b9020b53d9ab1fe6c9eaa6db3441b",
+  "archive_bytes": 11193,
+  "members_location": "inside_archive",
+  "note": "Frozen originals are byte-preserved in the archive. The findings.md original includes a Markdown line break with trailing spaces; it is retained only inside the archive."
+}

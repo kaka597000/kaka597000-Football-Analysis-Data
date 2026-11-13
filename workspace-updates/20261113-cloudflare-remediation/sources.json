@@ -1,0 +1,88 @@
+{
+  "repository": "https://github.com/cloudflare/cloudflare-docs",
+  "repository_commit": "dc696ce1fefd0b0b5eddcc28064f4434e9bdc202",
+  "content_retrieved_utc": "2026-11-13T02:35:00Z",
+  "content_retrieved_beijing": "2026-11-13T10:35:00+08:00",
+  "retrieval_method": "One read-only GitHub GraphQL request to the official Cloudflare documentation repository. No API-Football or TheRundown hosts were contacted.",
+  "sources": [
+    {
+      "id": "skip-action",
+      "title": "Configure a custom rule with the Skip action",
+      "official_docs_url": "https://developers.cloudflare.com/waf/custom-rules/skip/",
+      "pinned_source_url": "https://github.com/cloudflare/cloudflare-docs/blob/dc696ce1fefd0b0b5eddcc28064f4434e9bdc202/src/content/docs/waf/custom-rules/skip/index.mdx",
+      "source_level": "Cloudflare official documentation source",
+      "operation_requirements": "The documented action is a Cloudflare dashboard custom-rule edit for a given zone/account, or a Rulesets API action. It therefore requires authorization to manage that zone's Security rules or an appropriately authorized Rulesets API credential. The page does not name the minimum account role needed.",
+      "safety_and_scope": "Cloudflare describes Skip for legitimate requests that unintentionally match a security rule. Any exception should match only confirmed legitimate traffic and skip only the specific offending feature/rule group. No event or offending rule has been identified for this API-Football case.",
+      "documented_points": [
+        "Skip rules allow specific requests to bypass security features that would otherwise block or challenge them. Use skip rules when legitimate traffic matches a security rule unintentionally.",
+        "You can skip rate limiting rules, Managed Rules, Super Bot Fight Mode rules, and several other security products. However, you cannot skip Bot Fight Mode (available on the Free plan).",
+        "In the Cloudflare dashboard, go to the Security rules page. Create a custom rule or edit an existing custom rule; define the rule name and expression; choose Skip; configure the desired skip options; save your changes."
+      ]
+    },
+    {
+      "id": "skip-options",
+      "title": "Available skip options",
+      "official_docs_url": "https://developers.cloudflare.com/waf/custom-rules/skip/options/",
+      "pinned_source_url": "https://github.com/cloudflare/cloudflare-docs/blob/dc696ce1fefd0b0b5eddcc28064f4434e9bdc202/src/content/docs/waf/custom-rules/skip/options.mdx",
+      "source_level": "Cloudflare official documentation source",
+      "applicability_and_limits": "Skip is product- and phase-specific; it is not a universal Cloudflare bypass. Bot Fight Mode is excluded. A Skip decision does not suppress out-of-engine products unless one of their documented product options is selected.",
+      "documented_points": [
+        "Skip phases: All rate limiting rules, All Super Bot Fight Mode rules, and All managed rules.",
+        "Currently, you cannot skip Bot Fight Mode, only Super Bot Fight Mode.",
+        "Skipping a phase does not skip security products that run outside the Ruleset Engine, such as Browser Integrity Check or Zone Lockdown. To skip those products, use the Skip products option instead.",
+        "Skip products: Zone Lockdown (zoneLockdown), User Agent Blocking (uaBlock), Browser Integrity Check (bic), Hotlink Protection (hot), Security Level (securityLevel), Rate limiting rules (Previous version) (rateLimit), and Managed rules (Previous version) (waf).",
+        "When an account-level skip rule uses the phases action parameter, Cloudflare skips the specified phases at both the account and zone levels for matching requests.",
+        "The phase: current option is supported only in zone-level custom and entry point rulesets for the http_request_firewall_custom phase.",
+        "When disabled, Cloudflare will not log any requests matching the current skip rule, and these requests will not appear in Security Events. The default for custom rules with Skip is logging enabled."
+      ]
+    },
+    {
+      "id": "bot-fight-mode",
+      "title": "Bot Fight Mode",
+      "official_docs_url": "https://developers.cloudflare.com/bots/get-started/bot-fight-mode/",
+      "pinned_source_url": "https://github.com/cloudflare/cloudflare-docs/blob/dc696ce1fefd0b0b5eddcc28064f4434e9bdc202/src/content/docs/bots/get-started/bot-fight-mode.mdx",
+      "source_level": "Cloudflare official documentation source",
+      "operation_requirements": "Changing Bot Fight Mode settings or migrating to Super Bot Fight Mode is a zone administrator action; it is not available to an API consumer that does not administer the provider's Cloudflare zone.",
+      "safety_and_scope": "The page documents disabling Bot Fight Mode for the zone when it causes application traffic problems. It does not establish that Bot Fight Mode caused this request's 403. No setting was changed.",
+      "documented_points": [
+        "You cannot bypass or skip Bot Fight Mode using WAF custom rules or Page Rules. This is because Bot Fight Mode does not run on the Ruleset Engine — it operates in a separate evaluation pipeline where Skip, Bypass, and Allow actions have no effect.",
+        "If you need to create exceptions for specific traffic (for example, your own API clients or monitoring tools), use Super Bot Fight Mode instead. Super Bot Fight Mode runs on the Ruleset Engine and supports Skip rules.",
+        "You can see bot-related actions by going to Security > Analytics and selecting the Events tab. Any requests challenged by this product will be labeled Bot Fight Mode in the Service field."
+      ]
+    },
+    {
+      "id": "security-events",
+      "title": "Security Events",
+      "official_docs_url": "https://developers.cloudflare.com/waf/analytics/security-events/",
+      "pinned_source_url": "https://github.com/cloudflare/cloudflare-docs/blob/dc696ce1fefd0b0b5eddcc28064f4434e9bdc202/src/content/docs/waf/analytics/security-events.mdx",
+      "source_level": "Cloudflare official documentation source",
+      "availability_and_limits": "The captured source says dashboard features are Sampled logs only on Free and All on Pro/Business/Enterprise; Free/Pro/Business do not have account-level dashboard access, while Enterprise does. The source lists up to 31 days of historical data and a 30-day maximum query window for Free/Pro/Business (31 days Enterprise). Sampling can omit individual events.",
+      "ray_id_support": "The full retrieved source contains no Ray ID filter or Ray ID lookup instructions. Security Events is documented as zone-dashboard analytics over events/filters; do not claim it can search directly by CF-Ray on the basis of this page.",
+      "documented_points": [
+        "Security Events allows you to review mitigated requests and helps you tailor your security configurations. Use Security Events to investigate requests that Cloudflare security products acted on or flagged, identify false positives, and fine-tune your security rules.",
+        "To open Security Events for a given zone: in the Cloudflare dashboard, go to the Analytics page, then select the Events tab.",
+        "For example, to filter events by IP address, select IP for the field, select equals for the operator, and enter the IP address.",
+        "Security Events may use sampled data. If your search uses sampled data, Security Events might not display all events and filters might not return the expected results."
+      ]
+    }
+  ],
+  "retrieval_failures": [
+    {
+      "url": "https://developers.cloudflare.com/waf/custom-rules/skip/",
+      "retrieved_utc": "2026-11-13T02:32:59Z",
+      "http_status": 403,
+      "content_type": "text/plain; charset=UTF-8",
+      "sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c",
+      "note": "Blocked response; stopped requests to developers.cloudflare.com. No page text was inferred from this response."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/waf/custom-rules/skip.mdx",
+      "retrieved_utc": "2026-11-13T02:33:47Z",
+      "http_status": 404,
+      "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+      "note": "An initial candidate file path was wrong. A subsequent official repository tree read identified the actual paths above."
+    }
+  ],
+  "case_specific_conclusion": "These are Cloudflare zone-administrator mechanisms. They do not identify the product or rule behind either API denial. This session has API-consumer credentials but no binding or tool authorized to manage either provider Cloudflare zone. No zone permission check was performed, and a stable provider-approved egress IP has not been established. No rule can be configured from the current session.",
+  "content_time_basis": "Recorded GraphQL response file modification time; not a provider-signed timestamp."
+}
