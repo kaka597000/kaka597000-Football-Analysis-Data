@@ -1,0 +1,1655 @@
+{
+  "status": "PASS",
+  "scope": "Read-only existing-core numerical reload; no prediction freezes, training, or historical performance validation",
+  "artifacts": 16,
+  "distribution_cases": 160,
+  "nations_returned_missing_checks": 64,
+  "max_normalization_error": 4.440892098500626e-16,
+  "max_wdl_total_error": 4.440892098500626e-16,
+  "max_matrix_mean_error": 4.440892098500626e-16,
+  "jcup_missing_metadata_note": "The cup distribution helper returns only matrix and means. QF predict and diagnostic source emit unseen-team metadata; edition predict does not emit it. No predict function was called.",
+  "source_or_artifact_edits": false,
+  "real_database_writes": false,
+  "checks": [
+    {
+      "artifact": "/workspace/nations-model-20261110/models/A/current-artifact.json",
+      "family": "nations",
+      "role": "current",
+      "artifact_sha256": "5f8a96dfc7b0713971f935a6078d3e794e1fad9f1e5f9ce32c74739f9b5b29ec",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.65137607869243,
+            1.3211009440451051
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.3211009440451051,
+            1.3211009440451051
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.65137607869243,
+            1.3211009440451051
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.3211009440451051,
+            1.3211009440451051
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.65137607869243,
+            1.3211009440451051
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.3211009440451051,
+            1.3211009440451051
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.65137607869243,
+            1.3211009440451051
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.3211009440451051,
+            1.3211009440451051
+          ],
+          "returned_missing": []
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/nations-model-20261110/models/A/test-artifact.json",
+      "family": "nations",
+      "role": "test",
+      "artifact_sha256": "69fa5c7ef71a21ff262dbcc87c995237cca5c1b99fecb3168becd8dc4bf3e9ba",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.4561650226955527,
+            1.6394623456318644
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.3834233734247332,
+            1.6394623456318644
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.5947884799402112,
+            1.3379232499620766
+          ],
+          "returned_missing": [
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.5151219981466786,
+            1.3379232499620766
+          ],
+          "returned_missing": [
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.3646764579410693,
+            1.739950743657632
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home"
+          ]
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.2965050524173094,
+            1.739950743657632
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home"
+          ]
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.4945904207623955,
+            1.4199292590835004
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home",
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.4199292590835004,
+            1.4199292590835004
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home",
+            "synthetic-unseen-away"
+          ]
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/nations-model-20261110/models/B/current-artifact.json",
+      "family": "nations",
+      "role": "current",
+      "artifact_sha256": "ca86d58d2584084535884d5a0ed2f90a3605a210f62b6fe7291e3fe6cae44daf",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.2589921573380483,
+            1.0503587717183374
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.0503587717183374,
+            1.0503587717183374
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.2589921573380483,
+            1.0503587717183374
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.0503587717183374,
+            1.0503587717183374
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.2589921573380483,
+            1.0503587717183374
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.0503587717183374,
+            1.0503587717183374
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.2589921573380483,
+            1.0503587717183374
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.0503587717183374,
+            1.0503587717183374
+          ],
+          "returned_missing": []
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/nations-model-20261110/models/B/test-artifact.json",
+      "family": "nations",
+      "role": "test",
+      "artifact_sha256": "007a07cf47611fcd94d2cc735054e538596d5251d31f8e98ef2ad960f0e87b0e",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.0805363168178521,
+            1.0421411521269643
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            0.9813414632570634,
+            1.0421411521269643
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.0935899098989812,
+            1.0276779037862158
+          ],
+          "returned_missing": [
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            0.9931967169265771,
+            1.0276779037862158
+          ],
+          "returned_missing": [
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.1716808756364836,
+            1.0921311024621403
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home"
+          ]
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.0641188149544178,
+            1.0921311024621403
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home"
+          ]
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.1858355552464592,
+            1.076974073758949
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home",
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.076974073758949,
+            1.076974073758949
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home",
+            "synthetic-unseen-away"
+          ]
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/nations-model-20261110/models/C/current-artifact.json",
+      "family": "nations",
+      "role": "current",
+      "artifact_sha256": "3a2f3f6ca4b611b1a00f22e8881abb471f3f6fc43e85fe2444a9cc42744cfc0d",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.2758614493777625,
+            1.0632177291682985
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.0632177291682985,
+            1.0632177291682985
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.2758614493777625,
+            1.0632177291682985
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.0632177291682985,
+            1.0632177291682985
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.2758614493777625,
+            1.0632177291682985
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.0632177291682985,
+            1.0632177291682985
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.2758614493777625,
+            1.0632177291682985
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.0632177291682985,
+            1.0632177291682985
+          ],
+          "returned_missing": []
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/nations-model-20261110/models/C/test-artifact.json",
+      "family": "nations",
+      "role": "test",
+      "artifact_sha256": "95921be94765987fa81fd105e9f17b2da777174da9d24f837023af73b007d727",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.2294192942507873,
+            1.3748685838714163
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.1066526133735182,
+            1.3748685838714163
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.2270581982096829,
+            1.3379772727023653
+          ],
+          "returned_missing": [
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.1045272903722176,
+            1.3379772727023653
+          ],
+          "returned_missing": [
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.2986302321319416,
+            1.198876333718337
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home"
+          ]
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.168952323194558,
+            1.198876333718337
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home"
+          ]
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.2961362166936905,
+            1.1667073537887245
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home",
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.1667073537887245,
+            1.1667073537887245
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home",
+            "synthetic-unseen-away"
+          ]
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/nations-model-20261110/models/D/current-artifact.json",
+      "family": "nations",
+      "role": "current",
+      "artifact_sha256": "433cdd94ef2042f9a64861a2e51e6544d1603d572fa0d7fbeb3b10a3368f0fd8",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.212499710680968,
+            1.0874971606499961
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.0874971606499961,
+            1.0874971606499961
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.212499710680968,
+            1.0874971606499961
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.0874971606499961,
+            1.0874971606499961
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.212499710680968,
+            1.0874971606499961
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.0874971606499961,
+            1.0874971606499961
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.212499710680968,
+            1.0874971606499961
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.0874971606499961,
+            1.0874971606499961
+          ],
+          "returned_missing": []
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/nations-model-20261110/models/D/test-artifact.json",
+      "family": "nations",
+      "role": "test",
+      "artifact_sha256": "37c473f9e88a67cb30eb53434dcbb1db720b43b3f97fdf2cfab9d4d578182f6f",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            0.8415531113742041,
+            1.0086304229450123
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            0.928055300002235,
+            1.0086304229450123
+          ],
+          "returned_missing": []
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            0.8541088993306849,
+            0.9717915745441144
+          ],
+          "returned_missing": [
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            0.9419016816520974,
+            0.9717915745441144
+          ],
+          "returned_missing": [
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            0.8946655621578012,
+            1.039306628126634
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home"
+          ]
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            0.986627112974723,
+            1.039306628126634
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home"
+          ]
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            0.9080137762379273,
+            1.0013473732354174
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home",
+            "synthetic-unseen-away"
+          ]
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.0013473732354174,
+            1.0013473732354174
+          ],
+          "returned_missing": [
+            "synthetic-unseen-home",
+            "synthetic-unseen-away"
+          ]
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/current-artifact.json",
+      "family": "jcup_edition",
+      "role": "current",
+      "artifact_sha256": "2dc3843e47ba0361f26e42e2716e809a6e59afa28b3dd749ee1f3caebe245c03",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": null,
+          "expected_goals": [
+            1.166663639640833,
+            1.166663639640833
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.1666636396408332,
+            1.1666636396408332
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.1666636396408332,
+            1.1666636396408332
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": null,
+          "expected_goals": [
+            1.166663639640833,
+            1.166663639640833
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.1666636396408332,
+            1.1666636396408332
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.1666636396408332,
+            1.1666636396408332
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": null,
+          "expected_goals": [
+            1.166663639640833,
+            1.166663639640833
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.1666636396408332,
+            1.1666636396408332
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.1666636396408332,
+            1.1666636396408332
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": null,
+          "expected_goals": [
+            1.166663639640833,
+            1.166663639640833
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.1666636396408332,
+            1.1666636396408332
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.1666636396408332,
+            1.1666636396408332
+          ],
+          "returned_missing": null
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/jleague-cup-20261111/final-models/2e145cad7345c5d6/test-artifact.json",
+      "family": "jcup_edition",
+      "role": "test",
+      "artifact_sha256": "6543091cb57b7dc71fac35a5da476f91fcea4305cb73bbb5f1100fe2c6856047",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": null,
+          "expected_goals": [
+            1.1437836393665857,
+            1.0451919823865374
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.143613653242354,
+            1.0450366486957512
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.143613653242354,
+            1.0450366486957512
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": null,
+          "expected_goals": [
+            1.152036053325266,
+            1.1012658331774101
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.1518648407489187,
+            1.1011021659380062
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.1518648407489187,
+            1.1011021659380062
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": null,
+          "expected_goals": [
+            1.152036053325266,
+            1.1012658331774101
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.1518648407489187,
+            1.1011021659380062
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.1518648407489187,
+            1.1011021659380062
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": null,
+          "expected_goals": [
+            1.1603480085588882,
+            1.1603480085588882
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.1601755606815571,
+            1.1601755606815571
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.1601755606815571,
+            1.1601755606815571
+          ],
+          "returned_missing": null
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/current-artifact.json",
+      "family": "jcup_edition",
+      "role": "current",
+      "artifact_sha256": "c267b997bb8d8d9a48beb8aa7a01a918583a72630c98b8e61d12b3f9b2bb872f",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": null,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": null,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": null,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": null,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.349997348080407,
+            1.349997348080407
+          ],
+          "returned_missing": null
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/jleague-cup-20261111/final-models/d60344820c88cc2b/test-artifact.json",
+      "family": "jcup_edition",
+      "role": "test",
+      "artifact_sha256": "7406614e5a441b63d69674bf41998dfba6d5f4680c5d0401d55662355dedfb04",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": null,
+          "expected_goals": [
+            1.6134742492175178,
+            1.2489445247102897
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.6130103462261967,
+            1.2485854305993744
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.6130103462261967,
+            1.2485854305993744
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": null,
+          "expected_goals": [
+            1.51832749656479,
+            1.2939570282178094
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.517890949983521,
+            1.2935849921990614
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.517890949983521,
+            1.2935849921990614
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": null,
+          "expected_goals": [
+            1.4153967992466296,
+            1.285597213118547
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.4149898471001077,
+            1.2852275806976459
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.4149898471001077,
+            1.2852275806976459
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": null,
+          "expected_goals": [
+            1.331930695446899,
+            1.331930695446899
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.3315477413128929,
+            1.3315477413128929
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.3315477413128929,
+            1.3315477413128929
+          ],
+          "returned_missing": null
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/jcup-qf-expansion-20261111/final-models/leg1/current-artifact.json",
+      "family": "jcup_quarterfinal",
+      "role": "current",
+      "artifact_sha256": "cedba0a57587b3b2dac2b070b5d11fcff88132f9e263094d2795bb2310c1d9d9",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": null,
+          "expected_goals": [
+            1.541648773756354,
+            1.541648773756354
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.5409814442728902,
+            1.5409814442728902
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.5409814442728902,
+            1.5409814442728902
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": null,
+          "expected_goals": [
+            1.541648773756354,
+            1.541648773756354
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.5409814442728902,
+            1.5409814442728902
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.5409814442728902,
+            1.5409814442728902
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": null,
+          "expected_goals": [
+            1.541648773756354,
+            1.541648773756354
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.5409814442728902,
+            1.5409814442728902
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.5409814442728902,
+            1.5409814442728902
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": null,
+          "expected_goals": [
+            1.541648773756354,
+            1.541648773756354
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.5409814442728902,
+            1.5409814442728902
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.5409814442728902,
+            1.5409814442728902
+          ],
+          "returned_missing": null
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/jcup-qf-expansion-20261111/final-models/leg1/test-artifact.json",
+      "family": "jcup_quarterfinal",
+      "role": "test",
+      "artifact_sha256": "8de1e64679a8e31d97819ec718363222c812622d78534139a97258455a2ca827",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": null,
+          "expected_goals": [
+            1.4024116526170243,
+            1.5298707375157548
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.4018493307356195,
+            1.5292573086485455
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.4018493307356195,
+            1.5292573086485455
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": null,
+          "expected_goals": [
+            1.4974460619818002,
+            1.4967335128687047
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.4968456343646277,
+            1.4961333709607654
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.4968456343646277,
+            1.4961333709607654
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": null,
+          "expected_goals": [
+            1.4002148596627584,
+            1.5282014714782342
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.3996534186245388,
+            1.5275887119329155
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.3996534186245388,
+            1.5275887119329155
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": null,
+          "expected_goals": [
+            1.495100403378482,
+            1.495100403378482
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.494500916294823,
+            1.494500916294823
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.494500916294823,
+            1.494500916294823
+          ],
+          "returned_missing": null
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/jcup-qf-expansion-20261111/final-models/leg2/current-artifact.json",
+      "family": "jcup_quarterfinal",
+      "role": "current",
+      "artifact_sha256": "9b6bf9a599b0b4a39f9207d895e92f85f41858a94585e0cc6d8509a27ef5a07d",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": null,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": null,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": null,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": null,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.2499901410852912,
+            1.2499901410852912
+          ],
+          "returned_missing": null
+        }
+      ]
+    },
+    {
+      "artifact": "/workspace/jcup-qf-expansion-20261111/final-models/leg2/test-artifact.json",
+      "family": "jcup_quarterfinal",
+      "role": "test",
+      "artifact_sha256": "e18a9fd6f18becfda061a027aa7ed1d0cd83a26e80cc636bf11510bb50175c7d",
+      "artifact_unchanged": true,
+      "cases": [
+        {
+          "case": "seen",
+          "neutral": null,
+          "expected_goals": [
+            1.3025731256959512,
+            1.145944343135838
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": false,
+          "expected_goals": [
+            1.302300281112729,
+            1.1457043069332398
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "seen",
+          "neutral": true,
+          "expected_goals": [
+            1.302300281112729,
+            1.1457043069332398
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": null,
+          "expected_goals": [
+            1.316267763349457,
+            1.2110700099053036
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": false,
+          "expected_goals": [
+            1.3159920502073579,
+            1.2108163320997456
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_away",
+          "neutral": true,
+          "expected_goals": [
+            1.3159920502073579,
+            1.2108163320997456
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": null,
+          "expected_goals": [
+            1.221882550895272,
+            1.1683309179705224
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": false,
+          "expected_goals": [
+            1.2216266082316558,
+            1.168086192545062
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_home",
+          "neutral": true,
+          "expected_goals": [
+            1.2216266082316558,
+            1.168086192545062
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": null,
+          "expected_goals": [
+            1.2347288460164858,
+            1.2347288460164858
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": false,
+          "expected_goals": [
+            1.2344702124927796,
+            1.2344702124927796
+          ],
+          "returned_missing": null
+        },
+        {
+          "case": "unseen_both",
+          "neutral": true,
+          "expected_goals": [
+            1.2344702124927796,
+            1.2344702124927796
+          ],
+          "returned_missing": null
+        }
+      ]
+    }
+  ]
+}

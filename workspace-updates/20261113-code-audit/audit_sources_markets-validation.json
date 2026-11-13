@@ -1,0 +1,72 @@
+{
+  "task": "audit_sources_markets",
+  "created_at_bjt": "2026-11-13T15:50:21.390477+08:00",
+  "status": "PASSED",
+  "source_root": "/workspace/Football-Analysis",
+  "fix_categories": 3,
+  "test_methods_added": 14,
+  "tests_passed": 107,
+  "tests_failed": 0,
+  "commands": [
+    {
+      "command": "env -i PATH=/usr/local/bin:/usr/bin:/bin OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=runtime/data_sources /workspace/football-venv/bin/python -m unittest discover -s runtime/data_sources -p 'test_*.py' -v",
+      "tests": 52,
+      "exit_code": 0
+    },
+    {
+      "command": "env -i PATH=/usr/local/bin:/usr/bin:/bin OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=runtime /workspace/football-venv/bin/python -m unittest runtime.automation.test_market_snapshot runtime.automation.test_infer_market_snapshot runtime.automation.test_market_bridge -v",
+      "tests": 55,
+      "exit_code": 0
+    }
+  ],
+  "initial_validation_issue": {
+    "kind": "TEST_COMMAND_IMPORT_PATH",
+    "detail": "Initial market command omitted PYTHONPATH=runtime; rerun with required import path passed all 54 tests. No code change for this issue."
+  },
+  "pre_fix_reproductions": {
+    "duplicate_home_competitor_verified_quotes": 1,
+    "in_progress_nested_competition_verified_quotes": 1,
+    "requests_with_first_response_403": 6,
+    "echoed_synthetic_query_credential_saved": true,
+    "http200_errors_token_api_success": true,
+    "http200_errors_token_authenticated": true
+  },
+  "changed_files_sha256": {
+    "runtime/automation/market_snapshot.py": "f609c55f9c897d31671a6dcf8f27b26b67603e8df0289b438f238f02c8ebc9a1",
+    "runtime/automation/test_market_snapshot.py": "c01ee14dbe07c9ecbb7d50af3de95ae4f92ad301c8fe55a5d23e4d90e90d0f17",
+    "runtime/data_sources/clients.py": "edac81418db5e0fa6f5f14c05a59303da6e2a860c6083bfea8572b0f7181237c",
+    "runtime/data_sources/test_clients.py": "6f053fdbaed50e17fa6b4201bdf6acaf6a047b40e40b9a62ff74a080320b1c35",
+    "runtime/data_sources/api_first.py": "58cdc7b8b0f2fdfeb970630f80d52815b2901ecc7e1cf225f49097c96ba45a2a",
+    "runtime/data_sources/test_api_first.py": "a177b3d184616e7ec36667eaeb3be35dcb2eaf44f7bd29bccc0fee3d7a3e72f5"
+  },
+  "network_requests": 0,
+  "real_credentials_read": false,
+  "real_source_status_refreshed": false,
+  "git_operations": false,
+  "active_models_changed": false,
+  "numeric_parameters_changed": false,
+  "registries_changed": false,
+  "real_databases_changed": false,
+  "frozen_records_changed": false,
+  "accuracy_improvement_claimed": false,
+  "test_evidence": "offline synthetic responses and existing unit tests only",
+  "remaining_items": [
+    "Legacy match_context and standalone market collectors are not unified under the shared quota ledger.",
+    "Generic api_first source-time checks have no separate response captured_at; pending evidence still requires downstream review."
+  ],
+  "independent_review_corrections": [
+    {
+      "issue": "Raw provider business key was rejected by generic normalized-row credential guard",
+      "regression_reproduced": true,
+      "fix": "Nonmutating recursive check of explicit credential fields and actual secret values; business key retained",
+      "regression_test": "test_nonempty_provider_response_preserves_business_keys_through_fetch_and_build",
+      "verified_quotes": 2,
+      "status": "PASSED"
+    },
+    {
+      "issue": "HTTP200 rateLimit or daily requests error did not stop subsequent requests",
+      "fix": "Explicit rate/quota rejection classified as RATE_LIMITED; shared batch stop extended, ordinary resource plan restriction not globally blocked",
+      "status": "PASSED"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "task": "audit_freeze_review",
+  "date_beijing": "2026-11-13",
+  "source_root": "/workspace/Football-Analysis",
+  "status": "PASS_SCOPED_REGRESSIONS_WITH_DOCUMENTED_FOLLOWUPS",
+  "fixed_findings": [
+    "F1_PUBLICATION_FIXTURE_CONTEXT_BINDING",
+    "F2_PROSPECTIVE_ATOMIC_COMMIT_AND_PREMATCH_BOUNDARY",
+    "F3_PROSPECTIVE_EXPLICIT_FINAL_RESULT_STATUS",
+    "F4_FUTURE_STATUS_RECEIPT_AND_DUPLICATE_POPULATION",
+    "F5_FUTURE_REVIEW_PREREGISTERED_IDENTITY_WRAPPER"
+  ],
+  "changed_files": [
+    "runtime/publication.py",
+    "runtime/test_publication_recovery.py",
+    "runtime/research/prospective.py",
+    "runtime/research/test_prospective.py",
+    "runtime/research_program/future_status.py",
+    "runtime/research_program/test_future_status.py",
+    "runtime/research_program/future_identity.py",
+    "runtime/research_program/test_future_identity.py"
+  ],
+  "before_fix": {
+    "new_core_tests_run": 6,
+    "tests_failing": 6,
+    "failing_subcases": 20,
+    "temporary_reproductions": {
+      "conflicting_test_home_published": "OTHER",
+      "interrupted_json_write_left_partial_final_file": true,
+      "live_result_counted_as_settled": 1
+    }
+  },
+  "after_fix": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=runtime:runtime/research /workspace/football-venv/bin/python -m unittest test_publication_recovery test_prospective test_analysis_freeze test_refactor_contracts.PublicationTests test_partial_prediction test_review_contracts.ReviewContracts.test_chinese_freeze_resume_and_append_under_cp1252_default",
+    "tests_run": 42,
+    "new_tests": 7,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 2.097,
+    "exit_code": 0
+  },
+  "additional_status_baseline": {
+    "core_safety_tests_failing": 4,
+    "failing_subcases": 8,
+    "conflicting_planned_home_accepted_as_pending": 1,
+    "duplicate_single_fixture_plan_inflated_population": 2
+  },
+  "additional_status_and_identity_validation": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=runtime:runtime/research /workspace/football-venv/bin/python -m unittest research_program.test_future_status research_program.test_future_identity",
+    "tests_run": 11,
+    "new_tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 0.012,
+    "exit_code": 0
+  },
+  "total_distinct_scoped_tests_run": 53,
+  "total_new_tests": 17,
+  "identity_wrapper_interface": "research_program.future_identity.validate_plan_packages(plan_record, packages) -> None; receipt paths already resolved",
+  "identity_wrapper_consumers": {
+    "future_status": "IMPLEMENTED_AND_TESTED",
+    "automation_prospective_cycle": "DELEGATED_TO_AUDIT_OPERATIONS"
+  },
+  "followups": [{
+    "id": "DIRECT_SOURCE_LOCKED_REVIEW_ENTRYPOINT",
+    "constraint": "Direct future_validation CLI/API callers must use the new identity wrapper; source-locked engine remains unchanged"
+  }],
+  "concurrency_scope": "Two concurrent same-match ledger saves; existing three-process freeze append regression",
+  "failure_injection_scope": "tempfile-only; file fsync failure, simulated time boundary and existing publication interruption tests",
+  "whole_system_crash_or_network_filesystem_tested": false,
+  "active_artifacts_modified": false,
+  "active_registry_modified": false,
+  "old_freezes_modified": false,
+  "numerical_model_or_matrix_modified": false,
+  "source_hash_compatibility_bypassed": false,
+  "business_network_calls": 0,
+  "git_mutations": 0,
+  "real_future_performance_validation": false,
+  "accuracy_improvement_claimed": false
+}

@@ -1,0 +1,59 @@
+{
+  "task": "audit_numerics",
+  "generated_at_beijing": "2026-11-13T15:40:06+08:00",
+  "status": "PASS",
+  "modified_files": [
+    "runtime/research_program/selection_review.py",
+    "runtime/research_program/test_selection_review.py",
+    "runtime/research_program/complementarity.py",
+    "runtime/research_program/test_complementarity.py"
+  ],
+  "checks": [
+    {
+      "name": "targeted_regression",
+      "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=runtime:runtime/research_program /workspace/football-venv/bin/python -m unittest research_program.test_selection_review research_program.test_complementarity -v",
+      "cwd": "/workspace/Football-Analysis",
+      "tests_run": 19,
+      "new_test_methods": 7,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "wall_time_seconds": 0.47887239,
+      "log": "audit_numerics-tests.log",
+      "provenance": "Synthetic software regression only; no football performance evidence."
+    },
+    {
+      "name": "pre_fix_regression_reproduction",
+      "tests_run": 17,
+      "failing_subtests_and_tests": 14,
+      "failure_cause": "No ValueError for contradictory status, pair/result identity conflicts, or different-ID duplicate physical fixture.",
+      "existing_tests_regressed": 0
+    },
+    {
+      "name": "read_only_retained_identity_compatibility_scan",
+      "root": "/workspace/WCPP/forecasts/issued-analyses",
+      "comprehensive_records_with_reference_found": 133,
+      "referenced_records_with_mismatched_home_or_away": 8,
+      "explanation": "Eight old J.League Cup records use different provider team namespaces and have no comprehensive cohort; the original comparison already requires cohort, so these were already outside this function's input contract. No legacy records modified.",
+      "broad_identity_certification": false
+    }
+  ],
+  "findings_fixed": [
+    "NUM-01",
+    "NUM-02"
+  ],
+  "active_assets_modified": false,
+  "source_hash_locked_modules_modified": false,
+  "probability_or_weight_parameters_changed": false,
+  "training_performed": false,
+  "database_or_freeze_writes": false,
+  "network_requests": false,
+  "git_operations": false,
+  "performance_improvement_claim": false,
+  "remaining_limits": [
+    "Optional identity fields absent from legacy records are not invented or retrospectively certified.",
+    "by_model_version retains existing full-batch summaries; cohort/stage/artifact decomposition is a possible future reporting extension, not a proven mixing defect.",
+    "No complete integration suite or active-artifact reload performed by this agent; root owns integration."
+  ]
+}
+

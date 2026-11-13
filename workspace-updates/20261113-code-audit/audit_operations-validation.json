@@ -1,0 +1,150 @@
+{
+  "audit_agent": "audit_operations",
+  "audit_date_beijing": "2026-11-13",
+  "status": "FIXED_FOCUSED_TESTS_PASSED",
+  "fixed_findings": [
+    "OPS-01",
+    "OPS-02",
+    "OPS-03",
+    "OPS-04-SHARED-FUTURE-IDENTITY",
+    "OPS-05-RAW-VENUE",
+    "OPS-06-RAW-KNOWN-TIME"
+  ],
+  "modified_files": [
+    "/workspace/Football-Analysis/runtime/automation/collector.py",
+    "/workspace/Football-Analysis/runtime/automation/test_collector.py",
+    "/workspace/kaka597000-Football-Analysis-Data/runtime/collect_kor1.py",
+    "/workspace/kaka597000-Football-Analysis-Data/runtime/test_collect_kor1.py",
+    "/workspace/Football-Analysis/runtime/automation/prospective_cycle.py",
+    "/workspace/Football-Analysis/runtime/automation/test_prospective_cycle.py",
+    "/workspace/Football-Analysis/runtime/automation/trainer.py",
+    "/workspace/Football-Analysis/runtime/automation/test_trainer_raw_evidence.py"
+  ],
+  "final_checks": [
+    {
+      "cwd": "/workspace/Football-Analysis/runtime/automation",
+      "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /workspace/football-venv/bin/python -m unittest test_collector test_collection_status",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "cwd": "/workspace/kaka597000-Football-Analysis-Data",
+      "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /workspace/football-venv/bin/python -m unittest runtime.test_collect_kor1",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "execution": "SERIAL_FIXED_TEST_DIRECTORY_PLUS_UNIQUE_TEMP_DIRECTORIES"
+    },
+    {
+      "cwd": "/workspace/Football-Analysis",
+      "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /workspace/football-venv/bin/python -m unittest runtime.automation.test_prospective_cycle",
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "cwd": "/workspace/Football-Analysis/runtime/automation",
+      "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /workspace/football-venv/bin/python -m unittest test_trainer_raw_evidence",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "kind": "OFFLINE_OVERLAY_IMPORT_AND_SOURCE_LOCK_CHECK",
+      "script": "audit_operations-overlay-smoke.py",
+      "result": "audit_operations-overlay-validation.json",
+      "base_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+      "locked_sources": 8,
+      "overlay_files": 6,
+      "imports": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "unique_focused_tests_passed": 65,
+  "new_tests": 12,
+  "before_fix_evidence": [
+    {
+      "finding": "OPS-01",
+      "cases": 2,
+      "failures": 2,
+      "observed": "Six one-request runs visited one distinct scoreboard URL; repeated timeout also starved the second competition"
+    },
+    {
+      "findings": [
+        "OPS-02",
+        "OPS-03"
+      ],
+      "tests": 3,
+      "failed_subtests_or_tests": 8,
+      "observed": "Seven semantic corrections were discarded; completed history did not resume in the next year"
+    },
+    {
+      "finding": "OPS-04-SHARED-FUTURE-IDENTITY",
+      "tests": 2,
+      "failures": 2,
+      "observed": "Recovery and terminal review accepted an internally consistent pair bound to different registered team or kickoff"
+    },
+    {
+      "findings": [
+        "OPS-05-RAW-VENUE",
+        "OPS-06-RAW-KNOWN-TIME"
+      ],
+      "tests": 2,
+      "failed_subtests_or_tests": 3,
+      "observed": "Explicit venue contradiction and known_at/first_known_at before kickoff were accepted with raw evidence"
+    }
+  ],
+  "new_runtime_state": {
+    "path_relative_to_state_dir": "scoreboard-attempts.json",
+    "written_to_real_state_in_audit": false,
+    "purpose": "Fair rotation of bounded competition and UTC-day scoreboard attempts",
+    "persistence": "Before actual request; atomic replace with file and directory fsync",
+    "size_bound": "Only URLs in the current configured scope and lookback window",
+    "response_cache": "Per collect invocation only; no cross-run response TTL"
+  },
+  "network_requests": 0,
+  "emails_sent": 0,
+  "real_collection_or_training_run": false,
+  "real_database_writes": false,
+  "active_assets_modified": false,
+  "model_parameters_modified": false,
+  "locked_training_code_modified": false,
+  "workflows_or_pins_modified": false,
+  "real_scheduler_state_modified": false,
+  "git_operations_performed": true,
+  "evidence_kind": "SYNTHETIC_SOFTWARE_REGRESSIONS_NOT_FOOTBALL_EFFECTIVENESS_OR_DEPLOYMENT_VALIDATION",
+  "additional_input_validation": [
+    {
+      "component": "trainer._verify_raw_result",
+      "case": "raw neutralSite true with normalized neutral false",
+      "accepted_rows": 1,
+      "quarantined": 0,
+      "evidence_status": "VERIFIED_RAW_REGULATION_90",
+      "fixed": true,
+      "post_fix_accepted_rows": 0,
+      "post_fix_quarantined": 1,
+      "scope": "INCREMENTAL_WITH_RAW_REFERENCE_ONLY"
+    },
+    {
+      "component": "trainer._verify_raw_result",
+      "case": "normalized known_at before kickoff",
+      "accepted_rows": 1,
+      "quarantined": 0,
+      "evidence_status": "VERIFIED_RAW_REGULATION_90",
+      "fixed": true,
+      "post_fix_accepted_rows": 0,
+      "post_fix_quarantined": 1,
+      "scope": "INCREMENTAL_WITH_RAW_REFERENCE_ONLY"
+    }
+  ],
+  "training_input_validation_modified": true,
+  "training_fit_or_parameters_modified": false,
+  "trainer_deployment_status": "PENDING_SEPARATE_ROLLOUT_FIXED_BASE_PIN_UNCHANGED",
+  "shared_dependency_owned_by_other_agent": "runtime/research_program/future_identity.py",
+  "git_operations_scope": "ROOT_AUTHORIZED_READ_ONLY_GIT_ARCHIVE_OF_FIXED_BASE_TO_TEMP_DIRECTORY_ONLY"
+}

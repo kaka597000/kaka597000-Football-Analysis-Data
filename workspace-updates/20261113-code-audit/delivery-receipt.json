@@ -1,0 +1,126 @@
+{
+  "schema": "WCPP-CODE-AUDIT-DELIVERY-1",
+  "verified_at_beijing": "2026-11-13T16:06:49.417864+08:00",
+  "source_main": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
+  "source_change": "bbfe0f5f118b568f60f3831568c80f284a2d6a66",
+  "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/37",
+  "source_ci": {
+    "pull_request_run": 43389229384,
+    "main_run": 43389500149,
+    "conclusion": "success",
+    "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/43389500149"
+  },
+  "data_rollout_commit": "0f82cbabb52455a7686ab8e8c6a8bbc846f98821",
+  "data_live_writeback_commit": "5294fd7c4799a264b9232e1d52518916834c0313",
+  "data_pull_request": null,
+  "data_sync_method": "authorized direct fast-forward main pushes; no branch protection bypass",
+  "live_workflow": {
+    "run": 43389637073,
+    "conclusion": "success",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/43389637073"
+  },
+  "actual_runtime": {
+    "base_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+    "polling_overlay_commit": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
+    "evaluation_overlay_commit": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
+    "overlay_files_sha256": {
+      "runtime/automation/prospective_cycle.py": "08733ec74a2ed0d27c4491192e0f15b7be71413ad8e15239b4d49f73d9b5374b",
+      "runtime/automation/market_bridge.py": "ca0fdab0381754298ecd0aaabd9c2c669fd29a0ea91d09affed5f26ba4ff3b15",
+      "runtime/automation/result_queue.py": "d59c606c63f33a4fb2e732c5c4f6adb140a4d35a54615d25e5b2f9c146e18b4d",
+      "runtime/research_program/future_identity.py": "3bb9085c512e9ab9642bae734f276e0853f7f59d1bf3152c3eee3cf020d31531",
+      "runtime/research_program/promotion_review.py": "51552372240a0afc04a02683353491d3e039ac7146f6a422b0d696bc20a4d592",
+      "runtime/v2_test/evaluation.py": "053f8e43427a52daad5920d2d6600b581daf52c029d9f1152f72bf7f94e23724"
+    },
+    "locked_protocol_sources_verified": true,
+    "inference_source_changed": false,
+    "active_model_changed": false
+  },
+  "strict_local_tests": {
+    "suites": 24,
+    "test_executions": 938,
+    "failures": 0,
+    "skips": 0,
+    "log_sha256": "d4b610dee491ccd590257af87c1f31334f630dcbd6211b7690a3073a1681f52c"
+  },
+  "data_tests_passed": 14,
+  "active_registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+  "active_artifacts_verified": 38,
+  "independent_candidates_unchanged": 16,
+  "collection": {
+    "request_count": 49,
+    "successful_requests": 48,
+    "events_seen": 0,
+    "new_result_observations": 0,
+    "coverage_complete": false,
+    "data_status": "PARTIAL_NO_VERIFIED_MARKET"
+  },
+  "channels": {
+    "history": {
+      "requests": 48,
+      "successful_requests": 48,
+      "failures": {},
+      "status": "RESPONSE_RECEIVED",
+      "new_result_observations": 0,
+      "quarantined": 0,
+      "training_eligibility": "SEPARATE_RAW_EVIDENCE_AND_VENUE_AUDIT_REQUIRED"
+    },
+    "market": {
+      "requests": 1,
+      "successful_requests": 0,
+      "failures": {
+        "TLS": 1
+      },
+      "status": "FAILED",
+      "raw_snapshot_saved": false,
+      "verified_quote_count": 0,
+      "model_ready": false,
+      "quote_status": "NO_RESPONSE"
+    }
+  },
+  "the_odds_market_channel": {
+    "market_model_ready": false,
+    "verified_quote_count": 0,
+    "status": "MISSING_CREDENTIAL",
+    "required_secret": "WCPP_ODDS_API_KEY",
+    "requests": 0
+  },
+  "rotation_state": {
+    "sequence": 48,
+    "entries": 48,
+    "persisted": true
+  },
+  "kor1_candidates_added": 6,
+  "kor1_training_eligible": false,
+  "api_football_actions_observation": {
+    "http_status": 200,
+    "error_keys": [
+      "token"
+    ],
+    "response_items": 0,
+    "authenticated": false
+  },
+  "existing_future_review": {
+    "population": 80,
+    "captured_population": 80,
+    "completed": 37,
+    "pending": 43,
+    "new_captures": [],
+    "result_requests": 2,
+    "missing_first_pairs": 0
+  },
+  "optimization_gain_proven": false,
+  "training_input_guard_deployed": false,
+  "environment_published": false,
+  "active_model_promotion": false,
+  "rollback": {
+    "source_main_before": "a342384242140c613033bd7f830569f3ae92babd",
+    "data_before_rollout": "aa0823c820c20310b9956129cee16726cbe2ab3c",
+    "collector_pin_before": "8488660427610e0fbf6df9a6d356e84f6ec66b7b",
+    "method": "append revert commits; preserve observations, queue and frozen records"
+  },
+  "limitations": [
+    "Training input guard exists in source but fixed training base remains unchanged.",
+    "Zero valid live market quotes in this workflow.",
+    "Existing future settlement updates are not evidence of accuracy gains from this code change."
+  ]
+}
