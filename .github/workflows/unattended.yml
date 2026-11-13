@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 8488660427610e0fbf6df9a6d356e84f6ec66b7b
+          ref: 1257fdde7b6746b7ba6d2aa919382214a2cfb589
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -139,6 +139,7 @@ jobs:
           paths=('runtime/automation/prospective_cycle.py',
                  'runtime/automation/market_bridge.py',
                  'runtime/automation/result_queue.py',
+                 'runtime/research_program/future_identity.py',
                  'runtime/research_program/promotion_review.py',
                  'runtime/v2_test/evaluation.py')
           locked={'runtime/'+path.split('/runtime/',1)[1] for path in hashes}

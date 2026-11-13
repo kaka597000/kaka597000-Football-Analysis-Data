@@ -2,12 +2,14 @@
 import gzip
 import json
 import shutil
+import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 
 from runtime.collect_kor1 import (
     collect, espn_scopes, is_k_league_1, live_fetch, load_config,
+    _advance_history, _append_new, _history_url, five_dollar_rows,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +55,41 @@ class FakeHttp:
                 raw = json.dumps(body).encode()
                 return status, raw
         raise AssertionError("unexpected url " + url)
+
+
+class RetainedObservationTests(unittest.TestCase):
+    def test_identity_time_and_phase_corrections_are_appended(self):
+        original=five_dollar_rows([fixture()],2270596712,NOW.isoformat(),'https://example.test/fixtures')[0]
+        changes={'kickoff_at':'2026-11-02T10:00:00+00:00', 'home_id':'5dollar:9',
+                 'away_id':'5dollar:10', 'stage':'UNKNOWN', 'source_round':'Final A',
+                 'neutral':True, 'bookmaker':'corrected-bookmaker'}
+        for key,value in changes.items():
+            with self.subTest(field=key), tempfile.TemporaryDirectory() as folder:
+                path=Path(folder)/'fixtures.jsonl'
+                self.assertEqual(len(_append_new(path,[original])),1)
+                corrected=dict(original,**{key:value})
+                self.assertEqual(len(_append_new(path,[corrected])),1)
+                self.assertEqual([json.loads(line) for line in path.read_text().splitlines()],
+                                 [original,corrected])
+
+    def test_observation_time_and_source_url_alone_do_not_duplicate_fixture(self):
+        original=five_dollar_rows([fixture()],2270596712,NOW.isoformat(),'https://example.test/fresh')[0]
+        repeated=dict(original,known_at='2026-11-02T00:00:00Z',source_url='https://example.test/history')
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'fixtures.jsonl'
+            self.assertEqual(len(_append_new(path,[original,repeated])),1)
+
+    def test_completed_history_pauses_until_next_year_then_resumes(self):
+        cursor=_advance_history({'next_year':2026,'page':3}, {'has_more':False}, NOW,2018)
+        self.assertEqual(cursor,{'next_year':2027,'page':1,'completed':True})
+        base='https://example.test';competition=2270596712
+        self.assertIsNone(_history_url(base,competition,cursor,NOW)[0])
+        url,resumed=_history_url(base,competition,cursor,datetime(2027,3,1,tzinfo=timezone.utc))
+        self.assertIsNotNone(url)
+        self.assertEqual(resumed,{'next_year':2027,'page':1,'completed':False})
+        self.assertIn('start_time=1798761600',url)
+        self.assertIn('end_time=1830297600',url)
+        self.assertEqual(cursor['completed'],True)
 
 
 class Kor1Tests(unittest.TestCase):

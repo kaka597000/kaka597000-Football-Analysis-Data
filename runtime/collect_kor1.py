@@ -201,7 +201,9 @@ def api_football_rows(payload, competition_id, captured_at, source_url):
 
 
 def _signature(row):
-    payload = {key: row.get(key) for key in ("provider", "match_id", "status", "goals", "odds", "statistics")}
+    # Retain corrections to identity, kickoff, phase and venue as observations.
+    # Re-fetching unchanged facts through another query is still a duplicate.
+    payload = {key:value for key,value in row.items() if key not in ("known_at", "source_url")}
     return hashlib.sha256(json.dumps(payload, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
 
@@ -336,7 +338,8 @@ def _identity_ok(name, country):
 def _history_url(base, competition_id, cursor, now):
     year = int(cursor.get("next_year") or 2018)
     page = int(cursor.get("page") or 1)
-    if cursor.get("completed") or year > now.year:
+    # completed means caught up through the prior run's year, not forever.
+    if year > now.year:
         return None, cursor
     start = int(datetime(year, 1, 1, tzinfo=timezone.utc).timestamp())
     end = int(datetime(year + 1, 1, 1, tzinfo=timezone.utc).timestamp())
