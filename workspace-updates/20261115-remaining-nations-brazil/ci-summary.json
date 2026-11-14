@@ -1,0 +1,34 @@
+{
+  "run_id": 43629642719,
+  "source_commit": "7a18cee715acb0633904af434b3f743d870c0951",
+  "status": "success",
+  "linux_test_suites": 24,
+  "linux_tests_reported": 911,
+  "skip_reports": 16,
+  "skip_reasons": [
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:26.3969261Z test_active_anchor_still_matches_hash_locked_engine (test_active_route_engines.ActiveRouteEngineTests.test_active_anchor_still_matches_hash_locked_engine) ... skipped 'external active registry required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:26.3970433Z test_afc_elite_route_is_phase_isolated (test_active_route_engines.ActiveRouteEngineTests.test_afc_elite_route_is_phase_isolated) ... skipped 'external active registry required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:26.3971361Z test_four_requested_routes_are_hash_locked (test_active_route_engines.ActiveRouteEngineTests.test_four_requested_routes_are_hash_locked) ... skipped 'external active registry required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:26.3972964Z test_today_afc_provider_team_map_has_no_cold_start_target (test_active_route_engines.ActiveRouteEngineTests.test_today_afc_provider_team_map_has_no_cold_start_target) ... skipped 'external AFC artifacts required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:33.1219201Z test_append_only_import_rollback_and_legal_repeat (test_expert.ExpertTests.test_append_only_import_rollback_and_legal_repeat) ... skipped 'external Australian historical database required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:36.6411709Z test_invalid_observed_process_rejected (test_ucl.Tests.test_invalid_observed_process_rejected) ... skipped 'external UCL historical dataset required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:36.6413053Z test_mixed_eras_stages_rejected (test_ucl.Tests.test_mixed_eras_stages_rejected) ... skipped 'external UCL historical dataset required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:36.6413981Z test_neutral_unknown_rejected (test_ucl.Tests.test_neutral_unknown_rejected) ... skipped 'external UCL historical dataset required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:36.6414752Z test_partial_process_preserves_real_sot_and_possession (test_ucl.Tests.test_partial_process_preserves_real_sot_and_possession) ... skipped 'external UCL historical dataset required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:00:36.6415569Z test_target_or_same_date_process_not_used (test_ucl.Tests.test_target_or_same_date_process_not_used) ... skipped 'external UCL historical dataset required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:01:00.6701080Z setUpClass (test_fixed_recipe_refresh.RefreshTests) ... skipped 'private integration assets unavailable: /workspace/WCPP/models/weighted-20261012/ita.1/artifact.json, /workspace/WCPP/models/ml-20261012/ita.1/artifact.json, /workspace/WCPP/reports/auto-optimization-20261101/history/rows.json, /workspace/WCPP/reports/auto-optimization-20261101/history/coverage.json, /workspace/WCPP/reports/auto-optimization-20261101/history/raw'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:01:01.1360134Z setUpClass (test_refresh_holdout.RetainedModelTests) ... skipped 'retained model integration assets unavailable'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:01:08.3008278Z test_future_quote_or_bad_hash_rejected (test_predict.PredictionTest.test_future_quote_or_bad_hash_rejected) ... skipped 'external upset model registry required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:01:08.3010155Z test_local_artifact_inference_and_input_isolation (test_predict.PredictionTest.test_local_artifact_inference_and_input_isolation) ... skipped 'external upset model registry required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:01:08.3011487Z test_missing_and_untrained (test_predict.PredictionTest.test_missing_and_untrained) ... skipped 'external upset model registry required'",
+    "tests\tRun python scripts/run_tests.py\t2026-11-14T19:01:08.3013195Z test_test_outcomes_do_not_select_models_blends_or_hyperparameters (test_validation.ValidationTest.test_test_outcomes_do_not_select_models_blends_or_hyperparameters) ... skipped 'external upset training history and prior report required'"
+  ],
+  "portable_ubuntu": "PASS",
+  "portable_windows": "PASS",
+  "strict_local_integration": {
+    "suites": 24,
+    "test_executions": 941,
+    "skips": 0,
+    "failures": 0
+  }
+}

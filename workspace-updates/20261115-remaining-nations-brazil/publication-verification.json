@@ -1,0 +1,214 @@
+{
+  "report_matches_frozen_payload": true,
+  "csv_matches_all_seven_comprehensive_records": true,
+  "receipts_verified": 23,
+  "archive_verification": {
+    "status": "PASS",
+    "archives": 5,
+    "retained_files": 233,
+    "freeze_chain_records": 48,
+    "staging": null,
+    "source_checkout_separate": "7a18cee715acb0633904af434b3f743d870c0951",
+    "no_source_or_freeze_mutation": true
+  },
+  "prior_staging_restore": "/tmp/remaining-20261115-restore-0311",
+  "active_registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+  "source_branch": "analysis/remaining-nations-brazil-20261115",
+  "source_commit": "7a18cee715acb0633904af434b3f743d870c0951",
+  "source_main_unchanged": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
+  "source_ci": {
+    "conclusion": "success",
+    "databaseId": 43629642719,
+    "event": "pull_request",
+    "headSha": "7a18cee715acb0633904af434b3f743d870c0951",
+    "jobs": [
+      {
+        "completedAt": "2026-11-14T19:01:19Z",
+        "conclusion": "success",
+        "databaseId": 132553200192,
+        "name": "tests",
+        "startedAt": "2026-11-14T18:59:55Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install -r requirements.txt -r requirements-test.txt",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/check_repository.py",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/run_tests.py",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 13,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/43629642719/job/132553200192"
+      },
+      {
+        "completedAt": "2026-11-14T19:00:32Z",
+        "conclusion": "success",
+        "databaseId": 132553200302,
+        "name": "portable (windows-latest)",
+        "startedAt": "2026-11-14T18:59:55Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install -r requirements.txt lightgbm==4.6.0",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/run_tests.py --layer portable",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 9,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 10,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 11,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/43629642719/job/132553200302"
+      },
+      {
+        "completedAt": "2026-11-14T19:00:11Z",
+        "conclusion": "success",
+        "databaseId": 132553200385,
+        "name": "portable (ubuntu-latest)",
+        "startedAt": "2026-11-14T18:59:55Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python -m pip install -r requirements.txt lightgbm==4.6.0",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run python scripts/run_tests.py --layer portable",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 9,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 10,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 11,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/43629642719/job/132553200385"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/43629642719"
+  },
+  "environment_published": false,
+  "model_promoted": false
+}
