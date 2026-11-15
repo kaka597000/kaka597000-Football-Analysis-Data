@@ -1,0 +1,344 @@
+{
+  "decision": [
+    "KEEP_CURRENT_TEST",
+    "SUPPLEMENT_DATA",
+    "REGISTER_INDEPENDENT_DIAGNOSTICS"
+  ],
+  "batch_unique": 10,
+  "cumulative_nations_first": 26,
+  "primary_kpi": "unique first comprehensive score hit",
+  "manual_first": {
+    "population": 10,
+    "settled": 10,
+    "pending": 0,
+    "primary_n": 10,
+    "primary_hits": 1,
+    "primary_accuracy": 0.1,
+    "primary_coverage": 1.0,
+    "primary_wilson_95": [
+      0.017876213095072896,
+      0.4041500267952385
+    ],
+    "wdl_n": 10,
+    "wdl_hits": 6,
+    "wdl_accuracy": 0.6,
+    "wdl_coverage": 1.0,
+    "wdl_wilson_95": [
+      0.31267376973365824,
+      0.8318196702937638
+    ],
+    "total_n": 6,
+    "total_coverage": 0.6,
+    "total_non_push_n": 5,
+    "total_strict_full_win_rate": 0.4,
+    "total_settlements": {
+      "win": 2,
+      "half_win": 0,
+      "push": 1,
+      "half_loss": 0,
+      "loss": 3
+    }
+  },
+  "manual_net": {
+    "current": {
+      "rows": [
+        {
+          "match_id": "espn:401861163",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-CURRENT-0.1",
+          "comprehensive": "1-0",
+          "candidate": "1-1",
+          "actual": "0-0",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861164",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-CURRENT-0.1",
+          "comprehensive": "0-1",
+          "candidate": "1-1",
+          "actual": "0-2",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861165",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-A-CURRENT-0.1",
+          "comprehensive": "2-1",
+          "candidate": "1-1",
+          "actual": "3-1",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861170",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-CURRENT-0.1",
+          "comprehensive": "2-1",
+          "candidate": "1-1",
+          "actual": "1-0",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861169",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-CURRENT-0.1",
+          "comprehensive": "1-0",
+          "candidate": "1-1",
+          "actual": "1-0",
+          "comprehensive_hit": true,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861167",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-A-CURRENT-0.1",
+          "comprehensive": "2-1",
+          "candidate": "1-1",
+          "actual": "1-4",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861168",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-CURRENT-0.1",
+          "comprehensive": "1-2",
+          "candidate": "1-1",
+          "actual": "2-1",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861166",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-CURRENT-0.1",
+          "comprehensive": "1-1",
+          "candidate": "1-1",
+          "actual": "3-2",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401841311",
+          "competition": "bra.1",
+          "version": "WCPP-MAIN-1.2",
+          "comprehensive": "1-1",
+          "candidate": "1-1",
+          "actual": "0-0",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401841175",
+          "competition": "bra.1",
+          "version": "WCPP-MAIN-1.2",
+          "comprehensive": "1-2",
+          "candidate": "1-1",
+          "actual": "0-2",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        }
+      ],
+      "descriptive_mixed_versions": {
+        "paired_n": 10,
+        "changed_right": 1,
+        "changed_wrong": 0,
+        "net_hits": 1,
+        "rate_difference_bootstrap_95": [
+          0.0,
+          0.3
+        ],
+        "exact_discordant_sign_test_p": 1.0,
+        "not_promotion_evidence": true
+      },
+      "by_competition": {
+        "bra.1": {
+          "paired_n": 2,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_hits": 0,
+          "rate_difference_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "exact_discordant_sign_test_p": 1.0,
+          "not_promotion_evidence": true
+        },
+        "uefa.nations": {
+          "paired_n": 8,
+          "changed_right": 1,
+          "changed_wrong": 0,
+          "net_hits": 1,
+          "rate_difference_bootstrap_95": [
+            0.0,
+            0.375
+          ],
+          "exact_discordant_sign_test_p": 1.0,
+          "not_promotion_evidence": true
+        }
+      }
+    },
+    "test": {
+      "rows": [
+        {
+          "match_id": "espn:401861163",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-TEST-0.1",
+          "comprehensive": "1-0",
+          "candidate": "1-0",
+          "actual": "0-0",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861164",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-TEST-0.1",
+          "comprehensive": "0-1",
+          "candidate": "0-0",
+          "actual": "0-2",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861165",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-A-TEST-0.1",
+          "comprehensive": "2-1",
+          "candidate": "1-1",
+          "actual": "3-1",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861170",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-TEST-0.1",
+          "comprehensive": "2-1",
+          "candidate": "1-1",
+          "actual": "1-0",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861169",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-TEST-0.1",
+          "comprehensive": "1-0",
+          "candidate": "1-0",
+          "actual": "1-0",
+          "comprehensive_hit": true,
+          "candidate_hit": true
+        },
+        {
+          "match_id": "espn:401861167",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-A-TEST-0.1",
+          "comprehensive": "2-1",
+          "candidate": "1-1",
+          "actual": "1-4",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861168",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-TEST-0.1",
+          "comprehensive": "1-2",
+          "candidate": "1-1",
+          "actual": "2-1",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861166",
+          "competition": "uefa.nations",
+          "version": "WCPP-NATIONS-B-TEST-0.1",
+          "comprehensive": "1-1",
+          "candidate": "1-1",
+          "actual": "3-2",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401841311",
+          "competition": "bra.1",
+          "version": "WCPP-ML-0.1",
+          "comprehensive": "1-1",
+          "candidate": "1-1",
+          "actual": "0-0",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401841175",
+          "competition": "bra.1",
+          "version": "WCPP-ML-0.1",
+          "comprehensive": "1-2",
+          "candidate": "1-1",
+          "actual": "0-2",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        }
+      ],
+      "descriptive_mixed_versions": {
+        "paired_n": 10,
+        "changed_right": 0,
+        "changed_wrong": 0,
+        "net_hits": 0,
+        "rate_difference_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "exact_discordant_sign_test_p": 1.0,
+        "not_promotion_evidence": true
+      },
+      "by_competition": {
+        "bra.1": {
+          "paired_n": 2,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_hits": 0,
+          "rate_difference_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "exact_discordant_sign_test_p": 1.0,
+          "not_promotion_evidence": true
+        },
+        "uefa.nations": {
+          "paired_n": 8,
+          "changed_right": 0,
+          "changed_wrong": 0,
+          "net_hits": 0,
+          "rate_difference_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "exact_discordant_sign_test_p": 1.0,
+          "not_promotion_evidence": true
+        }
+      }
+    }
+  },
+  "reason": "Only one exact hit in ten. Manual selection gained one against the referenced Current candidate and none against Test; uncertainty includes no gain. No evidence supports numerical parameter change or promotion.",
+  "findings": [
+    "Portugal 1-4: penalty at 43 then three further Denmark goals; offensive shot volume did not justify a narrow home-win path.",
+    "Sweden 3-2: early goal plus two first-half penalties; cannot treat five goals as a stable new scoring mean.",
+    "Austria 1-0 despite 8-7 shots on target: shots do not measure chance quality and conversion.",
+    "Kosovo 0-0 and Mirassol 0-0: preserve zero-goal cases; late red card in Mirassol is not an explanation for earlier low conversion.",
+    "Cup verified official first leg cannot enter a source-specific BetExplorer-only schema; loading and actual prediction availability are separate."
+  ],
+  "next_checks": [
+    "At the next complete frozen match batch, include the full population and versions; settle original actual-line totals separately.",
+    "Any proposed score selection/zero-goal/tail adjustment requires a predeclared independent recipe and untouched future holdout; this reviewed batch is diagnostic development data.",
+    "Implement any Cup official-evidence support in a separately versioned adapter with identity/time/integrity tests, retaining all hash-pinned legacy artifacts; no forecast was synthesized in this delivery."
+  ],
+  "model_parameters_changed": false,
+  "active_registry_changed": false,
+  "model_promoted": false
+}
