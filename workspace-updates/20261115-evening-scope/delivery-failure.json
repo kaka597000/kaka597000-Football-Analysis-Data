@@ -1,0 +1,39 @@
+{
+  "status": "PARTIAL_DELIVERY",
+  "initial_population": [
+    "espn:401861171",
+    "espn:401861172",
+    "espn:401861173",
+    "espn:401861174",
+    "espn:401861175",
+    "espn:401861176",
+    "espn:401861177",
+    "espn:401861178"
+  ],
+  "candidate_predictions_saved_before_all_kickoffs": true,
+  "successful_comprehensive": 6,
+  "failed_comprehensive": [
+    "espn:401861171",
+    "espn:401861172"
+  ],
+  "error_reproduction": {
+    "exception": "TypeError",
+    "message": "only integer scalar arrays can be converted to a scalar index",
+    "reproduced_at": "2026-11-15T14:05:52.687138+00:00",
+    "scope": "pure calculation only; no network or expired prematch publication"
+  },
+  "failed_script": {
+    "path": "/workspace/recovered-workspace-20261102/WCPP/reports/scope-prematch-20261115-2146/finalize.py",
+    "sha256": "79409f1ec0636086757b219534e926d626f6123b9b3b584a792d43c98a1575d3"
+  },
+  "retained_partial_active_freeze": {
+    "path": "/workspace/WCPP/forecasts/issued-analyses/0054063932e6a64a6684cc7831a26ae7ad1d9120a49cd7385effe0c578bbf7c3/000001.json",
+    "sha256": "9ac98bd824e8bfb0d1967f933fed3c92ab3ce8c2177c680492e9b495774c0faf",
+    "freeze_id": "0054063932e6a64a-v000001",
+    "recorded_at": "2026-11-15T21:59:29.750763+08:00"
+  },
+  "disposition": "No early-match manual primary is issued retrospectively. Preserve candidates as real prematch revisions; original unfrozen draft is failure evidence only, never a score claim. Keep both failures in all-eight coverage.",
+  "root_cause": "Delivery code passed a JSON list into a NumPy boolean-index settlement function. The corrected new delivery converts the unchanged matrix to ndarray and selects only genuinely future fixtures. No model or frozen payload is edited.",
+  "additional_render_fix": "p_ge_2/p_ge_3 descriptive output keys corrected before successful rerun",
+  "resume_script": "/workspace/recovered-workspace-20261102/WCPP/reports/scope-prematch-20261115-2146/finalize_resume.py"
+}
