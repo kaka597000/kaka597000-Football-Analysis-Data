@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 1257fdde7b6746b7ba6d2aa919382214a2cfb589
+          ref: 4c6061dd5eb2e4af77f18e64bd908a2847f039d0
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -171,6 +171,11 @@ jobs:
           fi
           python -m runtime.automation.prospective_cycle cycle --bundle ../private-state/future/bundle-v2 --market-dir ../private-state/market --market-provider the-odds-api --market-provider infersports --market-bookmaker pinnacle --max-captures 1 --max-result-requests 2 --max-seconds 20
           python -m runtime.automation.prospective_cycle review-ucl --bundle ../private-state/future/ucl-bundle-v2 --max-result-requests 2 --max-seconds 20
+      - name: Review frozen Nations repair population
+        if: always() && steps.mode.outputs.value == 'collect'
+        working-directory: collector-code
+        timeout-minutes: 1
+        run: python -m runtime.automation.nations_repair_cycle --bundle ../private-state/future/nations-repair-bundle --state ../private-state/future/nations-repair-state --max-requests 6 --max-seconds 40
       - name: Save private audit and data
         if: always()
         working-directory: private-state
