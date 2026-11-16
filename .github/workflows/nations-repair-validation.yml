@@ -1,0 +1,68 @@
+name: Restore and verify Nations repair evidence
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wcpp-private-research-state
+  cancel-in-progress: false
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: data
+          sparse-checkout: |
+            .github
+            runtime
+            workspace-updates/20261110-nations-league
+            workspace-updates/20261110-nations-model
+            workspace-updates/20261116-nations-repair
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 4c6061dd5eb2e4af77f18e64bd908a2847f039d0
+          path: repair-code
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r repair-code/requirements.txt
+      - name: Restore original paths on a fresh runner
+        run: |
+          sudo install -d -m 0755 -o "$(id -u)" -g "$(id -g)" /workspace
+          cp -a repair-code /workspace/Football-Analysis-nations-repair-20261116
+          cd data
+          mkdir -p workspace-updates/20261116-nations-repair/cloud-validation
+          python runtime/restore_nations_repair.py --dest / > workspace-updates/20261116-nations-repair/cloud-validation/restore.json
+      - name: Recompute frozen matrices without issuing predictions
+        working-directory: data
+        run: python runtime/verify_nations_repair.py --index workspace-updates/20261116-nations-repair/archive-index.json --out workspace-updates/20261116-nations-repair/cloud-validation/replay.json
+      - name: Save permanent verification receipt
+        if: always()
+        working-directory: data
+        env:
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          VERIFY_STATUS: ${{ job.status }}
+        run: |
+          python - <<'PY'
+          import json,os
+          from datetime import datetime,timezone
+          from pathlib import Path
+          p=Path('workspace-updates/20261116-nations-repair/cloud-validation');p.mkdir(exist_ok=True)
+          (p/('run-'+os.environ['RUN_ID']+'-'+os.environ['RUN_ATTEMPT']+'.json')).write_text(json.dumps({'run_id':os.environ['RUN_ID'],'run_attempt':os.environ['RUN_ATTEMPT'],'status':os.environ['VERIFY_STATUS'],'observed_at':datetime.now(timezone.utc).isoformat(),'source_commit':'4c6061dd5eb2e4af77f18e64bd908a2847f039d0','mode':'FRESH_RUNNER_RESTORE_AND_NUMERICAL_REPLAY','active_model_promotion':False},indent=2))
+          PY
+          git config user.name 'WCPP automation'
+          git config user.email 'wcpp-automation@users.noreply.github.com'
+          git add workspace-updates/20261116-nations-repair/cloud-validation
+          if ! git diff --cached --quiet; then
+            git commit -m 'Verify Nations repair recovery on fresh runner'
+            git push origin HEAD:main
+          fi
