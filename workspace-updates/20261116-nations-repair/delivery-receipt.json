@@ -1,0 +1,100 @@
+{
+  "schema": "WCPP-NATIONS-REPAIR-DELIVERY-1",
+  "verified_at": "2026-11-16T18:10:53.383512+08:00",
+  "source_repository": "kaka597000/Football-Analysis",
+  "source_commit": "4c6061dd5eb2e4af77f18e64bd908a2847f039d0",
+  "source_main_merge_commit": "ba6a18dca6169867863ef2b034c7773aa9113b6e",
+  "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/39",
+  "source_pr_state": "MERGED",
+  "source_main_tree_equals_tested_commit": true,
+  "data_repository": "kaka597000/kaka597000-Football-Analysis-Data",
+  "data_asset_commit": "8c5010fab5da5e692a665bb2e45246cc43b01b1e",
+  "data_merge_commit": "0228a9990af8a412a2026ee70323842e7cdad39e",
+  "data_pr": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/11",
+  "data_pr_state": "MERGED",
+  "automation_write_commit": "4e791f294571414683cdecd6b57a2d863b16b5c8",
+  "restore_write_commit": "4362e0a780b0484b325556a18b6fa6b2e4298bf4",
+  "ci": {
+    "source_main": 43845936017,
+    "source_pr": 43844089487,
+    "data_rollout": 43845712736,
+    "fresh_restore": 43845768255,
+    "all_conclusions": "success",
+    "public_source_ci_missing_asset_skips": 16,
+    "local_strict_integration": {
+      "suites": 24,
+      "test_executions": 960,
+      "failed": 0,
+      "skipped": 0,
+      "registry_verified_artifacts": 38,
+      "active_registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+      "layer": "integration",
+      "source_base": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
+      "source_worktree_dirty": true
+    }
+  },
+  "deployment": {
+    "collector_commit": "4c6061dd5eb2e4af77f18e64bd908a2847f039d0",
+    "nations_review_commit": "4c6061dd5eb2e4af77f18e64bd908a2847f039d0",
+    "training_and_locked_inference_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+    "nations_review_written_to_repository": true,
+    "cycle_receipt": {
+      "freeze_id": "1255c8e45f2c26ff-v000001",
+      "recorded_at": "2026-11-16T18:06:44.502431+08:00",
+      "path": "/home/runner/work/kaka597000-Football-Analysis-Data/kaka597000-Football-Analysis-Data/private-state/future/nations-repair-state/freezes/1255c8e45f2c26ff8715fb115463a625da33fdd12d9ed523f36122e0a9f56661/000001.json",
+      "sha256": "cba2689846aead88d6b542e54acaf61a0861435c81c991168737eb46c3bcdfd4",
+      "evaluation_slot": "SEPARATE_REVISION_OR_STAGE"
+    },
+    "cycle_record_repo_path": "future/nations-repair-state/freezes/1255c8e45f2c26ff8715fb115463a625da33fdd12d9ed523f36122e0a9f56661/000001.json",
+    "cycle_record_file_sha256": "30abda3f4bafd5aaa2ea4fbdbab6bc895fff89a5d1ac0b7511b7ebe649f4933f",
+    "future_population": 18,
+    "frozen_tracks": 5,
+    "quoted_population": 18,
+    "completed": 0,
+    "pending": 18,
+    "future_outcome_effect_validated": false,
+    "minimum_future_per_level": 30
+  },
+  "fresh_restore": {
+    "mode": "RESTORED_HISTORICAL_MATRIX_REPLAY_NO_NEW_FORECAST",
+    "training_counts": {
+      "A": 211,
+      "B": 201,
+      "C": 230,
+      "D": 106
+    },
+    "new_artifacts_verified": 12,
+    "old_artifacts_verified": 8,
+    "matrices_replayed": 90,
+    "max_absolute_difference": 0.0,
+    "population": 18,
+    "quoted_population": 18,
+    "settled": 0,
+    "active_model_promotion": false,
+    "source_commit": "4c6061dd5eb2e4af77f18e64bd908a2847f039d0"
+  },
+  "archive_index_sha256": "65cb027e98015adb884b3297f7af441ea255ea175f8434bf96358d54fa0b7aad",
+  "blocked": {
+    "automatic_market_collection": "MISSING_CREDENTIAL",
+    "actual_actions_market_verified_quotes": 0,
+    "actions_secret_installation": "HTTP403_RESOURCE_NOT_ACCESSIBLE_BY_INTEGRATION_AT_PUBLIC_KEY_READ",
+    "access_receipt": "actions-secret-access.json",
+    "already_frozen_batch_quotes_eligible": 18,
+    "note": "Existing frozen source-timed quotes are valid at their prediction cutoffs; they do not prove autonomous fresh market collection."
+  },
+  "preserved": {
+    "active_registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+    "original_nations_database_sha256": "47c62b8167bfa474a0a79cc2479404770d9ff60e63cf4904593792840181525f",
+    "old_candidate_count": 8,
+    "registered_artifact_count": 38,
+    "old_freezes_overwritten": false
+  },
+  "rollback": {
+    "source_main_before_work": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
+    "data_main_before_work": "cca48af",
+    "collector_before_rollout": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
+    "action": "Revert the added Nations review step and collector pin; retain all evidence and immutable records."
+  },
+  "active_model_promotion": false,
+  "environment_published": false
+}
