@@ -1,5 +1,7 @@
 # WCPP 研究状态
 
+2026-11-16 北京时间20:43：[今晚至明晨10场欧国联赛前报告](workspace-updates/20261116-nations-prematch-2044/欧国联赛前分析.md)已冻结，含独立新旧候选、综合判断、研究TOP3及真实盘口。唯一比分7场、3场资格缺口待定；证据与冻结链见[本轮归档](workspace-updates/20261116-nations-prematch-2044/README.md)。
+
 2026-11-10 用户明确接受本数据仓库公开，并授权同步赛事数据、冻结复盘与审计材料；旧文档中的私有强制要求由此覆盖。密钥仍仅使用环境或仓库 Secrets，不写入数据或日志。最新增量备份见 `workspace-updates/20261110-review-and-audit/`。
 
 源码：kaka597000/Football-Analysis，固定到workflow内完整commit。
