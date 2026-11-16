@@ -1,0 +1,747 @@
+{
+  "schema": "WCPP-CONFIGURED-API-INDEPENDENT-VERIFICATION-1",
+  "verified_at": "2026-11-16T12:06:01.671109+00:00",
+  "run_id": "43863271589-1",
+  "source_code_commit": "4c6061dd5eb2e4af77f18e64bd908a2847f039d0",
+  "probe_summary_sha256": "bcfde3faed025ff85e730d34fe94345444ba362a495f325b020fc5fb0d693ca2",
+  "source_rebuild": {
+    "the-odds-api": {
+      "rebuilt_from_raw_identically": true,
+      "quotes": 287,
+      "eligible": 10,
+      "covered": 10
+    },
+    "infersports": {
+      "rebuilt_from_raw_identically": true,
+      "quotes": 2,
+      "eligible": 6,
+      "covered": 1
+    }
+  },
+  "model_input_load_acceptance": {
+    "tested": 18,
+    "attached": 10,
+    "fixtures": [
+      {
+        "match_id": "espn:401861180",
+        "home_name": "Faroe Islands",
+        "away_name": "Moldova",
+        "date_utc": "2026-11-16",
+        "grade": "C",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861180",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.25,
+          "over_odds": 2.03,
+          "under_odds": 1.85,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 14,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 9
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "de61e4dfa817ee92e043d5cff93367e4397aa73e26075b4f4635d98821a4e177",
+            "observation_sha256": "ecd545b03b25f4278bb745dc14a32335831d9c1971c3634e995f34d982ce7a38",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861181",
+        "home_name": "Kazakhstan",
+        "away_name": "Slovakia",
+        "date_utc": "2026-11-16",
+        "grade": "C",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861181",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.5,
+          "over_odds": 1.96,
+          "under_odds": 1.91,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 12,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "96b5a398f9553332f4cb452109e57ee5c2edf5e3f35d65446bec964463e13514",
+            "observation_sha256": "89f7e7868ec49788802ed5747505aa4e54d8b2789e24214b2d6ee22a692c8f39",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861182",
+        "home_name": "Iceland",
+        "away_name": "Luxembourg",
+        "date_utc": "2026-11-16",
+        "grade": "C",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861182",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.75,
+          "over_odds": 1.93,
+          "under_odds": 1.94,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 12,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "95463f0c58bf4562b58b350897bd3e73bd8cf322bf20236dcbfae4bb0433a28f",
+            "observation_sha256": "f184e34fb54bf232df59a509582b33dddcd0c78a1360d5183a07e7f9873b081f",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861183",
+        "home_name": "Estonia",
+        "away_name": "Bulgaria",
+        "date_utc": "2026-11-16",
+        "grade": "C",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861183",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.25,
+          "over_odds": 2.0,
+          "under_odds": 1.88,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 10,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "153b51f09ce6cc31ee784c5e75a1581912cec5ca96e14cc3e0aa2b0cde4dc0ca",
+            "observation_sha256": "ec1c449682b7d17f1bac99bf50b823d0d6f969434c820494d79226ad67b5edd7",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861184",
+        "home_name": "Lithuania",
+        "away_name": "Liechtenstein",
+        "date_utc": "2026-11-16",
+        "grade": "D",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861184",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.5,
+          "over_odds": 1.86,
+          "under_odds": 1.95,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 12,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "6fd42bf93e81330aa16ac5c73faaeff29af789dc1bfa460e70775e19cab10f7e",
+            "observation_sha256": "444da56b71a655eeb4a080757713a906faf8ef6629f28e8618727f4d194be450",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861179",
+        "home_name": "Gibraltar",
+        "away_name": "Malta",
+        "date_utc": "2026-11-16",
+        "grade": "D",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861179",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.0,
+          "over_odds": 1.84,
+          "under_odds": 2.0,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 12,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "4b32087720c8e62bcab5ab2ef074b7bff89cdcf7cb1338d26980979bfa26e050",
+            "observation_sha256": "ea77d132c9520dca7eee1a378a0170bfeb8dce9759c4d89295f272628c6d3e02",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861185",
+        "home_name": "Germany",
+        "away_name": "Netherlands",
+        "date_utc": "2026-11-16",
+        "grade": "A",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861185",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 3.5,
+          "over_odds": 2.07,
+          "under_odds": 1.83,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 13,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "32e032cce163041193af53d177c46521ddac18d808165b9c8f17135cfa9e713e",
+            "observation_sha256": "491c7176fc52fff7ccb3a742af3dc6f817c833df21ca10911b6d2a63d98072a7",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861186",
+        "home_name": "Switzerland",
+        "away_name": "Scotland",
+        "date_utc": "2026-11-16",
+        "grade": "B",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861186",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.5,
+          "over_odds": 1.99,
+          "under_odds": 1.9,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 12,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "0832e45392f4b067d6df34a7ecb1f23d5e92521d6fa8156e591afc1e9191e12d",
+            "observation_sha256": "f0e61abae8e14fa152df0186f0c37e6a7607e3a6b7e7440ba7fd3027f97e909f",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861187",
+        "home_name": "North Macedonia",
+        "away_name": "Slovenia",
+        "date_utc": "2026-11-16",
+        "grade": "B",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861187",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.25,
+          "over_odds": 1.98,
+          "under_odds": 1.91,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 12,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "5c7652cbf81dfb136eb39851327001952443e60e3fe1a90aa32ec39aaf4ae49e",
+            "observation_sha256": "c2ebf79746e8d37845697e87bd2e9597131601d7ec556206f756b4ff32c95de6",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861188",
+        "home_name": "Greece",
+        "away_name": "Serbia",
+        "date_utc": "2026-11-16",
+        "grade": "A",
+        "status": "ATTACHED",
+        "total_quote": {
+          "verified": true,
+          "match_id": "espn:401861188",
+          "bookmaker": "pinnacle",
+          "market": "standard_total",
+          "line": 2.75,
+          "over_odds": 1.84,
+          "under_odds": 2.06,
+          "quoted_at": "2026-11-16T12:04:40Z",
+          "query_time": "2026-11-16T12:04:41.049491+00:00",
+          "source_url": "https://api.the-odds-api.com/v4/sports/soccer_uefa_nations_league/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "source_sha256": "25efb5c8931f5d39b298e6e0e729a13b663b85a2889bcb5a34cf1357137126e5",
+          "provider": "the-odds-api"
+        },
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "ATTACHED",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 12,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 10
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false,
+          "selected": {
+            "channel_path": "/workspace/kaka597000-Football-Analysis-Data/api-probes/43863271589-1/the-odds-api/market-channel.json",
+            "snapshot_sha256": "676f6deaa718aec1f1f11d6fc17d1becbaf1e2542dab6591b7d9ee188fe6cf9c",
+            "observation_sha256": "ef24ee67a61f8603d04061e02e8d20763a842b9d58cec632b2fa800b9a1fc326",
+            "evidence_file": "odds.json",
+            "provider": "the-odds-api",
+            "bookmaker": "pinnacle"
+          }
+        }
+      },
+      {
+        "match_id": "espn:401861189",
+        "home_name": "Wales",
+        "away_name": "Portugal",
+        "date_utc": "2026-11-17",
+        "grade": "A",
+        "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+        "total_quote": null,
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 0,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 11
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false
+        }
+      },
+      {
+        "match_id": "espn:401861190",
+        "home_name": "Ukraine",
+        "away_name": "Georgia",
+        "date_utc": "2026-11-17",
+        "grade": "B",
+        "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+        "total_quote": null,
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 0,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 11
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false
+        }
+      },
+      {
+        "match_id": "espn:401861191",
+        "home_name": "Hungary",
+        "away_name": "Northern Ireland",
+        "date_utc": "2026-11-17",
+        "grade": "B",
+        "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+        "total_quote": null,
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 0,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 11
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false
+        }
+      },
+      {
+        "match_id": "espn:401861192",
+        "home_name": "Republic of Ireland",
+        "away_name": "Kosovo",
+        "date_utc": "2026-11-17",
+        "grade": "B",
+        "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+        "total_quote": null,
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 0,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 11
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false
+        }
+      },
+      {
+        "match_id": "espn:401861193",
+        "home_name": "Israel",
+        "away_name": "Austria",
+        "date_utc": "2026-11-17",
+        "grade": "B",
+        "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+        "total_quote": null,
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 0,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 11
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false
+        }
+      },
+      {
+        "match_id": "espn:401861194",
+        "home_name": "Denmark",
+        "away_name": "Norway",
+        "date_utc": "2026-11-17",
+        "grade": "A",
+        "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+        "total_quote": null,
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 0,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 11
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false
+        }
+      },
+      {
+        "match_id": "espn:401861195",
+        "home_name": "Poland",
+        "away_name": "Sweden",
+        "date_utc": "2026-11-17",
+        "grade": "B",
+        "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+        "total_quote": null,
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 0,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 11
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false
+        }
+      },
+      {
+        "match_id": "espn:401861196",
+        "home_name": "Bosnia-Herzegovina",
+        "away_name": "Romania",
+        "date_utc": "2026-11-17",
+        "grade": "B",
+        "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+        "total_quote": null,
+        "audit": {
+          "schema": "WCPP-MARKET-ATTACHMENT-1",
+          "status": "NO_ELIGIBLE_RETAINED_TOTAL_QUOTE",
+          "market_channels_examined": 2,
+          "eligible_provider_books": 0,
+          "excluded": {
+            "FIXTURE_IDENTITY_OR_STAGE_MISMATCH": 11
+          },
+          "provider_order": [
+            "the-odds-api",
+            "infersports"
+          ],
+          "bookmaker_order": [
+            "pinnacle"
+          ],
+          "source_time_inferred": false,
+          "first_freeze_backfilled": false,
+          "numeric_weights_changed": false
+        }
+      }
+    ]
+  },
+  "network_calls": 0,
+  "prediction_freezes_written": 0,
+  "old_freezes_backfilled": false,
+  "model_parameters_changed": false,
+  "future_accuracy_validated": false,
+  "scope": "Read-only reconstruction of real provider evidence and dry model-input attachment; original fixtures are never changed."
+}

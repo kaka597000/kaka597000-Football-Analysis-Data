@@ -15,3 +15,5 @@ seed为追溯历史种子，不是完整数据库备份。候选不自动晋级�
 2026-11-16 密钥核验：手动工作流 `api-secret-validation.yml` 使用仓库已有的 `BSD`、`FOOTBALLDATA`、`INFER`、`OPENFOOT`、`THEODDSAPI`、`WCPP_5DOLLAR_API_KEY` 和 `WCPP_API_FOOTBALL_KEY`，分别映射到对应提供方的程序环境变量。无需连接器拥有 Secrets 读取权限。定时盘口任务优先读取 `THEODDSAPI`，兼容旧名称 `WCPP_ODDS_API_KEY` / `THE_ODDS`。
 
 核验结果追加到 `api-probes/<run-id>-<attempt>/`，保留每次鉴权、请求状态、记录数量及可验证盘口证据。接口调用成功、有效赛事返回、盘口通过身份及时间校验分开报告；不代表所有赛事均覆盖或历史前向样本已补齐。每提供方有限请求，无自动重试，401/403/429 后停止该提供方；INFER 最多抽测一场独立核实身份的未来比赛。此任务不触发训练、活动模型切换或预测冻结。
+
+本轮实际结果：[7 个密钥云端实测及盘口加载验收](api-probes/43863271589-1/README.zh-CN.md)。6 个成功取得数据，API-Football 返回业务鉴权拒绝；The Odds API 10 场 / 287 组、INFER 抽测 1 场 / 2 组合法报价。
