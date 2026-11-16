@@ -1,0 +1,42 @@
+{
+  "call": {
+    "provider": "5dollar",
+    "url": "https://api.5dollarfootballapi.com/v1/leagues?per_page=50&page=1",
+    "query_time": "2026-11-16T12:04:40.778760+00:00",
+    "http_status": 200,
+    "api_success": true,
+    "authenticated": true,
+    "authentication_status": "CREDENTIAL_ACCEPTED",
+    "fixture_mapping_verified": false,
+    "model_ingestion_performed": false,
+    "credential_binding_name": "WCPP_5DOLLAR_API_KEY",
+    "content_type": "application/json",
+    "cf_ray": "a5b65c0b0852979e-LAX",
+    "quota_headers": {
+      "x-ratelimit-limit": "300",
+      "x-ratelimit-remaining": "298",
+      "x-ratelimit-reset": "1794834000"
+    },
+    "response_sha256": "03bbc01a6453fae43c448ae41b37fae7b380ade2574ed7e6e61e4c70162dcfc0"
+  },
+  "response_summary": {
+    "object_type": "dict",
+    "record_count": 8,
+    "top_level_fields": [
+      "data",
+      "pagination",
+      "success"
+    ],
+    "sample_record_fields": [
+      "country",
+      "has_standings",
+      "id",
+      "is_popular",
+      "last_fixture_ts",
+      "last_fixture_utc",
+      "name",
+      "short_name"
+    ],
+    "response_values_retained": "No account/profile bodies; schema and counts only"
+  }
+}

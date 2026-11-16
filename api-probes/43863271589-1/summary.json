@@ -1,0 +1,510 @@
+{
+  "schema": "WCPP-CONFIGURED-API-VERIFICATION-1",
+  "completed_at": "2026-11-16T12:04:42.250053+00:00",
+  "fixture_date_utc": "2026-11-16",
+  "providers": {
+    "api-football": {
+      "provider": "api-football",
+      "secret_name": "WCPP_API_FOOTBALL_KEY",
+      "credential_bound": true,
+      "calls": [
+        {
+          "call": {
+            "provider": "api-football",
+            "url": "https://v3.football.api-sports.io/status",
+            "query_time": "2026-11-16T12:04:40.427635+00:00",
+            "http_status": 200,
+            "api_success": false,
+            "authenticated": false,
+            "authentication_status": "UNVERIFIED",
+            "fixture_mapping_verified": false,
+            "model_ingestion_performed": false,
+            "credential_binding_name": "WCPP_API_FOOTBALL_KEY",
+            "content_type": "application/json",
+            "cf_ray": "a5b65c091c749972-LAX",
+            "quota_headers": {},
+            "response_format": "JSON",
+            "failure_kind": "PROVIDER_AUTHENTICATION_REJECTION",
+            "error_code": "PROVIDER_ERROR",
+            "response_sha256": "c1376617b77924e9dd327acee6bf2808df3a02115d49479ac0f5209839d5d907"
+          },
+          "response_summary": {
+            "object_type": "dict",
+            "record_count": 0,
+            "top_level_fields": [
+              "errors",
+              "get",
+              "paging",
+              "parameters",
+              "response",
+              "results"
+            ],
+            "sample_record_fields": null,
+            "response_values_retained": "No account/profile bodies; schema and counts only"
+          }
+        }
+      ],
+      "automatic_model_ingestion": false,
+      "requests": 1,
+      "credential_accepted": false,
+      "status": "NO_USABLE_RESPONSE",
+      "scope_failures": [
+        {
+          "url": "https://v3.football.api-sports.io/status",
+          "http_status": 200,
+          "failure_kind": "PROVIDER_AUTHENTICATION_REJECTION",
+          "error_code": "PROVIDER_ERROR"
+        }
+      ]
+    },
+    "bsd": {
+      "provider": "bsd",
+      "secret_name": "BSD",
+      "credential_bound": true,
+      "calls": [
+        {
+          "call": {
+            "provider": "bsd",
+            "url": "https://sports.bzzoiro.com/api/v2/events/?date=2026-11-16&limit=20",
+            "query_time": "2026-11-16T12:04:40.426997+00:00",
+            "http_status": 200,
+            "api_success": true,
+            "authenticated": true,
+            "authentication_status": "CREDENTIAL_ACCEPTED",
+            "fixture_mapping_verified": false,
+            "model_ingestion_performed": false,
+            "credential_binding_name": "WCPP_BSD_API_KEY",
+            "content_type": "application/json",
+            "cf_ray": "a5b65c093b1f2d61-LAX",
+            "quota_headers": {},
+            "response_sha256": "079185a59bc824db2cf2d44ac4c808361ced75f5b1ec0f5e525d4d10afad8bfe"
+          },
+          "response_summary": {
+            "object_type": "dict",
+            "record_count": 20,
+            "top_level_fields": [
+              "count",
+              "next",
+              "previous",
+              "results"
+            ],
+            "sample_record_fields": [
+              "attendance",
+              "away_coach_id",
+              "away_score",
+              "away_score_ht",
+              "away_team",
+              "away_team_id",
+              "current_minute",
+              "event_date",
+              "extra_time_score",
+              "group_name",
+              "has_xg",
+              "head_to_head",
+              "highlights",
+              "home_coach_id",
+              "home_score",
+              "home_score_ht",
+              "home_team",
+              "home_team_id",
+              "id",
+              "is_local_derby",
+              "is_neutral_ground",
+              "league_id",
+              "live_websocket",
+              "penalty_shootout",
+              "period",
+              "pitch_condition",
+              "previous_leg_event_id",
+              "referee_id",
+              "replaced_by",
+              "round_label",
+              "round_name",
+              "round_number",
+              "season_id",
+              "stage",
+              "stage_name",
+              "status",
+              "travel_distance_km",
+              "venue_id",
+              "weather",
+              "websocket_plus"
+            ],
+            "response_values_retained": "No account/profile bodies; schema and counts only"
+          }
+        }
+      ],
+      "automatic_model_ingestion": false,
+      "requests": 1,
+      "credential_accepted": true,
+      "status": "RESPONSES_AVAILABLE",
+      "scope_failures": []
+    },
+    "the-odds-api": {
+      "provider": "the-odds-api",
+      "secret_name": "THEODDSAPI",
+      "credential_bound": true,
+      "automatic_model_ingestion": false,
+      "schema": "WCPP-MARKET-CHANNEL-1",
+      "created_at": "2026-11-16T12:04:41.050784+00:00",
+      "market_model_ready": true,
+      "verified_quote_count": 287,
+      "eligible_fixture_count": 10,
+      "covered_fixture_count": 10,
+      "coverage": 1.0,
+      "coverage_scope": "ESPN uefa.nations league-phase future fixtures on requested UTC day",
+      "source_odds_events": 18,
+      "market_max_age_seconds": 3600,
+      "excluded": {
+        "unsupported_market": 12
+      },
+      "tls_verification_disabled": false,
+      "active_model_changed": false,
+      "quote_time_inferred_from_capture": false,
+      "status": "VALIDATED",
+      "source_time_inferred": false,
+      "markets": [
+        "h2h",
+        "totals"
+      ],
+      "bookmakers": [
+        "betanysports",
+        "betclic_fr",
+        "betfair_ex_eu",
+        "betonlineag",
+        "betsson",
+        "leovegas_se",
+        "marathonbet",
+        "matchbook",
+        "mybookieag",
+        "nordicbet",
+        "onexbet",
+        "pinnacle",
+        "pmu_fr",
+        "sport888",
+        "unibet_se",
+        "williamhill",
+        "winamax_de",
+        "winamax_fr"
+      ],
+      "quote_time_range": [
+        "2026-11-16T12:03:22Z",
+        "2026-11-16T12:04:40Z"
+      ],
+      "coverage_by_market": {
+        "h2h": 10,
+        "totals": 10
+      },
+      "protected_response_retained": true,
+      "credential_accepted": true,
+      "quota_headers_retained": false,
+      "quota_remaining": null
+    },
+    "openfoot": {
+      "provider": "openfoot",
+      "secret_name": "OPENFOOT",
+      "credential_bound": true,
+      "calls": [
+        {
+          "call": {
+            "provider": "openfoot",
+            "url": "https://openfootapi.com/v1/matches?date=2026-11-16",
+            "query_time": "2026-11-16T12:04:40.428460+00:00",
+            "http_status": 200,
+            "api_success": true,
+            "authenticated": true,
+            "authentication_status": "CREDENTIAL_ACCEPTED",
+            "fixture_mapping_verified": false,
+            "model_ingestion_performed": false,
+            "credential_binding_name": "WCPP_OPENFOOT_API_KEY",
+            "content_type": "application/json",
+            "cf_ray": "a5b65c096e096387-LAX",
+            "quota_headers": {},
+            "response_sha256": "2cb6ddefab03d505fbdcf15b8bc7c967f99b1c25488a37b09ded63adf3cb19fb"
+          },
+          "response_summary": {
+            "object_type": "dict",
+            "record_count": 14,
+            "top_level_fields": [
+              "data",
+              "meta"
+            ],
+            "sample_record_fields": [
+              "addedTime",
+              "awayTeam",
+              "competitionId",
+              "homeTeam",
+              "id",
+              "kickoffAt",
+              "kickoffTimeKnown",
+              "minute",
+              "period",
+              "round",
+              "score",
+              "season",
+              "sourceRefs",
+              "status",
+              "updatedAt",
+              "venue"
+            ],
+            "response_values_retained": "No account/profile bodies; schema and counts only"
+          }
+        }
+      ],
+      "automatic_model_ingestion": false,
+      "requests": 1,
+      "credential_accepted": true,
+      "status": "RESPONSES_AVAILABLE",
+      "scope_failures": []
+    },
+    "5dollar": {
+      "provider": "5dollar",
+      "secret_name": "WCPP_5DOLLAR_API_KEY",
+      "credential_bound": true,
+      "calls": [
+        {
+          "call": {
+            "provider": "5dollar",
+            "url": "https://api.5dollarfootballapi.com/v1/status",
+            "query_time": "2026-11-16T12:04:40.428918+00:00",
+            "http_status": 200,
+            "api_success": true,
+            "authenticated": true,
+            "authentication_status": "CREDENTIAL_ACCEPTED",
+            "fixture_mapping_verified": false,
+            "model_ingestion_performed": false,
+            "credential_binding_name": "WCPP_5DOLLAR_API_KEY",
+            "content_type": "application/json",
+            "cf_ray": "a5b65c0958021ad1-LAX",
+            "quota_headers": {
+              "x-ratelimit-limit": "300",
+              "x-ratelimit-remaining": "299",
+              "x-ratelimit-reset": "1794834000"
+            },
+            "response_sha256": "c098e1b6464a5295dfccb3b482bf5305a0fcad0f4be83edc5419b92b9b88be8b"
+          },
+          "response_summary": {
+            "object_type": "dict",
+            "record_count": 0,
+            "top_level_fields": [
+              "data",
+              "success"
+            ],
+            "sample_record_fields": null,
+            "response_values_retained": "No account/profile bodies; schema and counts only"
+          }
+        },
+        {
+          "call": {
+            "provider": "5dollar",
+            "url": "https://api.5dollarfootballapi.com/v1/leagues?per_page=50&page=1",
+            "query_time": "2026-11-16T12:04:40.778760+00:00",
+            "http_status": 200,
+            "api_success": true,
+            "authenticated": true,
+            "authentication_status": "CREDENTIAL_ACCEPTED",
+            "fixture_mapping_verified": false,
+            "model_ingestion_performed": false,
+            "credential_binding_name": "WCPP_5DOLLAR_API_KEY",
+            "content_type": "application/json",
+            "cf_ray": "a5b65c0b0852979e-LAX",
+            "quota_headers": {
+              "x-ratelimit-limit": "300",
+              "x-ratelimit-remaining": "298",
+              "x-ratelimit-reset": "1794834000"
+            },
+            "response_sha256": "03bbc01a6453fae43c448ae41b37fae7b380ade2574ed7e6e61e4c70162dcfc0"
+          },
+          "response_summary": {
+            "object_type": "dict",
+            "record_count": 8,
+            "top_level_fields": [
+              "data",
+              "pagination",
+              "success"
+            ],
+            "sample_record_fields": [
+              "country",
+              "has_standings",
+              "id",
+              "is_popular",
+              "last_fixture_ts",
+              "last_fixture_utc",
+              "name",
+              "short_name"
+            ],
+            "response_values_retained": "No account/profile bodies; schema and counts only"
+          }
+        },
+        {
+          "call": {
+            "provider": "5dollar",
+            "url": "https://api.5dollarfootballapi.com/v1/leagues/4160026622/fixtures?start_time=1794787200&end_time=1795392000&status=all&per_page=10&page=1&order=asc&include=events%2Cstats",
+            "query_time": "2026-11-16T12:04:41.050498+00:00",
+            "http_status": 200,
+            "api_success": true,
+            "authenticated": true,
+            "authentication_status": "CREDENTIAL_ACCEPTED",
+            "fixture_mapping_verified": false,
+            "model_ingestion_performed": false,
+            "credential_binding_name": "WCPP_5DOLLAR_API_KEY",
+            "content_type": "application/json",
+            "cf_ray": "a5b65c0ccdb78ad4-LAX",
+            "quota_headers": {
+              "x-ratelimit-limit": "300",
+              "x-ratelimit-remaining": "297",
+              "x-ratelimit-reset": "1794834000"
+            },
+            "response_sha256": "9af88abde16b781fad9d1b3fee2dc01020d363b6740a49fe7974300363504ce4"
+          },
+          "response_summary": {
+            "object_type": "dict",
+            "record_count": 9,
+            "top_level_fields": [
+              "data",
+              "pagination",
+              "success"
+            ],
+            "sample_record_fields": [
+              "cards",
+              "corners",
+              "events",
+              "goals",
+              "id",
+              "kickoff_ts",
+              "kickoff_utc",
+              "league",
+              "statistics",
+              "status",
+              "status_code",
+              "status_reason",
+              "teams"
+            ],
+            "response_values_retained": "No account/profile bodies; schema and counts only"
+          }
+        }
+      ],
+      "automatic_model_ingestion": false,
+      "sample_competition": {
+        "id": 4160026622,
+        "name": "England Premier League"
+      },
+      "requests": 3,
+      "credential_accepted": true,
+      "status": "RESPONSES_AVAILABLE",
+      "scope_failures": []
+    },
+    "infersports": {
+      "provider": "infersports",
+      "secret_name": "INFER",
+      "credential_bound": true,
+      "automatic_model_ingestion": false,
+      "requested_fixture_date_utc": "2026-11-16",
+      "fixture_sampling_limit": 1,
+      "schema": "WCPP-MARKET-CHANNEL-1",
+      "created_at": "2026-11-16T12:04:41.805685+00:00",
+      "market_model_ready": true,
+      "verified_quote_count": 2,
+      "eligible_fixture_count": 6,
+      "covered_fixture_count": 1,
+      "coverage": 0.16666666666666666,
+      "coverage_scope": "explicit requested fixtures",
+      "provider_events_page_truncated": true,
+      "source_odds_events": 1,
+      "market_max_age_seconds": 3600,
+      "excluded": {
+        "requested_fixture_absent_from_identity": 0,
+        "unsupported_market_period_or_status": 11,
+        "missing_or_ambiguous_odds_response": 5
+      },
+      "quote_time_inferred_from_capture": false,
+      "tls_verification_disabled": false,
+      "active_model_changed": false,
+      "request_budget_truncated": true,
+      "status": "VALIDATED",
+      "requests": 3,
+      "failures": [],
+      "source_time_inferred": false,
+      "markets": [
+        "totals"
+      ],
+      "bookmakers": [
+        "crown",
+        "nova88"
+      ],
+      "quote_time_range": [
+        "2026-11-16T11:47:24Z",
+        "2026-11-16T12:02:42Z"
+      ],
+      "coverage_by_market": {
+        "totals": 1
+      },
+      "protected_response_retained": true,
+      "credential_accepted": true,
+      "quota_headers_retained": false,
+      "quota_remaining": null
+    },
+    "football-data": {
+      "provider": "football-data",
+      "secret_name": "FOOTBALLDATA",
+      "credential_bound": true,
+      "calls": [
+        {
+          "call": {
+            "provider": "football-data",
+            "url": "https://api.football-data.org/v4/matches?dateFrom=2026-11-16&dateTo=2026-11-23",
+            "query_time": "2026-11-16T12:04:40.428070+00:00",
+            "http_status": 200,
+            "api_success": true,
+            "authenticated": true,
+            "authentication_status": "CREDENTIAL_ACCEPTED",
+            "fixture_mapping_verified": false,
+            "model_ingestion_performed": false,
+            "credential_binding_name": "WCPP_FOOTBALL_DATA_API_KEY",
+            "content_type": "application/json;charset=UTF-8",
+            "cf_ray": null,
+            "quota_headers": {
+              "x-requests-available-minute": "9"
+            },
+            "response_sha256": "efec7b661b722c49fcbb43558099192d46d5132715902c3ba26fc9405925c44a"
+          },
+          "response_summary": {
+            "object_type": "dict",
+            "record_count": 81,
+            "top_level_fields": [
+              "filters",
+              "matches",
+              "resultSet"
+            ],
+            "sample_record_fields": [
+              "area",
+              "awayTeam",
+              "competition",
+              "group",
+              "homeTeam",
+              "id",
+              "lastUpdated",
+              "matchday",
+              "odds",
+              "referees",
+              "score",
+              "season",
+              "stage",
+              "status",
+              "utcDate"
+            ],
+            "response_values_retained": "No account/profile bodies; schema and counts only"
+          }
+        }
+      ],
+      "automatic_model_ingestion": false,
+      "requests": 1,
+      "credential_accepted": true,
+      "status": "RESPONSES_AVAILABLE",
+      "scope_failures": []
+    }
+  },
+  "automatic_model_promotion": false,
+  "tls_verification_disabled": false,
+  "scope": "bounded authenticated endpoints and actual data samples; not all-competition certification"
+}

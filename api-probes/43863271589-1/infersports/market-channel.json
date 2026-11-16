@@ -1,0 +1,171 @@
+{
+  "schema": "WCPP-MARKET-CHANNEL-1",
+  "created_at": "2026-11-16T12:04:41.805685+00:00",
+  "provider": "infersports",
+  "market_model_ready": true,
+  "verified_quote_count": 2,
+  "eligible_fixture_count": 6,
+  "covered_fixture_count": 1,
+  "coverage": 0.16666666666666666,
+  "coverage_scope": "explicit requested fixtures",
+  "provider_events_page_truncated": true,
+  "source_odds_events": 1,
+  "market_max_age_seconds": 3600,
+  "excluded": {
+    "requested_fixture_absent_from_identity": 0,
+    "unsupported_market_period_or_status": 11,
+    "missing_or_ambiguous_odds_response": 5
+  },
+  "identity_mappings": [
+    {
+      "match_id": "espn:401861180",
+      "provider_match_id": "evt_8365T1M7",
+      "provider_league": {
+        "id": "lg_FDN4KCTA",
+        "name": "UEFANLC"
+      },
+      "cohort": "uefa.nations:C:league-phase",
+      "identity_evidence_sha256": "23645ddb5c219c0bf7f11dfe61dc4b75aabb5101ab316a6c0fd8038678927173",
+      "provider_event_evidence_sha256": "6e6a46bdda0d040d67bf7f2834b8380b38058633b630d2c2580f55f71f08f61d"
+    }
+  ],
+  "snapshots": [
+    {
+      "schema": "WCPP-V2-FEATURE-SNAPSHOT-1",
+      "target": {
+        "match_id": "espn:401861180",
+        "competition": "uefa.nations",
+        "cohort": "uefa.nations:C:league-phase",
+        "stage": "league-phase",
+        "home_id": "espn:447",
+        "away_id": "espn:483",
+        "kickoff_at": "2026-11-16T15:00Z",
+        "cutoff_at": "2026-11-16T12:04:41.805685+00:00"
+      },
+      "provider": "infersports",
+      "created_at": "2026-11-16T12:04:41.805685+00:00",
+      "features": {
+        "espn:447": {
+          "market_quote": {
+            "n": 2,
+            "observation_sha256": [
+              "7da47a7caf234ac23a715633ad06d15547285775b2e01bbdce2eaff27e70d4f2",
+              "97ae5e7b89927ddc8133cdfb555bc7158de343938be1609867c2e15944dce8cc"
+            ]
+          }
+        },
+        "espn:483": {}
+      },
+      "observations": [
+        {
+          "provider": "infersports",
+          "cohort": "uefa.nations:C:league-phase",
+          "match_id": "espn:401861180",
+          "entity_id": "espn:447",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-16T15:00Z",
+          "observed_at": "2026-11-16T12:04:41.805450+00:00",
+          "provider_match_id": "evt_8365T1M7",
+          "value": {
+            "bookmaker": "crown",
+            "market": "totals",
+            "line": 2.5,
+            "odds": {
+              "over": 2.31,
+              "under": 1.64
+            },
+            "quoted_at": "2026-11-16T12:02:42Z"
+          },
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "23645ddb5c219c0bf7f11dfe61dc4b75aabb5101ab316a6c0fd8038678927173",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard?dates=20261116&limit=1000",
+            "requested_at": "2026-11-16T12:04:40.451968+00:00",
+            "captured_at": "2026-11-16T12:04:40.591092+00:00"
+          },
+          "provider_event_evidence": {
+            "file": "events.json",
+            "sha256": "6e6a46bdda0d040d67bf7f2834b8380b38058633b630d2c2580f55f71f08f61d",
+            "url": "https://api.infersports.dev/v1/events?sport=football&status=scheduled&limit=100",
+            "requested_at": "2026-11-16T12:04:40.597346+00:00",
+            "captured_at": "2026-11-16T12:04:41.302182+00:00"
+          },
+          "evidence": {
+            "file": "evt_8365T1M7-odds.json",
+            "sha256": "b482d26ed0a6d6f48c201559efcab984382151451c050f0d8fb60c0011f56c36",
+            "url": "https://api.infersports.dev/v1/events/evt_8365T1M7/odds?markets=totals&format=decimal",
+            "query_time": "2026-11-16T12:04:41.805450+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "infersports",
+          "cohort": "uefa.nations:C:league-phase",
+          "match_id": "espn:401861180",
+          "entity_id": "espn:447",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-16T15:00Z",
+          "observed_at": "2026-11-16T12:04:41.805450+00:00",
+          "provider_match_id": "evt_8365T1M7",
+          "value": {
+            "bookmaker": "nova88",
+            "market": "totals",
+            "line": 2.25,
+            "odds": {
+              "over": 2.05,
+              "under": 1.83
+            },
+            "quoted_at": "2026-11-16T11:47:24Z"
+          },
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "23645ddb5c219c0bf7f11dfe61dc4b75aabb5101ab316a6c0fd8038678927173",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard?dates=20261116&limit=1000",
+            "requested_at": "2026-11-16T12:04:40.451968+00:00",
+            "captured_at": "2026-11-16T12:04:40.591092+00:00"
+          },
+          "provider_event_evidence": {
+            "file": "events.json",
+            "sha256": "6e6a46bdda0d040d67bf7f2834b8380b38058633b630d2c2580f55f71f08f61d",
+            "url": "https://api.infersports.dev/v1/events?sport=football&status=scheduled&limit=100",
+            "requested_at": "2026-11-16T12:04:40.597346+00:00",
+            "captured_at": "2026-11-16T12:04:41.302182+00:00"
+          },
+          "evidence": {
+            "file": "evt_8365T1M7-odds.json",
+            "sha256": "b482d26ed0a6d6f48c201559efcab984382151451c050f0d8fb60c0011f56c36",
+            "url": "https://api.infersports.dev/v1/events/evt_8365T1M7/odds?markets=totals&format=decimal",
+            "query_time": "2026-11-16T12:04:41.805450+00:00",
+            "identity_verified": true
+          }
+        }
+      ],
+      "excluded": {
+        "stale_current_evidence": 16
+      },
+      "policy": {
+        "last_n": 3,
+        "lookback_days": 90,
+        "market_max_age_seconds": 3600,
+        "availability_max_age_seconds": 21600
+      },
+      "claims": {
+        "source_first_known_time_inferred": false,
+        "historical_asof_certified": false,
+        "new_model_trained": false,
+        "active_model_changed": false
+      },
+      "notice": "Capture/hash/identity checks use supplied evidence. No publication time inferred; freshly downloaded history is available only after capture. Small windows, missing players and provider differences remain explicit. No prediction or learned impact.",
+      "snapshot_sha256": "336bbd240ad0b9b6614580b5496a2b97061e3be9102a20ca1763f8b8ec2e1128"
+    }
+  ],
+  "quote_time_inferred_from_capture": false,
+  "tls_verification_disabled": false,
+  "active_model_changed": false,
+  "request_budget_truncated": true,
+  "status": "VALIDATED",
+  "requests": 3,
+  "failures": []
+}

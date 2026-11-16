@@ -1,0 +1,59 @@
+{
+  "provider": "football-data",
+  "secret_name": "FOOTBALLDATA",
+  "credential_bound": true,
+  "calls": [
+    {
+      "call": {
+        "provider": "football-data",
+        "url": "https://api.football-data.org/v4/matches?dateFrom=2026-11-16&dateTo=2026-11-23",
+        "query_time": "2026-11-16T12:04:40.428070+00:00",
+        "http_status": 200,
+        "api_success": true,
+        "authenticated": true,
+        "authentication_status": "CREDENTIAL_ACCEPTED",
+        "fixture_mapping_verified": false,
+        "model_ingestion_performed": false,
+        "credential_binding_name": "WCPP_FOOTBALL_DATA_API_KEY",
+        "content_type": "application/json;charset=UTF-8",
+        "cf_ray": null,
+        "quota_headers": {
+          "x-requests-available-minute": "9"
+        },
+        "response_sha256": "efec7b661b722c49fcbb43558099192d46d5132715902c3ba26fc9405925c44a"
+      },
+      "response_summary": {
+        "object_type": "dict",
+        "record_count": 81,
+        "top_level_fields": [
+          "filters",
+          "matches",
+          "resultSet"
+        ],
+        "sample_record_fields": [
+          "area",
+          "awayTeam",
+          "competition",
+          "group",
+          "homeTeam",
+          "id",
+          "lastUpdated",
+          "matchday",
+          "odds",
+          "referees",
+          "score",
+          "season",
+          "stage",
+          "status",
+          "utcDate"
+        ],
+        "response_values_retained": "No account/profile bodies; schema and counts only"
+      }
+    }
+  ],
+  "automatic_model_ingestion": false,
+  "requests": 1,
+  "credential_accepted": true,
+  "status": "RESPONSES_AVAILABLE",
+  "scope_failures": []
+}
