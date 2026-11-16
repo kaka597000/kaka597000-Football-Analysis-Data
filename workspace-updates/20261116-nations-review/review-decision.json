@@ -1,0 +1,460 @@
+{
+  "decision": [
+    "KEEP_CURRENT_TEST_PARAMETERS",
+    "KEEP_RESEARCH_CANDIDATES_INACTIVE",
+    "RETAIN_DELIVERY_FAILURES",
+    "SUPPLEMENT_FRESH_DATA_BEFORE_NEW_EXPERIMENT"
+  ],
+  "batch_unique": 8,
+  "manual_selected": 6,
+  "cumulative_nations_first": 34,
+  "manual_summary": {
+    "population": 8,
+    "settled": 8,
+    "pending": 0,
+    "primary_n": 6,
+    "primary_hits": 1,
+    "primary_accuracy": 0.16666666666666666,
+    "primary_coverage": 0.75,
+    "primary_failures_or_abstentions": 2,
+    "primary_hits_over_population": 0.125,
+    "primary_wilson_95": [
+      0.030053369748306635,
+      0.5635028221864702
+    ],
+    "wdl_n": 6,
+    "wdl_hits": 4,
+    "wdl_accuracy": 0.6666666666666666,
+    "wdl_coverage": 0.75,
+    "wdl_wilson_95": [
+      0.299993315138392,
+      0.9032285888942195
+    ],
+    "total_n": 4,
+    "total_coverage": 0.5,
+    "total_non_push_n": 3,
+    "total_strict_full_win_rate": 0.3333333333333333,
+    "total_settlements": {
+      "win": 1,
+      "half_win": 0,
+      "push": 1,
+      "half_loss": 1,
+      "loss": 1
+    }
+  },
+  "manual_net": {
+    "current": {
+      "score": {
+        "rows": [
+          {
+            "match_id": "espn:401861173",
+            "version": "WCPP-NATIONS-C-CURRENT-0.1",
+            "comprehensive": "0-1",
+            "candidate": "1-1",
+            "actual": "0-2",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861174",
+            "version": "WCPP-NATIONS-C-CURRENT-0.1",
+            "comprehensive": "3-0",
+            "candidate": "1-1",
+            "actual": "7-2",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861175",
+            "version": "WCPP-NATIONS-A-CURRENT-0.1",
+            "comprehensive": "2-1",
+            "candidate": "1-1",
+            "actual": "2-3",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861176",
+            "version": "WCPP-NATIONS-A-CURRENT-0.1",
+            "comprehensive": "1-1",
+            "candidate": "1-1",
+            "actual": "4-1",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861177",
+            "version": "WCPP-NATIONS-A-CURRENT-0.1",
+            "comprehensive": "2-1",
+            "candidate": "1-1",
+            "actual": "2-1",
+            "comprehensive_hit": true,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861178",
+            "version": "WCPP-NATIONS-A-CURRENT-0.1",
+            "comprehensive": "2-0",
+            "candidate": "1-1",
+            "actual": "2-1",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          }
+        ],
+        "batch_descriptive": {
+          "n": 6,
+          "changed_right": 1,
+          "changed_wrong": 0,
+          "net_hits": 1,
+          "descriptive_rate_difference_bootstrap_95": [
+            0.0,
+            0.5
+          ],
+          "exact_discordant_sign_test_p": 1.0,
+          "not_promotion_evidence": true
+        },
+        "by_version": {
+          "WCPP-NATIONS-A-CURRENT-0.1": {
+            "n": 4,
+            "changed_right": 1,
+            "changed_wrong": 0,
+            "net_hits": 1,
+            "descriptive_rate_difference_bootstrap_95": [
+              0.0,
+              0.75
+            ],
+            "exact_discordant_sign_test_p": 1.0,
+            "not_promotion_evidence": true
+          },
+          "WCPP-NATIONS-C-CURRENT-0.1": {
+            "n": 2,
+            "changed_right": 0,
+            "changed_wrong": 0,
+            "net_hits": 0,
+            "descriptive_rate_difference_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "exact_discordant_sign_test_p": 1.0,
+            "not_promotion_evidence": true
+          }
+        }
+      },
+      "wdl": {
+        "rows": [
+          {
+            "match_id": "espn:401861173",
+            "version": "WCPP-NATIONS-C-CURRENT-0.1",
+            "comprehensive": "客胜",
+            "candidate": "主胜",
+            "actual": "客胜",
+            "comprehensive_hit": true,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861174",
+            "version": "WCPP-NATIONS-C-CURRENT-0.1",
+            "comprehensive": "主胜",
+            "candidate": "主胜",
+            "actual": "主胜",
+            "comprehensive_hit": true,
+            "candidate_hit": true
+          },
+          {
+            "match_id": "espn:401861175",
+            "version": "WCPP-NATIONS-A-CURRENT-0.1",
+            "comprehensive": "主胜",
+            "candidate": "主胜",
+            "actual": "客胜",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861176",
+            "version": "WCPP-NATIONS-A-CURRENT-0.1",
+            "comprehensive": "平局",
+            "candidate": "主胜",
+            "actual": "主胜",
+            "comprehensive_hit": false,
+            "candidate_hit": true
+          },
+          {
+            "match_id": "espn:401861177",
+            "version": "WCPP-NATIONS-A-CURRENT-0.1",
+            "comprehensive": "主胜",
+            "candidate": "主胜",
+            "actual": "主胜",
+            "comprehensive_hit": true,
+            "candidate_hit": true
+          },
+          {
+            "match_id": "espn:401861178",
+            "version": "WCPP-NATIONS-A-CURRENT-0.1",
+            "comprehensive": "主胜",
+            "candidate": "主胜",
+            "actual": "主胜",
+            "comprehensive_hit": true,
+            "candidate_hit": true
+          }
+        ],
+        "batch_descriptive": {
+          "n": 6,
+          "changed_right": 1,
+          "changed_wrong": 1,
+          "net_hits": 0,
+          "descriptive_rate_difference_bootstrap_95": [
+            -0.5,
+            0.5
+          ],
+          "exact_discordant_sign_test_p": 1.0,
+          "not_promotion_evidence": true
+        },
+        "by_version": {
+          "WCPP-NATIONS-A-CURRENT-0.1": {
+            "n": 4,
+            "changed_right": 0,
+            "changed_wrong": 1,
+            "net_hits": -1,
+            "descriptive_rate_difference_bootstrap_95": [
+              -0.75,
+              0.0
+            ],
+            "exact_discordant_sign_test_p": 1.0,
+            "not_promotion_evidence": true
+          },
+          "WCPP-NATIONS-C-CURRENT-0.1": {
+            "n": 2,
+            "changed_right": 1,
+            "changed_wrong": 0,
+            "net_hits": 1,
+            "descriptive_rate_difference_bootstrap_95": [
+              0.0,
+              1.0
+            ],
+            "exact_discordant_sign_test_p": 1.0,
+            "not_promotion_evidence": true
+          }
+        }
+      }
+    },
+    "test": {
+      "score": {
+        "rows": [
+          {
+            "match_id": "espn:401861173",
+            "version": "WCPP-NATIONS-C-TEST-0.1",
+            "comprehensive": "0-1",
+            "candidate": "1-1",
+            "actual": "0-2",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861174",
+            "version": "WCPP-NATIONS-C-TEST-0.1",
+            "comprehensive": "3-0",
+            "candidate": "2-0",
+            "actual": "7-2",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861175",
+            "version": "WCPP-NATIONS-A-TEST-0.1",
+            "comprehensive": "2-1",
+            "candidate": "1-1",
+            "actual": "2-3",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861176",
+            "version": "WCPP-NATIONS-A-TEST-0.1",
+            "comprehensive": "1-1",
+            "candidate": "1-1",
+            "actual": "4-1",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861177",
+            "version": "WCPP-NATIONS-A-TEST-0.1",
+            "comprehensive": "2-1",
+            "candidate": "1-0",
+            "actual": "2-1",
+            "comprehensive_hit": true,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861178",
+            "version": "WCPP-NATIONS-A-TEST-0.1",
+            "comprehensive": "2-0",
+            "candidate": "1-1",
+            "actual": "2-1",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          }
+        ],
+        "batch_descriptive": {
+          "n": 6,
+          "changed_right": 1,
+          "changed_wrong": 0,
+          "net_hits": 1,
+          "descriptive_rate_difference_bootstrap_95": [
+            0.0,
+            0.5
+          ],
+          "exact_discordant_sign_test_p": 1.0,
+          "not_promotion_evidence": true
+        },
+        "by_version": {
+          "WCPP-NATIONS-A-TEST-0.1": {
+            "n": 4,
+            "changed_right": 1,
+            "changed_wrong": 0,
+            "net_hits": 1,
+            "descriptive_rate_difference_bootstrap_95": [
+              0.0,
+              0.75
+            ],
+            "exact_discordant_sign_test_p": 1.0,
+            "not_promotion_evidence": true
+          },
+          "WCPP-NATIONS-C-TEST-0.1": {
+            "n": 2,
+            "changed_right": 0,
+            "changed_wrong": 0,
+            "net_hits": 0,
+            "descriptive_rate_difference_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "exact_discordant_sign_test_p": 1.0,
+            "not_promotion_evidence": true
+          }
+        }
+      },
+      "wdl": {
+        "rows": [
+          {
+            "match_id": "espn:401861173",
+            "version": "WCPP-NATIONS-C-TEST-0.1",
+            "comprehensive": "客胜",
+            "candidate": "主胜",
+            "actual": "客胜",
+            "comprehensive_hit": true,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861174",
+            "version": "WCPP-NATIONS-C-TEST-0.1",
+            "comprehensive": "主胜",
+            "candidate": "主胜",
+            "actual": "主胜",
+            "comprehensive_hit": true,
+            "candidate_hit": true
+          },
+          {
+            "match_id": "espn:401861175",
+            "version": "WCPP-NATIONS-A-TEST-0.1",
+            "comprehensive": "主胜",
+            "candidate": "主胜",
+            "actual": "客胜",
+            "comprehensive_hit": false,
+            "candidate_hit": false
+          },
+          {
+            "match_id": "espn:401861176",
+            "version": "WCPP-NATIONS-A-TEST-0.1",
+            "comprehensive": "平局",
+            "candidate": "主胜",
+            "actual": "主胜",
+            "comprehensive_hit": false,
+            "candidate_hit": true
+          },
+          {
+            "match_id": "espn:401861177",
+            "version": "WCPP-NATIONS-A-TEST-0.1",
+            "comprehensive": "主胜",
+            "candidate": "主胜",
+            "actual": "主胜",
+            "comprehensive_hit": true,
+            "candidate_hit": true
+          },
+          {
+            "match_id": "espn:401861178",
+            "version": "WCPP-NATIONS-A-TEST-0.1",
+            "comprehensive": "主胜",
+            "candidate": "主胜",
+            "actual": "主胜",
+            "comprehensive_hit": true,
+            "candidate_hit": true
+          }
+        ],
+        "batch_descriptive": {
+          "n": 6,
+          "changed_right": 1,
+          "changed_wrong": 1,
+          "net_hits": 0,
+          "descriptive_rate_difference_bootstrap_95": [
+            -0.5,
+            0.5
+          ],
+          "exact_discordant_sign_test_p": 1.0,
+          "not_promotion_evidence": true
+        },
+        "by_version": {
+          "WCPP-NATIONS-A-TEST-0.1": {
+            "n": 4,
+            "changed_right": 0,
+            "changed_wrong": 1,
+            "net_hits": -1,
+            "descriptive_rate_difference_bootstrap_95": [
+              -0.75,
+              0.0
+            ],
+            "exact_discordant_sign_test_p": 1.0,
+            "not_promotion_evidence": true
+          },
+          "WCPP-NATIONS-C-TEST-0.1": {
+            "n": 2,
+            "changed_right": 1,
+            "changed_wrong": 0,
+            "net_hits": 1,
+            "descriptive_rate_difference_bootstrap_95": [
+              0.0,
+              1.0
+            ],
+            "exact_discordant_sign_test_p": 1.0,
+            "not_promotion_evidence": true
+          }
+        }
+      }
+    }
+  },
+  "reasons": [
+    "Manual score gained one against each referenced candidate on the same six matches; paired uncertainty includes zero and discordant sign-test p=1. No validated improvement or promotion.",
+    "Finland 7-2 was already 3-0 at 20 minutes and 5-1 at half-time, without a red card. Low-rate stale candidates and manual small-total selection missed a large winning margin and conceded goals. One penalty explains neither seven Finland goals nor the whole nine-goal tail.",
+    "Spain was 0-3 down before England red card. Strong prematch counterevidence was recorded but not resolved before TOP3 ranking; a low-confidence label did not make the choice reliable.",
+    "Belgium 4-1: manual draw lost a WDL hit versus both candidate home directions. Same-six WDL net benefit is zero despite Belarus direction improvement.",
+    "Croatia conceded at 84 minutes; known five-match concession record was relevant counterevidence to 2-0. A low away shot count does not ensure a clean sheet.",
+    "France exact hit includes an opponent own goal and a 90-minute away goal; one such hit does not validate the method."
+  ],
+  "engineering_status": {
+    "prior_failed_oneoff_script": "JSON list passed to ndarray settlement; already corrected in last delivery, originals retained",
+    "this_review": "all calculations and rendering verified before review publication; original failures remain",
+    "market_available": 8,
+    "model_OU_selected": 0,
+    "model_OU_reason": "Research pair contract stores actual line and probabilities but no explicit pre-frozen over/under selection; not an API access failure this batch"
+  },
+  "next_checks": [
+    "Next complete original frozen batch: preserve all matches, incomplete deliveries and first/revision separation, with three KPI denominators.",
+    "For a future numerical OU experiment, fix the decision/abstention rule and explicit total.quote/reference_direction before results, then independently freeze; never add selections to these eight completed matches.",
+    "Before a fixed-recipe refresh, validate new 90-minute history and source times, preserve original fitted recipes and candidate IDs, and predeclare temporal training/calibration/holdout boundaries. This reviewed batch is not an untouched validation set for any change it motivates.",
+    "Apply existing TOP3 evidence rule: unresolved high-impact counterevidence is a reason to omit a slot; no requirement to force three picks. Do not uniformly add goals or switch all totals to over."
+  ],
+  "training_run": false,
+  "parameters_changed": false,
+  "registry_changed": false,
+  "promotion": false
+}
