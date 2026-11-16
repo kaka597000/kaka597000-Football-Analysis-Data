@@ -108,8 +108,7 @@ jobs:
         working-directory: collector-code
         timeout-minutes: 1
         env:
-          WCPP_ODDS_API_KEY: ${{ secrets.WCPP_ODDS_API_KEY }}
-          THE_ODDS: ${{ secrets.THE_ODDS }}
+          WCPP_ODDS_API_KEY: ${{ secrets.THEODDSAPI || secrets.WCPP_ODDS_API_KEY || secrets.THE_ODDS }}
           MARKET_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
         run: python -m runtime.automation.market_snapshot --market-max-age-seconds 3600 --out "../private-state/market/runs/$MARKET_RUN_ID"
       - name: Capture and review locked future populations
