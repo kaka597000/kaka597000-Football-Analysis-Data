@@ -1,0 +1,38 @@
+{
+  "decision": [
+    "KEEP_CURRENT_TEST_PARAMETERS",
+    "KEEP_ALL_RESEARCH_CANDIDATES_INACTIVE",
+    "CONTINUE_EXISTING_FROZEN_18_MATCH_PLAN",
+    "RETAIN_FAILED_MANUAL_SCORE_AND_TOTAL_CHOICES"
+  ],
+  "batch_population": 10,
+  "manual_score_n": 7,
+  "manual_primary_hits": 0,
+  "cumulative_old_candidate_matches": 44,
+  "original_forward_settled": 10,
+  "original_forward_pending": 8,
+  "parameters_changed": false,
+  "registry_changed": false,
+  "model_promoted": false,
+  "new_training_run": false,
+  "reasons": [
+    "Manual WDL 8/10 did not translate into exact scores (0/7) or actual totals (0 wins, 1 half loss, 1 push, 5 losses). Three score abstentions remain.",
+    "Germany 5-0 and Switzerland 4-0 had strong shots-on-target advantages without red cards. Switzerland had one own goal, followed by three other goals. Estonia red card followed the final goal, so it cannot explain the small-total miss.",
+    "Both old Test and fixed-recipe Test have zero exact-score hits this batch. Fixed Test WDL improved by one versus old Test, but fresh history is not proof of exact-score gains.",
+    "Manual exact score lost one hit to old Current on Gibraltar and one to the separate challenger on Faroe on the same seven eligible games. These baselines must not be combined into a hypothetical perfect model.",
+    "Old Current selects 1-1 in all ten; fixed Current remains 1-1 in eight. Structural grade-level averaging and conservative manual selection remain diagnostic concerns; this batch cannot identify new optimal weights.",
+    "No source provides real xG in the ten current summaries. Shots-on-target demonstrate shot placement/count, not calibrated chance quality or purely unlucky finishing."
+  ],
+  "next_check": {
+    "trigger": "Remaining eight original frozen matches reach verified 90-minute FT",
+    "population_locked": 18,
+    "require": [
+      "Keep all five original tracks and original actual quotes",
+      "Report grade/version-specific Primary, WDL, five-way total settlement and coverage",
+      "Retain manual and statistical Primary separately",
+      "No tuning against these ten observed matches and relabeling them as untouched validation",
+      "Any later tail/strength/selection experiment requires its own locked temporal development and unseen forward cohort"
+    ]
+  },
+  "automatic_promotion": false
+}

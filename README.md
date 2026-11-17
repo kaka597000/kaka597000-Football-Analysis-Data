@@ -1,5 +1,7 @@
 # WCPP 研究状态
 
+2026-11-17 北京时间08:32：[昨晚10场欧国联复盘](workspace-updates/20261117-nations-review-0833/复盘报告.md)已冻结。综合第一比分0/7（3待定），胜平负8/10，实际大小球5全输、1半输、1走盘（3观望）；原TOP3比分0/3、方向3/3。现有18场五轨计划已结10场、余8场待赛，研究候选保持inactive；[结果、完整冻结链及恢复清单](workspace-updates/20261117-nations-review-0833/README.md)。
+
 2026-11-16 北京时间20:43：[今晚至明晨10场欧国联赛前报告](workspace-updates/20261116-nations-prematch-2044/欧国联赛前分析.md)已冻结，含独立新旧候选、综合判断、研究TOP3及真实盘口。唯一比分7场、3场资格缺口待定；证据与冻结链见[本轮归档](workspace-updates/20261116-nations-prematch-2044/README.md)。
 
 2026-11-10 用户明确接受本数据仓库公开，并授权同步赛事数据、冻结复盘与审计材料；旧文档中的私有强制要求由此覆盖。密钥仍仅使用环境或仓库 Secrets，不写入数据或日志。最新增量备份见 `workspace-updates/20261110-review-and-audit/`。

@@ -1,0 +1,59 @@
+{
+  "schema": "WCPP-ROOT-PROCESS-AUDIT-20261117-1",
+  "verified_at": "2026-11-17T00:29:03.843150+00:00",
+  "results": 10,
+  "independent_scores_agree": 10,
+  "goal_events_verified": 29,
+  "own_goals": [
+    {
+      "match_id": "espn:401861186",
+      "event_id": "55323680",
+      "minute": "22'",
+      "period": 1,
+      "source_type": "own-goal",
+      "source_text": "Own Goal by Lewis Ferguson, Scotland. Switzerland 1, Scotland 0.",
+      "athlete_id": "202429",
+      "player_team_id": "580",
+      "beneficiary_team_id": "475",
+      "normalized": {
+        "minute": "22'",
+        "type": "Goal",
+        "detail": {
+          "scorer": "Lewis Ferguson",
+          "team_side": "away",
+          "beneficiary_side": "home",
+          "own_goal": true,
+          "assist": null,
+          "score_before": [
+            0,
+            0
+          ],
+          "score_after": [
+            1,
+            0
+          ]
+        },
+        "normalization": "SCORE_DELTA_AND_SHOT_TEAM_ID_VERIFIED"
+      }
+    }
+  ],
+  "secondary_kickoff_differences": [
+    {
+      "match_id": "espn:401861180",
+      "scheduled": "2026-11-16T15:00Z",
+      "secondary_updated": "2026-11-16T15:01:00Z",
+      "difference_seconds": 60.0,
+      "identity": "PREMATCH_PROVIDER_ID_RETAINED; scheduled kickoff never rewritten"
+    },
+    {
+      "match_id": "espn:401861181",
+      "scheduled": "2026-11-16T15:00Z",
+      "secondary_updated": "2026-11-16T15:01:00Z",
+      "difference_seconds": 60.0,
+      "identity": "PREMATCH_PROVIDER_ID_RETAINED; scheduled kickoff never rewritten"
+    }
+  ],
+  "real_xg_available": 0,
+  "source_score_basis": "ESPN regulation period evidence; TheOdds independent final-score corroboration",
+  "original_result_sources_retained": true
+}
