@@ -1,13 +1,13 @@
 {
   "repository": "kaka597000/Football-Analysis",
-  "commit": "ba6a18dca6169867863ef2b034c7773aa9113b6e",
+  "commit": "3eca355a9e801c15d21c9b9b87e84592be15cee9",
   "base_backup_tag": "workspace-full-20261102-v1",
   "incremental_workspace_updates": "workspace-updates/20261102-single-match-v2-audit",
   "v2_research_branch": "v2-test/audit-20261102",
   "v2_research_commit": "ca4a3d2e0879c3a233ddcc58034733e0d170db56",
   "v2_active": false,
   "supplemental_sources_increment": "workspace-updates/20261102-supplemental-sources",
-  "previous_source_commit": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
+  "previous_source_commit": "ba6a18dca6169867863ef2b034c7773aa9113b6e",
   "additional_workspace_updates": [
     "workspace-updates/20261110-review-and-audit",
     "workspace-updates/20261110-four-cohort-refresh",
@@ -39,9 +39,10 @@
     "workspace-updates/20261115-review-kashiwa",
     "workspace-updates/20261115-evening-scope",
     "workspace-updates/20261116-nations-review",
-    "workspace-updates/20261116-nations-repair"
+    "workspace-updates/20261116-nations-repair",
+    "workspace-updates/20261117-nations-xg-research"
   ],
-  "synchronized_at": "2026-11-16T18:10:53.383512+08:00",
+  "synchronized_at": "2026-11-17T10:41:02.724866+08:00",
   "pull_request": "https://github.com/kaka597000/Football-Analysis/pull/39",
   "automatic_model_promotion": false,
   "latest_independent_refresh": "workspace-updates/20261110-four-cohort-refresh/delivery.json",
@@ -58,7 +59,7 @@
   "latest_model_inventory": "workspace-updates/20261112-model-inventory/manifest.json",
   "main_commit_at_work_start": "1257fdde7b6746b7ba6d2aa919382214a2cfb589",
   "source_branch": "main",
-  "source_merge_status": "PR39_MERGED_NOT_MODEL_PROMOTION",
+  "source_merge_status": "MAIN_PR38_MERGED; PR40_RESEARCH_REVIEW_FIX_PUSHED_CI_PENDING",
   "latest_post32_delivery": "workspace-updates/20261112-post32/execution-index.json",
   "actual_runtime_versions": {
     "collector_verified_commit": "4c6061dd5eb2e4af77f18e64bd908a2847f039d0",
@@ -307,5 +308,44 @@
     "autonomous_market_status": "MISSING_CREDENTIAL_GITHUB_SECRETS_PUBLIC_KEY_HTTP403",
     "report_freeze": "4a810036d00ce915-v000002"
   },
-  "latest_nations_repair_runtime": "workspace-updates/20261116-nations-repair/delivery-receipt.json"
+  "latest_nations_repair_runtime": "workspace-updates/20261116-nations-repair/delivery-receipt.json",
+  "latest_nations_xg_research": "workspace-updates/20261117-nations-xg-research/README.md",
+  "latest_nations_xg_status": {
+    "history": 758,
+    "target_2026": 148,
+    "xg_observations": 29,
+    "arms": 13,
+    "artifacts": 52,
+    "historical_predictions": 1248,
+    "statistical_score_november": {
+      "baseline_hits": 5,
+      "selected_hits": 6,
+      "n": 44
+    },
+    "wdl_november": {
+      "baseline_hits": 30,
+      "selected_hits": 31,
+      "n": 44
+    },
+    "actual_line_november": {
+      "n": 10,
+      "gain": 0
+    },
+    "future_population": 8,
+    "future_predictions": 104,
+    "quoted_population": 8,
+    "pending": 8,
+    "frozen_source_commit": "7dc5d0f9a64185dd16e44e45b59385990d12f331",
+    "latest_research_source_commit": "aeaf14b66a1c28105fc4757969fee33c5886f273",
+    "pull_request": "https://github.com/kaka597000/Football-Analysis/pull/40",
+    "automatic_model_promotion": false
+  },
+  "research_execution_preference": {
+    "mode": "EXPERIMENT_FIRST",
+    "user_confirmed_at": "2026-11-17",
+    "primary_priority": "first_exact_score",
+    "missing_optional_data": "declared baseline fallback",
+    "field_conflicts": "parallel experiments with retained provenance",
+    "policy": "docs/research-execution-20261117.md"
+  }
 }
