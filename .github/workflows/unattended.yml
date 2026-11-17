@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 4c6061dd5eb2e4af77f18e64bd908a2847f039d0
+          ref: 3eca355a9e801c15d21c9b9b87e84592be15cee9
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -78,6 +78,21 @@ jobs:
           # kor.1 stays registered; omit only its unsupported ESPN request here.
           if [ "$JOB_MODE" = collect ]; then
             python ../private-state/runtime/collect_kor1.py omit-espn --state-dir ../private-state
+            # Brazil is collection-only; restore the original training scopes below.
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('../private-state/config/scopes.json')
+          scopes = json.loads(path.read_text())
+          brazil = {'cohort': 'bra.1', 'competition': 'bra.1', 'stages': ['regular'],
+                    'gender': 'men', 'age': 'senior'}
+          matches = [s for s in scopes if s.get('cohort') == 'bra.1']
+          if matches and matches != [brazil]:
+              raise ValueError('conflicting Brazil collection scope')
+          if not matches:
+              scopes.append(brazil)
+          path.write_text(json.dumps(scopes, ensure_ascii=False, indent=2) + '\n')
+          PY
           fi
           set +e
           if [ "$JOB_MODE" = collect ]; then
@@ -111,6 +126,14 @@ jobs:
           WCPP_ODDS_API_KEY: ${{ secrets.THEODDSAPI || secrets.WCPP_ODDS_API_KEY || secrets.THE_ODDS }}
           MARKET_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
         run: python -m runtime.automation.market_snapshot --market-max-age-seconds 3600 --out "../private-state/market/runs/$MARKET_RUN_ID"
+      - name: Collect bounded Brazil Serie A market snapshots
+        if: always() && steps.mode.outputs.value == 'collect'
+        working-directory: collector-code
+        timeout-minutes: 1
+        env:
+          WCPP_ODDS_API_KEY: ${{ secrets.THEODDSAPI || secrets.WCPP_ODDS_API_KEY || secrets.THE_ODDS }}
+          MARKET_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: python -m runtime.automation.market_snapshot --competition bra.1 --market-max-age-seconds 3600 --out "../private-state/market/runs/$MARKET_RUN_ID-bra1"
       - name: Capture and review locked future populations
         if: always() && steps.mode.outputs.value == 'collect'
         working-directory: code
