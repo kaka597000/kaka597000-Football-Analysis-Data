@@ -1,0 +1,572 @@
+{
+  "schema": "WCPP-XG-AVAILABILITY-AUDIT-20261117-1",
+  "verified_at": "2026-11-17T00:49:29.991194+00:00",
+  "population": 10,
+  "retrieved": 10,
+  "score_and_identity_agree": 10,
+  "both_aggregate_fields_equal": 5,
+  "aggregate_field_conflict_matches": 5,
+  "directory_availability_conflicts": 2,
+  "match_estimated_true": 1,
+  "native_upstream_independently_certified": 0,
+  "selected_authoritative_field": null,
+  "numeric_model_ingested": 0,
+  "prematch_backfilled": false,
+  "interpretation": "10/10 returned xG fields; this is acquisition coverage, not 10/10 clean native-xG certification. Both aggregate fields and shotmaps retained. Rounding-range findings are diagnostics, not provider-certified error thresholds.",
+  "previous_review": "/workspace/WCPP/reports/nations-review-20261117-0818/delivery.json",
+  "rows": [
+    {
+      "match_id": "espn:401861180",
+      "name": "法罗群岛—摩尔多瓦",
+      "bsd_event_id": 212721,
+      "bsd_team_ids": {
+        "home": 711,
+        "away": 673
+      },
+      "league_level": "C",
+      "kickoff_at": "2026-11-16T15:00Z",
+      "actual_score": "1-0",
+      "directory_has_xg": false,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 2.78,
+          "xg_actual": 2.78,
+          "xg_estimated": false,
+          "total_shots": 22,
+          "shotmap_rows": 22,
+          "shotmap_xg_sum": 2.7768,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 2.777,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": 0.0032
+        },
+        "away": {
+          "expected_goals": 1.36,
+          "xg_actual": 1.36,
+          "xg_estimated": false,
+          "total_shots": 11,
+          "shotmap_rows": 11,
+          "shotmap_xg_sum": 1.3767,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 1.377,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": -0.0167
+        }
+      },
+      "quality_findings": [
+        "away:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE",
+        "DIRECTORY_SAYS_NO_XG_BUT_STATS_HAS_VALUES"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212721/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212721.json",
+      "source_sha256": "488fe5c6e38f35105c6b4f06cff2d16028fa6f471da1d6f3c9af273ffc417ae2",
+      "observed_at": "2026-11-17T00:47:46.676597+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861181",
+      "name": "哈萨克斯坦—斯洛伐克",
+      "bsd_event_id": 212722,
+      "bsd_team_ids": {
+        "home": 2209,
+        "away": 725
+      },
+      "league_level": "C",
+      "kickoff_at": "2026-11-16T15:00Z",
+      "actual_score": "2-2",
+      "directory_has_xg": false,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 0.78,
+          "xg_actual": 0.78,
+          "xg_estimated": false,
+          "total_shots": 17,
+          "shotmap_rows": 17,
+          "shotmap_xg_sum": 0.851,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 0.851,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": -0.071
+        },
+        "away": {
+          "expected_goals": 1.79,
+          "xg_actual": 1.93,
+          "xg_estimated": false,
+          "total_shots": 16,
+          "shotmap_rows": 15,
+          "shotmap_xg_sum": 1.8739,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 1.874,
+          "aggregate_field_delta": 0.14,
+          "nested_vs_shots_delta": 0.0561
+        }
+      },
+      "quality_findings": [
+        "home:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE",
+        "away:AGGREGATE_FIELDS_DIFFER",
+        "away:SHOT_COUNT_DIFFERS",
+        "away:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE",
+        "DIRECTORY_SAYS_NO_XG_BUT_STATS_HAS_VALUES"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212722/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212722.json",
+      "source_sha256": "d68cadc17e1df1fb628380e5232c68c19c2269eb42bc7f473fcaf92080bb5919",
+      "observed_at": "2026-11-17T00:47:45.273166+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861182",
+      "name": "冰岛—卢森堡",
+      "bsd_event_id": 212724,
+      "bsd_team_ids": {
+        "home": 665,
+        "away": 2091
+      },
+      "league_level": "C",
+      "kickoff_at": "2026-11-16T17:00Z",
+      "actual_score": "3-0",
+      "directory_has_xg": true,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 3.3,
+          "xg_actual": 3.32,
+          "xg_estimated": false,
+          "total_shots": 25,
+          "shotmap_rows": 25,
+          "shotmap_xg_sum": 3.3218,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 3.322,
+          "aggregate_field_delta": 0.02,
+          "nested_vs_shots_delta": -0.0018
+        },
+        "away": {
+          "expected_goals": 0.08,
+          "xg_actual": 0.07,
+          "xg_estimated": false,
+          "total_shots": 4,
+          "shotmap_rows": 4,
+          "shotmap_xg_sum": 0.0767,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 0.077,
+          "aggregate_field_delta": -0.01,
+          "nested_vs_shots_delta": -0.0067
+        }
+      },
+      "quality_findings": [
+        "home:AGGREGATE_FIELDS_DIFFER",
+        "away:AGGREGATE_FIELDS_DIFFER",
+        "away:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212724/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212724.json",
+      "source_sha256": "2821cefe1a1479e22465bf53bf14d5d5b317d25e63df09a1f4b5e0fc98389697",
+      "observed_at": "2026-11-17T00:47:42.440082+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861183",
+      "name": "爱沙尼亚—保加利亚",
+      "bsd_event_id": 212723,
+      "bsd_team_ids": {
+        "home": 2208,
+        "away": 2090
+      },
+      "league_level": "C",
+      "kickoff_at": "2026-11-16T17:00Z",
+      "actual_score": "2-1",
+      "directory_has_xg": true,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 0.86,
+          "xg_actual": 0.86,
+          "xg_estimated": false,
+          "total_shots": 10,
+          "shotmap_rows": 10,
+          "shotmap_xg_sum": 0.8581,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 0.858,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": 0.0019
+        },
+        "away": {
+          "expected_goals": 0.46,
+          "xg_actual": 0.46,
+          "xg_estimated": false,
+          "total_shots": 10,
+          "shotmap_rows": 10,
+          "shotmap_xg_sum": 0.4557,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 0.456,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": 0.0043
+        }
+      },
+      "quality_findings": [],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212723/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212723.json",
+      "source_sha256": "2fe1bd70d7422412a2bf14dc25dccdb15eb0e7e5b142c023630555f4704bb5b7",
+      "observed_at": "2026-11-17T00:47:43.845600+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861184",
+      "name": "立陶宛—列支敦士登",
+      "bsd_event_id": 212725,
+      "bsd_team_ids": {
+        "home": 674,
+        "away": 2212
+      },
+      "league_level": "D",
+      "kickoff_at": "2026-11-16T17:00Z",
+      "actual_score": "2-1",
+      "directory_has_xg": true,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 3.17,
+          "xg_actual": 3.17,
+          "xg_estimated": false,
+          "total_shots": 21,
+          "shotmap_rows": 21,
+          "shotmap_xg_sum": 3.1833,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 3.183,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": -0.0133
+        },
+        "away": {
+          "expected_goals": 0.37,
+          "xg_actual": 0.37,
+          "xg_estimated": false,
+          "total_shots": 8,
+          "shotmap_rows": 8,
+          "shotmap_xg_sum": 0.3748,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 0.375,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": -0.0048
+        }
+      },
+      "quality_findings": [
+        "home:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212725/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212725.json",
+      "source_sha256": "6c58c2e1c982509d9784443824703b318ac62f004aef2cd6fce23e76acca0f58",
+      "observed_at": "2026-11-17T00:47:41.014466+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861179",
+      "name": "直布罗陀—马耳他",
+      "bsd_event_id": 212728,
+      "bsd_team_ids": {
+        "home": 2219,
+        "away": 2089
+      },
+      "league_level": "D",
+      "kickoff_at": "2026-11-16T19:45Z",
+      "actual_score": "1-1",
+      "directory_has_xg": true,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 0.29,
+          "xg_actual": 0.29,
+          "xg_estimated": false,
+          "total_shots": 6,
+          "shotmap_rows": 6,
+          "shotmap_xg_sum": 0.2887,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 0.289,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": 0.0013
+        },
+        "away": {
+          "expected_goals": 1.73,
+          "xg_actual": 1.73,
+          "xg_estimated": false,
+          "total_shots": 17,
+          "shotmap_rows": 17,
+          "shotmap_xg_sum": 1.7488,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 1.749,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": -0.0188
+        }
+      },
+      "quality_findings": [
+        "away:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212728/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212728.json",
+      "source_sha256": "8f15309514c3847f24574f25916c392e734ce7fbf82520ab73d27bfd78e3e532",
+      "observed_at": "2026-11-17T00:47:33.582738+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861185",
+      "name": "德国—荷兰",
+      "bsd_event_id": 212726,
+      "bsd_team_ids": {
+        "home": 467,
+        "away": 469
+      },
+      "league_level": "A",
+      "kickoff_at": "2026-11-16T19:45Z",
+      "actual_score": "5-0",
+      "directory_has_xg": true,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 1.52,
+          "xg_actual": 1.55,
+          "xg_estimated": false,
+          "total_shots": 18,
+          "shotmap_rows": 18,
+          "shotmap_xg_sum": 1.5477,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 1.548,
+          "aggregate_field_delta": 0.03,
+          "nested_vs_shots_delta": 0.0023
+        },
+        "away": {
+          "expected_goals": 1.19,
+          "xg_actual": 1.19,
+          "xg_estimated": false,
+          "total_shots": 9,
+          "shotmap_rows": 9,
+          "shotmap_xg_sum": 1.1529,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 1.153,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": 0.0371
+        }
+      },
+      "quality_findings": [
+        "home:AGGREGATE_FIELDS_DIFFER",
+        "away:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212726/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212726.json",
+      "source_sha256": "f843a031a8db6f7404d3bbbea4ca26b2f49fbd7634cd679ac8e8134ba96e1649",
+      "observed_at": "2026-11-17T00:47:36.585007+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861186",
+      "name": "瑞士—苏格兰",
+      "bsd_event_id": 212712,
+      "bsd_team_ids": {
+        "home": 462,
+        "away": 466
+      },
+      "league_level": "B",
+      "kickoff_at": "2026-11-16T19:45Z",
+      "actual_score": "4-0",
+      "directory_has_xg": true,
+      "match_xg_estimated": true,
+      "sides": {
+        "home": {
+          "expected_goals": 2.23,
+          "xg_actual": 2.23,
+          "xg_estimated": false,
+          "total_shots": 18,
+          "shotmap_rows": 19,
+          "shotmap_xg_sum": 2.346,
+          "shotmap_estimated_rows": 1,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 2.346,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": -0.116
+        },
+        "away": {
+          "expected_goals": 1.33,
+          "xg_actual": 1.32,
+          "xg_estimated": false,
+          "total_shots": 13,
+          "shotmap_rows": 12,
+          "shotmap_xg_sum": 1.1362,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 1.136,
+          "aggregate_field_delta": -0.01,
+          "nested_vs_shots_delta": 0.1838
+        }
+      },
+      "quality_findings": [
+        "home:SHOT_COUNT_DIFFERS",
+        "home:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE",
+        "home:MATCH_AND_TEAM_ESTIMATION_FLAGS_DIFFER",
+        "away:AGGREGATE_FIELDS_DIFFER",
+        "away:SHOT_COUNT_DIFFERS",
+        "away:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE",
+        "away:MATCH_AND_TEAM_ESTIMATION_FLAGS_DIFFER"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212712/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212712.json",
+      "source_sha256": "cb0cbade8c7169694590793795ea31d79d44f18856e0bd95e47c0ab7a1492bcd",
+      "observed_at": "2026-11-17T00:47:38.152071+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861187",
+      "name": "北马其顿—斯洛文尼亚",
+      "bsd_event_id": 212711,
+      "bsd_team_ids": {
+        "home": 730,
+        "away": 715
+      },
+      "league_level": "B",
+      "kickoff_at": "2026-11-16T19:45Z",
+      "actual_score": "0-3",
+      "directory_has_xg": true,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 0.43,
+          "xg_actual": 0.43,
+          "xg_estimated": false,
+          "total_shots": 9,
+          "shotmap_rows": 9,
+          "shotmap_xg_sum": 0.4315,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 0.431,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": -0.0015
+        },
+        "away": {
+          "expected_goals": 1.88,
+          "xg_actual": 1.88,
+          "xg_estimated": false,
+          "total_shots": 8,
+          "shotmap_rows": 7,
+          "shotmap_xg_sum": 1.6389,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 1.639,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": 0.2411
+        }
+      },
+      "quality_findings": [
+        "away:SHOT_COUNT_DIFFERS",
+        "away:SHOT_SUM_OUTSIDE_TWO_DECIMAL_ROUNDING_RANGE"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212711/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212711.json",
+      "source_sha256": "cdd95fe5b1ccff4d23193897ac955ecfdcb61e68d16833a7128b6547068df2e1",
+      "observed_at": "2026-11-17T00:47:39.576750+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    },
+    {
+      "match_id": "espn:401861188",
+      "name": "希腊—塞尔维亚",
+      "bsd_event_id": 212727,
+      "bsd_team_ids": {
+        "home": 702,
+        "away": 675
+      },
+      "league_level": "A",
+      "kickoff_at": "2026-11-16T19:45Z",
+      "actual_score": "1-0",
+      "directory_has_xg": true,
+      "match_xg_estimated": false,
+      "sides": {
+        "home": {
+          "expected_goals": 1.54,
+          "xg_actual": 1.55,
+          "xg_estimated": false,
+          "total_shots": 19,
+          "shotmap_rows": 19,
+          "shotmap_xg_sum": 1.5457,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 1.546,
+          "aggregate_field_delta": 0.01,
+          "nested_vs_shots_delta": 0.0043
+        },
+        "away": {
+          "expected_goals": 0.14,
+          "xg_actual": 0.14,
+          "xg_estimated": false,
+          "total_shots": 5,
+          "shotmap_rows": 5,
+          "shotmap_xg_sum": 0.1439,
+          "shotmap_estimated_rows": 0,
+          "shotmap_null_estimation_flag_rows": 0,
+          "minute_final": 0.144,
+          "aggregate_field_delta": 0.0,
+          "nested_vs_shots_delta": -0.0039
+        }
+      },
+      "quality_findings": [
+        "home:AGGREGATE_FIELDS_DIFFER"
+      ],
+      "retrieved": true,
+      "source_url": "https://sports.bzzoiro.com/api/v2/events/212727/stats/",
+      "source_path": "/workspace/recovered-workspace-20261102/WCPP/reports/xg-availability-20261117/raw/bsd-stats-212727.json",
+      "source_sha256": "c67c1745d110551cb466074a4d151e599fb1ac7e0bcb316cf5b00bc2211ff05a",
+      "observed_at": "2026-11-17T00:47:35.167661+00:00",
+      "source_quote_time": null,
+      "source_contract": "Provider-reported values; upstream xG model and conflicting field contract not independently certified",
+      "model_ingested": false,
+      "prematch_backfilled": false
+    }
+  ]
+}
