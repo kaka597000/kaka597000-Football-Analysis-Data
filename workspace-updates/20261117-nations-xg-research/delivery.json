@@ -2,7 +2,7 @@
   "schema": "WCPP-NATIONS-XG-DELIVERY-1",
   "created_at": "2026-11-17T10:41:02.724866+08:00",
   "source_branch": "research/nations-xg-20261117",
-  "source_commit": "aeaf14b66a1c28105fc4757969fee33c5886f273",
+  "source_commit": "2970cc808bacad85e1f1a3c51fade7318b2ecf57",
   "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/40",
   "first_execution_commit": "7dc5d0f9a64185dd16e44e45b59385990d12f331",
   "original_report_freeze": {
@@ -21,18 +21,12 @@
     "sha256": "8b593ca79ac40052f33526f52a97b3c1e22279f0ea2066019c6560a382d44daf"
   },
   "local_verification": {
-    "source-tests-review-fix": {
-      "suites": 25,
-      "executions": 972,
-      "failures": 0,
-      "skips": 0
-    },
-    "source-integration-review-fix": {
-      "suites": 25,
-      "executions": 972,
-      "failures": 0,
-      "skips": 0
-    }
+    "suites": 25,
+    "executions": 973,
+    "failures": 0,
+    "skips": 0,
+    "layer": "integration (full suite with skip prohibition)",
+    "retained_previous_passes": "test-summary-final.json"
   },
   "isolated_numerical_replay": {
     "verified_members": 226,
@@ -46,5 +40,41 @@
   "prospective_effect": "PENDING_8_MATCHES",
   "environment_published": false,
   "automatic_promotion": false,
-  "rollback": "disable or revert the independent research entry; retained old assets and first forecasts are not rewritten"
+  "rollback": "Revert source PR40 merge with git revert -m 1 29c9701821367034b46fb6d86683e57e31f02262 if necessary; this preserves preceding Finland scope update. Keep archived experiment and immutable forecasts for review.",
+  "source_review_fix_commit": "aeaf14b66a1c28105fc4757969fee33c5886f273",
+  "windows_lock_fix_commit": "949267687c9d8b825dae71a9507c6e4f0b369581",
+  "preserved_upstream_scope_commit": "7b216b3",
+  "actual_historical_xg_used": 19,
+  "final_training_xg_used": 29,
+  "future_by_level": {
+    "A": 2,
+    "B": 6,
+    "C": 0,
+    "D": 0
+  },
+  "data_pr": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/14",
+  "data_pr_merge_commit": "81d360c9b1f8614645646a7cca71bd1f0952ff2f",
+  "source_ci_status": "LATEST_HEAD_PASSED",
+  "data_ci_status": "MERGED_MAIN_ARCHIVE_INTEGRITY_PASSED",
+  "code_review_repairs": [
+    "preserve canonical neutral venue and identity",
+    "bind numerical dependency identities",
+    "exclude in-play quote from historical prematch totals"
+  ],
+  "interim_validation_issue": {
+    "log": "source-tests-interim-timeout.log",
+    "cause_observed": "existing partial-output CLI subprocess exceeded its 40-second limit once",
+    "followup": "full strict integration subsequently passed 973 tests with no timeout relaxation"
+  },
+  "updated_at": "2026-11-17T11:01:48.741767+08:00",
+  "source_main_merge_commit": "29c9701821367034b46fb6d86683e57e31f02262",
+  "source_pr_status": "MERGED",
+  "source_ci_receipts": [
+    "source-pr-ci.json",
+    "source-push-ci.json"
+  ],
+  "data_ci_receipts": [
+    "data-ci.json",
+    "data-main-ci.json"
+  ]
 }

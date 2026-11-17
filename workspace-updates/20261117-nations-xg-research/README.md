@@ -25,3 +25,11 @@ PYTHONPATH=runtime python workspace-updates/20261117-nations-xg-research/verify_
 `xg_research.review_forward(恢复后的forward目录, 已核验赛果列表)`可按首版冻结结算，未完赛保持pending。已有旧18场定时流程不自动纳入本8场新实验；本轮已执行训练与冻结，未另建定时任务。
 
 代码审查后修正了盘口附加时的中立场上下文与计算依赖身份；`review-fix-evidence.tar.gz`另存修复后的52工件和1,248条逐场结果，107文件，SHA256 `8b593ca79ac40052f33526f52a97b3c1e22279f0ea2066019c6560a382d44daf`。重算与首轮指标和逐场预测完全一致；原8场104份冻结继续绑定原执行源码，未重发或改写。验证修复包可追加 `--manifest review-fix-manifest.json --out /tmp/nations-xg-review-fix`。
+
+时间口径：历史10月/11月诊断实际能用的是较早9月的19条xG；11月16日新增10条只进入随后拟合和未来8场预测，没有进入该10场自身的预测。未来8场按等级为A两场、B六场，C/D暂没有本批未来样本。
+
+后续源码同步保留了并行合入main的芬超移除配置（不影响欧国联），并修复Windows并发冻结的锁文件初始化竞争。最终源码与CI身份见 `delivery.json`；首版预测仍按其原始执行代码及工件评价。
+
+最终补充核验：赛前历史大小球排除开赛后捕获的盘口，保留比赛的比分/胜平负与原报价审计；本批10场盘口全部合格，1,248条数值重算仍完全相同。最终严格集成执行25组、973次、零失败/零跳过，见 `test-summary-release.json`。
+
+源码PR #40与数据PR #14已合并。最新源码main为 `29c9701821367034b46fb6d86683e57e31f02262`；原10:25首版使用 `7dc5d0f9a64185dd16e44e45b59385990d12f331`，两者身份单列。最新修复头 `2970cc808bacad85e1f1a3c51fade7318b2ecf57` 的push/PR CI均通过，数据主分支归档CI通过，实际回执见 `source-pr-ci.json`、`source-push-ci.json`、`data-main-ci.json`。
