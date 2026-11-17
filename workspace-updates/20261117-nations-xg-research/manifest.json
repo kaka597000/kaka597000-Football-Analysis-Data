@@ -1,0 +1,1403 @@
+{
+  "schema": "WCPP-NATIONS-XG-ARCHIVE-1",
+  "created_at": "2026-11-17T02:31:51.094989+00:00",
+  "archive": "nations-xg-evidence.tar.gz",
+  "bytes": 8840011,
+  "sha256": "1f5722db6e66467f3979c612817fa867fb0f9946e1fe36864c9f86566772d591",
+  "source": {
+    "source_commit": "7dc5d0f9a64185dd16e44e45b59385990d12f331",
+    "base_main_commit": "3eca355a9e801c15d21c9b9b87e84592be15cee9",
+    "pull_request": "https://github.com/kaka597000/Football-Analysis/pull/40",
+    "actual_execution_state": "numerical runs used this exact module set before Git commit; file hashes match committed source",
+    "dependencies": {
+      "runtime/nations_league/xg_research.py": "a283c1bfa3852eb4d752ef5f1bdf423b30a14ad05a316478ade65f1ac655833b",
+      "runtime/nations_league/repair.py": "909bef7108f03607f7bc7bef8ade3ffc63e87edbe9e52ab02d20073d259594ac",
+      "runtime/nations_league/repair_forward.py": "a2b16c17e9bb58e820c475da1a3a21f4efbbd02174f81e262f40e21df23b53b0",
+      "runtime/v2/model.py": "d11e5296500df41a149ae16eecb8a12f4c88bb613d05f35764cec62f613c7a9a",
+      "runtime/v2_test/evaluation.py": "053f8e43427a52daad5920d2d6600b581daf52c029d9f1152f72bf7f94e23724",
+      "runtime/research/analysis_freeze.py": "d2e9c7f8ab24aac0624d4799351c16bad16768a18602a8fcf01949ab63603425",
+      "runtime/research_program/future_validation.py": "c188e3c20eb9afbe8df90c83b56d2d81a8930b776b9a77577789995dc622e990",
+      "runtime/v5/paired_review.py": "a89063a027f0faa6c5cc5a2ac1e82fed6b13ef29a5dbb296e4aa089550319dd3"
+    },
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "automatic_model_promotion": false
+  },
+  "files": [
+    {
+      "member": "research/nations-xg-20261117/archive_experiment.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/archive_experiment.py",
+      "bytes": 6254,
+      "sha256": "9e6fd771624c745cffc845e07e76ddcb65b160ddadcd9ad01bf1fcffc4a4cba1"
+    },
+    {
+      "member": "research/nations-xg-20261117/archived-quotes.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/archived-quotes.json",
+      "bytes": 70333,
+      "sha256": "e4e0dee46b33ddba75fbf2a6a1747c2034c9f2d8d3b10c5e861883735ae34cef"
+    },
+    {
+      "member": "research/nations-xg-20261117/build_report.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/build_report.py",
+      "bytes": 8386,
+      "sha256": "57f53f056cc9e42b2707a7afa0f4a2131940b58bbed9ec76b26db20f537bcadc"
+    },
+    {
+      "member": "research/nations-xg-20261117/canonical-history.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/canonical-history.json",
+      "bytes": 3276610,
+      "sha256": "7a78944d76070e06b305f98b9332c923cc3577b58efeb9d14d4d642b87ea3d53"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/_matched.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/_matched.json",
+      "bytes": 518707,
+      "sha256": "179483c3104f479c1ad9ed94278d0f1b9f8f88b2d750bd34c64cb383a34a9b12"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/captures.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/captures.json",
+      "bytes": 27022,
+      "sha256": "19cf0e9abd677751c7b25003f65d5224fb88dbce06e0215742b4353774a5aacf"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/coverage.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/coverage.json",
+      "bytes": 2149,
+      "sha256": "49a326591f4effab36dd3c517c598a3e6486d5a23fcd495a8a80c11c1da9d5d1"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/captures.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/captures.json",
+      "bytes": 4502,
+      "sha256": "419015523cb70a1aa1bd7f95be44b32a074be2775e3dcbfe81bb00feab649c56"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/raw/espn-summary-401861189.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/raw/espn-summary-401861189.json",
+      "bytes": 120281,
+      "sha256": "bd839485ab3a9febaea75f1d8a061e15df6fef7b91ec4a080e2647dd23b859f7"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/raw/espn-summary-401861190.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/raw/espn-summary-401861190.json",
+      "bytes": 117397,
+      "sha256": "6ae88286fbce0990423e0542e03d24a026bb177639001b54f683469f4be4c39c"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/raw/espn-summary-401861191.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/raw/espn-summary-401861191.json",
+      "bytes": 128294,
+      "sha256": "2f1b36d9c978098a4d3fef6833933fb17b880712b2c6c8ebb06a9229bc98047b"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/raw/espn-summary-401861192.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/raw/espn-summary-401861192.json",
+      "bytes": 115286,
+      "sha256": "be414dc8bf7ae5cd309f6abd5d6966db9ae2148ebd26d5ad7878576a33cc1345"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/raw/espn-summary-401861193.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/raw/espn-summary-401861193.json",
+      "bytes": 124080,
+      "sha256": "c9d3726a254aede8fa5432c5b0d00393f8091ef79d6bc21bc0eb57ac96d9158b"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/raw/espn-summary-401861194.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/raw/espn-summary-401861194.json",
+      "bytes": 130142,
+      "sha256": "ca7b65aab2a6d851f7f3402c8cf99f52e9b007afa04183b7943083db9ae0b2e1"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/raw/espn-summary-401861195.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/raw/espn-summary-401861195.json",
+      "bytes": 128783,
+      "sha256": "98ab78980fcf01738545e6a6f7db9d667982e499a15dab34312f48fac90a2944"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/raw/espn-summary-401861196.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/raw/espn-summary-401861196.json",
+      "bytes": 130612,
+      "sha256": "226f83ee3917fc9e86e475d6155185ef1a98df93a50b0a68aa2a3d3527c89254"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/future/verification.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/future/verification.json",
+      "bytes": 3716,
+      "sha256": "80f8f36448af31de5ba94a812821632393313c849d9bd5611b969f14d07b54dc"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/identity-alias-evidence.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/identity-alias-evidence.json",
+      "bytes": 3382,
+      "sha256": "1abfec7c6595f07ff0b9090b47c2dd836094b265fc6b95eea8118816a1643e42"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/markets/capture.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/markets/capture.json",
+      "bytes": 677,
+      "sha256": "45e244c07b603ebaa66f81f945c250947c99994a0044d7166240467be175777e"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/markets/future-matching.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/markets/future-matching.json",
+      "bytes": 4494,
+      "sha256": "8532521e205a4d1f15921d59df1047c56a381f5f47fdcb8d7024252d99757721"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/markets/odds-parsed.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/markets/odds-parsed.json",
+      "bytes": 118175,
+      "sha256": "5b74a7c47acbb0090da03cc35d8005d19a736a515e1e707b780a92acce50ab1f"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/markets/raw/odds.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/markets/raw/odds.json",
+      "bytes": 49256,
+      "sha256": "2b9c7759537ad94244441b6641d3b1e2068f490d0d8ef9a69ed9b9a6d19d356e"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-09-24.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-09-24.json",
+      "bytes": 16111,
+      "sha256": "5c22b6a9ebe938e4506c95bff12847e38c4c70cb1ea08664f05e4b97ca8c57c7"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-09-25.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-09-25.json",
+      "bytes": 17346,
+      "sha256": "2f8797a3e516daf96da5d28bbdd000761b307d016bfbc8bcd9f02dcb292edc15"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-09-26.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-09-26.json",
+      "bytes": 22494,
+      "sha256": "272c27039dd8138dd5ff3b227eb015748376876f4b8355a12a18e5f76f7a9f0c"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-09-27.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-09-27.json",
+      "bytes": 15745,
+      "sha256": "c9eddfb32729997aeb8da700c220fda2d966f200ab5c967b3d48a56bea5c4d4d"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-09-28.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-09-28.json",
+      "bytes": 20412,
+      "sha256": "0ec636ee719a21888d34d7187ac5e7eb3cb3fd7e32b6cd5a465037e9a4809128"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-09-29.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-09-29.json",
+      "bytes": 20710,
+      "sha256": "673c2627195fcad14688e2ec09bb2506e06f73b28211af57df779a20b10255e2"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-10-01.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-10-01.json",
+      "bytes": 16994,
+      "sha256": "f44068b4398797262a9c41f518cc3dd2682b4c5ed6b745718195da7f300184ad"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-10-02.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-10-02.json",
+      "bytes": 21721,
+      "sha256": "1c11927deb191c142dc24a129c3c8f783be2cef83014ef06ee4b256313b784e1"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-10-03.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-10-03.json",
+      "bytes": 17712,
+      "sha256": "c21294fa69d5dc463e2afb6c0321f2253c2bb42f8b735213fdb0bcb52cd1521b"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-10-04.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-10-04.json",
+      "bytes": 16116,
+      "sha256": "40cbdfe99ce974acbd2f766f3fdb2ae56d5389a347c0ce401b42a617846fce34"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-10-05.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-10-05.json",
+      "bytes": 17235,
+      "sha256": "2af8092064501657b4c1a54b7bbb12eeb51a79a846714cd7133261651708d4d7"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-10-06.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-10-06.json",
+      "bytes": 22561,
+      "sha256": "e47d69b2562dda7a90e9c0b226348d0bea62ad3ebe74b65a773748755e268599"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-11-12.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-11-12.json",
+      "bytes": 18614,
+      "sha256": "009aed64d72f9659d15d7156f2c86d1c30ff514bb5539deb4d684b2495e408f2"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-11-13.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-11-13.json",
+      "bytes": 22889,
+      "sha256": "a0eaecc77528018af0a212d44b5951580bdfe933a107d3dbc48d08e32a910165"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-11-14.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-11-14.json",
+      "bytes": 18367,
+      "sha256": "bb882ab4edc4c1a93ee3f000991d9da6f045c1a7690505e98528b7e0f1088ce6"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-11-15.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-11-15.json",
+      "bytes": 21931,
+      "sha256": "19aff4a6739d9c3ce148cb943539ab0b0403a32fa5ea6b361e063bee3891c51e"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-events-2026-11-16.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-events-2026-11-16.json",
+      "bytes": 17963,
+      "sha256": "f26a18b6bf1c3a360cb6d724647e2fcb1c13ea000a9dd7dd275138eb53f9d9d1"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212581.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212581.json",
+      "bytes": 20225,
+      "sha256": "9d2773265ce52d0eeb508c0a6fdf165bff102ec96a5ab5a5864d8b84c363851c"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212582.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212582.json",
+      "bytes": 20917,
+      "sha256": "c6ec04c47917e79837de4537740507766a2d9f91debd1ecec92c549a1257bf10"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212583.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212583.json",
+      "bytes": 18747,
+      "sha256": "c0d46a1a331bb201686650ea3cf31ec9c36060080a2058de0b226f77fbcca56d"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212584.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212584.json",
+      "bytes": 18421,
+      "sha256": "c21d6a24693112b29d2abc67aac4bf6904ca9c5a828b8bd4e8fb462366d1adeb"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212586.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212586.json",
+      "bytes": 16526,
+      "sha256": "c599d93b06f7e06036c8b107a9aff502d8db6eb3e2a004b41a16e14edd980afb"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212587.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212587.json",
+      "bytes": 17641,
+      "sha256": "878543621c7dad3a3c55d3e09da91587165b89d6371817cdfa51b135732ed72c"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212589.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212589.json",
+      "bytes": 18511,
+      "sha256": "a5c84ab263d52b2d007a48b2adfdc8046d2ebdd157ec8de8b2ce95833971fee6"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212590.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212590.json",
+      "bytes": 16552,
+      "sha256": "88923da6059abfffb816cb4b31153889ded1fb28c31cc92a48766050f77abb85"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212591.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212591.json",
+      "bytes": 17381,
+      "sha256": "081c38697af640906f48995684494b48733a6cec21dcb188f8f0ed82517ed569"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212592.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212592.json",
+      "bytes": 16279,
+      "sha256": "994668022d8c12078be9cc552f3c1a65247c45c2d4ca5b92115860ac876d1a7d"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212593.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212593.json",
+      "bytes": 22618,
+      "sha256": "705b584224e0fbc79e552b97c9755ce9fe2ca9589aadf3854faf773aeb3dbdf7"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212594.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212594.json",
+      "bytes": 17651,
+      "sha256": "c127499a2dbe9b029ff99afdf38f9d27d1e1591fefa4b6e9de66e2c1f28c3275"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212595.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212595.json",
+      "bytes": 18724,
+      "sha256": "226e009f646f8da05b7e8dc5d8cc2fba547eaa7ce559586988f54b1299d78dcb"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212596.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212596.json",
+      "bytes": 17172,
+      "sha256": "a4e58595c2992b90a0fe6a866432a23125402ebe3c133c38294a24eb7bc24c72"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212597.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212597.json",
+      "bytes": 16535,
+      "sha256": "e3761fe862180289a3424e5f924663698f5fe78acbaf0090545489e4b9b0d2f0"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212598.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212598.json",
+      "bytes": 19402,
+      "sha256": "a272d016f90587911b6fb8e77524fd94d5801c35a4f4d0f2291e4eddb9519864"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212599.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212599.json",
+      "bytes": 18033,
+      "sha256": "445a567d2bc522ed83dde0f4b640ee888e06fe8044247547ee436a149eafef87"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212600.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212600.json",
+      "bytes": 18145,
+      "sha256": "2d8a365439ef417a8f05cd8fb1025342ede801b5c74d2e6bd32b55e982b63dc6"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212602.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212602.json",
+      "bytes": 18760,
+      "sha256": "dcb87b409f479e0fba8041b00444166a4e6611ce49e56577a5d4b56590489448"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212711.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212711.json",
+      "bytes": 15482,
+      "sha256": "cdd95fe5b1ccff4d23193897ac955ecfdcb61e68d16833a7128b6547068df2e1"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212712.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212712.json",
+      "bytes": 19686,
+      "sha256": "cb0cbade8c7169694590793795ea31d79d44f18856e0bd95e47c0ab7a1492bcd"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212721.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212721.json",
+      "bytes": 20748,
+      "sha256": "488fe5c6e38f35105c6b4f06cff2d16028fa6f471da1d6f3c9af273ffc417ae2"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212722.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212722.json",
+      "bytes": 19785,
+      "sha256": "d68cadc17e1df1fb628380e5232c68c19c2269eb42bc7f473fcaf92080bb5919"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212723.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212723.json",
+      "bytes": 16216,
+      "sha256": "2fe1bd70d7422412a2bf14dc25dccdb15eb0e7e5b142c023630555f4704bb5b7"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212724.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212724.json",
+      "bytes": 19485,
+      "sha256": "2821cefe1a1479e22465bf53bf14d5d5b317d25e63df09a1f4b5e0fc98389697"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212725.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212725.json",
+      "bytes": 19242,
+      "sha256": "6c58c2e1c982509d9784443824703b318ac62f004aef2cd6fce23e76acca0f58"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212726.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212726.json",
+      "bytes": 18751,
+      "sha256": "f843a031a8db6f7404d3bbbea4ca26b2f49fbd7634cd679ac8e8134ba96e1649"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212727.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212727.json",
+      "bytes": 17827,
+      "sha256": "c67c1745d110551cb466074a4d151e599fb1ac7e0bcb316cf5b00bc2211ff05a"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/raw/bsd-stats-212728.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/raw/bsd-stats-212728.json",
+      "bytes": 17409,
+      "sha256": "8f15309514c3847f24574f25916c392e734ce7fbf82520ab73d27bfd78e3e532"
+    },
+    {
+      "member": "research/nations-xg-20261117/data/xg-records.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/data/xg-records.json",
+      "bytes": 261284,
+      "sha256": "6bdf9eadcfe790fb6ac6f80a820d031599c763c40018a20f2b0cf932c728fe09"
+    },
+    {
+      "member": "research/nations-xg-20261117/executed-source/runtime/nations_league/repair.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/executed-source/runtime/nations_league/repair.py",
+      "bytes": 23273,
+      "sha256": "909bef7108f03607f7bc7bef8ade3ffc63e87edbe9e52ab02d20073d259594ac"
+    },
+    {
+      "member": "research/nations-xg-20261117/executed-source/runtime/nations_league/repair_forward.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/executed-source/runtime/nations_league/repair_forward.py",
+      "bytes": 14442,
+      "sha256": "a2b16c17e9bb58e820c475da1a3a21f4efbbd02174f81e262f40e21df23b53b0"
+    },
+    {
+      "member": "research/nations-xg-20261117/executed-source/runtime/nations_league/xg_research.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/executed-source/runtime/nations_league/xg_research.py",
+      "bytes": 16886,
+      "sha256": "a283c1bfa3852eb4d752ef5f1bdf423b30a14ad05a316478ade65f1ac655833b"
+    },
+    {
+      "member": "research/nations-xg-20261117/executed-source/runtime/research/analysis_freeze.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/executed-source/runtime/research/analysis_freeze.py",
+      "bytes": 7009,
+      "sha256": "d2e9c7f8ab24aac0624d4799351c16bad16768a18602a8fcf01949ab63603425"
+    },
+    {
+      "member": "research/nations-xg-20261117/executed-source/runtime/research_program/future_validation.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/executed-source/runtime/research_program/future_validation.py",
+      "bytes": 29293,
+      "sha256": "c188e3c20eb9afbe8df90c83b56d2d81a8930b776b9a77577789995dc622e990"
+    },
+    {
+      "member": "research/nations-xg-20261117/executed-source/runtime/v2/model.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/executed-source/runtime/v2/model.py",
+      "bytes": 13725,
+      "sha256": "d11e5296500df41a149ae16eecb8a12f4c88bb613d05f35764cec62f613c7a9a"
+    },
+    {
+      "member": "research/nations-xg-20261117/executed-source/runtime/v2_test/evaluation.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/executed-source/runtime/v2_test/evaluation.py",
+      "bytes": 4492,
+      "sha256": "053f8e43427a52daad5920d2d6600b581daf52c029d9f1152f72bf7f94e23724"
+    },
+    {
+      "member": "research/nations-xg-20261117/executed-source/runtime/v5/paired_review.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/executed-source/runtime/v5/paired_review.py",
+      "bytes": 8919,
+      "sha256": "a89063a027f0faa6c5cc5a2ac1e82fed6b13ef29a5dbb296e4aa089550319dd3"
+    },
+    {
+      "member": "research/nations-xg-20261117/execution-source.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/execution-source.json",
+      "bytes": 1433,
+      "sha256": "9759fa138a7f573ced866085b9cb582141b82a69da97728cdec64f75fc3286dd"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/actual-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/actual-100-artifact.json",
+      "bytes": 3655,
+      "sha256": "fbb512a50f6e498232ade27c257b5bc9854ccc9c2b64d9f0d5993552a14a7f57"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/actual-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/actual-100-predictions.json",
+      "bytes": 163736,
+      "sha256": "15ae624d084c97d69f7c65f61d6d3821d09006b5e7d7f52ca28cd0cb1531fbb6"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/actual-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/actual-25-artifact.json",
+      "bytes": 3661,
+      "sha256": "44b0c591ae59de309e8d1735155ec6b3b3647a8923cb13adb834b1ff85006fb1"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/actual-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/actual-25-predictions.json",
+      "bytes": 163718,
+      "sha256": "7af02eb6fcc708575dd3941011e002c9c768113412a91c495b2d13d396497c74"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/actual-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/actual-50-artifact.json",
+      "bytes": 3653,
+      "sha256": "5d9b2971ba6552e4611aa4eb75a46c3d21fb2dd1a300f9678d6427416b176593"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/actual-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/actual-50-predictions.json",
+      "bytes": 163741,
+      "sha256": "e16b9542c06153082004c488e5f7aaafb2e903f588828e3e9adbd8fe4e96ebe7"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/actual-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/actual-75-artifact.json",
+      "bytes": 3651,
+      "sha256": "e5eb5248c6a7fcad56160800d92a89262614dd14a5ba53e2702720e1f72ee100"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/actual-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/actual-75-predictions.json",
+      "bytes": 163719,
+      "sha256": "38a35b60e8b9286395cb622021f7c39c33c2b46a6a5c079ee2aeb5ebdf4aa330"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/expected-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/expected-100-artifact.json",
+      "bytes": 3665,
+      "sha256": "c2e83f2071570020f2adffc5e0fbe71c9cd5aaecff07b392b5b47a6590999348"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/expected-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/expected-100-predictions.json",
+      "bytes": 163757,
+      "sha256": "7341f13ab060ef624d12f9a5881a1d5aec204c8534a3ed388e9f8ad1730b3b86"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/expected-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/expected-25-artifact.json",
+      "bytes": 3662,
+      "sha256": "6130aff5f9889d9bc6dc23b1c83897d108b3acdfcc546b77e1cdfed7c9af5562"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/expected-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/expected-25-predictions.json",
+      "bytes": 163814,
+      "sha256": "c99eb48b61d768c287726442d398a9c4d22a9e534e8dfc0b79bf07a3ab28b433"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/expected-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/expected-50-artifact.json",
+      "bytes": 3663,
+      "sha256": "98efca4ef77857066aeb85b78448cc7dfd154b82218477afee7524ba57394c71"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/expected-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/expected-50-predictions.json",
+      "bytes": 163767,
+      "sha256": "71d08ee362e68c6e163dd46b653a38281dfa87fae98a412132832b16be6d764c"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/expected-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/expected-75-artifact.json",
+      "bytes": 3662,
+      "sha256": "83525ac90622f34fb83c816a3fde81fd9cf4e8c50c37aee30cace01fab284de1"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/expected-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/expected-75-predictions.json",
+      "bytes": 163680,
+      "sha256": "a5201a04ed6011b74905105efa91180be7a4c2b9814107482558e663919a0690"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/goals-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/goals-artifact.json",
+      "bytes": 3635,
+      "sha256": "d72664daba74451f1b52f686b3e0e8701f70550aaef0760779036176a3874bcf"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/goals-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/goals-predictions.json",
+      "bytes": 163761,
+      "sha256": "dca627b6fc9f0383b84d4183c0306f7f24676fa59187610341a874f7d9f55ee4"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/shotmap-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/shotmap-100-artifact.json",
+      "bytes": 3662,
+      "sha256": "818b1963368d3b2dcd0527ff28c8e4691b4d6a170db2f221709012909f8e14ae"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/shotmap-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/shotmap-100-predictions.json",
+      "bytes": 163712,
+      "sha256": "405812a198edc693c4338a72fb10ac61c117a4999d32b6fa251be929b2c39d8a"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/shotmap-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/shotmap-25-artifact.json",
+      "bytes": 3663,
+      "sha256": "63af4c12f32335b024b06b0f41399db5c5b079938debfacb5cb155080b5b9045"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/shotmap-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/shotmap-25-predictions.json",
+      "bytes": 163772,
+      "sha256": "e7c0fc86b16b14c0c6a30d5c448c3b6dce6d80ad7717e38bb0867d440bc3bb73"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/shotmap-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/shotmap-50-artifact.json",
+      "bytes": 3659,
+      "sha256": "225a67a1f124d5c078ce6f77ea486071c21eb8cd98b834a59c74cbc69555535c"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/shotmap-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/shotmap-50-predictions.json",
+      "bytes": 163769,
+      "sha256": "82be953048e258b9a8e2250617d9c7296be8689d485c376ae574e44befb92f51"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/shotmap-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/shotmap-75-artifact.json",
+      "bytes": 3658,
+      "sha256": "3744b16096b9d1c6a8c5c63669e67b8fc96918b3c175df3181a71d3f0bfda0fd"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/A/shotmap-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/A/shotmap-75-predictions.json",
+      "bytes": 163701,
+      "sha256": "e070c555f127aea1641c313268acec66340512898619f8a44502cedc6ed8a648"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/actual-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/actual-100-artifact.json",
+      "bytes": 4227,
+      "sha256": "5d8225b2a761e40d0dc9bb9f5b2d658ff9c737ac8a9c5c4404d3db475db59842"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/actual-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/actual-100-predictions.json",
+      "bytes": 142590,
+      "sha256": "9b0821d201d9e48dd75462e652889a16393d52d99358d44ac7b47c318dce7b32"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/actual-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/actual-25-artifact.json",
+      "bytes": 4235,
+      "sha256": "88c8ead2745dd309fa89b2aa5666f178d28a3710e74152879372e9b905b2bebe"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/actual-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/actual-25-predictions.json",
+      "bytes": 142575,
+      "sha256": "b921dc88f03ad9ea1b24c2d2c9dac17340a7fdc6f752f78ea9b0ad5b9faaa373"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/actual-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/actual-50-artifact.json",
+      "bytes": 4231,
+      "sha256": "b9625f25e3c3f2a4099bebbcdf0fdaf38bdd0285b560a3e0652b51beae2919d2"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/actual-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/actual-50-predictions.json",
+      "bytes": 142598,
+      "sha256": "5613041b16ab20207d5eb24463790b2866d3f5b6284c727a21fbdf47c529b35e"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/actual-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/actual-75-artifact.json",
+      "bytes": 4228,
+      "sha256": "eb387aa126e31866c0bd4219faa7f7db91c7fd36cdf3dde2fca8963d2ed399c6"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/actual-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/actual-75-predictions.json",
+      "bytes": 142569,
+      "sha256": "382e71f1343ab0c5f1719accaa8d3426f03c231804f2ad1de40cc10a785580bf"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/expected-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/expected-100-artifact.json",
+      "bytes": 4232,
+      "sha256": "0accd94e977c67cdcdb0259e7368075c1bca71412d8bfe8f366fe86dfead0f94"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/expected-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/expected-100-predictions.json",
+      "bytes": 142541,
+      "sha256": "05b5383f6481029d8cb900a13b463aa266575f6ab1cac947c1a6bd4cc70ead9c"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/expected-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/expected-25-artifact.json",
+      "bytes": 4239,
+      "sha256": "a391e1d0153f0ddf86e826aa3d6cdb2176be4d7965ebf48065e81e9d22c65b74"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/expected-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/expected-25-predictions.json",
+      "bytes": 142643,
+      "sha256": "3250e6bab0dc4885478308b073116e18a766ef7fd3ec044533f9261dd5d59229"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/expected-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/expected-50-artifact.json",
+      "bytes": 4232,
+      "sha256": "46591e73fd3bdec7d2460e17af941f57e262309dc9a3334d9f304f8a85a2fd1c"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/expected-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/expected-50-predictions.json",
+      "bytes": 142618,
+      "sha256": "cf8328a8cf2fe6c3f91dd5f0dfa0c2277d79ef64e12accdc3aafe8e11cd4ce97"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/expected-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/expected-75-artifact.json",
+      "bytes": 4229,
+      "sha256": "b16096425886a5304bbebaadcfda5ba369cfd0d647570518c008e59046f79f66"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/expected-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/expected-75-predictions.json",
+      "bytes": 142607,
+      "sha256": "12e625a4238691f059fc76ad004fe845cf3cd1373b48d8b6ed400d53bafc906e"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/goals-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/goals-artifact.json",
+      "bytes": 4218,
+      "sha256": "bb14f1d283641298ba52a37b96987260ceaf83e0f712b8d632d7cb4d0fc25729"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/goals-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/goals-predictions.json",
+      "bytes": 142602,
+      "sha256": "65a906de47a3b18c742ce3215e9b583239866dd9cd72566d3341c5228f488b4a"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/shotmap-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/shotmap-100-artifact.json",
+      "bytes": 4225,
+      "sha256": "6a325995f7c4e82d0a83f1cd921ed42cee358d296077895025cae4934987262d"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/shotmap-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/shotmap-100-predictions.json",
+      "bytes": 142599,
+      "sha256": "8352d4b836071f6e342993ddfac8cd8dc3e31b7539af2c97bb2c08d36c0f6621"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/shotmap-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/shotmap-25-artifact.json",
+      "bytes": 4240,
+      "sha256": "428db8116a3eda5740690076e9a7a8542832b270f54da0e72d8338e7df8d4c4c"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/shotmap-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/shotmap-25-predictions.json",
+      "bytes": 142573,
+      "sha256": "6adc3658c8ca990e6698229b64f35e739279f08a8f6ea20d41a2ceef29e215cd"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/shotmap-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/shotmap-50-artifact.json",
+      "bytes": 4232,
+      "sha256": "bff2dffa199a2e3791bfd9b80a032f4431e5312ffd3dc2a666f036ca7547fa49"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/shotmap-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/shotmap-50-predictions.json",
+      "bytes": 142673,
+      "sha256": "65ac40662dcd7ebe93e229dd93de483a18a1893ec4033634f1fe42e850a91094"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/shotmap-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/shotmap-75-artifact.json",
+      "bytes": 4229,
+      "sha256": "c7fd3562f9f7b76cdbb570f7cd425fa89a25a0fadae8f6dc4970f0e1235412a5"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/B/shotmap-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/B/shotmap-75-predictions.json",
+      "bytes": 142618,
+      "sha256": "5c65e5e1ef7056186dad9f228e3867277b4b4eb36aea647d7a171bb8b6765c86"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/actual-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/actual-100-artifact.json",
+      "bytes": 4227,
+      "sha256": "2c4bd2770fe087989602a84f8d3f1eaa73f68545032de3824c6f022db8263fa7"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/actual-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/actual-100-predictions.json",
+      "bytes": 178197,
+      "sha256": "965229b0312c567802c8b02bbc74d243a5f585c26348ae4bf768b5bdb704941a"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/actual-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/actual-25-artifact.json",
+      "bytes": 4232,
+      "sha256": "09fad6b59405041dc56b909191e0384c48f345402ffe3258442fbcec313b4d45"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/actual-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/actual-25-predictions.json",
+      "bytes": 178164,
+      "sha256": "7c7d708b463c1695a68a6f6dcc5d562ccf9b0c42e7aa9deea0d6f04411af6002"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/actual-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/actual-50-artifact.json",
+      "bytes": 4227,
+      "sha256": "25922a58735eee970619d426b990e4179492304bbd46b979bb1e86fa1ab25d90"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/actual-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/actual-50-predictions.json",
+      "bytes": 178154,
+      "sha256": "1ea35d28b8d9c868d5350e2ef75542eb11d37c0148b64d28846a4faa18370524"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/actual-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/actual-75-artifact.json",
+      "bytes": 4234,
+      "sha256": "8624c579c5b5f37101d4933208469f9b1b8b80a7ab1a5f5b174a7ba4fb7ba77f"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/actual-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/actual-75-predictions.json",
+      "bytes": 178127,
+      "sha256": "f3e55e69861a379d000a63cc87e7f63b54ee8710631d4b485f868b6a21e66c68"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/expected-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/expected-100-artifact.json",
+      "bytes": 4242,
+      "sha256": "a61f7efc252827766fd3110748aa9a0049da4ad5b982aaa33c19e900dd9fa31c"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/expected-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/expected-100-predictions.json",
+      "bytes": 178133,
+      "sha256": "e878ad57855161c0d7c97e32ed3eda919ecdb36065a30992175ddb939ddeaa7e"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/expected-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/expected-25-artifact.json",
+      "bytes": 4238,
+      "sha256": "5a5cbda6994e478308e4166a345c255535999c111f11f1a5e5787e7d04f07d25"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/expected-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/expected-25-predictions.json",
+      "bytes": 178105,
+      "sha256": "12553e4ad10add936d3c32d5026d26d847fd9770f0a6458cdb3f090f961351fa"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/expected-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/expected-50-artifact.json",
+      "bytes": 4240,
+      "sha256": "8dc56cf2b65e72bfc7691e898b24eb00a7fd2cf3c38c2c058018ac4232c129ac"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/expected-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/expected-50-predictions.json",
+      "bytes": 178121,
+      "sha256": "443430105582501dbd49259feec96b53a2513025406f66aec39b271e3e25778e"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/expected-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/expected-75-artifact.json",
+      "bytes": 4233,
+      "sha256": "faa69e462fe116d524f50d511c0d49b257503d268c632f6718668485c59dff89"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/expected-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/expected-75-predictions.json",
+      "bytes": 178111,
+      "sha256": "33eaec455bfa1c62f23853d67fdb648910b2fff92fa10c7cbe50e660fdc6d224"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/goals-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/goals-artifact.json",
+      "bytes": 4214,
+      "sha256": "1d44c3bceaa5d909ad32312d75b75f112b9909e541eec87a14ab232c8f3cc562"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/goals-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/goals-predictions.json",
+      "bytes": 178102,
+      "sha256": "dad6b1122afe3cba8bd812036793760bcea720aa2152c03882e47b78d5acd093"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/shotmap-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/shotmap-100-artifact.json",
+      "bytes": 4235,
+      "sha256": "5475bc8339eadc381fedb0360c7206a7969d5d4907999fdcb6ccf650ae75b861"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/shotmap-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/shotmap-100-predictions.json",
+      "bytes": 178132,
+      "sha256": "05f348d11fee14c8045af504a860feaf7a3d7a6b11ba1ab6bac1caed1a1db687"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/shotmap-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/shotmap-25-artifact.json",
+      "bytes": 4239,
+      "sha256": "83ebb6acf232e878320d5bea6cd573763df3441e86cdd59c799691e56d1c3306"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/shotmap-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/shotmap-25-predictions.json",
+      "bytes": 178199,
+      "sha256": "bbc9b68a79a9aa98be63c1fef58356507c8a927925b7ab1500356d1450b548a3"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/shotmap-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/shotmap-50-artifact.json",
+      "bytes": 4230,
+      "sha256": "47a602b13420f5868536798d38d0ce17897245599c525df224a4824a3f89f58b"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/shotmap-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/shotmap-50-predictions.json",
+      "bytes": 178142,
+      "sha256": "8ce80cfc23887d560d0bfb283b1a910680b1d65e464204f41a51cad50c7fa033"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/shotmap-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/shotmap-75-artifact.json",
+      "bytes": 4234,
+      "sha256": "c03741168db72f872e334f80ad56f60a7a25b32d1dbada26af0061592f9c9884"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/C/shotmap-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/C/shotmap-75-predictions.json",
+      "bytes": 178176,
+      "sha256": "dc71970301c4a73efc63b43f023a83be713da9b0cfe0c9f2f18e23ed9d1d455a"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/actual-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/actual-100-artifact.json",
+      "bytes": 3038,
+      "sha256": "48589e60cc8da279f6f28d83afab3f1cfc37baa7f673309d434adee7003992eb"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/actual-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/actual-100-predictions.json",
+      "bytes": 46271,
+      "sha256": "d4f29b1b9c5c8df8ee40fc450c22131367c4395f1702bcd1c359bc9a51e29e13"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/actual-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/actual-25-artifact.json",
+      "bytes": 3042,
+      "sha256": "3a71ac36def6982a4de4d0498ad1b0501c877279f1ca82c5ab187c9743c189f1"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/actual-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/actual-25-predictions.json",
+      "bytes": 46294,
+      "sha256": "2880c2dbfa7554637d628ce45df17ab19fa6c1e73a9597eac8180f07c8b522ad"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/actual-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/actual-50-artifact.json",
+      "bytes": 3039,
+      "sha256": "65397e81f106f68cd1c0fc8528382e960472a1c67001e06d3094f73c968009b8"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/actual-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/actual-50-predictions.json",
+      "bytes": 46268,
+      "sha256": "9abe65b1fa39186e038378bc09394ef10274b290f640dc7c380277786e28db67"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/actual-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/actual-75-artifact.json",
+      "bytes": 3042,
+      "sha256": "dd1f4ccd201bc342cbb09336636a55b7da0d8423d31b35a68b74c475d8327f0a"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/actual-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/actual-75-predictions.json",
+      "bytes": 46286,
+      "sha256": "8381129b7232fce7b8f675ff60336bd5f9ce7698948523fda3b01373047c67e2"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/expected-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/expected-100-artifact.json",
+      "bytes": 3043,
+      "sha256": "e16edf7aa9da4209253de99fb5ec485049a6e5f2a2e48391546ca76f7696cc7d"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/expected-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/expected-100-predictions.json",
+      "bytes": 46309,
+      "sha256": "eafe32808ee2a70635cfde79a9eb4f877effff47bc4e2d12e9e94b869e07295d"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/expected-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/expected-25-artifact.json",
+      "bytes": 3046,
+      "sha256": "4e6fba7e906e9c808997e3e0a4db142ec96eff872b891fc33f54986ebbe5ff2c"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/expected-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/expected-25-predictions.json",
+      "bytes": 46270,
+      "sha256": "6b230f39312a7977ec188fa6a2e29600f94d7bff8aa0d0b8e665b5e99c990002"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/expected-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/expected-50-artifact.json",
+      "bytes": 3047,
+      "sha256": "68be3574a2ef7f313c77ea18246a75e6c03e5ad21b0339827aec2e8d2bbb367c"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/expected-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/expected-50-predictions.json",
+      "bytes": 46268,
+      "sha256": "3ada0aad61dd536b19c09de6a4633d00dea704ea02fba12d993cf1081ea837b9"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/expected-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/expected-75-artifact.json",
+      "bytes": 3044,
+      "sha256": "15f9161a432e2b2389fb62c6224d05673ae2a8c9c6041cba4aeeeb79f9acc24b"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/expected-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/expected-75-predictions.json",
+      "bytes": 46276,
+      "sha256": "baeff49d55ffa15b4eb0915583debf093d130cad4afde89a2f1bfbec313092dd"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/goals-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/goals-artifact.json",
+      "bytes": 3030,
+      "sha256": "d0fa03ae5df9ebce660c493e69fbcf0fa3a4f99c75700caceeae9a1801d68b16"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/goals-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/goals-predictions.json",
+      "bytes": 46275,
+      "sha256": "85ee353ef20384f151e167cca491bdef93ee7f7e71097186fb2720ecfc6d4778"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/shotmap-100-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/shotmap-100-artifact.json",
+      "bytes": 3037,
+      "sha256": "6b0e917d7a9c0a748a83197ce5175973a663feb2a445af47084046b50bc201f6"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/shotmap-100-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/shotmap-100-predictions.json",
+      "bytes": 46246,
+      "sha256": "b59071a0b392bd212819272a965475d0ea17baa75a84174f30a46a26bb654632"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/shotmap-25-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/shotmap-25-artifact.json",
+      "bytes": 3042,
+      "sha256": "f84b7ea4de52759a3117aacc0db5e7b443c029aea07e97426864b1ab80e79a9a"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/shotmap-25-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/shotmap-25-predictions.json",
+      "bytes": 46276,
+      "sha256": "131ddbfb83242d52880598b0cb10f428f20c7e667f409d3b60eedcebcc1f891d"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/shotmap-50-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/shotmap-50-artifact.json",
+      "bytes": 3048,
+      "sha256": "549ccdd8ff48ea4fb90f6987446e0e121e1210dc5f25e91b970b0224b3ea0c9e"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/shotmap-50-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/shotmap-50-predictions.json",
+      "bytes": 46290,
+      "sha256": "a8168d53b8a2fc61945ad7d57d1f0dad964395822de8e295f6c6b8715741ea0a"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/shotmap-75-artifact.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/shotmap-75-artifact.json",
+      "bytes": 3044,
+      "sha256": "29d963648dba52187139b218e7a59f9ef971b76e4be02f7ddbc4663a8d611214"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/D/shotmap-75-predictions.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/D/shotmap-75-predictions.json",
+      "bytes": 46284,
+      "sha256": "e7e29dc3e63250bace8a0f1ec09f51f0d67927ed3aef906311a1122a0268e439"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/index.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/index.json",
+      "bytes": 16074,
+      "sha256": "a4e792eb1cd6e118681c473d5f05148e7ba36346f06173e0e12b999a1cb016da"
+    },
+    {
+      "member": "research/nations-xg-20261117/experiment/results.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/experiment/results.json",
+      "bytes": 202403,
+      "sha256": "9c911adaeffc90205d1c6a202e8f5e05282ab608a79b1acdd9cf9fd555061a94"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/creation-result.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/creation-result.json",
+      "bytes": 63,
+      "sha256": "494d2af603588afb8ee13410477b86a88c68a5d3f4aa35378b21157931ec33c4"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/freezes/espn-401861189.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/freezes/espn-401861189.json",
+      "bytes": 1286761,
+      "sha256": "ea54eda2b39221f61c1bb0351869cbe140fad9027150bfc11b64405ae542de3a"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/freezes/espn-401861190.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/freezes/espn-401861190.json",
+      "bytes": 1288570,
+      "sha256": "647ff3863b4698432e6a17281a282e656afa5a2e89b7bcb62abad5ed07607b52"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/freezes/espn-401861191.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/freezes/espn-401861191.json",
+      "bytes": 1288615,
+      "sha256": "a26100e50a1c85fcc5811d25c344eb9fa228c08fb52ec8cdfc4254e682eee974"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/freezes/espn-401861192.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/freezes/espn-401861192.json",
+      "bytes": 1288592,
+      "sha256": "6aac0af7afcac46b18ec8d301f9e50bf0af7e9936b657a9b4fdf738732f3f4f6"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/freezes/espn-401861193.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/freezes/espn-401861193.json",
+      "bytes": 1287471,
+      "sha256": "d31fa3a0b74796443f23a9eb972003b9729b23a9506955c61bfe4a6e0fa5d181"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/freezes/espn-401861194.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/freezes/espn-401861194.json",
+      "bytes": 1286495,
+      "sha256": "8f7beafc25cebfab09a876f76dadd250af382245985087f97a56aab87f946cb5"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/freezes/espn-401861195.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/freezes/espn-401861195.json",
+      "bytes": 1287135,
+      "sha256": "5950e7a08a8158f54f7b88ea7b823f20978e122f427850919f375add0a4f077e"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/freezes/espn-401861196.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/freezes/espn-401861196.json",
+      "bytes": 1286468,
+      "sha256": "f023d03bdc58e4531a04f5996f6106792ad16c70ecb01d7809aaa5681c03d940"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/pending-review.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/pending-review.json",
+      "bytes": 5420,
+      "sha256": "3fbf27578dafa5556cc5bdbc4529daed16bd841fc19e7969b2736d5733d2bd37"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/plan-receipt.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/plan-receipt.json",
+      "bytes": 362,
+      "sha256": "c1b534c64703c0f848408a154dd9f00b08d269f2a0e3798f98bb1c889427289b"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/plan.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/plan.json",
+      "bytes": 36309,
+      "sha256": "307b167d6253625242c536212e3163e0a3aa985c9712c23dfd83b095bd47182f"
+    },
+    {
+      "member": "research/nations-xg-20261117/forward/receipts.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/forward/receipts.json",
+      "bytes": 2923,
+      "sha256": "e1b6ec3354922cbaf95f2a58b14c996743b763783a3a1daed0f0551caa9ddcdf"
+    },
+    {
+      "member": "research/nations-xg-20261117/freeze_experiment.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/freeze_experiment.py",
+      "bytes": 2798,
+      "sha256": "115e20ec1f270011bbb327b35e91a16e1f77b349b93681e59310a8f8281bab41"
+    },
+    {
+      "member": "research/nations-xg-20261117/future-identity.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/future-identity.json",
+      "bytes": 24160,
+      "sha256": "1ccacfe81189be97abda454f7794d9a7c62b3048b0fe4c8d75518266368a74de"
+    },
+    {
+      "member": "research/nations-xg-20261117/future-predictions.csv",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/future-predictions.csv",
+      "bytes": 1270,
+      "sha256": "e095a465e64bfa2f4215496e6a3b160f61d288d7904df2c3703d56e7dafc93f2"
+    },
+    {
+      "member": "research/nations-xg-20261117/future-prepared.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/future-prepared.json",
+      "bytes": 16402,
+      "sha256": "ac86bfc03df85fe6dfb63cdb307a13449002bfbe719014f6bf7ede08674427bf"
+    },
+    {
+      "member": "research/nations-xg-20261117/metrics.csv",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/metrics.csv",
+      "bytes": 7828,
+      "sha256": "ac28adb48f4d5a5ef66b0e7a90268f8ca825926be2f922f09afdc475b0a16d0a"
+    },
+    {
+      "member": "research/nations-xg-20261117/prepare_experiment.py",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/prepare_experiment.py",
+      "bytes": 4704,
+      "sha256": "c716045fbdfbd916ce76c2ec20f650fd1a549c81d12ca711bad9d1a8c487379b"
+    },
+    {
+      "member": "research/nations-xg-20261117/protocol-freeze.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/protocol-freeze.json",
+      "bytes": 6641,
+      "sha256": "e69e862adb7ddc2edd84ae8ce4d7c5c86e65e1e2ad4c825e000596e357dc54c1"
+    },
+    {
+      "member": "research/nations-xg-20261117/protocol-receipt.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/protocol-receipt.json",
+      "bytes": 362,
+      "sha256": "13b78f29c30bf0191b0f112e41865e4e9beb5a6aa4bd3ceed86ea94330a6973b"
+    },
+    {
+      "member": "research/nations-xg-20261117/protocol.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/protocol.json",
+      "bytes": 5561,
+      "sha256": "105820c4b55dc4eeb8e0bfeff66f5e76534d95f32fb15af6755262db96d68c2a"
+    },
+    {
+      "member": "research/nations-xg-20261117/report-freeze.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/report-freeze.json",
+      "bytes": 20475,
+      "sha256": "7c940940826e19830fea69668ed94d3afedfce072faf4506c56fac7100a60fb3"
+    },
+    {
+      "member": "research/nations-xg-20261117/report-receipt.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/report-receipt.json",
+      "bytes": 362,
+      "sha256": "414dbf7cdf1f0ce8a558d532c32a947c3cd68d2024f896d7bcd11c57d900a065"
+    },
+    {
+      "member": "research/nations-xg-20261117/root-input-verification.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/root-input-verification.json",
+      "bytes": 853,
+      "sha256": "9ee6b0d37f157c4a262531a150b9388259752b5045299c134398895ac20d743e"
+    },
+    {
+      "member": "research/nations-xg-20261117/runtime-AGENTS.md",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/runtime-AGENTS.md",
+      "bytes": 21210,
+      "sha256": "1d79bd1820f7ecd09791bbc1947184b7975a6dcf1c992a4705b1219dc3ccd3fe"
+    },
+    {
+      "member": "research/nations-xg-20261117/source-integration-tests.log",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/source-integration-tests.log",
+      "bytes": 151981,
+      "sha256": "1e05709ac932698c97e0fb8376dd1e4dadb3c76b7e6d7205cdd7a3d3a58d187e"
+    },
+    {
+      "member": "research/nations-xg-20261117/source-tests.log",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/source-tests.log",
+      "bytes": 151980,
+      "sha256": "b39b60136ae803fae9cf001e55f22b337c96f794b22ce5513e57dbb4e73574be"
+    },
+    {
+      "member": "research/nations-xg-20261117/summary.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/summary.json",
+      "bytes": 12012,
+      "sha256": "037600efb5c3c39a7019fca9fe1c50441bd40d4da3915c9896bef0abe9eb6064"
+    },
+    {
+      "member": "research/nations-xg-20261117/test-summary.json",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/test-summary.json",
+      "bytes": 269,
+      "sha256": "1e4a0060aa264fcd87f7509698f21355663d94259c5cdd893bcaa0f70ed0dc4b"
+    },
+    {
+      "member": "research/nations-xg-20261117/xG研究执行报告.md",
+      "original_path": "/workspace/WCPP/research/nations-xg-20261117/xG研究执行报告.md",
+      "bytes": 4185,
+      "sha256": "4f86fa6bfddd1fcd00f2ea5fef638f237b6fac328469dec834470b0af7d06201"
+    },
+    {
+      "member": "forecasts/issued-analyses/d0753295a2841e5bd5362e4dc76c122b702cb742fb47b74abdc0b07baefe78ea/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/d0753295a2841e5bd5362e4dc76c122b702cb742fb47b74abdc0b07baefe78ea/000001.json",
+      "bytes": 4873,
+      "sha256": "98d73fd4449da5446f8dd177db9295e821bbc4d44ae0d7ea6de577ca05760710"
+    },
+    {
+      "member": "forecasts/issued-analyses/5c9d1d73aade0c9aabd0684b85225daf6a20bbc939c9b80595189cbe49238de4/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/5c9d1d73aade0c9aabd0684b85225daf6a20bbc939c9b80595189cbe49238de4/000001.json",
+      "bytes": 14344,
+      "sha256": "16d407443fb70e259dcd47ca55d0c0cea9356a0040f1b5557ad611cf85c7de93"
+    },
+    {
+      "member": "forecasts/issued-analyses/0d33811468c624169bbadb73fa336c41297265e47f2f2ae66d05f1148010cfaf/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/0d33811468c624169bbadb73fa336c41297265e47f2f2ae66d05f1148010cfaf/000001.json",
+      "bytes": 28508,
+      "sha256": "5795be21ef4ee2fa890f0ce433e3838a17796cb4d3905e441af1dfcc7a95feee"
+    },
+    {
+      "member": "forecasts/issued-analyses/4fd3eada03830f9d5584d9787962e830ac633a990684797c0508c276180ffcec/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/4fd3eada03830f9d5584d9787962e830ac633a990684797c0508c276180ffcec/000001.json",
+      "bytes": 811529,
+      "sha256": "2ba947aa9f5444d19f50f565954683421d55f575d20217ab8a7040b1ad86e0d9"
+    },
+    {
+      "member": "forecasts/issued-analyses/59174bc1251a27e0accc712f7d411cab15ee4354eda2d031e7b429c7c7c882b6/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/59174bc1251a27e0accc712f7d411cab15ee4354eda2d031e7b429c7c7c882b6/000001.json",
+      "bytes": 813338,
+      "sha256": "165bd1f12df70e99822784373c59d51c167c526ac45d96bfa74c34a7de23548d"
+    },
+    {
+      "member": "forecasts/issued-analyses/f994d67937ac005778ddce60f7842b97f7dce8028804c1f12b0b5a8e0cdf790f/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/f994d67937ac005778ddce60f7842b97f7dce8028804c1f12b0b5a8e0cdf790f/000001.json",
+      "bytes": 813383,
+      "sha256": "33d6e40cc934cba87d67b7fe175f232eee8d287a92874230fe9383f1a9a6451f"
+    },
+    {
+      "member": "forecasts/issued-analyses/372634b5620d1c59c2603aad0fb5b0558d1e4089e621dc7f04422609aa9c2f1d/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/372634b5620d1c59c2603aad0fb5b0558d1e4089e621dc7f04422609aa9c2f1d/000001.json",
+      "bytes": 813360,
+      "sha256": "03c0c52440575670a98ca8ca353d45737ec3c3c549713c3eb348f55a55bae7ff"
+    },
+    {
+      "member": "forecasts/issued-analyses/a9c0b35e7206c91f9becbcf43a65fd1b70e81ebc8bcc14c54743f1dc6ad5aba6/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/a9c0b35e7206c91f9becbcf43a65fd1b70e81ebc8bcc14c54743f1dc6ad5aba6/000001.json",
+      "bytes": 812239,
+      "sha256": "b78bfac48c7785ba5fe6cc39ed262c999da137484e9b053225931a029541db87"
+    },
+    {
+      "member": "forecasts/issued-analyses/c5122b60a0125c50dd2accd9aceac419591ad39b5ceb8086f20e5ee7c716c2e2/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/c5122b60a0125c50dd2accd9aceac419591ad39b5ceb8086f20e5ee7c716c2e2/000001.json",
+      "bytes": 811263,
+      "sha256": "7a2d93db4855ae8d80858da3e5b7a997885f7c584d482acf4f966c297e87aefc"
+    },
+    {
+      "member": "forecasts/issued-analyses/2a818d1cf2d9cf088ef3c6ef5e9cad86bed4e671749b00b654ea08db4526b3f7/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/2a818d1cf2d9cf088ef3c6ef5e9cad86bed4e671749b00b654ea08db4526b3f7/000001.json",
+      "bytes": 811903,
+      "sha256": "6ccca8082e7161dfa3d2ea26bfd6e7e4ed92b483db1ac7cbcd603dbf57467895"
+    },
+    {
+      "member": "forecasts/issued-analyses/b07327f4395ac8a351d07cb497e9947dd7e82a00c97e0d786b9e1157aa5cc5b1/000001.json",
+      "original_path": "/workspace/WCPP/forecasts/issued-analyses/b07327f4395ac8a351d07cb497e9947dd7e82a00c97e0d786b9e1157aa5cc5b1/000001.json",
+      "bytes": 811236,
+      "sha256": "14269799a0af7ab3247abffbbd38ec3e21152e17e50a05bf03a65a2247f31f84"
+    }
+  ],
+  "prior_source_evidence_archives": [
+    {
+      "path": "workspace-updates/20261116-nations-repair/nations-repair-evidence.tar.gz",
+      "sha256": "4ce0a909d6c3e0079101106dcd0c88abac17459f4a01b18d844795f6f7161c43",
+      "reuse": "original ESPN history and first frozen quote evidence; no duplicate whole backup"
+    },
+    {
+      "path": "workspace-updates/20261117-nations-review-0833/nations-review-evidence.tar.gz",
+      "sha256": "b00b5eebefdbd251d9e243d21c96057d1b507c8e8158b4c38d81cd4acb8e9071",
+      "reuse": "original ESPN history and first frozen quote evidence; no duplicate whole backup"
+    },
+    {
+      "path": "workspace-updates/20261116-nations-prematch-2044/nations-prematch-evidence.tar.gz",
+      "sha256": "49ae1bbc3041b3ea0b3f3eb59c3706bbac6b9d5c88ffb4827f917490399b8dd0",
+      "reuse": "original ESPN history and first frozen quote evidence; no duplicate whole backup"
+    }
+  ]
+}

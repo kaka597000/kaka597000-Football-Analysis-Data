@@ -1,0 +1,38 @@
+name: Nations xG archive integrity
+on:
+  push:
+    branches: [main, research/nations-xg-20261117]
+    paths:
+      - .github/workflows/nations-xg-validation.yml
+      - workspace-updates/20261117-nations-xg-research/manifest.json
+      - workspace-updates/20261117-nations-xg-research/nations-xg-evidence.tar.gz
+      - workspace-updates/20261117-nations-xg-research/review-fix-manifest.json
+      - workspace-updates/20261117-nations-xg-research/review-fix-evidence.tar.gz
+      - workspace-updates/20261117-nations-xg-research/verify_archive.py
+  pull_request:
+    paths:
+      - .github/workflows/nations-xg-validation.yml
+      - workspace-updates/20261117-nations-xg-research/manifest.json
+      - workspace-updates/20261117-nations-xg-research/nations-xg-evidence.tar.gz
+      - workspace-updates/20261117-nations-xg-research/review-fix-manifest.json
+      - workspace-updates/20261117-nations-xg-research/review-fix-evidence.tar.gz
+      - workspace-updates/20261117-nations-xg-research/verify_archive.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: workspace-updates/20261117-nations-xg-research
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore and verify all permanent evidence bytes
+        run: python workspace-updates/20261117-nations-xg-research/verify_archive.py --out "${RUNNER_TEMP}/nations-xg-restore"
+      - name: Verify review fixes without replacing the original forward freezes
+        run: python workspace-updates/20261117-nations-xg-research/verify_archive.py --manifest review-fix-manifest.json --out "${RUNNER_TEMP}/nations-xg-review-fix"

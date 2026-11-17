@@ -1,0 +1,419 @@
+{
+  "generated_at": "2026-11-17T02:28:41.814803+00:00",
+  "windows": {
+    "selection": {
+      "baseline": {
+        "n": 52,
+        "primary_hits": 7,
+        "primary_accuracy": 0.1346153846153846,
+        "coverage": 1.0,
+        "wdl_hits": 26,
+        "exact_top1": 0.1346153846153846,
+        "exact_top3": 0.36538461538461536,
+        "exact_top5": 0.5576923076923077,
+        "score_log_loss": 2.8647599705232616,
+        "score_brier": 0.915733257065026,
+        "wdl_brier": 0.5853442103063996,
+        "wdl_rps": 0.19185362867667302,
+        "wdl_accuracy": 0.5,
+        "expected_total_mean": 2.5310568766469244,
+        "actual_total_mean": 2.519230769230769,
+        "actual_total4plus_n": 11,
+        "expected_total4plus_n": 13.08643962657046,
+        "zero_brier": 0.2064214870627047,
+        "primary_score_counts": {
+          "1-0": 11,
+          "1-1": 34,
+          "0-0": 2,
+          "2-0": 2,
+          "0-1": 1,
+          "1-2": 1,
+          "2-1": 1
+        },
+        "extreme_rate_rows": 0,
+        "tail": {
+          "away3+": {
+            "brier": 0.07360566417955196,
+            "observed_events": 4
+          },
+          "away4+": {
+            "brier": 0.05443699606184485,
+            "observed_events": 3
+          },
+          "home3+": {
+            "brier": 0.11948560483788873,
+            "observed_events": 9
+          },
+          "home4+": {
+            "brier": 0.056356548119367814,
+            "observed_events": 3
+          },
+          "total4+": {
+            "brier": 0.16399680339796316,
+            "observed_events": 11
+          },
+          "total5+": {
+            "brier": 0.0739755503696408,
+            "observed_events": 4
+          }
+        },
+        "actual_line_n": 0,
+        "actual_line_status": "NO_ARCHIVED_QUOTES",
+        "actual_line_settlements": {}
+      },
+      "selected": {
+        "n": 52,
+        "primary_hits": 9,
+        "primary_accuracy": 0.17307692307692307,
+        "coverage": 1.0,
+        "wdl_hits": 29,
+        "exact_top1": 0.17307692307692307,
+        "exact_top3": 0.38461538461538464,
+        "exact_top5": 0.5576923076923077,
+        "score_log_loss": 2.8688094831034743,
+        "score_brier": 0.9149959511490349,
+        "wdl_brier": 0.5839467517450502,
+        "wdl_rps": 0.1911847606111991,
+        "wdl_accuracy": 0.5576923076923077,
+        "expected_total_mean": 2.5696512614144584,
+        "actual_total_mean": 2.519230769230769,
+        "actual_total4plus_n": 11,
+        "expected_total4plus_n": 13.50905611458935,
+        "zero_brier": 0.2064124178155598,
+        "primary_score_counts": {
+          "1-0": 11,
+          "1-1": 33,
+          "0-0": 2,
+          "2-0": 2,
+          "2-1": 3,
+          "1-2": 1
+        },
+        "extreme_rate_rows": 0,
+        "tail": {
+          "away3+": {
+            "brier": 0.07364627013325889,
+            "observed_events": 4
+          },
+          "away4+": {
+            "brier": 0.054566444401148884,
+            "observed_events": 3
+          },
+          "home3+": {
+            "brier": 0.11932964198260707,
+            "observed_events": 9
+          },
+          "home4+": {
+            "brier": 0.05706574979158719,
+            "observed_events": 3
+          },
+          "total4+": {
+            "brier": 0.1651044358394222,
+            "observed_events": 11
+          },
+          "total5+": {
+            "brier": 0.07425972480998447,
+            "observed_events": 4
+          }
+        },
+        "actual_line_n": 0,
+        "actual_line_status": "NO_ARCHIVED_QUOTES",
+        "actual_line_settlements": {}
+      },
+      "paired": {
+        "n": 52,
+        "primary_net_hits": 2,
+        "gained_match_ids": [
+          "espn:401861120",
+          "espn:401861126"
+        ],
+        "lost_match_ids": [],
+        "date_clusters": 6,
+        "primary_net_rate_95": [
+          0.0,
+          0.12
+        ],
+        "wdl_net_hits": 3,
+        "wdl_net_rate_95": [
+          0.017857142857142856,
+          0.1
+        ],
+        "scope": "known-history development; date-cluster descriptive uncertainty"
+      }
+    },
+    "diagnostic": {
+      "baseline": {
+        "n": 44,
+        "primary_hits": 5,
+        "primary_accuracy": 0.11363636363636363,
+        "coverage": 1.0,
+        "wdl_hits": 30,
+        "exact_top1": 0.11363636363636363,
+        "exact_top3": 0.29545454545454547,
+        "exact_top5": 0.45454545454545453,
+        "score_log_loss": 3.0929480464109846,
+        "score_brier": 0.9363576767369768,
+        "wdl_brier": 0.5266391774050526,
+        "wdl_rps": 0.19258408291368323,
+        "wdl_accuracy": 0.6818181818181818,
+        "expected_total_mean": 2.5282105358831646,
+        "actual_total_mean": 3.022727272727273,
+        "actual_total4plus_n": 15,
+        "expected_total4plus_n": 11.099140781949188,
+        "zero_brier": 0.17758001625787576,
+        "primary_score_counts": {
+          "1-1": 24,
+          "0-1": 3,
+          "2-1": 1,
+          "1-0": 10,
+          "0-0": 4,
+          "2-0": 2
+        },
+        "extreme_rate_rows": 0,
+        "tail": {
+          "away3+": {
+            "brier": 0.1137645656713906,
+            "observed_events": 6
+          },
+          "away4+": {
+            "brier": 0.06456244810627575,
+            "observed_events": 3
+          },
+          "home3+": {
+            "brier": 0.14778445889829908,
+            "observed_events": 9
+          },
+          "home4+": {
+            "brier": 0.0965816388593373,
+            "observed_events": 5
+          },
+          "total4+": {
+            "brier": 0.21438676753312055,
+            "observed_events": 15
+          },
+          "total5+": {
+            "brier": 0.15850694889101433,
+            "observed_events": 9
+          }
+        },
+        "actual_line_n": 10,
+        "actual_line_status": "ARCHIVED_QUOTES_RETROSPECTIVE_MODEL",
+        "actual_line_settlements": {
+          "push": 1,
+          "loss": 6,
+          "win": 2,
+          "half_loss": 1
+        }
+      },
+      "selected": {
+        "n": 44,
+        "primary_hits": 6,
+        "primary_accuracy": 0.13636363636363635,
+        "coverage": 1.0,
+        "wdl_hits": 31,
+        "exact_top1": 0.13636363636363635,
+        "exact_top3": 0.29545454545454547,
+        "exact_top5": 0.45454545454545453,
+        "score_log_loss": 3.105341938114758,
+        "score_brier": 0.935798387334421,
+        "wdl_brier": 0.5278840608910511,
+        "wdl_rps": 0.19343218853076435,
+        "wdl_accuracy": 0.7045454545454546,
+        "expected_total_mean": 2.5536365709110687,
+        "actual_total_mean": 3.022727272727273,
+        "actual_total4plus_n": 15,
+        "expected_total4plus_n": 11.332958951947916,
+        "zero_brier": 0.17806154194545495,
+        "primary_score_counts": {
+          "1-1": 25,
+          "0-1": 3,
+          "2-1": 2,
+          "1-0": 13,
+          "0-0": 1
+        },
+        "extreme_rate_rows": 0,
+        "tail": {
+          "away3+": {
+            "brier": 0.11313638808070499,
+            "observed_events": 6
+          },
+          "away4+": {
+            "brier": 0.06440765740568792,
+            "observed_events": 3
+          },
+          "home3+": {
+            "brier": 0.14869644206811897,
+            "observed_events": 9
+          },
+          "home4+": {
+            "brier": 0.0982485350813277,
+            "observed_events": 5
+          },
+          "total4+": {
+            "brier": 0.21282003612523773,
+            "observed_events": 15
+          },
+          "total5+": {
+            "brier": 0.15846913600381482,
+            "observed_events": 9
+          }
+        },
+        "actual_line_n": 10,
+        "actual_line_status": "ARCHIVED_QUOTES_RETROSPECTIVE_MODEL",
+        "actual_line_settlements": {
+          "push": 1,
+          "loss": 6,
+          "win": 2,
+          "half_loss": 1
+        }
+      },
+      "paired": {
+        "n": 44,
+        "primary_net_hits": 1,
+        "gained_match_ids": [
+          "espn:401861177"
+        ],
+        "lost_match_ids": [],
+        "date_clusters": 5,
+        "primary_net_rate_95": [
+          0.0,
+          0.07142857142857142
+        ],
+        "wdl_net_hits": 1,
+        "wdl_net_rate_95": [
+          0.0,
+          0.07142857142857142
+        ],
+        "scope": "known-history development; date-cluster descriptive uncertainty"
+      }
+    }
+  },
+  "selected": {
+    "A": "shotmap-75",
+    "B": "expected-75",
+    "C": "actual-75",
+    "D": "actual-100"
+  },
+  "execution": {
+    "arms": 13,
+    "fitted_final_artifacts": 52,
+    "historical_predictions_replayed": 1248,
+    "forward_fixtures": 8,
+    "forward_predictions_replayed": 104,
+    "protected_asset_hashes_unchanged": 81
+  },
+  "future": [
+    {
+      "match_id": "espn:401861189",
+      "home": "Wales",
+      "away": "Portugal",
+      "level": "A",
+      "kickoff_at": "2026-11-17T19:45Z",
+      "selected": "shotmap-75",
+      "score": "1-1",
+      "wdl": "客胜",
+      "line": 3.0,
+      "total_direction": "under",
+      "freeze_id": "4fd3eada03830f9d-v000001",
+      "recorded_at": "2026-11-17T10:25:02.672612+08:00"
+    },
+    {
+      "match_id": "espn:401861190",
+      "home": "Ukraine",
+      "away": "Georgia",
+      "level": "B",
+      "kickoff_at": "2026-11-17T19:45Z",
+      "selected": "expected-75",
+      "score": "1-0",
+      "wdl": "主胜",
+      "line": 2.25,
+      "total_direction": "under",
+      "freeze_id": "59174bc1251a27e0-v000001",
+      "recorded_at": "2026-11-17T10:25:02.903927+08:00"
+    },
+    {
+      "match_id": "espn:401861191",
+      "home": "Hungary",
+      "away": "Northern Ireland",
+      "level": "B",
+      "kickoff_at": "2026-11-17T19:45Z",
+      "selected": "expected-75",
+      "score": "1-0",
+      "wdl": "主胜",
+      "line": 2.0,
+      "total_direction": "under",
+      "freeze_id": "f994d67937ac0057-v000001",
+      "recorded_at": "2026-11-17T10:25:03.186864+08:00"
+    },
+    {
+      "match_id": "espn:401861192",
+      "home": "Republic of Ireland",
+      "away": "Kosovo",
+      "level": "B",
+      "kickoff_at": "2026-11-17T19:45Z",
+      "selected": "expected-75",
+      "score": "1-0",
+      "wdl": "主胜",
+      "line": 2.0,
+      "total_direction": "under",
+      "freeze_id": "372634b5620d1c59-v000001",
+      "recorded_at": "2026-11-17T10:25:03.890811+08:00"
+    },
+    {
+      "match_id": "espn:401861193",
+      "home": "Israel",
+      "away": "Austria",
+      "level": "B",
+      "kickoff_at": "2026-11-17T19:45Z",
+      "selected": "expected-75",
+      "score": "1-1",
+      "wdl": "客胜",
+      "line": 2.75,
+      "total_direction": "under",
+      "freeze_id": "a9c0b35e7206c91f-v000001",
+      "recorded_at": "2026-11-17T10:25:04.587070+08:00"
+    },
+    {
+      "match_id": "espn:401861194",
+      "home": "Denmark",
+      "away": "Norway",
+      "level": "A",
+      "kickoff_at": "2026-11-17T19:45Z",
+      "selected": "shotmap-75",
+      "score": "1-1",
+      "wdl": "主胜",
+      "line": 3.25,
+      "total_direction": "under",
+      "freeze_id": "c5122b60a0125c50-v000001",
+      "recorded_at": "2026-11-17T10:25:05.001494+08:00"
+    },
+    {
+      "match_id": "espn:401861195",
+      "home": "Poland",
+      "away": "Sweden",
+      "level": "B",
+      "kickoff_at": "2026-11-17T19:45Z",
+      "selected": "expected-75",
+      "score": "1-1",
+      "wdl": "主胜",
+      "line": 2.75,
+      "total_direction": "under",
+      "freeze_id": "2a818d1cf2d9cf08-v000001",
+      "recorded_at": "2026-11-17T10:25:05.655637+08:00"
+    },
+    {
+      "match_id": "espn:401861196",
+      "home": "Bosnia-Herzegovina",
+      "away": "Romania",
+      "level": "B",
+      "kickoff_at": "2026-11-17T19:45Z",
+      "selected": "expected-75",
+      "score": "1-1",
+      "wdl": "主胜",
+      "line": 2.5,
+      "total_direction": "over",
+      "freeze_id": "b07327f4395ac8a3-v000001",
+      "recorded_at": "2026-11-17T10:25:06.434312+08:00"
+    }
+  ],
+  "evidence_scope": "Known-history statistical score experiment; selected on October only; future 8 matches pending, no comprehensive Primary performance claim"
+}
