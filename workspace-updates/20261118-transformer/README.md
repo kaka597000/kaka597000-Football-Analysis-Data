@@ -28,7 +28,7 @@ Transformer 采用一层双头自注意力、16 维隐藏表示、32 维前馈�
 | LSTM | 57 | 273 | 292 |
 | Transformer | 58 | 272 | 292 |
 
-Transformer 相对基线改对一个首选比分、无改错，净增 0.21 个百分点。比赛日分组的 95% 区间为 0.00 至 +0.68 个百分点。与 LightGBM 相比，首选比分少中 1 场，胜平负少中 4 场，大小球持平。另有 2 场真实巴甲历史 Current 首冻带有合格的双市场报价；四组在这 2 场的三项成绩均为 0/2、1/2、1/2。
+Transformer 相对基线改对一个首选比分、无改错，净增 0.21 个百分点。比赛日分组的 95% 区间为 0.00 至 +0.68 个百分点。481 场中，Transformer 有 12 场给出了与盘口基线不同的首选比分。与 LightGBM 相比，首选比分少中 1 场，大小球持平。两者有 4 场给出不同的胜平负选择，4 场均由 LightGBM 命中。另有 2 场真实巴甲历史 Current 首冻带有合格的双市场报价；四组在这 2 场的三项成绩均为 0/2、1/2、1/2。
 
 [新赛季逐场来源、覆盖和配对区间](transfer/europe-2627-validation.json) · [新赛季逐场预测](transfer/europe-2627-predictions.jsonl.gz) · [追加验证登记](registration/transfer.json)
 
@@ -45,3 +45,5 @@ EXP=workspace-updates/20261118-transformer
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python "$EXP/verify.py" --source "$ANALYSIS"
 PYTHONPATH="$ANALYSIS/runtime" python -m research_program.transformer_forward review --state-dir . --batch "$EXP/forward"
 ```
+
+[严格集成测试](integration.json) · [完整离线复算](offline-replay.json) · [主分支实际运行与回滚记录](deployment.json)
