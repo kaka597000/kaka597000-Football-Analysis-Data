@@ -47,3 +47,5 @@ PYTHONPATH="$ANALYSIS/runtime" python -m research_program.three_arm_review --bat
 ```
 
 数据仓现有的六小时采集任务会在有认证赛果时结算。同一比赛的预测分布、所用行情与首次冻结时间均可从预测记录回查。六场属于一个巴西比赛日，统计配对净增，待积累更多独立比赛日后估计区间。研究组独立保存，登记排除了自动晋级。
+
+[云端复盘与回滚记录](deployment.json) · [训练重建及逐文件校验](training/reproduction.json) · [云端实际运行](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44229217044)
