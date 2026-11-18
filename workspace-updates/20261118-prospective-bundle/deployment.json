@@ -1,0 +1,94 @@
+{
+  "verified_at_beijing": "2026-11-18T10:27:28.760572+08:00",
+  "source_main": "964a4ef044d0cca113d99f3e3da935aa2c430562",
+  "actual_scheduler_commit": "fbed25e9648e4ba4061042b7f97b6a2f23f1213c",
+  "locked_inference_base": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+  "source_pr": 45,
+  "source_pr_ci": 44222328637,
+  "source_main_ci": 44222702249,
+  "data_pr": 23,
+  "data_delivery_commit": "f75c3215448ee09ee87e91fb0d58988f3b56df24",
+  "data_deployment_merge": "0d1000e82eaf29515ec168c9b8254f34231a4d27",
+  "data_state_commit": "5fbf169084476625c422d67bd06f957cc2370efa",
+  "data_pr_replay_ci": 44222925728,
+  "data_main_replay_ci": 44223086454,
+  "cloud": {
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44223152835",
+    "conclusion": "success",
+    "headSha": "0d1000e82eaf29515ec168c9b8254f34231a4d27",
+    "startedAt": "2026-11-18T02:25:34Z",
+    "updatedAt": "2026-11-18T02:26:29Z"
+  },
+  "runtime_revision": "future/runtime-revisions/44223152835-1.json",
+  "runtime_revision_sha256": "e208202c8e1886da08542dbc2fdcee95b3e9a666639808a1a627996151549e21",
+  "overlay_file_hashes": {
+    "runtime/automation/prospective_cycle.py": "4c6f92c2d680c854e03c4cc57e46eef6fc1c17efa75327d0525d47717774e386",
+    "runtime/automation/prospective_bundle.py": "adcadd46c3c10c3ad437b6a6f8e1a01f8de9c9ad541079e9c7176ff74469a96d",
+    "runtime/automation/market_bridge.py": "e91fd69569dc70eb7765da50b86287ca27338434b7b1692a289fdcbd762c7329",
+    "runtime/automation/result_queue.py": "d59c606c63f33a4fb2e732c5c4f6adb140a4d35a54615d25e5b2f9c146e18b4d",
+    "runtime/research_program/future_identity.py": "3bb9085c512e9ab9642bae734f276e0853f7f59d1bf3152c3eee3cf020d31531",
+    "runtime/research_program/promotion_review.py": "51552372240a0afc04a02683353491d3e039ac7146f6a422b0d696bc20a4d592",
+    "runtime/v2_test/evaluation.py": "053f8e43427a52daad5920d2d6600b581daf52c029d9f1152f72bf7f94e23724"
+  },
+  "frozen_file_count": 284,
+  "frozen_tree_sha256": "717e0e1ec1bf878a9b7f382d055d9902f58817a200339be62b77bfd150a0900b",
+  "live_reviews": {
+    "bundle-v2": {
+      "population": 80,
+      "paired": 80,
+      "completed": 59,
+      "pending": 21,
+      "missing": 0,
+      "result_requests": 1,
+      "new_captures": [],
+      "failures": [
+        {
+          "match_id": "espn:401843480",
+          "status": "RESULT_NOT_CERTIFIED",
+          "error_type": "ValueError"
+        }
+      ],
+      "run_path": "future/state/runs/20261118T022621026215.json",
+      "run_sha256": "359a37972957b346e2242e510861726ac38396844d23bc939dea438a7fc4b296",
+      "same_complete_review_as_offline_replay": true,
+      "review_sha256": "46ef633370f12ee63cf01ed18d3ebd2eb598b4e75fd9e2544576a7a87aea2a0d"
+    },
+    "ucl-bundle-v2": {
+      "population": 36,
+      "paired": 36,
+      "completed": 0,
+      "pending": 36,
+      "missing": 0,
+      "result_requests": 0,
+      "new_captures": [],
+      "failures": [],
+      "run_path": "future/ucl-state/runs/20261118T022623327201.json",
+      "run_sha256": "abca8fced44b905524508228f7e1a4d197b8d39f005004db6db69cf7334d8a00",
+      "same_complete_review_as_offline_replay": true,
+      "review_sha256": "75f1a0b4330b2ed97396d3ba2411689ce2444dcde1f98cbb48ef4c7096539491"
+    }
+  },
+  "nations_repair_new_review_files": [],
+  "rollback_workflow_at_data_commit": "9804e58e805db9039a5031c0e205a32cbd5f6de2",
+  "rollback_scheduler_commit": "83aa58916555ac0885e164d9882384a829fd1843",
+  "existing_pending_result": {
+    "match_id": "espn:401843480",
+    "competition": "nor.1",
+    "home": "Kristiansund BK",
+    "away": "Vålerenga",
+    "registered_kickoff": "2026-11-07T15:00Z",
+    "retained_espn_kickoff": "2026-11-09T18:00Z",
+    "difference_hours": 51.0,
+    "raw_source_reference": {
+      "captured_at": "2026-11-09T22:21:13.344737+00:00",
+      "path": "raw/5919bc50fe9b5350c90ec2b2799fe406c6d4e718216711976b16f4c4cc164c3a.json.gz",
+      "sha256": "5919bc50fe9b5350c90ec2b2799fe406c6d4e718216711976b16f4c4cc164c3a",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/nor.1/summary?event=401843480"
+    },
+    "registered_plan_sha256": "117eb0cf8afb59ffb49001e88490416f79fef58c040dd935651dff5d889b9cea",
+    "same_observation_before_deployment": true,
+    "included_in_completed": false,
+    "previous_run": "future/state/runs/20261118T013442285415.json"
+  },
+  "nations_repair_reused_freeze": "1255c8e45f2c26ff-v000009"
+}
