@@ -174,6 +174,7 @@ def verify_quality(directory):
     plan, fixtures, histories, membership, originals = supplement.original_inputs(DATA)
     by_id = {f['match_id']: f for f in fixtures}
     previous = {}
+    previous_started_at = None
     paths = sorted((directory / 'runs').glob('*.json'))
     require(paths and paths[-1] == directory / index['latest'], 'quality index omits the latest observation')
     stages = ('original_first_issue', 'latest_observation')
@@ -200,17 +201,20 @@ def verify_quality(directory):
                     mid + ': earliest T-90 confirmation or window coverage differs')
             if carried:
                 expected = dict(old, quality=dict(old['quality'], lineup_window=window['state']), lineup_window_evidence=window)
+                expected.setdefault('market_cutoff_at', previous_started_at)
                 require(row == expected, mid + ': closed fixture observation changed')
                 previous[mid] = row
                 continue
+            require(aware(row.get('market_cutoff_at', run['started_at'])) == start, mid + ': market selection cutoff changed')
             entrants = lineups.get('facts', {}).get('starters', {})
             confirmed = all(len(entrants.get(s, [])) == len(set(entrants.get(s, []))) == 11 for s in supplement.SIDES)
             if lineups.get('status') == 'ok':
                 require(aware(lineups['observed_at']) <= end and aware(lineups['observed_at']) < kickoff,
                         mid + ': late first XI')
             ids = [membership[mid].get(s) for s in supplement.SIDES]
-            shots = [run['previous_games_espn'].get(i, {}).get('facts', {}).get('statistics', {}) for i in ids]
-            xgs = [run['previous_games_bsd'].get(i, {}) for i in ids]
+            shots = [supplement.prematch_observation(run['previous_games_espn'].get(i), kickoff)
+                     .get('facts', {}).get('statistics', {}) for i in ids]
+            xgs = [supplement.prematch_observation(run['previous_games_bsd'].get(i), kickoff) for i in ids]
             reported = all(x.get('status') == 'ok' and all(any(x['facts']['teams'][side][field] is not None
                            for field in ('expected_goals', 'xg_actual')) for side in supplement.SIDES) for x in xgs)
             first = {'confirmed_lineups': originals[mid]['facts']['both_elevens'], 'timed_h2h_and_total': bool(row['original_market'])}
@@ -222,6 +226,7 @@ def verify_quality(directory):
             require(row['latest_valid_market'] == quotes.get(mid) and row['quality'][stages[0]] == first
                     and row['quality'][stages[1]] == latest, mid + ': source market or field coverage differs')
             previous[mid] = row
+        previous_started_at = run['started_at']
         require(supplement.quality_counts(run['fixtures']) == run['coverage_counts'], 'quality totals differ from verified rows')
     require(all(index[k] == run[k] for k in ('coverage_counts', 'status', 'observed_through', 'registered')),
             'quality display differs from latest receipt')
