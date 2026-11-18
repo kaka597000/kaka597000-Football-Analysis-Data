@@ -20,7 +20,7 @@ concurrency:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
@@ -46,6 +46,7 @@ jobs:
             workspace-updates/20261118-sequence/forward
             workspace-updates/20261118-transformer/forward
             workspace-updates/20261118-sequence/coverage
+            workspace-updates/20261118-market-signals
       - name: Read pinned public code
         uses: actions/checkout@v4
         with:
@@ -226,6 +227,58 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}/transformer-code/runtime
         run: python -m research_program.transformer_forward review --batch workspace-updates/20261118-transformer/forward --state-dir .
+      - name: Load market signal research revision
+        id: signal_revision
+        if: always() && steps.mode.outputs.value == 'collect'
+        uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 7c4b833c94426347941667cff540e6d78405485e
+          path: market-signal-code
+          persist-credentials: false
+      - name: Collect source-timed Brazil team markets and issue independent pairs
+        if: always() && steps.signal_revision.outcome == 'success'
+        working-directory: private-state
+        env:
+          PYTHONPATH: ${{ github.workspace }}/market-signal-code/runtime
+          THE_ODDS: ${{ secrets.THEODDSAPI || secrets.WCPP_ODDS_API_KEY || secrets.THE_ODDS }}
+          RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          experiment=workspace-updates/20261118-market-signals
+          quotes="$experiment/team-markets/runs/$RUN_ID-bra1"
+          python -m data_sources.team_market_quotes --data-root . --regions eu --out "$quotes"
+          python -m research_program.team_market_candidate issue --state-dir . --batch "$experiment/team-candidate" --quotes-run "$quotes"
+      - name: Track all registered Brazil signal first issues
+        if: always() && steps.signal_revision.outcome == 'success'
+        working-directory: private-state
+        env:
+          PYTHONPATH: ${{ github.workspace }}/market-signal-code/runtime
+          RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          experiment=workspace-updates/20261118-market-signals
+          python -m research_program.consensus_forward issue --state-dir . --run "$RUN_ID-bra1"
+          python -m research_program.consensus_forward review --state-dir .
+          python -m research_program.market_path_study review --state-dir . --batch "$experiment/movement/forward"
+          python -m research_program.team_market_candidate review --state-dir . --batch "$experiment/team-candidate"
+          python -m research_program.team_market_pilot review --state-dir .
+          python -m research_program.handicap_forward review --state-dir . --batch "$experiment/handicap/forward"
+      - name: Collect one rolling English team-market panel per UTC day
+        if: always() && steps.signal_revision.outcome == 'success'
+        working-directory: private-state
+        env:
+          PYTHONPATH: ${{ github.workspace }}/market-signal-code/runtime
+          THE_ODDS: ${{ secrets.THEODDSAPI || secrets.WCPP_ODDS_API_KEY || secrets.THE_ODDS }}
+        run: |
+          quotes="workspace-updates/20261118-market-signals/team-markets/runs/daily-$(date -u +%F)-eng1"
+          if [ ! -f "$quotes/coverage.json" ]; then
+            python -m data_sources.team_market_quotes --data-root . --discover eng.1 --regions us --days 4 --max-events 1 --match-markets --out "$quotes"
+          fi
+      - name: Check the next eligible Nations League Elo issue
+        if: always() && steps.signal_revision.outcome == 'success'
+        working-directory: private-state
+        env:
+          PYTHONPATH: ${{ github.workspace }}/market-signal-code/runtime
+        run: python -m nations_league.elo_monitor --study workspace-updates/20261118-market-signals/nations-elo
       - name: Save private audit and data
         if: always()
         working-directory: private-state
