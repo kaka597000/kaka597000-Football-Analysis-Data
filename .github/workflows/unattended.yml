@@ -40,6 +40,8 @@ jobs:
             kor1
             future
             market
+            workspace-updates/20261118-three-arm/batch
+            workspace-updates/20261118-three-arm/registration
       - name: Read pinned public code
         uses: actions/checkout@v4
         with:
@@ -164,6 +166,24 @@ jobs:
         working-directory: collector-code
         timeout-minutes: 1
         run: python -m runtime.automation.nations_repair_cycle --bundle ../private-state/future/nations-repair-bundle --state ../private-state/future/nations-repair-state --max-requests 6 --max-seconds 40
+      - name: Load frozen three-arm research reviewer
+        id: three_arm_source
+        if: always() && steps.mode.outputs.value == 'collect'
+        uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 3fd411a4a34769e3192816631f2fa90948ad4ac9
+          path: three-arm-code
+          persist-credentials: false
+      - name: Settle the registered Brazil calibration batch
+        if: always() && steps.three_arm_source.outcome == 'success' && steps.mode.outputs.value == 'collect'
+        timeout-minutes: 1
+        working-directory: private-state
+        run: |
+          experiment=workspace-updates/20261118-three-arm
+          export PYTHONPATH="$GITHUB_WORKSPACE/three-arm-code:$GITHUB_WORKSPACE/three-arm-code/runtime"
+          python runtime/poll_three_arm_results.py --batch "$experiment/batch" --registration "$experiment/registration/protocol.json" --state-dir .
+          python -m research_program.three_arm_review --batch "$experiment/batch" --state-dir . --out "$experiment/batch/review.json"
       - name: Save private audit and data
         if: always()
         working-directory: private-state

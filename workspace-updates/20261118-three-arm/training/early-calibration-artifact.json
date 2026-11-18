@@ -1,0 +1,120 @@
+{
+  "version": "WCPP-THREE-ARM-MARKET-COHORT-1",
+  "cutoff_at": "2026-11-14T00:00:00Z",
+  "sample_sha256": "a63a9c3d9aaaab7c33077a2375ccdd2e81f5fcc8ac3b56eb8d4fb368f64a494d",
+  "n": 3082,
+  "training_by_source": {
+    "frozen_current": {
+      "bra.1": 7,
+      "eng.1": 5,
+      "esp.1": 4,
+      "fra.1": 1,
+      "ger.1": 6,
+      "ita.1": 8,
+      "nor.1": 7,
+      "swe.1": 8
+    },
+    "date_only_proxy": {
+      "eng.1": 660,
+      "esp.1": 653,
+      "fra.1": 536,
+      "ger.1": 523,
+      "ita.1": 664
+    }
+  },
+  "market_n": 3036,
+  "market_training_by_source": {
+    "frozen_current": {},
+    "date_only_proxy": {
+      "eng.1": 660,
+      "esp.1": 653,
+      "fra.1": 536,
+      "ger.1": 523,
+      "ita.1": 664
+    }
+  },
+  "market_weight": 1.0,
+  "market_ridge": 2.0,
+  "features": [
+    "home_zero",
+    "away_zero",
+    "total_at_least_four"
+  ],
+  "cohort_calibration_n": 46,
+  "global_ridge": 12.0,
+  "cohort_ridge": 30.0,
+  "global_coefficients": [
+    -0.1773850832164758,
+    0.12034615463715656,
+    -0.039176892727675425
+  ],
+  "cohorts": {
+    "bra.1": {
+      "n": 7,
+      "coefficients": [
+        -0.21982840973929701,
+        0.1290261078026816,
+        -0.06558681801233177
+      ]
+    },
+    "eng.1": {
+      "n": 5,
+      "coefficients": [
+        -0.2097997326506675,
+        0.12257389015689346,
+        -0.015197332465020582
+      ]
+    },
+    "esp.1": {
+      "n": 4,
+      "coefficients": [
+        -0.1391993443738944,
+        0.1427487771984181,
+        -0.07458497614316732
+      ]
+    },
+    "fra.1": {
+      "n": 1,
+      "coefficients": [
+        -0.18275604961247424,
+        0.11302542788229013,
+        -0.019719875004272896
+      ]
+    },
+    "ger.1": {
+      "n": 6,
+      "coefficients": [
+        -0.20296065148042183,
+        0.09930541624733949,
+        -0.025935464382958177
+      ]
+    },
+    "ita.1": {
+      "n": 8,
+      "coefficients": [
+        -0.20769701560588077,
+        0.13410083144185797,
+        -0.10723487118467097
+      ]
+    },
+    "nor.1": {
+      "n": 7,
+      "coefficients": [
+        -0.17784939586346424,
+        0.08255967540658697,
+        0.03478665785390211
+      ]
+    },
+    "swe.1": {
+      "n": 8,
+      "coefficients": [
+        -0.14831312459481133,
+        0.18479470543922863,
+        -0.054788444174713256
+      ]
+    }
+  },
+  "unseen_cohort_fallback": "pooled_frozen_current_coefficients",
+  "historical_close_times_certified": false,
+  "active_model_changed": false
+}
