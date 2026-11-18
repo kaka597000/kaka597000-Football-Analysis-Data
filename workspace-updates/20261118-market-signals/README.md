@@ -42,3 +42,5 @@
 - 真实的未来命中率只在赛果获得来源验证并结算后更新。正式活动 Current、Test 与综合首选继续沿用原登记，所有新配方保留在独立研究轨。
 
 [总登记](registration.json) · [离线复算入口](verify.py)
+
+[严格集成测试与执行数](integration.json) · [两仓主分支 CI、云端实采和赛果监测回执、回滚记录](deployment.json)

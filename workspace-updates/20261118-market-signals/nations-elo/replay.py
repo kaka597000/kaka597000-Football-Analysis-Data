@@ -136,7 +136,26 @@ def summary(rows):
     return {'arms':arms,'elo_minus_reference':paired}
 
 
-def fit_and_evaluate(entry, prior, targets, campaign):
+def verify_poisson_fit(group, refit, retained):
+    """Both coefficient vectors must solve the same strictly convex score equations."""
+    x = np.vstack([elo.design(*r['ratings'], r['neutral'], refit['include_elo']) for r in group])
+    goals = np.asarray([r['score'] for r in group]).ravel()
+    roots = []
+    for model in (refit, retained):
+        weights = np.asarray(model['coefficients'])
+        rates = np.exp(x @ weights)
+        gradient = x.T @ (rates - goals) / len(goals)
+        if not np.isfinite(gradient).all() or np.max(np.abs(gradient)) > 1.01e-7:
+            raise ValueError('coefficient vector violates the training solver gradient tolerance')
+        hessian = x.T @ (rates[:, None] * x) / len(goals)
+        # A Newton step from the two nearly stationary points removes differences
+        # caused by a BLAS-dependent final BFGS stopping iteration.
+        roots.append(weights - np.linalg.solve(hessian, gradient))
+    np.testing.assert_allclose(roots[0], roots[1], rtol=0, atol=1e-10,
+                               err_msg='refit and archive do not identify the same Poisson optimum')
+
+
+def fit_and_evaluate(entry, prior, targets, campaign, retained_fits=None):
     world = elo.international_matches(source(entry),entry['committed_at'][:10])
     joining = {(r['date'], r['home'], r['away']):r for r in world if r['tournament']=='UEFA Nations League'}
     # Dates of predictions in the evaluation are later than the Git revision. Keep the
@@ -156,6 +175,9 @@ def fit_and_evaluate(entry, prior, targets, campaign):
     for level in LEVELS:
         group = [r for r in prepared if r['level']==level]
         fits[level] = {'elo':elo.fit(group,True), 'venue_only':elo.fit(group,False)}
+        if retained_fits is not None:
+            for arm, refit in fits[level].items():
+                verify_poisson_fit(group, refit, retained_fits[level][arm])
     output = []
     for target in targets:
         row = attach(target, ratings[snapshot_day])
@@ -173,7 +195,7 @@ def fit_and_evaluate(entry, prior, targets, campaign):
     return details, output
 
 
-def replay():
+def replay(retained_report=None):
     sources = {e['file']:e for e in read(HERE/'inputs/sources.json')}
     historical, historic_lineage = history()
     original, issued_lineage = original_pairs()
@@ -186,7 +208,8 @@ def replay():
     new = [r for r in historical if r['season'] == 2024]
     summaries, forecasts = {}, []
     for year, prior, targets in ((2024,old,new),(2026,historical,original)):
-        summaries[str(year)], rows = fit_and_evaluate(sources[f'world-{year}.csv.gz'],prior,targets,str(year))
+        retained_fits = None if retained_report is None else retained_report['campaigns'][str(year)]['fits']
+        summaries[str(year)], rows = fit_and_evaluate(sources[f'world-{year}.csv.gz'],prior,targets,str(year),retained_fits)
         forecasts.extend(rows)
     inventory = []
     for file, entry in sources.items():
@@ -216,7 +239,19 @@ def compare(actual, saved, path='root'):
         if len(actual)!=len(saved): raise ValueError(path + ': length')
         for i,(a,b) in enumerate(zip(actual,saved)): compare(a,b,path+'.'+str(i))
     elif isinstance(saved,float):
-        if not np.isclose(actual,saved,rtol=1e-8,atol=1e-10): raise ValueError(path+': numeric replay')
+        # Identical model decisions and counts are checked below. Only re-fitted
+        # model probabilities, log scores and verified coefficients vary with BFGS.
+        refitted = any(marker in path for marker in ('.arms.elo.', '.arms.venue_only.'))
+        if '.coefficients.' in path:
+            atol, rtol = 1e-7, 0.
+        elif refitted and ('.wdl_probabilities.' in path or path.endswith(('p_observed_score','p_over_2_5'))):
+            atol, rtol = 1e-7, 0.
+        elif refitted and path.endswith('.score_log_loss'):
+            atol, rtol = 5e-7, 1e-7
+        else:
+            atol, rtol = 1e-12, 1e-12
+        if not np.isclose(actual, saved, rtol=rtol, atol=atol):
+            raise ValueError(f'{path}: {actual!r} differs from {saved!r} (atol={atol}, rtol={rtol})')
     elif actual!=saved:
         raise ValueError(path+': value')
 
@@ -228,13 +263,14 @@ if __name__=='__main__':
     args=parser.parse_args()
     sys.path.insert(0,str(args.source.resolve()/'runtime'))
     from nations_league import elo_reference as elo
-    report, rows=replay()
+    retained = None if args.out else read(HERE/'report.json')
+    report, rows=replay(retained)
     if args.out:
         args.out.mkdir(parents=True,exist_ok=True)
         (args.out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True,allow_nan=False)+'\n')
         (args.out/'predictions.jsonl.gz').write_bytes(gzip.compress(b''.join(
             (json.dumps(r,sort_keys=True,separators=(',',':'),allow_nan=False)+'\n').encode() for r in rows),mtime=0))
     else:
-        compare(report,read(HERE/'report.json'))
+        compare(report,retained)
         compare(rows,[json.loads(line) for line in gzip.open(HERE/'predictions.jsonl.gz','rt')])
     print(json.dumps({c:d['evaluation']['arms'] for c,d in report['campaigns'].items()},sort_keys=True))
