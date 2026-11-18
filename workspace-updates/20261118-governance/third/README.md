@@ -28,7 +28,7 @@
 ANALYSIS=/path/to/Football-Analysis
 PYTHONPATH="$ANALYSIS/runtime" python -m research_program.portfolio_lifecycle --data . --policy workspace-updates/20261118-governance/third/policy.json
 PYTHONPATH="$ANALYSIS/runtime" python -m research_program.bounded_fusion --data . --out /tmp/new-bounded-development
-diff -u workspace-updates/20261118-governance/third/report.json /tmp/new-bounded-development/report.json
+python runtime/development_replay.py workspace-updates/20261118-governance/third /tmp/new-bounded-development
 ```
 
 ## 验证与兼容
@@ -40,3 +40,5 @@ diff -u workspace-updates/20261118-governance/third/report.json /tmp/new-bounded
 [import-boundaries.json](import-boundaries.json)记录旧裸名导入边界。新模块使用包相对导入，没有新增sys.path覆盖；旧v2至v7和optimization相关哈希依赖没有批量删除。市场信号和Elo继续原监测，不混入本三组同场比较。
 
 源码及数据均只提交草稿分支；未合并PR、未部署、未改正式权重或自动晋级。回滚对应新提交即可；原始记录和固定源码恢复点继续保留。
+
+远端首次开发复算的字节比较因概率指标约1e-15的数学库尾差失败。现验证器对报告和8,685条逐权重记录的身份、权重、比分、计数和源哈希保持精确比较，仅score_log_loss/wdl_brier允许绝对误差1e-12；不改变原数值记录或任何冻结哈希。新增测试拒绝权重/比分/身份变化、较大概率偏差和缺行。

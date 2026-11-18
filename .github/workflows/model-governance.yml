@@ -81,5 +81,5 @@ jobs:
           OMP_NUM_THREADS: '1'
         run: |
           python -m research_program.bounded_fusion --data . --out /tmp/bounded-development
-          diff -u workspace-updates/20261118-governance/third/report.json /tmp/bounded-development/report.json
+          python runtime/development_replay.py workspace-updates/20261118-governance/third /tmp/bounded-development
           python -m research_program.portfolio_lifecycle --data . --policy workspace-updates/20261118-governance/third/policy.json > /tmp/lifecycle.json
