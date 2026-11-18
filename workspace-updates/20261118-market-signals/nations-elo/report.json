@@ -1,0 +1,851 @@
+{
+  "active_promotion": false,
+  "archive_lineage": {
+    "november_first_issues": {
+      "first_issue_manifest": "workspace-updates/20261110-nations-model/manifest.json",
+      "original_archive_sha256": "e7a4c6af292c6984ff6d1dbbada60cc9a24f809089bc84c1b97c2a0ae6feb528",
+      "result_ledger": "workspace-updates/20261118-all-analysis-review/cumulative-inputs.json",
+      "result_ledger_sha256": "7230b1f30ab2f89612f6c78dcbbc0245fa25a58b2e4db4338169b457c2b0bb3c"
+    },
+    "uefa_nations_repaired_database": {
+      "archive": "workspace-updates/20261116-nations-repair/nations-repair-evidence.tar.gz",
+      "member": "objects/b72474c1e02711dbe98d300219bfbf2f2d7f39c884f170bc5b2bb8c00d054054",
+      "sha256": "b72474c1e02711dbe98d300219bfbf2f2d7f39c884f170bc5b2bb8c00d054054"
+    }
+  },
+  "campaigns": {
+    "2024": {
+      "by_grade": {
+        "A": {
+          "arms": {
+            "elo": {
+              "n": 48,
+              "primary_hit": 5,
+              "score_log_loss": 2.9120719575145073,
+              "total_hit": 28,
+              "wdl_hit": 27
+            },
+            "venue_only": {
+              "n": 48,
+              "primary_hit": 5,
+              "score_log_loss": 3.1577143329157615,
+              "total_hit": 27,
+              "wdl_hit": 21
+            }
+          },
+          "elo_minus_reference": {
+            "venue_only": {
+              "primary_hit": {
+                "gained": 1,
+                "lost": 1,
+                "net": 0
+              },
+              "total_hit": {
+                "gained": 11,
+                "lost": 10,
+                "net": 1
+              },
+              "wdl_hit": {
+                "gained": 8,
+                "lost": 2,
+                "net": 6
+              }
+            }
+          }
+        },
+        "B": {
+          "arms": {
+            "elo": {
+              "n": 48,
+              "primary_hit": 7,
+              "score_log_loss": 2.83779932660176,
+              "total_hit": 25,
+              "wdl_hit": 27
+            },
+            "venue_only": {
+              "n": 48,
+              "primary_hit": 4,
+              "score_log_loss": 3.0999208455271305,
+              "total_hit": 24,
+              "wdl_hit": 22
+            }
+          },
+          "elo_minus_reference": {
+            "venue_only": {
+              "primary_hit": {
+                "gained": 6,
+                "lost": 3,
+                "net": 3
+              },
+              "total_hit": {
+                "gained": 2,
+                "lost": 1,
+                "net": 1
+              },
+              "wdl_hit": {
+                "gained": 9,
+                "lost": 4,
+                "net": 5
+              }
+            }
+          }
+        },
+        "C": {
+          "arms": {
+            "elo": {
+              "n": 47,
+              "primary_hit": 7,
+              "score_log_loss": 2.6210445732523797,
+              "total_hit": 28,
+              "wdl_hit": 33
+            },
+            "venue_only": {
+              "n": 47,
+              "primary_hit": 4,
+              "score_log_loss": 3.0049435412528305,
+              "total_hit": 24,
+              "wdl_hit": 20
+            }
+          },
+          "elo_minus_reference": {
+            "venue_only": {
+              "primary_hit": {
+                "gained": 7,
+                "lost": 4,
+                "net": 3
+              },
+              "total_hit": {
+                "gained": 4,
+                "lost": 0,
+                "net": 4
+              },
+              "wdl_hit": {
+                "gained": 13,
+                "lost": 0,
+                "net": 13
+              }
+            }
+          }
+        },
+        "D": {
+          "arms": {
+            "elo": {
+              "n": 12,
+              "primary_hit": 2,
+              "score_log_loss": 2.427918976975279,
+              "total_hit": 10,
+              "wdl_hit": 5
+            },
+            "venue_only": {
+              "n": 12,
+              "primary_hit": 1,
+              "score_log_loss": 2.4576780351178815,
+              "total_hit": 10,
+              "wdl_hit": 5
+            }
+          },
+          "elo_minus_reference": {
+            "venue_only": {
+              "primary_hit": {
+                "gained": 2,
+                "lost": 1,
+                "net": 1
+              },
+              "total_hit": {
+                "gained": 0,
+                "lost": 0,
+                "net": 0
+              },
+              "wdl_hit": {
+                "gained": 2,
+                "lost": 2,
+                "net": 0
+              }
+            }
+          }
+        }
+      },
+      "calibration_matches": 454,
+      "evaluation": {
+        "arms": {
+          "elo": {
+            "n": 155,
+            "primary_hit": 21,
+            "score_log_loss": 2.763341576155781,
+            "total_hit": 91,
+            "wdl_hit": 92
+          },
+          "venue_only": {
+            "n": 155,
+            "primary_hit": 14,
+            "score_log_loss": 3.0392965898422997,
+            "total_hit": 85,
+            "wdl_hit": 68
+          }
+        },
+        "elo_minus_reference": {
+          "venue_only": {
+            "primary_hit": {
+              "gained": 16,
+              "lost": 9,
+              "net": 7
+            },
+            "total_hit": {
+              "gained": 17,
+              "lost": 11,
+              "net": 6
+            },
+            "wdl_hit": {
+              "gained": 32,
+              "lost": 8,
+              "net": 24
+            }
+          }
+        }
+      },
+      "fits": {
+        "A": {
+          "elo": {
+            "coefficients": [
+              0.2630632313171757,
+              0.15362679720300387,
+              0.8784926186208297
+            ],
+            "include_elo": true,
+            "matches": 119
+          },
+          "venue_only": {
+            "coefficients": [
+              0.3053768569636533,
+              0.157246664973174
+            ],
+            "include_elo": false,
+            "matches": 119
+          }
+        },
+        "B": {
+          "elo": {
+            "coefficients": [
+              0.1352946147669224,
+              0.11930510463331655,
+              0.7840878650451362
+            ],
+            "include_elo": true,
+            "matches": 113
+          },
+          "venue_only": {
+            "coefficients": [
+              0.14917801152654084,
+              0.11330765240487527
+            ],
+            "include_elo": false,
+            "matches": 113
+          }
+        },
+        "C": {
+          "elo": {
+            "coefficients": [
+              0.052336070807606085,
+              0.11492420437757778,
+              1.0292959434919289
+            ],
+            "include_elo": true,
+            "matches": 138
+          },
+          "venue_only": {
+            "coefficients": [
+              0.12835233075847965,
+              0.12242097655420717
+            ],
+            "include_elo": false,
+            "matches": 138
+          }
+        },
+        "D": {
+          "elo": {
+            "coefficients": [
+              -0.00766772948346953,
+              0.08007892248715627,
+              1.1481259775019008
+            ],
+            "include_elo": true,
+            "matches": 84
+          },
+          "venue_only": {
+            "coefficients": [
+              0.1554573413719035,
+              0.0875531662195173
+            ],
+            "include_elo": false,
+            "matches": 84
+          }
+        }
+      },
+      "last_calibration_result": "2022-09-27",
+      "last_world_result": "2024-07-14",
+      "rating_vintage": "2024-07-29T09:01:51Z",
+      "snapshot_url": "https://raw.githubusercontent.com/martj42/international_results/e38d162ae0c187e76b1c298bea7972782c90ad76/results.csv",
+      "world_raw_results": 30318,
+      "world_raw_sha256": "a0913301339409f5fc9541ba1d54e48af83e80d9bd9b45ab020fe641a4806e95"
+    },
+    "2026": {
+      "by_grade": {
+        "A": {
+          "arms": {
+            "elo": {
+              "n": 16,
+              "primary_hit": 1,
+              "score_log_loss": 3.530550225586367,
+              "total_hit": 9,
+              "wdl_hit": 12
+            },
+            "frozen_current": {
+              "n": 16,
+              "primary_hit": 0,
+              "score_log_loss": 3.5764304232033735,
+              "total_hit": 14,
+              "wdl_hit": 9
+            },
+            "frozen_test": {
+              "n": 16,
+              "primary_hit": 1,
+              "score_log_loss": 3.6033292308788076,
+              "total_hit": 12,
+              "wdl_hit": 11
+            },
+            "venue_only": {
+              "n": 16,
+              "primary_hit": 0,
+              "score_log_loss": 3.630145950439532,
+              "total_hit": 14,
+              "wdl_hit": 9
+            }
+          },
+          "elo_minus_reference": {
+            "frozen_current": {
+              "primary_hit": {
+                "gained": 1,
+                "lost": 0,
+                "net": 1
+              },
+              "total_hit": {
+                "gained": 0,
+                "lost": 5,
+                "net": -5
+              },
+              "wdl_hit": {
+                "gained": 4,
+                "lost": 1,
+                "net": 3
+              }
+            },
+            "frozen_test": {
+              "primary_hit": {
+                "gained": 1,
+                "lost": 1,
+                "net": 0
+              },
+              "total_hit": {
+                "gained": 1,
+                "lost": 4,
+                "net": -3
+              },
+              "wdl_hit": {
+                "gained": 1,
+                "lost": 0,
+                "net": 1
+              }
+            },
+            "venue_only": {
+              "primary_hit": {
+                "gained": 1,
+                "lost": 0,
+                "net": 1
+              },
+              "total_hit": {
+                "gained": 0,
+                "lost": 5,
+                "net": -5
+              },
+              "wdl_hit": {
+                "gained": 4,
+                "lost": 1,
+                "net": 3
+              }
+            }
+          }
+        },
+        "B": {
+          "arms": {
+            "elo": {
+              "n": 16,
+              "primary_hit": 3,
+              "score_log_loss": 2.5255860640483165,
+              "total_hit": 10,
+              "wdl_hit": 9
+            },
+            "frozen_current": {
+              "n": 16,
+              "primary_hit": 3,
+              "score_log_loss": 2.7039447579916014,
+              "total_hit": 9,
+              "wdl_hit": 9
+            },
+            "frozen_test": {
+              "n": 16,
+              "primary_hit": 3,
+              "score_log_loss": 2.5892561973291186,
+              "total_hit": 11,
+              "wdl_hit": 10
+            },
+            "venue_only": {
+              "n": 16,
+              "primary_hit": 3,
+              "score_log_loss": 2.6980410628932203,
+              "total_hit": 9,
+              "wdl_hit": 9
+            }
+          },
+          "elo_minus_reference": {
+            "frozen_current": {
+              "primary_hit": {
+                "gained": 2,
+                "lost": 2,
+                "net": 0
+              },
+              "total_hit": {
+                "gained": 1,
+                "lost": 0,
+                "net": 1
+              },
+              "wdl_hit": {
+                "gained": 2,
+                "lost": 2,
+                "net": 0
+              }
+            },
+            "frozen_test": {
+              "primary_hit": {
+                "gained": 2,
+                "lost": 2,
+                "net": 0
+              },
+              "total_hit": {
+                "gained": 1,
+                "lost": 2,
+                "net": -1
+              },
+              "wdl_hit": {
+                "gained": 0,
+                "lost": 1,
+                "net": -1
+              }
+            },
+            "venue_only": {
+              "primary_hit": {
+                "gained": 2,
+                "lost": 2,
+                "net": 0
+              },
+              "total_hit": {
+                "gained": 1,
+                "lost": 0,
+                "net": 1
+              },
+              "wdl_hit": {
+                "gained": 2,
+                "lost": 2,
+                "net": 0
+              }
+            }
+          }
+        },
+        "C": {
+          "arms": {
+            "elo": {
+              "n": 16,
+              "primary_hit": 1,
+              "score_log_loss": 3.1307321466394447,
+              "total_hit": 8,
+              "wdl_hit": 9
+            },
+            "frozen_current": {
+              "n": 16,
+              "primary_hit": 1,
+              "score_log_loss": 3.4856634146763588,
+              "total_hit": 7,
+              "wdl_hit": 7
+            },
+            "frozen_test": {
+              "n": 16,
+              "primary_hit": 1,
+              "score_log_loss": 3.105636847324243,
+              "total_hit": 7,
+              "wdl_hit": 8
+            },
+            "venue_only": {
+              "n": 16,
+              "primary_hit": 1,
+              "score_log_loss": 3.4963644168705934,
+              "total_hit": 7,
+              "wdl_hit": 7
+            }
+          },
+          "elo_minus_reference": {
+            "frozen_current": {
+              "primary_hit": {
+                "gained": 1,
+                "lost": 1,
+                "net": 0
+              },
+              "total_hit": {
+                "gained": 2,
+                "lost": 1,
+                "net": 1
+              },
+              "wdl_hit": {
+                "gained": 4,
+                "lost": 2,
+                "net": 2
+              }
+            },
+            "frozen_test": {
+              "primary_hit": {
+                "gained": 1,
+                "lost": 1,
+                "net": 0
+              },
+              "total_hit": {
+                "gained": 1,
+                "lost": 0,
+                "net": 1
+              },
+              "wdl_hit": {
+                "gained": 2,
+                "lost": 1,
+                "net": 1
+              }
+            },
+            "venue_only": {
+              "primary_hit": {
+                "gained": 1,
+                "lost": 1,
+                "net": 0
+              },
+              "total_hit": {
+                "gained": 2,
+                "lost": 1,
+                "net": 1
+              },
+              "wdl_hit": {
+                "gained": 4,
+                "lost": 2,
+                "net": 2
+              }
+            }
+          }
+        },
+        "D": {
+          "arms": {
+            "elo": {
+              "n": 4,
+              "primary_hit": 0,
+              "score_log_loss": 2.344824784001876,
+              "total_hit": 3,
+              "wdl_hit": 2
+            },
+            "frozen_current": {
+              "n": 4,
+              "primary_hit": 1,
+              "score_log_loss": 2.3428061752805855,
+              "total_hit": 3,
+              "wdl_hit": 2
+            },
+            "frozen_test": {
+              "n": 4,
+              "primary_hit": 1,
+              "score_log_loss": 2.3491234636416785,
+              "total_hit": 3,
+              "wdl_hit": 2
+            },
+            "venue_only": {
+              "n": 4,
+              "primary_hit": 1,
+              "score_log_loss": 2.322892798738665,
+              "total_hit": 3,
+              "wdl_hit": 2
+            }
+          },
+          "elo_minus_reference": {
+            "frozen_current": {
+              "primary_hit": {
+                "gained": 0,
+                "lost": 1,
+                "net": -1
+              },
+              "total_hit": {
+                "gained": 0,
+                "lost": 0,
+                "net": 0
+              },
+              "wdl_hit": {
+                "gained": 1,
+                "lost": 1,
+                "net": 0
+              }
+            },
+            "frozen_test": {
+              "primary_hit": {
+                "gained": 0,
+                "lost": 1,
+                "net": -1
+              },
+              "total_hit": {
+                "gained": 0,
+                "lost": 0,
+                "net": 0
+              },
+              "wdl_hit": {
+                "gained": 0,
+                "lost": 0,
+                "net": 0
+              }
+            },
+            "venue_only": {
+              "primary_hit": {
+                "gained": 0,
+                "lost": 1,
+                "net": -1
+              },
+              "total_hit": {
+                "gained": 0,
+                "lost": 0,
+                "net": 0
+              },
+              "wdl_hit": {
+                "gained": 1,
+                "lost": 1,
+                "net": 0
+              }
+            }
+          }
+        }
+      },
+      "calibration_matches": 609,
+      "evaluation": {
+        "arms": {
+          "elo": {
+            "n": 52,
+            "primary_hit": 5,
+            "score_log_loss": 3.0070998868537213,
+            "total_hit": 30,
+            "wdl_hit": 32
+          },
+          "frozen_current": {
+            "n": 52,
+            "primary_hit": 5,
+            "score_log_loss": 3.185150812212763,
+            "total_hit": 33,
+            "wdl_hit": 27
+          },
+          "frozen_test": {
+            "n": 52,
+            "primary_hit": 6,
+            "score_log_loss": 3.0416932742900276,
+            "total_hit": 33,
+            "wdl_hit": 31
+          },
+          "venue_only": {
+            "n": 52,
+            "primary_hit": 5,
+            "score_log_loss": 3.2016229630424657,
+            "total_hit": 33,
+            "wdl_hit": 27
+          }
+        },
+        "elo_minus_reference": {
+          "frozen_current": {
+            "primary_hit": {
+              "gained": 4,
+              "lost": 4,
+              "net": 0
+            },
+            "total_hit": {
+              "gained": 3,
+              "lost": 6,
+              "net": -3
+            },
+            "wdl_hit": {
+              "gained": 11,
+              "lost": 6,
+              "net": 5
+            }
+          },
+          "frozen_test": {
+            "primary_hit": {
+              "gained": 4,
+              "lost": 5,
+              "net": -1
+            },
+            "total_hit": {
+              "gained": 3,
+              "lost": 6,
+              "net": -3
+            },
+            "wdl_hit": {
+              "gained": 3,
+              "lost": 2,
+              "net": 1
+            }
+          },
+          "venue_only": {
+            "primary_hit": {
+              "gained": 4,
+              "lost": 4,
+              "net": 0
+            },
+            "total_hit": {
+              "gained": 3,
+              "lost": 6,
+              "net": -3
+            },
+            "wdl_hit": {
+              "gained": 11,
+              "lost": 6,
+              "net": 5
+            }
+          }
+        }
+      },
+      "fits": {
+        "A": {
+          "elo": {
+            "coefficients": [
+              0.2686148827190123,
+              0.16439759900870715,
+              0.8802101005576737
+            ],
+            "include_elo": true,
+            "matches": 167
+          },
+          "venue_only": {
+            "coefficients": [
+              0.32251580081917774,
+              0.17463744245396892
+            ],
+            "include_elo": false,
+            "matches": 167
+          }
+        },
+        "B": {
+          "elo": {
+            "coefficients": [
+              0.14155296727009378,
+              0.15340155433376976,
+              1.096772975409731
+            ],
+            "include_elo": true,
+            "matches": 161
+          },
+          "venue_only": {
+            "coefficients": [
+              0.18712691670413661,
+              0.1413192714069346
+            ],
+            "include_elo": false,
+            "matches": 161
+          }
+        },
+        "C": {
+          "elo": {
+            "coefficients": [
+              0.04428017988707192,
+              0.11460172767142526,
+              1.1846045387131443
+            ],
+            "include_elo": true,
+            "matches": 185
+          },
+          "venue_only": {
+            "coefficients": [
+              0.14564769168126512,
+              0.12212007629433962
+            ],
+            "include_elo": false,
+            "matches": 185
+          }
+        },
+        "D": {
+          "elo": {
+            "coefficients": [
+              -0.03606432087215507,
+              0.0861033963763574,
+              1.126055556027186
+            ],
+            "include_elo": true,
+            "matches": 96
+          },
+          "venue_only": {
+            "coefficients": [
+              0.11343244461130352,
+              0.09383743692855755
+            ],
+            "include_elo": false,
+            "matches": 96
+          }
+        }
+      },
+      "last_calibration_result": "2024-11-19",
+      "last_world_result": "2026-10-06",
+      "rating_vintage": "2026-10-31T10:12:59Z",
+      "snapshot_url": "https://raw.githubusercontent.com/martj42/international_results/b0948cb558c927c357db4067eac5b37b96d0e4bb/results.csv",
+      "world_raw_results": 32820,
+      "world_raw_sha256": "09aac809e317f3004c69720a38addb656c49ebb19f1937deab96f96e3362257a"
+    }
+  },
+  "elo_method_selected_after_matches": true,
+  "future": [
+    {
+      "captured_at": "2026-11-18T06:17:14.351870+00:00",
+      "events": 52,
+      "scheduled_after_capture": [],
+      "source_sha256": "02e21c3d0a939f7c3c2b0c9bcf3aa71301957281fe3d24071f2e25c9e8ec7ccc",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard?dates=202611"
+    },
+    {
+      "captured_at": "2026-11-18T06:17:14.634496+00:00",
+      "events": 0,
+      "scheduled_after_capture": [],
+      "source_sha256": "692c4c42808b63e1c12c2a1a052d08d1285b4bfacfa8be060ac0bf4ad55199f7",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard?dates=202612"
+    }
+  ],
+  "historical_eligibility_exclusions": [
+    {
+      "away": "Kosovo",
+      "database_score": [
+        3,
+        0
+      ],
+      "date": "2024-11-15",
+      "home": "Romania",
+      "match_id": "espn:698999",
+      "reason": "match abandoned; conflicting 90-minute/awarded score",
+      "world_score": [
+        0,
+        0
+      ]
+    }
+  ],
+  "historical_intake_first_known_certified": false,
+  "issued_forward": 0,
+  "population_2024_before_exclusions": 156,
+  "protocol_sha256": "1d963f3f02e419ddd6f44a114a3f2fbc32ff9f3ce8e0541d1b27527e23cb4ffe",
+  "rating_inputs_existed_before_matches": true,
+  "study_version": "1",
+  "team_aliases": {
+    "Bosnia-Herzegovina": "Bosnia and Herzegovina",
+    "Czechia": "Czech Republic",
+    "Türkiye": "Turkey"
+  }
+}
