@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 3eca355a9e801c15d21c9b9b87e84592be15cee9
+          ref: 3e4412b853bfa258f6b8a121d35cc76d3e9965b5
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -134,6 +134,14 @@ jobs:
           WCPP_ODDS_API_KEY: ${{ secrets.THEODDSAPI || secrets.WCPP_ODDS_API_KEY || secrets.THE_ODDS }}
           MARKET_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
         run: python -m runtime.automation.market_snapshot --competition bra.1 --market-max-age-seconds 3600 --out "../private-state/market/runs/$MARKET_RUN_ID-bra1"
+      - name: Collect bounded InferSports Nations fallback
+        if: always() && steps.mode.outputs.value == 'collect'
+        working-directory: collector-code
+        timeout-minutes: 1
+        env:
+          WCPP_INFERSPORTS_KEY: ${{ secrets.INFER || secrets.WCPP_INFERSPORTS_KEY || secrets.infer_yapan_zhishu }}
+          MARKET_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: python -m runtime.automation.infer_market_snapshot --max-pages 3 --max-events 8 --out "../private-state/market/runs/$MARKET_RUN_ID-infer"
       - name: Capture and review locked future populations
         if: always() && steps.mode.outputs.value == 'collect'
         working-directory: code
