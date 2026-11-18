@@ -1,0 +1,103 @@
+{
+  "schema": "WCPP-TRANSFORMER-RESEARCH-REGISTRATION-1",
+  "recorded_at": "2026-11-18T05:06:33.838631+00:00",
+  "fixtures": [
+    {
+      "match_id": "espn:401841315",
+      "home": "espn:3456",
+      "away": "espn:2674",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-18T22:30Z",
+      "neutral": false,
+      "identity_sha256": "036c1b3e5c25fb2e8192db4006c4ce0fc10a0108e3c60d76e3acd131f28fed47"
+    },
+    {
+      "match_id": "espn:401841310",
+      "home": "espn:4936",
+      "away": "espn:9318",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-18T23:00Z",
+      "neutral": false,
+      "identity_sha256": "9fd6429a01b223b2ccfd713bd0b9a1af8d18e1484a3a77352afa5d266d9344f4"
+    },
+    {
+      "match_id": "espn:401841313",
+      "home": "espn:819",
+      "away": "espn:3458",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-18T23:30Z",
+      "neutral": false,
+      "identity_sha256": "6ad1f177f8957765013028ec8c28a58d3de4b0ed11b50cbe5aabc2d0f678935f"
+    },
+    {
+      "match_id": "espn:401841314",
+      "home": "espn:2022",
+      "away": "espn:2029",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-18T23:30Z",
+      "neutral": false,
+      "identity_sha256": "628d39b3c8a6fc0acfa080e7bf8174d4333f3963763c0fb4c501c2114a368dd9"
+    },
+    {
+      "match_id": "espn:401841312",
+      "home": "espn:6273",
+      "away": "espn:9967",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-19T00:30Z",
+      "neutral": false,
+      "identity_sha256": "542fbc1880c4871f074a673efabb109f0adace050e9851b3932e1b048f87faa9"
+    },
+    {
+      "match_id": "espn:401841316",
+      "home": "espn:874",
+      "away": "espn:6086",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-19T00:30Z",
+      "neutral": false,
+      "identity_sha256": "dc1ddaab2d445de9a5f10a150fd7e4ced600b395a71f3fab9804cd389b618705"
+    }
+  ],
+  "scoreboard_source": "market/runs/44223152835-1-bra1/identity.json",
+  "scoreboard_sha256": "d47630e3f3961be32601079ea3be52898dc30f902612da8c1478fd57d2e9366e",
+  "automatic_promotion": false,
+  "arms": [
+    "market_baseline",
+    "lightgbm",
+    "lstm",
+    "transformer"
+  ],
+  "baseline": "Active Current score matrix projected to common paired 1X2 and Asian total at market weight 1. Europe development uses date-separated archived goals-only proxy and Bet365 close.",
+  "sequence": "Last five completed domestic league matches strictly before the fixture day; same per-step goals for, against, home indicator and validity masks. Same history and baseline expected goals for both learners.",
+  "scope": "Same six Brazil fixtures at a fresh common future cutoff. Compare all four forecasts at that time. Prior experiment stays independent.",
+  "primary": "Paired net exact-score Top1 hits on all same eligible matches; report gained and lost. Secondary WDL and strict Asian total at the common line, directions from the same joint matrix; report score log loss and WDL and totals probability quality.",
+  "method": "One fit recipe fixed before fitting. Development train 1299 from 2024/25; assess subsequent 1737 already-researched goals-only five-league and closing-line proxies (not untouched or quote-time-certified); refit 3036 before forward. No learning from evaluation outcomes during development fit. Pair by match and estimate net differences by matchday block. Diagnostic reverse valid timesteps only, holding same inputs and weights.",
+  "model": {
+    "encoder_layers": 1,
+    "architecture": "pre-layernorm self-attention encoder, ReLU feedforward; single native Torch CPU fit using float64 and one thread; learned absolute position initialized N(0,.02), own/opponent series and three static features shared with prior heads",
+    "d_model": 16,
+    "heads": 2,
+    "ffn": 32,
+    "dropout": 0,
+    "readout": "last valid representation plus same three static features, learned linear head initialized at zero",
+    "mask": "exclude doubly padded keys/values; empty history uses zero pooled representation",
+    "weight_decay": 0.01,
+    "optimizer": "Adam",
+    "epochs": 60,
+    "lr": 0.003,
+    "seed": 20261118,
+    "objective": "same ridge-2 Poisson log-rate residual objective, clamp fitted log-rate shifts to ±0.35 when applying to the common score matrix"
+  },
+  "original_europe_sources": {
+    "samples-2425.jsonl.gz": "da3d4527ae1e12e10cb386b8373c0f74bcd653734178e872c2f3fcc5e9fb6e26",
+    "samples-2526.jsonl.gz": "61906571456d62bffb1919bb43285a3318f055aae923170f47e73392423814cc",
+    "season-training-artifact.json": "b4250e5682bd62d7c5389fca2fccc793672b80d4dffa6032887821a47511cff0",
+    "artifact.json": "42bf92248332987987d3bd104afe52d08ec5340712240fb87cdd3a7dc0ef77b1",
+    "season-holdout.jsonl.gz": "40072b1a27a1040d3777d7872963ebcbdad8308f200ce2a8830a350916d5c420"
+  }
+}
