@@ -1,0 +1,1738 @@
+{
+  "created_at": "2026-11-18T00:49:25.665968+00:00",
+  "classification": "DEVELOPMENT_COUNTERFACTUAL_NOT_FORWARD_POLICY_VALIDATION",
+  "unique_matches": 18,
+  "separate_forecast_nodes": 26,
+  "matrix_quote_pairs": 194,
+  "policy_rows": 776,
+  "model_groups": {
+    "repair:challenger": {
+      "settlement_balance": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 7,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 8
+        },
+        "strict_full_win_rate": 0.4375,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 8,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 7
+        },
+        "strict_full_win_rate": 0.5,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.1875
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861187",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 8,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 7
+        },
+        "strict_full_win_rate": 0.5,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.1875
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861180",
+            "line": 2.25,
+            "before": "over",
+            "after": "under",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      },
+      "expected_return": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 7,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 8
+        },
+        "strict_full_win_rate": 0.4375,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "repair:fixed_current": {
+      "settlement_balance": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 6,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 9
+        },
+        "strict_full_win_rate": 0.375,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 6,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 9
+        },
+        "strict_full_win_rate": 0.375,
+        "changed_directions": 4,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          -0.25,
+          0.25
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861180",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          },
+          {
+            "match_id": "espn:401861183",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          },
+          {
+            "match_id": "espn:401861187",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          },
+          {
+            "match_id": "espn:401861190",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 5,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 10
+        },
+        "strict_full_win_rate": 0.3125,
+        "changed_directions": 1,
+        "net_full_wins": -1,
+        "descriptive_match_bootstrap95": [
+          -0.1875,
+          0.0
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861188",
+            "line": 2.75,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          }
+        ]
+      },
+      "expected_return": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 7,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 8
+        },
+        "strict_full_win_rate": 0.4375,
+        "changed_directions": 3,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          -0.125,
+          0.25
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861180",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          },
+          {
+            "match_id": "espn:401861183",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          },
+          {
+            "match_id": "espn:401861187",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      }
+    },
+    "repair:fixed_test": {
+      "settlement_balance": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 7,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 8
+        },
+        "strict_full_win_rate": 0.4375,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 8,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 7
+        },
+        "strict_full_win_rate": 0.5,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.1875
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861187",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 7,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 8
+        },
+        "strict_full_win_rate": 0.4375,
+        "changed_directions": 2,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          -0.1875,
+          0.1875
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861180",
+            "line": 2.25,
+            "before": "over",
+            "after": "under",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          },
+          {
+            "match_id": "espn:401861188",
+            "line": 2.75,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          }
+        ]
+      },
+      "expected_return": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 6,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 9
+        },
+        "strict_full_win_rate": 0.375,
+        "changed_directions": 1,
+        "net_full_wins": -1,
+        "descriptive_match_bootstrap95": [
+          -0.1875,
+          0.0
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861194",
+            "line": 3.0,
+            "before": "over",
+            "after": "under",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          }
+        ]
+      }
+    },
+    "repair:old_current": {
+      "settlement_balance": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 5,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 10
+        },
+        "strict_full_win_rate": 0.3125,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 6,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 9
+        },
+        "strict_full_win_rate": 0.375,
+        "changed_directions": 5,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          -0.1875,
+          0.3125
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861180",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          },
+          {
+            "match_id": "espn:401861183",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          },
+          {
+            "match_id": "espn:401861187",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          },
+          {
+            "match_id": "espn:401861188",
+            "line": 2.75,
+            "before": "over",
+            "after": "under",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          },
+          {
+            "match_id": "espn:401861190",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 5,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 10
+        },
+        "strict_full_win_rate": 0.3125,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 6,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 9
+        },
+        "strict_full_win_rate": 0.375,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.1875
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861188",
+            "line": 2.75,
+            "before": "over",
+            "after": "under",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      }
+    },
+    "repair:old_test": {
+      "settlement_balance": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 6,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 9
+        },
+        "strict_full_win_rate": 0.375,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 7,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 8
+        },
+        "strict_full_win_rate": 0.4375,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.1875
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861187",
+            "line": 2.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 6,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 9
+        },
+        "strict_full_win_rate": 0.375,
+        "changed_directions": 2,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          -0.1875,
+          0.1875
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861180",
+            "line": 2.25,
+            "before": "over",
+            "after": "under",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          },
+          {
+            "match_id": "espn:401861188",
+            "line": 2.75,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          }
+        ]
+      },
+      "expected_return": {
+        "n": 18,
+        "coverage": 1.0,
+        "non_push_n": 16,
+        "settlements": {
+          "win": 5,
+          "half_win": 0,
+          "push": 2,
+          "half_loss": 1,
+          "loss": 10
+        },
+        "strict_full_win_rate": 0.3125,
+        "changed_directions": 1,
+        "net_full_wins": -1,
+        "descriptive_match_bootstrap95": [
+          -0.1875,
+          0.0
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861194",
+            "line": 3.0,
+            "before": "over",
+            "after": "under",
+            "before_settlement": "win",
+            "after_settlement": "loss"
+          }
+        ]
+      }
+    },
+    "xg:actual-100": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:actual-25": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 5,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 2
+        },
+        "strict_full_win_rate": 0.7142857142857143,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.42857142857142855
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861194",
+            "line": 3.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:actual-50": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:actual-75": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:expected-100": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:expected-25": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 5,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 2
+        },
+        "strict_full_win_rate": 0.7142857142857143,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.42857142857142855
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861194",
+            "line": 3.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:expected-50": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:expected-75": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:goals": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 5,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 2
+        },
+        "strict_full_win_rate": 0.7142857142857143,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.42857142857142855
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861194",
+            "line": 3.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:shotmap-100": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:shotmap-25": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 5,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 2
+        },
+        "strict_full_win_rate": 0.7142857142857143,
+        "changed_directions": 1,
+        "net_full_wins": 1,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.42857142857142855
+        ],
+        "changed_matches": [
+          {
+            "match_id": "espn:401861194",
+            "line": 3.25,
+            "before": "under",
+            "after": "over",
+            "before_settlement": "loss",
+            "after_settlement": "win"
+          }
+        ]
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:shotmap-50": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    },
+    "xg:shotmap-75": {
+      "settlement_balance": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "strict_full_win": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "positive_settlement": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      },
+      "expected_return": {
+        "n": 8,
+        "coverage": 1.0,
+        "non_push_n": 7,
+        "settlements": {
+          "win": 4,
+          "half_win": 0,
+          "push": 1,
+          "half_loss": 0,
+          "loss": 3
+        },
+        "strict_full_win_rate": 0.5714285714285714,
+        "changed_directions": 0,
+        "net_full_wins": 0,
+        "descriptive_match_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "changed_matches": []
+      }
+    }
+  },
+  "protocol_sha256": "9e5b830fb311b4945d43b6df58cb2ab8504fcb1c1e8e1b2535fd77c5d2354f39",
+  "protocol_freeze_receipt": {
+    "freeze_id": "7c6dc0829d804d5e-v000001",
+    "recorded_at": "2026-11-18T08:49:21.355622+08:00",
+    "path": "/workspace/WCPP/research/repo-audit-20261118/total-objectives/freezes/7c6dc0829d804d5e6f7677b903afd087a325928d43aa9202ecdd04eccbbfc757/000001.json",
+    "sha256": "369d86b5e859143671a594321a36723ecc3f9f4058a3d8922bedf2b403376471",
+    "evaluation_slot": "SEPARATE_REVISION_OR_STAGE"
+  },
+  "original_forecasts_unchanged": true,
+  "new_future_samples": 0,
+  "active_model_promotion": false
+}

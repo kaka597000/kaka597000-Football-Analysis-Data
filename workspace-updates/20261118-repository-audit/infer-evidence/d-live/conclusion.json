@@ -1,0 +1,58 @@
+{
+  "status": "D_PROVIDER_ID_NOT_VERIFIED",
+  "reviewed_at": "2026-11-18T00:48:14.519967+00:00",
+  "reviewed_at_beijing": "2026-11-18T08:48:14.519967+08:00",
+  "requests_used": 2,
+  "request_budget": 2,
+  "stopped": true,
+  "reason": "Both authorized date-filtered finished-event requests returned HTTP 200 and an empty data array. Budget exhausted; no further requests.",
+  "provider_league_id": null,
+  "provider_league_name": null,
+  "ordered_team_mappings": [],
+  "request_evidence": [
+    {
+      "raw_path": "/workspace/WCPP/research/repo-audit-20261118/infer-evidence/d-live/events-20261113-raw.json",
+      "metadata_path": "/workspace/WCPP/research/repo-audit-20261118/infer-evidence/d-live/events-20261113-meta.json",
+      "sha256": "59b3e14f68e5a76af108fa6a8128564ca3d6dd648e567559c2fbd6c74c869b57",
+      "metadata_sha256": "3f3680bfc36313e8dc7ed608df4a99d5a20dacf8905ff9c5acbf55bd50f24e80",
+      "url": "https://api.infersports.dev/v1/events?sport=football&league=UEFANLD&status=finished&date=2026-11-13&timezone=UTC&limit=50",
+      "requested_at": "2026-11-18T00:47:30.247244+00:00",
+      "captured_at": "2026-11-18T00:47:31.003741+00:00",
+      "captured_at_beijing": "2026-11-18T08:47:31.003741+08:00",
+      "http_status": 200,
+      "event_count": 0,
+      "page": {
+        "next_cursor": null,
+        "limit": 50
+      },
+      "raw_sha_verified": true
+    },
+    {
+      "raw_path": "/workspace/WCPP/research/repo-audit-20261118/infer-evidence/d-live/events-20261115-raw.json",
+      "metadata_path": "/workspace/WCPP/research/repo-audit-20261118/infer-evidence/d-live/events-20261115-meta.json",
+      "sha256": "59b3e14f68e5a76af108fa6a8128564ca3d6dd648e567559c2fbd6c74c869b57",
+      "metadata_sha256": "d96fa002112fd389f1b3d4aba67dec3afdd17ecba11c52a39f772344362f949c",
+      "url": "https://api.infersports.dev/v1/events?sport=football&league=UEFANLD&status=finished&date=2026-11-15&timezone=UTC&limit=50",
+      "requested_at": "2026-11-18T00:47:55.101319+00:00",
+      "captured_at": "2026-11-18T00:47:55.778323+00:00",
+      "captured_at_beijing": "2026-11-18T08:47:55.778323+08:00",
+      "http_status": 200,
+      "event_count": 0,
+      "page": {
+        "next_cursor": null,
+        "limit": 50
+      },
+      "raw_sha_verified": true
+    }
+  ],
+  "independent_espn_evidence_path": "/workspace/WCPP/research/repo-audit-20261118/infer-evidence/d-grade-evidence.json",
+  "independent_espn_evidence_sha256": "cc21b43c858090a9d6046a085121501ddcf2762b3e8f99f9aeb5feb5d804196a",
+  "limitation": "Empty responses do not prove service-wide absence of League D or invalidate ESPN D1/D2 identity. No provider event was available for exact kickoff and ordered-team crosscheck. The archived API description states no historical data.",
+  "tls_verification_disabled": false,
+  "redirects_allowed": false,
+  "proxy_environment_preserved": true,
+  "credentials_written_or_printed": false,
+  "odds_requests": 0,
+  "training_performed": false,
+  "existing_freezes_changed": false
+}

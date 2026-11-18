@@ -1,0 +1,28 @@
+name: Repository audit evidence integrity
+on:
+  push:
+    branches: [main, research/repo-audit-20261118]
+    paths:
+      - .github/workflows/repository-audit-validation.yml
+      - workspace-updates/20261118-repository-audit/**
+  pull_request:
+    paths:
+      - .github/workflows/repository-audit-validation.yml
+      - workspace-updates/20261118-repository-audit/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: workspace-updates/20261118-repository-audit
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore archive and independently check coverage and settlements
+        run: python workspace-updates/20261118-repository-audit/verify_archive.py --out "${RUNNER_TEMP}/repository-audit-restore"

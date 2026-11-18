@@ -1,0 +1,323 @@
+[
+  {
+    "version": "infer-nations-bosnia-20261118-1",
+    "reviewed_at": "2026-11-18T00:45:15.784230+00:00",
+    "espn_id": "452",
+    "espn_name": "Bosnia-Herzegovina",
+    "provider_name": "Bosnia",
+    "evidence": {
+      "provider_event": {
+        "raw_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/events-page2-raw.json",
+        "metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/events-page2-meta.json",
+        "url": "https://api.infersports.dev/v1/events?sport=football&status=scheduled&limit=100&cursor=MTAw",
+        "sha256": "aa477ed114a72fb1bcd93b924796d7c3bf27c5b6d91304ff883fc4784ebc7814",
+        "metadata_sha256": "aeb581bfe55f80b111ab5566416f6d445e076911b37b0d8c830adb25b8d276f4",
+        "byte_count": 25560,
+        "sha256_matches_archive_metadata": true,
+        "recorded_times": {
+          "query_time_utc": "2026-11-17T13:02:02.000332+00:00"
+        },
+        "recorded_times_beijing": {
+          "query_time_utc": "2026-11-17T21:02:02.000332+08:00"
+        },
+        "http_status": 200,
+        "json_pointer": "/data/36/home_team",
+        "provider_event_id": "evt_YT1ZX5BW"
+      },
+      "espn_identity": {
+        "raw_path": "/workspace/WCPP/reports/tonight-20261117-2100/fixtures/raw/espn-scoreboard-uefa.nations-20261117-raw.json",
+        "metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/fixtures/raw/espn-scoreboard-uefa.nations-20261117-meta.json",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard?dates=20261117",
+        "sha256": "76fadb5b37b90bd18a9f214392a69c30a87074e660c4bf1b6dcb722234e537c8",
+        "metadata_sha256": "579762de6f510eb1a8b2eff5adf8a3eb2f3a757b6d7f16d28f93f1b17e755fe9",
+        "byte_count": 98154,
+        "sha256_matches_archive_metadata": true,
+        "recorded_times": {
+          "requested_at_utc": "2026-11-17T13:02:31.359551+00:00",
+          "received_at_utc": "2026-11-17T13:02:31.678162+00:00"
+        },
+        "recorded_times_beijing": {
+          "requested_at_utc": "2026-11-17T21:02:31.359551+08:00",
+          "received_at_utc": "2026-11-17T21:02:31.678162+08:00"
+        },
+        "http_status": 200,
+        "json_pointer": "/events/0/competitions/0/competitors",
+        "espn_event_id": "401861196"
+      },
+      "ordered_fixture": {
+        "espn_event_id": "401861196",
+        "provider_event_id": "evt_YT1ZX5BW",
+        "provider_event_pointer": "/data/36",
+        "espn_event_pointer": "/events/0",
+        "provider_league": {
+          "id": "lg_4GXKQVPJ",
+          "name": "UEFANLB"
+        },
+        "espn_group": {
+          "groupId": "8",
+          "name": "Group B4",
+          "abbreviation": "Group B4"
+        },
+        "grade": "B",
+        "phase": "league-phase",
+        "ordered_participants": [
+          {
+            "side": "home",
+            "provider_team_id": "tm_DXE8PZVK",
+            "provider_name": "Bosnia",
+            "espn_team_id": "452",
+            "espn_name": "Bosnia-Herzegovina",
+            "name_match": "alias_candidate_verified_in_this_audit"
+          },
+          {
+            "side": "away",
+            "provider_team_id": "tm_AMREX7VJ",
+            "provider_name": "Romania",
+            "espn_team_id": "473",
+            "espn_name": "Romania",
+            "name_match": "exact"
+          }
+        ],
+        "provider_kickoff_raw": "2026-11-17T19:45:00Z",
+        "espn_kickoff_raw": "2026-11-17T19:45Z",
+        "kickoff_exact_instant_match": true,
+        "kickoff_beijing": "2026-11-18T03:45:00+08:00",
+        "provider_status": "scheduled",
+        "espn_status": {
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "state": "pre",
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Tue, November 17th at 2:45 PM EST",
+          "shortDetail": "Scheduled"
+        },
+        "raw_odds_source": "odds_evt_YT1ZX5BW",
+        "raw_odds_row_count": 53,
+        "raw_totals_row_count": 26,
+        "raw_open_full_time_decimal_totals_count": 18,
+        "response_stale": false,
+        "response_as_of": "2026-11-17T13:02:19Z",
+        "current_ac_target_filter_excluded": true
+      },
+      "archive_explicit_pairing_metadata": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_YT1ZX5BW-meta.json",
+      "archive_explicit_pairing_query_time": "2026-11-17T13:02:56.475600+00:00",
+      "prior_formal_review_time": null,
+      "review_time_warning": "Archived query time is not a documented alias review time; do not backdate this audit."
+    }
+  },
+  {
+    "version": "infer-nations-northern-ireland-20261118-1",
+    "reviewed_at": "2026-11-18T00:45:15.784230+00:00",
+    "espn_id": "586",
+    "espn_name": "Northern Ireland",
+    "provider_name": "Nor.Ireland",
+    "evidence": {
+      "provider_event": {
+        "raw_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/events-page2-raw.json",
+        "metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/events-page2-meta.json",
+        "url": "https://api.infersports.dev/v1/events?sport=football&status=scheduled&limit=100&cursor=MTAw",
+        "sha256": "aa477ed114a72fb1bcd93b924796d7c3bf27c5b6d91304ff883fc4784ebc7814",
+        "metadata_sha256": "aeb581bfe55f80b111ab5566416f6d445e076911b37b0d8c830adb25b8d276f4",
+        "byte_count": 25560,
+        "sha256_matches_archive_metadata": true,
+        "recorded_times": {
+          "query_time_utc": "2026-11-17T13:02:02.000332+00:00"
+        },
+        "recorded_times_beijing": {
+          "query_time_utc": "2026-11-17T21:02:02.000332+08:00"
+        },
+        "http_status": 200,
+        "json_pointer": "/data/37/away_team",
+        "provider_event_id": "evt_VE437XS2"
+      },
+      "espn_identity": {
+        "raw_path": "/workspace/WCPP/reports/tonight-20261117-2100/fixtures/raw/espn-scoreboard-uefa.nations-20261117-raw.json",
+        "metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/fixtures/raw/espn-scoreboard-uefa.nations-20261117-meta.json",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard?dates=20261117",
+        "sha256": "76fadb5b37b90bd18a9f214392a69c30a87074e660c4bf1b6dcb722234e537c8",
+        "metadata_sha256": "579762de6f510eb1a8b2eff5adf8a3eb2f3a757b6d7f16d28f93f1b17e755fe9",
+        "byte_count": 98154,
+        "sha256_matches_archive_metadata": true,
+        "recorded_times": {
+          "requested_at_utc": "2026-11-17T13:02:31.359551+00:00",
+          "received_at_utc": "2026-11-17T13:02:31.678162+00:00"
+        },
+        "recorded_times_beijing": {
+          "requested_at_utc": "2026-11-17T21:02:31.359551+08:00",
+          "received_at_utc": "2026-11-17T21:02:31.678162+08:00"
+        },
+        "http_status": 200,
+        "json_pointer": "/events/2/competitions/0/competitors",
+        "espn_event_id": "401861191"
+      },
+      "ordered_fixture": {
+        "espn_event_id": "401861191",
+        "provider_event_id": "evt_VE437XS2",
+        "provider_event_pointer": "/data/37",
+        "espn_event_pointer": "/events/2",
+        "provider_league": {
+          "id": "lg_4GXKQVPJ",
+          "name": "UEFANLB"
+        },
+        "espn_group": {
+          "groupId": "6",
+          "name": "Group B2",
+          "abbreviation": "Group B2"
+        },
+        "grade": "B",
+        "phase": "league-phase",
+        "ordered_participants": [
+          {
+            "side": "home",
+            "provider_team_id": "tm_MM07TV6M",
+            "provider_name": "Hungary",
+            "espn_team_id": "480",
+            "espn_name": "Hungary",
+            "name_match": "exact"
+          },
+          {
+            "side": "away",
+            "provider_team_id": "tm_Q4HCSBRM",
+            "provider_name": "Nor.Ireland",
+            "espn_team_id": "586",
+            "espn_name": "Northern Ireland",
+            "name_match": "alias_candidate_verified_in_this_audit"
+          }
+        ],
+        "provider_kickoff_raw": "2026-11-17T19:45:00Z",
+        "espn_kickoff_raw": "2026-11-17T19:45Z",
+        "kickoff_exact_instant_match": true,
+        "kickoff_beijing": "2026-11-18T03:45:00+08:00",
+        "provider_status": "scheduled",
+        "espn_status": {
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "state": "pre",
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Tue, November 17th at 2:45 PM EST",
+          "shortDetail": "Scheduled"
+        },
+        "raw_odds_source": "odds_evt_VE437XS2",
+        "raw_odds_row_count": 47,
+        "raw_totals_row_count": 21,
+        "raw_open_full_time_decimal_totals_count": 18,
+        "response_stale": false,
+        "response_as_of": "2026-11-17T13:01:09Z",
+        "current_ac_target_filter_excluded": true
+      },
+      "archive_explicit_pairing_metadata": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_VE437XS2-meta.json",
+      "archive_explicit_pairing_query_time": "2026-11-17T13:02:56.830864+00:00",
+      "prior_formal_review_time": null,
+      "review_time_warning": "Archived query time is not a documented alias review time; do not backdate this audit."
+    }
+  },
+  {
+    "version": "infer-nations-ireland-20261118-1",
+    "reviewed_at": "2026-11-18T00:45:15.784230+00:00",
+    "espn_id": "476",
+    "espn_name": "Republic of Ireland",
+    "provider_name": "Ireland",
+    "evidence": {
+      "provider_event": {
+        "raw_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/events-page2-raw.json",
+        "metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/events-page2-meta.json",
+        "url": "https://api.infersports.dev/v1/events?sport=football&status=scheduled&limit=100&cursor=MTAw",
+        "sha256": "aa477ed114a72fb1bcd93b924796d7c3bf27c5b6d91304ff883fc4784ebc7814",
+        "metadata_sha256": "aeb581bfe55f80b111ab5566416f6d445e076911b37b0d8c830adb25b8d276f4",
+        "byte_count": 25560,
+        "sha256_matches_archive_metadata": true,
+        "recorded_times": {
+          "query_time_utc": "2026-11-17T13:02:02.000332+00:00"
+        },
+        "recorded_times_beijing": {
+          "query_time_utc": "2026-11-17T21:02:02.000332+08:00"
+        },
+        "http_status": 200,
+        "json_pointer": "/data/39/home_team",
+        "provider_event_id": "evt_G537DAY6"
+      },
+      "espn_identity": {
+        "raw_path": "/workspace/WCPP/reports/tonight-20261117-2100/fixtures/raw/espn-scoreboard-uefa.nations-20261117-raw.json",
+        "metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/fixtures/raw/espn-scoreboard-uefa.nations-20261117-meta.json",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard?dates=20261117",
+        "sha256": "76fadb5b37b90bd18a9f214392a69c30a87074e660c4bf1b6dcb722234e537c8",
+        "metadata_sha256": "579762de6f510eb1a8b2eff5adf8a3eb2f3a757b6d7f16d28f93f1b17e755fe9",
+        "byte_count": 98154,
+        "sha256_matches_archive_metadata": true,
+        "recorded_times": {
+          "requested_at_utc": "2026-11-17T13:02:31.359551+00:00",
+          "received_at_utc": "2026-11-17T13:02:31.678162+00:00"
+        },
+        "recorded_times_beijing": {
+          "requested_at_utc": "2026-11-17T21:02:31.359551+08:00",
+          "received_at_utc": "2026-11-17T21:02:31.678162+08:00"
+        },
+        "http_status": 200,
+        "json_pointer": "/events/5/competitions/0/competitors",
+        "espn_event_id": "401861192"
+      },
+      "ordered_fixture": {
+        "espn_event_id": "401861192",
+        "provider_event_id": "evt_G537DAY6",
+        "provider_event_pointer": "/data/39",
+        "espn_event_pointer": "/events/5",
+        "provider_league": {
+          "id": "lg_4GXKQVPJ",
+          "name": "UEFANLB"
+        },
+        "espn_group": {
+          "groupId": "7",
+          "name": "Group B3",
+          "abbreviation": "Group B3"
+        },
+        "grade": "B",
+        "phase": "league-phase",
+        "ordered_participants": [
+          {
+            "side": "home",
+            "provider_team_id": "tm_NRHGJ4SZ",
+            "provider_name": "Ireland",
+            "espn_team_id": "476",
+            "espn_name": "Republic of Ireland",
+            "name_match": "alias_candidate_verified_in_this_audit"
+          },
+          {
+            "side": "away",
+            "provider_team_id": "tm_QHM9CSBR",
+            "provider_name": "Kosovo",
+            "espn_team_id": "18272",
+            "espn_name": "Kosovo",
+            "name_match": "exact"
+          }
+        ],
+        "provider_kickoff_raw": "2026-11-17T19:45:00Z",
+        "espn_kickoff_raw": "2026-11-17T19:45Z",
+        "kickoff_exact_instant_match": true,
+        "kickoff_beijing": "2026-11-18T03:45:00+08:00",
+        "provider_status": "scheduled",
+        "espn_status": {
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "state": "pre",
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Tue, November 17th at 2:45 PM EST",
+          "shortDetail": "Scheduled"
+        },
+        "raw_odds_source": "odds_evt_G537DAY6",
+        "raw_odds_row_count": 46,
+        "raw_totals_row_count": 21,
+        "raw_open_full_time_decimal_totals_count": 18,
+        "response_stale": false,
+        "response_as_of": "2026-11-17T12:50:21Z",
+        "current_ac_target_filter_excluded": true
+      },
+      "archive_explicit_pairing_metadata": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_G537DAY6-meta.json",
+      "archive_explicit_pairing_query_time": "2026-11-17T13:02:57.286574+00:00",
+      "prior_formal_review_time": null,
+      "review_time_warning": "Archived query time is not a documented alias review time; do not backdate this audit."
+    }
+  }
+]

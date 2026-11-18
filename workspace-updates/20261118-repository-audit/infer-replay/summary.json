@@ -1,0 +1,223 @@
+{
+  "evaluated_at": "2026-11-18T00:48:15.537026+00:00",
+  "scope": "REPLAY_OF_ARCHIVED_PREMATCH_RAW_WITH_TODAYS_IDENTITY_REVIEW",
+  "population": 8,
+  "before": {
+    "eligible_fixture_count": 2,
+    "covered_fixture_count": 0,
+    "verified_quote_count": 0,
+    "excluded": {
+      "unverified_target_identity_or_phase": 6,
+      "requested_fixture_absent_from_identity": 0,
+      "missing_or_ambiguous_provider_identity": 2
+    }
+  },
+  "after_pages_and_grade_before_new_alias_review": {
+    "eligible_fixture_count": 8,
+    "covered_fixture_count": 5,
+    "verified_quote_count": 32,
+    "excluded": {
+      "requested_fixture_absent_from_identity": 0,
+      "missing_or_ambiguous_provider_identity": 3,
+      "unsupported_market_period_or_status": 183
+    }
+  },
+  "after_today_alias_review": {
+    "eligible_fixture_count": 8,
+    "covered_fixture_count": 8,
+    "verified_quote_count": 51,
+    "excluded": {
+      "requested_fixture_absent_from_identity": 0,
+      "unsupported_market_period_or_status": 275
+    },
+    "coverage": 1.0
+  },
+  "retrospective_identity_replay": true,
+  "legacy_capture_time_proxy": true,
+  "quotes_use_original_row_as_of": true,
+  "raw_bytes_unchanged": true,
+  "new_forecasts": 0,
+  "active_model_changed": false,
+  "metadata": {
+    "pages": [
+      {
+        "file": "events-raw.json",
+        "sha256": "1a6b306c44a49e8c5a28f23f17e31eb383bca040453d6c5ffe7e76fe933a7686",
+        "url": "https://api.infersports.dev/v1/events?sport=football&status=scheduled&limit=100",
+        "captured_at": "2026-11-17T13:01:32.578358+00:00",
+        "original_metadata_sha256": "1bfdf27ef169b938155d3476ab008552e933c8d1c99af4bbd453f6edb05b3a00",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/events-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      },
+      {
+        "file": "events-page2-raw.json",
+        "sha256": "aa477ed114a72fb1bcd93b924796d7c3bf27c5b6d91304ff883fc4784ebc7814",
+        "url": "https://api.infersports.dev/v1/events?sport=football&status=scheduled&limit=100&cursor=MTAw",
+        "captured_at": "2026-11-17T13:02:02.000332+00:00",
+        "original_metadata_sha256": "aeb581bfe55f80b111ab5566416f6d445e076911b37b0d8c830adb25b8d276f4",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/events-page2-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      }
+    ],
+    "identity": {
+      "file": "espn-scoreboard-uefa.nations-20261117-raw.json",
+      "sha256": "76fadb5b37b90bd18a9f214392a69c30a87074e660c4bf1b6dcb722234e537c8",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard?dates=20261117",
+      "captured_at": "2026-11-17T13:02:31.678162+00:00",
+      "original_metadata_sha256": "579762de6f510eb1a8b2eff5adf8a3eb2f3a757b6d7f16d28f93f1b17e755fe9",
+      "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/fixtures/raw/espn-scoreboard-uefa.nations-20261117-meta.json",
+      "capture_time_basis": "received_at_utc",
+      "requested_at": "2026-11-17T13:02:31.359551+00:00"
+    },
+    "odds": [
+      {
+        "file": "evt_G537DAY6-odds-raw.json",
+        "sha256": "1f69f44f5a958a284d85cf37b7d0e8f967e581b3bdea935a5e7404b48e364875",
+        "url": "https://api.infersports.dev/v1/events/evt_G537DAY6/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+        "captured_at": "2026-11-17T13:02:57.286574+00:00",
+        "original_metadata_sha256": "5d31311597965c8971cd66fb4634b9eaf6688ed899512e215cccf39dc71c0c0b",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_G537DAY6-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      },
+      {
+        "file": "evt_B60JMXVP-odds-raw.json",
+        "sha256": "2230bd1791d49eb2fd8f69cd3f4ae277fdf43ecc04009a56c39d9effcc620b10",
+        "url": "https://api.infersports.dev/v1/events/evt_B60JMXVP/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+        "captured_at": "2026-11-17T13:02:57.065859+00:00",
+        "original_metadata_sha256": "b154c19b36d36ee6f4c1f8acf9c348b8721ef58f1fa14a3787bab36cc3e77305",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_B60JMXVP-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      },
+      {
+        "file": "evt_WB7XZTR6-odds-raw.json",
+        "sha256": "c655c60362744e5d843f5eda36acb3d8d681887bf464b7d315456c50792e2c55",
+        "url": "https://api.infersports.dev/v1/events/evt_WB7XZTR6/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+        "captured_at": "2026-11-17T13:02:55.547233+00:00",
+        "original_metadata_sha256": "de1047ef0a6ddb8a1c509aa772da4204fbe93d0f9efe5523b1af6577dd018f7f",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_WB7XZTR6-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      },
+      {
+        "file": "evt_NSJMH6GJ-odds-raw.json",
+        "sha256": "ea4c1770f5cadc885b0051b094aedbf2e3fb194a4a2a6b2881b28cbf146acf24",
+        "url": "https://api.infersports.dev/v1/events/evt_NSJMH6GJ/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+        "captured_at": "2026-11-17T13:02:56.167079+00:00",
+        "original_metadata_sha256": "98e59fff96baf78abf9dda203f031014a2509439d730a3e989b5a51bab902ee1",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_NSJMH6GJ-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      },
+      {
+        "file": "evt_836VXBM7-odds-raw.json",
+        "sha256": "e0719923d3841749dd8ae5a60e1f4127f17f13b7f99caedfcdffe78b06ac74ea",
+        "url": "https://api.infersports.dev/v1/events/evt_836VXBM7/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+        "captured_at": "2026-11-17T13:02:55.865917+00:00",
+        "original_metadata_sha256": "e148a074e83a47539151e0d88d58611876a50f3bd22b08108ff76cc54fa6959f",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_836VXBM7-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      },
+      {
+        "file": "evt_G53M1EY6-odds-raw.json",
+        "sha256": "b92a4d9d6fc7b00aaa10c42b10cf22f44c1a8abcb3bb7d269981e872ca018a4e",
+        "url": "https://api.infersports.dev/v1/events/evt_G53M1EY6/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+        "captured_at": "2026-11-17T13:02:55.137652+00:00",
+        "original_metadata_sha256": "ae8fe6e563751c0fd578dc9d5f119943ea858339176c723cf5590b4cae7eecaf",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_G53M1EY6-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      },
+      {
+        "file": "evt_YT1ZX5BW-odds-raw.json",
+        "sha256": "49fe2584a59e611175f48885df25d80fdf55eafc700ab67c82e15038c3dc6cce",
+        "url": "https://api.infersports.dev/v1/events/evt_YT1ZX5BW/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+        "captured_at": "2026-11-17T13:02:56.475600+00:00",
+        "original_metadata_sha256": "7214de9833be1d652f724a6dba40de38ea89a74ab126ae76531ae4c2706996ef",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_YT1ZX5BW-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      },
+      {
+        "file": "evt_VE437XS2-odds-raw.json",
+        "sha256": "8c77925a598964607c3f8a1465aad4baada276ec6fd5efaf1067eb731bfeacca",
+        "url": "https://api.infersports.dev/v1/events/evt_VE437XS2/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+        "captured_at": "2026-11-17T13:02:56.830864+00:00",
+        "original_metadata_sha256": "ea44c4f8e11eed049f1d80145b6832392fc50cb21687be7f59110f8ab1589927",
+        "original_metadata_path": "/workspace/WCPP/reports/tonight-20261117-2100/markets/evt_VE437XS2-meta.json",
+        "capture_time_basis": "legacy_query_time_proxy_REPLAY_ONLY"
+      }
+    ]
+  },
+  "fixtures": [
+    {
+      "match_id": "espn:401861196",
+      "competition": "uefa.nations",
+      "cohort": "uefa.nations:B:league-phase",
+      "stage": "league-phase",
+      "home": "espn:452",
+      "away": "espn:473",
+      "kickoff_at": "2026-11-17T19:45Z"
+    },
+    {
+      "match_id": "espn:401861194",
+      "competition": "uefa.nations",
+      "cohort": "uefa.nations:A:league-phase",
+      "stage": "league-phase",
+      "home": "espn:479",
+      "away": "espn:464",
+      "kickoff_at": "2026-11-17T19:45Z"
+    },
+    {
+      "match_id": "espn:401861191",
+      "competition": "uefa.nations",
+      "cohort": "uefa.nations:B:league-phase",
+      "stage": "league-phase",
+      "home": "espn:480",
+      "away": "espn:586",
+      "kickoff_at": "2026-11-17T19:45Z"
+    },
+    {
+      "match_id": "espn:401861193",
+      "competition": "uefa.nations",
+      "cohort": "uefa.nations:B:league-phase",
+      "stage": "league-phase",
+      "home": "espn:461",
+      "away": "espn:474",
+      "kickoff_at": "2026-11-17T19:45Z"
+    },
+    {
+      "match_id": "espn:401861195",
+      "competition": "uefa.nations",
+      "cohort": "uefa.nations:B:league-phase",
+      "stage": "league-phase",
+      "home": "espn:471",
+      "away": "espn:466",
+      "kickoff_at": "2026-11-17T19:45Z"
+    },
+    {
+      "match_id": "espn:401861192",
+      "competition": "uefa.nations",
+      "cohort": "uefa.nations:B:league-phase",
+      "stage": "league-phase",
+      "home": "espn:476",
+      "away": "espn:18272",
+      "kickoff_at": "2026-11-17T19:45Z"
+    },
+    {
+      "match_id": "espn:401861190",
+      "competition": "uefa.nations",
+      "cohort": "uefa.nations:B:league-phase",
+      "stage": "league-phase",
+      "home": "espn:457",
+      "away": "espn:584",
+      "kickoff_at": "2026-11-17T19:45Z"
+    },
+    {
+      "match_id": "espn:401861189",
+      "competition": "uefa.nations",
+      "cohort": "uefa.nations:A:league-phase",
+      "stage": "league-phase",
+      "home": "espn:578",
+      "away": "espn:482",
+      "kickoff_at": "2026-11-17T19:45Z"
+    }
+  ],
+  "old_source_commit": "29c9701821367034b46fb6d86683e57e31f02262",
+  "new_adapter_sha256": "d33fba1beb75780f6b8acaa8e8c1a05d88fbf964c1920ca257d5a46cb31bfeaf"
+}
