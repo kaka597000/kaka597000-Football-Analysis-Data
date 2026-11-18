@@ -23,7 +23,7 @@ HISTORY="$DATA/workspace-updates/20261118-sequence/history"
 cd "$SOURCE"
 python -m runtime.research_program.sequence_history --data "$DATA" --out "$HISTORY"
 python "$HISTORY/brazil/prepare.py"
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python "$HISTORY/run_models.py" --source "$SOURCE" --history "$HISTORY" --out "$HISTORY"
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python "$HISTORY/run_models.py" --source "$SOURCE" --inputs "$HISTORY" --out "$HISTORY"
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python "$HISTORY/replay_brazil.py" --source "$SOURCE" --history "$HISTORY" --out "$HISTORY"
 ```
 
