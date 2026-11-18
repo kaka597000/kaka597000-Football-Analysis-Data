@@ -1,0 +1,56 @@
+name: Model governance compatibility
+on:
+  pull_request:
+    paths:
+      - 'runtime/**'
+      - 'config/source-contract.json'
+      - 'workspace-updates/20261118-governance/**'
+      - '.github/workflows/model-governance.yml'
+  push:
+    branches: ['chore/model-governance-*']
+permissions:
+  contents: read
+jobs:
+  compatibility:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - api: public-v1
+            revision: 8534d90f801abff8ace07938f9cc104feeaac407
+          - api: legacy-frozen-pin
+            revision: 3fd411a4a34769e3192816631f2fa90948ad4ac9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: data
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ matrix.revision }}
+          path: code
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r code/requirements.txt
+      - name: Check selected adapter and result-polling contract
+        working-directory: data
+        env:
+          PYTHONPATH: ${{ github.workspace }}/code/runtime
+          EXPECTED_API: ${{ matrix.api }}
+        run: |
+          python -c "import os; from runtime.source_review_api import BACKEND; assert BACKEND == os.environ['EXPECTED_API']"
+          python -m unittest discover -s runtime -p test_poll_three_arm_results.py -v
+      - name: Verify governance and retained evidence
+        if: matrix.api == 'public-v1'
+        working-directory: data
+        env:
+          PYTHONPATH: ${{ github.workspace }}/code/runtime
+        run: |
+          python ../code/runtime/module_governance.py --data .
+          python -m research_program.consolidation_audit --data . > /tmp/consolidation.json
+          diff -u workspace-updates/20261118-governance/consolidation.json /tmp/consolidation.json
+          python workspace-updates/20261118-three-arm/verify.py --source ../code
+          python workspace-updates/20261118-sequence/verify.py --source ../code
+          python workspace-updates/20261118-transformer/verify.py --source ../code
