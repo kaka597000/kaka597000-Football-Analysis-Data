@@ -1,0 +1,348 @@
+{
+  "verified_at": "2026-11-18T05:30:15.822941+00:00",
+  "implementation_commit": "0751528579d97587fb649ebea6ad51d148de804b",
+  "source_pr": 48,
+  "data_pr": 29,
+  "source_main_ci": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T05:18:49Z",
+    "databaseId": 44243373345,
+    "event": "push",
+    "headSha": "b56f309801373c952fa4897a7b38539a8a22c1ff",
+    "jobs": [
+      {
+        "name": "tests",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python -m pip install -r requirements.txt -r requirements-test.txt",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python scripts/check_repository.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python scripts/run_tests.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "portable (windows-latest)",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python -m pip install -r requirements.txt lightgbm==4.6.0",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python scripts/run_tests.py --layer portable",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "portable (ubuntu-latest)",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python -m pip install -r requirements.txt lightgbm==4.6.0",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python scripts/run_tests.py --layer portable",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-11-18T05:20:27Z",
+    "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/44243373345"
+  },
+  "data_main_ci": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T05:27:45Z",
+    "databaseId": 44244418609,
+    "event": "push",
+    "headSha": "b70a3f36766811c5247205c01a568725bc0b85ef",
+    "jobs": [
+      {
+        "name": "replay",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Reconstruct historical forecasts, later-season transfer and registered first issues",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-11-18T05:28:25Z",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44244418609"
+  },
+  "main_collect": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T05:28:12Z",
+    "databaseId": 44244467280,
+    "event": "workflow_dispatch",
+    "headSha": "b70a3f36766811c5247205c01a568725bc0b85ef",
+    "jobs": [
+      {
+        "name": "research",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Read pinned public code",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Select bounded job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Read verified collector-only revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install CPU inference and training dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect or train candidate only",
+            "conclusion": "success"
+          },
+          {
+            "name": "Restore scopes.json",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect kor.1 with audited public candidate fallback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate bounded source-timed Nations League market snapshots",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect bounded Brazil Serie A market snapshots",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect bounded InferSports Nations fallback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Capture and review locked future populations",
+            "conclusion": "success"
+          },
+          {
+            "name": "Review frozen Nations repair population",
+            "conclusion": "success"
+          },
+          {
+            "name": "Load frozen three-arm research reviewer",
+            "conclusion": "success"
+          },
+          {
+            "name": "Settle the registered Brazil calibration batch",
+            "conclusion": "success"
+          },
+          {
+            "name": "Load verified sequence research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Review fixed sequence forecasts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Measure prematch coverage for the registered fixtures",
+            "conclusion": "success"
+          },
+          {
+            "name": "Load registered Transformer research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Settle the fixed four-model Transformer comparison",
+            "conclusion": "success"
+          },
+          {
+            "name": "Save private audit and data",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Load registered Transformer research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Load verified sequence research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Load frozen three-arm research reviewer",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Read verified collector-only revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Read pinned public code",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-11-18T05:29:31Z",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44244467280"
+  },
+  "observed_forward_summary": {
+    "automatic_promotion": false,
+    "issued": 6,
+    "pending": 6,
+    "plan_sha256": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e",
+    "population": 6,
+    "schema": "WCPP-TRANSFORMER-REVIEW-1",
+    "settled": 0
+  },
+  "verified_data_main_after_collection": "61520b45dd7f601fd736114905ac31227aa19845",
+  "original_registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+  "rollback": {
+    "source_base": "cea3972042dbfbd0e1123ee042f429823d792e87",
+    "data_base": "261257e4620a4b625230d113b8865e812585ca0d",
+    "procedure": "Remove the new Transformer-review checkout, command and sparse-checkout path from unattended.yml to stop future reviews of this batch. Preserve the original frozen predictions, observed matches, and settlements."
+  }
+}
