@@ -1,0 +1,10 @@
+{
+  "version": "WCPP-TEAM-SCORING-MARKETS-1",
+  "parent_plan": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e",
+  "base_arm": "market_baseline",
+  "input": "An earlier immutable same-fixture market baseline, and one bookmaker's two-sided source-timed BTTS or named home/away team total prices, collected before this independent issuance.",
+  "market_selection": "Use only two-way BTTS and half-goal team lines. A half-goal team line of 0.5 measures the team's chance of scoring; higher half-goal lines measure the stated threshold only. Skip other Asian team lines. Within one bookmaker and provider event take latest complete observation per feature at most one hour old. Prefer more of BTTS, home and away families; then more direct team 0.5s, then the original baseline bookmaker, then latest observation time, then bookmaker key.",
+  "formula": "Minimize KL(adjusted matrix || original matrix) plus weighted Bernoulli KL(adjusted event probability || margin-normalized market probability). Each of the three market families has weight 1 if available, divided equally over distinct supported lines within a family. Retain original cell support. No fitted parameters.",
+  "comparison": "Unchanged archived base and candidate share the original actual match-total line. Keep the original baseline quote age explicit. Evaluate single score, top three, WDL, full-win total excluding pushes, score log loss and WDL Brier. A first candidate issue needs at least one validated and supported observed feature. Missing fixtures remain in coverage.",
+  "activation": "Inactive research, separately first-issued. Earlier production or research freezes remain separate."
+}
