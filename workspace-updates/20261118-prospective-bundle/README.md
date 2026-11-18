@@ -19,3 +19,9 @@
 固定输入数据提交为 `9804e58e805db9039a5031c0e205a32cbd5f6de2`。两个运行环境都使用推理源码 `6639867d502a2dfe53a9a235c8761f8ee6b91533`，旧、新调度分别加载 `83aa58916555ac0885e164d9882384a829fd1843` 和 `fbed25e9648e4ba4061042b7f97b6a2f23f1213c` 的指定文件。CI 在两个新 runner 上各自执行恢复、重放与重新导出，并将输出与 `before.json` 和 `after.json` 逐项比对。 [复算工作流](../../.github/workflows/prospective-bundle-replay.yml)
 
 云端任务和验收工作流通过同一份安装程序把新模块与调度器一起加载。部署回退时恢复数据仓库 `9804e58e805db9039a5031c0e205a32cbd5f6de2` 中的 `.github/workflows/unattended.yml`，其中同时保存旧调度提交和六个旧文件的清单。 [源码 PR #45](https://github.com/kaka597000/Football-Analysis/pull/45)
+
+## 云端实跑
+
+北京时间 11 月 18 日 10:26，数据主分支完成国内联赛及欧冠的正常定时任务入口验证。部署回执确认七份调度、数据和评估文件的哈希，推理版本为 `6639867`。两份逐场报告均与离线对照一致，284 个归档及冻结文件字节一致；欧国联的另一条任务复用了原有 `v000009` 复盘。 [运行记录](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44223152835) · [部署及数据回执](deployment.json)
+
+国内联赛待结算项包括挪超克里斯蒂安松对瓦勒伦加。比赛 ID 和两队身份相符，冻结开球为北京时间 11 月 7 日 23:00，ESPN 已存完赛响应记录为 11 月 10 日 02:00，相差 51 小时。前后两版均按原冻结口径保留为待核，复盘分母中有 59 场已结算。 [ESPN 原始记录](https://site.api.espn.com/apis/site/v2/sports/soccer/nor.1/summary?event=401843480)
