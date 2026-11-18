@@ -38,3 +38,5 @@ diff -u workspace-updates/20261118-governance/consolidation.json /tmp/consolidat
 使用原三组 `verify.py --source "$ANALYSIS"` 可重放全部冻结。没有删除数据或改活动工件；revert 对应整理提交即可回滚。保留 legacy 兼容层和 overlay，直到分别完成运行 pin 迁移及冻结协议兼容验证。本次不合并、不部署、不自动晋级。
 
 第二批继续整理、拟议版本迁移及最新验收见 [后续交付](continuation/README.md)，第一批“工作流未迁移”描述的是当时提交。
+
+第三批实际开发取舍、候选关闭政策与原固定源码回放见 [第三批交付](third/README.md)。

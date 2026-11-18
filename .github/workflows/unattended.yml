@@ -236,7 +236,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 7c4b833c94426347941667cff540e6d78405485e
+          ref: ${{ steps.versions.outputs.market_signal_code }}
           path: market-signal-code
           persist-credentials: false
       - name: Collect source-timed Brazil team markets and issue independent pairs

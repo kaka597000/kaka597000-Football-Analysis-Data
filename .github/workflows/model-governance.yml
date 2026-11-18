@@ -22,7 +22,7 @@ jobs:
       matrix:
         include:
           - api: public-v1
-            revision: cbc5502d735bdc405a2f29c6c38c6dec79586ea6
+            revision: 78427c8f9d5ef508855ef6dd981d9052ee0d0795
           - api: legacy-frozen-pin
             revision: 3fd411a4a34769e3192816631f2fa90948ad4ac9
     steps:
@@ -34,6 +34,18 @@ jobs:
           repository: kaka597000/Football-Analysis
           ref: ${{ matrix.revision }}
           path: code
+          persist-credentials: false
+      - name: Resolve original replay identity
+        if: matrix.api == 'public-v1'
+        id: replay_version
+        run: python3 data/runtime/source_versions.py --include-replay --github-output "$GITHUB_OUTPUT"
+      - name: Read immutable original freeze replay source
+        if: matrix.api == 'public-v1'
+        uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ steps.replay_version.outputs.frozen_replay }}
+          path: frozen-code
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -56,6 +68,18 @@ jobs:
           python ../code/runtime/module_governance.py --data .
           python -m research_program.consolidation_audit --data . > /tmp/consolidation.json
           diff -u workspace-updates/20261118-governance/consolidation.json /tmp/consolidation.json
-          python workspace-updates/20261118-three-arm/verify.py --source ../code
-          python workspace-updates/20261118-sequence/verify.py --source ../code
-          python workspace-updates/20261118-transformer/verify.py --source ../code
+          python workspace-updates/20261118-three-arm/verify.py --source ../frozen-code
+          python workspace-updates/20261118-sequence/verify.py --source ../frozen-code
+          python workspace-updates/20261118-transformer/verify.py --source ../frozen-code
+
+      - name: Reproduce bounded development decisions and lifecycle policy
+        if: matrix.api == 'public-v1'
+        working-directory: data
+        env:
+          PYTHONPATH: ${{ github.workspace }}/code/runtime
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          python -m research_program.bounded_fusion --data . --out /tmp/bounded-development
+          diff -u workspace-updates/20261118-governance/third/report.json /tmp/bounded-development/report.json
+          python -m research_program.portfolio_lifecycle --data . --policy workspace-updates/20261118-governance/third/policy.json > /tmp/lifecycle.json
