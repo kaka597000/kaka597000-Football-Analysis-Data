@@ -1,0 +1,29 @@
+from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
+import subprocess,sys,os,json,hashlib,gzip,re
+S=Path('/workspace/Football-Analysis');D=Path('/workspace/kaka597000-Football-Analysis-Data');PY='/workspace/football-venv/bin/python'
+O=D/'workspace-updates/20261118-governance/third/acceptance-correction';O.mkdir(exist_ok=False)
+def now():return datetime.now(ZoneInfo('Asia/Shanghai')).isoformat()
+def git(root,*args):return subprocess.check_output(['git','-C',str(root),*args],text=True).strip()
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def assets():
+ registry=Path(os.environ.get('WCPP_ACTIVE_MODEL',str(Path(os.environ.get('WCPP_RUNTIME_ROOT','/workspace/WCPP'))/'runtime/active-model.json')))
+ models=json.loads(registry.read_text())['models'];paths={registry}
+ for r in models.values():
+  for k in ('artifact_path','test_artifact_path'):
+   if r.get(k):paths.add(Path(r[k]))
+ c=json.loads((D/'config/source-contract.json').read_text())
+ paths.update(D/k for k in c['protected_sha256'])
+ return {str(p):sha(p) for p in sorted(paths)}
+base={'source_commit':git(S,'rev-parse','HEAD'),'data_commit':git(D,'rev-parse','HEAD'),'source_runtime_tree':git(S,'rev-parse','HEAD:runtime'),'source_scripts_tree':git(S,'rev-parse','HEAD:scripts'),'data_runtime_tree':git(D,'rev-parse','HEAD:runtime'),'source_initial_status':git(S,'status','--short'),'data_initial_status':git(D,'status','--short'),'python':subprocess.check_output([PY,'--version'],text=True).strip()}
+before=assets();(O/'protected-before.json').write_text(json.dumps(before,indent=2)+'\n')
+records=[]
+for name,root,cmd,env in [('strict-integration',S,[PY,'scripts/run_tests.py','--layer','integration'],dict(os.environ)),('data-tests',D,[PY,'-m','unittest','discover','-s','runtime','-v'],dict(os.environ,PYTHONPATH=str(S/'runtime')))]:
+ record=dict(base,name=name,cwd=str(root),command=cmd,started_at=now(),complete_command=True)
+ with (O/(name+'.log')).open('w') as out:r=subprocess.run(cmd,cwd=root,env=env,stdout=out,stderr=subprocess.STDOUT)
+ record.update(finished_at=now(),exit_code=r.returncode)
+ raw=(O/(name+'.log')).read_bytes();text=raw.decode();record['suite_counts']=[int(v) for v in re.findall(r'^Ran (\d+) tests?',text,re.M)];record['tests']=sum(record['suite_counts']);record['suite_count']=len(record['suite_counts']);record['skip_lines']=len(re.findall(r'\.\.\. skipped ',text));record['failure_summary']=[line for line in text.splitlines() if line.startswith(('FAILED','Failed suites:'))];record['log_sha256']=hashlib.sha256(raw).hexdigest()
+ (O/(name+'.log.gz')).write_bytes(gzip.compress(raw,mtime=0));record['compressed_log_sha256']=sha(O/(name+'.log.gz'))
+ (O/(name+'.json')).write_text(json.dumps(record,indent=2)+'\n');records.append(record)
+after=assets();(O/'protected-after.json').write_text(json.dumps(after,indent=2)+'\n');result={'runs':records,'protected_files':len(before),'protected_hashes_unchanged':before==after,'source_final_status':git(S,'status','--short'),'data_final_status':git(D,'status','--short'),'finished_at':now()};(O/'receipt.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'tests':[r['tests'] for r in records],'exit_codes':[r['exit_code'] for r in records],'protected_hashes_unchanged':before==after,'finished_at':result['finished_at']}))

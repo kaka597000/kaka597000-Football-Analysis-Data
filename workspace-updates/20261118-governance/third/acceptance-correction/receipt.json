@@ -1,0 +1,100 @@
+{
+  "runs": [
+    {
+      "source_commit": "783e02ddebd427383dbdd6a9e4b359dc68c13d8b",
+      "data_commit": "0884b5e166a0a21c404e5350a5bb209e71ed2e88",
+      "source_runtime_tree": "4c3ef88ac8db4025f64dba91ca1a49cb166af917",
+      "source_scripts_tree": "3a62e7a8c937a378f210ee638ab2a77797907802",
+      "data_runtime_tree": "d0de7721419eb431546129b17a39abc8623cbaba",
+      "source_initial_status": "",
+      "data_initial_status": "",
+      "python": "Python 3.12.14",
+      "name": "strict-integration",
+      "cwd": "/workspace/Football-Analysis",
+      "command": [
+        "/workspace/football-venv/bin/python",
+        "scripts/run_tests.py",
+        "--layer",
+        "integration"
+      ],
+      "started_at": "2026-11-18T16:50:30.864529+08:00",
+      "complete_command": true,
+      "finished_at": "2026-11-18T16:51:41.644449+08:00",
+      "exit_code": 0,
+      "suite_counts": [
+        71,
+        3,
+        156,
+        6,
+        68,
+        24,
+        8,
+        29,
+        58,
+        9,
+        28,
+        1,
+        168,
+        15,
+        267,
+        11,
+        11,
+        10,
+        19,
+        35,
+        15,
+        36,
+        21,
+        8,
+        4
+      ],
+      "tests": 1081,
+      "suite_count": 25,
+      "skip_lines": 0,
+      "failure_summary": [
+        "Failed suites: none"
+      ],
+      "log_sha256": "8d70f3ff509b89fd755cab7f9ee6aabccf9925efc8806b8c7258613b368919fd",
+      "compressed_log_sha256": "40603f9f9bda4fbce8e5ebf2fa013c0184f9630de67826a5f8401ac4c41ef23b"
+    },
+    {
+      "source_commit": "783e02ddebd427383dbdd6a9e4b359dc68c13d8b",
+      "data_commit": "0884b5e166a0a21c404e5350a5bb209e71ed2e88",
+      "source_runtime_tree": "4c3ef88ac8db4025f64dba91ca1a49cb166af917",
+      "source_scripts_tree": "3a62e7a8c937a378f210ee638ab2a77797907802",
+      "data_runtime_tree": "d0de7721419eb431546129b17a39abc8623cbaba",
+      "source_initial_status": "",
+      "data_initial_status": "",
+      "python": "Python 3.12.14",
+      "name": "data-tests",
+      "cwd": "/workspace/kaka597000-Football-Analysis-Data",
+      "command": [
+        "/workspace/football-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "runtime",
+        "-v"
+      ],
+      "started_at": "2026-11-18T16:51:41.666345+08:00",
+      "complete_command": true,
+      "finished_at": "2026-11-18T16:51:42.004957+08:00",
+      "exit_code": 0,
+      "suite_counts": [
+        30
+      ],
+      "tests": 30,
+      "suite_count": 1,
+      "skip_lines": 0,
+      "failure_summary": [],
+      "log_sha256": "de8b19e47080dd1ed5304fb9cd018680343fc6885c56dcc9ac9eb598a0c18f21",
+      "compressed_log_sha256": "02d97109c8cbfd21443acf2caee2749cd9d83cae9d2d3e769a754977953fc711"
+    }
+  ],
+  "protected_files": 71,
+  "protected_hashes_unchanged": true,
+  "source_final_status": "",
+  "data_final_status": "?? workspace-updates/20261118-governance/third/acceptance-correction/",
+  "finished_at": "2026-11-18T16:51:42.080102+08:00"
+}
