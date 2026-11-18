@@ -1,0 +1,45 @@
+{
+  "reason": "Exact event types distinguish red-card from penalty---scored. Work-in-progress extraction corrected before freezing review; all original source data, scores and metrics unchanged.",
+  "changes": [
+    {
+      "match_id": "espn:401861192",
+      "removed_non_red_events": [
+        {
+          "minute": "28'",
+          "type": "penalty---scored",
+          "team_id": "476",
+          "text": "Goal! Republic of Ireland 1, Kosovo 0. Troy Parrott (Republic of Ireland) converts the penalty with a right footed shot to the top right corner."
+        },
+        {
+          "minute": "50'",
+          "type": "penalty---scored",
+          "team_id": "476",
+          "text": "Goal! Republic of Ireland 2, Kosovo 0. Troy Parrott (Republic of Ireland) converts the penalty with a right footed shot to the centre of the goal."
+        }
+      ]
+    },
+    {
+      "match_id": "espn:401861194",
+      "removed_non_red_events": [
+        {
+          "minute": "90'+6'",
+          "type": "penalty---scored",
+          "team_id": "464",
+          "text": "Goal! Denmark 2, Norway 3. Erling Haaland (Norway) converts the penalty with a left footed shot to the bottom right corner."
+        }
+      ]
+    },
+    {
+      "match_id": "fifa.friendly:401930880",
+      "removed_non_red_events": [
+        {
+          "minute": "80'",
+          "type": "penalty---scored",
+          "team_id": "658",
+          "text": "Goal! China PR 2, Bahrain 2. Zhang Yuning (China PR) converts the penalty with a right footed shot to the high centre of the goal."
+        }
+      ]
+    }
+  ],
+  "verified_red_cards": 3
+}

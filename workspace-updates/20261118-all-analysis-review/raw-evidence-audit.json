@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-11-18T00:24:07.476901+00:00",
+  "matches": 11,
+  "goal_events_verified": 37,
+  "sources": "ESPN final period scores, score progression and roster player identity; independent source audit is separate",
+  "own_goals": [
+    {
+      "match_id": "fifa.friendly:401916335",
+      "event_id": "55335895",
+      "minute": "74'",
+      "period": 2,
+      "text": "Own Goal by Raoul Suhaimi, Singapore. Singapore 0, Brazil 7.",
+      "type": "own-goal",
+      "source_provider": "ESPN",
+      "ownership_validation_adapter": "Shared score-delta helper; not a FotMob observation",
+      "normalized": {
+        "minute": "74'",
+        "type": "Goal",
+        "detail": {
+          "scorer": "Raoul Bin Suhaimi",
+          "team_side": "home",
+          "beneficiary_side": "away",
+          "own_goal": true,
+          "assist": null,
+          "score_before": [
+            0,
+            6
+          ],
+          "score_after": [
+            0,
+            7
+          ]
+        },
+        "normalization": "SCORE_DELTA_AND_SHOT_TEAM_ID_VERIFIED"
+      }
+    }
+  ],
+  "xg_match_coverage": 0
+}
