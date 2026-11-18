@@ -1,0 +1,29 @@
+{
+  "schema": "WCPP-MARKET-PATH-PROTOCOL-1",
+  "registered_at": "2026-11-18T06:16:33.548792+00:00",
+  "models": [
+    "latest_only",
+    "latest_plus_movement"
+  ],
+  "reference": "Project a common premarket historical goal prior or Brazilian archived native Current prior to the latest same-book 1X2 and Asian total.",
+  "candidate": "Independently project the exact same prior to the earlier price and its own actual Asian total. For supported joint scores multiply the latest-only matrix by exp(0.25*clip(log(latest_projected/earlier_projected),-log(2),log(2))) and normalize. Latest-only and candidate settle at the latest actual line. All coefficients fixed, no re-estimation or parameter search.",
+  "path": "Europe compares Football-Data Bet365 earlier B365 series to closing B365C at the fixed explicit 2.5. Timestamps are not available. Brazil uses earliest retained, complete same-specification prematch channel within 24h before a new cutoff and latest complete channel at cutoff, with both observations tied to the same venue, provider event, bookmaker and 90min fixture. Distinguish equal lines (price move) and changed lines; the projection translates a new line into a full distribution before differencing. Equal quotes are included. Source market timestamps for 1X2 and O/U must advance at both endpoints; fresh latest quotes cannot predate the cutoff by more than 1h.",
+  "population": "European existing 2025/26 1737 and 2026/27 481 held-out market-goal fixtures from the 5 leagues. Brazil all six in the prior Transformer plan; missing quotes or earlier leg are visible abstentions.",
+  "fixture_registration": "workspace-updates/20261118-transformer/forward/plan.json",
+  "fixture_registration_sha256": "7bd29be2d5b6a4c1116ed08700391e0f1dc4fc88a7bbb2e483c979b87079ff10",
+  "fixture_ids": [
+    "espn:401841315",
+    "espn:401841310",
+    "espn:401841313",
+    "espn:401841314",
+    "espn:401841312",
+    "espn:401841316"
+  ],
+  "metrics": [
+    "joint score Top1",
+    "joint score Top3",
+    "1X2",
+    "strict Asian O/U full win excluding push; half win as non-full; all settlement outcomes"
+  ],
+  "automatic_promotion": false
+}
