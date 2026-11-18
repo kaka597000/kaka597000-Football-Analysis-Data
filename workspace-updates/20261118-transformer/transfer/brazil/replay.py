@@ -44,7 +44,8 @@ def same_refit(early, final):
 def replay(source, transformer_file, sequence_file, out):
     sequence_history = UPDATES / '20261118-sequence/history'
     trial_history = EXPERIMENT / 'history'
-    sys.path[:0] = [str(source / 'runtime'), str(source), str(sequence_history), str(trial_history)]
+    sys.path[:0] = [str(sequence_history.parent), str(source / 'runtime'), str(source), str(sequence_history), str(trial_history)]
+    from verify import compare as compare_reference
     from research_program import three_arm_model
     from run_models import evaluate, encoded
     from run_study import apply_holdout, summarize
@@ -95,8 +96,7 @@ def replay(source, transformer_file, sequence_file, out):
         rows.append(dict(row, sequence=evidence['sequence'], baseline_matrix=baseline, game_date=kickoff.date().isoformat()))
 
     historical_three = evaluate(alternatives, rows)
-    if {r['match_id']: r for r in historical_three} != saved_three:
-        raise ValueError('reference forecasts failed independent four-arm comparison replay')
+    compare_reference({r['match_id']: r for r in historical_three}, saved_three, 'archived Brazil reference forecasts')
     evaluated = [apply_holdout(transformer, row, old) for row, old in zip(rows, historical_three, strict=True)]
     report = {
         'scope': 'Retrospective transfer to all earlier Brazilian Current freezes with paired source-timed 1X2 and totals.',

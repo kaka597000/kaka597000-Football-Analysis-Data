@@ -197,6 +197,7 @@ def verify_transfer(source):
                            check=True, stdout=sys.stderr)
         # The archived hashes commit exact bytes; cross-platform numerical replays use float tolerances.
         computed = prior.read(temp / europe_report)
+        prior.checked(temp / europe_file, computed['prediction_archive_sha256'])
         prior.compare({k: v for k, v in computed.items() if k != 'prediction_archive_sha256'},
                       {k: v for k, v in study.items() if k != 'prediction_archive_sha256'}, 'European transfer report')
         for expected, actual in zip(european, prior.records(temp / europe_file), strict=True):
