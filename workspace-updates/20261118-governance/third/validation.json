@@ -14,7 +14,7 @@
     "portfolio_lifecycle": 6,
     "note": "one additional single-slot test was added after full suite discovery and passed in focused run"
   },
-  "data_tests": 28,
+  "data_tests": 30,
   "closed_development_scopes": [
     "eng.1",
     "esp.1",
@@ -39,6 +39,19 @@
     "replay-three-arm.json": "c80c6d6990e8cf1fdd5ad36c9505690acca9875f173c4bba185598dbe91ae557",
     "replay-transformer.json": "f59df2586b8a4a9c85996d36f1cd58fa93b14c0a302404d2d7822f79d88e446d",
     "report.json": "df4a64370b228a3778bc3f6a3512cc72c52ac0d1d266eeab14e90af6300f88a5",
-    "rows.jsonl.gz": "ee086196b6bd82d88591a643a15e6980b5b77980bdc5b3d41cfa493ffe072d7d"
+    "rows.jsonl.gz": "ee086196b6bd82d88591a643a15e6980b5b77980bdc5b3d41cfa493ffe072d7d",
+    "data-tests-roundoff.log.gz": "a53331ab81d2e8b79cb7267c19d96148e744a3c00fffbb0c598bbcf2cc855eb4"
+  },
+  "development_replay_comparison": {
+    "exact": [
+      "identities",
+      "weights",
+      "primary",
+      "counts",
+      "source_hashes"
+    ],
+    "probability_metrics_absolute_tolerance": 1e-12,
+    "failed_byte_compare_run": 44269213354,
+    "reason": "cross-runner math library probability metric differences around 1e-15; no selection or count changes"
   }
 }
