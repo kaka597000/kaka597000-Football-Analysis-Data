@@ -1,0 +1,140 @@
+{
+  "fitted_at_cutoff": "2026-11-14T00:00:00Z",
+  "training_evidence": {
+    "frozen_current": {
+      "bra.1": 7,
+      "eng.1": 5,
+      "esp.1": 4,
+      "fra.1": 1,
+      "ger.1": 6,
+      "ita.1": 8,
+      "nor.1": 7,
+      "swe.1": 8
+    },
+    "date_only_proxy": {
+      "eng.1": 660,
+      "esp.1": 653,
+      "fra.1": 536,
+      "ger.1": 523,
+      "ita.1": 664
+    }
+  },
+  "scope": "Development replay of previous first freezes at their original cutoffs, not new future scores.",
+  "results": {
+    "n": 2,
+    "by_cohort_population": {
+      "bra.1": 2
+    },
+    "arms": {
+      "current": {
+        "primary_hits": 0,
+        "wdl_hits": 1,
+        "score_log_loss": 2.6649623345801885,
+        "wdl_log_loss": 1.123556852526115,
+        "totals": {
+          "win": 2
+        },
+        "totals_eligible": 2,
+        "totals_non_push": 2,
+        "strict_full_win_rate": 1.0
+      },
+      "market": {
+        "primary_hits": 0,
+        "wdl_hits": 1,
+        "score_log_loss": 2.3924139372043403,
+        "wdl_log_loss": 0.8279172972390363,
+        "totals": {
+          "loss": 1,
+          "win": 1
+        },
+        "totals_eligible": 2,
+        "totals_non_push": 2,
+        "strict_full_win_rate": 0.5
+      },
+      "market_cohort": {
+        "primary_hits": 0,
+        "wdl_hits": 1,
+        "score_log_loss": 2.4946978746583777,
+        "wdl_log_loss": 0.8574025734340388,
+        "totals": {
+          "loss": 1,
+          "win": 1
+        },
+        "totals_eligible": 2,
+        "totals_non_push": 2,
+        "strict_full_win_rate": 0.5
+      }
+    },
+    "paired": {
+      "current_vs_market": {
+        "primary_hit": {
+          "n": 2,
+          "gained": 0,
+          "lost": 0,
+          "net_hits": 0,
+          "date_block_95pct_rate_interval": null
+        },
+        "wdl_hit": {
+          "n": 2,
+          "gained": 0,
+          "lost": 0,
+          "net_hits": 0,
+          "date_block_95pct_rate_interval": null
+        },
+        "settlement": {
+          "n": 2,
+          "gained": 0,
+          "lost": 1,
+          "net_hits": -1,
+          "date_block_95pct_rate_interval": null
+        }
+      },
+      "market_vs_market_cohort": {
+        "primary_hit": {
+          "n": 2,
+          "gained": 0,
+          "lost": 0,
+          "net_hits": 0,
+          "date_block_95pct_rate_interval": null
+        },
+        "wdl_hit": {
+          "n": 2,
+          "gained": 0,
+          "lost": 0,
+          "net_hits": 0,
+          "date_block_95pct_rate_interval": null
+        },
+        "settlement": {
+          "n": 2,
+          "gained": 0,
+          "lost": 0,
+          "net_hits": 0,
+          "date_block_95pct_rate_interval": null
+        }
+      },
+      "current_vs_market_cohort": {
+        "primary_hit": {
+          "n": 2,
+          "gained": 0,
+          "lost": 0,
+          "net_hits": 0,
+          "date_block_95pct_rate_interval": null
+        },
+        "wdl_hit": {
+          "n": 2,
+          "gained": 0,
+          "lost": 0,
+          "net_hits": 0,
+          "date_block_95pct_rate_interval": null
+        },
+        "settlement": {
+          "n": 2,
+          "gained": 0,
+          "lost": 1,
+          "net_hits": -1,
+          "date_block_95pct_rate_interval": null
+        }
+      }
+    }
+  }
+}

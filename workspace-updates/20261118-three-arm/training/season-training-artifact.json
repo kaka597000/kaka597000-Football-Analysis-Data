@@ -1,0 +1,46 @@
+{
+  "version": "WCPP-THREE-ARM-MARKET-COHORT-1",
+  "cutoff_at": "2025-08-01T00:00:00Z",
+  "sample_sha256": "b945aee18141c11f4f50d22ff26f689d09dbeaa66efb87fafe63cc3b06f148f2",
+  "n": 1299,
+  "training_by_source": {
+    "frozen_current": {},
+    "date_only_proxy": {
+      "eng.1": 283,
+      "esp.1": 276,
+      "fra.1": 233,
+      "ger.1": 220,
+      "ita.1": 287
+    }
+  },
+  "market_n": 1299,
+  "market_training_by_source": {
+    "frozen_current": {},
+    "date_only_proxy": {
+      "eng.1": 283,
+      "esp.1": 276,
+      "fra.1": 233,
+      "ger.1": 220,
+      "ita.1": 287
+    }
+  },
+  "market_weight": 1.0,
+  "market_ridge": 2.0,
+  "features": [
+    "home_zero",
+    "away_zero",
+    "total_at_least_four"
+  ],
+  "cohort_calibration_n": 0,
+  "global_ridge": 12.0,
+  "cohort_ridge": 30.0,
+  "global_coefficients": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "cohorts": {},
+  "unseen_cohort_fallback": "pooled_frozen_current_coefficients",
+  "historical_close_times_certified": false,
+  "active_model_changed": false
+}
