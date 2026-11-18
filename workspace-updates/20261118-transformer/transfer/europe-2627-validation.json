@@ -1,0 +1,1706 @@
+{
+  "by_cohort": {
+    "eng.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 95,
+            "total_strict_full_win": 95,
+            "wdl": 95
+          },
+          "hits": {
+            "score_top1": 11,
+            "total_strict_full_win": 51,
+            "wdl": 47
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2462741086888825,
+            "score_log_loss": 2.927706955009042,
+            "wdl_brier": 0.601137072262381,
+            "wdl_log_loss": 1.004150536414443
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 44,
+            "FULL_WIN": 51
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 95,
+            "total_strict_full_win": 95,
+            "wdl": 95
+          },
+          "hits": {
+            "score_top1": 11,
+            "total_strict_full_win": 53,
+            "wdl": 46
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24525386680016753,
+            "score_log_loss": 2.9257186017953827,
+            "wdl_brier": 0.601350929431492,
+            "wdl_log_loss": 1.0044689018076198
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 42,
+            "FULL_WIN": 53
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 95,
+            "total_strict_full_win": 95,
+            "wdl": 95
+          },
+          "hits": {
+            "score_top1": 11,
+            "total_strict_full_win": 49,
+            "wdl": 46
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24633555121046338,
+            "score_log_loss": 2.926643478663492,
+            "wdl_brier": 0.6010722666930784,
+            "wdl_log_loss": 1.0036599677369817
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 46,
+            "FULL_WIN": 49
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 95,
+            "total_strict_full_win": 95,
+            "wdl": 95
+          },
+          "hits": {
+            "score_top1": 11,
+            "total_strict_full_win": 52,
+            "wdl": 46
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24525701363076305,
+            "score_log_loss": 2.923129785937692,
+            "wdl_brier": 0.6008477711970245,
+            "wdl_log_loss": 1.003411103896312
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 43,
+            "FULL_WIN": 52
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 0,
+          "total": 3,
+          "wdl": 0
+        },
+        "max_abs_log_rate_change": 0.08026560281829823,
+        "mean_abs_log_rate_change": 0.01647867136596623,
+        "team_sides": 190
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 95,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 31,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.03540613147914028
+            ],
+            "eligible": 95,
+            "gained": 1,
+            "lost": 0,
+            "matchday_blocks": 31,
+            "net_hits": 1,
+            "net_rate": 0.010526315789473684
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.034482758620689655,
+              0.0
+            ],
+            "eligible": 95,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 31,
+            "net_hits": -1,
+            "net_rate": -0.010526315789473684
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 95,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 31,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.031578947368421054,
+              0.0
+            ],
+            "eligible": 95,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 31,
+            "net_hits": -1,
+            "net_rate": -0.010526315789473684
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 95,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 31,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 95,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 31,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.010309278350515464,
+              0.08
+            ],
+            "eligible": 95,
+            "gained": 4,
+            "lost": 1,
+            "matchday_blocks": 31,
+            "net_hits": 3,
+            "net_rate": 0.031578947368421054
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 95,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 31,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "population": 95
+    },
+    "esp.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 111,
+            "total_strict_full_win": 111,
+            "wdl": 111
+          },
+          "hits": {
+            "score_top1": 20,
+            "total_strict_full_win": 72,
+            "wdl": 62
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.22033634717836845,
+            "score_log_loss": 2.9473567746416376,
+            "wdl_brier": 0.5353349394918969,
+            "wdl_log_loss": 0.9091211659001828
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 39,
+            "FULL_WIN": 72
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 111,
+            "total_strict_full_win": 111,
+            "wdl": 111
+          },
+          "hits": {
+            "score_top1": 21,
+            "total_strict_full_win": 74,
+            "wdl": 64
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2210718909664829,
+            "score_log_loss": 2.9407615186674505,
+            "wdl_brier": 0.5345458972446067,
+            "wdl_log_loss": 0.9073319680767772
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 37,
+            "FULL_WIN": 74
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 111,
+            "total_strict_full_win": 111,
+            "wdl": 111
+          },
+          "hits": {
+            "score_top1": 20,
+            "total_strict_full_win": 74,
+            "wdl": 63
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2202158286801104,
+            "score_log_loss": 2.9407251262141147,
+            "wdl_brier": 0.5342866689754764,
+            "wdl_log_loss": 0.9069612272105104
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 37,
+            "FULL_WIN": 74
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 111,
+            "total_strict_full_win": 111,
+            "wdl": 111
+          },
+          "hits": {
+            "score_top1": 20,
+            "total_strict_full_win": 74,
+            "wdl": 62
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.22011566934735222,
+            "score_log_loss": 2.9419216201475074,
+            "wdl_brier": 0.53372399680505,
+            "wdl_log_loss": 0.9064045905201258
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 37,
+            "FULL_WIN": 74
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 6,
+          "total": 6,
+          "wdl": 2
+        },
+        "max_abs_log_rate_change": 0.06437985288060767,
+        "mean_abs_log_rate_change": 0.01761589728719374,
+        "team_sides": 222
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 111,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 49,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.016135642517186674,
+              0.05263157894736842
+            ],
+            "eligible": 111,
+            "gained": 3,
+            "lost": 1,
+            "matchday_blocks": 49,
+            "net_hits": 2,
+            "net_rate": 0.018018018018018018
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 111,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 49,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.02857142857142857,
+              0.0
+            ],
+            "eligible": 111,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 49,
+            "net_hits": -1,
+            "net_rate": -0.009009009009009009
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 111,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 49,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.046296296296296294,
+              0.0
+            ],
+            "eligible": 111,
+            "gained": 0,
+            "lost": 2,
+            "matchday_blocks": 49,
+            "net_hits": -2,
+            "net_rate": -0.018018018018018018
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 111,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 49,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.035398230088495575,
+              0.03636363636363636
+            ],
+            "eligible": 111,
+            "gained": 2,
+            "lost": 2,
+            "matchday_blocks": 49,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.029419044845661036,
+              0.0
+            ],
+            "eligible": 111,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 49,
+            "net_hits": -1,
+            "net_rate": -0.009009009009009009
+          }
+        }
+      },
+      "population": 111
+    },
+    "fra.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 87,
+            "total_strict_full_win": 87,
+            "wdl": 87
+          },
+          "hits": {
+            "score_top1": 7,
+            "total_strict_full_win": 51,
+            "wdl": 49
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.23288273099450404,
+            "score_log_loss": 2.9600307764179865,
+            "wdl_brier": 0.5581217014308294,
+            "wdl_log_loss": 0.9441680625897287
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 36,
+            "FULL_WIN": 51
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 87,
+            "total_strict_full_win": 87,
+            "wdl": 87
+          },
+          "hits": {
+            "score_top1": 8,
+            "total_strict_full_win": 52,
+            "wdl": 50
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2329369676020571,
+            "score_log_loss": 2.9567583960353736,
+            "wdl_brier": 0.5550470971017261,
+            "wdl_log_loss": 0.9402223940935023
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 35,
+            "FULL_WIN": 52
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 87,
+            "total_strict_full_win": 87,
+            "wdl": 87
+          },
+          "hits": {
+            "score_top1": 7,
+            "total_strict_full_win": 52,
+            "wdl": 49
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.23309636383641538,
+            "score_log_loss": 2.9563742941995543,
+            "wdl_brier": 0.5566173614983931,
+            "wdl_log_loss": 0.9418635782140229
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 35,
+            "FULL_WIN": 52
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 87,
+            "total_strict_full_win": 87,
+            "wdl": 87
+          },
+          "hits": {
+            "score_top1": 7,
+            "total_strict_full_win": 52,
+            "wdl": 49
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2327762708509269,
+            "score_log_loss": 2.956782374267423,
+            "wdl_brier": 0.5570114352479536,
+            "wdl_log_loss": 0.9424960529725304
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 35,
+            "FULL_WIN": 52
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 3,
+          "total": 2,
+          "wdl": 1
+        },
+        "max_abs_log_rate_change": 0.06941594667029605,
+        "mean_abs_log_rate_change": 0.01800496887295406,
+        "team_sides": 174
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 87,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 33,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.02702702702702703,
+              0.053763440860215055
+            ],
+            "eligible": 87,
+            "gained": 2,
+            "lost": 1,
+            "matchday_blocks": 33,
+            "net_hits": 1,
+            "net_rate": 0.011494252873563218
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 87,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 33,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.036585365853658534,
+              0.0
+            ],
+            "eligible": 87,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 33,
+            "net_hits": -1,
+            "net_rate": -0.011494252873563218
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.036585365853658534,
+              0.030935889175257688
+            ],
+            "eligible": 87,
+            "gained": 1,
+            "lost": 1,
+            "matchday_blocks": 33,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.0379746835443038,
+              0.0
+            ],
+            "eligible": 87,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 33,
+            "net_hits": -1,
+            "net_rate": -0.011494252873563218
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 87,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 33,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.0341007053291536,
+              0.033717441266598515
+            ],
+            "eligible": 87,
+            "gained": 1,
+            "lost": 1,
+            "matchday_blocks": 33,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 87,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 33,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "population": 87
+    },
+    "ger.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 78,
+            "total_strict_full_win": 78,
+            "wdl": 78
+          },
+          "hits": {
+            "score_top1": 10,
+            "total_strict_full_win": 54,
+            "wdl": 45
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.20661551218735696,
+            "score_log_loss": 3.2402537628921495,
+            "wdl_brier": 0.575626389371963,
+            "wdl_log_loss": 0.9663246503101951
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 24,
+            "FULL_WIN": 54
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 78,
+            "total_strict_full_win": 78,
+            "wdl": 78
+          },
+          "hits": {
+            "score_top1": 10,
+            "total_strict_full_win": 54,
+            "wdl": 46
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.20630801887283987,
+            "score_log_loss": 3.234406835027688,
+            "wdl_brier": 0.5761470844141788,
+            "wdl_log_loss": 0.9673534520094254
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 24,
+            "FULL_WIN": 54
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 78,
+            "total_strict_full_win": 78,
+            "wdl": 78
+          },
+          "hits": {
+            "score_top1": 10,
+            "total_strict_full_win": 54,
+            "wdl": 45
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.20670090201402674,
+            "score_log_loss": 3.234937382400989,
+            "wdl_brier": 0.5762687777942853,
+            "wdl_log_loss": 0.967255434888454
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 24,
+            "FULL_WIN": 54
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 78,
+            "total_strict_full_win": 78,
+            "wdl": 78
+          },
+          "hits": {
+            "score_top1": 10,
+            "total_strict_full_win": 54,
+            "wdl": 45
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2083176973856645,
+            "score_log_loss": 3.236865105561244,
+            "wdl_brier": 0.5754761714189532,
+            "wdl_log_loss": 0.9660604674521687
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 24,
+            "FULL_WIN": 54
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 1,
+          "total": 0,
+          "wdl": 0
+        },
+        "max_abs_log_rate_change": 0.06597541942141275,
+        "mean_abs_log_rate_change": 0.018241849997594234,
+        "team_sides": 156
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 27,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 27,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 27,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 27,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 27,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.04054054054054054,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 27,
+            "net_hits": -1,
+            "net_rate": -0.01282051282051282
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 27,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 27,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 78,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 27,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "population": 78
+    },
+    "ita.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 110,
+            "total_strict_full_win": 110,
+            "wdl": 110
+          },
+          "hits": {
+            "score_top1": 9,
+            "total_strict_full_win": 62,
+            "wdl": 70
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24353503035529628,
+            "score_log_loss": 2.9739494813494556,
+            "wdl_brier": 0.5258434107494957,
+            "wdl_log_loss": 0.9055902481664426
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 48,
+            "FULL_WIN": 62
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 110,
+            "total_strict_full_win": 110,
+            "wdl": 110
+          },
+          "hits": {
+            "score_top1": 9,
+            "total_strict_full_win": 59,
+            "wdl": 70
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24558473370235842,
+            "score_log_loss": 2.9754625162906834,
+            "wdl_brier": 0.5229841920514777,
+            "wdl_log_loss": 0.9020337968016445
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 51,
+            "FULL_WIN": 59
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 110,
+            "total_strict_full_win": 110,
+            "wdl": 110
+          },
+          "hits": {
+            "score_top1": 9,
+            "total_strict_full_win": 63,
+            "wdl": 70
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2435028175339242,
+            "score_log_loss": 2.9718942316432124,
+            "wdl_brier": 0.5226962926099102,
+            "wdl_log_loss": 0.9013784631242725
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 47,
+            "FULL_WIN": 63
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 110,
+            "total_strict_full_win": 110,
+            "wdl": 110
+          },
+          "hits": {
+            "score_top1": 10,
+            "total_strict_full_win": 60,
+            "wdl": 70
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24482805656621076,
+            "score_log_loss": 2.976143970464892,
+            "wdl_brier": 0.5239166497653891,
+            "wdl_log_loss": 0.903071463938441
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 50,
+            "FULL_WIN": 60
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 7,
+          "total": 5,
+          "wdl": 1
+        },
+        "max_abs_log_rate_change": 0.06965104994124115,
+        "mean_abs_log_rate_change": 0.017122058164567116,
+        "team_sides": 220
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.030303030303030304
+            ],
+            "eligible": 110,
+            "gained": 1,
+            "lost": 0,
+            "matchday_blocks": 37,
+            "net_hits": 1,
+            "net_rate": 0.00909090909090909
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.05555555555555555,
+              0.016952774156163967
+            ],
+            "eligible": 110,
+            "gained": 2,
+            "lost": 4,
+            "matchday_blocks": 37,
+            "net_hits": -2,
+            "net_rate": -0.01818181818181818
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 110,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 37,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.027777777777777776
+            ],
+            "eligible": 110,
+            "gained": 1,
+            "lost": 0,
+            "matchday_blocks": 37,
+            "net_hits": 1,
+            "net_rate": 0.00909090909090909
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.019801980198019802,
+              0.0423728813559322
+            ],
+            "eligible": 110,
+            "gained": 2,
+            "lost": 1,
+            "matchday_blocks": 37,
+            "net_hits": 1,
+            "net_rate": 0.00909090909090909
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 110,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 37,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.027777777777777776
+            ],
+            "eligible": 110,
+            "gained": 1,
+            "lost": 0,
+            "matchday_blocks": 37,
+            "net_hits": 1,
+            "net_rate": 0.00909090909090909
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.06060606060606061,
+              0.0
+            ],
+            "eligible": 110,
+            "gained": 1,
+            "lost": 4,
+            "matchday_blocks": 37,
+            "net_hits": -3,
+            "net_rate": -0.02727272727272727
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 110,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 37,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "population": 110
+    }
+  },
+  "comparison": {
+    "arms": {
+      "baseline": {
+        "denominators": {
+          "score_top1": 481,
+          "total_strict_full_win": 481,
+          "wdl": 481
+        },
+        "hits": {
+          "score_top1": 57,
+          "total_strict_full_win": 290,
+          "wdl": 273
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.2308088061298566,
+          "score_log_loss": 2.999346521233832,
+          "wdl_brier": 0.5568158455851696,
+          "wdl_log_loss": 0.9426977585074899
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 191,
+          "FULL_WIN": 290
+        }
+      },
+      "lightgbm": {
+        "denominators": {
+          "score_top1": 481,
+          "total_strict_full_win": 481,
+          "wdl": 481
+        },
+        "hits": {
+          "score_top1": 59,
+          "total_strict_full_win": 292,
+          "wdl": 276
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.23120573722248525,
+          "score_log_loss": 2.9962378089851573,
+          "wdl_brier": 0.5555504450061575,
+          "wdl_log_loss": 0.9409875869424053
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 189,
+          "FULL_WIN": 292
+        }
+      },
+      "lstm": {
+        "denominators": {
+          "score_top1": 481,
+          "total_strict_full_win": 481,
+          "wdl": 481
+        },
+        "hits": {
+          "score_top1": 57,
+          "total_strict_full_win": 292,
+          "wdl": 273
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.23083825007916875,
+          "score_log_loss": 2.995612607871497,
+          "wdl_brier": 0.555673498747453,
+          "wdl_log_loss": 0.940873345789957
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 189,
+          "FULL_WIN": 292
+        }
+      },
+      "transformer": {
+        "denominators": {
+          "score_top1": 481,
+          "total_strict_full_win": 481,
+          "wdl": 481
+        },
+        "hits": {
+          "score_top1": 58,
+          "total_strict_full_win": 292,
+          "wdl": 272
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.2311094756234392,
+          "score_log_loss": 2.9965530375189915,
+          "wdl_brier": 0.5557211426622057,
+          "wdl_log_loss": 0.9410035312286724
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 189,
+          "FULL_WIN": 292
+        }
+      }
+    },
+    "order_sensitivity": {
+      "changed_calls": {
+        "primary": 17,
+        "total": 16,
+        "wdl": 4
+      },
+      "max_abs_log_rate_change": 0.08026560281829823,
+      "mean_abs_log_rate_change": 0.017450231535357658,
+      "team_sides": 962
+    },
+    "paired": {
+      "transformer_minus_baseline": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": [
+            0.0,
+            0.006788101604278071
+          ],
+          "eligible": 481,
+          "gained": 1,
+          "lost": 0,
+          "matchday_blocks": 52,
+          "net_hits": 1,
+          "net_rate": 0.002079002079002079
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.011242964049257046,
+            0.01867611824254637
+          ],
+          "eligible": 481,
+          "gained": 8,
+          "lost": 6,
+          "matchday_blocks": 52,
+          "net_hits": 2,
+          "net_rate": 0.004158004158004158
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.006909664338815048,
+            0.0
+          ],
+          "eligible": 481,
+          "gained": 0,
+          "lost": 1,
+          "matchday_blocks": 52,
+          "net_hits": -1,
+          "net_rate": -0.002079002079002079
+        }
+      },
+      "transformer_minus_lightgbm": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.006788101604278075,
+            0.0
+          ],
+          "eligible": 481,
+          "gained": 1,
+          "lost": 2,
+          "matchday_blocks": 52,
+          "net_hits": -1,
+          "net_rate": -0.002079002079002079
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.012197801020189464,
+            0.010756202122426013
+          ],
+          "eligible": 481,
+          "gained": 3,
+          "lost": 3,
+          "matchday_blocks": 52,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.01763391364436816,
+            -0.001751084654954632
+          ],
+          "eligible": 481,
+          "gained": 0,
+          "lost": 4,
+          "matchday_blocks": 52,
+          "net_hits": -4,
+          "net_rate": -0.008316008316008316
+        }
+      },
+      "transformer_minus_lstm": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": [
+            0.0,
+            0.006818181818181818
+          ],
+          "eligible": 481,
+          "gained": 1,
+          "lost": 0,
+          "matchday_blocks": 52,
+          "net_hits": 1,
+          "net_rate": 0.002079002079002079
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.016260530145988623,
+            0.016748424273095315
+          ],
+          "eligible": 481,
+          "gained": 8,
+          "lost": 8,
+          "matchday_blocks": 52,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.006929614909501047,
+            0.0
+          ],
+          "eligible": 481,
+          "gained": 0,
+          "lost": 1,
+          "matchday_blocks": 52,
+          "net_hits": -1,
+          "net_rate": -0.002079002079002079
+        }
+      }
+    },
+    "population": 481
+  },
+  "coverage": 0.962,
+  "evaluated": 481,
+  "evidence": "Later chronological fixtures disjoint from the 3,036 residual-training observations. Data were retrieved after completion; individual quote times and original availability of results are not certified. The model recipe was decided after the season began. Not a prospective issue, a deployment of active Current, or a project-wide unseen-data claim.",
+  "exclusions": [
+    {
+      "away": "Leverkusen",
+      "away_goals": 2,
+      "cohort": "ger.1",
+      "game_date": "2026-08-29",
+      "home": "Elversberg",
+      "home_goals": 3,
+      "match_id": "84785038c436c2a3afe757c765eb59c3d7fe14b55d46ef5012378770b8c609c7",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_D1.csv",
+      "source_line": 3
+    },
+    {
+      "away": "Elversberg",
+      "away_goals": 4,
+      "cohort": "ger.1",
+      "game_date": "2026-09-05",
+      "home": "M'gladbach",
+      "home_goals": 3,
+      "match_id": "8deac512393368239aff2f8c050803e5adcaf249c6448bab78fa1aa041be8b0d",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_D1.csv",
+      "source_line": 14
+    },
+    {
+      "away": "Bayern Munich",
+      "away_goals": 2,
+      "cohort": "ger.1",
+      "game_date": "2026-09-13",
+      "home": "Elversberg",
+      "home_goals": 1,
+      "match_id": "bbfa5808bcf8fb343568453123f4a2084b96fa2c6349b31e43c897616e32f834",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_D1.csv",
+      "source_line": 28
+    },
+    {
+      "away": "Coventry",
+      "away_goals": 0,
+      "cohort": "eng.1",
+      "game_date": "2026-08-21",
+      "home": "Arsenal",
+      "home_goals": 3,
+      "match_id": "e1325a3c6d2b5fcaaaff091718b84b54005b62a15076d5f4aa0de4de6114351b",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_E0.csv",
+      "source_line": 2
+    },
+    {
+      "away": "Man United",
+      "away_goals": 0,
+      "cohort": "eng.1",
+      "game_date": "2026-08-22",
+      "home": "Hull",
+      "home_goals": 2,
+      "match_id": "a3d6f64969405875a2b756c85eee9e2450a9f199110676936f72c1036c31f5dd",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_E0.csv",
+      "source_line": 3
+    },
+    {
+      "away": "Hull",
+      "away_goals": 1,
+      "cohort": "eng.1",
+      "game_date": "2026-08-29",
+      "home": "Coventry",
+      "home_goals": 0,
+      "match_id": "c68d6f7bb6cd713a7b51d1744449f3798e2b5582d6d2b226259d1fabbd98fad0",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_E0.csv",
+      "source_line": 15
+    },
+    {
+      "away": "Coventry",
+      "away_goals": 0,
+      "cohort": "eng.1",
+      "game_date": "2026-09-05",
+      "home": "Man City",
+      "home_goals": 1,
+      "match_id": "1fe1c8fef66e97ddaa341f62fa3eda11c954f9c6eb6ed3761fcccc6098e7bd3b",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_E0.csv",
+      "source_line": 27
+    },
+    {
+      "away": "Aston Villa",
+      "away_goals": 0,
+      "cohort": "eng.1",
+      "game_date": "2026-09-05",
+      "home": "Hull",
+      "home_goals": 0,
+      "match_id": "941fe09c4323332b663c8a332ebf0268d14cdad69208c44ee0c372a970b1961a",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_E0.csv",
+      "source_line": 29
+    },
+    {
+      "away": "Brest",
+      "away_goals": 2,
+      "cohort": "fra.1",
+      "game_date": "2026-08-22",
+      "home": "Le Mans",
+      "home_goals": 2,
+      "match_id": "573381004a39bdcdfe56b746dd72cf84feea31e5801b8176add9f4deb3e9b531",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_F1.csv",
+      "source_line": 4
+    },
+    {
+      "away": "Le Mans",
+      "away_goals": 2,
+      "cohort": "fra.1",
+      "game_date": "2026-08-30",
+      "home": "Rennes",
+      "home_goals": 3,
+      "match_id": "a43db474fb1cc4cb8a99d72ca0da75f93ac99d603872131b2b084de2345434e9",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_F1.csv",
+      "source_line": 18
+    },
+    {
+      "away": "Le Mans",
+      "away_goals": 1,
+      "cohort": "fra.1",
+      "game_date": "2026-09-05",
+      "home": "Nice",
+      "home_goals": 1,
+      "match_id": "4ec12e3dca85133fc432bdb3945b90f95a9e8f15dec504ae9eca1937da5d8fa6",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_F1.csv",
+      "source_line": 25
+    },
+    {
+      "away": "Villarreal",
+      "away_goals": 2,
+      "cohort": "esp.1",
+      "game_date": "2026-08-16",
+      "home": "Santander",
+      "home_goals": 2,
+      "match_id": "0c62813c96b997c95fb8c5008165ca6a940939c51bd04bf18a6d5a7e1b9a6791",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_SP1.csv",
+      "source_line": 4
+    },
+    {
+      "away": "Elche",
+      "away_goals": 1,
+      "cohort": "esp.1",
+      "game_date": "2026-08-17",
+      "home": "La Coruna",
+      "home_goals": 1,
+      "match_id": "8c41764f337c6cb9cb3eb4b8cc0dd8bf1f46e50b71980ff6854739732a822bde",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_SP1.csv",
+      "source_line": 6
+    },
+    {
+      "away": "Malaga",
+      "away_goals": 0,
+      "cohort": "esp.1",
+      "game_date": "2026-08-19",
+      "home": "Ath Madrid",
+      "home_goals": 2,
+      "match_id": "79f20b64ae557675e3d29aec800d8a0ce56609c7d0647c17a63ef62fafa0dbb0",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_SP1.csv",
+      "source_line": 7
+    },
+    {
+      "away": "Santander",
+      "away_goals": 0,
+      "cohort": "esp.1",
+      "game_date": "2026-08-23",
+      "home": "Getafe",
+      "home_goals": 1,
+      "match_id": "6a45273335fe70a4717e96bb033d201d839e161bfc48e70c3e0c7a3c1de64b19",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_SP1.csv",
+      "source_line": 14
+    },
+    {
+      "away": "La Coruna",
+      "away_goals": 1,
+      "cohort": "esp.1",
+      "game_date": "2026-08-24",
+      "home": "Malaga",
+      "home_goals": 1,
+      "match_id": "d79c34e0b96ea6fd7d81927ecf0026b310df17e467369d3977e7f851b6e8ac3a",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_SP1.csv",
+      "source_line": 17
+    },
+    {
+      "away": "Elche",
+      "away_goals": 2,
+      "cohort": "esp.1",
+      "game_date": "2026-08-28",
+      "home": "Santander",
+      "home_goals": 3,
+      "match_id": "29cd637b83d132d8a0486eb823b821df49149328eabde93900b934a87764dcf1",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_SP1.csv",
+      "source_line": 22
+    },
+    {
+      "away": "Malaga",
+      "away_goals": 0,
+      "cohort": "esp.1",
+      "game_date": "2026-08-30",
+      "home": "Real Madrid",
+      "home_goals": 4,
+      "match_id": "95d52066d25a1370eaf6e4907b0aaeaa26491c6eebcf3d31e4b76bc79088cae0",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_SP1.csv",
+      "source_line": 27
+    },
+    {
+      "away": "Valencia",
+      "away_goals": 1,
+      "cohort": "esp.1",
+      "game_date": "2026-08-30",
+      "home": "La Coruna",
+      "home_goals": 3,
+      "match_id": "c350c17b2fc8d4e9e0632e0dfa3ca4dd0bc1b9ab4841d1a04044af7217a0c443",
+      "reasons": [
+        "insufficient_prior_goals_model_history"
+      ],
+      "source_file": "2627_SP1.csv",
+      "source_line": 28
+    }
+  ],
+  "history_archive_sha256": "ebe1acee81f2909b8d0c5f9cf6c535c543ef3c656c502b1aecbc0c194366b655",
+  "inventory": {
+    "eng.1": {
+      "evaluated": 95,
+      "excluded_played": 5,
+      "first": "2026-08-21",
+      "last": "2026-11-08",
+      "played_in_source": 100,
+      "reason_counts": {
+        "insufficient_prior_goals_model_history": 5
+      }
+    },
+    "esp.1": {
+      "evaluated": 111,
+      "excluded_played": 8,
+      "first": "2026-08-15",
+      "last": "2026-11-08",
+      "played_in_source": 119,
+      "reason_counts": {
+        "insufficient_prior_goals_model_history": 8
+      }
+    },
+    "fra.1": {
+      "evaluated": 87,
+      "excluded_played": 3,
+      "first": "2026-08-21",
+      "last": "2026-11-08",
+      "played_in_source": 90,
+      "reason_counts": {
+        "insufficient_prior_goals_model_history": 3
+      }
+    },
+    "ger.1": {
+      "evaluated": 78,
+      "excluded_played": 3,
+      "first": "2026-08-28",
+      "last": "2026-11-08",
+      "played_in_source": 81,
+      "reason_counts": {
+        "insufficient_prior_goals_model_history": 3
+      }
+    },
+    "ita.1": {
+      "evaluated": 110,
+      "excluded_played": 0,
+      "first": "2026-08-22",
+      "last": "2026-11-08",
+      "played_in_source": 110,
+      "reason_counts": {}
+    }
+  },
+  "last_model_training_game": "2026-05-24",
+  "method": "Archived original goals-only Poisson intensity coefficients and code. Each target uses results from strictly earlier dates. Fixed market projection constrained by Bet365 1X2 and 2.5 closing prices. Upstream history and downstream five-game histories are rebuilt separately.",
+  "original_prior_holdout_intensities": {
+    "max_abs_error": 0.0,
+    "n": 1737,
+    "runtime_sha256": "6595e9cf714b4f9ecab0ce3eb669610ea4e38cc0b3f64ae7360bed4b3433e3c8",
+    "training_end_by_league": {
+      "D1": "2025-03-16",
+      "E0": "2025-03-16",
+      "F1": "2025-03-16",
+      "I1": "2025-03-16",
+      "SP1": "2025-03-16"
+    },
+    "weights_sha256": "365afaab307a091c75292757be62707b3fcfd13c240ec7b4f6fdf2ade1a1157d"
+  },
+  "population_played_in_source": 500,
+  "population_rule": "All labeled 2026/27 fixtures in the five downloaded source files with match date through 2026-11-17 inclusive.",
+  "prediction_archive_sha256": "8d5704f18ad5f1bae7d3f2a9d49bc7bdb589d650dec5f3b76473f2b1ffb363a8",
+  "residual_model_preseason_cutoff": "2026-08-01T00:00:00Z",
+  "residual_models": {
+    "sequence": "ede82a49f934d93d9ca2505a6d5c3ee7207e304ac504f9c2038569198c478236",
+    "transformer": "ffeabf318bc30635e2fee051fea8730291d8fbfff07d88fb4ae58cf8995f4b25"
+  },
+  "schema": "TRANSFORMER-LATER-SEASON-REPLAY-1",
+  "source_csv": [
+    {
+      "bytes": 39030,
+      "captured_at": "2026-11-18T05:10:18.940180+00:00",
+      "file": "2627_D1.csv",
+      "last_modified": "Mon, 09 Nov 2026 10:03:07 GMT",
+      "sha256": "85b5ff5199866f452016473e927ff2431c05c7b2ae045b5edd3b7f5bb5847d2a",
+      "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv"
+    },
+    {
+      "bytes": 49046,
+      "captured_at": "2026-11-18T05:10:19.204546+00:00",
+      "file": "2627_E0.csv",
+      "last_modified": "Mon, 09 Nov 2026 10:03:06 GMT",
+      "sha256": "d598a5f681e1a9a4acf9dad9fb203b68da6f67e2d195678dbe99e95fbba14593",
+      "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv"
+    },
+    {
+      "bytes": 43048,
+      "captured_at": "2026-11-18T05:10:19.258696+00:00",
+      "file": "2627_F1.csv",
+      "last_modified": "Mon, 09 Nov 2026 10:03:07 GMT",
+      "sha256": "351303e69ffd3e18a25ac6f06463929faa3db6b86abbf2564709f3c5a9f92f31",
+      "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv"
+    },
+    {
+      "bytes": 52274,
+      "captured_at": "2026-11-18T05:10:19.311943+00:00",
+      "file": "2627_I1.csv",
+      "last_modified": "Mon, 09 Nov 2026 10:03:06 GMT",
+      "sha256": "91f517fedb41215a32e80faa8f4ec44e26d970e557c6c120a664686dbc4d22f0",
+      "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv"
+    },
+    {
+      "bytes": 56854,
+      "captured_at": "2026-11-18T05:10:19.099588+00:00",
+      "file": "2627_SP1.csv",
+      "last_modified": "Mon, 09 Nov 2026 10:03:07 GMT",
+      "sha256": "b4c9a5cc1139f30dbd1026679c360de4626ce97fe64ae62ff1ff8ba3af0b7828",
+      "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv"
+    }
+  ]
+}

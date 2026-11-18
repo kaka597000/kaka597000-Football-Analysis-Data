@@ -44,6 +44,7 @@ jobs:
             workspace-updates/20261118-three-arm/registration
             workspace-updates/20261118-three-arm/identity
             workspace-updates/20261118-sequence/forward
+            workspace-updates/20261118-transformer/forward
             workspace-updates/20261118-sequence/coverage
       - name: Read pinned public code
         uses: actions/checkout@v4
@@ -210,6 +211,21 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}/sequence-code/runtime
           WCPP_BSD_API_KEY: ${{ secrets.BSD }}
         run: python -m data_sources.research_supplement --data-root . --out workspace-updates/20261118-sequence/coverage
+      - name: Load registered Transformer research revision
+        id: transformer_revision
+        if: always() && steps.mode.outputs.value == 'collect'
+        uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 0751528579d97587fb649ebea6ad51d148de804b
+          path: transformer-code
+          persist-credentials: false
+      - name: Settle the fixed four-model Transformer comparison
+        if: always() && steps.transformer_revision.outcome == 'success'
+        working-directory: private-state
+        env:
+          PYTHONPATH: ${{ github.workspace }}/transformer-code/runtime
+        run: python -m research_program.transformer_forward review --batch workspace-updates/20261118-transformer/forward --state-dir .
       - name: Save private audit and data
         if: always()
         working-directory: private-state

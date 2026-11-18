@@ -1,0 +1,14 @@
+{
+  "locked_at": "2026-11-18T05:10:17.067229+00:00",
+  "study": "Supplementary distinct-season retrospective transfer; all labeled 2026/27 Football-Data E0, D1, I1, F1 and SP1 with match date through 2026-11-17 inclusive. No year-round full-season claim.",
+  "eligibility": "The same archived goal-strength model and prior-history requirement as the original 2025/26 comparator, plus Bet365 three 1X2 and two total 2.5 closing prices, valid >1 and complete. Record each excluded played match once with reason. Latest source files may stop earlier than the date cutoff; report as-source population and date spans.",
+  "artifact_rule": "Fixed-budget methods and pretrained goal-strength coefficients. Match old 1737 goal-strength predictions before evaluating target rows. Refit the exact same 3036 European rows with label cutoff 2026-08-01 and compare all exported fields except cutoff exactly to retained final artifacts. All new season matches are later. No tuning, exclusions based on results, or model promotion.",
+  "metrics": [
+    "Top1 exact",
+    "WDL",
+    "full win at total 2.5",
+    "paired gained, lost and uncertainty date blocks",
+    "score log loss and WDL/over Brier"
+  ],
+  "secondary_brazil": "Separately replay the two actual original Brazilian Current snapshots with complete source-timed paired prices, retaining all 9 archived forecasts in coverage."
+}

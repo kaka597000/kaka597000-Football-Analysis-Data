@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-11-18T05:10:12.668107+00:00",
+  "method": "Two independent CPU processes each fit the 1299-game study model and 3036-game final candidate, predicted the full holdout in chronological and reverse order, and regenerated the paired report in separate output directories.",
+  "first_returncode": 0,
+  "second_returncode": 0,
+  "artifacts": {
+    "season-training-artifact.json": {
+      "bytes": 79290,
+      "sha256": "08ff5aafc96df1b87bf9801224977b1e2904adc4501c87c05686a82039137a4f",
+      "byte_identical": true
+    },
+    "season-holdout.jsonl.gz": {
+      "bytes": 1012435,
+      "sha256": "93778606a2bf98ad15a8518c32f8cb3b0e05b8c9df9c116abb42af31ceb24566",
+      "byte_identical": true
+    },
+    "artifact.json": {
+      "bytes": 79244,
+      "sha256": "802eecd16007db422fd178a331a23612a9f0d0cee082527aca8d2f938f1570d5",
+      "byte_identical": true
+    },
+    "season-validation.json": {
+      "bytes": 38924,
+      "sha256": "cad9620380f41d17d3b71e286ff1e10a32eaa5b0636b0985807b271135241e20",
+      "byte_identical": true
+    }
+  },
+  "sample_and_inference_checks": {
+    "season-training-artifact.json": {
+      "training_matches": 1299,
+      "common_sample_sha256": "37b9226eeaf5f5790649b43a0b2efe261e359f31a83a4181efb15e5c17e30ca1",
+      "native_numpy_max_abs_error": 2.0816681711721685e-17
+    },
+    "artifact.json": {
+      "training_matches": 3036,
+      "common_sample_sha256": "1ce86043c1d0025e6763bc0e094f1fa40fe676478256a4aaef4c864a49704b99",
+      "native_numpy_max_abs_error": 3.469446951953614e-17
+    }
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pytorch": "2.14.1+cpu"
+  }
+}
