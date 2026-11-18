@@ -1,0 +1,227 @@
+{
+  "coverage": 0.2222222222222222,
+  "eligible": 2,
+  "evaluation_match_ids": [
+    "espn:401841311",
+    "espn:401841175"
+  ],
+  "last_training_result_date": "2026-05-24",
+  "matched_original_three_arms": true,
+  "missing_paired_market": [
+    "espn:401841275",
+    "espn:401841272",
+    "espn:401841282",
+    "espn:401841286",
+    "espn:401841289",
+    "espn:401841290",
+    "espn:401841295"
+  ],
+  "real_forward": false,
+  "registered_archived_forecasts": 9,
+  "replay_training_cutoff": "2026-08-01T00:00:00Z",
+  "same_day_ranges": "Both eligible fixtures are November 14, 2026. A matchday block confidence interval needs additional days.",
+  "same_refitted_weights_as_final": true,
+  "scope": "Retrospective transfer to all earlier Brazilian Current freezes with paired source-timed 1X2 and totals.",
+  "source_hashes": {
+    "20261118-sequence/history/brazil-transfer-rows.jsonl.gz": "c36eadeb9033bb77f5c00e3060657d679d44c743485a8dde67c7fd051b16b064",
+    "20261118-sequence/history/brazil/sequences.json": "7f3c8253bce847a74406f5f30ca1675b3906f23c5e747920537fc544eb333338",
+    "20261118-three-arm/training/actual_current.jsonl.gz": "ea28d93a6740c4d17e93470b7b88d48fa0ef56237d8b84f80dc9311392e175af",
+    "20261118-transformer/transfer/sequence-before-season.json": "ede82a49f934d93d9ca2505a6d5c3ee7207e304ac504f9c2038569198c478236",
+    "20261118-transformer/transfer/transformer-before-season.json": "ffeabf318bc30635e2fee051fea8730291d8fbfff07d88fb4ae58cf8995f4b25"
+  },
+  "status": "RESEARCH_REPLAY",
+  "summary": {
+    "arms": {
+      "baseline": {
+        "denominators": {
+          "score_top1": 2,
+          "total_strict_full_win": 2,
+          "wdl": 2
+        },
+        "hits": {
+          "score_top1": 0,
+          "total_strict_full_win": 1,
+          "wdl": 1
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.18702551951078097,
+          "score_log_loss": 2.3924139372043403,
+          "wdl_brier": 0.4717691805050598,
+          "wdl_log_loss": 0.8279172972390363
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 1,
+          "FULL_WIN": 1
+        }
+      },
+      "lightgbm": {
+        "denominators": {
+          "score_top1": 2,
+          "total_strict_full_win": 2,
+          "wdl": 2
+        },
+        "hits": {
+          "score_top1": 0,
+          "total_strict_full_win": 1,
+          "wdl": 1
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.18166026572206673,
+          "score_log_loss": 2.3752995223907805,
+          "wdl_brier": 0.471131466923763,
+          "wdl_log_loss": 0.8264782665788439
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 1,
+          "FULL_WIN": 1
+        }
+      },
+      "lstm": {
+        "denominators": {
+          "score_top1": 2,
+          "total_strict_full_win": 2,
+          "wdl": 2
+        },
+        "hits": {
+          "score_top1": 0,
+          "total_strict_full_win": 1,
+          "wdl": 1
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.18715184809102411,
+          "score_log_loss": 2.381601691196371,
+          "wdl_brier": 0.4686736282807996,
+          "wdl_log_loss": 0.8218028199124336
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 1,
+          "FULL_WIN": 1
+        }
+      },
+      "transformer": {
+        "denominators": {
+          "score_top1": 2,
+          "total_strict_full_win": 2,
+          "wdl": 2
+        },
+        "hits": {
+          "score_top1": 0,
+          "total_strict_full_win": 1,
+          "wdl": 1
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.18758094629536576,
+          "score_log_loss": 2.381373751679039,
+          "wdl_brier": 0.46683144701043217,
+          "wdl_log_loss": 0.8201633854610422
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 1,
+          "FULL_WIN": 1
+        }
+      }
+    },
+    "order_sensitivity": {
+      "changed_calls": {
+        "primary": 0,
+        "total": 0,
+        "wdl": 0
+      },
+      "max_abs_log_rate_change": 0.020684675061484782,
+      "mean_abs_log_rate_change": 0.015256664435116987,
+      "team_sides": 4
+    },
+    "paired": {
+      "transformer_minus_baseline": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        }
+      },
+      "transformer_minus_lightgbm": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        }
+      },
+      "transformer_minus_lstm": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        }
+      }
+    },
+    "population": 2
+  },
+  "training_matches": 3036,
+  "training_population_sha256": "1ce86043c1d0025e6763bc0e094f1fa40fe676478256a4aaef4c864a49704b99"
+}

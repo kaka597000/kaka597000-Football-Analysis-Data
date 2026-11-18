@@ -1,0 +1,59 @@
+name: Replay registered football Transformer comparison
+on:
+  pull_request:
+    paths: &trial_paths
+      - .github/workflows/transformer-validation.yml
+      - workspace-updates/20261118-transformer/**
+  push:
+    branches: [main, research/transformer-20261118]
+    paths: *trial_paths
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: data
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /workspace-updates/20261118-transformer/
+            /workspace-updates/20261118-sequence/verify.py
+            /workspace-updates/20261118-sequence/history/run_models.py
+            /workspace-updates/20261118-sequence/history/samples-*.jsonl.gz
+            /workspace-updates/20261118-sequence/history/*artifact.json
+            /workspace-updates/20261118-sequence/history/season-holdout.jsonl.gz
+            /workspace-updates/20261118-sequence/history/season-validation.json
+            /workspace-updates/20261118-sequence/forward/history/
+            /workspace-updates/20261118-sequence/history/brazil/sequences.json
+            /workspace-updates/20261118-sequence/history/brazil-transfer*.json*
+            /workspace-updates/20261118-three-arm/training/actual_current.jsonl.gz
+            /workspace-updates/20261118-three-arm/training/fit_driver.py
+            /workspace-updates/20261105-remaining-nine-market/parts/research.tar.gz.part000
+            /workspace-updates/20261112-elo-kelly/diagnostic-results.tar.gz
+            /workspace-updates/20261112-post32/elo-independent-temporal.tar.gz
+            /workspace-updates/20261118-three-arm/identity/
+            /workspace-updates/20261118-three-arm/training/artifact.json
+            /workspace-updates/20261115-remaining-nations-brazil/remaining-evidence.tar.gz
+            /future/bundle-v2/objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013
+            /market/runs/44241910588-1-bra1/
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 0751528579d97587fb649ebea6ad51d148de804b
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reconstruct historical forecasts, later-season transfer and registered first issues
+        run: |
+          python -m pip install -r source/requirements.txt
+          python data/workspace-updates/20261118-transformer/verify.py --source source

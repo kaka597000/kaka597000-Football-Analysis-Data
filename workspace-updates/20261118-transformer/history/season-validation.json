@@ -1,0 +1,1347 @@
+{
+  "by_cohort": {
+    "eng.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 40,
+            "total_strict_full_win": 213,
+            "wdl": 186
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24537262464799114,
+            "score_log_loss": 2.866977442156596,
+            "wdl_brier": 0.6076434013396209,
+            "wdl_log_loss": 1.0122582539210114
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 164,
+            "FULL_WIN": 213
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 45,
+            "total_strict_full_win": 214,
+            "wdl": 186
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2443184939196144,
+            "score_log_loss": 2.866065779910485,
+            "wdl_brier": 0.6087018252681944,
+            "wdl_log_loss": 1.0133142099598889
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 163,
+            "FULL_WIN": 214
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 40,
+            "total_strict_full_win": 211,
+            "wdl": 185
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2455274575394041,
+            "score_log_loss": 2.868605023867364,
+            "wdl_brier": 0.6087892633277106,
+            "wdl_log_loss": 1.0132821575753284
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 166,
+            "FULL_WIN": 211
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 42,
+            "total_strict_full_win": 211,
+            "wdl": 185
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24536134457560205,
+            "score_log_loss": 2.8681111339849013,
+            "wdl_brier": 0.6082197955480334,
+            "wdl_log_loss": 1.0127413681213717
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 166,
+            "FULL_WIN": 211
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 7,
+          "total": 1,
+          "wdl": 2
+        },
+        "max_abs_log_rate_change": 0.016730863507367234,
+        "mean_abs_log_rate_change": 0.004988052934546651,
+        "team_sides": 754
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.004976059551864736,
+              0.016484651711924432
+            ],
+            "eligible": 377,
+            "gained": 3,
+            "lost": 1,
+            "matchday_blocks": 114,
+            "net_hits": 2,
+            "net_rate": 0.005305039787798408
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.013298758865248226,
+              0.0
+            ],
+            "eligible": 377,
+            "gained": 0,
+            "lost": 2,
+            "matchday_blocks": 114,
+            "net_hits": -2,
+            "net_rate": -0.005305039787798408
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.008798951548023773,
+              0.0
+            ],
+            "eligible": 377,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 114,
+            "net_hits": -1,
+            "net_rate": -0.002652519893899204
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.01694915254237288,
+              0.0
+            ],
+            "eligible": 377,
+            "gained": 0,
+            "lost": 3,
+            "matchday_blocks": 114,
+            "net_hits": -3,
+            "net_rate": -0.007957559681697613
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.030985915492957747,
+              0.013054830287206266
+            ],
+            "eligible": 377,
+            "gained": 8,
+            "lost": 11,
+            "matchday_blocks": 114,
+            "net_hits": -3,
+            "net_rate": -0.007957559681697613
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.011731761467382282,
+              0.005797522750252779
+            ],
+            "eligible": 377,
+            "gained": 1,
+            "lost": 2,
+            "matchday_blocks": 114,
+            "net_hits": -1,
+            "net_rate": -0.002652519893899204
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.004902564474065488,
+              0.015792614826190127
+            ],
+            "eligible": 377,
+            "gained": 3,
+            "lost": 1,
+            "matchday_blocks": 114,
+            "net_hits": 2,
+            "net_rate": 0.005305039787798408
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 377,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 114,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.008130081300813009,
+              0.007575757575757576
+            ],
+            "eligible": 377,
+            "gained": 1,
+            "lost": 1,
+            "matchday_blocks": 114,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "population": 377
+    },
+    "esp.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 63,
+            "total_strict_full_win": 219,
+            "wdl": 201
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.23976259904204528,
+            "score_log_loss": 2.7563037365437473,
+            "wdl_brier": 0.5733219898287031,
+            "wdl_log_loss": 0.9670842594948541
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 158,
+            "FULL_WIN": 219
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 64,
+            "total_strict_full_win": 218,
+            "wdl": 201
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.24089403701633066,
+            "score_log_loss": 2.7552884012218466,
+            "wdl_brier": 0.5726963703515607,
+            "wdl_log_loss": 0.9658652826896755
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 159,
+            "FULL_WIN": 218
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 64,
+            "total_strict_full_win": 216,
+            "wdl": 203
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.23987801129906502,
+            "score_log_loss": 2.756951008950549,
+            "wdl_brier": 0.5732508782924203,
+            "wdl_log_loss": 0.9666752927578535
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 161,
+            "FULL_WIN": 216
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 64,
+            "total_strict_full_win": 219,
+            "wdl": 203
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2397219926134431,
+            "score_log_loss": 2.756396528028632,
+            "wdl_brier": 0.5733539618509864,
+            "wdl_log_loss": 0.966932418243146
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 158,
+            "FULL_WIN": 219
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 3,
+          "total": 2,
+          "wdl": 5
+        },
+        "max_abs_log_rate_change": 0.02103932010128295,
+        "mean_abs_log_rate_change": 0.004771841506350261,
+        "team_sides": 754
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.005449591280653951,
+              0.011531590744392176
+            ],
+            "eligible": 377,
+            "gained": 2,
+            "lost": 1,
+            "matchday_blocks": 144,
+            "net_hits": 1,
+            "net_rate": 0.002652519893899204
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 377,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 144,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.005,
+              0.015584415584415584
+            ],
+            "eligible": 377,
+            "gained": 3,
+            "lost": 1,
+            "matchday_blocks": 144,
+            "net_hits": 2,
+            "net_rate": 0.005305039787798408
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.007557152125791924,
+              0.007980327705207908
+            ],
+            "eligible": 377,
+            "gained": 1,
+            "lost": 1,
+            "matchday_blocks": 144,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.0170503526645768,
+              0.020833333333333332
+            ],
+            "eligible": 377,
+            "gained": 6,
+            "lost": 5,
+            "matchday_blocks": 144,
+            "net_hits": 1,
+            "net_rate": 0.002652519893899204
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.007753452034883721,
+              0.01837512725157375
+            ],
+            "eligible": 377,
+            "gained": 4,
+            "lost": 2,
+            "matchday_blocks": 144,
+            "net_hits": 2,
+            "net_rate": 0.005305039787798408
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.010527010137480905,
+              0.010639007092198578
+            ],
+            "eligible": 377,
+            "gained": 2,
+            "lost": 2,
+            "matchday_blocks": 144,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.017858284618195098
+            ],
+            "eligible": 377,
+            "gained": 3,
+            "lost": 0,
+            "matchday_blocks": 144,
+            "net_hits": 3,
+            "net_rate": 0.007957559681697613
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.007834444139068296,
+              0.00785443648387985
+            ],
+            "eligible": 377,
+            "gained": 1,
+            "lost": 1,
+            "matchday_blocks": 144,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "population": 377
+    },
+    "fra.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 303,
+            "total_strict_full_win": 303,
+            "wdl": 303
+          },
+          "hits": {
+            "score_top1": 42,
+            "total_strict_full_win": 181,
+            "wdl": 164
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.23642504165548378,
+            "score_log_loss": 3.006682669581037,
+            "wdl_brier": 0.5837999647436113,
+            "wdl_log_loss": 0.9779978664011044
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 122,
+            "FULL_WIN": 181
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 303,
+            "total_strict_full_win": 303,
+            "wdl": 303
+          },
+          "hits": {
+            "score_top1": 41,
+            "total_strict_full_win": 181,
+            "wdl": 163
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2371186647060352,
+            "score_log_loss": 3.0067969166281143,
+            "wdl_brier": 0.5844761301961859,
+            "wdl_log_loss": 0.9790090206522368
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 122,
+            "FULL_WIN": 181
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 303,
+            "total_strict_full_win": 303,
+            "wdl": 303
+          },
+          "hits": {
+            "score_top1": 43,
+            "total_strict_full_win": 180,
+            "wdl": 163
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.23652560658484306,
+            "score_log_loss": 3.0083543487996716,
+            "wdl_brier": 0.5847980992370717,
+            "wdl_log_loss": 0.9792182542036123
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 123,
+            "FULL_WIN": 180
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 303,
+            "total_strict_full_win": 303,
+            "wdl": 303
+          },
+          "hits": {
+            "score_top1": 42,
+            "total_strict_full_win": 180,
+            "wdl": 163
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.236379861212663,
+            "score_log_loss": 3.0068002973119574,
+            "wdl_brier": 0.5842632558403035,
+            "wdl_log_loss": 0.9785493760121399
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 123,
+            "FULL_WIN": 180
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 3,
+          "total": 0,
+          "wdl": 0
+        },
+        "max_abs_log_rate_change": 0.019510393881381115,
+        "mean_abs_log_rate_change": 0.005148877927666298,
+        "team_sides": 606
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 98,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.010676156583629894,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 98,
+            "net_hits": -1,
+            "net_rate": -0.0033003300330033004
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.010380622837370242,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 98,
+            "net_hits": -1,
+            "net_rate": -0.0033003300330033004
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.00689714831165732,
+              0.015579997648856737
+            ],
+            "eligible": 303,
+            "gained": 2,
+            "lost": 1,
+            "matchday_blocks": 98,
+            "net_hits": 1,
+            "net_rate": 0.0033003300330033004
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.025549784765113232,
+              0.016339869281045753
+            ],
+            "eligible": 303,
+            "gained": 5,
+            "lost": 6,
+            "matchday_blocks": 98,
+            "net_hits": -1,
+            "net_rate": -0.0033003300330033004
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.012944983818770227,
+              0.013334448160535112
+            ],
+            "eligible": 303,
+            "gained": 2,
+            "lost": 2,
+            "matchday_blocks": 98,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.01056338028169014,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 98,
+            "net_hits": -1,
+            "net_rate": -0.0033003300330033004
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 98,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 98,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "population": 303
+    },
+    "ger.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 303,
+            "total_strict_full_win": 303,
+            "wdl": 303
+          },
+          "hits": {
+            "score_top1": 36,
+            "total_strict_full_win": 192,
+            "wdl": 171
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.22416804227620132,
+            "score_log_loss": 3.0529091557402457,
+            "wdl_brier": 0.5636324981873271,
+            "wdl_log_loss": 0.9541580694978583
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 111,
+            "FULL_WIN": 192
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 303,
+            "total_strict_full_win": 303,
+            "wdl": 303
+          },
+          "hits": {
+            "score_top1": 35,
+            "total_strict_full_win": 188,
+            "wdl": 173
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.22385139885118877,
+            "score_log_loss": 3.050001185476322,
+            "wdl_brier": 0.5621788092668313,
+            "wdl_log_loss": 0.9516801049409147
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 115,
+            "FULL_WIN": 188
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 303,
+            "total_strict_full_win": 303,
+            "wdl": 303
+          },
+          "hits": {
+            "score_top1": 36,
+            "total_strict_full_win": 192,
+            "wdl": 168
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.22335468916835055,
+            "score_log_loss": 3.048628126151487,
+            "wdl_brier": 0.5618028204889638,
+            "wdl_log_loss": 0.9515302528070304
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 111,
+            "FULL_WIN": 192
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 303,
+            "total_strict_full_win": 303,
+            "wdl": 303
+          },
+          "hits": {
+            "score_top1": 35,
+            "total_strict_full_win": 192,
+            "wdl": 171
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.22355892759056548,
+            "score_log_loss": 3.049852241721734,
+            "wdl_brier": 0.562596342949587,
+            "wdl_log_loss": 0.9526924913908278
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 111,
+            "FULL_WIN": 192
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 0,
+          "total": 0,
+          "wdl": 2
+        },
+        "max_abs_log_rate_change": 0.022577168628458683,
+        "mean_abs_log_rate_change": 0.004492220375479237,
+        "team_sides": 606
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.010831305917438392,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 99,
+            "net_hits": -1,
+            "net_rate": -0.0033003300330033004
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 99,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.013201320132013201,
+              0.01282051282051282
+            ],
+            "eligible": 303,
+            "gained": 2,
+            "lost": 2,
+            "matchday_blocks": 99,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.01644736842105263,
+              0.015108035886463592
+            ],
+            "eligible": 303,
+            "gained": 2,
+            "lost": 2,
+            "matchday_blocks": 99,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.028573703366696984
+            ],
+            "eligible": 303,
+            "gained": 6,
+            "lost": 2,
+            "matchday_blocks": 99,
+            "net_hits": 4,
+            "net_rate": 0.013201320132013201
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.023809523809523808,
+              0.00977278533563262
+            ],
+            "eligible": 303,
+            "gained": 2,
+            "lost": 4,
+            "matchday_blocks": 99,
+            "net_hits": -2,
+            "net_rate": -0.006600660066006601
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.010831305917438392,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 99,
+            "net_hits": -1,
+            "net_rate": -0.0033003300330033004
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 303,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 99,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.022508038585209004
+            ],
+            "eligible": 303,
+            "gained": 3,
+            "lost": 0,
+            "matchday_blocks": 99,
+            "net_hits": 3,
+            "net_rate": 0.009900990099009901
+          }
+        }
+      },
+      "population": 303
+    },
+    "ita.1": {
+      "arms": {
+        "baseline": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 44,
+            "total_strict_full_win": 206,
+            "wdl": 201
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.25387962838035305,
+            "score_log_loss": 2.7526241640372806,
+            "wdl_brier": 0.5821094628760781,
+            "wdl_log_loss": 0.9767364376738396
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 171,
+            "FULL_WIN": 206
+          }
+        },
+        "lightgbm": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 44,
+            "total_strict_full_win": 205,
+            "wdl": 203
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2539912446372429,
+            "score_log_loss": 2.750480582363592,
+            "wdl_brier": 0.5812104212401561,
+            "wdl_log_loss": 0.975345975315573
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 172,
+            "FULL_WIN": 205
+          }
+        },
+        "lstm": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 43,
+            "total_strict_full_win": 207,
+            "wdl": 205
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2541858191951627,
+            "score_log_loss": 2.7507167046591445,
+            "wdl_brier": 0.5810959852436289,
+            "wdl_log_loss": 0.9753036499280289
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 170,
+            "FULL_WIN": 207
+          }
+        },
+        "transformer": {
+          "denominators": {
+            "score_top1": 377,
+            "total_strict_full_win": 377,
+            "wdl": 377
+          },
+          "hits": {
+            "score_top1": 43,
+            "total_strict_full_win": 208,
+            "wdl": 205
+          },
+          "probability_quality": {
+            "over_full_win_brier_excluding_push": 0.2539547022004571,
+            "score_log_loss": 2.7514207089448584,
+            "wdl_brier": 0.5812689331146935,
+            "wdl_log_loss": 0.9755264969370258
+          },
+          "settlement_counts": {
+            "FULL_LOSS": 169,
+            "FULL_WIN": 208
+          }
+        }
+      },
+      "order_sensitivity": {
+        "changed_calls": {
+          "primary": 0,
+          "total": 1,
+          "wdl": 0
+        },
+        "max_abs_log_rate_change": 0.015987280145314475,
+        "mean_abs_log_rate_change": 0.004241170213040717,
+        "team_sides": 754
+      },
+      "paired": {
+        "transformer_minus_baseline": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.008499187161988154,
+              0.0
+            ],
+            "eligible": 377,
+            "gained": 0,
+            "lost": 1,
+            "matchday_blocks": 132,
+            "net_hits": -1,
+            "net_rate": -0.002652519893899204
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.013477088948787063
+            ],
+            "eligible": 377,
+            "gained": 2,
+            "lost": 0,
+            "matchday_blocks": 132,
+            "net_hits": 2,
+            "net_rate": 0.005305039787798408
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0025061090225563906,
+              0.02240983675265617
+            ],
+            "eligible": 377,
+            "gained": 4,
+            "lost": 0,
+            "matchday_blocks": 132,
+            "net_hits": 4,
+            "net_rate": 0.010610079575596816
+          }
+        },
+        "transformer_minus_lightgbm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.01282051282051282,
+              0.005555942432683378
+            ],
+            "eligible": 377,
+            "gained": 1,
+            "lost": 2,
+            "matchday_blocks": 132,
+            "net_hits": -1,
+            "net_rate": -0.002652519893899204
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.008152173913043478,
+              0.02551347462061746
+            ],
+            "eligible": 377,
+            "gained": 8,
+            "lost": 5,
+            "matchday_blocks": 132,
+            "net_hits": 3,
+            "net_rate": 0.007957559681697613
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.013929527242651925
+            ],
+            "eligible": 377,
+            "gained": 2,
+            "lost": 0,
+            "matchday_blocks": 132,
+            "net_hits": 2,
+            "net_rate": 0.005305039787798408
+          }
+        },
+        "transformer_minus_lstm": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 377,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 132,
+            "net_hits": 0,
+            "net_rate": 0.0
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.008670520231213872
+            ],
+            "eligible": 377,
+            "gained": 1,
+            "lost": 0,
+            "matchday_blocks": 132,
+            "net_hits": 1,
+            "net_rate": 0.002652519893899204
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.0
+            ],
+            "eligible": 377,
+            "gained": 0,
+            "lost": 0,
+            "matchday_blocks": 132,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "population": 377
+    }
+  },
+  "common_baseline": "Published goals-only match PMF with a fixed, single-book H2H/Asian total projection.",
+  "evaluation_date_range": [
+    "2025-08-15",
+    "2026-05-24"
+  ],
+  "evaluation_n": 1737,
+  "evidence": "Previously inspected European seasons; point-in-time odds were unavailable. Bet365 closing prices and prior date-only team results are development proxies.",
+  "fit_cutoff": "2025-08-01T00:00:00Z",
+  "fit_n": 1299,
+  "forward_cutoff": "2026-11-18T00:00:00Z",
+  "forward_fit_n": 3036,
+  "inputs_sha256": {
+    "samples-2425.jsonl.gz": "da3d4527ae1e12e10cb386b8373c0f74bcd653734178e872c2f3fcc5e9fb6e26",
+    "samples-2526.jsonl.gz": "61906571456d62bffb1919bb43285a3318f055aae923170f47e73392423814cc",
+    "season-holdout.jsonl.gz": "40072b1a27a1040d3777d7872963ebcbdad8308f200ce2a8830a350916d5c420",
+    "season-validation.json": "a200287f3a23b1da8b1cbb14177f7bcc3a87036bad39be29b9aa70d1078eccc2"
+  },
+  "outputs_sha256": {
+    "artifact.json": "802eecd16007db422fd178a331a23612a9f0d0cee082527aca8d2f938f1570d5",
+    "season-holdout.jsonl.gz": "93778606a2bf98ad15a8518c32f8cb3b0e05b8c9df9c116abb42af31ceb24566",
+    "season-training-artifact.json": "08ff5aafc96df1b87bf9801224977b1e2904adc4501c87c05686a82039137a4f"
+  },
+  "recipe": "One fixed research configuration. Reversing the observation order is a post-fit sensitivity diagnostic.",
+  "same_input_coverage": 1.0,
+  "schema": "SCORE-TRANSFORMER-TEMPORAL-COMPARISON-1",
+  "source_sha256": {
+    "run_study.py": "967bb81853a540dc5346e01467b838ae79ec8761a83f32dadb83aac5e5825044",
+    "transformer_score.py": "91bc47ecb61c268ed15d1e2f3695c6f7b27757a88a9b081b5c28807a5cfa4f49"
+  },
+  "study": {
+    "arms": {
+      "baseline": {
+        "denominators": {
+          "score_top1": 1737,
+          "total_strict_full_win": 1737,
+          "wdl": 1737
+        },
+        "hits": {
+          "score_top1": 225,
+          "total_strict_full_win": 1011,
+          "wdl": 923
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.24074168316743666,
+          "score_log_loss": 2.874941069248378,
+          "wdl_brier": 0.5828159218438768,
+          "wdl_log_loss": 0.9786327076213037
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 726,
+          "FULL_WIN": 1011
+        }
+      },
+      "lightgbm": {
+        "denominators": {
+          "score_top1": 1737,
+          "total_strict_full_win": 1737,
+          "wdl": 1737
+        },
+        "hits": {
+          "score_top1": 229,
+          "total_strict_full_win": 1006,
+          "wdl": 926
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.2408484471208582,
+          "score_log_loss": 2.8735702537568266,
+          "wdl_brier": 0.582579099144203,
+          "wdl_log_loss": 0.9780396698201392
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 731,
+          "FULL_WIN": 1006
+        }
+      },
+      "lstm": {
+        "denominators": {
+          "score_top1": 1737,
+          "total_strict_full_win": 1737,
+          "wdl": 1737
+        },
+        "hits": {
+          "score_top1": 226,
+          "total_strict_full_win": 1006,
+          "wdl": 924
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.24074245549907705,
+          "score_log_loss": 2.874565637270612,
+          "wdl_brier": 0.5826841672450351,
+          "wdl_log_loss": 0.9782096905139327
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 731,
+          "FULL_WIN": 1006
+        }
+      },
+      "transformer": {
+        "denominators": {
+          "score_top1": 1737,
+          "total_strict_full_win": 1737,
+          "wdl": 1737
+        },
+        "hits": {
+          "score_top1": 226,
+          "total_strict_full_win": 1010,
+          "wdl": 927
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.24063258138009244,
+          "score_log_loss": 2.874433342071688,
+          "wdl_brier": 0.5826656031991979,
+          "wdl_log_loss": 0.9782825518870357
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 727,
+          "FULL_WIN": 1010
+        }
+      }
+    },
+    "order_sensitivity": {
+      "changed_calls": {
+        "primary": 13,
+        "total": 4,
+        "wdl": 9
+      },
+      "max_abs_log_rate_change": 0.022577168628458683,
+      "mean_abs_log_rate_change": 0.004720583857448234,
+      "team_sides": 3474
+    },
+    "paired": {
+      "transformer_minus_baseline": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.0026868722468999908,
+            0.0038130009612738825
+          ],
+          "eligible": 1737,
+          "gained": 5,
+          "lost": 4,
+          "matchday_blocks": 178,
+          "net_hits": 1,
+          "net_rate": 0.0005757052389176742
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.003010280133175689,
+            0.0019317450096587251
+          ],
+          "eligible": 1737,
+          "gained": 2,
+          "lost": 3,
+          "matchday_blocks": 178,
+          "net_hits": -1,
+          "net_rate": -0.0005757052389176742
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.0018185148185148184,
+            0.006896670712262915
+          ],
+          "eligible": 1737,
+          "gained": 9,
+          "lost": 5,
+          "matchday_blocks": 178,
+          "net_hits": 4,
+          "net_rate": 0.002302820955670697
+        }
+      },
+      "transformer_minus_lightgbm": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.006024759102416266,
+            0.0024485093008144794
+          ],
+          "eligible": 1737,
+          "gained": 6,
+          "lost": 9,
+          "matchday_blocks": 178,
+          "net_hits": -3,
+          "net_rate": -0.0017271157167530224
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.007294943757903845,
+            0.010752832775165281
+          ],
+          "eligible": 1737,
+          "gained": 33,
+          "lost": 29,
+          "matchday_blocks": 178,
+          "net_hits": 4,
+          "net_rate": 0.002302820955670697
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.004546234657790722,
+            0.00618007966048631
+          ],
+          "eligible": 1737,
+          "gained": 11,
+          "lost": 10,
+          "matchday_blocks": 178,
+          "net_hits": 1,
+          "net_rate": 0.0005757052389176742
+        }
+      },
+      "transformer_minus_lstm": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.003133487864552884,
+            0.0033923744931373106
+          ],
+          "eligible": 1737,
+          "gained": 5,
+          "lost": 5,
+          "matchday_blocks": 178,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": [
+            0.000543470880665045,
+            0.004791182098612688
+          ],
+          "eligible": 1737,
+          "gained": 4,
+          "lost": 0,
+          "matchday_blocks": 178,
+          "net_hits": 4,
+          "net_rate": 0.002302820955670697
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": [
+            -0.0016316117204990808,
+            0.005161373622940919
+          ],
+          "eligible": 1737,
+          "gained": 5,
+          "lost": 2,
+          "matchday_blocks": 178,
+          "net_hits": 3,
+          "net_rate": 0.0017271157167530224
+        }
+      }
+    },
+    "population": 1737
+  }
+}

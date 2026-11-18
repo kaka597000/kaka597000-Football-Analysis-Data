@@ -1,0 +1,656 @@
+{
+  "schema": "WCPP-TRANSFORMER-BATCH-1",
+  "plan_sha256": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e",
+  "cutoff_at": "2026-11-18T05:11:09.196213+00:00",
+  "population": 6,
+  "matches": [
+    {
+      "match_id": "espn:401841315",
+      "recorded_at": "2026-11-18T13:11:10.530953+08:00",
+      "record_sha256": "793dc7ec72ea127763cbdbae701bb7ebf2bbfc2cebe4b5fa678c8684ea1dddd0",
+      "status": "ISSUED_REAL_MARKET",
+      "arms": {
+        "lightgbm": {
+          "primary": "1-1",
+          "wdl": "away",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.2051574304541332,
+                "loss": 0.4486015419589879,
+                "push": 0.0,
+                "win": 0.3462410275868789
+              },
+              "under": {
+                "half_loss": 0.2051574304541332,
+                "half_win": 0.0,
+                "loss": 0.3462410275868789,
+                "push": 0.0,
+                "win": 0.4486015419589879
+              }
+            }
+          }
+        },
+        "lstm": {
+          "primary": "1-1",
+          "wdl": "away",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.2051994062345375,
+                "loss": 0.4498233848975719,
+                "push": 0.0,
+                "win": 0.3449772088678904
+              },
+              "under": {
+                "half_loss": 0.2051994062345375,
+                "half_win": 0.0,
+                "loss": 0.3449772088678904,
+                "push": 0.0,
+                "win": 0.4498233848975719
+              }
+            }
+          }
+        },
+        "market_baseline": {
+          "primary": "1-1",
+          "wdl": "away",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.2051429920136858,
+                "loss": 0.44987372034800066,
+                "push": 0.0,
+                "win": 0.3449832876383136
+              },
+              "under": {
+                "half_loss": 0.2051429920136858,
+                "half_win": 0.0,
+                "loss": 0.3449832876383136,
+                "push": 0.0,
+                "win": 0.44987372034800066
+              }
+            }
+          }
+        },
+        "transformer": {
+          "primary": "1-1",
+          "wdl": "away",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.20528923910081542,
+                "loss": 0.44524410824039384,
+                "push": 0.0,
+                "win": 0.34946665265879095
+              },
+              "under": {
+                "half_loss": 0.20528923910081542,
+                "half_win": 0.0,
+                "loss": 0.34946665265879095,
+                "push": 0.0,
+                "win": 0.44524410824039384
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "match_id": "espn:401841310",
+      "recorded_at": "2026-11-18T13:11:10.764058+08:00",
+      "record_sha256": "5273fc0647f8686e84fa5ccc80532094b303855f1b9949909d2d97e55b78717a",
+      "status": "ISSUED_REAL_MARKET",
+      "arms": {
+        "lightgbm": {
+          "primary": "2-1",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.22661174752342664,
+                "loss": 0.39363029147754236,
+                "push": 0.0,
+                "win": 0.37975796099903103
+              },
+              "under": {
+                "half_loss": 0.22661174752342664,
+                "half_win": 0.0,
+                "loss": 0.37975796099903103,
+                "push": 0.0,
+                "win": 0.39363029147754236
+              }
+            }
+          }
+        },
+        "lstm": {
+          "primary": "2-1",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.22702956216204456,
+                "loss": 0.4126580707156891,
+                "push": 0.0,
+                "win": 0.36031236712226605
+              },
+              "under": {
+                "half_loss": 0.22702956216204456,
+                "half_win": 0.0,
+                "loss": 0.36031236712226605,
+                "push": 0.0,
+                "win": 0.4126580707156891
+              }
+            }
+          }
+        },
+        "market_baseline": {
+          "primary": "2-1",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.22694295328516986,
+                "loss": 0.41584585373981725,
+                "push": 0.0,
+                "win": 0.3572111929750131
+              },
+              "under": {
+                "half_loss": 0.22694295328516986,
+                "half_win": 0.0,
+                "loss": 0.3572111929750131,
+                "push": 0.0,
+                "win": 0.41584585373981725
+              }
+            }
+          }
+        },
+        "transformer": {
+          "primary": "2-1",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.22708597865493574,
+                "loss": 0.4230943047449167,
+                "push": 0.0,
+                "win": 0.34981971660014755
+              },
+              "under": {
+                "half_loss": 0.22708597865493574,
+                "half_win": 0.0,
+                "loss": 0.34981971660014755,
+                "push": 0.0,
+                "win": 0.4230943047449167
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "match_id": "espn:401841313",
+      "recorded_at": "2026-11-18T13:11:10.981071+08:00",
+      "record_sha256": "18c6d11d7d7e385a25a1115c213b9ddb55a946ababb2dd3f25bbbda5b9d8a07c",
+      "status": "ISSUED_REAL_MARKET",
+      "arms": {
+        "lightgbm": {
+          "primary": "2-0",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 3.0,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.38350718429892044,
+                "push": 0.23477654142864868,
+                "win": 0.3817162742724308
+              },
+              "under": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.3817162742724308,
+                "push": 0.23477654142864868,
+                "win": 0.38350718429892044
+              }
+            }
+          }
+        },
+        "lstm": {
+          "primary": "2-0",
+          "wdl": "home",
+          "total": {
+            "direction": "over",
+            "line": 3.0,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.36822079324847135,
+                "push": 0.23384216191405693,
+                "win": 0.3979370448374718
+              },
+              "under": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.3979370448374718,
+                "push": 0.23384216191405693,
+                "win": 0.36822079324847135
+              }
+            }
+          }
+        },
+        "market_baseline": {
+          "primary": "2-0",
+          "wdl": "home",
+          "total": {
+            "direction": "over",
+            "line": 3.0,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.3759141114811133,
+                "push": 0.23432230977284546,
+                "win": 0.38976357874604106
+              },
+              "under": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.38976357874604106,
+                "push": 0.23432230977284546,
+                "win": 0.3759141114811133
+              }
+            }
+          }
+        },
+        "transformer": {
+          "primary": "2-0",
+          "wdl": "home",
+          "total": {
+            "direction": "over",
+            "line": 3.0,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.37632604546422044,
+                "push": 0.23438897626909455,
+                "win": 0.38928497826668496
+              },
+              "under": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.38928497826668496,
+                "push": 0.23438897626909455,
+                "win": 0.37632604546422044
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "match_id": "espn:401841314",
+      "recorded_at": "2026-11-18T13:11:11.210749+08:00",
+      "record_sha256": "8d192c863d2d87a64d6558ef1e48d566d10c4bfe068abb6cf15d025eb0acd8bc",
+      "status": "ISSUED_REAL_MARKET",
+      "arms": {
+        "lightgbm": {
+          "primary": "1-1",
+          "wdl": "away",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.23953256428054767,
+                "loss": 0.46446501538587825,
+                "push": 0.0,
+                "win": 0.29600242033357393
+              },
+              "under": {
+                "half_loss": 0.23953256428054767,
+                "half_win": 0.0,
+                "loss": 0.29600242033357393,
+                "push": 0.0,
+                "win": 0.46446501538587825
+              }
+            }
+          }
+        },
+        "lstm": {
+          "primary": "1-1",
+          "wdl": "away",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.2404489693777741,
+                "loss": 0.45595107736412777,
+                "push": 0.0,
+                "win": 0.30359995325809824
+              },
+              "under": {
+                "half_loss": 0.2404489693777741,
+                "half_win": 0.0,
+                "loss": 0.30359995325809824,
+                "push": 0.0,
+                "win": 0.45595107736412777
+              }
+            }
+          }
+        },
+        "market_baseline": {
+          "primary": "1-1",
+          "wdl": "away",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.24058215013689366,
+                "loss": 0.4546299353651436,
+                "push": 0.0,
+                "win": 0.3047879144979627
+              },
+              "under": {
+                "half_loss": 0.24058215013689366,
+                "half_win": 0.0,
+                "loss": 0.3047879144979627,
+                "push": 0.0,
+                "win": 0.4546299353651436
+              }
+            }
+          }
+        },
+        "transformer": {
+          "primary": "1-1",
+          "wdl": "away",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.2382586562071501,
+                "loss": 0.474893280596583,
+                "push": 0.0,
+                "win": 0.28684806319626677
+              },
+              "under": {
+                "half_loss": 0.2382586562071501,
+                "half_win": 0.0,
+                "loss": 0.28684806319626677,
+                "push": 0.0,
+                "win": 0.474893280596583
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "match_id": "espn:401841312",
+      "recorded_at": "2026-11-18T13:11:11.512678+08:00",
+      "record_sha256": "c0ae907045dacc40dddc43bc48e930a4b01a752b3497e664c413a8bed9a3de91",
+      "status": "ISSUED_REAL_MARKET",
+      "arms": {
+        "lightgbm": {
+          "primary": "1-1",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.24215333847498666,
+                "loss": 0.4313590043512286,
+                "push": 0.0,
+                "win": 0.3264876571737848
+              },
+              "under": {
+                "half_loss": 0.24215333847498666,
+                "half_win": 0.0,
+                "loss": 0.3264876571737848,
+                "push": 0.0,
+                "win": 0.4313590043512286
+              }
+            }
+          }
+        },
+        "lstm": {
+          "primary": "1-1",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.24224797924361435,
+                "loss": 0.4299491305526374,
+                "push": 0.0,
+                "win": 0.3278028902037483
+              },
+              "under": {
+                "half_loss": 0.24224797924361435,
+                "half_win": 0.0,
+                "loss": 0.3278028902037483,
+                "push": 0.0,
+                "win": 0.4299491305526374
+              }
+            }
+          }
+        },
+        "market_baseline": {
+          "primary": "1-1",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.24226576752826962,
+                "loss": 0.42921417304542253,
+                "push": 0.0,
+                "win": 0.3285200594263079
+              },
+              "under": {
+                "half_loss": 0.24226576752826962,
+                "half_win": 0.0,
+                "loss": 0.3285200594263079,
+                "push": 0.0,
+                "win": 0.42921417304542253
+              }
+            }
+          }
+        },
+        "transformer": {
+          "primary": "1-1",
+          "wdl": "home",
+          "total": {
+            "direction": "under",
+            "line": 2.75,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.24129838150554486,
+                "loss": 0.4435392396225352,
+                "push": 0.0,
+                "win": 0.31516237887191983
+              },
+              "under": {
+                "half_loss": 0.24129838150554486,
+                "half_win": 0.0,
+                "loss": 0.31516237887191983,
+                "push": 0.0,
+                "win": 0.4435392396225352
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "match_id": "espn:401841316",
+      "recorded_at": "2026-11-18T13:11:11.739750+08:00",
+      "record_sha256": "5877ff6ab8333dee9510379fff47d505678f5640f91a54b747e7cd263cb2c4ab",
+      "status": "ISSUED_REAL_MARKET",
+      "arms": {
+        "lightgbm": {
+          "primary": "1-0",
+          "wdl": "home",
+          "total": {
+            "direction": "over",
+            "line": 2.5,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.48012367604723016,
+                "push": 0.0,
+                "win": 0.5198763239527698
+              },
+              "under": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.5198763239527698,
+                "push": 0.0,
+                "win": 0.48012367604723016
+              }
+            }
+          }
+        },
+        "lstm": {
+          "primary": "1-0",
+          "wdl": "home",
+          "total": {
+            "direction": "over",
+            "line": 2.5,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.4874966137677005,
+                "push": 0.0,
+                "win": 0.5125033862322997
+              },
+              "under": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.5125033862322997,
+                "push": 0.0,
+                "win": 0.4874966137677005
+              }
+            }
+          }
+        },
+        "market_baseline": {
+          "primary": "1-0",
+          "wdl": "home",
+          "total": {
+            "direction": "over",
+            "line": 2.5,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.4883720930232556,
+                "push": 0.0,
+                "win": 0.5116279069767444
+              },
+              "under": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.5116279069767444,
+                "push": 0.0,
+                "win": 0.4883720930232556
+              }
+            }
+          }
+        },
+        "transformer": {
+          "primary": "1-0",
+          "wdl": "home",
+          "total": {
+            "direction": "over",
+            "line": 2.5,
+            "objective": "strict_full_win_excluding_push; tie within 1e-12: settlement balance then over",
+            "settlements": {
+              "over": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.470359042496038,
+                "push": 0.0,
+                "win": 0.5296409575039619
+              },
+              "under": {
+                "half_loss": 0.0,
+                "half_win": 0.0,
+                "loss": 0.5296409575039619,
+                "push": 0.0,
+                "win": 0.470359042496038
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

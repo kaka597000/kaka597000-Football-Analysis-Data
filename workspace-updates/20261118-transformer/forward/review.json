@@ -1,0 +1,386 @@
+{
+  "schema": "WCPP-TRANSFORMER-REVIEW-1",
+  "plan_sha256": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e",
+  "population": 6,
+  "issued": 6,
+  "settled": 0,
+  "pending": 6,
+  "arms": {
+    "market_baseline": {
+      "forecasts": 6,
+      "coverage": 1.0,
+      "real_line_selections": 6,
+      "metrics": {
+        "score_top1": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        },
+        "wdl": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        },
+        "total_strict_full_win": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        }
+      },
+      "total_settlements": {
+        "FULL_WIN": 0,
+        "HALF_WIN": 0,
+        "PUSH": 0,
+        "HALF_LOSS": 0,
+        "FULL_LOSS": 0
+      },
+      "mean_score_log_loss": null,
+      "mean_wdl_brier": null
+    },
+    "lightgbm": {
+      "forecasts": 6,
+      "coverage": 1.0,
+      "real_line_selections": 6,
+      "metrics": {
+        "score_top1": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        },
+        "wdl": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        },
+        "total_strict_full_win": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        }
+      },
+      "total_settlements": {
+        "FULL_WIN": 0,
+        "HALF_WIN": 0,
+        "PUSH": 0,
+        "HALF_LOSS": 0,
+        "FULL_LOSS": 0
+      },
+      "mean_score_log_loss": null,
+      "mean_wdl_brier": null
+    },
+    "lstm": {
+      "forecasts": 6,
+      "coverage": 1.0,
+      "real_line_selections": 6,
+      "metrics": {
+        "score_top1": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        },
+        "wdl": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        },
+        "total_strict_full_win": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        }
+      },
+      "total_settlements": {
+        "FULL_WIN": 0,
+        "HALF_WIN": 0,
+        "PUSH": 0,
+        "HALF_LOSS": 0,
+        "FULL_LOSS": 0
+      },
+      "mean_score_log_loss": null,
+      "mean_wdl_brier": null
+    },
+    "transformer": {
+      "forecasts": 6,
+      "coverage": 1.0,
+      "real_line_selections": 6,
+      "metrics": {
+        "score_top1": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        },
+        "wdl": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        },
+        "total_strict_full_win": {
+          "n": 0,
+          "hits": 0,
+          "accuracy": null
+        }
+      },
+      "total_settlements": {
+        "FULL_WIN": 0,
+        "HALF_WIN": 0,
+        "PUSH": 0,
+        "HALF_LOSS": 0,
+        "FULL_LOSS": 0
+      },
+      "mean_score_log_loss": null,
+      "mean_wdl_brier": null
+    }
+  },
+  "paired": {
+    "lightgbm_minus_market_baseline": {
+      "score_top1": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "wdl": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "total_strict_full_win": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      }
+    },
+    "lstm_minus_market_baseline": {
+      "score_top1": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "wdl": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "total_strict_full_win": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      }
+    },
+    "transformer_minus_market_baseline": {
+      "score_top1": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "wdl": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "total_strict_full_win": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      }
+    },
+    "lstm_minus_lightgbm": {
+      "score_top1": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "wdl": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "total_strict_full_win": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      }
+    },
+    "transformer_minus_lightgbm": {
+      "score_top1": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "wdl": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "total_strict_full_win": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      }
+    },
+    "transformer_minus_lstm": {
+      "score_top1": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "wdl": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      },
+      "total_strict_full_win": {
+        "eligible": 0,
+        "gained": 0,
+        "lost": 0,
+        "net_hits": 0,
+        "net_rate": null,
+        "matchday_blocks": 0,
+        "date_block_bootstrap_95pct_rate": null
+      }
+    }
+  },
+  "rows": [
+    {
+      "match_id": "espn:401841315",
+      "kickoff_utc_date": "2026-11-18",
+      "matchday": "2026-11-18",
+      "matchday_timezone": "America/Sao_Paulo",
+      "result": null,
+      "freeze_sha256": "793dc7ec72ea127763cbdbae701bb7ebf2bbfc2cebe4b5fa678c8684ea1dddd0",
+      "source_issues": [],
+      "status": "PENDING",
+      "outcomes": {}
+    },
+    {
+      "match_id": "espn:401841310",
+      "kickoff_utc_date": "2026-11-18",
+      "matchday": "2026-11-18",
+      "matchday_timezone": "America/Sao_Paulo",
+      "result": null,
+      "freeze_sha256": "5273fc0647f8686e84fa5ccc80532094b303855f1b9949909d2d97e55b78717a",
+      "source_issues": [],
+      "status": "PENDING",
+      "outcomes": {}
+    },
+    {
+      "match_id": "espn:401841313",
+      "kickoff_utc_date": "2026-11-18",
+      "matchday": "2026-11-18",
+      "matchday_timezone": "America/Sao_Paulo",
+      "result": null,
+      "freeze_sha256": "18c6d11d7d7e385a25a1115c213b9ddb55a946ababb2dd3f25bbbda5b9d8a07c",
+      "source_issues": [],
+      "status": "PENDING",
+      "outcomes": {}
+    },
+    {
+      "match_id": "espn:401841314",
+      "kickoff_utc_date": "2026-11-18",
+      "matchday": "2026-11-18",
+      "matchday_timezone": "America/Sao_Paulo",
+      "result": null,
+      "freeze_sha256": "8d192c863d2d87a64d6558ef1e48d566d10c4bfe068abb6cf15d025eb0acd8bc",
+      "source_issues": [],
+      "status": "PENDING",
+      "outcomes": {}
+    },
+    {
+      "match_id": "espn:401841312",
+      "kickoff_utc_date": "2026-11-19",
+      "matchday": "2026-11-18",
+      "matchday_timezone": "America/Sao_Paulo",
+      "result": null,
+      "freeze_sha256": "c0ae907045dacc40dddc43bc48e930a4b01a752b3497e664c413a8bed9a3de91",
+      "source_issues": [],
+      "status": "PENDING",
+      "outcomes": {}
+    },
+    {
+      "match_id": "espn:401841316",
+      "kickoff_utc_date": "2026-11-19",
+      "matchday": "2026-11-18",
+      "matchday_timezone": "America/Sao_Paulo",
+      "result": null,
+      "freeze_sha256": "5877ff6ab8333dee9510379fff47d505678f5640f91a54b747e7cd263cb2c4ab",
+      "source_issues": [],
+      "status": "PENDING",
+      "outcomes": {}
+    }
+  ],
+  "automatic_promotion": false,
+  "freeze_receipt": {
+    "freeze_id": "059be53cc4ea1e61-v000001",
+    "recorded_at": "2026-11-18T13:11:13.457653+08:00",
+    "path": "reviews/059be53cc4ea1e612fab951c6d475e297fbb7094ae4a16fb5b9611ac1fa9c3a7/000001.json",
+    "sha256": "fc23d73668b7198a57df0136bb5ef63917c8956ede882ec8d6b9048a73797c78",
+    "evaluation_slot": "SEPARATE_REVISION_OR_STAGE"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-18T05:12:11.412783+00:00",
+  "replay": {
+    "population": 6,
+    "first_issues": 6,
+    "restored_current": 6,
+    "market_pairs": 6,
+    "matrix_and_selection_replays": 24,
+    "plan_sha256": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e"
+  },
+  "module_sha256": "53971f2ab47e1201d562b74991d272ffa8c19e39e4640674ab43024e0c794838",
+  "artifacts": {
+    "channel": "d007f1e8c986b5785fc5ab7055e7d16cde7aa4d5408e2a17c21023ebb02c6812",
+    "market": "3a2210037ebfeb3df59dff5fc4049a89443f43139fb3dbacf642fb407f0d1908",
+    "market_archive": "market/runs/44241910588-1-bra1",
+    "registration": "45c837cc29554033ea0248acbee31895c36381d7acddadb105fa23426bfe3412",
+    "registry": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+    "sequence": "42bf92248332987987d3bd104afe52d08ec5340712240fb87cdd3a7dc0ef77b1",
+    "source": {
+      "issuer": "53971f2ab47e1201d562b74991d272ffa8c19e39e4640674ab43024e0c794838",
+      "market": "3af3ef83185a75a9bca82659b32d322df168153a99a85f2f0da2080e5c14c6d8",
+      "market_inputs": "e287d3412d18bc383c65cda9bbde32054ef023780521f308133f26d7c8ac67ce",
+      "original_issuer": "9d2ae4b68a26a3cb190e53cf0525f673141f935830f72a57d07362ca48ca1dbd",
+      "quote_parser": "d14fa75ffd0a2e44cd3980591206cc9a39523c413fad0cb61e237eade2656b40",
+      "sequence": "a0148663fed429b2b9f5bdfa82e9d73d91570e1f7d6dcc60b981d5cc8136f9bb",
+      "transformer": "91bc47ecb61c268ed15d1e2f3695c6f7b27757a88a9b081b5c28807a5cfa4f49"
+    },
+    "transformer": "802eecd16007db422fd178a331a23612a9f0d0cee082527aca8d2f938f1570d5"
+  },
+  "cli": "PYTHONPATH=\"$SOURCE/runtime\" python -m research_program.transformer_forward replay --batch workspace-updates/20261118-transformer/forward --state-dir ."
+}
