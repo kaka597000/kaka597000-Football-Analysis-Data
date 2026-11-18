@@ -1,0 +1,61 @@
+name: Replay market-signal comparisons
+on:
+  pull_request:
+    paths: &trial_paths
+      - .github/workflows/market-signals-validation.yml
+      - workspace-updates/20261118-market-signals/**
+  push:
+    branches: [main, research/market-signals-20261118]
+    paths: *trial_paths
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: data
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /workspace-updates/20261118-market-signals/
+            /workspace-updates/20261118-transformer/history/season-validation.json
+            /workspace-updates/20261118-transformer/history/season-holdout.jsonl.gz
+            /workspace-updates/20261118-transformer/transfer/europe-2627-validation.json
+            /workspace-updates/20261118-transformer/transfer/europe-2627-predictions.jsonl.gz
+            /workspace-updates/20261118-transformer/transfer/raw/
+            /workspace-updates/20261118-transformer/forward/plan.json
+            /workspace-updates/20261118-transformer/forward/freezes/
+            /workspace-updates/20261118-sequence/history/sequence-inputs.json
+            /workspace-updates/20261118-sequence/history/samples-2526.jsonl.gz
+            /workspace-updates/20261105-remaining-nine-market/parts/research.tar.gz.part000
+            /workspace-updates/20261116-nations-repair/archive-index.json
+            /workspace-updates/20261116-nations-repair/nations-repair-evidence.tar.gz
+            /workspace-updates/20261110-nations-model/manifest.json
+            /workspace-updates/20261110-nations-model/nations-model-evidence.tar.gz
+            /workspace-updates/20261118-all-analysis-review/cumulative-inputs.json
+            /workspace-updates/20261118-all-analysis-review/cumulative-first-candidates-52.json
+            /future/bundle-v2/objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013
+            /future/bundle-v2/objects/ac5ef67c624da8913a2e3492b2fbae6b73776bf0f9e5157423c72e718dd72983
+            /market/runs/
+            /normalized-results.jsonl
+            /raw/
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 7c4b833c94426347941667cff540e6d78405485e
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify recovered market studies, raw quotes and registered forecasts
+        run: |
+          python -m pip install -r source/requirements.txt
+          python data/workspace-updates/20261118-market-signals/verify.py --source source

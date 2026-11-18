@@ -1,0 +1,51 @@
+{
+  "registered_at": "2026-11-18T06:17:20.888978+00:00",
+  "active": false,
+  "prior_research": "Both European evaluation seasons and known Bet365 versus consensus 1X2 totals were previously examined. Replays are historical research.",
+  "source_base": "b56f309801373c952fa4897a7b38539a8a22c1ff",
+  "data_base": "2e6486653c604e6399a8c6abd348e640b7e9b864",
+  "forward_plan_parent": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e",
+  "forward_ids": [
+    "espn:401841315",
+    "espn:401841310",
+    "espn:401841313",
+    "espn:401841314",
+    "espn:401841312",
+    "espn:401841316"
+  ],
+  "forward_arms": {
+    "consensus": [
+      "same_cutoff_pinnacle",
+      "equal_named_books",
+      "inverse_overround_named_books"
+    ],
+    "movement": [
+      "latest_only",
+      "latest_with_prior_path"
+    ],
+    "team_markets": [
+      "frozen_market_baseline",
+      "prematch_team_and_btts_adjustment"
+    ]
+  },
+  "consensus_forward_recipe": {
+    "books": "complete 1X2 price triples of distinct provider bookmaker keys; latest observed regional event raw file collected no later than current study cutoff, source quotes aged at most 60 min; exclude exchange price and lay markets; one triple per brand, at least 3 incl the original Pinnacle reference",
+    "horizon": "registered fixtures and first available real issue before kick-off",
+    "baseline": "original frozen market baseline, retargeted to fresh Pinnacle 1X2 and observed Pinnacle totals offer, including Asian full-win/loss conditional on non-void fractions",
+    "candidate": "same baseline and actual fixed Pinnacle totals, project WDL to consensus; both alternatives use identical peers and sample",
+    "summary": "WDL IQR across books in percentage points and coverage. Three-arm comparison; all official first issues retained."
+  },
+  "metrics": [
+    "unique exact score top1",
+    "top3 exact score",
+    "WDL",
+    "strict total full win excluding pushes",
+    "log loss",
+    "coverage",
+    "paired difference"
+  ],
+  "uncertainty": "Matchday-block intervals for historical cohorts, retain actual Asian settlements.",
+  "sample_handling": "Source-timed over/under paired prices and identities for prospective input, regulation-only final for settlement, no retrospective replacement.",
+  "nations_reference": "Independent national-team Elo estimated or observed strictly before fixture; compare at the same date to retained references where available, separate forward status.",
+  "collection": "Registered Brazil six first; keep original quotes and source times, per market bookmaker and team; record unsupported or missing markets separately."
+}

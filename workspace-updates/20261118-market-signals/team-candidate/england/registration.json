@@ -1,0 +1,29 @@
+{
+  "version": "TEAM-SCORING-MARKETS-ENGLAND-1",
+  "registered_at": "2026-11-18T06:31:09.458615+00:00",
+  "run": "workspace-updates/20261118-market-signals/team-markets/runs/20261118-epl-us-pilot",
+  "fixture_ids": [
+    "espn:401879233",
+    "espn:401878756"
+  ],
+  "selection": "All two fixtures in the first, kickoff-sorted official EPL pilot capture; common per-book complete 1X2, standard match totals, BTTS and both named teams over/under 0.5; among qualifying books choose lexicographically first book key. Additional higher half lines excluded so the direct scoring question is isolated.",
+  "baseline": "Hash-verified English active legacy weighted anchor, unmodified native PMF projected to fresh same-book main 1X2 and total. If an active fixture cannot be reproduced, record an abstention. Candidate applies the registered soft binary KL adjustment with one unit per BTTS, home and away scoring event.",
+  "outputs": [
+    "score_top1",
+    "score_top3",
+    "wdl",
+    "total_strict_full_win",
+    "score_log_loss",
+    "wdl_brier"
+  ],
+  "active": false,
+  "discovered_fixture_ids": [
+    "espn:401879233",
+    "espn:401878756",
+    "espn:401879238",
+    "espn:401879236",
+    "espn:401879235",
+    "espn:401878754",
+    "espn:401879232"
+  ]
+}

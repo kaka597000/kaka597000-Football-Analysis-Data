@@ -1,0 +1,805 @@
+{
+  "verified_at": "2026-11-18T07:21:03.967372+00:00",
+  "source_pr": {
+    "headRefOid": "7c4b833c94426347941667cff540e6d78405485e",
+    "mergeCommit": {
+      "oid": "d5645f13de63658af79289bfd118d530e2b4f0f2"
+    },
+    "state": "MERGED",
+    "url": "https://github.com/kaka597000/Football-Analysis/pull/49"
+  },
+  "data_pr": {
+    "headRefOid": "083b291029180a90a7c97d26f74e80113fd71e80",
+    "mergeCommit": {
+      "oid": "9f5dfd5e5a9b3d60c7e3928f7ac966cf971f8eeb"
+    },
+    "state": "MERGED",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/31"
+  },
+  "source_ci": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T07:14:31Z",
+    "databaseId": 44257330122,
+    "event": "push",
+    "headSha": "d5645f13de63658af79289bfd118d530e2b4f0f2",
+    "jobs": [
+      {
+        "name": "portable (windows-latest)",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python -m pip install -r requirements.txt lightgbm==4.6.0",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python scripts/run_tests.py --layer portable",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python -m pip install -r requirements.txt -r requirements-test.txt",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python scripts/check_repository.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python scripts/run_tests.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "portable (ubuntu-latest)",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python -m pip install -r requirements.txt lightgbm==4.6.0",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python scripts/run_tests.py --layer portable",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-11-18T07:16:17Z",
+    "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/44257330122"
+  },
+  "data_ci": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T07:16:30Z",
+    "databaseId": 44257593733,
+    "event": "push",
+    "headSha": "9f5dfd5e5a9b3d60c7e3928f7ac966cf971f8eeb",
+    "jobs": [
+      {
+        "name": "replay",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify recovered market studies, raw quotes and registered forecasts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-11-18T07:17:31Z",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44257593733"
+  },
+  "main_collect": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T07:18:17Z",
+    "databaseId": 44257823993,
+    "event": "workflow_dispatch",
+    "headSha": "9f5dfd5e5a9b3d60c7e3928f7ac966cf971f8eeb",
+    "jobs": [
+      {
+        "name": "research",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Read pinned public code",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Select bounded job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Read verified collector-only revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install CPU inference and training dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect or train candidate only",
+            "conclusion": "success"
+          },
+          {
+            "name": "Restore scopes.json",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect kor.1 with audited public candidate fallback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate bounded source-timed Nations League market snapshots",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect bounded Brazil Serie A market snapshots",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect bounded InferSports Nations fallback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Capture and review locked future populations",
+            "conclusion": "success"
+          },
+          {
+            "name": "Review frozen Nations repair population",
+            "conclusion": "success"
+          },
+          {
+            "name": "Load frozen three-arm research reviewer",
+            "conclusion": "success"
+          },
+          {
+            "name": "Settle the registered Brazil calibration batch",
+            "conclusion": "success"
+          },
+          {
+            "name": "Load verified sequence research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Review fixed sequence forecasts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Measure prematch coverage for the registered fixtures",
+            "conclusion": "success"
+          },
+          {
+            "name": "Load registered Transformer research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Settle the fixed four-model Transformer comparison",
+            "conclusion": "success"
+          },
+          {
+            "name": "Load market signal research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect source-timed Brazil team markets and issue independent pairs",
+            "conclusion": "success"
+          },
+          {
+            "name": "Track all registered Brazil signal first issues",
+            "conclusion": "success"
+          },
+          {
+            "name": "Collect one rolling English team-market panel per UTC day",
+            "conclusion": "success"
+          },
+          {
+            "name": "Check the next eligible Nations League Elo issue",
+            "conclusion": "success"
+          },
+          {
+            "name": "Save private audit and data",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Load market signal research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Load registered Transformer research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Load verified sequence research revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Load frozen three-arm research reviewer",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Read verified collector-only revision",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Read pinned public code",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-11-18T07:19:36Z",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44257823993"
+  },
+  "runtime_output": {
+    "Collect source-timed Brazil team markets and issue independent pairs": [
+      {
+        "accepted_pairs": 24,
+        "credits_reported": 6,
+        "fixtures_with_away_05": 0,
+        "fixtures_with_btts": 6,
+        "fixtures_with_home_05": 0,
+        "registered": 6,
+        "requests": 6
+      },
+      {
+        "run": "workspace-updates/20261118-market-signals/team-markets/runs/44257823993-1-bra1",
+        "population": 6,
+        "status_counts": {
+          "PREVIOUSLY_ISSUED": 6
+        }
+      }
+    ],
+    "Track all registered Brazil signal first issues": [
+      {
+        "issued": 6,
+        "population": 6
+      },
+      {
+        "issued": 6,
+        "pending": 6,
+        "population": 6,
+        "settled": 0
+      },
+      {
+        "issued": 6,
+        "pending": 6,
+        "population": 6,
+        "settled": 0
+      },
+      {
+        "population": 6,
+        "first_issues": 6,
+        "settled_first_issues": 0
+      },
+      {},
+      {},
+      {
+        "issued": 6,
+        "pending": 6,
+        "population": 6,
+        "settled": 0
+      }
+    ],
+    "Collect one rolling English team-market panel per UTC day": [
+      {
+        "accepted_pairs": 40,
+        "credits_reported": 5,
+        "fixtures_with_away_05": 1,
+        "fixtures_with_btts": 1,
+        "fixtures_with_home_05": 1,
+        "registered": 7,
+        "requests": 1
+      }
+    ],
+    "Check the next eligible Nations League Elo issue": [
+      {
+        "horizon_end": "2027-02-16",
+        "status": "COMPLETE",
+        "scheduled": 0,
+        "registered": 0,
+        "issued_or_original": 0
+      }
+    ]
+  },
+  "actual_collection_coverage": {
+    "workspace-updates/20261118-market-signals/team-markets/runs/44257823993-1-bra1/coverage.json": {
+      "sha256": "6511c0e41a3c9eb68adbcde7e8b41ddb67e74d32f7ab4938aeaeef2fc5b29af2",
+      "data": {
+        "accepted_pairs": 24,
+        "collection_settings": {
+          "days": null,
+          "max_events": null
+        },
+        "completed_at": "2026-11-18T07:19:21.083696+00:00",
+        "credits_reported": 6,
+        "discovery_competition": null,
+        "fixtures": [
+          {
+            "accepted_pairs": 4,
+            "away_team_05_books": [],
+            "btts_books": [
+              "matchbook",
+              "onexbet",
+              "pinnacle",
+              "williamhill"
+            ],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401841315",
+            "status": "COLLECTED"
+          },
+          {
+            "accepted_pairs": 4,
+            "away_team_05_books": [],
+            "btts_books": [
+              "matchbook",
+              "onexbet",
+              "pinnacle",
+              "williamhill"
+            ],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401841310",
+            "status": "COLLECTED"
+          },
+          {
+            "accepted_pairs": 4,
+            "away_team_05_books": [],
+            "btts_books": [
+              "matchbook",
+              "onexbet",
+              "pinnacle",
+              "williamhill"
+            ],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401841313",
+            "status": "COLLECTED"
+          },
+          {
+            "accepted_pairs": 4,
+            "away_team_05_books": [],
+            "btts_books": [
+              "matchbook",
+              "onexbet",
+              "pinnacle",
+              "williamhill"
+            ],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401841314",
+            "status": "COLLECTED"
+          },
+          {
+            "accepted_pairs": 4,
+            "away_team_05_books": [],
+            "btts_books": [
+              "matchbook",
+              "onexbet",
+              "pinnacle",
+              "williamhill"
+            ],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401841312",
+            "status": "COLLECTED"
+          },
+          {
+            "accepted_pairs": 4,
+            "away_team_05_books": [],
+            "btts_books": [
+              "matchbook",
+              "onexbet",
+              "pinnacle",
+              "williamhill"
+            ],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401841316",
+            "status": "COLLECTED"
+          }
+        ],
+        "fixtures_with_away_05": 0,
+        "fixtures_with_btts": 6,
+        "fixtures_with_home_05": 0,
+        "plan": "workspace-updates/20261118-transformer/forward/plan.json",
+        "plan_sha256": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e",
+        "regions": "eu",
+        "registered": 6,
+        "remaining_credits": 180,
+        "requested_markets": [
+          "btts",
+          "team_totals",
+          "alternate_team_totals"
+        ],
+        "requests": 6,
+        "schema": "WCPP-TEAM-MARKETS-1",
+        "source": "the-odds-api",
+        "started_at": "2026-11-18T07:19:19.714921+00:00"
+      }
+    },
+    "workspace-updates/20261118-market-signals/team-markets/runs/daily-2026-11-18-eng1/coverage.json": {
+      "sha256": "b3aa6bb700b79b23f82567c8dde1fec3cb5880be12bd2b2b7d1d568d715f47bd",
+      "data": {
+        "accepted_pairs": 40,
+        "collection_settings": {
+          "days": 4,
+          "max_events": 1
+        },
+        "completed_at": "2026-11-18T07:19:27.446424+00:00",
+        "credits_reported": 5,
+        "discovery_competition": "eng.1",
+        "fixtures": [
+          {
+            "accepted_pairs": 40,
+            "away_team_05_books": [
+              "betmgm",
+              "betrivers",
+              "bovada",
+              "draftkings",
+              "fanduel"
+            ],
+            "btts_books": [
+              "betmgm",
+              "betrivers",
+              "bovada",
+              "draftkings",
+              "fanduel"
+            ],
+            "exclusions": {
+              "INCOMPLETE_OR_CONFLICTING_PAIR": 2
+            },
+            "home_team_05_books": [
+              "betmgm",
+              "betrivers",
+              "bovada",
+              "draftkings",
+              "fanduel"
+            ],
+            "match_id": "espn:401879238",
+            "status": "COLLECTED"
+          },
+          {
+            "accepted_pairs": 0,
+            "away_team_05_books": [],
+            "btts_books": [],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401879236",
+            "status": "MAX_EVENTS"
+          },
+          {
+            "accepted_pairs": 0,
+            "away_team_05_books": [],
+            "btts_books": [],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401879235",
+            "status": "MAX_EVENTS"
+          },
+          {
+            "accepted_pairs": 0,
+            "away_team_05_books": [],
+            "btts_books": [],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401878754",
+            "status": "MAX_EVENTS"
+          },
+          {
+            "accepted_pairs": 0,
+            "away_team_05_books": [],
+            "btts_books": [],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401879232",
+            "status": "MAX_EVENTS"
+          },
+          {
+            "accepted_pairs": 0,
+            "away_team_05_books": [],
+            "btts_books": [],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401879233",
+            "status": "MAX_EVENTS"
+          },
+          {
+            "accepted_pairs": 0,
+            "away_team_05_books": [],
+            "btts_books": [],
+            "exclusions": {},
+            "home_team_05_books": [],
+            "match_id": "espn:401878756",
+            "status": "MAX_EVENTS"
+          }
+        ],
+        "fixtures_with_away_05": 1,
+        "fixtures_with_btts": 1,
+        "fixtures_with_home_05": 1,
+        "plan": null,
+        "plan_sha256": null,
+        "previously_covered_in_selected_population": [
+          "espn:401878756",
+          "espn:401879233"
+        ],
+        "regions": "us",
+        "registered": 7,
+        "remaining_credits": 175,
+        "requested_markets": [
+          "btts",
+          "team_totals",
+          "alternate_team_totals",
+          "h2h",
+          "totals"
+        ],
+        "requests": 1,
+        "schema": "WCPP-TEAM-MARKETS-1",
+        "source": "the-odds-api",
+        "started_at": "2026-11-18T07:19:26.835987+00:00"
+      }
+    }
+  },
+  "after_cloud_data": "650b84b982d402bc0cf2c6b627c2db611d5859e5",
+  "rollback": {
+    "source_base": "b56f309801373c952fa4897a7b38539a8a22c1ff",
+    "data_base": "2e6486653c604e6399a8c6abd348e640b7e9b864",
+    "operation": "Remove only the four market-signals steps and their checkout in unattended.yml to stop future research runs. Keep scores, inputs and first freezes. The activity registry is independent."
+  },
+  "registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+  "first_issue_and_registry_audit": {
+    "active_registry": {
+      "git_blob": "82f009f4bc9c436df3d13b69b5e267bfc9733a6a",
+      "path": "future/bundle-v2/objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+      "sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013"
+    },
+    "added_immutable_files": [],
+    "after_commit": "650b84b982d402bc0cf2c6b627c2db611d5859e5",
+    "after_matches": {
+      "distinct_matches": 8,
+      "match_ids": [
+        "espn:401841310",
+        "espn:401841312",
+        "espn:401841313",
+        "espn:401841314",
+        "espn:401841315",
+        "espn:401841316",
+        "espn:401878756",
+        "espn:401879233"
+      ],
+      "matches_per_track": {
+        "england-btts-both-teams-scoring": 2,
+        "named-book-consensus-first": 6,
+        "research-same-book-market-path": 6,
+        "research-verified-pinnacle-handicap": 6,
+        "team-scoring-market-study": 6
+      },
+      "track_match_forecasts": 26,
+      "unique_records": 16
+    },
+    "before_commit": "9f5dfd5e5a9b3d60c7e3928f7ac966cf971f8eeb",
+    "new_first_record_hashes": [],
+    "original_matches": {
+      "distinct_matches": 8,
+      "match_ids": [
+        "espn:401841310",
+        "espn:401841312",
+        "espn:401841313",
+        "espn:401841314",
+        "espn:401841315",
+        "espn:401841316",
+        "espn:401878756",
+        "espn:401879233"
+      ],
+      "matches_per_track": {
+        "england-btts-both-teams-scoring": 2,
+        "named-book-consensus-first": 6,
+        "research-same-book-market-path": 6,
+        "research-verified-pinnacle-handicap": 6,
+        "team-scoring-market-study": 6
+      },
+      "track_match_forecasts": 26,
+      "unique_records": 16
+    },
+    "prior_protected_files": 33,
+    "status": "original_first_issues_and_registry_verified",
+    "unchanged_by_kind": {
+      "first_freezes": 24,
+      "first_issue_summary": 1,
+      "plans_and_protocols": 8
+    },
+    "unchanged_git_blobs": {
+      "workspace-updates/20261118-market-signals/consensus/forward/freezes/espn-401841310.json": "77e77e03c954c71ee675e31a94a5f6d2bb8d4ac5",
+      "workspace-updates/20261118-market-signals/consensus/forward/freezes/espn-401841312.json": "5b221bed73f76737c69cde152eb04f8f53bc951a",
+      "workspace-updates/20261118-market-signals/consensus/forward/freezes/espn-401841313.json": "65c9dd02d5981d06d8d50b592dbac17c170f5504",
+      "workspace-updates/20261118-market-signals/consensus/forward/freezes/espn-401841314.json": "9190d74170f054ec143625261bc2b26e574afc32",
+      "workspace-updates/20261118-market-signals/consensus/forward/freezes/espn-401841315.json": "e2f056e3aac81a8f19a64e31dab2eeb604afebfd",
+      "workspace-updates/20261118-market-signals/consensus/forward/freezes/espn-401841316.json": "e3302f1fc7cbf196e81cf8e697d77b35d9921bcd",
+      "workspace-updates/20261118-market-signals/consensus/forward/records/04d812027b3dc6749441a5201b2db81aac250f40eddca3bc11147c4580853cbd/000001.json": "9190d74170f054ec143625261bc2b26e574afc32",
+      "workspace-updates/20261118-market-signals/consensus/forward/records/797c2b1c2d0b4a8964848443b1eb211e80fd71ceec5cb6e40c468664d8ebe5c0/000001.json": "65c9dd02d5981d06d8d50b592dbac17c170f5504",
+      "workspace-updates/20261118-market-signals/consensus/forward/records/b964bdd5500641472e7486f078765a1b8517bac62700046fc9ad375c08043638/000001.json": "e3302f1fc7cbf196e81cf8e697d77b35d9921bcd",
+      "workspace-updates/20261118-market-signals/consensus/forward/records/bfe46825349b30d81d2d6d1bedacd5cc1df642f547b826118665d905200fac99/000001.json": "77e77e03c954c71ee675e31a94a5f6d2bb8d4ac5",
+      "workspace-updates/20261118-market-signals/consensus/forward/records/c352dd56ed8587a2dc32f8dd02db5ac641458fcd582426cab76006cf7c293ecc/000001.json": "5b221bed73f76737c69cde152eb04f8f53bc951a",
+      "workspace-updates/20261118-market-signals/consensus/forward/records/cfd871bb97b7495f0cffb17c7617be2b9481623ff6ddd5622637fd121e41306d/000001.json": "e2f056e3aac81a8f19a64e31dab2eeb604afebfd",
+      "workspace-updates/20261118-market-signals/consensus/protocol.json": "448d9c6dfcea80b160e0bfc9de1e0503f3c5ed95",
+      "workspace-updates/20261118-market-signals/handicap/forward-protocol.json": "0ebd2c38929d29926dadcfd91bf909de53931741",
+      "workspace-updates/20261118-market-signals/handicap/forward/first-issue.json": "8c0256d500da472866cc1b4d015e706aad8dc498",
+      "workspace-updates/20261118-market-signals/handicap/forward/records/33a6d338cd71cb3d5ead321fe15bbfedc7f7adc006fa0d36bc547e5aefcbfe14/000001.json": "8c0256d500da472866cc1b4d015e706aad8dc498",
+      "workspace-updates/20261118-market-signals/handicap/protocol.json": "e518f04556cd020e5634238b25d12bfd4fcb0349",
+      "workspace-updates/20261118-market-signals/movement/forward/first-issue.json": "b60a92e3d0410e05dd4e1f7d81ba4ccd778291dd",
+      "workspace-updates/20261118-market-signals/movement/forward/records/dc607668595fce0dc2beace38305e494001e740206edeeefcf043fbe24511edc/000001.json": "b60a92e3d0410e05dd4e1f7d81ba4ccd778291dd",
+      "workspace-updates/20261118-market-signals/movement/protocol.json": "1a30c56c8d6dc579596506d371d344ef605fb113",
+      "workspace-updates/20261118-market-signals/nations-elo/protocol.json": "593540011be2550f07ca2777381efe92180e8e6a",
+      "workspace-updates/20261118-market-signals/registration.json": "856cf9afc3f4b9f8c8b879c39fc89740f9a8eba5",
+      "workspace-updates/20261118-market-signals/team-candidate/england/records/35e1e7a1cd01e284d8a640fff3dd4952a867c347fad09014acde9dd5ca2ccc26/000001.json": "a5e8029578207e76157b21b7164a17f735afbb0d",
+      "workspace-updates/20261118-market-signals/team-candidate/england/records/904cc0700bbd321b7a50b7d01170d8ce3a29fe3edb8a127baeb58e094880d563/000001.json": "e0de69c12867ad06982a2609f386802c76159142",
+      "workspace-updates/20261118-market-signals/team-candidate/england/registration.json": "2af649110f0438e4b834914a2a90d4da63f95793",
+      "workspace-updates/20261118-market-signals/team-candidate/first-issue-evidence.json": "a4793a2000ecc52a1831897d39526013651c94c4",
+      "workspace-updates/20261118-market-signals/team-candidate/protocol.json": "106407446539c698d1de155816fe407c02d0a64b",
+      "workspace-updates/20261118-market-signals/team-candidate/records/082c8ed0bfcc0ee5fe5153c2998f638b2b5b5bfe0dff14e1d64e1acb6a8ee95c/000001.json": "6343d6439d1c3a49ba95a903a86d5c05305c8db8",
+      "workspace-updates/20261118-market-signals/team-candidate/records/53b32ac3a6eb74bfece02e301a91b066b62243155cd7afae6acfe79cf1bcde8b/000001.json": "6c736b43a9350cb3dbff680a3536dce5b5920082",
+      "workspace-updates/20261118-market-signals/team-candidate/records/680b1a401d762e1ee70ac10349e35bc7d0c1938e38b1afd861ce778d3bb384c6/000001.json": "102996f4d00ace709cbd18ed048ec90ce0bf942b",
+      "workspace-updates/20261118-market-signals/team-candidate/records/94da85e8c61b988d1d60b1aece22dca10c9e0146778096edbdcff5e5bb55fd06/000001.json": "6ba841077b71cd6fca694015c7c1f22df9fa1c87",
+      "workspace-updates/20261118-market-signals/team-candidate/records/96aff2bed1f17d04fbc663b36ff2fdc485a43251a3375af76477ac0753c6c6be/000001.json": "0027a32951a2dbd3b6ae16e76cdbd975770c5aad",
+      "workspace-updates/20261118-market-signals/team-candidate/records/996429f04c4d5abca9addd9502af5dbdc6133a6bfbe4e8f6f1221f33999f170d/000001.json": "fb4242e52d77d170b3e8f45b765edcb572c42612"
+    }
+  },
+  "nations_monitor": {
+    "as_of": "2026-11-18T07:19:28.867995+00:00",
+    "horizon_end": "2027-02-16",
+    "scheduled": 0,
+    "registered": 0,
+    "issued_or_original": 0,
+    "status": "COMPLETE",
+    "discovery_errors": [],
+    "review": {
+      "first_issues": 0,
+      "settled": 0,
+      "pending": 0,
+      "standardized_hits": {
+        "primary_hit": 0,
+        "top3_hit": 0,
+        "wdl_hit": 0,
+        "total_hit": 0
+      },
+      "top3_eligible": 0,
+      "rows": []
+    }
+  }
+}

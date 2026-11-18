@@ -1,0 +1,80 @@
+{
+  "bsd": {
+    "document_url": "https://sports.bzzoiro.com/openapi.json",
+    "schema_response_sha256": "51bb9fdf1dafb40c05d0373e1859a7b57f2310fdb7205fbde8667a239ba22b2b",
+    "market_coverage_note": {
+      "availability": "not supported by documented `/api/v2/odds/` market enum",
+      "market_enum": [
+        "1x2",
+        "asian_handicap",
+        "btts",
+        "corners_1x2",
+        "double_chance",
+        "draw_no_bet",
+        "european_handicap",
+        "over_under_05",
+        "over_under_15",
+        "over_under_25",
+        "over_under_35",
+        "red_card",
+        "total_corners",
+        "total_red_cards"
+      ],
+      "interpretation": "over_under_05 is match total goals; there is no home-team or away-team total market in the documented enum; do not treat as equivalent to team scoring at least once."
+    },
+    "saved_event_pairs": 6,
+    "price_type": "provider consensus aggregation; bookmaker_count is not a delivery of individually attributed prices",
+    "model_input": false,
+    "freshness": "Five source updates on 2026-11-18 and Flamengo on 2026-11-14. No observed_at values were populated.",
+    "odds_market_parameter": {
+      "in": "query",
+      "name": "market",
+      "schema": {
+        "type": "string",
+        "enum": [
+          "1x2",
+          "asian_handicap",
+          "btts",
+          "corners_1x2",
+          "double_chance",
+          "draw_no_bet",
+          "european_handicap",
+          "over_under_05",
+          "over_under_15",
+          "over_under_25",
+          "over_under_35",
+          "red_card",
+          "total_corners",
+          "total_red_cards"
+        ]
+      }
+    }
+  },
+  "api_football": {
+    "status": "HTTP_403",
+    "metadata": "api-football-epl-http.json",
+    "instance": "Normal authenticated fixture query. No alternate route or sensitive provider response stored."
+  },
+  "therundown": {
+    "current_collection": "NOT_QUERIED",
+    "reference": "https://github.com/kaka597000/Football-Analysis/blob/b56f309801373c952fa4897a7b38539a8a22c1ff/docs/api-access-diagnosis-20261113.md",
+    "historical_observation": "Previously protected events requests returned HTTP 403; no current entitlement inferred."
+  },
+  "regional_probes": {
+    "brazil_fixture": "Coritiba v Santos",
+    "markets": [
+      "btts",
+      "team_totals",
+      "alternate_team_totals"
+    ],
+    "regions_separately": [
+      "eu",
+      "us",
+      "uk,us2,au"
+    ],
+    "all_observed_market_keys": [
+      "btts"
+    ],
+    "scope": "One fixture; other five were measured only in eu."
+  }
+}
