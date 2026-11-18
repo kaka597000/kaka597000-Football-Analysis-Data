@@ -42,6 +42,9 @@ jobs:
             market
             workspace-updates/20261118-three-arm/batch
             workspace-updates/20261118-three-arm/registration
+            workspace-updates/20261118-three-arm/identity
+            workspace-updates/20261118-sequence/forward
+            workspace-updates/20261118-sequence/coverage
       - name: Read pinned public code
         uses: actions/checkout@v4
         with:
@@ -184,6 +187,29 @@ jobs:
           export PYTHONPATH="$GITHUB_WORKSPACE/three-arm-code:$GITHUB_WORKSPACE/three-arm-code/runtime"
           python runtime/poll_three_arm_results.py --batch "$experiment/batch" --registration "$experiment/registration/protocol.json" --state-dir .
           python -m research_program.three_arm_review --batch "$experiment/batch" --state-dir . --out "$experiment/batch/review.json"
+      - name: Load verified sequence research revision
+        id: sequence_revision
+        if: always() && steps.mode.outputs.value == 'collect'
+        uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 3371a3e835012f734f01322760b1a55033058852
+          path: sequence-code
+          persist-credentials: false
+      - name: Review fixed sequence forecasts
+        if: always() && steps.sequence_revision.outcome == 'success'
+        working-directory: private-state
+        env:
+          PYTHONPATH: ${{ github.workspace }}/sequence-code/runtime
+        run: python -m research_program.sequence_forward review --batch workspace-updates/20261118-sequence/forward --state-dir .
+      - name: Measure prematch coverage for the registered fixtures
+        if: always() && steps.sequence_revision.outcome == 'success'
+        working-directory: private-state
+        timeout-minutes: 2
+        env:
+          PYTHONPATH: ${{ github.workspace }}/sequence-code/runtime
+          WCPP_BSD_API_KEY: ${{ secrets.BSD }}
+        run: python -m data_sources.research_supplement --data-root . --out workspace-updates/20261118-sequence/coverage
       - name: Save private audit and data
         if: always()
         working-directory: private-state

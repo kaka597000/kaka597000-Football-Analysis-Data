@@ -1,0 +1,454 @@
+{
+  "task": "within-match exact pass receiver conditional on a completed regular-play first-half pass",
+  "inference_time": "current passer and pass origin; directed graph uses earlier events only",
+  "source": "StatsBomb Open Data",
+  "source_revision": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "split": {
+    "train_matches": 36,
+    "training_dates": [
+      "2024-06-14",
+      "2024-06-26"
+    ],
+    "test_matches": 15,
+    "holdout_dates": [
+      "2024-06-29",
+      "2024-07-14"
+    ]
+  },
+  "coverage": {
+    "train": {
+      "completed_regular_first_half": 6841,
+      "evaluated": 6161,
+      "roster_or_recipient_unavailable": 680
+    },
+    "holdout": {
+      "completed_regular_first_half": 2529,
+      "evaluated": 1877,
+      "roster_or_recipient_unavailable": 652
+    }
+  },
+  "arms": {
+    "pair_frequency": {
+      "hits": 356,
+      "evaluated": 1877,
+      "top1_rate": 0.18966435801811402,
+      "log_loss": 2.176506780218938
+    },
+    "node_and_dyad": {
+      "hits": 434,
+      "evaluated": 1877,
+      "top1_rate": 0.23122003196590304,
+      "log_loss": 2.0257336323910886
+    },
+    "directed_graph": {
+      "hits": 428,
+      "evaluated": 1877,
+      "top1_rate": 0.22802344166222696,
+      "log_loss": 2.023175311977148
+    }
+  },
+  "graph_minus_node_and_dyad": {
+    "net_hits": -6,
+    "top1_rate_difference": -0.0031965903036760787,
+    "match_block_bootstrap95": [
+      -0.011803687358585195,
+      0.00557739188379402
+    ]
+  },
+  "match_metrics": [
+    {
+      "match_id": 3940878,
+      "match_date": "2024-06-29",
+      "counts": {
+        "completed_regular_first_half": 172,
+        "evaluated": 117,
+        "roster_or_recipient_unavailable": 55
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 26,
+          "log_loss_sum": 258.1175231933594
+        },
+        "node_and_dyad": {
+          "top1_hits": 26,
+          "log_loss_sum": 237.15735155285466
+        },
+        "directed_graph": {
+          "top1_hits": 25,
+          "log_loss_sum": 236.24764191583142
+        }
+      }
+    },
+    {
+      "match_id": 3940983,
+      "match_date": "2024-06-29",
+      "counts": {
+        "completed_regular_first_half": 176,
+        "evaluated": 98,
+        "roster_or_recipient_unavailable": 78
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 18,
+          "log_loss_sum": 220.25030517578125
+        },
+        "node_and_dyad": {
+          "top1_hits": 19,
+          "log_loss_sum": 209.11908301863934
+        },
+        "directed_graph": {
+          "top1_hits": 18,
+          "log_loss_sum": 206.9319577193689
+        }
+      }
+    },
+    {
+      "match_id": 3941017,
+      "match_date": "2024-06-30",
+      "counts": {
+        "completed_regular_first_half": 106,
+        "evaluated": 82,
+        "roster_or_recipient_unavailable": 24
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 15,
+          "log_loss_sum": 176.3625946044922
+        },
+        "node_and_dyad": {
+          "top1_hits": 23,
+          "log_loss_sum": 161.10796336283
+        },
+        "directed_graph": {
+          "top1_hits": 21,
+          "log_loss_sum": 161.75548851939524
+        }
+      }
+    },
+    {
+      "match_id": 3941018,
+      "match_date": "2024-06-30",
+      "counts": {
+        "completed_regular_first_half": 232,
+        "evaluated": 207,
+        "roster_or_recipient_unavailable": 25
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 44,
+          "log_loss_sum": 437.65570068359375
+        },
+        "node_and_dyad": {
+          "top1_hits": 42,
+          "log_loss_sum": 404.3842847200543
+        },
+        "directed_graph": {
+          "top1_hits": 46,
+          "log_loss_sum": 404.72342456735873
+        }
+      }
+    },
+    {
+      "match_id": 3941019,
+      "match_date": "2024-07-01",
+      "counts": {
+        "completed_regular_first_half": 149,
+        "evaluated": 149
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 34,
+          "log_loss_sum": 303.9093322753906
+        },
+        "node_and_dyad": {
+          "top1_hits": 44,
+          "log_loss_sum": 278.6042959319522
+        },
+        "directed_graph": {
+          "top1_hits": 42,
+          "log_loss_sum": 278.63487875143164
+        }
+      }
+    },
+    {
+      "match_id": 3941020,
+      "match_date": "2024-07-01",
+      "counts": {
+        "completed_regular_first_half": 135,
+        "evaluated": 100,
+        "roster_or_recipient_unavailable": 35
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 15,
+          "log_loss_sum": 220.5991668701172
+        },
+        "node_and_dyad": {
+          "top1_hits": 22,
+          "log_loss_sum": 206.79187227430631
+        },
+        "directed_graph": {
+          "top1_hits": 20,
+          "log_loss_sum": 206.33902406383865
+        }
+      }
+    },
+    {
+      "match_id": 3941021,
+      "match_date": "2024-07-02",
+      "counts": {
+        "completed_regular_first_half": 112,
+        "roster_or_recipient_unavailable": 87,
+        "evaluated": 25
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 3,
+          "log_loss_sum": 57.51320266723633
+        },
+        "node_and_dyad": {
+          "top1_hits": 6,
+          "log_loss_sum": 54.00867501574552
+        },
+        "directed_graph": {
+          "top1_hits": 6,
+          "log_loss_sum": 54.215389746817344
+        }
+      }
+    },
+    {
+      "match_id": 3941022,
+      "match_date": "2024-07-02",
+      "counts": {
+        "completed_regular_first_half": 219,
+        "evaluated": 113,
+        "roster_or_recipient_unavailable": 106
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 12,
+          "log_loss_sum": 257.94781494140625
+        },
+        "node_and_dyad": {
+          "top1_hits": 23,
+          "log_loss_sum": 242.75000815539548
+        },
+        "directed_graph": {
+          "top1_hits": 22,
+          "log_loss_sum": 242.29650343459556
+        }
+      }
+    },
+    {
+      "match_id": 3942226,
+      "match_date": "2024-07-05",
+      "counts": {
+        "completed_regular_first_half": 171,
+        "evaluated": 81,
+        "roster_or_recipient_unavailable": 90
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 11,
+          "log_loss_sum": 184.4428253173828
+        },
+        "node_and_dyad": {
+          "top1_hits": 16,
+          "log_loss_sum": 173.61792565568342
+        },
+        "directed_graph": {
+          "top1_hits": 16,
+          "log_loss_sum": 173.6621420468535
+        }
+      }
+    },
+    {
+      "match_id": 3942349,
+      "match_date": "2024-07-05",
+      "counts": {
+        "completed_regular_first_half": 190,
+        "evaluated": 190
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 27,
+          "log_loss_sum": 432.58447265625
+        },
+        "node_and_dyad": {
+          "top1_hits": 39,
+          "log_loss_sum": 402.8093021589846
+        },
+        "directed_graph": {
+          "top1_hits": 43,
+          "log_loss_sum": 398.89855874285627
+        }
+      }
+    },
+    {
+      "match_id": 3942227,
+      "match_date": "2024-07-06",
+      "counts": {
+        "completed_regular_first_half": 201,
+        "evaluated": 201
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 40,
+          "log_loss_sum": 429.2235412597656
+        },
+        "node_and_dyad": {
+          "top1_hits": 55,
+          "log_loss_sum": 397.0672514555522
+        },
+        "directed_graph": {
+          "top1_hits": 51,
+          "log_loss_sum": 398.32918475678355
+        }
+      }
+    },
+    {
+      "match_id": 3942382,
+      "match_date": "2024-07-06",
+      "counts": {
+        "completed_regular_first_half": 209,
+        "evaluated": 158,
+        "roster_or_recipient_unavailable": 51
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 34,
+          "log_loss_sum": 335.9391174316406
+        },
+        "node_and_dyad": {
+          "top1_hits": 36,
+          "log_loss_sum": 315.70041277841676
+        },
+        "directed_graph": {
+          "top1_hits": 34,
+          "log_loss_sum": 316.8213229096621
+        }
+      }
+    },
+    {
+      "match_id": 3942752,
+      "match_date": "2024-07-09",
+      "counts": {
+        "completed_regular_first_half": 143,
+        "evaluated": 143
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 37,
+          "log_loss_sum": 302.7427978515625
+        },
+        "node_and_dyad": {
+          "top1_hits": 38,
+          "log_loss_sum": 281.97546586376643
+        },
+        "directed_graph": {
+          "top1_hits": 38,
+          "log_loss_sum": 282.33838062115535
+        }
+      }
+    },
+    {
+      "match_id": 3942819,
+      "match_date": "2024-07-10",
+      "counts": {
+        "completed_regular_first_half": 143,
+        "evaluated": 42,
+        "roster_or_recipient_unavailable": 101
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 5,
+          "log_loss_sum": 98.41015625
+        },
+        "node_and_dyad": {
+          "top1_hits": 4,
+          "log_loss_sum": 90.38624039652643
+        },
+        "directed_graph": {
+          "top1_hits": 5,
+          "log_loss_sum": 90.04013632082044
+        }
+      }
+    },
+    {
+      "match_id": 3943043,
+      "match_date": "2024-07-14",
+      "counts": {
+        "completed_regular_first_half": 171,
+        "evaluated": 171
+      },
+      "arms": {
+        "pair_frequency": {
+          "top1_hits": 35,
+          "log_loss_sum": 369.60467529296875
+        },
+        "node_and_dyad": {
+          "top1_hits": 41,
+          "log_loss_sum": 346.82189565736553
+        },
+        "directed_graph": {
+          "top1_hits": 41,
+          "log_loss_sum": 346.2660264643376
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "data/matches/55/282.json": "70aa07d8a73e899d501c3edcd39b4bea0d4ae1d48bce7b59c4619869a13adc1b",
+    "data/events/3930158.json": "4c7412bf2e4a25d7bdf9c0e5f78fbb55c8fc30a918c68a48eb7c7a434d3e91a9",
+    "data/events/3930159.json": "694c7c4422592ee3a38a1f6375004d23355d40f8918c705a9df967e063dcce40",
+    "data/events/3930160.json": "e04ef2100f09adeab65d8a63c389fbf9487323223f9027b12abbeb4b577b8790",
+    "data/events/3930161.json": "4c87b1547af72dabb5eb812f16749b24f196d4735606efd06a20c494372f32e5",
+    "data/events/3938637.json": "031b6bcc24b43b9d5e0ef444f65db4dba2f7504391532eafe891ecd1e7ad6130",
+    "data/events/3930162.json": "e97379bf5fc05d24d07c7ac98defc2856203d0fd8c52b64c05dec19f0e768e37",
+    "data/events/3930163.json": "1e73b8517f4a51d08eced1c77995c188b9eddcec0cb599c8f5067fd007b29b13",
+    "data/events/3938638.json": "b642135a6ac4e0b10c5a96d26498eb1d9a7a3c00abc2cef989f873bbc4cccfef",
+    "data/events/3930164.json": "573e66df5216af87f1d90fcea9981717a2fb7a1d8c634cd358c8df5347298c60",
+    "data/events/3930165.json": "3450034b725d7e8145a283ba2a8de31499a9c2b44d8b0164302805c2f3f22698",
+    "data/events/3938639.json": "328aca7629193a2780f449d0026e8d356096fc20b47a0305219c192fe661c15f",
+    "data/events/3930166.json": "aae2a1e51c98abb3f35f7898ddadc5641132907bd0a758b45ca0f5776e33c3a2",
+    "data/events/3930167.json": "4dbd82ba45e05f8b3ec16965f221fcbf6b788256ee49419c15bab3fbbf8048f8",
+    "data/events/3930168.json": "c125d9215805fbf285226b89e5de5b87376111a7a969eaf4de3d01be69bf6272",
+    "data/events/3930169.json": "07b490aeec4ea23dd77c05351f0d846e2ad8210d1cf40458b63d9a3c0aef137c",
+    "data/events/3930170.json": "3d0641d64fd8c76ef7797902405ef68178488c754518ad52d42597d09a05699c",
+    "data/events/3930171.json": "d4f834a5c560f9af3095351aaaf5f308dde96fae230a00da788b468e18606d7f",
+    "data/events/3930172.json": "abf0a997a0723ad593eee176d4dff387a1e72ce95093942dd47125a4d783b9c3",
+    "data/events/3938640.json": "eb9e13650dcab1bc41738f5b9577377b5e3c55c9528fcfbaf947dd28a62d9975",
+    "data/events/3938641.json": "6ca66b263f739a45abb783ea10f8d4ba7ca58e4634fbdde0fbbf557328e9ab48",
+    "data/events/3930173.json": "acf4f80fdf726920ccfed08359e8b6853da676abb9f5e9b8cc3b26c387d69f1a",
+    "data/events/3938642.json": "a370edcf9fc4d809314c3768579eee2926e7136a4e1a9eec618749fd1171766e",
+    "data/events/3930174.json": "eb07ab0fe87cd5ecf06863ecf4d1ff878d5b23dbdf808fb7742c14b7e5cc6a80",
+    "data/events/3930175.json": "47ca0ed1482c400b7cbb4abd8dbe00791f68f50a765f4019ee47080bcfda79f4",
+    "data/events/3930176.json": "7f4043b0afe1a97ce5c47a674c56edf8cc9d02773a9b0cf38419b6c1cd423cdd",
+    "data/events/3930177.json": "3f996dc352237a3260abdc128099c554d49bdbf64e27250647b072ceaa370bb2",
+    "data/events/3930178.json": "c30cf383f2c3f85ce28dff572cdc8d8d1a51217755a70a05090ef36e90ba801a",
+    "data/events/3930179.json": "a65d0878381a7acdaebc74ad937f6451c4c1ddd6f47ae08abaf018867fdf47c6",
+    "data/events/3930180.json": "aff9750bc5b7223c89c805e048d412616e627f45378ded0ac79f642e498f5b3b",
+    "data/events/3938643.json": "6dfb69ed3be4797cb610756c07e72e81c86c211479b3ff16fa668d73141581ea",
+    "data/events/3930181.json": "3cf0b798289f035d0880f789126b1eee83cd947280d16488ba62978b69c294c7",
+    "data/events/3930182.json": "48cd23ecd5e033fb3a5d3084757a833fe024d26ff02ee05ff206e2577027e768",
+    "data/events/3930183.json": "d9127adb5f8ca29137912a8d30744496e011599fdfcdae41434a937ceb39ca80",
+    "data/events/3938645.json": "f93b68287bf0c334574d8331c8bf298db1ebb363b6e8d764f3872d64a0e9a1bf",
+    "data/events/3938644.json": "e3505f31e5ecb6ea6b94514dccdff7c63d82ec2e4244dff40b91dabe8f1b1494",
+    "data/events/3930184.json": "b32ec79b13e1a1606634f677bd7713ad272bbe38e9c7ef955d6237ac1b689765",
+    "data/events/3940878.json": "3fcb21720b9df15390e996f76f2e8713e6756aeedd502b62a5ea5bd955351a60",
+    "data/events/3940983.json": "e46855568db36550730428cbdf0251716d8e6768639482ad9c56ce0c1d5c377f",
+    "data/events/3941017.json": "45b618a2b04258310bb696370b83251ec79846783eac7c0e9ac9e2be7f90c07e",
+    "data/events/3941018.json": "62f65d56f69ce4ed8e9d7950d0c8897acbcac9db318e7abbe469c1f77f698aad",
+    "data/events/3941019.json": "3d2e6e72f95bf7c4aca447f8e8c082ada20f5fc78a64a4ea50456a8159f29428",
+    "data/events/3941020.json": "fed12f03582eb53308e6f831130e81924d17023f29b199e28e3672812f5cb696",
+    "data/events/3941021.json": "63913270d365347be4367a699cf6c8e77225cb4fd8e5cb4d8a33063244f6fe9e",
+    "data/events/3941022.json": "6d8a1604a6db456e98279f1cb31cd4f556bb55bd6534bed18e293ca7e70246a5",
+    "data/events/3942226.json": "e4e0aba5eecdc7d136a54173fc5a3a51b3f179efc5e815be3aa8291e0ae5437c",
+    "data/events/3942349.json": "331477f8fb6adc208588a20bc7329ba00396ae3f711bd91b441feaacf96e626a",
+    "data/events/3942227.json": "b0bc13e5fa3b548afe8a8435ca932f304fd9d8bb994df51882d54ddaa766a6be",
+    "data/events/3942382.json": "31a3da99f63c52f83d69e5cdf2b26c14851da6d51765320d95f80b85b50a0a5f",
+    "data/events/3942752.json": "2422cf9024265c773c1002e51a707db15d2b890c3851a9321ffbeb0c23c5b72d",
+    "data/events/3942819.json": "5bf91f83b4ea6e5fa6fd3207c347b65ccce5124ae2040689509895ef5c0ab1b5",
+    "data/events/3943043.json": "cd6ab2cf6c129cdc35d43242006582f69f6419d9041dd417405171f91ab26989"
+  }
+}

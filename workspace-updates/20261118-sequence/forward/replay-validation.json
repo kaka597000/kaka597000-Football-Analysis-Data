@@ -1,0 +1,30 @@
+{
+  "schema": "WCPP-SEQUENCE-INDEPENDENT-REPLAY-1",
+  "verified_at": "2026-11-18T04:09:12.739941+00:00",
+  "verifier_sha256": "9d155e43407292994f33b332da20b756633384b690faedeeac908ecd453d557c",
+  "plan_sha256": "25eb46a2c5e4ebfbc917c0c918cea68d03f2f3d6c010276f0269b42257fe9b7a",
+  "model_and_source_binding": {
+    "artifact_sha256": "42bf92248332987987d3bd104afe52d08ec5340712240fb87cdd3a7dc0ef77b1",
+    "capture_source_sha256": "9d2ae4b68a26a3cb190e53cf0525f673141f935830f72a57d07362ca48ca1dbd",
+    "channel_sha256": "c993ef809f5eb99bb12aca8f547c0697d8e96533ecc2270180ab42d3c5bbf9a9",
+    "market_artifact_sha256": "3a2210037ebfeb3df59dff5fc4049a89443f43139fb3dbacf642fb407f0d1908",
+    "market_capture_source_sha256": "e287d3412d18bc383c65cda9bbde32054ef023780521f308133f26d7c8ac67ce",
+    "market_model_source_sha256": "3af3ef83185a75a9bca82659b32d322df168153a99a85f2f0da2080e5c14c6d8",
+    "registration_sha256": "8969e0945ad7a24d666ba0000bfd5c115fa461d961ef0760b6ba104e936a0db3",
+    "registry_sha256": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+    "sequence_model_source_sha256": "a0148663fed429b2b9f5bdfa82e9d73d91570e1f7d6dcc60b981d5cc8136f9bb"
+  },
+  "command": "python workspace-updates/20261118-sequence/verify.py --source <pinned-source-checkout>",
+  "verified_counts": {
+    "europe_training": 1299,
+    "europe_replayed_holdout": 1737,
+    "brazil_histories": 9,
+    "graph_holdout_fixtures": 15,
+    "graph_eligible_passes": 1877,
+    "registered": 6,
+    "restored_active_current": 6,
+    "source_verified_markets": 6,
+    "unique_prior_games": 295,
+    "forward_matrix_and_pick_replays": 18
+  }
+}
