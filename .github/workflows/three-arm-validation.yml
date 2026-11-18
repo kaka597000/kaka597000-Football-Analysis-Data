@@ -4,6 +4,7 @@ on:
     paths:
       - .github/workflows/three-arm-validation.yml
       - .github/workflows/unattended.yml
+      - runtime/source_review_api.py
       - runtime/poll_three_arm_results.py
       - runtime/test_poll_three_arm_results.py
       - workspace-updates/20261118-three-arm/**
@@ -13,6 +14,7 @@ on:
     paths:
       - .github/workflows/three-arm-validation.yml
       - .github/workflows/unattended.yml
+      - runtime/source_review_api.py
       - runtime/poll_three_arm_results.py
       - runtime/test_poll_three_arm_results.py
       - workspace-updates/20261118-three-arm/**
@@ -34,6 +36,7 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /runtime/source_review_api.py
             /runtime/poll_three_arm_results.py
             /runtime/test_poll_three_arm_results.py
             /workspace-updates/20261118-three-arm/
