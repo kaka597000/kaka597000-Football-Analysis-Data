@@ -5,10 +5,16 @@ on:
     paths:
       - .github/workflows/repository-audit-validation.yml
       - workspace-updates/20261118-repository-audit/**
+      - workspace-updates/20261118-code-structure/verify.py
+      - workspace-updates/20261118-code-structure/before.json
+      - workspace-updates/20261118-code-structure/after.json
   pull_request:
     paths:
       - .github/workflows/repository-audit-validation.yml
       - workspace-updates/20261118-repository-audit/**
+      - workspace-updates/20261118-code-structure/verify.py
+      - workspace-updates/20261118-code-structure/before.json
+      - workspace-updates/20261118-code-structure/after.json
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,3 +32,50 @@ jobs:
           python-version: '3.12'
       - name: Restore archive and independently check coverage and settlements
         run: python workspace-updates/20261118-repository-audit/verify_archive.py --out "${RUNNER_TEMP}/repository-audit-restore"
+  historical-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+          sparse-checkout: workspace-updates/20261118-code-structure
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: inputs
+          ref: 4475dd9c5ed397cbeb5cf4ba45d59ea3201abe55
+          sparse-checkout: |
+            market/runs/44212218194-1-bra1
+            future/nations-repair-bundle
+            future/nations-repair-state
+            workspace-updates/20261117-nations-xg-research
+            workspace-updates/20261118-repository-audit
+            workspace-updates/20261118-all-analysis-review
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          path: before
+          ref: 9106394424b22896e4819d9faec8eb679ace3c75
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          path: after
+          ref: 83aa58916555ac0885e164d9882384a829fd1843
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r after/requirements.txt
+      - name: Reproduce both revisions and compare all emitted results
+        run: |
+          evidence=audit/workspace-updates/20261118-code-structure
+          for version in before after; do
+            python "$evidence/verify.py" --source "$version" --data inputs --version "$version" > "$RUNNER_TEMP/$version.json"
+            diff -u "$evidence/$version.json" "$RUNNER_TEMP/$version.json"
+          done
