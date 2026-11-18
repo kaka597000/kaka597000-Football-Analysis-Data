@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-11-18T06:18:52.818341+00:00",
+  "study": "UEFA Nations League independent senior international Elo reference; retrospective comparisons, no automatic promotion",
+  "scheduled_forward_window": [
+    "2026-11-18",
+    "2026-12-31"
+  ],
+  "rating": {
+    "initial": 1500,
+    "start": "1990-01-01",
+    "k": 20,
+    "home_points": 60,
+    "neutral_home_points": 0,
+    "scale": 400,
+    "update": "Both sides use start-of-local-recorded-day ratings; apply summed zero-sum updates after the whole source date. W/D/L uses source score, which can include extra time. Friendlies weighted identically. No goal-margin multiplier, market, UEFA model or paywalled rating."
+  },
+  "goal_model": "Poisson on each side jointly, predictors intercept, signed home advantage (zero on neutral), signed pregame Elo gap / 400, each coefficient learned on earlier UEFA league-phase results. Baseline fits intercept and signed home advantage alone. No hyperparameter search; maximum-likelihood fits. Use joint mode, marginal W/D/L, P(total>=3) threshold .5 for standardized over 2.5.",
+  "evaluation": [
+    {
+      "campaign": "2024/25",
+      "eligible": "all verified 2024 league-phase events in repaired SQLite",
+      "ratings_snapshot": "2024-07-29 (last result July 14), frozen for all targets",
+      "fit": "2018/20/22 group matches, outcome verified in both ESPN and as-of world snapshot"
+    },
+    {
+      "campaign": "November 2026",
+      "eligible": "all 52 first issues ledger (independent same-match source original Current/Test and matrix-derived totals when no original total pick)",
+      "ratings_snapshot": "2026-10-31 (last result Oct 6), frozen for all targets",
+      "fit": "2018/20/22/24 group matches, outcome verified in both ESPN and as-of world snapshot"
+    }
+  ],
+  "metrics": [
+    "exact_top1",
+    "wdl",
+    "standardized_over_under_2.5",
+    "score_log_loss",
+    "paired_hits"
+  ],
+  "forward_rule": "Only known, senior men, league-phase, named scheduled fixtures in ESPN publication window; playoffs require a separate model scope.",
+  "result_integrity": "Two-source final score disagreement or contemporary event commentary marking an abandonment excludes that match from calibration, evaluation and post-event Elo updates; retain exclusions with raw evidence.",
+  "calibration_scope": "Separate fit for each of A, B, C and D league-phase, shared fixed Elo update recipe across international opponents."
+}
