@@ -1,0 +1,265 @@
+{
+  "eligible": 2218,
+  "exclusions": [],
+  "observations": "Earlier sampled B365 and closing B365C fields. No individual price timestamps or true first-book opening certified.",
+  "population": {
+    "2526": {
+      "dates": [
+        "2025-08-15",
+        "2026-05-24"
+      ],
+      "metrics": {
+        "arms": {
+          "latest_only": {
+            "metrics": {
+              "score_top1": {
+                "hits": 225,
+                "n": 1737
+              },
+              "score_top3": {
+                "hits": 582,
+                "n": 1737
+              },
+              "total_strict_full_win": {
+                "hits": 1011,
+                "n": 1737
+              },
+              "wdl": {
+                "hits": 923,
+                "n": 1737
+              }
+            },
+            "score_log_loss": 2.874941069248378,
+            "total_settlements": {
+              "FULL_LOSS": 726,
+              "FULL_WIN": 1011
+            },
+            "wdl_brier": 0.5828159218438768
+          },
+          "latest_plus_movement": {
+            "metrics": {
+              "score_top1": {
+                "hits": 229,
+                "n": 1737
+              },
+              "score_top3": {
+                "hits": 587,
+                "n": 1737
+              },
+              "total_strict_full_win": {
+                "hits": 1018,
+                "n": 1737
+              },
+              "wdl": {
+                "hits": 920,
+                "n": 1737
+              }
+            },
+            "score_log_loss": 2.8753003371792234,
+            "total_settlements": {
+              "FULL_LOSS": 719,
+              "FULL_WIN": 1018
+            },
+            "wdl_brier": 0.5832499252833736
+          }
+        },
+        "paired": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.0016113227813468983,
+              0.006366179009808684
+            ],
+            "eligible": 1737,
+            "gained": 8,
+            "lost": 4,
+            "matchday_blocks": 178,
+            "net_hits": 4,
+            "net_rate": 0.002302820955670697
+          },
+          "score_top3": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.0020874049127400777,
+              0.007966291590826905
+            ],
+            "eligible": 1737,
+            "gained": 13,
+            "lost": 8,
+            "matchday_blocks": 178,
+            "net_hits": 5,
+            "net_rate": 0.0028785261945883708
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.0035524475524475524,
+              0.011636720621385207
+            ],
+            "eligible": 1737,
+            "gained": 32,
+            "lost": 25,
+            "matchday_blocks": 178,
+            "net_hits": 7,
+            "net_rate": 0.004029936672423719
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.0060354596611923005,
+              0.0023244674034864792
+            ],
+            "eligible": 1737,
+            "gained": 5,
+            "lost": 8,
+            "matchday_blocks": 178,
+            "net_hits": -3,
+            "net_rate": -0.0017271157167530224
+          }
+        }
+      },
+      "missing": 0,
+      "paired": 1737,
+      "registered": 1737,
+      "total_movement_counts": {
+        "same_line_no_total_price_move": 374,
+        "same_line_price_move": 1363
+      }
+    },
+    "2627": {
+      "dates": [
+        "2026-08-15",
+        "2026-11-08"
+      ],
+      "metrics": {
+        "arms": {
+          "latest_only": {
+            "metrics": {
+              "score_top1": {
+                "hits": 57,
+                "n": 481
+              },
+              "score_top3": {
+                "hits": 164,
+                "n": 481
+              },
+              "total_strict_full_win": {
+                "hits": 290,
+                "n": 481
+              },
+              "wdl": {
+                "hits": 273,
+                "n": 481
+              }
+            },
+            "score_log_loss": 2.999346521233832,
+            "total_settlements": {
+              "FULL_LOSS": 191,
+              "FULL_WIN": 290
+            },
+            "wdl_brier": 0.5568158455851696
+          },
+          "latest_plus_movement": {
+            "metrics": {
+              "score_top1": {
+                "hits": 58,
+                "n": 481
+              },
+              "score_top3": {
+                "hits": 162,
+                "n": 481
+              },
+              "total_strict_full_win": {
+                "hits": 289,
+                "n": 481
+              },
+              "wdl": {
+                "hits": 273,
+                "n": 481
+              }
+            },
+            "score_log_loss": 2.9986971470515775,
+            "total_settlements": {
+              "FULL_LOSS": 192,
+              "FULL_WIN": 289
+            },
+            "wdl_brier": 0.5569930770797562
+          }
+        },
+        "paired": {
+          "score_top1": {
+            "date_block_bootstrap_95pct_rate": [
+              0.0,
+              0.006757521095756386
+            ],
+            "eligible": 481,
+            "gained": 1,
+            "lost": 0,
+            "matchday_blocks": 52,
+            "net_hits": 1,
+            "net_rate": 0.002079002079002079
+          },
+          "score_top3": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.014388859282944016,
+              0.006024096385542169
+            ],
+            "eligible": 481,
+            "gained": 2,
+            "lost": 4,
+            "matchday_blocks": 52,
+            "net_hits": -2,
+            "net_rate": -0.004158004158004158
+          },
+          "total_strict_full_win": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.016509921253703416,
+              0.009060040934742854
+            ],
+            "eligible": 481,
+            "gained": 3,
+            "lost": 4,
+            "matchday_blocks": 52,
+            "net_hits": -1,
+            "net_rate": -0.002079002079002079
+          },
+          "wdl": {
+            "date_block_bootstrap_95pct_rate": [
+              -0.009412319644839066,
+              0.010075566750629723
+            ],
+            "eligible": 481,
+            "gained": 3,
+            "lost": 3,
+            "matchday_blocks": 52,
+            "net_hits": 0,
+            "net_rate": 0.0
+          }
+        }
+      },
+      "missing": 0,
+      "paired": 481,
+      "registered": 481,
+      "total_movement_counts": {
+        "same_line_no_total_price_move": 84,
+        "same_line_price_move": 397
+      }
+    }
+  },
+  "protocol_sha256": "74720443591a2a99eea7ff9284dcd5a583fc30c81bd240a4007de89120b7f871",
+  "reference_sources_sha256": {
+    "workspace-updates/20261118-sequence/history/samples-2526.jsonl.gz": "61906571456d62bffb1919bb43285a3318f055aae923170f47e73392423814cc",
+    "workspace-updates/20261118-transformer/history/season-holdout.jsonl.gz": "93778606a2bf98ad15a8518c32f8cb3b0e05b8c9df9c116abb42af31ceb24566",
+    "workspace-updates/20261118-transformer/transfer/europe-2627-predictions.jsonl.gz": "8d5704f18ad5f1bae7d3f2a9d49bc7bdb589d650dec5f3b76473f2b1ffb363a8"
+  },
+  "row_file_sha256": "451b6c98ce3e043f5073ff9c4a8ecea965d37fa029ab9ff11cc879eef2e72841",
+  "scope": "Frozen design retrospective. Scores and source snapshots retrieved after the matches.",
+  "source_csv_sha256": {
+    "2526_D1.csv": "618301a4b39918225a8ccc57f0f839d675e1abd92fa3a3ccd9a67acd7c79dd7f",
+    "2526_E0.csv": "3e3a8352f9ada6789c508d6ca184424421fed56a30400904a4a327c583407e62",
+    "2526_F1.csv": "898b7ddcd373cfe955ae353b1a98cf7f1c8757ca10b69d53039f4e098e88f192",
+    "2526_I1.csv": "709ae279617d16af226312bcceac941e71241745ddaf950bdac2b83afad4fcbb",
+    "2526_SP1.csv": "4ca2e285f3ee0702f6bc55fcaa4f5a15cb3aef6220735a1d15398131e21d63f5",
+    "2627_D1.csv": "85b5ff5199866f452016473e927ff2431c05c7b2ae045b5edd3b7f5bb5847d2a",
+    "2627_E0.csv": "d598a5f681e1a9a4acf9dad9fb203b68da6f67e2d195678dbe99e95fbba14593",
+    "2627_F1.csv": "351303e69ffd3e18a25ac6f06463929faa3db6b86abbf2564709f3c5a9f92f31",
+    "2627_I1.csv": "91f517fedb41215a32e80faa8f4ec44e26d970e557c6c120a664686dbc4d22f0",
+    "2627_SP1.csv": "b4c9a5cc1139f30dbd1026679c360de4626ce97fe64ae62ff1ff8ba3af0b7828"
+  }
+}

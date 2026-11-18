@@ -1,0 +1,12 @@
+{
+  "arms": ["archived Bet365 plus goal intensities", "equal named-brand consensus", "inverse overround named-brand consensus"],
+  "formula": "Each available H/D/A triple is independently de-vigged. The equal arm averages these probability vectors. The inverse-overround arm assigns book b unnormalized weight 1 / max(sum(1/odds_b) - 1, 0.0001).",
+  "panel": ["B365", "BFD", "BMGM", "BV", "BW", "CL", "LB", "PS", "PP", "SKB"],
+  "availability": "One complete finite named closing triple per brand; exclude Max, Avg, exchanges and all opening columns. If fewer than three brands qualify, both alternatives retain the archived reference PMF, with fallback reported.",
+  "cohorts": ["All 1737 registered 2025/26 European historical fixtures", "All 481 eligible 2026/27 European historical fixtures through 2026-11-17"],
+  "role": "Fixed observational reanalysis of previously studied historical cohorts; algorithm and thresholds do not use their outcomes. Brand availability may differ between seasons. No automatic promotion; no certification of historical quote times.",
+  "constant": "Original archived baseline-score PMF and Bet365 2.5-goal fair Over share. Only W/D/L targets vary across arms.",
+  "spread": "Maximum of three side-specific interquartile ranges of the de-vigged bookmaker probabilities, grouped below 1pp, 1 to below 3pp, and at least 3pp.",
+  "goals": ["exact score Top1 and Top3", "W/D/L and strict Over/Under 2.5 hit counts", "exact-score and W/D/L log loss", "W/D/L multiclass Brier and over 2.5 binary Brier"],
+  "uncertainty": "2000 paired block-bootstrap draws by complete calendar matchday, separately by season, common random seed 20261118."
+}

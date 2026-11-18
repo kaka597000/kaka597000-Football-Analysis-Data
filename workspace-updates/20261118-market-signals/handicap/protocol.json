@@ -1,0 +1,16 @@
+{
+  "schema": "WCPP-AH-JOINT-RESEARCH-1",
+  "registered_at": "2026-11-18T06:24:13.832189+00:00",
+  "population": "All retained 1737 and 481 five-league European goal+closing market fixtures. Missing any complete, valid same-book closing AH pair is reported.",
+  "benchmark": "The fixed same-book 1X2 + actual 2.5 total closing Bet365 projection of the same joint goal prior.",
+  "candidate": "Add same-book Bet365 closing Asian handicap AHCh (home perspective), B365CAHH (home), B365CAHA (away). Convert the home adjusted score difference to average net stake result s over the two split quarter lines or the single half/integer line. De-vig the two decimal quotes by normalized reciprocals for fair home share q. On each matrix cell f=max(s,0)-q*abs(s). Starting at benchmark, use M(theta) proportional to benchmark*exp(theta*f) then reproject to the exact original WDL and totals targets. Fit one fixture-specific tilt to E_M[f]+0.01*theta=0; coefficient, data, sample and outcomes fixed before scoring. No model training or retrospective selection.",
+  "source": "Historical earlier/closing labels as archived; the comparison only uses closing columns and cannot certify individual original quote time.",
+  "score_metrics": [
+    "Top1",
+    "Top3",
+    "WDL",
+    "strict actual O/U full win excluding push",
+    "probability quality"
+  ],
+  "automatic_promotion": false
+}
