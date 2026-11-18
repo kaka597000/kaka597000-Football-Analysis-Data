@@ -1,0 +1,340 @@
+{
+  "checked_at": "2026-11-18T04:38:04.620078+00:00",
+  "code_pr": 47,
+  "data_pr": 27,
+  "source_code": "7458322a61534a907efd2211b551b419f6929da0",
+  "source_main_ci": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T04:22:01Z",
+    "databaseId": 44236819769,
+    "event": "push",
+    "headSha": "cea3972042dbfbd0e1123ee042f429823d792e87",
+    "status": "completed",
+    "updatedAt": "2026-11-18T04:23:21Z",
+    "url": "https://github.com/kaka597000/Football-Analysis/actions/runs/44236819769",
+    "steps": [
+      [
+        "Set up job",
+        "success"
+      ],
+      [
+        "Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Run python -m pip install -r requirements.txt -r requirements-test.txt",
+        "success"
+      ],
+      [
+        "Run python scripts/check_repository.py",
+        "success"
+      ],
+      [
+        "Run python scripts/run_tests.py",
+        "success"
+      ],
+      [
+        "Post Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Post Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Complete job",
+        "success"
+      ],
+      [
+        "Set up job",
+        "success"
+      ],
+      [
+        "Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Run python -m pip install -r requirements.txt lightgbm==4.6.0",
+        "success"
+      ],
+      [
+        "Run python scripts/run_tests.py --layer portable",
+        "success"
+      ],
+      [
+        "Post Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Post Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Complete job",
+        "success"
+      ],
+      [
+        "Set up job",
+        "success"
+      ],
+      [
+        "Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Run python -m pip install -r requirements.txt lightgbm==4.6.0",
+        "success"
+      ],
+      [
+        "Run python scripts/run_tests.py --layer portable",
+        "success"
+      ],
+      [
+        "Post Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Post Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Complete job",
+        "success"
+      ]
+    ]
+  },
+  "data_replay_ci": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T04:36:33Z",
+    "databaseId": 44238508777,
+    "event": "push",
+    "headSha": "5d19845284a016fab72f582e58527519a0d68fdc",
+    "status": "completed",
+    "updatedAt": "2026-11-18T04:36:55Z",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44238508777",
+    "steps": [
+      [
+        "Set up job",
+        "success"
+      ],
+      [
+        "Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Replay original markets, chronological histories, held-out predictions and six first issues",
+        "success"
+      ],
+      [
+        "Post Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Post Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Post Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Complete job",
+        "success"
+      ]
+    ]
+  },
+  "collector_on_main": {
+    "conclusion": "success",
+    "createdAt": "2026-11-18T04:36:35Z",
+    "databaseId": 44238513719,
+    "event": "workflow_dispatch",
+    "headSha": "5d19845284a016fab72f582e58527519a0d68fdc",
+    "status": "completed",
+    "updatedAt": "2026-11-18T04:37:48Z",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44238513719",
+    "steps": [
+      [
+        "Set up job",
+        "success"
+      ],
+      [
+        "Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Read pinned public code",
+        "success"
+      ],
+      [
+        "Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Select bounded job",
+        "success"
+      ],
+      [
+        "Read verified collector-only revision",
+        "success"
+      ],
+      [
+        "Install CPU inference and training dependencies",
+        "success"
+      ],
+      [
+        "Collect or train candidate only",
+        "success"
+      ],
+      [
+        "Restore scopes.json",
+        "success"
+      ],
+      [
+        "Collect kor.1 with audited public candidate fallback",
+        "success"
+      ],
+      [
+        "Validate bounded source-timed Nations League market snapshots",
+        "success"
+      ],
+      [
+        "Collect bounded Brazil Serie A market snapshots",
+        "success"
+      ],
+      [
+        "Collect bounded InferSports Nations fallback",
+        "success"
+      ],
+      [
+        "Capture and review locked future populations",
+        "success"
+      ],
+      [
+        "Review frozen Nations repair population",
+        "success"
+      ],
+      [
+        "Load frozen three-arm research reviewer",
+        "success"
+      ],
+      [
+        "Settle the registered Brazil calibration batch",
+        "success"
+      ],
+      [
+        "Load verified sequence research revision",
+        "success"
+      ],
+      [
+        "Review fixed sequence forecasts",
+        "success"
+      ],
+      [
+        "Measure prematch coverage for the registered fixtures",
+        "success"
+      ],
+      [
+        "Save private audit and data",
+        "success"
+      ],
+      [
+        "Post Load verified sequence research revision",
+        "success"
+      ],
+      [
+        "Post Load frozen three-arm research reviewer",
+        "success"
+      ],
+      [
+        "Post Read verified collector-only revision",
+        "success"
+      ],
+      [
+        "Post Run actions/setup-python@v5",
+        "success"
+      ],
+      [
+        "Post Read pinned public code",
+        "success"
+      ],
+      [
+        "Post Run actions/checkout@v4",
+        "success"
+      ],
+      [
+        "Complete job",
+        "success"
+      ]
+    ]
+  },
+  "cloud_results": {
+    "Review fixed sequence forecasts": {
+      "population": 6,
+      "settled": 0,
+      "pending": 6,
+      "plan_sha256": "25eb46a2c5e4ebfbc917c0c918cea68d03f2f3d6c010276f0269b42257fe9b7a"
+    },
+    "Measure prematch coverage for the registered fixtures": {
+      "coverage_counts": {
+        "latest_observation": {
+          "both_prior_games_reported_xg": 6,
+          "both_prior_games_shots": 6,
+          "both_prior_games_xg": 2,
+          "confirmed_lineups": 0,
+          "fresh_h2h_and_total": 6,
+          "open_file_date_and_teams": 6
+        },
+        "lineup_window": {
+          "awaiting_observation": 0,
+          "confirmed": 0,
+          "pending": 6,
+          "provider_unavailable": 0,
+          "queried_not_published": 0,
+          "window_not_sampled": 0
+        },
+        "original_first_issue": {
+          "confirmed_lineups": 0,
+          "timed_h2h_and_total": 6
+        }
+      },
+      "latest": "runs/20261118T043741367209Z.json",
+      "observed_through": "2026-11-18T04:37:41.593084+00:00",
+      "registered": 6,
+      "snapshot_sha256": "9c95ceab80a32e9dd4cb2cfb9af1621c41241e42e45db856b68e586c17a635a6",
+      "status": "prematch_observation"
+    }
+  },
+  "verified_data_commit_after_collection": "6688bd4b9aafcbe17046f5266b94dbb657fedfa6",
+  "original_registry": "923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013",
+  "matchday_timer": {
+    "workflow_id": 422189423,
+    "state": "active",
+    "url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/blob/main/.github/workflows/brazil-lineup-window.yml",
+    "window_status": "scheduled; actual lineup coverage requires observations before kickoff"
+  },
+  "rollback": {
+    "code_before": "4b2b4b7e0d1e400806966eb314a24325bbbe99f9",
+    "data_before": "126951ff94e04945d863003c60b28d2aad05f0a8",
+    "procedure": "Remove only the new sequence review, supplemental observation steps and matchday timer to stop collecting this batch. Keep historical data, forecasts and reviews under their original paths."
+  }
+}

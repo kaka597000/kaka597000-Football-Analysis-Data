@@ -53,3 +53,5 @@ REPLAY_OUT="$(mktemp -d)"
 PYTHONPATH="$ANALYSIS/runtime" python -m research_program.sequence_history --data . --out "$REPLAY_OUT"
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python "$EXP/history/run_models.py" --source "$ANALYSIS" --inputs "$REPLAY_OUT" --out "$REPLAY_OUT"
 ```
+
+[独立回放回执](replay-receipt.json) · [严格集成测试](integration.json) · [云端实际采样、复盘和回滚点](deployment.json) · [云端任务](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44238513719)
