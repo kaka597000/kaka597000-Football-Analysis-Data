@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "same_second_provider_score": 10,
+  "officially_resolved_conflicts": 1,
+  "all_results_corroborated": 11,
+  "unresolved_result_conflicts": 0,
+  "official_source": {
+    "provider": "Norges Fotballforbund",
+    "source_url": "https://www.fotball.no/landslag/norge-a-herrer/2026/disse-starter-mot-danmark2/",
+    "source_path": "/workspace/WCPP/reports/all-review-20261118-0818/friendly-results/raw/norway-official-denmark-report.html",
+    "source_sha256": "ed1de2ed11078659a51a7c92ab209a1fcdd994a3a87e9519e8384bff586b83de",
+    "http_status": 200,
+    "observed_at": "2026-11-18T00:24:23.562987+00:00",
+    "published_date": "2026-11-17",
+    "title": "Avgjorde på overtid: - Tidenes landslagsår",
+    "match_number": "99101000922",
+    "venue": "Parken, København",
+    "kickoff_local": "17.11.2026 20:45",
+    "home_score": 2,
+    "away_score": 3,
+    "half_time": {
+      "home": 2,
+      "away": 1
+    },
+    "plain_text_extract": "/workspace/WCPP/reports/all-review-20261118-0818/friendly-results/norway-official-denmark-report-extract.txt"
+  },
+  "provider_discrepancy_reason": "UNKNOWN; conflicting InferSports raw value retained",
+  "goal_minute_disagreements": [
+    {
+      "actor": "Martin Ødegaard",
+      "espn": "83",
+      "nff": "84",
+      "handling": "Keep source-specific minutes."
+    },
+    {
+      "actor": "Erling Braut Haaland penalty",
+      "espn": "90+6",
+      "nff": "90 with narrative stoppage time",
+      "handling": "Official page supports stoppage-time goal; does not independently confirm +6."
+    }
+  ],
+  "regulation_basis": "ESPN two-half FT evidence; secondary final scores corroborate outcome"
+}

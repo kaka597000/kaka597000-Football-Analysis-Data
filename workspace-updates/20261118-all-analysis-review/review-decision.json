@@ -1,0 +1,229 @@
+{
+  "decision": [
+    "KEEP_ACTIVE_PARAMETERS",
+    "RETAIN_ALL_FIRST_AND_REVISION_OUTCOMES",
+    "COMPLETE_EXISTING_FORWARD_PLANS",
+    "PRIORITIZE_MANUAL_OVERRIDE_AND_TAIL_RESEARCH"
+  ],
+  "model_promoted": false,
+  "parameters_changed": false,
+  "new_training_run": false,
+  "data_queue_completed": 18,
+  "xg_forward_completed": 8,
+  "all_13_xg_arms_evaluated": true,
+  "basis": {
+    "comprehensive_first": {
+      "population": 11,
+      "settled": 11,
+      "pending": 0,
+      "primary_n": 11,
+      "primary_hits": 2,
+      "primary_accuracy": 0.18181818181818182,
+      "primary_wilson95": [
+        0.05136768974608513,
+        0.4769805619608442
+      ],
+      "wdl_n": 11,
+      "wdl_hits": 5,
+      "wdl_accuracy": 0.45454545454545453,
+      "total_n": 11,
+      "total_non_push_n": 10,
+      "total_strict_full_win_rate": 0.4,
+      "total_settlements": {
+        "win": 4,
+        "half_win": 1,
+        "push": 1,
+        "half_loss": 0,
+        "loss": 5
+      },
+      "coverage": {
+        "primary": 1.0,
+        "wdl": 1.0,
+        "total": 1.0
+      }
+    },
+    "manual_net_vs_locked_xg": {
+      "n": 8,
+      "changed_right": 1,
+      "changed_wrong": 2,
+      "net_hits": -1,
+      "descriptive_match_bootstrap95": [
+        -0.5,
+        0.25
+      ],
+      "single_batch_not_promotion_evidence": true,
+      "rows": [
+        {
+          "match_id": "espn:401861189",
+          "name": "威尔士—葡萄牙",
+          "version": "NATIONS-XG-A-shotmap-75-8c1ebdc58a",
+          "comprehensive": "1-2",
+          "candidate": "1-1",
+          "actual": "2-3",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861190",
+          "name": "乌克兰—格鲁吉亚",
+          "version": "NATIONS-XG-B-expected-75-8c1ebdc58a",
+          "comprehensive": "0-0",
+          "candidate": "1-0",
+          "actual": "1-0",
+          "comprehensive_hit": false,
+          "candidate_hit": true
+        },
+        {
+          "match_id": "espn:401861191",
+          "name": "匈牙利—北爱尔兰",
+          "version": "NATIONS-XG-B-expected-75-8c1ebdc58a",
+          "comprehensive": "1-0",
+          "candidate": "1-0",
+          "actual": "1-1",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861192",
+          "name": "爱尔兰—科索沃",
+          "version": "NATIONS-XG-B-expected-75-8c1ebdc58a",
+          "comprehensive": "1-0",
+          "candidate": "1-0",
+          "actual": "3-0",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861193",
+          "name": "以色列—奥地利",
+          "version": "NATIONS-XG-B-expected-75-8c1ebdc58a",
+          "comprehensive": "0-1",
+          "candidate": "1-1",
+          "actual": "1-1",
+          "comprehensive_hit": false,
+          "candidate_hit": true
+        },
+        {
+          "match_id": "espn:401861194",
+          "name": "丹麦—挪威",
+          "version": "NATIONS-XG-A-shotmap-75-8c1ebdc58a",
+          "comprehensive": "2-1",
+          "candidate": "1-1",
+          "actual": "2-3",
+          "comprehensive_hit": false,
+          "candidate_hit": false
+        },
+        {
+          "match_id": "espn:401861195",
+          "name": "波兰—瑞典",
+          "version": "NATIONS-XG-B-expected-75-8c1ebdc58a",
+          "comprehensive": "1-1",
+          "candidate": "1-1",
+          "actual": "1-1",
+          "comprehensive_hit": true,
+          "candidate_hit": true
+        },
+        {
+          "match_id": "espn:401861196",
+          "name": "波黑—罗马尼亚",
+          "version": "NATIONS-XG-B-expected-75-8c1ebdc58a",
+          "comprehensive": "2-1",
+          "candidate": "1-1",
+          "actual": "2-1",
+          "comprehensive_hit": true,
+          "candidate_hit": false
+        }
+      ]
+    },
+    "xg_selected_quality": {
+      "A": {
+        "goals": {
+          "n": 2,
+          "primary_hits": 0,
+          "wdl_hits": 1,
+          "score_log_loss": 3.604211141249851,
+          "wdl_brier_sum3": 0.6853423150020557
+        },
+        "shotmap-75": {
+          "n": 2,
+          "primary_hits": 0,
+          "wdl_hits": 1,
+          "score_log_loss": 3.5889836518513674,
+          "wdl_brier_sum3": 0.6797850556172281
+        }
+      },
+      "B": {
+        "goals": {
+          "n": 6,
+          "primary_hits": 3,
+          "wdl_hits": 3,
+          "score_log_loss": 2.318322532414226,
+          "wdl_brier_sum3": 0.6122466328183067
+        },
+        "expected-75": {
+          "n": 6,
+          "primary_hits": 3,
+          "wdl_hits": 3,
+          "score_log_loss": 2.331607884767567,
+          "wdl_brier_sum3": 0.626162880256513
+        }
+      }
+    },
+    "japan_revision": [
+      {
+        "match_id": "fifa.friendly:401916336",
+        "name": "日本—巴拉圭",
+        "competition": "fifa.friendly",
+        "league_level": null,
+        "track": "comprehensive",
+        "role": "comprehensive",
+        "version": "WCPP-COMPREHENSIVE-REPAIR-1",
+        "freeze_id": "3af1d44fae5488ca-v000002",
+        "recorded_at": "2026-11-17T21:04:46.100686+08:00",
+        "record_sha256": "4a54e02234d67d3a14b6e7f53800aaa08a8c2543b3e94f6df796bb7f7d4b84a7",
+        "evaluation_role": "SEPARATE_REVISION",
+        "revision": 2,
+        "settled": true,
+        "actual": "1-2",
+        "primary": "1-1",
+        "primary_hit": false,
+        "wdl": "主胜",
+        "wdl_hit": false,
+        "total_line": 2.75,
+        "total_direction": "under",
+        "total_eligible": true,
+        "total_settlement": "half_loss",
+        "quote": {
+          "as_of": "2026-11-17T12:59:20Z",
+          "bookmaker": "m8bet",
+          "format": "decimal",
+          "handicap_components": [
+            2.5,
+            3.0
+          ],
+          "line": 2.75,
+          "market_type": "totals",
+          "period": "full_time",
+          "prices": {
+            "over": 1.89,
+            "under": 1.93
+          },
+          "provider": "InferSports",
+          "query_time": "2026-11-17T13:00:56.302633+00:00",
+          "source_quote_time": "2026-11-17T12:59:20Z",
+          "source_sha256": "e252a25ca9859c07ebe96b463260074b4a5a00360eed546e8a654068b78fe933",
+          "source_url": "https://api.infersports.dev/v1/events/evt_NSJZ3XGJ/odds?markets=1x2%2Casian_handicap%2Ctotals&period=full_time&format=decimal",
+          "status": "open"
+        }
+      }
+    ]
+  },
+  "research_decisions": [
+    "本轮实际完成13个原锁定xG权重/字段方案的未来同场结算，三个命中项目均没有相对进球基线增益；不提高xG权重或宣称已优化成功。",
+    "人工改分优先研究零球与一球路径、第三国主场效应，以及比分/大小球各自选择。当前8场已是已观察诊断样本，后续改规则不能再把这8场称为未见验证。",
+    "日本10人换阵仍允许继续研究；进攻产出与防守/定位球风险分别评估，不能把大幅轮换自动等同小球或仅下调进攻。",
+    "强弱悬殊友谊赛的历史强度收缩和高比分尾部需要单独实验。巴西场刷新模型仍给新加坡约1.79、巴西约2.30模型均值；不因本场直接手工加2球。",
+    "继续保存原候选、刷新候选、xG和综合各自独立结果，下一次实际赛事分析仍按真实数据执行研究，不用本批失败阻断分析。"
+  ],
+  "next_check": "下一次实际赛前分析先记录候选/配方与比较节点，后续用新开赛比赛检验；已结束18场和本次8场xG完整保留为首轮前向证据。"
+}
