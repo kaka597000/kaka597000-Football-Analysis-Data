@@ -1,0 +1,83 @@
+{
+  "reproduced_at": "2026-11-18T03:17:27.165186+00:00",
+  "method": "Rebuilt actual Current rows from the retained inputs into an initially empty temporary directory. Refit both development artifacts, evaluated row-level predictions and fit the final forward trial artifact from the two repositories into that directory. Compared compressed and uncompressed files byte for byte.",
+  "commands": [
+    "python \"$DIR/prepare_actual_current.py\" --data-root . --out \"$TMP\"",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python \"$DIR/fit_driver.py\" --source \"$ANALYSIS\" --data . --out \"$TMP\""
+  ],
+  "prepare_returncode": 0,
+  "fit_returncode": 0,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "script_sha256": {
+    "fit_driver.py": "0f53231c3e12b931f13f0db72940ed5e6fbe792f05de6e9b21712185a8822083",
+    "prepare_actual_current.py": "6db5cdcefc2aaa8ec229f0cfedc1cb0a434b1a949f5332561494bf8fb748e30b",
+    "three_arm_model.py": "3af3ef83185a75a9bca82659b32d322df168153a99a85f2f0da2080e5c14c6d8"
+  },
+  "compared_file_count": 10,
+  "comparisons": {
+    "actual_current.jsonl.gz": {
+      "bytes": 1850514,
+      "reference_sha256": "ea28d93a6740c4d17e93470b7b88d48fa0ef56237d8b84f80dc9311392e175af",
+      "replay_sha256": "ea28d93a6740c4d17e93470b7b88d48fa0ef56237d8b84f80dc9311392e175af",
+      "identical": true
+    },
+    "actual_current_sources.json": {
+      "bytes": 90854,
+      "reference_sha256": "2586ab39f76955cb4bcc9eab57de5c4859f3998d3bd9d74d79274625e699b842",
+      "replay_sha256": "2586ab39f76955cb4bcc9eab57de5c4859f3998d3bd9d74d79274625e699b842",
+      "identical": true
+    },
+    "historical-sources.json": {
+      "bytes": 2928,
+      "reference_sha256": "6caa863020cab19cb979ebbebbba8c153a33faa106e5be50b81aa46c9179accf",
+      "replay_sha256": "6caa863020cab19cb979ebbebbba8c153a33faa106e5be50b81aa46c9179accf",
+      "identical": true
+    },
+    "season-training-artifact.json": {
+      "bytes": 1014,
+      "reference_sha256": "cdf58d4bf6c85831747dd96843b53e9f8cecee785fc90cd735ed80aac5766463",
+      "replay_sha256": "cdf58d4bf6c85831747dd96843b53e9f8cecee785fc90cd735ed80aac5766463",
+      "identical": true
+    },
+    "season-holdout.jsonl.gz": {
+      "bytes": 267775,
+      "reference_sha256": "89bc4daec0cd5da81669cb4cef1ad81243f2aaf720fb0238ccda664d1bcf7d9e",
+      "replay_sha256": "89bc4daec0cd5da81669cb4cef1ad81243f2aaf720fb0238ccda664d1bcf7d9e",
+      "identical": true
+    },
+    "season-validation.json": {
+      "bytes": 22903,
+      "reference_sha256": "0f6186e8c9b7f88f895282674e0208d237714082f9b21c329a00eb8357ca5c3c",
+      "replay_sha256": "0f6186e8c9b7f88f895282674e0208d237714082f9b21c329a00eb8357ca5c3c",
+      "identical": true
+    },
+    "early-calibration-artifact.json": {
+      "bytes": 2462,
+      "reference_sha256": "f5c7972e78f9388b7feed48d6577207909b92a605a708011c535abaed4f5741f",
+      "replay_sha256": "f5c7972e78f9388b7feed48d6577207909b92a605a708011c535abaed4f5741f",
+      "identical": true
+    },
+    "frozen-current-holdout.jsonl.gz": {
+      "bytes": 575,
+      "reference_sha256": "a3f1767503ac680056f0e8dd3c80ce137211e82a986dd9bb081680c4df74cf11",
+      "replay_sha256": "a3f1767503ac680056f0e8dd3c80ce137211e82a986dd9bb081680c4df74cf11",
+      "identical": true
+    },
+    "frozen-current-validation.json": {
+      "bytes": 3266,
+      "reference_sha256": "7e71ac0bcca87d3a6c031b831f9f4ec798db3a90a98098d16a899bb09724a717",
+      "replay_sha256": "7e71ac0bcca87d3a6c031b831f9f4ec798db3a90a98098d16a899bb09724a717",
+      "identical": true
+    },
+    "artifact.json": {
+      "bytes": 2484,
+      "reference_sha256": "3a2210037ebfeb3df59dff5fc4049a89443f43139fb3dbacf642fb407f0d1908",
+      "replay_sha256": "3a2210037ebfeb3df59dff5fc4049a89443f43139fb3dbacf642fb407f0d1908",
+      "identical": true
+    }
+  }
+}
