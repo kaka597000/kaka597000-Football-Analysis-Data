@@ -1,4 +1,4 @@
-# 模块治理、接口收敛与冻结验证
+# 第一批：模块治理、接口收敛与冻结验证
 
 本次整理保留全部原始数据、训练工件、冻结与源码锁定点。源码仓新增机器可读模块/路由清单、有限候选检查和公开复盘 API；数据仓把复盘轮询中的跨仓私有调用集中到 `runtime/source_review_api.py` 兼容层。现有固定版本没有公开 API 时仍执行相同旧函数；后续迁移源码 pin 后使用 v1。工作流未迁移、未部署。
 
@@ -36,3 +36,5 @@ diff -u workspace-updates/20261118-governance/consolidation.json /tmp/consolidat
 ```
 
 使用原三组 `verify.py --source "$ANALYSIS"` 可重放全部冻结。没有删除数据或改活动工件；revert 对应整理提交即可回滚。保留 legacy 兼容层和 overlay，直到分别完成运行 pin 迁移及冻结协议兼容验证。本次不合并、不部署、不自动晋级。
+
+第二批继续整理、拟议版本迁移及最新验收见 [后续交付](continuation/README.md)，第一批“工作流未迁移”描述的是当时提交。

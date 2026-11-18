@@ -3,11 +3,11 @@
   "source_repository": "kaka597000/Football-Analysis",
   "review_api_version": 1,
   "legacy_api_pin": "3fd411a4a34769e3192816631f2fa90948ad4ac9",
-  "workflow_sha256": "d9aa3930c1292d764a734f9be2811b41b5a08f81fcb01c6193852a66d3b277af",
+  "workflow_sha256": "2fc8d9b2f86597206616de0e7bf906086173900105a18a15495d4059e1ef8744",
   "workflow_pins": {
     "code": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
     "collector-code": "fbed25e9648e4ba4061042b7f97b6a2f23f1213c",
-    "three-arm-code": "3fd411a4a34769e3192816631f2fa90948ad4ac9",
+    "three-arm-code": "8534d90f801abff8ace07938f9cc104feeaac407",
     "sequence-code": "7458322a61534a907efd2211b551b419f6929da0",
     "transformer-code": "0751528579d97587fb649ebea6ad51d148de804b"
   },
@@ -45,5 +45,19 @@
     "future/ucl-bundle-v2/manifest.json": "343e3914f725f89799cd7e0bbbbb420de4bc52f2ef6fa9885f8e209ec0b25bea",
     "runtime/install_forward_overlay.py": "48f2d6cf6263a83ee8955e468c8d71592e91c4b8fba98151b3bfe78429d589fe"
   },
-  "automatic_promotion": false
+  "automatic_promotion": false,
+  "workflow_baseline_sha256": "d9aa3930c1292d764a734f9be2811b41b5a08f81fcb01c6193852a66d3b277af",
+  "workflow_pin_migration": {
+    "role": "three-arm-code",
+    "from": "3fd411a4a34769e3192816631f2fa90948ad4ac9",
+    "to": "8534d90f801abff8ace07938f9cc104feeaac407",
+    "reason": "public API v1; original collector and three-arm reviewer implementations identical"
+  },
+  "managed_workflows": {
+    "unattended.yml": null,
+    "three-arm-validation.yml": "three-arm-code",
+    "sequence-validation.yml": "sequence-code",
+    "transformer-validation.yml": "transformer-code",
+    "brazil-lineup-window.yml": "sequence-code"
+  }
 }

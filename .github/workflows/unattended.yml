@@ -46,11 +46,14 @@ jobs:
             workspace-updates/20261118-sequence/forward
             workspace-updates/20261118-transformer/forward
             workspace-updates/20261118-sequence/coverage
+      - name: Read source versions
+        id: versions
+        run: python3 private-state/runtime/source_versions.py --github-output "$GITHUB_OUTPUT"
       - name: Read pinned public code
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 6639867d502a2dfe53a9a235c8761f8ee6b91533
+          ref: ${{ steps.versions.outputs.code }}
           path: code
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -70,7 +73,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: fbed25e9648e4ba4061042b7f97b6a2f23f1213c
+          ref: ${{ steps.versions.outputs.collector_code }}
           path: collector-code
           persist-credentials: false
       - name: Install CPU inference and training dependencies
@@ -176,7 +179,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 3fd411a4a34769e3192816631f2fa90948ad4ac9
+          ref: ${{ steps.versions.outputs.three_arm_code }}
           path: three-arm-code
           persist-credentials: false
       - name: Settle the registered Brazil calibration batch
@@ -194,7 +197,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 7458322a61534a907efd2211b551b419f6929da0
+          ref: ${{ steps.versions.outputs.sequence_code }}
           path: sequence-code
           persist-credentials: false
       - name: Review fixed sequence forecasts
@@ -217,7 +220,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 0751528579d97587fb649ebea6ad51d148de804b
+          ref: ${{ steps.versions.outputs.transformer_code }}
           path: transformer-code
           persist-credentials: false
       - name: Settle the fixed four-model Transformer comparison

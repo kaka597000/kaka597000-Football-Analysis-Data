@@ -2,6 +2,8 @@ name: Replay registered sequence-model experiment
 on:
   pull_request:
     paths: &evidence_paths
+      - config/source-contract.json
+      - runtime/source_versions.py
       - .github/workflows/sequence-validation.yml
       - .github/workflows/unattended.yml
       - .github/workflows/brazil-lineup-window.yml
@@ -36,6 +38,8 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /config/source-contract.json
+            /runtime/source_versions.py
             /workspace-updates/20261118-sequence/
             /workspace-updates/20261118-three-arm/training/
             /workspace-updates/20261118-three-arm/identity/
@@ -47,10 +51,13 @@ jobs:
             /future/bundle-v2/objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013
             /workspace-updates/20261118-three-arm/batch/plan.json
             /market/runs/*-bra1/
+      - name: Read source versions
+        id: versions
+        run: python3 data/runtime/source_versions.py --github-output "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 7458322a61534a907efd2211b551b419f6929da0
+          ref: ${{ steps.versions.outputs.sequence_code }}
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5

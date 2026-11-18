@@ -2,6 +2,8 @@ name: Replay six registered Brazil forecasts
 on:
   pull_request:
     paths:
+      - config/source-contract.json
+      - runtime/source_versions.py
       - .github/workflows/three-arm-validation.yml
       - .github/workflows/unattended.yml
       - runtime/source_review_api.py
@@ -12,6 +14,8 @@ on:
   push:
     branches: [main, research/three-arm-forward-20261118]
     paths:
+      - config/source-contract.json
+      - runtime/source_versions.py
       - .github/workflows/three-arm-validation.yml
       - .github/workflows/unattended.yml
       - runtime/source_review_api.py
@@ -36,6 +40,8 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /config/source-contract.json
+            /runtime/source_versions.py
             /runtime/source_review_api.py
             /runtime/poll_three_arm_results.py
             /runtime/test_poll_three_arm_results.py
@@ -43,10 +49,13 @@ jobs:
             /workspace-updates/20261115-remaining-nations-brazil/remaining-evidence.tar.gz
             /future/bundle-v2/objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013
             /market/runs/44223152835-1-bra1/
+      - name: Read source versions
+        id: versions
+        run: python3 data/runtime/source_versions.py --github-output "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 3fd411a4a34769e3192816631f2fa90948ad4ac9
+          ref: ${{ steps.versions.outputs.three_arm_code }}
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5
