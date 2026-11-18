@@ -1,0 +1,85 @@
+{
+  "schema": "WCPP-SEQUENCE-FORWARD-REGISTRATION-1",
+  "recorded_at": "2026-11-18T04:02:09.468943+00:00",
+  "fixtures": [
+    {
+      "match_id": "espn:401841315",
+      "home": "espn:3456",
+      "away": "espn:2674",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-18T22:30Z",
+      "neutral": false,
+      "identity_sha256": "036c1b3e5c25fb2e8192db4006c4ce0fc10a0108e3c60d76e3acd131f28fed47"
+    },
+    {
+      "match_id": "espn:401841310",
+      "home": "espn:4936",
+      "away": "espn:9318",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-18T23:00Z",
+      "neutral": false,
+      "identity_sha256": "9fd6429a01b223b2ccfd713bd0b9a1af8d18e1484a3a77352afa5d266d9344f4"
+    },
+    {
+      "match_id": "espn:401841313",
+      "home": "espn:819",
+      "away": "espn:3458",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-18T23:30Z",
+      "neutral": false,
+      "identity_sha256": "6ad1f177f8957765013028ec8c28a58d3de4b0ed11b50cbe5aabc2d0f678935f"
+    },
+    {
+      "match_id": "espn:401841314",
+      "home": "espn:2022",
+      "away": "espn:2029",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-18T23:30Z",
+      "neutral": false,
+      "identity_sha256": "628d39b3c8a6fc0acfa080e7bf8174d4333f3963763c0fb4c501c2114a368dd9"
+    },
+    {
+      "match_id": "espn:401841312",
+      "home": "espn:6273",
+      "away": "espn:9967",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-19T00:30Z",
+      "neutral": false,
+      "identity_sha256": "542fbc1880c4871f074a673efabb109f0adace050e9851b3932e1b048f87faa9"
+    },
+    {
+      "match_id": "espn:401841316",
+      "home": "espn:874",
+      "away": "espn:6086",
+      "cohort": "bra.1",
+      "stage": "regular",
+      "kickoff_at": "2026-11-19T00:30Z",
+      "neutral": false,
+      "identity_sha256": "dc1ddaab2d445de9a5f10a150fd7e4ced600b395a71f3fab9804cd389b618705"
+    }
+  ],
+  "scoreboard_source": "market/runs/44223152835-1-bra1/identity.json",
+  "scoreboard_sha256": "d47630e3f3961be32601079ea3be52898dc30f902612da8c1478fd57d2e9366e",
+  "automatic_promotion": false,
+  "reference_population": "All six already announced Brazil fixtures; independent prospective sequence experiment at one fresh common cutoff. Existing first issues remain separate.",
+  "baseline": "Active Current score matrix projected to common paired 1X2 and Asian total at market weight 1. Europe development uses date-separated archived goals-only proxy and Bet365 close.",
+  "arms": [
+    "market_baseline",
+    "lightgbm",
+    "lstm"
+  ],
+  "sequence": "Last five completed domestic league matches strictly before the fixture day; same per-step goals for, against, home indicator and validity masks. Same history and baseline expected goals for both learners.",
+  "fitting": "Europe 2024/25 fixed development training, ensuing 2025/26 season evaluation; fixed recipe refit eligible completed rows before the future forecasts. No tuning on the six games. Fixed Poisson offset and bounded log-rate shift (+/-0.35), ridge 2. LSTM one 6-unit layer / 60 epochs, Adam .012, decay .01; LightGBM 40 trees, rate .05, 7 leaves, min 48, lambda 12. Seed 20261118.",
+  "metrics": [
+    "unique MAP exact score as primary",
+    "marginal 1X2",
+    "strict full win at same actual Asian line, push excluded",
+    "paired gained and lost, coverage and probability quality"
+  ],
+  "quality": "First seen vs source timestamp stored separately. Newly obtained supplemental xG and lineup data are tracked independently of fixed matched-input experiment."
+}

@@ -1,0 +1,62 @@
+name: Replay registered sequence-model experiment
+on:
+  pull_request:
+    paths: &evidence_paths
+      - .github/workflows/sequence-validation.yml
+      - .github/workflows/unattended.yml
+      - .github/workflows/brazil-lineup-window.yml
+      - workspace-updates/20261118-sequence/**
+      - workspace-updates/20261118-three-arm/training/**
+      - workspace-updates/20261118-three-arm/identity/**
+      - workspace-updates/20261118-three-arm/registration/protocol.json
+      - workspace-updates/20261105-remaining-nine-market/parts/research.tar.gz.part000
+      - workspace-updates/20261112-elo-kelly/diagnostic-results.tar.gz
+      - workspace-updates/20261112-post32/elo-independent-temporal.tar.gz
+      - workspace-updates/20261115-remaining-nations-brazil/remaining-evidence.tar.gz
+      - workspace-updates/20261118-three-arm/batch/plan.json
+      - market/runs/44233773352-1-bra1/**
+      - future/bundle-v2/objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013
+  push:
+    branches: [main, research/sequence-evidence-20261118]
+    paths: *evidence_paths
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: data
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /workspace-updates/20261118-sequence/
+            /workspace-updates/20261118-three-arm/training/
+            /workspace-updates/20261118-three-arm/identity/
+            /workspace-updates/20261118-three-arm/registration/protocol.json
+            /workspace-updates/20261105-remaining-nine-market/parts/research.tar.gz.part000
+            /workspace-updates/20261112-elo-kelly/diagnostic-results.tar.gz
+            /workspace-updates/20261112-post32/elo-independent-temporal.tar.gz
+            /workspace-updates/20261115-remaining-nations-brazil/remaining-evidence.tar.gz
+            /future/bundle-v2/objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013
+            /workspace-updates/20261118-three-arm/batch/plan.json
+            /market/runs/*-bra1/
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 7458322a61534a907efd2211b551b419f6929da0
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replay original markets, chronological histories, held-out predictions and six first issues
+        run: |
+          python -m pip install -r source/requirements.txt
+          python data/workspace-updates/20261118-sequence/verify.py --source source

@@ -1,0 +1,11 @@
+{
+  "publication": "Historical tactical task, outside the prematch football score metric",
+  "data": "StatsBomb Open Data, UEFA Euro 2024, competition 55, season 282",
+  "source_commit": "4b73468fc5b0f1950f9f66fada70ad3a4f9327cb",
+  "task": "Identify the receiver conditional on a successfully completed regular-play pass in the first half, given passer and origin. Use the starting XI until the first personnel change in the passing team. Predict among the other ten players.",
+  "training": "All group-stage fixtures; order by kickoff. UEFA Euro 2024 knockout fixtures are the sole holdout. Freeze the split and recipe before measuring holdout results.",
+  "treatments": ["smoothed historical passer-to-receiver frequency", "shared pair scorer using direct dyad, prior node totals, positions and locations", "same scorer additionally using one directed message-passing layer over the passing graph as it existed before the current pass"],
+  "training_recipe": "Twelve hidden units with tanh, categorical cross entropy, Adam learning rate 0.003, 16 epochs, batch 128, weight decay 0.0001, seed 20261118. Fixed for both trained arms.",
+  "metrics": ["exact recipient top1", "recipient multiclass log loss", "coverage vs all complete first-half regular-play passes", "paired 95% interval clustered by held-out match"],
+  "heldout_tuning": false
+}

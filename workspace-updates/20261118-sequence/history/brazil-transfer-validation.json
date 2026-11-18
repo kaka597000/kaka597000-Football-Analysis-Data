@@ -1,0 +1,263 @@
+{
+  "baseline": "Original frozen Current PMF projected once onto its complete timestamped original market panel.",
+  "cutoff": "2026-10-01T00:00:00Z",
+  "fit_n": 3036,
+  "inventory": [
+    {
+      "eligible": false,
+      "freeze_cutoff": "2026-10-17T01:58:18.813837+08:00",
+      "match_id": "espn:401841275",
+      "reason": "original forecast lacks a complete matched h2h and Asian total pair",
+      "valid_steps": [
+        5,
+        5
+      ]
+    },
+    {
+      "eligible": false,
+      "freeze_cutoff": "2026-10-19T21:49:48.959896+08:00",
+      "match_id": "espn:401841272",
+      "reason": "original forecast lacks a complete matched h2h and Asian total pair",
+      "valid_steps": [
+        5,
+        5
+      ]
+    },
+    {
+      "eligible": false,
+      "freeze_cutoff": "2026-10-24T19:07:14.278914+08:00",
+      "match_id": "espn:401841282",
+      "reason": "original forecast lacks a complete matched h2h and Asian total pair",
+      "valid_steps": [
+        5,
+        5
+      ]
+    },
+    {
+      "eligible": false,
+      "freeze_cutoff": "2026-10-26T16:16:34.112722+08:00",
+      "match_id": "espn:401841286",
+      "reason": "original forecast lacks a complete matched h2h and Asian total pair",
+      "valid_steps": [
+        5,
+        5
+      ]
+    },
+    {
+      "eligible": false,
+      "freeze_cutoff": "2026-10-28T17:26:37.549861+08:00",
+      "match_id": "espn:401841289",
+      "reason": "original forecast lacks a complete matched h2h and Asian total pair",
+      "valid_steps": [
+        5,
+        5
+      ]
+    },
+    {
+      "eligible": false,
+      "freeze_cutoff": "2026-10-29T21:39:20.807147+08:00",
+      "match_id": "espn:401841290",
+      "reason": "original forecast lacks a complete matched h2h and Asian total pair",
+      "valid_steps": [
+        0,
+        0
+      ]
+    },
+    {
+      "eligible": false,
+      "freeze_cutoff": "2026-10-30T21:39:45.661794+08:00",
+      "match_id": "espn:401841295",
+      "reason": "original forecast lacks a complete matched h2h and Asian total pair",
+      "valid_steps": [
+        5,
+        5
+      ]
+    },
+    {
+      "eligible": true,
+      "freeze_cutoff": "2026-11-14T19:02:13.094204+00:00",
+      "match_id": "espn:401841311",
+      "valid_steps": [
+        5,
+        5
+      ]
+    },
+    {
+      "eligible": true,
+      "freeze_cutoff": "2026-11-14T19:02:14.446261+00:00",
+      "match_id": "espn:401841175",
+      "valid_steps": [
+        5,
+        5
+      ]
+    }
+  ],
+  "mode": "Historical transfer replay. All score labels used for fitting were European, through May 24, 2026.",
+  "scope": "Retained Brazilian Serie A Current freezes; only rows with paired market are eligible. Historical state is reconstructed from evidence already observed at the original cutoff. Later schedules check the sequence of fixture identities only.",
+  "source_sha256": {
+    "actual_current.jsonl.gz": "ea28d93a6740c4d17e93470b7b88d48fa0ef56237d8b84f80dc9311392e175af",
+    "brazil-transfer-artifact.json": "32674d978bc93aaa03bdf74af3cd88e695c207752f3327d78e284f8f30eeb5f1",
+    "brazil-transfer-rows.jsonl.gz": "c36eadeb9033bb77f5c00e3060657d679d44c743485a8dde67c7fd051b16b064",
+    "sequences.json": "7f3c8253bce847a74406f5f30ca1675b3906f23c5e747920537fc544eb333338"
+  },
+  "summary": {
+    "arms": {
+      "baseline": {
+        "denominators": {
+          "score_top1": 2,
+          "total_strict_full_win": 2,
+          "wdl": 2
+        },
+        "hits": {
+          "score_top1": 0,
+          "total_strict_full_win": 1,
+          "wdl": 1
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.18702551951078097,
+          "score_log_loss": 2.3924139372043403,
+          "wdl_brier": 0.4717691805050598,
+          "wdl_log_loss": 0.8279172972390363
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 1,
+          "FULL_WIN": 1
+        }
+      },
+      "lightgbm": {
+        "denominators": {
+          "score_top1": 2,
+          "total_strict_full_win": 2,
+          "wdl": 2
+        },
+        "hits": {
+          "score_top1": 0,
+          "total_strict_full_win": 1,
+          "wdl": 1
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.18166026572206673,
+          "score_log_loss": 2.3752995223907805,
+          "wdl_brier": 0.471131466923763,
+          "wdl_log_loss": 0.8264782665788439
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 1,
+          "FULL_WIN": 1
+        }
+      },
+      "lstm": {
+        "denominators": {
+          "score_top1": 2,
+          "total_strict_full_win": 2,
+          "wdl": 2
+        },
+        "hits": {
+          "score_top1": 0,
+          "total_strict_full_win": 1,
+          "wdl": 1
+        },
+        "probability_quality": {
+          "over_full_win_brier_excluding_push": 0.18715184809102411,
+          "score_log_loss": 2.381601691196371,
+          "wdl_brier": 0.4686736282807996,
+          "wdl_log_loss": 0.8218028199124336
+        },
+        "settlement_counts": {
+          "FULL_LOSS": 1,
+          "FULL_WIN": 1
+        }
+      }
+    },
+    "paired": {
+      "lightgbm_minus_baseline": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        }
+      },
+      "lstm_minus_baseline": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        }
+      },
+      "lstm_minus_lightgbm": {
+        "score_top1": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "total_strict_full_win": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        },
+        "wdl": {
+          "date_block_bootstrap_95pct_rate": null,
+          "eligible": 2,
+          "gained": 0,
+          "lost": 0,
+          "matchday_blocks": 1,
+          "net_hits": 0,
+          "net_rate": 0.0
+        }
+      }
+    },
+    "population": 2
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "arms": {
+    "lightgbm": {
+      "changed_calls": {
+        "primary": 63,
+        "total": 60,
+        "wdl": 36
+      },
+      "max_abs_log_rate_change": 0.15971535649724353,
+      "mean_abs_log_rate_change": 0.020295974654711738
+    },
+    "lstm": {
+      "changed_calls": {
+        "primary": 1,
+        "total": 0,
+        "wdl": 0
+      },
+      "max_abs_log_rate_change": 0.0009663531403642928,
+      "mean_abs_log_rate_change": 0.00020038141960045846
+    }
+  },
+  "both_full_histories": 1727,
+  "holdout_matches": 1737,
+  "inputs_sha256": {
+    "samples-2526.jsonl.gz": "61906571456d62bffb1919bb43285a3318f055aae923170f47e73392423814cc",
+    "season-training-artifact.json": "b4250e5682bd62d7c5389fca2fccc793672b80d4dffa6032887821a47511cff0"
+  },
+  "procedure": "Reverse the real events independently within each team. Keep the same events and padding slots, home/away, baseline matrix, quote and line, and all fitted parameters.",
+  "reproduce_from_data_root": "python workspace-updates/20261118-sequence/history/order_sensitivity.py --source /path/to/Football-Analysis --out /tmp/sequence-sensitivity",
+  "status": "POST_FIT_DIAGNOSTIC_NOT_USED_FOR_SELECTION",
+  "team_sides": 3474
+}
