@@ -1,0 +1,99 @@
+{
+  "verified_at_beijing": "2026-11-18T09:02:26.365856+08:00",
+  "source_commit": "3e4412b853bfa258f6b8a121d35cc76d3e9965b5",
+  "source_main_commit": "9106394424b22896e4819d9faec8eb679ace3c75",
+  "source_pr": "https://github.com/kaka597000/Football-Analysis/pull/43",
+  "data_delivery_commit": "4c0d15072d6af2396fc5fb82c6bc4ee3eb40cc24",
+  "data_merge_commit": "ed2ff21dfbefe14fd8311bb9ec0af2113ebcee85",
+  "data_runtime_commit": "3dab247275faab7e7a1d0d771468f618802318c5",
+  "data_pr": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/19",
+  "cloud_run_id": 44212218194,
+  "cloud_run_url": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44212218194",
+  "cloud_run_status": "success",
+  "runtime_receipt": {
+    "path": "future/runtime-revisions/44212218194-1.json",
+    "sha256": "f01ac11b30ee625a1ac44606384735e0305f7c4d7197e4109e62df48b0c15e76",
+    "base_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533",
+    "polling_overlay_commit": "3e4412b853bfa258f6b8a121d35cc76d3e9965b5",
+    "evaluation_overlay_commit": "3e4412b853bfa258f6b8a121d35cc76d3e9965b5",
+    "overlay_files_sha256": {
+      "runtime/automation/prospective_cycle.py": "08733ec74a2ed0d27c4491192e0f15b7be71413ad8e15239b4d49f73d9b5374b",
+      "runtime/automation/market_bridge.py": "ca0fdab0381754298ecd0aaabd9c2c669fd29a0ea91d09affed5f26ba4ff3b15",
+      "runtime/automation/result_queue.py": "d59c606c63f33a4fb2e732c5c4f6adb140a4d35a54615d25e5b2f9c146e18b4d",
+      "runtime/research_program/future_identity.py": "3bb9085c512e9ab9642bae734f276e0853f7f59d1bf3152c3eee3cf020d31531",
+      "runtime/research_program/promotion_review.py": "51552372240a0afc04a02683353491d3e039ac7146f6a422b0d696bc20a4d592",
+      "runtime/v2_test/evaluation.py": "053f8e43427a52daad5920d2d6600b581daf52c029d9f1152f72bf7f94e23724"
+    },
+    "locked_protocol_sources_verified": true,
+    "inference_source_changed": false,
+    "active_model_changed": false
+  },
+  "channels": {
+    "nations_theodds": {
+      "path": "market/runs/44212218194-1/market-channel.json",
+      "sha256": "981be568a41c8bf6ead4e44cff46cddb1b7a5fe5c9d3b71c66cc53c3964242ef",
+      "status": "NO_VALID_QUOTES",
+      "eligible_fixture_count": 0,
+      "covered_fixture_count": 0,
+      "verified_quote_count": 0,
+      "coverage": null,
+      "requests": null,
+      "failures": null
+    },
+    "nations_infer": {
+      "path": "market/runs/44212218194-1-infer/market-channel.json",
+      "sha256": "0ac30fc4fec9794820e203c5eb09e1d593f6aa880c7cadff615a4d771c8fa0d1",
+      "status": "NO_FUTURE_FIXTURES",
+      "eligible_fixture_count": 0,
+      "covered_fixture_count": 0,
+      "verified_quote_count": 0,
+      "coverage": null,
+      "requests": 1,
+      "failures": []
+    },
+    "brazil_theodds": {
+      "path": "market/runs/44212218194-1-bra1/market-channel.json",
+      "sha256": "4c33a47687e1956ab7a1bd582a0ad58ac8378a35e7cb488598f06ddfb2b09c77",
+      "status": "VALIDATED",
+      "eligible_fixture_count": 6,
+      "covered_fixture_count": 5,
+      "verified_quote_count": 208,
+      "coverage": 0.8333333333333334,
+      "requests": null,
+      "failures": null
+    }
+  },
+  "infer_credentials": "Secret binding present; no Infer API request because no future targets. Local authorized two-request probe HTTP200 is separate evidence.",
+  "nations_completed_review": {
+    "path": "future/nations-repair-state/runs/20261118T005946604794.json",
+    "sha256": "3f0c62f31fb5189dbde155459fe779fa0a2666fda6191c1de9353aaade3130bb",
+    "settled": 18,
+    "pending": 0,
+    "new_result_requests": 0,
+    "freeze_receipt": {
+      "freeze_id": "1255c8e45f2c26ff-v000008",
+      "recorded_at": "2026-11-18T08:59:46.602007+08:00",
+      "path": "/home/runner/work/kaka597000-Football-Analysis-Data/kaka597000-Football-Analysis-Data/private-state/future/nations-repair-state/freezes/1255c8e45f2c26ff8715fb115463a625da33fdd12d9ed523f36122e0a9f56661/000008.json",
+      "sha256": "a3cd7239af6ad634218678f7cb010b8161df7db0e90ff33ccca1557fe89e5062",
+      "evaluation_slot": "SEPARATE_REVISION_OR_STAGE"
+    }
+  },
+  "code_complete": true,
+  "collector_deployed_and_executed": true,
+  "real_nations_raw_replay": {
+    "population": 8,
+    "covered": 8,
+    "quotes": 51,
+    "retrospective_identity_review": true
+  },
+  "live_nations_quote_acceptance": "NO_FUTURE_TARGETS; NOT A LIVE QUOTE COVERAGE PASS",
+  "historical_policy_comparison": "KNOWN_OUTCOME_DIAGNOSTIC; FIXED_TEST_7_OF_16_TO_8_OF_16",
+  "future_policy_validation": "PENDING; NO_NEW_PROSPECTIVE_POLICY_SAMPLE",
+  "active_model_changed": false,
+  "old_freezes_changed": false,
+  "rollback": {
+    "collector_commit": "3eca355a9e801c15d21c9b9b87e84592be15cee9",
+    "disable_new_step": "Collect bounded InferSports Nations fallback",
+    "locked_training_commit": "6639867d502a2dfe53a9a235c8761f8ee6b91533"
+  }
+}

@@ -19,3 +19,5 @@ python workspace-updates/20261118-repository-audit/verify_archive.py --out /tmp/
 `input-dependencies.json` 指向仍长期保存的旧修复计划、xG工件和复盘原文，避免重复上传整套模型。重跑数值实验先恢复这些依赖，在独立工作树签出上述源码提交；解包的 `scripts/compare_total_objectives.py`、`scripts/replay_infer.py` 保留实际执行步骤。脚本中 `/workspace` 路径为本项目恢复布局；更换位置时明确重定位，禁止改原工件哈希。重跑输出使用新目录。
 
 回滚只需在现有无人值守工作流将采集版本恢复 `3eca355a9e801c15d21c9b9b87e84592be15cee9` 并停用新增InferSports步骤；训练/锁定推理仍为 `6639867d502a2dfe53a9a235c8761f8ee6b91533`，无需改动模型、冻结或历史复盘。
+
+北京时间11月18日08:58–08:59已完成主分支真实部署运行 [44212218194](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/actions/runs/44212218194)，所有步骤成功并自动提交 `3dab247275faab7e7a1d0d771468f618802318c5`。Nations无未开赛目标，Infer只查ESPN一次、未消耗供应商额度，因此不声称本轮已做云端Infer鉴权或盘口覆盖验收。巴西甲通道取得208条有效报价、覆盖5/6，另1场身份未匹配；18场旧计划复盘仍完整，新增复盘版本未改旧冻结。详见 `delivery-receipt.json`。
