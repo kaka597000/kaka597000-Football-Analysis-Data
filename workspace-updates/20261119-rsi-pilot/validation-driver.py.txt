@@ -1,0 +1,11 @@
+from pathlib import Path
+import subprocess,json,hashlib,gzip,datetime
+p=Path('/workspace/kaka597000-Football-Analysis-Data/workspace-updates/20261119-rsi-pilot');s=Path('/workspace/Football-Analysis');py='/workspace/football-venv/bin/python'
+old=json.loads((p.parent/'20261119-three-baselines/verification.json').read_text())['protected_after']
+def snap():return {f:hashlib.sha256(Path(f).read_bytes()).hexdigest() for f in old}
+def stamp():return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat()
+before=snap();frozen={str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in (p/'batch').rglob('*.json')};commands=[]
+for name,args in [('pilot-tests',['-m','unittest','discover','-s',str(p),'-p','test_pilot.py','-v']),('source-static',['scripts/check_repository.py']),('strict-integration',['scripts/run_tests.py','--layer','integration'])]:
+ start=stamp();r=subprocess.run([py,*args],cwd=s,stdout=subprocess.PIPE,stderr=subprocess.STDOUT);end=stamp();(p/(name+'.log.gz')).write_bytes(gzip.compress(r.stdout,mtime=0));commands.append({'name':name,'command':[py,*args],'started_at':start,'finished_at':end,'exit_code':r.returncode});print(name,r.returncode,flush=True)
+after=snap();receipt={'commands':commands,'protected_files':len(before),'protected_unchanged':before==after,'protected_before':before,'protected_after':after,'new_freezes_unchanged':all(hashlib.sha256(Path(f).read_bytes()).hexdigest()==h for f,h in frozen.items()),'new_frozen_files_sha256':frozen}
+(p/'validation.json').write_text(json.dumps(receipt,indent=2)+'\n');assert all(c['exit_code']==0 for c in commands) and before==after and receipt['new_freezes_unchanged']

@@ -1,0 +1,70 @@
+{
+  "old_n": 2280,
+  "new_n": 100,
+  "deduplicated_n": 2380,
+  "new_teams": [
+    "Arsenal",
+    "Aston Villa",
+    "Bournemouth",
+    "Brentford",
+    "Brighton",
+    "Chelsea",
+    "Coventry",
+    "Crystal Palace",
+    "Everton",
+    "Fulham",
+    "Hull",
+    "Ipswich",
+    "Leeds",
+    "Liverpool",
+    "Man City",
+    "Man United",
+    "Newcastle",
+    "Nott'm Forest",
+    "Sunderland",
+    "Tottenham"
+  ],
+  "new_team_count": 20,
+  "old_new_overlap_n": 0,
+  "duplicate_identity_n": 0,
+  "train_start": "2020-09-12",
+  "train_end": "2026-11-08",
+  "latest_observed_at": "2026-11-18T05:10:19.204546+00:00",
+  "new_source": {
+    "bytes": 49046,
+    "captured_at": "2026-11-18T05:10:19.204546+00:00",
+    "file": "2627_E0.csv",
+    "last_modified": "Mon, 09 Nov 2026 10:03:06 GMT",
+    "sha256": "d598a5f681e1a9a4acf9dad9fb203b68da6f67e2d195678dbe99e95fbba14593",
+    "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv"
+  },
+  "new_source_commit": "a5ecf0d0f1148a7acdb5675d45c347c0d5fb9d12",
+  "new_source_commit_time": "2026-11-18T20:30:35Z",
+  "training_sha256": "b7976496cade6d312d58ef7efe303abf40d1c5cc1e354cc5765e5f7ac033429e",
+  "used_columns": [
+    "match_id",
+    "cohort",
+    "date",
+    "home",
+    "away",
+    "home_goals",
+    "away_goals",
+    "score_basis",
+    "source_url",
+    "observed_at",
+    "neutral"
+  ],
+  "odds_used": false,
+  "forbidden_fields_removed": [
+    "all odds",
+    "xG",
+    "shots",
+    "half-time labels",
+    "referee"
+  ],
+  "limitations": [
+    "Historical first-known unavailable; observed timestamps authenticate availability for this future pilot only.",
+    "CSV 90-minute labels retained from league result fields, no individual official second-source crosscheck of all 2380 training matches.",
+    "Historical daily date labels used for training decay, not historical time-of-day reconstruction."
+  ]
+}
