@@ -1,0 +1,14 @@
+from pathlib import Path
+import subprocess,json,hashlib,datetime,gzip,re
+p=Path('/workspace/kaka597000-Football-Analysis-Data/workspace-updates/20261119-three-baselines');s=Path('/workspace/Football-Analysis');d=p.parents[1];py='/workspace/football-venv/bin/python'
+old=json.loads((d/'workspace-updates/20261118-governance/third/acceptance-correction/protected-after.json').read_text())
+def snap():return {f:hashlib.sha256(Path(f).read_bytes()).hexdigest() for f in old}
+def now():return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat()
+before=snap();records=[]
+commands=[('offline-tests',['-m','unittest','discover','-s',str(p),'-p','test_run.py','-v'],s),('source-check',['scripts/check_repository.py'],s),('strict-integration',['scripts/run_tests.py','--layer','integration'],s),('reproduction',[str(p/'run.py'),'--source',str(s),'--out','/workspace/three-baselines-reproduction-20261119'],s)]
+for name,args,cwd in commands:
+ start=now();r=subprocess.run([py,*args],cwd=cwd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT);end=now();(p/(name+'.log.gz')).write_bytes(gzip.compress(r.stdout,mtime=0));records.append({'name':name,'command':[py,*args],'cwd':str(cwd),'started_at':start,'finished_at':end,'exit_code':r.returncode,'tests':sum(map(int,re.findall(rb'^Ran (\d+) tests?',r.stdout,re.M))),'skips':len(re.findall(rb'\.\.\. skipped ',r.stdout))});print(name,r.returncode,flush=True)
+after=snap();repro=Path('/workspace/three-baselines-reproduction-20261119');original=json.loads((p/'result/report.json').read_text());repeat=json.loads((repro/'report.json').read_text());same=all(original[k]==repeat[k] for k in original if k not in ('started_at','finished_at'))
+receipt={'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=s,text=True).strip(),'data_parent_commit':'bb9326923ce3554e216d32ee7e9c5734cbb9c567','commands':records,'protected_before':before,'protected_after':after,'protected_unchanged':before==after,'reproduction_report_equal_except_timestamps':same,'reproduction_rows_byte_equal':(p/'result/rows.jsonl.gz').read_bytes()==(repro/'rows.jsonl.gz').read_bytes(),'reproduction_fits_byte_equal':(p/'result/development-fits.json').read_bytes()==(repro/'development-fits.json').read_bytes()}
+(p/'verification.json').write_text(json.dumps(receipt,indent=2)+'\n')
+assert all(r['exit_code']==0 for r in records) and before==after and same and receipt['reproduction_rows_byte_equal'] and receipt['reproduction_fits_byte_equal']

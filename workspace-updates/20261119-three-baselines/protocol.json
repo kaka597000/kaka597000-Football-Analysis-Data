@@ -1,0 +1,43 @@
+{
+  "registered_at": "2026-11-19T11:05:27.541807+08:00",
+  "status": "DEVELOPMENT_ONLY_FIXED_RECIPE_NOT_PROSPECTIVE",
+  "source_commit": "783e02ddebd427383dbdd6a9e4b359dc68c13d8b",
+  "data_parent_commit": "bb9326923ce3554e216d32ee7e9c5734cbb9c567",
+  "input_sha256": "7a6b100c3b797740cbab2aeb45ad3fcbc2017dcc1170236d881a15e92dc85f4d",
+  "scope": [
+    "EPL"
+  ],
+  "excluded_sources": {
+    "usa.1": "missing regular-season/playoff phase identification in v2 history",
+    "uefa.nations": "old v2 file missing league/phase separation",
+    "fifa.friendly": "different competition context; not a domestic league baseline",
+    "Brazil six fixtures": "excluded from input, fitting and recipe decisions"
+  },
+  "split": "reuse v2 distinct-calendar-date 60/10/10/20 partition; fit first60%, middle20% unused, evaluate final20%; no refit or tuning",
+  "arms": [
+    "simple_ratio_poisson",
+    "opponent_poisson",
+    "opponent_dixon_coles"
+  ],
+  "half_life_days": 365,
+  "ratio_prior_matches": 8,
+  "strength_ridge": 8,
+  "rho_bounds": [
+    -0.08,
+    0.006
+  ],
+  "rho_fit": "weighted training likelihood with identical 365-day decay; strength fixed identical to opponent_poisson",
+  "temperature": 1,
+  "selection": "no winner selection, no grid search, no promotion",
+  "top3": "three distinct highest-probability matrix cells; deterministic home-goals then away-goals tie order; statistical coverage only, not path-diverse recommendations",
+  "uncertainty": "3000 paired calendar-date cluster bootstrap draws, seed20261007; 95% percentile intervals; fixed-fit conditional, no training-refit uncertainty",
+  "cutoff": "static fit ends before evaluation block; per-target date boundary only, no authenticated historical first-known timestamp",
+  "future_frozen_n": null,
+  "future_status": "no prospectively frozen three-arm cohort exists; cannot backfill",
+  "production_changes": false,
+  "source_file_sha256": {
+    "model.py": "d11e5296500df41a149ae16eecb8a12f4c88bb613d05f35764cec62f613c7a9a",
+    "training_inputs.py": "79d94eacee8d41f12a3cab7e9b46363d96b3ad739c3e4848aee59d2831783850",
+    "evidence.py": "5d8f7eed73971dde7cfcaa4bcacdb0bbcc2cfd20e5fa6a5989d745de283345b6"
+  }
+}

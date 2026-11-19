@@ -1,0 +1,175 @@
+{
+  "status": "DATE_ISOLATED_DEVELOPMENT_NOT_FUTURE_VALIDATION",
+  "started_at": "2026-11-19T11:06:20.775543+08:00",
+  "finished_at": "2026-11-19T11:06:21.264148+08:00",
+  "protocol_sha256": "aabe7f0bcc13b169c9d31d561e86d1a62c88274c1741deb803d6da037c2984ad",
+  "runner_sha256": "5b8fb22e60089c94ecc686e8062caa436108061257da47478d32ba032c3c8a20",
+  "dataset_n": 2280,
+  "split": {
+    "train": {
+      "n": 1326,
+      "first_date": "2020-09-12",
+      "last_date": "2023-12-27"
+    },
+    "unused_calibration": {
+      "n": 221,
+      "first_date": "2023-12-28",
+      "last_date": "2024-08-31"
+    },
+    "unused_selection": {
+      "n": 259,
+      "first_date": "2024-09-01",
+      "last_date": "2025-03-15"
+    },
+    "evaluation": {
+      "n": 474,
+      "first_date": "2025-03-16",
+      "last_date": "2026-05-24"
+    }
+  },
+  "target_n": 474,
+  "common_n": 474,
+  "coverage_by_arm": {
+    "simple_ratio_poisson": 474,
+    "opponent_poisson": 474,
+    "opponent_dixon_coles": 474
+  },
+  "excluded_from_common": 0,
+  "errors": [],
+  "fitted_rho": 0.005994314801323737,
+  "rho_near_bound": true,
+  "metrics": {
+    "simple_ratio_poisson": {
+      "n": 474,
+      "top1_hits": 51,
+      "top3_hits": 153,
+      "top1": 0.10759493670886076,
+      "top3": 0.3227848101265823,
+      "score_log_loss": 2.907939172109811,
+      "date_cluster_95_ci": {
+        "top1_hit": [
+          0.0817171683088136,
+          0.13286713286713286
+        ],
+        "top3_hit": [
+          0.2844991445126598,
+          0.36160736832611834
+        ],
+        "score_log_loss": [
+          2.843182230928774,
+          2.977247082993823
+        ]
+      },
+      "unseen_team_matches": 47
+    },
+    "opponent_poisson": {
+      "n": 474,
+      "top1_hits": 60,
+      "top3_hits": 157,
+      "top1": 0.12658227848101267,
+      "top3": 0.33122362869198313,
+      "score_log_loss": 2.903117597282609,
+      "date_cluster_95_ci": {
+        "top1_hit": [
+          0.10021310833248016,
+          0.1541789145743307
+        ],
+        "top3_hit": [
+          0.293180755055755,
+          0.3692391304347827
+        ],
+        "score_log_loss": [
+          2.839834073216392,
+          2.97077196898681
+        ]
+      },
+      "unseen_team_matches": 47,
+      "vs_simple": {
+        "wrong_to_right": 11,
+        "right_to_wrong": 2,
+        "net_hits": 9,
+        "changed_primary": 35,
+        "differences": {
+          "top1_hit": {
+            "mean": 0.0189873417721519,
+            "date_cluster_95_ci": [
+              0.004682754011421617,
+              0.03404255319148936
+            ]
+          },
+          "top3_hit": {
+            "mean": 0.008438818565400843,
+            "date_cluster_95_ci": [
+              -0.0058258104808947934,
+              0.022823119724261046
+            ]
+          },
+          "score_log_loss": {
+            "mean": -0.004821574827201989,
+            "date_cluster_95_ci": [
+              -0.008240940346456565,
+              -0.0013578305910760507
+            ]
+          }
+        }
+      }
+    },
+    "opponent_dixon_coles": {
+      "n": 474,
+      "top1_hits": 57,
+      "top3_hits": 156,
+      "top1": 0.12025316455696203,
+      "top3": 0.3291139240506329,
+      "score_log_loss": 2.90342544267123,
+      "date_cluster_95_ci": {
+        "top1_hit": [
+          0.09492273730684327,
+          0.14649905353899675
+        ],
+        "top3_hit": [
+          0.2900422077922078,
+          0.3673913043478261
+        ],
+        "score_log_loss": [
+          2.840134436323689,
+          2.970980188483587
+        ]
+      },
+      "unseen_team_matches": 47,
+      "vs_simple": {
+        "wrong_to_right": 9,
+        "right_to_wrong": 3,
+        "net_hits": 6,
+        "changed_primary": 33,
+        "differences": {
+          "top1_hit": {
+            "mean": 0.012658227848101266,
+            "date_cluster_95_ci": [
+              0.0,
+              0.027211546097038037
+            ]
+          },
+          "top3_hit": {
+            "mean": 0.006329113924050633,
+            "date_cluster_95_ci": [
+              -0.00653666280516583,
+              0.020285006349049294
+            ]
+          },
+          "score_log_loss": {
+            "mean": -0.004513729438581196,
+            "date_cluster_95_ci": [
+              -0.00795532488846308,
+              -0.0009749165983545429
+            ]
+          }
+        }
+      }
+    }
+  },
+  "historical_first_known_missing": 2280,
+  "future_frozen_n": null,
+  "future_status": "NOT_AVAILABLE_NOT_ZERO_HITS",
+  "fit_end_before_all_targets": true,
+  "production_changed": false
+}
