@@ -1,0 +1,1693 @@
+{
+  "schema": "WCPP-MARKET-CHANNEL-1",
+  "created_at": "2026-11-19T20:35:55.786402+00:00",
+  "market_model_ready": true,
+  "verified_quote_count": 42,
+  "eligible_fixture_count": 3,
+  "covered_fixture_count": 1,
+  "coverage": 0.3333333333333333,
+  "coverage_scope": "ESPN bra.1 regular future fixtures on requested UTC day",
+  "source_odds_events": 10,
+  "market_max_age_seconds": 3600,
+  "excluded": {
+    "unsupported_market": 2,
+    "missing_or_ambiguous_identity": 2
+  },
+  "identity_mappings": [
+    {
+      "match_id": "espn:401841308",
+      "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+      "home_id": "espn:3454",
+      "away_id": "espn:1936",
+      "kickoff_at": "2026-11-19T22:30Z",
+      "identity_evidence_sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417"
+    }
+  ],
+  "snapshots": [
+    {
+      "schema": "WCPP-V2-FEATURE-SNAPSHOT-1",
+      "target": {
+        "cohort": "bra.1",
+        "competition": "bra.1",
+        "stage": "regular",
+        "match_id": "espn:401841308",
+        "home_id": "espn:3454",
+        "away_id": "espn:1936",
+        "kickoff_at": "2026-11-19T22:30Z",
+        "cutoff_at": "2026-11-19T20:35:55.786402+00:00"
+      },
+      "provider": "the-odds-api",
+      "created_at": "2026-11-19T20:35:55.786402+00:00",
+      "features": {
+        "espn:1936": {},
+        "espn:3454": {
+          "market_quote": {
+            "n": 42,
+            "observation_sha256": [
+              "cb84c74e726f2f055f768485d11a58af94fafa6a9dfd81929bf17595ca2b7e01",
+              "8d12fe9e961e84486dffe091236ce1a8243df02c348c61a4efcbc315d8ac8064",
+              "1f8ad250edf3b0354dc495ff7bf66b60d26f3aa4c67485e09e52431b3d223d5b",
+              "a77b0bd4a3f841d2f88854a59d64ec9f85c2ad1e436a47c626bab045589f054f",
+              "9367bed62fffbae1566558da9d0413079d78935a6893250cd544e3386dfe2669",
+              "7877d297db742286d3dc95a5eae3437acf43bd0bcf9ccb78d8d12603526b352e",
+              "77f1a40750871c05370cf8766b5c26b897dfaaccd670922a6fee8ef3527cae41",
+              "5cf7b1a78e6115dc02fa9de8581c9d278081b6629085b6e8ac60e90cd90583d5",
+              "02a13ad550f3684de0d2f1a3a0ac8a9376c6e26043831ec520a901639faf08da",
+              "eacae8cb49dd09e33a01a22a48ceeb4f87d485c59ed39577cebf982d0526124a",
+              "6fc88d67c43db11478e39b369c6c576888b2dba38e1c6edb0311425ee786d1ac",
+              "3e2765bbd094ad74744b3a128ea92e9788d1b7602c2d3d9e3ef042a20e32d904",
+              "17e63f588260f4a862c98646119a8e3cf79b3494acfb410fd3af0013c4702432",
+              "06b41aa516dadd9bb2c4ba5c64e807248a77a530229cb908ffd9da04cd96b8eb",
+              "6cfcd801b2b16cfe4ab1b1df326f0e6137b1bc40e27596ebe9d1ca76ad471b8c",
+              "15e6ad33ecc3597afb01032df6ef89eb525fd4d7dfff27fa6e73f1798ffd1ae6",
+              "1ff521be0020b9f04e94353639cd9fac0351f975fbce313de9f9c058a06f72ad",
+              "b5beba5f289790c553471cd57f9ed3a82bf1b7e2e7c34b5421ba9301ecfe17a9",
+              "e52468f9e1f4b81b3519d8f9438ef582a395f32c2190c4a538acbdef81ed21a9",
+              "f194cfda7db0cc4d478db2b37e5051e0cee0959816062ede590379b0e99d1f71",
+              "87a00e85c2bd8040cf979d7ca5858477580917e8a20d246cf2926fb08993fde3",
+              "34b8acc23517c6a36560187d55f629eb564b9754a6f20ed0faf63f31f8b2a017",
+              "6ee13bc4aaf7f8dec9787fa65ca527e874f494b648182305d8ce18d1107458a9",
+              "e3e6c9f0fedf76ec7c3ad590554cc40c701e97f723c6102f48d45d4e066af848",
+              "4a9c4672f235dd16c20c24f8981f0ae17f681802ce047e944320e0b2d9e514d6",
+              "212b28cd19416e3fa7ea246e305bbace847a984a126565eba2c4ed3a19ec528a",
+              "0397dc3350a9e8eea312a5ccbd37af9e387de00911ad4fabdda6cef3803758af",
+              "d1bc813fcb725c15f37664089ffedebffe8bcaa5dbdbff6debcb66868ac0edb8",
+              "79683c5ac19acb69e84c5546bdcdb7f61400bc98b3eee7a927320c4f1b7bda2d",
+              "8d3c9e5bc7e78648e634b5d882bef132626e7bcd0be070de7979d78f6ddee4c9",
+              "a1563ecec02e33965e5cd15ad10c01b1f500097435d396c7b2becb360f73dd0c",
+              "7408eafc961844c3fb3755e518768ec17a6af529a918f64aee7c182905c64f93",
+              "be62e7bab0d93c8db49881eb5e8b88c8f5a85238ca80467d3ab6a53b7f6b7abc",
+              "b557f72691a6500df807b9b3da9b0840d3a2a66eeb2e6b9174a28e817c188349",
+              "63144dca013e91fb7634e95b5d06f257533f28127817e85fec877f8a1fa541d5",
+              "720b6d68e1f25faebec93908edd564151b312b10cd821c0396fb384a3bc9dffc",
+              "2e620f2a5261e2fb39f2a5391e341ae9a6778f178a0df8868ed6078c79720474",
+              "61915da19428c92e05fd146e66c3d7fcc9b546d7edb14ca6c2aac1c49ed9bd75",
+              "949f2806a16558ee5f50c402a2c466c801f901855e42a84a923b310d42694883",
+              "bbc6c7054c2d2217a7aeb89cb258425f06395d0ba1e4354a853e1d7b602897ca",
+              "7eaef89167f61e5ac31b3c223c584283cd74c0c5e0c582062fdb3f87b825678e",
+              "e544a32c63a4f2eaea7726202d0e96c387a5b32ed52a73cd7b05aa66568f21e0"
+            ]
+          }
+        }
+      },
+      "observations": [
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "betsson",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "away": 5.45,
+              "home": 1.52,
+              "draw": 4.3
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "betsson",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "over": 1.72,
+              "under": 2.02
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "nordicbet",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:15Z",
+            "odds": {
+              "away": 5.4,
+              "home": 1.5,
+              "draw": 4.15
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "nordicbet",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:15Z",
+            "odds": {
+              "over": 1.72,
+              "under": 2.02
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "unibet_fr",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:34:55Z",
+            "odds": {
+              "away": 4.7,
+              "home": 1.38,
+              "draw": 3.65
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "winamax_fr",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:14Z",
+            "odds": {
+              "away": 4.8,
+              "home": 1.45,
+              "draw": 4.0
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "winamax_de",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:17Z",
+            "odds": {
+              "away": 5.1,
+              "home": 1.5,
+              "draw": 4.3
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "williamhill",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:34:55Z",
+            "odds": {
+              "away": 5.5,
+              "home": 1.53,
+              "draw": 4.0
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "williamhill",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:34:55Z",
+            "odds": {
+              "over": 1.73,
+              "under": 2.0
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "sport888",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "away": 5.5,
+              "home": 1.53,
+              "draw": 4.0
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "onexbet",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:15Z",
+            "odds": {
+              "away": 5.72,
+              "home": 1.58,
+              "draw": 4.28
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "onexbet",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:15Z",
+            "odds": {
+              "over": 1.74,
+              "under": 2.15
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "mybookieag",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:30Z",
+            "odds": {
+              "away": 5.6,
+              "home": 1.54,
+              "draw": 4.3
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "mybookieag",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:30Z",
+            "odds": {
+              "over": 1.71,
+              "under": 2.06
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "betclic_fr",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:33:00Z",
+            "odds": {
+              "away": 5.25,
+              "home": 1.43,
+              "draw": 4.0
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "marathonbet",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:34:59Z",
+            "odds": {
+              "away": 5.55,
+              "home": 1.53,
+              "draw": 4.15
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "marathonbet",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:34:59Z",
+            "odds": {
+              "over": 1.69,
+              "under": 2.09
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "betfair_ex_eu",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:47Z",
+            "odds": {
+              "away": 6.6,
+              "home": 1.58,
+              "draw": 4.5
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "coolbet",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:34:58Z",
+            "odds": {
+              "away": 5.75,
+              "home": 1.57,
+              "draw": 4.2
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "coolbet",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:34:58Z",
+            "odds": {
+              "over": 1.74,
+              "under": 2.1
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "codere_it",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "away": 5.6,
+              "home": 1.54,
+              "draw": 4.1
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "codere_it",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "over": 1.68,
+              "under": 2.02
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "pmu_fr",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "away": 5.2,
+              "home": 1.48,
+              "draw": 3.8
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "pmu_fr",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "over": 1.6,
+              "under": 1.94
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "unibet_se",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:16Z",
+            "odds": {
+              "away": 5.6,
+              "home": 1.54,
+              "draw": 4.1
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "unibet_se",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:16Z",
+            "odds": {
+              "over": 1.71,
+              "under": 2.08
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "leovegas_se",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:15Z",
+            "odds": {
+              "away": 5.3,
+              "home": 1.5,
+              "draw": 3.9
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "leovegas_se",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:15Z",
+            "odds": {
+              "over": 1.68,
+              "under": 2.04
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "unibet_nl",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:29Z",
+            "odds": {
+              "away": 5.6,
+              "home": 1.54,
+              "draw": 4.1
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "unibet_nl",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:29Z",
+            "odds": {
+              "over": 1.71,
+              "under": 2.08
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "gtbets",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:15Z",
+            "odds": {
+              "away": 5.67,
+              "home": 1.57,
+              "draw": 4.28
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "gtbets",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:15Z",
+            "odds": {
+              "over": 1.74,
+              "under": 2.12
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "tipico_de",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:30Z",
+            "odds": {
+              "away": 5.8,
+              "home": 1.42,
+              "draw": 4.3
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "tipico_de",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:30Z",
+            "odds": {
+              "over": 1.65,
+              "under": 2.05
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "pinnacle",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:46Z",
+            "odds": {
+              "away": 6.0,
+              "home": 1.56,
+              "draw": 4.43
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "pinnacle",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:46Z",
+            "odds": {
+              "over": 2.02,
+              "under": 1.86
+            },
+            "line": 2.75
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "matchbook",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:48Z",
+            "odds": {
+              "away": 6.6,
+              "home": 1.58,
+              "draw": 4.5
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "matchbook",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:48Z",
+            "odds": {
+              "over": 1.85,
+              "under": 2.14
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "betonlineag",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:14Z",
+            "odds": {
+              "away": 6.1,
+              "home": 1.54,
+              "draw": 4.51
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "betonlineag",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:14Z",
+            "odds": {
+              "over": 1.72,
+              "under": 2.07
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "betanysports",
+            "market": "h2h",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "away": 6.1,
+              "home": 1.54,
+              "draw": 4.51
+            }
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        },
+        {
+          "provider": "the-odds-api",
+          "cohort": "bra.1",
+          "match_id": "espn:401841308",
+          "entity_id": "espn:3454",
+          "field": "market_quote",
+          "period": "regulation_90",
+          "event_kickoff_at": "2026-11-19T22:30Z",
+          "observed_at": "2026-11-19T20:35:55.785764+00:00",
+          "value": {
+            "bookmaker": "betanysports",
+            "market": "totals",
+            "quoted_at": "2026-11-19T20:35:13Z",
+            "odds": {
+              "over": 1.72,
+              "under": 2.08
+            },
+            "line": 2.5
+          },
+          "provider_match_id": "2a054ad1a9985edb5db37136cf40a382",
+          "identity_evidence": {
+            "file": "identity.json",
+            "sha256": "bedc0f1da8562ddc123a193fd2ec50434ad87770d27d37def16de4ae0d672417",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261119&limit=1000",
+            "requested_at": "2026-11-19T20:35:55.300704+00:00",
+            "captured_at": "2026-11-19T20:35:55.382980+00:00"
+          },
+          "evidence": {
+            "file": "odds.json",
+            "sha256": "f19fced1e7aba9a0bf43c04ed3e41085bc51a6cac419dd91a6e5ddd63942197d",
+            "url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+            "query_time": "2026-11-19T20:35:55.785764+00:00",
+            "request_started_at": "2026-11-19T20:35:55.384031+00:00",
+            "identity_verified": true
+          }
+        }
+      ],
+      "excluded": {},
+      "policy": {
+        "last_n": 3,
+        "lookback_days": 90,
+        "market_max_age_seconds": 3600,
+        "availability_max_age_seconds": 21600
+      },
+      "claims": {
+        "source_first_known_time_inferred": false,
+        "historical_asof_certified": false,
+        "new_model_trained": false,
+        "active_model_changed": false
+      },
+      "notice": "Capture/hash/identity checks use supplied evidence. No publication time inferred; freshly downloaded history is available only after capture. Small windows, missing players and provider differences remain explicit. No prediction or learned impact.",
+      "snapshot_sha256": "c36dec8a62d26e6a89ea39ad3b591d9b95d845bdbe660aaff1bb4f86e00e4e77"
+    }
+  ],
+  "identity_alias_review": {
+    "version": "brazil-alias-registry-20261118-1",
+    "reviews": [
+      {
+        "version": "brazil-team-alias-20261115-1",
+        "reviewed_at": "2026-11-14T18:51:10.870922+00:00",
+        "provider": "the-odds-api",
+        "sport_key": "soccer_brazil_campeonato",
+        "cohort": "bra.1",
+        "phase": "regular",
+        "teams": [
+          {
+            "espn_id": "7632",
+            "espn_name": "Atlético-MG",
+            "provider_name": "Atletico Mineiro"
+          }
+        ],
+        "evidence": {
+          "raw_odds_sha256": "b147bef28240afac9f35e918d2b3b76cc2e2289cd89e2b2ac5fee706e5765a0d",
+          "identity_sha256": "b877bf23f38f1ba82c87421ded77a52a0340e00a2065cfd5dee08bb34681ef90",
+          "odds_source_url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "identity_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261114",
+          "source_event_id": "401841311",
+          "provider_event_id": "60e79364c168ad0ad22c0cffc02be8a9",
+          "opponent_espn_id": "9169",
+          "opponent_name": "Mirassol",
+          "kickoff_at": "2026-11-14T21:30Z",
+          "retention_path": "workspace-updates/20261115-remaining-nations-brazil/remaining-evidence.tar.gz",
+          "review_method": "Exact country/club identity, same opponent, competition, side and kickoff; no fuzzy matching; review time gates future use only."
+        }
+      },
+      {
+        "version": "brazil-athletico-paranaense-20261118-1",
+        "reviewed_at": "2026-11-18T01:16:56.494882+00:00",
+        "provider": "the-odds-api",
+        "sport_key": "soccer_brazil_campeonato",
+        "cohort": "bra.1",
+        "phase": "regular",
+        "teams": [
+          {
+            "espn_id": "3458",
+            "espn_name": "Athletico-PR",
+            "provider_name": "Atletico Paranaense"
+          }
+        ],
+        "evidence": {
+          "raw_odds_sha256": "5c06ceae28182190fa2e2e1940cecd320186c09119f027b168734f2aeeeb2ca7",
+          "identity_sha256": "f58d60d628051f38ae04df29cf4e26bfdc91b1dd68ee128334b8e9b49b7a34c0",
+          "odds_source_url": "https://api.the-odds-api.com/v4/sports/soccer_brazil_campeonato/odds/?regions=eu&markets=h2h%2Ctotals&oddsFormat=decimal",
+          "identity_source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261118&limit=1000",
+          "source_event_id": "401841313",
+          "provider_event_id": "4ffeab0ae6c6a76e96262104d3a1d6e7",
+          "opponent_espn_id": "819",
+          "opponent_name": "Flamengo",
+          "team_side": "away",
+          "espn_full_name": "Athletico Paranaense",
+          "kickoff_at": "2026-11-18T23:30Z",
+          "retention_path": "market/runs/44212218194-1-bra1",
+          "data_commit": "3dab247275faab7e7a1d0d771468f618802318c5",
+          "review_method": "Unique Brazilian Serie A away team at Flamengo at the same instant. ESPN supplies both the full name and its short display name for 3458."
+        }
+      }
+    ],
+    "sha256": "d1ed04b608f8942cd4f1f08900a3274806f57f527b43f0e5acb15a38637870ef"
+  },
+  "tls_verification_disabled": false,
+  "active_model_changed": false,
+  "quote_time_inferred_from_capture": false,
+  "status": "VALIDATED"
+}
