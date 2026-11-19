@@ -1,0 +1,8 @@
+from pathlib import Path
+import subprocess,datetime,gzip,json,hashlib,re
+s=Path('/workspace/shared-results-source');p=Path('/workspace/brazil-results-data/workspace-updates/20261119-shared-results');py='/workspace/football-venv/bin/python'
+old=json.loads(Path('/workspace/kaka597000-Football-Analysis-Data/workspace-updates/20261119-rsi-pilot/validation.json').read_text())
+paths=list(old['protected_after'])+list(old['new_frozen_files_sha256']);before={n:hashlib.sha256(Path(n).read_bytes()).hexdigest() for n in paths};receipts=[]
+for name,args in [('shared-tests',['-m','unittest','discover','-s','runtime/research','-p','test_display_review.py','-v']),('repository-check',['scripts/check_repository.py']),('strict-integration',['scripts/run_tests.py','--layer','integration'])]:
+ start=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat();r=subprocess.run([py,*args],cwd=s,stdout=subprocess.PIPE,stderr=subprocess.STDOUT);end=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat();(p/(name+'.log.gz')).write_bytes(gzip.compress(r.stdout,mtime=0));receipts.append({'name':name,'command':[py,*args],'start':start,'end':end,'exit_code':r.returncode,'tests':sum(map(int,re.findall(rb'^Ran (\d+) tests?',r.stdout,re.M))),'skips':len(re.findall(rb'\.\.\. skipped ',r.stdout))});print(name,r.returncode,flush=True)
+after={n:hashlib.sha256(Path(n).read_bytes()).hexdigest() for n in paths};(p/'validation.json').write_text(json.dumps({'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=s,text=True).strip(),'runs':receipts,'protected_old_and_rsi_unchanged':before==after,'protected_count':len(before),'before':before,'after':after,'tests_are_synthetic_no_live_collection':True},indent=2)+'\n')
