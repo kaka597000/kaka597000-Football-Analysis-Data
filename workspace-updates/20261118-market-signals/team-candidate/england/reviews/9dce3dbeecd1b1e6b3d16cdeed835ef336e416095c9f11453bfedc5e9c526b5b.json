@@ -1,0 +1,173 @@
+{
+  "version": "WCPP-TEAM-SCORING-MARKETS-1",
+  "protocol_sha256": "194cdbbc4c2447b8203f2e7359255b20e2b7566bf4334e0cedf5daaaab5b38d1",
+  "population": 2,
+  "first_issues": 2,
+  "settled_first_issues": 2,
+  "rows": [
+    {
+      "match_id": "espn:401878756",
+      "kickoff_utc_date": "2026-11-21",
+      "matchday": "2026-11-21",
+      "matchday_timezone": "UTC",
+      "result": {
+        "home": 0,
+        "away": 0,
+        "source": {
+          "captured_at": "2026-11-21T19:14:33.778199+00:00",
+          "path": "raw/abc18d0d02cfd680ab02cbebc44a9e798ba92c1edd430f43b51b5c586e12425a.json.gz",
+          "sha256": "abc18d0d02cfd680ab02cbebc44a9e798ba92c1edd430f43b51b5c586e12425a",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401878756"
+        }
+      },
+      "source_issues": [],
+      "first_sha256": "6b48dcbb263ec0c7e9adb8d66cde11671858360e530e8a46e065cc6f013aa041",
+      "outcomes": {
+        "frozen_market_baseline": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "FULL_LOSS",
+          "total_strict_full_win": false,
+          "score_log_loss": 2.797269142735723,
+          "wdl_brier": 0.8772060114875947,
+          "score_top3": false
+        },
+        "prematch_team_and_btts_adjustment": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "FULL_LOSS",
+          "total_strict_full_win": false,
+          "score_log_loss": 2.7103159404326225,
+          "wdl_brier": 0.878743370998543,
+          "score_top3": false
+        }
+      }
+    },
+    {
+      "match_id": "espn:401879233",
+      "kickoff_utc_date": "2026-11-21",
+      "matchday": "2026-11-21",
+      "matchday_timezone": "UTC",
+      "result": {
+        "home": 1,
+        "away": 1,
+        "source": {
+          "captured_at": "2026-11-21T19:14:33.190935+00:00",
+          "path": "raw/6cc730f9ba5d8d40415871ac63a761c1708d31ff82e9d05e427c1f46b8664c3e.json.gz",
+          "sha256": "6cc730f9ba5d8d40415871ac63a761c1708d31ff82e9d05e427c1f46b8664c3e",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879233"
+        }
+      },
+      "source_issues": [],
+      "first_sha256": "41a8c125d1531193ad0d27bda3c11f253817f529b4b2ab7fcd5097ea4a011494",
+      "outcomes": {
+        "frozen_market_baseline": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.4754137687959767,
+          "wdl_brier": 1.0952611726109294,
+          "score_top3": false
+        },
+        "prematch_team_and_btts_adjustment": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.479425893839197,
+          "wdl_brier": 1.0954432020680234,
+          "score_top3": false
+        }
+      }
+    }
+  ],
+  "arms": {
+    "frozen_market_baseline": {
+      "score_top1": {
+        "n": 2,
+        "hits": 0
+      },
+      "wdl": {
+        "n": 2,
+        "hits": 0
+      },
+      "total_strict_full_win": {
+        "n": 2,
+        "hits": 1
+      },
+      "score_top3": {
+        "n": 2,
+        "hits": 0
+      },
+      "score_log_loss": 2.6363414557658498,
+      "wdl_brier": 0.986233592049262,
+      "settlements": {
+        "FULL_LOSS": 1,
+        "FULL_WIN": 1
+      }
+    },
+    "prematch_team_and_btts_adjustment": {
+      "score_top1": {
+        "n": 2,
+        "hits": 0
+      },
+      "wdl": {
+        "n": 2,
+        "hits": 0
+      },
+      "total_strict_full_win": {
+        "n": 2,
+        "hits": 1
+      },
+      "score_top3": {
+        "n": 2,
+        "hits": 0
+      },
+      "score_log_loss": 2.5948709171359097,
+      "wdl_brier": 0.9870932865332832,
+      "settlements": {
+        "FULL_LOSS": 1,
+        "FULL_WIN": 1
+      }
+    }
+  },
+  "paired": {
+    "score_top1": {
+      "eligible": 2,
+      "gained": 0,
+      "lost": 0,
+      "net_hits": 0,
+      "net_rate": 0.0,
+      "matchday_blocks": 1,
+      "date_block_bootstrap_95pct_rate": null
+    },
+    "wdl": {
+      "eligible": 2,
+      "gained": 0,
+      "lost": 0,
+      "net_hits": 0,
+      "net_rate": 0.0,
+      "matchday_blocks": 1,
+      "date_block_bootstrap_95pct_rate": null
+    },
+    "total_strict_full_win": {
+      "eligible": 2,
+      "gained": 0,
+      "lost": 0,
+      "net_hits": 0,
+      "net_rate": 0.0,
+      "matchday_blocks": 1,
+      "date_block_bootstrap_95pct_rate": null
+    },
+    "score_top3": {
+      "eligible": 2,
+      "gained": 0,
+      "lost": 0,
+      "net_hits": 0,
+      "net_rate": 0.0,
+      "matchday_blocks": 1,
+      "date_block_bootstrap_95pct_rate": null
+    }
+  }
+}
