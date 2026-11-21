@@ -1,0 +1,85 @@
+name: Model governance compatibility
+on:
+  pull_request:
+    paths:
+      - 'runtime/**'
+      - '.github/workflows/unattended.yml'
+      - '.github/workflows/three-arm-validation.yml'
+      - '.github/workflows/sequence-validation.yml'
+      - '.github/workflows/transformer-validation.yml'
+      - '.github/workflows/brazil-lineup-window.yml'
+      - 'config/source-contract.json'
+      - 'workspace-updates/20261118-governance/**'
+      - '.github/workflows/model-governance.yml'
+  push:
+    branches: ['chore/model-governance-*']
+permissions:
+  contents: read
+jobs:
+  compatibility:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - api: public-v1
+            revision: 78427c8f9d5ef508855ef6dd981d9052ee0d0795
+          - api: legacy-frozen-pin
+            revision: 3fd411a4a34769e3192816631f2fa90948ad4ac9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: data
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ matrix.revision }}
+          path: code
+          persist-credentials: false
+      - name: Resolve original replay identity
+        if: matrix.api == 'public-v1'
+        id: replay_version
+        run: python3 data/runtime/source_versions.py --include-replay --github-output "$GITHUB_OUTPUT"
+      - name: Read immutable original freeze replay source
+        if: matrix.api == 'public-v1'
+        uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ steps.replay_version.outputs.frozen_replay }}
+          path: frozen-code
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r code/requirements.txt
+      - name: Check selected adapter and result-polling contract
+        working-directory: data
+        env:
+          PYTHONPATH: ${{ github.workspace }}/code/runtime
+          EXPECTED_API: ${{ matrix.api }}
+        run: |
+          python -c "import os; from runtime.source_review_api import BACKEND; assert BACKEND == os.environ['EXPECTED_API']"
+          python -m unittest discover -s runtime -p test_poll_three_arm_results.py -v
+      - name: Verify governance and retained evidence
+        if: matrix.api == 'public-v1'
+        working-directory: data
+        env:
+          PYTHONPATH: ${{ github.workspace }}/code/runtime
+        run: |
+          python ../code/runtime/module_governance.py --data .
+          python -m research_program.consolidation_audit --data . > /tmp/consolidation.json
+          diff -u workspace-updates/20261118-governance/consolidation.json /tmp/consolidation.json
+          python workspace-updates/20261118-three-arm/verify.py --source ../frozen-code
+          python workspace-updates/20261118-sequence/verify.py --source ../frozen-code
+          python workspace-updates/20261118-transformer/verify.py --source ../frozen-code
+
+      - name: Reproduce bounded development decisions and lifecycle policy
+        if: matrix.api == 'public-v1'
+        working-directory: data
+        env:
+          PYTHONPATH: ${{ github.workspace }}/code/runtime
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          python -m research_program.bounded_fusion --data . --out /tmp/bounded-development
+          python runtime/development_replay.py workspace-updates/20261118-governance/third /tmp/bounded-development
+          python -m research_program.portfolio_lifecycle --data . --policy workspace-updates/20261118-governance/third/policy.json > /tmp/lifecycle.json

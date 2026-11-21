@@ -1,0 +1,115 @@
+{
+  "schema": "WCPP-CONSOLIDATION-AUDIT-1",
+  "frozen_experiments": [
+    {
+      "id": "three-arm",
+      "plan_sha256": "8fe961fce01352bd388a5505045e8903b8a211ffe96655fe82905b702fefc4cb",
+      "population": 6,
+      "frozen": 6,
+      "top1_disagreements_with_baseline": {
+        "market": 2,
+        "market_cohort": 2
+      },
+      "decision": "complete_existing_frozen_validation"
+    },
+    {
+      "id": "sequence",
+      "plan_sha256": "25eb46a2c5e4ebfbc917c0c918cea68d03f2f3d6c010276f0269b42257fe9b7a",
+      "population": 6,
+      "frozen": 6,
+      "top1_disagreements_with_baseline": {
+        "lightgbm": 1,
+        "lstm": 2
+      },
+      "decision": "complete_existing_frozen_validation"
+    },
+    {
+      "id": "transformer",
+      "plan_sha256": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e",
+      "population": 6,
+      "frozen": 6,
+      "top1_disagreements_with_baseline": {
+        "lightgbm": 0,
+        "lstm": 0,
+        "transformer": 0
+      },
+      "decision": "complete_existing_frozen_validation"
+    }
+  ],
+  "cross_experiment_cutoffs": {
+    "espn:401841310": {
+      "three-arm": "2026-11-18T03:12:07.332172+00:00",
+      "sequence": "2026-11-18T04:08:02.231177+00:00",
+      "transformer": "2026-11-18T05:11:09.196213+00:00"
+    },
+    "espn:401841312": {
+      "three-arm": "2026-11-18T03:12:07.332172+00:00",
+      "sequence": "2026-11-18T04:08:02.231177+00:00",
+      "transformer": "2026-11-18T05:11:09.196213+00:00"
+    },
+    "espn:401841313": {
+      "three-arm": "2026-11-18T03:12:07.332172+00:00",
+      "sequence": "2026-11-18T04:08:02.231177+00:00",
+      "transformer": "2026-11-18T05:11:09.196213+00:00"
+    },
+    "espn:401841314": {
+      "three-arm": "2026-11-18T03:12:07.332172+00:00",
+      "sequence": "2026-11-18T04:08:02.231177+00:00",
+      "transformer": "2026-11-18T05:11:09.196213+00:00"
+    },
+    "espn:401841315": {
+      "three-arm": "2026-11-18T03:12:07.332172+00:00",
+      "sequence": "2026-11-18T04:08:02.231177+00:00",
+      "transformer": "2026-11-18T05:11:09.196213+00:00"
+    },
+    "espn:401841316": {
+      "three-arm": "2026-11-18T03:12:07.332172+00:00",
+      "sequence": "2026-11-18T04:08:02.231177+00:00",
+      "transformer": "2026-11-18T05:11:09.196213+00:00"
+    }
+  },
+  "same_cutoff_across_experiments": false,
+  "cross_experiment_pooled_comparison_allowed": false,
+  "historical_evidence": {
+    "kind": "previously_inspected_development_evidence_not_future_acceptance",
+    "path": "workspace-updates/20261118-transformer/transfer/europe-2627-predictions.jsonl.gz",
+    "sha256": "8d5704f18ad5f1bae7d3f2a9d49bc7bdb589d650dec5f3b76473f2b1ffb363a8",
+    "arms": {
+      "baseline": {
+        "top1_hits": 57,
+        "population": 481,
+        "gained_vs_baseline": 0,
+        "lost_vs_baseline": 0,
+        "wdl_brier": 0.5568158455851698,
+        "stored_score_log_loss_mean": 2.999346521233832
+      },
+      "lightgbm": {
+        "top1_hits": 59,
+        "population": 481,
+        "gained_vs_baseline": 3,
+        "lost_vs_baseline": 1,
+        "wdl_brier": 0.5555504450061576,
+        "stored_score_log_loss_mean": 2.9962378089851573
+      },
+      "lstm": {
+        "top1_hits": 57,
+        "population": 481,
+        "gained_vs_baseline": 1,
+        "lost_vs_baseline": 1,
+        "wdl_brier": 0.5556734987474525,
+        "stored_score_log_loss_mean": 2.995612607871497
+      },
+      "transformer": {
+        "top1_hits": 58,
+        "population": 481,
+        "gained_vs_baseline": 1,
+        "lost_vs_baseline": 0,
+        "wdl_brier": 0.555721142662206,
+        "stored_score_log_loss_mean": 2.996553037518992
+      }
+    }
+  },
+  "priority": "reuse_existing_market_plus_lightgbm_component; league_calibration_optional_off",
+  "new_arms_created": 0,
+  "automatic_promotion": false
+}

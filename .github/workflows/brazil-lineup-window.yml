@@ -28,16 +28,22 @@ jobs:
           path: data
           ref: main
           sparse-checkout: |
+            config
+            runtime
             market
             workspace-updates/20261118-three-arm/registration
             workspace-updates/20261118-three-arm/batch
             workspace-updates/20261118-three-arm/identity
             workspace-updates/20261118-sequence/coverage
+      - name: Read source versions
+        id: versions
+        if: steps.window.outputs.active == 'true'
+        run: python3 data/runtime/source_versions.py --github-output "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         if: steps.window.outputs.active == 'true'
         with:
           repository: kaka597000/Football-Analysis
-          ref: 7458322a61534a907efd2211b551b419f6929da0
+          ref: ${{ steps.versions.outputs.sequence_code }}
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5

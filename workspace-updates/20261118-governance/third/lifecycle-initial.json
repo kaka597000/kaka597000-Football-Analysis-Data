@@ -1,0 +1,342 @@
+{
+  "schema": "WCPP-CANDIDATE-LIFECYCLE-1",
+  "policy_sha256": "97527c6ec89742983e7ec8c832cdd57a00db0a66f31c131457131674e8f3f1d6",
+  "experiments": {
+    "three-arm": {
+      "baseline": "current",
+      "decisions": {
+        "market": {
+          "status": "PENDING_ORIGINAL_VALIDATION",
+          "population": 6,
+          "paired": 0,
+          "coverage": 0.0,
+          "pending": 6,
+          "matchdays": 0,
+          "gained": 0,
+          "lost": 0,
+          "net_top1_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "family_adjusted_alpha": 0.025,
+          "quality_delta": {
+            "score_log_loss": null,
+            "wdl_brier": null
+          },
+          "candidate_settlements": {},
+          "baseline_settlements": {}
+        },
+        "market_cohort": {
+          "status": "PENDING_ORIGINAL_VALIDATION",
+          "population": 6,
+          "paired": 0,
+          "coverage": 0.0,
+          "pending": 6,
+          "matchdays": 0,
+          "gained": 0,
+          "lost": 0,
+          "net_top1_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "family_adjusted_alpha": 0.025,
+          "quality_delta": {
+            "score_log_loss": null,
+            "wdl_brier": null
+          },
+          "candidate_settlements": {},
+          "baseline_settlements": {}
+        }
+      },
+      "one_review_slot": null,
+      "baseline_remains_active": true,
+      "automatic_promotion": false,
+      "continuation": "pending rounds finish unchanged; closed rounds do not automatically re-enroll",
+      "promotion_gate": "existing promotion_review.assess plus independent review; not bypassed by this report",
+      "plan_sha256": "8fe961fce01352bd388a5505045e8903b8a211ffe96655fe82905b702fefc4cb",
+      "rows": [
+        {
+          "match_id": "espn:401841315",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T03:12:07.332172+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841310",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T03:12:07.332172+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841313",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T03:12:07.332172+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841314",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T03:12:07.332172+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841312",
+          "kickoff_utc_date": "2026-11-19",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T03:12:07.332172+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841316",
+          "kickoff_utc_date": "2026-11-19",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T03:12:07.332172+00:00",
+          "outcomes": null,
+          "source_issues": []
+        }
+      ]
+    },
+    "sequence": {
+      "baseline": "market_baseline",
+      "decisions": {
+        "lightgbm": {
+          "status": "PENDING_ORIGINAL_VALIDATION",
+          "population": 6,
+          "paired": 0,
+          "coverage": 0.0,
+          "pending": 6,
+          "matchdays": 0,
+          "gained": 0,
+          "lost": 0,
+          "net_top1_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "family_adjusted_alpha": 0.025,
+          "quality_delta": {
+            "score_log_loss": null,
+            "wdl_brier": null
+          },
+          "candidate_settlements": {},
+          "baseline_settlements": {}
+        },
+        "lstm": {
+          "status": "PENDING_ORIGINAL_VALIDATION",
+          "population": 6,
+          "paired": 0,
+          "coverage": 0.0,
+          "pending": 6,
+          "matchdays": 0,
+          "gained": 0,
+          "lost": 0,
+          "net_top1_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "family_adjusted_alpha": 0.025,
+          "quality_delta": {
+            "score_log_loss": null,
+            "wdl_brier": null
+          },
+          "candidate_settlements": {},
+          "baseline_settlements": {}
+        }
+      },
+      "one_review_slot": null,
+      "baseline_remains_active": true,
+      "automatic_promotion": false,
+      "continuation": "pending rounds finish unchanged; closed rounds do not automatically re-enroll",
+      "promotion_gate": "existing promotion_review.assess plus independent review; not bypassed by this report",
+      "plan_sha256": "25eb46a2c5e4ebfbc917c0c918cea68d03f2f3d6c010276f0269b42257fe9b7a",
+      "rows": [
+        {
+          "match_id": "espn:401841315",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T04:08:02.231177+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841310",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T04:08:02.231177+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841313",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T04:08:02.231177+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841314",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T04:08:02.231177+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841312",
+          "kickoff_utc_date": "2026-11-19",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T04:08:02.231177+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841316",
+          "kickoff_utc_date": "2026-11-19",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T04:08:02.231177+00:00",
+          "outcomes": null,
+          "source_issues": []
+        }
+      ]
+    },
+    "transformer": {
+      "baseline": "market_baseline",
+      "decisions": {
+        "lightgbm": {
+          "status": "PENDING_ORIGINAL_VALIDATION",
+          "population": 6,
+          "paired": 0,
+          "coverage": 0.0,
+          "pending": 6,
+          "matchdays": 0,
+          "gained": 0,
+          "lost": 0,
+          "net_top1_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "family_adjusted_alpha": 0.016666666666666666,
+          "quality_delta": {
+            "score_log_loss": null,
+            "wdl_brier": null
+          },
+          "candidate_settlements": {},
+          "baseline_settlements": {}
+        },
+        "lstm": {
+          "status": "PENDING_ORIGINAL_VALIDATION",
+          "population": 6,
+          "paired": 0,
+          "coverage": 0.0,
+          "pending": 6,
+          "matchdays": 0,
+          "gained": 0,
+          "lost": 0,
+          "net_top1_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "family_adjusted_alpha": 0.016666666666666666,
+          "quality_delta": {
+            "score_log_loss": null,
+            "wdl_brier": null
+          },
+          "candidate_settlements": {},
+          "baseline_settlements": {}
+        },
+        "transformer": {
+          "status": "PENDING_ORIGINAL_VALIDATION",
+          "population": 6,
+          "paired": 0,
+          "coverage": 0.0,
+          "pending": 6,
+          "matchdays": 0,
+          "gained": 0,
+          "lost": 0,
+          "net_top1_hits": 0,
+          "paired_one_sided_pvalue": 1.0,
+          "family_adjusted_alpha": 0.016666666666666666,
+          "quality_delta": {
+            "score_log_loss": null,
+            "wdl_brier": null
+          },
+          "candidate_settlements": {},
+          "baseline_settlements": {}
+        }
+      },
+      "one_review_slot": null,
+      "baseline_remains_active": true,
+      "automatic_promotion": false,
+      "continuation": "pending rounds finish unchanged; closed rounds do not automatically re-enroll",
+      "promotion_gate": "existing promotion_review.assess plus independent review; not bypassed by this report",
+      "plan_sha256": "cf41d588742003447f575ce8bc074ca0e98d9573ca01eac970f66d1671f1394e",
+      "rows": [
+        {
+          "match_id": "espn:401841315",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T05:11:09.196213+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841310",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T05:11:09.196213+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841313",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T05:11:09.196213+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841314",
+          "kickoff_utc_date": "2026-11-18",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T05:11:09.196213+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841312",
+          "kickoff_utc_date": "2026-11-19",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T05:11:09.196213+00:00",
+          "outcomes": null,
+          "source_issues": []
+        },
+        {
+          "match_id": "espn:401841316",
+          "kickoff_utc_date": "2026-11-19",
+          "matchday": "2026-11-18",
+          "matchday_timezone": "America/Sao_Paulo",
+          "cutoff_at": "2026-11-18T05:11:09.196213+00:00",
+          "outcomes": null,
+          "source_issues": []
+        }
+      ]
+    }
+  },
+  "cross_experiment_pooling": false,
+  "activation_modified": false
+}

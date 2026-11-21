@@ -2,6 +2,8 @@ name: Replay registered football Transformer comparison
 on:
   pull_request:
     paths: &trial_paths
+      - config/source-contract.json
+      - runtime/source_versions.py
       - .github/workflows/transformer-validation.yml
       - workspace-updates/20261118-transformer/**
   push:
@@ -24,6 +26,8 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /config/source-contract.json
+            /runtime/source_versions.py
             /workspace-updates/20261118-transformer/
             /workspace-updates/20261118-sequence/verify.py
             /workspace-updates/20261118-sequence/history/run_models.py
@@ -44,10 +48,13 @@ jobs:
             /workspace-updates/20261115-remaining-nations-brazil/remaining-evidence.tar.gz
             /future/bundle-v2/objects/923e34fc44cda33fe965498a24a2435abb37a01a80c539108d8ec20d490bf013
             /market/runs/44241910588-1-bra1/
+      - name: Read source versions
+        id: versions
+        run: python3 data/runtime/source_versions.py --github-output "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 0751528579d97587fb649ebea6ad51d148de804b
+          ref: ${{ steps.versions.outputs.transformer_code }}
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5

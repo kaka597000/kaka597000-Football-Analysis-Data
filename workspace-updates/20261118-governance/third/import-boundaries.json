@@ -1,0 +1,153 @@
+{
+  "notice": "Static inventory, not exhaustive dynamic dependency resolution. Frozen implementations retained; new modules use package-relative component imports.",
+  "files": [
+    {
+      "path": "runtime/prediction_engine.py",
+      "sha256": "d58181a698b3331137ec344de0b5cbd5eade59c8a0b0a31f2ef9349a886bfd2f",
+      "imports": [
+        "active_route_engines",
+        "argparse",
+        "competition_scope",
+        "copy",
+        "datetime",
+        "hashlib",
+        "json",
+        "ml_model",
+        "os",
+        "pathlib",
+        "runtime_config",
+        "subprocess",
+        "sys",
+        "ucl_ml",
+        "weighted_model"
+      ],
+      "path_mutations": [
+        "sys.path.insert(0, str(ROOT / 'v5'))",
+        "sys.path.insert(0, str(ROOT / 'continental'))",
+        "sys.path.insert(0, str(ROOT / 'v6'))"
+      ]
+    },
+    {
+      "path": "runtime/v5/weighted_model.py",
+      "sha256": "552754351f1b1a149f5a46111d129bb57e50992bf25f9ba262fc3973e540174d",
+      "imports": [
+        "competition_router",
+        "copy",
+        "datetime",
+        "hashlib",
+        "json",
+        "main_model",
+        "numpy",
+        "pathlib",
+        "scipy.optimize",
+        "sys"
+      ],
+      "path_mutations": [
+        "sys.path.insert(0, str(ROOT / 'v4'))"
+      ]
+    },
+    {
+      "path": "runtime/v2/model.py",
+      "sha256": "d11e5296500df41a149ae16eecb8a12f4c88bb613d05f35764cec62f613c7a9a",
+      "imports": [
+        "datetime",
+        "evidence",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "scipy.optimize",
+        "scipy.special",
+        "scipy.stats"
+      ],
+      "path_mutations": []
+    },
+    {
+      "path": "runtime/active_route_engines.py",
+      "sha256": "e9ce74a444ae8ac767223a70d50b892718e61d338d0d6a37574149607f89c732",
+      "imports": [
+        "__future__",
+        "aus_expert.runner",
+        "candidate",
+        "datetime",
+        "hashlib",
+        "json",
+        "main_model",
+        "math",
+        "models",
+        "numpy",
+        "os",
+        "pathlib",
+        "research_program.retained_j1",
+        "schema",
+        "sys"
+      ],
+      "path_mutations": [
+        "sys.path.insert(0, str(ROOT / 'v4'))",
+        "sys.path.insert(0, str(ROOT / 'optimization_tools'))",
+        "sys.path.insert(0, str(ROOT))",
+        "sys.path.insert(0, str(ROOT / 'optimization'))"
+      ]
+    },
+    {
+      "path": "runtime/optimization_tools/candidate.py",
+      "sha256": "244a0c3da5ce21efad98dd27b978f7ef79fb7d4c4115b7a91c677b935a94e967",
+      "imports": [
+        "argparse",
+        "dataset",
+        "datetime",
+        "features",
+        "importlib.util",
+        "json",
+        "lightgbm",
+        "models",
+        "numpy",
+        "pathlib",
+        "schema",
+        "sys"
+      ],
+      "path_mutations": [
+        "sys.path.insert(0, str(OPT))"
+      ]
+    },
+    {
+      "path": "runtime/research_program/bounded_fusion.py",
+      "sha256": "76a147be213d894502d4b0d0311d65c9f5a2669470d07a911443c446de23a470",
+      "imports": [
+        ".",
+        ".sequence_history",
+        ".sequence_models",
+        ".three_arm_model",
+        ".three_arm_review",
+        "argparse",
+        "collections",
+        "gzip",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib"
+      ],
+      "path_mutations": []
+    },
+    {
+      "path": "runtime/research_program/portfolio_lifecycle.py",
+      "sha256": "a78708b40f63cb78fae336ddb0b59b4e74c024e12fc85081dcfe16263f0ae609",
+      "imports": [
+        ".",
+        ".sequence_forward",
+        ".transformer_forward",
+        "argparse",
+        "collections",
+        "datetime",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "research.analysis_freeze",
+        "scipy.stats"
+      ],
+      "path_mutations": []
+    }
+  ]
+}

@@ -8,9 +8,13 @@ from pathlib import Path
 import re
 import subprocess
 
-from automation.collector import ESPN, _ScoreboardQueue, append, aware, regulation_row
+if __package__:
+    from .source_review_api import (ESPN, ScoreboardQueue, append, aware, regulation_row,
+                                  certify_result, read_predictions, read_results)
+else:
+    from source_review_api import (ESPN, ScoreboardQueue, append, aware, regulation_row,
+                                 certify_result, read_predictions, read_results)
 from publication import deliver
-from research_program.three_arm_review import _certify, _predictions, _results
 from storage_lock import exclusive_lock
 
 SCOPE = {'competition': 'bra.1', 'cohort': 'bra.1', 'stages': ['regular']}
@@ -76,7 +80,7 @@ def _retain(state, raw, captured, url):
 def poll(batch, registration, state, *, clock=None, fetcher=_fetch):
     clock = clock or (lambda: datetime.now(timezone.utc))
     state, batch, registration = Path(state).resolve(), Path(batch), Path(registration)
-    plan, fixtures, _ = _predictions(batch)
+    plan, fixtures, _ = read_predictions(batch)
     protocol = registration.read_bytes()
     if hashlib.sha256(protocol).hexdigest() != plan['payload']['binding']['registration_sha256']:
         raise ValueError('registration checksum differs from original plan')
@@ -90,7 +94,7 @@ def poll(batch, registration, state, *, clock=None, fetcher=_fetch):
         if not eligible:
             return report
         target = state / 'normalized-results.jsonl'
-        previous, issues = _results(state, eligible, now) if target.exists() else ({}, {})
+        previous, issues = read_results(state, eligible, now) if target.exists() else ({}, {})
         missing = {}
         for mid in eligible:
             if 'conflicting certified regulation scores' in issues.get(mid, []):
@@ -102,7 +106,7 @@ def poll(batch, registration, state, *, clock=None, fetcher=_fetch):
             return report
         queue_dir = batch / 'result-polling'
         queue_dir.mkdir(exist_ok=True)
-        queue = _ScoreboardQueue(queue_dir, missing)
+        queue = ScoreboardQueue(queue_dir, missing)
         for url in queue.order(missing)[:3]:
             mid = missing[url]
             queue.mark(url)
@@ -128,7 +132,7 @@ def poll(batch, registration, state, *, clock=None, fetcher=_fetch):
                 if not isinstance(body, dict):
                     raise ValueError('expected ESPN summary object')
                 row = regulation_row(SCOPE, events[mid], body, captured, ref)
-                _certify(row, fixtures[mid], state, observed)
+                certify_result(row, fixtures[mid], state, observed)
             except (ValueError, KeyError, TypeError, IndexError, AttributeError) as exc:
                 report['pending'][mid] = str(exc)
                 continue
