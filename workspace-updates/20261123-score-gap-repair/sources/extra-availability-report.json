@@ -1,0 +1,354 @@
+{
+  "phase_definitions": "Europe: test 2016-07-01..2017-06-30, validation 2015-07-01..2016-06-30, train_dev 2011-07-01..2015-06-30. Calendar competitions: test 2017, validation 2016, train_dev 2011-2015.",
+  "competition_coverage": [
+    {
+      "competition": "aus.1",
+      "total_events": 955,
+      "train_dev_2011_15": 673,
+      "validation": 140,
+      "test": 142,
+      "90min_scored": 953,
+      "90min_missing": 2,
+      "event_calendar_year_counts": {
+        "2011": 118,
+        "2012": 142,
+        "2013": 133,
+        "2014": 141,
+        "2015": 139,
+        "2016": 140,
+        "2017": 142
+      },
+      "stages": {
+        "regular": 921,
+        "playoffs:finals_week_1": 9,
+        "playoffs:finals_week_2": 7,
+        "playoffs:preliminary_final": 2,
+        "playoffs:grand_final": 4,
+        "playoffs:elimination_finals": 6,
+        "playoffs:semifinals": 6
+      }
+    },
+    {
+      "competition": "kor.1",
+      "total_events": 1188,
+      "train_dev_2011_15": 728,
+      "validation": 230,
+      "test": 230,
+      "90min_scored": 1188,
+      "90min_missing": 0,
+      "event_calendar_year_counts": {
+        "2013": 268,
+        "2014": 230,
+        "2015": 230,
+        "2016": 230,
+        "2017": 230
+      },
+      "stages": {
+        "regular": 1188
+      }
+    },
+    {
+      "competition": "jpn.league_cup",
+      "total_events": 361,
+      "train_dev_2011_15": 247,
+      "validation": 55,
+      "test": 59,
+      "90min_scored": 361,
+      "90min_missing": 0,
+      "event_calendar_year_counts": {
+        "2011": 27,
+        "2012": 55,
+        "2013": 55,
+        "2014": 55,
+        "2015": 55,
+        "2016": 55,
+        "2017": 59
+      },
+      "stages": {
+        "main-stage:leg-1": 10,
+        "main-stage:leg-2": 10,
+        "quarterfinals": 4,
+        "semifinals": 2,
+        "final": 7,
+        "group-stage": 252,
+        "quarterfinals:leg-1": 24,
+        "quarterfinals:leg-2": 24,
+        "semifinals:leg-1": 12,
+        "semifinals:leg-2": 12,
+        "playoff-stage:leg-1": 2,
+        "playoff-stage:leg-2": 2
+      }
+    },
+    {
+      "competition": "afc.champions",
+      "total_events": 733,
+      "train_dev_2011_15": 469,
+      "validation": 138,
+      "test": 126,
+      "90min_scored": 732,
+      "90min_missing": 1,
+      "event_calendar_year_counts": {
+        "2011": 117,
+        "2012": 112,
+        "2013": 110,
+        "2014": 107,
+        "2015": 23,
+        "2016": 138,
+        "2017": 126
+      },
+      "stages": {
+        "legacy:group_stage": 594,
+        "legacy:round_of_16": 16,
+        "legacy:quarterfinals:leg-1": 24,
+        "legacy:quarterfinals:leg-2": 32,
+        "legacy:semifinals:leg-1": 10,
+        "legacy:semifinals:leg-2": 10,
+        "legacy:final": 1,
+        "legacy:round_of_16:leg-2": 21,
+        "legacy:final:leg-1": 4,
+        "legacy:final:leg-2": 4,
+        "legacy:round_of_16:leg-1": 17
+      }
+    },
+    {
+      "competition": "uefa.champions",
+      "total_events": 750,
+      "train_dev_2011_15": 500,
+      "validation": 125,
+      "test": 125,
+      "90min_scored": 749,
+      "90min_missing": 1,
+      "event_calendar_year_counts": {
+        "2011": 96,
+        "2012": 125,
+        "2013": 125,
+        "2014": 125,
+        "2015": 125,
+        "2016": 125,
+        "2017": 29
+      },
+      "stages": {
+        "group-stage": 576,
+        "round-of-16:leg-1": 48,
+        "round-of-16:leg-2": 48,
+        "quarterfinals:leg-1": 24,
+        "quarterfinals:leg-2": 24,
+        "semifinals:leg-1": 12,
+        "semifinals:leg-2": 12,
+        "final": 6
+      }
+    },
+    {
+      "competition": "uefa.europa",
+      "total_events": 1234,
+      "train_dev_2011_15": 824,
+      "validation": 205,
+      "test": 205,
+      "90min_scored": 1234,
+      "90min_missing": 0,
+      "event_calendar_year_counts": {
+        "2011": 148,
+        "2012": 205,
+        "2013": 205,
+        "2014": 205,
+        "2015": 205,
+        "2016": 205,
+        "2017": 61
+      },
+      "stages": {
+        "group-stage": 868,
+        "round-of-32:leg-1": 96,
+        "round-of-32:leg-2": 96,
+        "round-of-16:leg-1": 48,
+        "round-of-16:leg-2": 48,
+        "quarterfinals:leg-1": 24,
+        "quarterfinals:leg-2": 24,
+        "semifinals:leg-1": 12,
+        "semifinals:leg-2": 12,
+        "final": 6
+      }
+    }
+  ],
+  "other_requested_competitions": [
+    {
+      "competition": "fifa.world",
+      "test_window": "2017 natural year / 2016-07-01..2017-06-30",
+      "matches": 0,
+      "reason": "No senior FIFA World Cup finals in the test window; this competition panel is finals, not qualifiers."
+    },
+    {
+      "competition": "uefa.nations",
+      "test_window": "2017 natural year / 2016-07-01..2017-06-30",
+      "matches": 0,
+      "reason": "Nations League started in 2018."
+    },
+    {
+      "competition": "uefa.europa.conf",
+      "test_window": "2017 natural year / 2016-07-01..2017-06-30",
+      "matches": 0,
+      "reason": "Conference League started in 2021."
+    }
+  ],
+  "cleaning_checks": {
+    "common_schema_fields": [
+      "id",
+      "competition",
+      "stage",
+      "season",
+      "date",
+      "home",
+      "away",
+      "home_goals",
+      "away_goals",
+      "neutral",
+      "sources",
+      "h2h",
+      "total",
+      "bookmaker",
+      "market_time_basis",
+      "paired_market",
+      "score_basis"
+    ],
+    "phase_is_separate_phase_index": "phase-index.jsonl",
+    "all_rows_have_same_fields": true,
+    "uefa_qualifying_excluded": true,
+    "uefa_stage_outcome_text_removed": true,
+    "AFC_format_transition_labeled_legacy": true,
+    "all_test_dates_match_phase": true,
+    "missing_90min_scores_are_retained_null_and_not_scoreable": true
+  },
+  "unscored_regulation_rows": [
+    {
+      "id": "espn:333495",
+      "competition": "afc.champions",
+      "date": "2011-11-05",
+      "sources": [
+        {
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2011&limit=1000",
+          "sha256": "1bc0c331bbeb7f2a655ce0d6157a7f4157412a1f858fdf2b5ede2f9bce35b4f0",
+          "match_url": "https://www.espn.com/soccer/match/_/gameId/333495"
+        }
+      ]
+    },
+    {
+      "id": "espn:314772",
+      "competition": "aus.1",
+      "date": "2011-03-13",
+      "sources": [
+        {
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2011&limit=1000",
+          "sha256": "9a50f9ab0b9217d7c23fc2bba36107d32e9448c397a1087508d0aa0b58d6a42d",
+          "match_url": "https://www.espn.com/soccer/match/_/gameId/314772"
+        }
+      ]
+    },
+    {
+      "id": "espn:447000",
+      "competition": "aus.1",
+      "date": "2016-04-24",
+      "sources": [
+        {
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2016&limit=1000",
+          "sha256": "6f571a3dd10c71d10128ed34e970abf4d5a4f5659db2906454f51870bd5f5b7f",
+          "match_url": "https://www.espn.com/soccer/match/_/gameId/447000"
+        }
+      ]
+    },
+    {
+      "id": "espn:476515",
+      "competition": "uefa.champions",
+      "date": "2017-04-18",
+      "sources": [
+        {
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=2017&limit=1000",
+          "sha256": "1a21106d72bcdd62d5a7616734e916fff53ca7bd89dfedc7537550a682697bb1",
+          "match_url": "https://www.espn.com/soccer/match/_/gameId/476515"
+        }
+      ]
+    }
+  ],
+  "jleague_90min_audit": "jleague_score_scope_audit.jsonl",
+  "r5_existing_panel_overlap_check": [
+    {
+      "competition": "aus.1",
+      "r5_panel": "/workspace/recovered-workspace-20261102/WCPP/reports/kpi-optimization-20261123-r5/panels/aus.1.jsonl",
+      "r5_panel_sha256": "a2ce3b7f299eb149c6aec1326c239bd9239ac8d9deea8d1e052fbd3f11fa8129",
+      "r5_panel_min_date": "2018-01-01",
+      "r5_panel_max_date": "2026-11-22",
+      "early_test_window": [
+        "2017-01-01",
+        "2017-12-31"
+      ],
+      "overlap_with_r5_panel": false,
+      "genuinely_new_by_r5_panel_date_coverage": true
+    },
+    {
+      "competition": "kor.1",
+      "r5_panel": "/workspace/recovered-workspace-20261102/WCPP/reports/kpi-optimization-20261123-r5/panels/kor.1.jsonl",
+      "r5_panel_sha256": "ad4b3acb5f6d0389cad9e5ee5fef2cb5a9b9c62f4dd96197f287c58d3b149010",
+      "r5_panel_min_date": "2018-03-01",
+      "r5_panel_max_date": "2026-11-22",
+      "early_test_window": [
+        "2017-01-01",
+        "2017-12-31"
+      ],
+      "overlap_with_r5_panel": false,
+      "genuinely_new_by_r5_panel_date_coverage": true
+    },
+    {
+      "competition": "jpn.league_cup",
+      "r5_panel": "/workspace/recovered-workspace-20261102/WCPP/reports/kpi-optimization-20261123-r5/panels/jpn.league_cup.jsonl",
+      "r5_panel_sha256": "2d2d4e4e57b1e56664d5116eadc595f1b008e23f1b9e4de7e60130847cd35f19",
+      "r5_panel_min_date": "2022-06-04",
+      "r5_panel_max_date": "2026-11-11",
+      "early_test_window": [
+        "2017-01-01",
+        "2017-12-31"
+      ],
+      "overlap_with_r5_panel": false,
+      "genuinely_new_by_r5_panel_date_coverage": true
+    },
+    {
+      "competition": "afc.champions",
+      "r5_panel": "/workspace/recovered-workspace-20261102/WCPP/reports/kpi-optimization-20261123-r5/panels/afc.champions.jsonl",
+      "r5_panel_sha256": "9a3b533c99656c966b95f36030d388ac291b163d42101d0b7d206ceae8d0f954",
+      "r5_panel_min_date": "2024-09-16",
+      "r5_panel_max_date": "2026-10-12",
+      "early_test_window": [
+        "2017-01-01",
+        "2017-12-31"
+      ],
+      "overlap_with_r5_panel": false,
+      "genuinely_new_by_r5_panel_date_coverage": true
+    },
+    {
+      "competition": "uefa.champions",
+      "r5_panel": "/workspace/recovered-workspace-20261102/WCPP/reports/kpi-optimization-20261123-r5/panels/uefa.champions.jsonl",
+      "r5_panel_sha256": "42adccc5c14c9613c02be35b8905b45cf9d1268815c98626258a69b8b59586b0",
+      "r5_panel_min_date": "2018-09-18",
+      "r5_panel_max_date": "2026-11-04",
+      "early_test_window": [
+        "2016-07-01",
+        "2017-06-30"
+      ],
+      "overlap_with_r5_panel": false,
+      "genuinely_new_by_r5_panel_date_coverage": true
+    },
+    {
+      "competition": "uefa.europa",
+      "r5_panel": "/workspace/recovered-workspace-20261102/WCPP/reports/kpi-optimization-20261123-r5/panels/uefa.europa.jsonl",
+      "r5_panel_sha256": "369bcce9ff1fec0fc65c3438b8097e2268efd5399949d2935853ba43b4c475b0",
+      "r5_panel_min_date": "2018-09-20",
+      "r5_panel_max_date": "2026-11-05",
+      "early_test_window": [
+        "2016-07-01",
+        "2017-06-30"
+      ],
+      "overlap_with_r5_panel": false,
+      "genuinely_new_by_r5_panel_date_coverage": true
+    }
+  ],
+  "total_rows": 5221,
+  "total_scored_90": 5217,
+  "total_null_90": 4
+}

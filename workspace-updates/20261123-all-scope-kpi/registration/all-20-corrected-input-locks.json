@@ -1,0 +1,2115 @@
+{
+  "registered_at": "2026-11-23T06:00:37.526707+00:00",
+  "scope": [
+    "eng.1",
+    "esp.1",
+    "ger.1",
+    "ita.1",
+    "fra.1",
+    "jpn.1",
+    "kor.1",
+    "aus.1",
+    "usa.1",
+    "nor.1",
+    "swe.1",
+    "ned.1",
+    "uefa.champions",
+    "uefa.europa",
+    "uefa.europa.conf",
+    "afc.champions",
+    "fifa.world",
+    "uefa.nations",
+    "jpn.league_cup",
+    "bra.1"
+  ],
+  "protocols": {
+    "protocol.json": "27e2a130ed229f8bb2445af3ccabed2baf77453feccc6bf91b27b1479dd70113",
+    "context-protocol.json": "6f746a9963fa3225fe34108c98ed97194d90acc4b7889b3cdf94341bb0bdac60",
+    "refresh-protocol.json": "e119736ee8b4706f0fcf380527d34ae73919400602662baca2b826385149e8a7"
+  },
+  "source_commit": "2e16828b995cafb70dc87c4a1a490856320603b5",
+  "competitions": {
+    "eng.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "eng.1",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 1900,
+        "selection_n": 380,
+        "trained_stage_counts": {
+          "regular": 1900
+        },
+        "selection_stage_counts": {
+          "regular": 380
+        },
+        "tree_stage_counts": {
+          "regular": 40
+        },
+        "fit_selection_sha256": "01f260b8dbc9a5b24f9bf50ad3d633a774e3463ce14934a7019394e33395f56e",
+        "policy": {
+          "first": "anchor",
+          "wdl": "anchor",
+          "total": "anchor",
+          "backups": "calibrated"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 52,
+            "team": 43,
+            "calibrated": 48,
+            "boosted": 48,
+            "venue": 45
+          },
+          "wdl": {
+            "anchor": 211,
+            "team": 190,
+            "calibrated": 207,
+            "boosted": 208,
+            "venue": 155
+          },
+          "total": {
+            "anchor": 220,
+            "team": 203,
+            "calibrated": 219,
+            "boosted": 220,
+            "venue": 215
+          },
+          "backups": {
+            "anchor": 114,
+            "team": 120,
+            "calibrated": 132,
+            "boosted": 120,
+            "venue": 115
+          }
+        },
+        "artifact_sha256": "df9b4d1164a39db295b6dedb48cb7e7669b781fb6c6579525318c03ad5c2071a"
+      },
+      "local_challenger": {
+        "competition": "eng.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 52,
+            "local": 46
+          },
+          "wdl": {
+            "original": 211,
+            "local": 208
+          },
+          "total": {
+            "original": 220,
+            "local": 213
+          },
+          "backups": {
+            "original": 132,
+            "local": 117
+          }
+        },
+        "validation_n": 380,
+        "artifact_sha256": "3dc997ba33f57450dfbd31eadf6a587cb79ba463044420a100c03fda9ee02ad3",
+        "original_sha256": "df9b4d1164a39db295b6dedb48cb7e7669b781fb6c6579525318c03ad5c2071a"
+      },
+      "panel_sha256": "ad17ee00756bc3fabd88cb6e0d92f20014a58d490309bb8c92e73e702a4b84b3"
+    },
+    "esp.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "esp.1",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 1900,
+        "selection_n": 380,
+        "trained_stage_counts": {
+          "regular": 1900
+        },
+        "selection_stage_counts": {
+          "regular": 380
+        },
+        "tree_stage_counts": {
+          "regular": 40
+        },
+        "fit_selection_sha256": "b053740cccb03e675068457b89bad1e756a321b1ab77a7e5c3dfbc5901cd8666",
+        "policy": {
+          "first": "calibrated",
+          "wdl": "anchor",
+          "total": "boosted",
+          "backups": "calibrated"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 60,
+            "team": 49,
+            "calibrated": 63,
+            "boosted": 58,
+            "venue": 57
+          },
+          "wdl": {
+            "anchor": 213,
+            "team": 192,
+            "calibrated": 211,
+            "boosted": 211,
+            "venue": 169
+          },
+          "total": {
+            "anchor": 232,
+            "team": 222,
+            "calibrated": 228,
+            "boosted": 233,
+            "venue": 195
+          },
+          "backups": {
+            "anchor": 155,
+            "team": 151,
+            "calibrated": 161,
+            "boosted": 161,
+            "venue": 150
+          }
+        },
+        "artifact_sha256": "d07350f975f29460d636849a63d6059ca70c259d5ec81dfc5b8edf4a5346dbc6"
+      },
+      "local_challenger": {
+        "competition": "esp.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "local"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 63,
+            "local": 62
+          },
+          "wdl": {
+            "original": 213,
+            "local": 211
+          },
+          "total": {
+            "original": 233,
+            "local": 226
+          },
+          "backups": {
+            "original": 161,
+            "local": 164
+          }
+        },
+        "validation_n": 380,
+        "artifact_sha256": "8f721e2600ac437ded96e81b52c86e29c9939025637b2b1f9e98fe7398a6b8b2",
+        "original_sha256": "d07350f975f29460d636849a63d6059ca70c259d5ec81dfc5b8edf4a5346dbc6"
+      },
+      "panel_sha256": "b65ec79d6f8202811ad680ebcaf9366baf48c3f695e706c6c5aa56c3ea878945"
+    },
+    "ger.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "ger.1",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 1530,
+        "selection_n": 306,
+        "trained_stage_counts": {
+          "regular": 1530
+        },
+        "selection_stage_counts": {
+          "regular": 306
+        },
+        "tree_stage_counts": {
+          "regular": 40
+        },
+        "fit_selection_sha256": "152eed25cf62df3e266e6d7d79d72c31fb810163c0c22e8944fa60554aad18f2",
+        "policy": {
+          "first": "anchor",
+          "wdl": "anchor",
+          "total": "boosted",
+          "backups": "anchor"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 27,
+            "team": 22,
+            "calibrated": 25,
+            "boosted": 24,
+            "venue": 26
+          },
+          "wdl": {
+            "anchor": 162,
+            "team": 147,
+            "calibrated": 160,
+            "boosted": 153,
+            "venue": 118
+          },
+          "total": {
+            "anchor": 194,
+            "team": 181,
+            "calibrated": 192,
+            "boosted": 195,
+            "venue": 183
+          },
+          "backups": {
+            "anchor": 79,
+            "team": 75,
+            "calibrated": 78,
+            "boosted": 75,
+            "venue": 65
+          }
+        },
+        "artifact_sha256": "1a26d732bdecd575acba05de7d7adfcd64a8f11e354ade487ee999f7e2651e5c"
+      },
+      "local_challenger": {
+        "competition": "ger.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "local",
+          "total": "local",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 27,
+            "local": 25
+          },
+          "wdl": {
+            "original": 162,
+            "local": 163
+          },
+          "total": {
+            "original": 195,
+            "local": 202
+          },
+          "backups": {
+            "original": 79,
+            "local": 77
+          }
+        },
+        "validation_n": 306,
+        "artifact_sha256": "576dc7f8bd87af12cdd8e5880aea935becfc8ba3fc19d6f91593c9095f7bdaa2",
+        "original_sha256": "1a26d732bdecd575acba05de7d7adfcd64a8f11e354ade487ee999f7e2651e5c"
+      },
+      "panel_sha256": "679952a9f6854bc59948668b371291f9beef98ad85776a11fae58f9c58fc1a0e"
+    },
+    "ita.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "ita.1",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 1900,
+        "selection_n": 380,
+        "trained_stage_counts": {
+          "regular": 1900
+        },
+        "selection_stage_counts": {
+          "regular": 380
+        },
+        "tree_stage_counts": {
+          "regular": 40
+        },
+        "fit_selection_sha256": "ccf4305c328e552c905b541e986307b21478837af459d724644213ab9d545014",
+        "policy": {
+          "first": "anchor",
+          "wdl": "calibrated",
+          "total": "anchor",
+          "backups": "calibrated"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 70,
+            "team": 57,
+            "calibrated": 54,
+            "boosted": 60,
+            "venue": 53
+          },
+          "wdl": {
+            "anchor": 205,
+            "team": 202,
+            "calibrated": 206,
+            "boosted": 202,
+            "venue": 151
+          },
+          "total": {
+            "anchor": 225,
+            "team": 193,
+            "calibrated": 221,
+            "boosted": 213,
+            "venue": 185
+          },
+          "backups": {
+            "anchor": 142,
+            "team": 140,
+            "calibrated": 144,
+            "boosted": 141,
+            "venue": 143
+          }
+        },
+        "artifact_sha256": "2f9694d7277a4f9930a1b09c46e863a715ceea5fed86af5a57f00d49e8f9b9c1"
+      },
+      "local_challenger": {
+        "competition": "ita.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "local"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 70,
+            "local": 66
+          },
+          "wdl": {
+            "original": 206,
+            "local": 204
+          },
+          "total": {
+            "original": 225,
+            "local": 220
+          },
+          "backups": {
+            "original": 144,
+            "local": 147
+          }
+        },
+        "validation_n": 380,
+        "artifact_sha256": "ae8020fc84fba97e2d902c203c1d3607772804d6a2e9c1fd26575db5a29e4dee",
+        "original_sha256": "2f9694d7277a4f9930a1b09c46e863a715ceea5fed86af5a57f00d49e8f9b9c1"
+      },
+      "panel_sha256": "aa1c1e122dc717d50679db46f557a4c9ba765d8532b9baafe4bfabe9b0836ba2"
+    },
+    "fra.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "fra.1",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 1725,
+        "selection_n": 306,
+        "trained_stage_counts": {
+          "regular": 1725
+        },
+        "selection_stage_counts": {
+          "regular": 306
+        },
+        "tree_stage_counts": {
+          "regular": 40
+        },
+        "fit_selection_sha256": "eda28c4fce95be5d57940fd36945547958424bc998701526611d821acf5b61f4",
+        "policy": {
+          "first": "boosted",
+          "wdl": "anchor",
+          "total": "calibrated",
+          "backups": "venue"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 29,
+            "team": 30,
+            "calibrated": 26,
+            "boosted": 33,
+            "venue": 33
+          },
+          "wdl": {
+            "anchor": 171,
+            "team": 168,
+            "calibrated": 168,
+            "boosted": 169,
+            "venue": 143
+          },
+          "total": {
+            "anchor": 180,
+            "team": 171,
+            "calibrated": 182,
+            "boosted": 166,
+            "venue": 170
+          },
+          "backups": {
+            "anchor": 85,
+            "team": 84,
+            "calibrated": 85,
+            "boosted": 85,
+            "venue": 91
+          }
+        },
+        "artifact_sha256": "4ee450041d35cd3acb45fe59920128e38f385de572d7ab137eed41a9fdcf5b9f"
+      },
+      "local_challenger": {
+        "competition": "fra.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 33,
+            "local": 29
+          },
+          "wdl": {
+            "original": 171,
+            "local": 169
+          },
+          "total": {
+            "original": 182,
+            "local": 180
+          },
+          "backups": {
+            "original": 91,
+            "local": 87
+          }
+        },
+        "validation_n": 306,
+        "artifact_sha256": "2d2e6a09babbc710424420468dc2a8c73d6e80098ef9aa97e49cc5a21a4eb5aa",
+        "original_sha256": "4ee450041d35cd3acb45fe59920128e38f385de572d7ab137eed41a9fdcf5b9f"
+      },
+      "panel_sha256": "b366c70ae6f1dfd1b824a611933d5adb58c4829aa8a859c215b2bc85b8d2a07c"
+    },
+    "jpn.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "jpn.1",
+        "selection_start": "2024-01-01",
+        "evaluation_start": "2025-01-01",
+        "evaluation_stop": "2026-01-01",
+        "fit_n": 1912,
+        "selection_n": 380,
+        "trained_stage_counts": {
+          "regular": 1911,
+          "playoffs:promotionrelegation-playoff": 1
+        },
+        "selection_stage_counts": {
+          "regular": 380
+        },
+        "tree_stage_counts": {
+          "regular": 40,
+          "playoffs:promotionrelegation-playoff": 0
+        },
+        "fit_selection_sha256": "3864591b81a8f192456921d9368157aa1c89296d5e2a9390f3d75c99c970776d",
+        "policy": {
+          "first": "venue",
+          "wdl": "team",
+          "total": "anchor",
+          "backups": "calibrated"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 44,
+            "team": 36,
+            "calibrated": 38,
+            "boosted": 40,
+            "venue": 48
+          },
+          "wdl": {
+            "anchor": 154,
+            "team": 161,
+            "calibrated": 154,
+            "boosted": 157,
+            "venue": 146
+          },
+          "total": {
+            "anchor": 0,
+            "team": 0,
+            "calibrated": 0,
+            "boosted": 0,
+            "venue": 0
+          },
+          "backups": {
+            "anchor": 119,
+            "team": 114,
+            "calibrated": 121,
+            "boosted": 121,
+            "venue": 113
+          }
+        },
+        "artifact_sha256": "5f90f82e632bcf1cbb0bc88a88bb4ff7bbfded09192e2ffb89b90bbb7820ecba"
+      },
+      "local_challenger": {
+        "competition": "jpn.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 48,
+            "local": 42
+          },
+          "wdl": {
+            "original": 161,
+            "local": 157
+          },
+          "total": {
+            "original": 0,
+            "local": 0
+          },
+          "backups": {
+            "original": 121,
+            "local": 119
+          }
+        },
+        "validation_n": 380,
+        "artifact_sha256": "86548e85b5faa47101fa4da2dedd348dfe10d3e354869640433fce0f65f706a4",
+        "original_sha256": "5f90f82e632bcf1cbb0bc88a88bb4ff7bbfded09192e2ffb89b90bbb7820ecba"
+      },
+      "panel_sha256": "d0e9591d8221bd3e1f41b480a7f14c5eb743f1020ca2afaae23454bad49c8140"
+    },
+    "kor.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "kor.1",
+        "selection_start": "2024-01-01",
+        "evaluation_start": "2025-01-01",
+        "evaluation_stop": "2026-01-01",
+        "fit_n": 1302,
+        "selection_n": 228,
+        "trained_stage_counts": {
+          "regular": 1152,
+          "split-a": 75,
+          "split-b": 75
+        },
+        "selection_stage_counts": {
+          "regular": 198,
+          "split-a": 15,
+          "split-b": 15
+        },
+        "tree_stage_counts": {
+          "regular": 40,
+          "split-a": 40,
+          "split-b": 40
+        },
+        "fit_selection_sha256": "cf14dbc4f93f51d2f645a74aa3cc2d3a8c52dceb206ae7a3667557ac9ff1b985",
+        "policy": {
+          "first": "calibrated",
+          "wdl": "venue",
+          "total": "anchor",
+          "backups": "venue"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 21,
+            "team": 21,
+            "calibrated": 25,
+            "boosted": 22,
+            "venue": 24
+          },
+          "wdl": {
+            "anchor": 90,
+            "team": 90,
+            "calibrated": 88,
+            "boosted": 88,
+            "venue": 103
+          },
+          "total": {
+            "anchor": 0,
+            "team": 0,
+            "calibrated": 0,
+            "boosted": 0,
+            "venue": 0
+          },
+          "backups": {
+            "anchor": 71,
+            "team": 71,
+            "calibrated": 71,
+            "boosted": 71,
+            "venue": 74
+          }
+        },
+        "artifact_sha256": "44e76742b83920b09b729a9d6d199b6a226ecafaf77d7b8896a0d1544a4501e0"
+      },
+      "local_challenger": {
+        "competition": "kor.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 25,
+            "local": 23
+          },
+          "wdl": {
+            "original": 103,
+            "local": 91
+          },
+          "total": {
+            "original": 0,
+            "local": 0
+          },
+          "backups": {
+            "original": 74,
+            "local": 73
+          }
+        },
+        "validation_n": 228,
+        "artifact_sha256": "1240ca6dc223b33568e817fb196ca439f299ca17ef25034c72f34c329e2dd236",
+        "original_sha256": "44e76742b83920b09b729a9d6d199b6a226ecafaf77d7b8896a0d1544a4501e0"
+      },
+      "panel_sha256": "c1380357ddbb17ffaecfd17ea69bdc1c6bc813faf02d9179df71b24d22ada820"
+    },
+    "aus.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "aus.1",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 1021,
+        "selection_n": 176,
+        "trained_stage_counts": {
+          "regular": 980,
+          "playoffs:elimination-finals": 14,
+          "playoffs:semifinals": 20,
+          "playoffs:grand-final": 7
+        },
+        "selection_stage_counts": {
+          "regular": 169,
+          "playoffs:elimination-finals": 2,
+          "playoffs:semifinals": 4,
+          "playoffs:grand-final": 1
+        },
+        "tree_stage_counts": {
+          "regular": 40,
+          "playoffs:elimination-finals": 0,
+          "playoffs:semifinals": 0,
+          "playoffs:grand-final": 0
+        },
+        "fit_selection_sha256": "fcf15a046647c3fc30b11d5bc2d7755148a87df255ff3558d590335a234725cd",
+        "policy": {
+          "first": "anchor",
+          "wdl": "anchor",
+          "total": "anchor",
+          "backups": "anchor"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 16,
+            "team": 15,
+            "calibrated": 15,
+            "boosted": 16,
+            "venue": 16
+          },
+          "wdl": {
+            "anchor": 87,
+            "team": 81,
+            "calibrated": 85,
+            "boosted": 83,
+            "venue": 61
+          },
+          "total": {
+            "anchor": 40,
+            "team": 39,
+            "calibrated": 37,
+            "boosted": 37,
+            "venue": 32
+          },
+          "backups": {
+            "anchor": 46,
+            "team": 43,
+            "calibrated": 44,
+            "boosted": 46,
+            "venue": 42
+          }
+        },
+        "artifact_sha256": "3db587e347b788477a68207c21ae98da5d1ee13a72dd8b884749f9040a1f5d7b"
+      },
+      "local_challenger": {
+        "competition": "aus.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 16,
+            "local": 12
+          },
+          "wdl": {
+            "original": 87,
+            "local": 85
+          },
+          "total": {
+            "original": 40,
+            "local": 33
+          },
+          "backups": {
+            "original": 46,
+            "local": 43
+          }
+        },
+        "validation_n": 176,
+        "artifact_sha256": "f39dc09aff28fd6d8f8f956b2e6b804dd20de33925662810592efedfc863075f",
+        "original_sha256": "3db587e347b788477a68207c21ae98da5d1ee13a72dd8b884749f9040a1f5d7b"
+      },
+      "panel_sha256": "dd8353d6ad892030bd4cc8d03ee9dc195cf0d93dbc2024339be86a43c04ff1e5"
+    },
+    "usa.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "usa.1",
+        "selection_start": "2024-01-01",
+        "evaluation_start": "2025-01-01",
+        "evaluation_stop": "2026-01-01",
+        "fit_n": 2650,
+        "selection_n": 526,
+        "trained_stage_counts": {
+          "regular": 2529,
+          "playoffs:knockout---eastern-conf": 2,
+          "playoffs:knockout---western-conf": 2,
+          "playoffs:semifinals---eastern-conf": 4,
+          "playoffs:semifinals---western-conf": 4,
+          "playoffs:finals---eastern-conf": 2,
+          "playoffs:finals---western-conf": 2,
+          "playoffs:final": 1,
+          "playoffs:western-conference-playoffs---first-round": 13,
+          "playoffs:eastern-conference-playoffs---first-round": 13,
+          "playoffs:eastern-conference-playoffs---semifinals": 10,
+          "playoffs:western-conference-playoffs---semifinals": 10,
+          "playoffs:western-conference-playoffs---finals": 2,
+          "playoffs:eastern-conference-playoffs---finals": 2,
+          "playoffs:mls-cup": 5,
+          "playoffs:mls-is-back---round-of-16": 8,
+          "playoffs:mls-is-back---quarterfinals": 4,
+          "playoffs:mls-is-back---semifinals": 2,
+          "playoffs:mls-is-back---final": 1,
+          "playoffs:eastern-conference-playoffs---play-in-round": 2,
+          "playoffs:western-conference-playoffs---final": 3,
+          "playoffs:eastern-conference-playoffs---final": 3,
+          "playoffs:eastern-conference-playoffs---wild-card": 1,
+          "playoffs:western-conference-playoffs---wild-card": 1,
+          "playoffs:eastern-conference-playoffs---round-one": 12,
+          "playoffs:western-conference-playoffs---round-one": 12
+        },
+        "selection_stage_counts": {
+          "regular": 493,
+          "playoffs:eastern-conference-playoffs---wild-card": 1,
+          "playoffs:western-conference-playoffs---wild-card": 1,
+          "playoffs:eastern-conference-playoffs---round-one": 12,
+          "playoffs:western-conference-playoffs---round-one": 12,
+          "playoffs:eastern-conference-playoffs---semifinals": 2,
+          "playoffs:western-conference-playoffs---semifinals": 2,
+          "playoffs:eastern-conference-playoffs---final": 1,
+          "playoffs:western-conference-playoffs---final": 1,
+          "playoffs:mls-cup": 1
+        },
+        "tree_stage_counts": {
+          "regular": 40,
+          "playoffs:knockout---eastern-conf": 0,
+          "playoffs:knockout---western-conf": 0,
+          "playoffs:semifinals---eastern-conf": 0,
+          "playoffs:semifinals---western-conf": 0,
+          "playoffs:finals---eastern-conf": 0,
+          "playoffs:finals---western-conf": 0,
+          "playoffs:final": 0,
+          "playoffs:western-conference-playoffs---first-round": 0,
+          "playoffs:eastern-conference-playoffs---first-round": 0,
+          "playoffs:eastern-conference-playoffs---semifinals": 0,
+          "playoffs:western-conference-playoffs---semifinals": 0,
+          "playoffs:western-conference-playoffs---finals": 0,
+          "playoffs:eastern-conference-playoffs---finals": 0,
+          "playoffs:mls-cup": 0,
+          "playoffs:mls-is-back---round-of-16": 0,
+          "playoffs:mls-is-back---quarterfinals": 0,
+          "playoffs:mls-is-back---semifinals": 0,
+          "playoffs:mls-is-back---final": 0,
+          "playoffs:eastern-conference-playoffs---play-in-round": 0,
+          "playoffs:western-conference-playoffs---final": 0,
+          "playoffs:eastern-conference-playoffs---final": 0,
+          "playoffs:eastern-conference-playoffs---wild-card": 0,
+          "playoffs:western-conference-playoffs---wild-card": 0,
+          "playoffs:eastern-conference-playoffs---round-one": 0,
+          "playoffs:western-conference-playoffs---round-one": 0
+        },
+        "fit_selection_sha256": "4503999ff8ed70461a7caf1241233f445e616b75f643db0130d74a4dc6287713",
+        "policy": {
+          "first": "venue",
+          "wdl": "team",
+          "total": "anchor",
+          "backups": "calibrated"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 36,
+            "team": 49,
+            "calibrated": 41,
+            "boosted": 44,
+            "venue": 50
+          },
+          "wdl": {
+            "anchor": 241,
+            "team": 252,
+            "calibrated": 242,
+            "boosted": 244,
+            "venue": 235
+          },
+          "total": {
+            "anchor": 0,
+            "team": 0,
+            "calibrated": 0,
+            "boosted": 0,
+            "venue": 0
+          },
+          "backups": {
+            "anchor": 136,
+            "team": 132,
+            "calibrated": 142,
+            "boosted": 136,
+            "venue": 135
+          }
+        },
+        "artifact_sha256": "cbb2a13a4cb5438a351fc61d5ad528ba86101855ffb0ed413ba8e085faa87222"
+      },
+      "local_challenger": {
+        "competition": "usa.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 50,
+            "local": 43
+          },
+          "wdl": {
+            "original": 252,
+            "local": 242
+          },
+          "total": {
+            "original": 0,
+            "local": 0
+          },
+          "backups": {
+            "original": 142,
+            "local": 140
+          }
+        },
+        "validation_n": 526,
+        "artifact_sha256": "d902000beed9c999783310b859e6dcfb9e5d26b5a48a810c5604eb0bc7d58ea0",
+        "original_sha256": "cbb2a13a4cb5438a351fc61d5ad528ba86101855ffb0ed413ba8e085faa87222"
+      },
+      "panel_sha256": "3d1ea30f0047d72a72558da44562571fb9f35a2d7b15288d64b9fc6e24f22a92"
+    },
+    "nor.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "nor.1",
+        "selection_start": "2024-01-01",
+        "evaluation_start": "2025-01-01",
+        "evaluation_stop": "2026-01-01",
+        "fit_n": 1448,
+        "selection_n": 242,
+        "trained_stage_counts": {
+          "regular": 1440,
+          "promotion-relegation-playoff": 8
+        },
+        "selection_stage_counts": {
+          "regular": 240,
+          "promotion-relegation-playoff": 2
+        },
+        "tree_stage_counts": {
+          "regular": 40,
+          "promotion-relegation-playoff": 0
+        },
+        "fit_selection_sha256": "7099f2b8a55a85a534d88dd332aec297ed2ade4e93365cdab166c6546ab902ab",
+        "policy": {
+          "first": "team",
+          "wdl": "calibrated",
+          "total": "team",
+          "backups": "anchor"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 27,
+            "team": 28,
+            "calibrated": 28,
+            "boosted": 28,
+            "venue": 24
+          },
+          "wdl": {
+            "anchor": 119,
+            "team": 117,
+            "calibrated": 124,
+            "boosted": 119,
+            "venue": 101
+          },
+          "total": {
+            "anchor": 12,
+            "team": 13,
+            "calibrated": 11,
+            "boosted": 10,
+            "venue": 10
+          },
+          "backups": {
+            "anchor": 76,
+            "team": 69,
+            "calibrated": 70,
+            "boosted": 74,
+            "venue": 75
+          }
+        },
+        "artifact_sha256": "73248ad97e0f0639bf2109ff26f20faef4df31873e4becdecc06b8ac70b243ef"
+      },
+      "local_challenger": {
+        "competition": "nor.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "local",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 28,
+            "local": 24
+          },
+          "wdl": {
+            "original": 124,
+            "local": 125
+          },
+          "total": {
+            "original": 13,
+            "local": 9
+          },
+          "backups": {
+            "original": 76,
+            "local": 67
+          }
+        },
+        "validation_n": 242,
+        "artifact_sha256": "99aa1d39da5ed6eda5a295124909abaea3b839b20667dd3584f63268e7d62edf",
+        "original_sha256": "73248ad97e0f0639bf2109ff26f20faef4df31873e4becdecc06b8ac70b243ef"
+      },
+      "panel_sha256": "2706aaf912dd8539f56a9458038ca579698f42f1631f9668d09d1660ad092729"
+    },
+    "swe.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "swe.1",
+        "selection_start": "2024-01-01",
+        "evaluation_start": "2025-01-01",
+        "evaluation_stop": "2026-01-01",
+        "fit_n": 1450,
+        "selection_n": 242,
+        "trained_stage_counts": {
+          "regular": 1440,
+          "promotion-relegation-playoff": 10
+        },
+        "selection_stage_counts": {
+          "regular": 240,
+          "promotion-relegation-playoff": 2
+        },
+        "tree_stage_counts": {
+          "regular": 40,
+          "promotion-relegation-playoff": 0
+        },
+        "fit_selection_sha256": "6b6490629343dab0b1dc9bb5238252814e51bb23eb20600c0944c70d4b7ed44a",
+        "policy": {
+          "first": "anchor",
+          "wdl": "boosted",
+          "total": "anchor",
+          "backups": "venue"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 26,
+            "team": 26,
+            "calibrated": 24,
+            "boosted": 21,
+            "venue": 26
+          },
+          "wdl": {
+            "anchor": 115,
+            "team": 110,
+            "calibrated": 116,
+            "boosted": 122,
+            "venue": 110
+          },
+          "total": {
+            "anchor": 4,
+            "team": 4,
+            "calibrated": 4,
+            "boosted": 4,
+            "venue": 2
+          },
+          "backups": {
+            "anchor": 69,
+            "team": 73,
+            "calibrated": 67,
+            "boosted": 74,
+            "venue": 77
+          }
+        },
+        "artifact_sha256": "4022088eff77a1563df40489f89d342ddfcf6643b19646b73fe52987d264c751"
+      },
+      "local_challenger": {
+        "competition": "swe.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "local",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 26,
+            "local": 28
+          },
+          "wdl": {
+            "original": 122,
+            "local": 121
+          },
+          "total": {
+            "original": 4,
+            "local": 3
+          },
+          "backups": {
+            "original": 83,
+            "local": 65
+          }
+        },
+        "validation_n": 242,
+        "artifact_sha256": "f032ed6eddc82cf6af77adb4fd6e4f1ac3848f20152e83bb7b3563c73d1763b3",
+        "original_sha256": "4022088eff77a1563df40489f89d342ddfcf6643b19646b73fe52987d264c751"
+      },
+      "panel_sha256": "7a1d1ba305f5c22dd3d9957f1fae19d7e0248d7729e69207db45f5728cd70c31"
+    },
+    "ned.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "ned.1",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 1456,
+        "selection_n": 306,
+        "trained_stage_counts": {
+          "regular": 1456
+        },
+        "selection_stage_counts": {
+          "regular": 306
+        },
+        "tree_stage_counts": {
+          "regular": 40
+        },
+        "fit_selection_sha256": "e6d9c45254da29c2d8a5a76eb3cac220fc590ee24c40d6c16969e42917e73c8e",
+        "policy": {
+          "first": "calibrated",
+          "wdl": "anchor",
+          "total": "calibrated",
+          "backups": "anchor"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 37,
+            "team": 35,
+            "calibrated": 42,
+            "boosted": 39,
+            "venue": 40
+          },
+          "wdl": {
+            "anchor": 170,
+            "team": 160,
+            "calibrated": 168,
+            "boosted": 168,
+            "venue": 139
+          },
+          "total": {
+            "anchor": 172,
+            "team": 157,
+            "calibrated": 173,
+            "boosted": 172,
+            "venue": 169
+          },
+          "backups": {
+            "anchor": 113,
+            "team": 100,
+            "calibrated": 105,
+            "boosted": 109,
+            "venue": 93
+          }
+        },
+        "artifact_sha256": "03d53cf0e06194bb5f3c559abde08a9becd695ff8a626e57645638a1bd0c1267"
+      },
+      "local_challenger": {
+        "competition": "ned.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "local",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 42,
+            "local": 40
+          },
+          "wdl": {
+            "original": 170,
+            "local": 169
+          },
+          "total": {
+            "original": 173,
+            "local": 177
+          },
+          "backups": {
+            "original": 113,
+            "local": 106
+          }
+        },
+        "validation_n": 306,
+        "artifact_sha256": "11908cc4b6948cb1a4fc551cd0f19e5a04df2ab05e82f0473d968f06f45a9009",
+        "original_sha256": "03d53cf0e06194bb5f3c559abde08a9becd695ff8a626e57645638a1bd0c1267"
+      },
+      "panel_sha256": "1d7f3ee442b2c5ab68137bab130f2db021821f851ce6ffad322d1a659e1ff730"
+    },
+    "uefa.champions": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "uefa.champions",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 744,
+        "selection_n": 189,
+        "trained_stage_counts": {
+          "group-stage": 576,
+          "round-of-16:leg-1": 48,
+          "round-of-16": 48,
+          "quarterfinals:leg-1": 20,
+          "quarterfinals": 24,
+          "semifinals:leg-1": 10,
+          "semifinals": 12,
+          "final": 6
+        },
+        "selection_stage_counts": {
+          "league-phase": 144,
+          "knockout-round-playoffs:leg-1": 8,
+          "knockout-round-playoffs": 8,
+          "round-of-16:leg-1": 8,
+          "round-of-16": 8,
+          "quarterfinals:leg-1": 4,
+          "quarterfinals": 4,
+          "semifinals:leg-1": 2,
+          "semifinals": 2,
+          "final": 1
+        },
+        "tree_stage_counts": {
+          "group-stage": 40,
+          "round-of-16:leg-1": 40,
+          "round-of-16": 40,
+          "quarterfinals:leg-1": 0,
+          "quarterfinals": 0,
+          "semifinals:leg-1": 0,
+          "semifinals": 0,
+          "final": 0
+        },
+        "fit_selection_sha256": "11279e2f2745597a9cba04e6b90bbbbeec341ee652aeaf481f9d68ac88670622",
+        "policy": {
+          "first": "team",
+          "wdl": "calibrated",
+          "total": "team",
+          "backups": "team"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 10,
+            "team": 16,
+            "calibrated": 15,
+            "boosted": 12,
+            "venue": 10
+          },
+          "wdl": {
+            "anchor": 115,
+            "team": 105,
+            "calibrated": 116,
+            "boosted": 113,
+            "venue": 98
+          },
+          "total": {
+            "anchor": 67,
+            "team": 71,
+            "calibrated": 61,
+            "boosted": 68,
+            "venue": 61
+          },
+          "backups": {
+            "anchor": 46,
+            "team": 50,
+            "calibrated": 46,
+            "boosted": 49,
+            "venue": 50
+          }
+        },
+        "artifact_sha256": "3cd5293037ff5b46fb597e6370c94eafdad9152e7a8a58d2fc9b4b3aca079e4b"
+      },
+      "local_challenger": {
+        "competition": "uefa.champions",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "local",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 16,
+            "local": 11
+          },
+          "wdl": {
+            "original": 116,
+            "local": 117
+          },
+          "total": {
+            "original": 71,
+            "local": 64
+          },
+          "backups": {
+            "original": 50,
+            "local": 46
+          }
+        },
+        "validation_n": 189,
+        "artifact_sha256": "6ea7bbd13af50bdbca7ec627cc2f0351812bbeb1effdde7322b6cc77797c3b75",
+        "original_sha256": "3cd5293037ff5b46fb597e6370c94eafdad9152e7a8a58d2fc9b4b3aca079e4b"
+      },
+      "panel_sha256": "c55bdbec2a7123dfebf9897f000039f693c92199ded4b5a17f973b3d3020ccca"
+    },
+    "uefa.europa": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "uefa.europa",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 1027,
+        "selection_n": 189,
+        "trained_stage_counts": {
+          "group-stage": 719,
+          "round-of-32:leg-1": 48,
+          "round-of-32": 48,
+          "round-of-16:leg-1": 45,
+          "round-of-16": 47,
+          "quarterfinals:leg-1": 20,
+          "quarterfinals": 24,
+          "semifinals:leg-1": 10,
+          "semifinals": 12,
+          "final": 6,
+          "knockout-round-playoffs:leg-1": 24,
+          "knockout-round-playoffs": 24
+        },
+        "selection_stage_counts": {
+          "league-phase": 144,
+          "knockout-round-playoffs:leg-1": 8,
+          "knockout-round-playoffs": 8,
+          "round-of-16:leg-1": 8,
+          "round-of-16": 8,
+          "quarterfinals:leg-1": 4,
+          "quarterfinals": 4,
+          "semifinals:leg-1": 2,
+          "semifinals": 2,
+          "final": 1
+        },
+        "tree_stage_counts": {
+          "group-stage": 40,
+          "round-of-32:leg-1": 40,
+          "round-of-32": 40,
+          "round-of-16:leg-1": 40,
+          "round-of-16": 40,
+          "quarterfinals:leg-1": 0,
+          "quarterfinals": 0,
+          "semifinals:leg-1": 0,
+          "semifinals": 0,
+          "final": 0,
+          "knockout-round-playoffs:leg-1": 0,
+          "knockout-round-playoffs": 0
+        },
+        "fit_selection_sha256": "dfcb5b8012b997db97fa86e602f9a85af81883f67b10040b6b74e13907f78bca",
+        "policy": {
+          "first": "calibrated",
+          "wdl": "boosted",
+          "total": "anchor",
+          "backups": "team"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 19,
+            "team": 18,
+            "calibrated": 20,
+            "boosted": 18,
+            "venue": 19
+          },
+          "wdl": {
+            "anchor": 102,
+            "team": 99,
+            "calibrated": 100,
+            "boosted": 104,
+            "venue": 94
+          },
+          "total": {
+            "anchor": 93,
+            "team": 87,
+            "calibrated": 87,
+            "boosted": 88,
+            "venue": 90
+          },
+          "backups": {
+            "anchor": 56,
+            "team": 57,
+            "calibrated": 53,
+            "boosted": 55,
+            "venue": 54
+          }
+        },
+        "artifact_sha256": "742bdd9b7095335e1126b664435afcbc64ea6a3a367b7c05fe051125028273ec"
+      },
+      "local_challenger": {
+        "competition": "uefa.europa",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 20,
+            "local": 20
+          },
+          "wdl": {
+            "original": 104,
+            "local": 101
+          },
+          "total": {
+            "original": 93,
+            "local": 89
+          },
+          "backups": {
+            "original": 57,
+            "local": 54
+          }
+        },
+        "validation_n": 189,
+        "artifact_sha256": "8efb13101ee398dcf4485a65ccc95e1439d2b1a6b708a11fe2cf9661b76022ce",
+        "original_sha256": "742bdd9b7095335e1126b664435afcbc64ea6a3a367b7c05fe051125028273ec"
+      },
+      "panel_sha256": "085ed13058b00ffcae33b24af150c716427ff0f3b33228b9c549cbdde60c1e4e"
+    },
+    "uefa.europa.conf": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "uefa.europa.conf",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 422,
+        "selection_n": 153,
+        "trained_stage_counts": {
+          "group-stage": 287,
+          "knockout-round-playoffs:leg-1": 24,
+          "knockout-round-playoffs": 24,
+          "round-of-16:leg-1": 24,
+          "round-of-16": 24,
+          "quarterfinals:leg-1": 12,
+          "quarterfinals": 12,
+          "semifinals:leg-1": 6,
+          "semifinals": 6,
+          "final": 3
+        },
+        "selection_stage_counts": {
+          "league-phase": 108,
+          "knockout-round-playoffs:leg-1": 8,
+          "knockout-round-playoffs": 8,
+          "round-of-16:leg-1": 8,
+          "round-of-16": 8,
+          "quarterfinals:leg-1": 4,
+          "quarterfinals": 4,
+          "semifinals:leg-1": 2,
+          "semifinals": 2,
+          "final": 1
+        },
+        "tree_stage_counts": {
+          "group-stage": 40,
+          "knockout-round-playoffs:leg-1": 0,
+          "knockout-round-playoffs": 0,
+          "round-of-16:leg-1": 0,
+          "round-of-16": 0,
+          "quarterfinals:leg-1": 0,
+          "quarterfinals": 0,
+          "semifinals:leg-1": 0,
+          "semifinals": 0,
+          "final": 0
+        },
+        "fit_selection_sha256": "8c0756894ea137d52527deef3101b48595cf7d1ca2186bf14c4fc1ae7c3e1b78",
+        "policy": {
+          "first": "venue",
+          "wdl": "venue",
+          "total": "anchor",
+          "backups": "venue"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 11,
+            "team": 11,
+            "calibrated": 14,
+            "boosted": 11,
+            "venue": 15
+          },
+          "wdl": {
+            "anchor": 74,
+            "team": 74,
+            "calibrated": 75,
+            "boosted": 74,
+            "venue": 77
+          },
+          "total": {
+            "anchor": 0,
+            "team": 0,
+            "calibrated": 0,
+            "boosted": 0,
+            "venue": 0
+          },
+          "backups": {
+            "anchor": 42,
+            "team": 42,
+            "calibrated": 43,
+            "boosted": 42,
+            "venue": 46
+          }
+        },
+        "artifact_sha256": "f33712ad0a7bc41b3ebf9f0bc0489807873bd62fdf266171b0b440fb6f7f7185"
+      },
+      "local_challenger": {
+        "competition": "uefa.europa.conf",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 15,
+            "local": 9
+          },
+          "wdl": {
+            "original": 77,
+            "local": 77
+          },
+          "total": {
+            "original": 0,
+            "local": 0
+          },
+          "backups": {
+            "original": 46,
+            "local": 44
+          }
+        },
+        "validation_n": 153,
+        "artifact_sha256": "29d35d3008951e5182f2de3de026b0ce2c6e23610d51eb84f02022365e8f1993",
+        "original_sha256": "f33712ad0a7bc41b3ebf9f0bc0489807873bd62fdf266171b0b440fb6f7f7185"
+      },
+      "panel_sha256": "bbf9b6580ab4a596dad2173a3adf22cafb6b8c4d3f528b636629c56d51d949af"
+    },
+    "afc.champions": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "afc.champions",
+        "selection_start": "2024-07-01",
+        "evaluation_start": "2025-07-01",
+        "evaluation_stop": "2026-07-01",
+        "fit_n": 0,
+        "selection_n": 112,
+        "trained_stage_counts": {},
+        "selection_stage_counts": {
+          "elite:league-phase:west-region": 48,
+          "elite:league-phase:east-region": 41,
+          "elite:round-of-16": 16,
+          "elite:quarterfinals": 4,
+          "elite:semifinals": 2,
+          "elite:final": 1
+        },
+        "tree_stage_counts": {},
+        "fit_selection_sha256": "004db9c199b3589fea685ad7c1df91554d97d320450848b577a61d62ddda8711",
+        "policy": {
+          "first": "anchor",
+          "wdl": "anchor",
+          "total": "anchor",
+          "backups": "anchor"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 15,
+            "team": 15,
+            "calibrated": 13,
+            "boosted": 15,
+            "venue": 12
+          },
+          "wdl": {
+            "anchor": 62,
+            "team": 62,
+            "calibrated": 62,
+            "boosted": 62,
+            "venue": 54
+          },
+          "total": {
+            "anchor": 0,
+            "team": 0,
+            "calibrated": 0,
+            "boosted": 0,
+            "venue": 0
+          },
+          "backups": {
+            "anchor": 29,
+            "team": 29,
+            "calibrated": 29,
+            "boosted": 29,
+            "venue": 25
+          }
+        },
+        "artifact_sha256": "f2a65c00e3c3af49152db367d256d17ad6efe6bd0563e717bc71a118cf08569d"
+      },
+      "local_challenger": {
+        "competition": "afc.champions",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 15,
+            "local": 14
+          },
+          "wdl": {
+            "original": 62,
+            "local": 62
+          },
+          "total": {
+            "original": 0,
+            "local": 0
+          },
+          "backups": {
+            "original": 29,
+            "local": 27
+          }
+        },
+        "validation_n": 112,
+        "artifact_sha256": "a27b7a0e94a6da6d7017e98392b7df037fd3c1e489c1fcd115680bcef6544058",
+        "original_sha256": "f2a65c00e3c3af49152db367d256d17ad6efe6bd0563e717bc71a118cf08569d"
+      },
+      "panel_sha256": "9a3b533c99656c966b95f36030d388ac291b163d42101d0b7d206ceae8d0f954"
+    },
+    "fifa.world": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "fifa.world",
+        "selection_start": "2022-01-01",
+        "evaluation_start": "2026-01-01",
+        "evaluation_stop": "2027-01-01",
+        "fit_n": 64,
+        "selection_n": 64,
+        "trained_stage_counts": {
+          "group-stage": 48,
+          "round-of-16": 8,
+          "quarterfinals": 4,
+          "semifinals": 2,
+          "3rd-place-match": 1,
+          "final": 1
+        },
+        "selection_stage_counts": {
+          "group-stage": 48,
+          "round-of-16": 8,
+          "quarterfinals": 4,
+          "semifinals": 2,
+          "3rd-place-match": 1,
+          "final": 1
+        },
+        "tree_stage_counts": {
+          "group-stage": 40,
+          "round-of-16": 0,
+          "quarterfinals": 0,
+          "semifinals": 0,
+          "3rd-place-match": 0,
+          "final": 0
+        },
+        "fit_selection_sha256": "41ff94cc05727836aa56c30e50d43664186f5feb005f83dfb8e858f04e371e4f",
+        "policy": {
+          "first": "anchor",
+          "wdl": "venue",
+          "total": "anchor",
+          "backups": "anchor"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 4,
+            "team": 4,
+            "calibrated": 4,
+            "boosted": 4,
+            "venue": 4
+          },
+          "wdl": {
+            "anchor": 28,
+            "team": 28,
+            "calibrated": 28,
+            "boosted": 26,
+            "venue": 29
+          },
+          "total": {
+            "anchor": 0,
+            "team": 0,
+            "calibrated": 0,
+            "boosted": 0,
+            "venue": 0
+          },
+          "backups": {
+            "anchor": 14,
+            "team": 14,
+            "calibrated": 13,
+            "boosted": 14,
+            "venue": 14
+          }
+        },
+        "artifact_sha256": "dac0a5dd1abf2e0c4558a3e9496af79dfd68d2184e973263e59c4d91e03ad38d"
+      },
+      "local_challenger": {
+        "competition": "fifa.world",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 4,
+            "local": 2
+          },
+          "wdl": {
+            "original": 29,
+            "local": 29
+          },
+          "total": {
+            "original": 0,
+            "local": 0
+          },
+          "backups": {
+            "original": 14,
+            "local": 11
+          }
+        },
+        "validation_n": 64,
+        "artifact_sha256": "362482aab49f51edfd735f3cc945b6ea1d48e1db235767dedbc5fdaa6562d988",
+        "original_sha256": "dac0a5dd1abf2e0c4558a3e9496af79dfd68d2184e973263e59c4d91e03ad38d"
+      },
+      "panel_sha256": "8df8ea03f8fecd9c44517d41646e7103ac00b16e3497ce86e135fb6d4ff76e64"
+    },
+    "uefa.nations": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "uefa.nations",
+        "selection_start": "2022-06-01",
+        "evaluation_start": "2024-07-01",
+        "evaluation_stop": "2025-07-01",
+        "fit_n": 308,
+        "selection_n": 160,
+        "trained_stage_counts": {
+          "level-d:league-phase": 66,
+          "level-a:league-phase": 71,
+          "level-b:league-phase": 71,
+          "level-c:league-phase": 90,
+          "level-a:semifinals": 3,
+          "level-a:final": 2,
+          "level-a:third-place": 1,
+          "level-unresolved:promotion-relegation-playoffs": 4
+        },
+        "selection_stage_counts": {
+          "level-a:league-phase": 48,
+          "level-c:league-phase": 48,
+          "level-b:league-phase": 42,
+          "level-d:league-phase": 18,
+          "level-a:semifinals": 1,
+          "level-a:third-place": 1,
+          "level-a:promotion-relegation-playoffs": 2
+        },
+        "tree_stage_counts": {
+          "level-d:league-phase": 40,
+          "level-a:league-phase": 40,
+          "level-b:league-phase": 40,
+          "level-c:league-phase": 40,
+          "level-a:semifinals": 0,
+          "level-a:final": 0,
+          "level-a:third-place": 0,
+          "level-unresolved:promotion-relegation-playoffs": 0
+        },
+        "fit_selection_sha256": "9fdb2d04ffe6d33c614f7d0055ca5b889dcfbb7d45e44abc7722162173053134",
+        "policy": {
+          "first": "boosted",
+          "wdl": "anchor",
+          "total": "anchor",
+          "backups": "calibrated"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 25,
+            "team": 25,
+            "calibrated": 17,
+            "boosted": 26,
+            "venue": 20
+          },
+          "wdl": {
+            "anchor": 79,
+            "team": 79,
+            "calibrated": 77,
+            "boosted": 78,
+            "venue": 69
+          },
+          "total": {
+            "anchor": 0,
+            "team": 0,
+            "calibrated": 0,
+            "boosted": 0,
+            "venue": 0
+          },
+          "backups": {
+            "anchor": 54,
+            "team": 54,
+            "calibrated": 55,
+            "boosted": 53,
+            "venue": 50
+          }
+        },
+        "artifact_sha256": "52b04918401dab05bf124d8aa0d5cd38079b2139753b978182c78992df16ed78"
+      },
+      "local_challenger": {
+        "competition": "uefa.nations",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 26,
+            "local": 17
+          },
+          "wdl": {
+            "original": 79,
+            "local": 73
+          },
+          "total": {
+            "original": 0,
+            "local": 0
+          },
+          "backups": {
+            "original": 55,
+            "local": 52
+          }
+        },
+        "validation_n": 160,
+        "artifact_sha256": "fd79accd05396bea5b7de7c2fe5a7a898813b84adf9492933480df34ad053507",
+        "original_sha256": "52b04918401dab05bf124d8aa0d5cd38079b2139753b978182c78992df16ed78"
+      },
+      "panel_sha256": "2ddc00a0b1ec286a25453f44bd6af6e047b4b01522e3a49494bce4b9135b7ccd"
+    },
+    "jpn.league_cup": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "jpn.league_cup",
+        "selection_start": "2024-01-01",
+        "evaluation_start": "2025-01-01",
+        "evaluation_stop": "2026-01-01",
+        "fit_n": 94,
+        "selection_n": 70,
+        "trained_stage_counts": {
+          "round-of-16": 8,
+          "quarterfinals": 8,
+          "semifinals": 4,
+          "final": 2,
+          "group c - 1. round": 2,
+          "group a - 1. round": 2,
+          "group e - 1. round": 2,
+          "group b - 1. round": 2,
+          "group d - 1. round": 2,
+          "group a - 2. round": 2,
+          "group d - 2. round": 2,
+          "group e - 2. round": 2,
+          "group b - 2. round": 2,
+          "group c - 2. round": 2,
+          "group d - 3. round": 2,
+          "group c - 3. round": 2,
+          "group b - 3. round": 2,
+          "group a - 3. round": 2,
+          "group e - 3. round": 2,
+          "group e - 4. round": 2,
+          "group b - 4. round": 2,
+          "group c - 4. round": 2,
+          "group d - 4. round": 2,
+          "group a - 4. round": 2,
+          "group e - 5. round": 2,
+          "group a - 5. round": 2,
+          "group c - 5. round": 2,
+          "group d - 5. round": 2,
+          "group b - 5. round": 2,
+          "group a - 6. round": 2,
+          "group c - 6. round": 2,
+          "group b - 6. round": 2,
+          "group d - 6. round": 2,
+          "group e - 6. round": 2,
+          "quarter-finals - first leg": 4,
+          "quarter-finals - second leg": 4,
+          "semi-finals - first leg": 2,
+          "semi-finals - second leg": 2
+        },
+        "selection_stage_counts": {
+          "1/64-finals": 17,
+          "1/32-finals": 20,
+          "1/16-finals": 10,
+          "1/8-finals - first leg": 5,
+          "1/8-finals - second leg": 5,
+          "quarter-finals - first leg": 4,
+          "quarter-finals - second leg": 4,
+          "semi-finals - first leg": 2,
+          "semi-finals - second leg": 2,
+          "final": 1
+        },
+        "tree_stage_counts": {
+          "round-of-16": 0,
+          "quarterfinals": 0,
+          "semifinals": 0,
+          "final": 0,
+          "group c - 1. round": 0,
+          "group a - 1. round": 0,
+          "group e - 1. round": 0,
+          "group b - 1. round": 0,
+          "group d - 1. round": 0,
+          "group a - 2. round": 0,
+          "group d - 2. round": 0,
+          "group e - 2. round": 0,
+          "group b - 2. round": 0,
+          "group c - 2. round": 0,
+          "group d - 3. round": 0,
+          "group c - 3. round": 0,
+          "group b - 3. round": 0,
+          "group a - 3. round": 0,
+          "group e - 3. round": 0,
+          "group e - 4. round": 0,
+          "group b - 4. round": 0,
+          "group c - 4. round": 0,
+          "group d - 4. round": 0,
+          "group a - 4. round": 0,
+          "group e - 5. round": 0,
+          "group a - 5. round": 0,
+          "group c - 5. round": 0,
+          "group d - 5. round": 0,
+          "group b - 5. round": 0,
+          "group a - 6. round": 0,
+          "group c - 6. round": 0,
+          "group b - 6. round": 0,
+          "group d - 6. round": 0,
+          "group e - 6. round": 0,
+          "quarter-finals - first leg": 0,
+          "quarter-finals - second leg": 0,
+          "semi-finals - first leg": 0,
+          "semi-finals - second leg": 0
+        },
+        "fit_selection_sha256": "b432943cbec3517277c601e5e36e356a1791c821f38bf247a07f10c47e08c71b",
+        "policy": {
+          "first": "anchor",
+          "wdl": "anchor",
+          "total": "anchor",
+          "backups": "anchor"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 13,
+            "team": 13,
+            "calibrated": 13,
+            "boosted": 13,
+            "venue": 13
+          },
+          "wdl": {
+            "anchor": 23,
+            "team": 23,
+            "calibrated": 23,
+            "boosted": 23,
+            "venue": 23
+          },
+          "total": {
+            "anchor": 0,
+            "team": 0,
+            "calibrated": 0,
+            "boosted": 0,
+            "venue": 0
+          },
+          "backups": {
+            "anchor": 24,
+            "team": 24,
+            "calibrated": 24,
+            "boosted": 24,
+            "venue": 24
+          }
+        },
+        "artifact_sha256": "b4613acd73b801836724f365479b734d0b989b0a70a61144c21037179674bb6e"
+      },
+      "local_challenger": {
+        "competition": "jpn.league_cup",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "local"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 13,
+            "local": 13
+          },
+          "wdl": {
+            "original": 23,
+            "local": 23
+          },
+          "total": {
+            "original": 0,
+            "local": 0
+          },
+          "backups": {
+            "original": 24,
+            "local": 26
+          }
+        },
+        "validation_n": 70,
+        "artifact_sha256": "e93268178635db2c1b69ea73f30a1f3815079203755b5de33673f2ad571fe6cf",
+        "original_sha256": "b4613acd73b801836724f365479b734d0b989b0a70a61144c21037179674bb6e"
+      },
+      "panel_sha256": "2d2d4e4e57b1e56664d5116eadc595f1b008e23f1b9e4de7e60130847cd35f19"
+    },
+    "bra.1": {
+      "primary": {
+        "version": "WCPP-ALL-SCOPE-SCORE-1",
+        "competition": "bra.1",
+        "selection_start": "2024-01-01",
+        "evaluation_start": "2025-01-01",
+        "evaluation_stop": "2026-01-01",
+        "fit_n": 2280,
+        "selection_n": 380,
+        "trained_stage_counts": {
+          "regular": 2280
+        },
+        "selection_stage_counts": {
+          "regular": 380
+        },
+        "tree_stage_counts": {
+          "regular": 40
+        },
+        "fit_selection_sha256": "691e7799bce43368cb0c35fae05529001d67aaa860685b1c16968cb6fa9b2496",
+        "policy": {
+          "first": "boosted",
+          "wdl": "anchor",
+          "total": "anchor",
+          "backups": "calibrated"
+        },
+        "validation_head_hits": {
+          "first": {
+            "anchor": 55,
+            "team": 48,
+            "calibrated": 50,
+            "boosted": 57,
+            "venue": 51
+          },
+          "wdl": {
+            "anchor": 205,
+            "team": 184,
+            "calibrated": 203,
+            "boosted": 198,
+            "venue": 180
+          },
+          "total": {
+            "anchor": 4,
+            "team": 4,
+            "calibrated": 4,
+            "boosted": 4,
+            "venue": 4
+          },
+          "backups": {
+            "anchor": 160,
+            "team": 153,
+            "calibrated": 170,
+            "boosted": 166,
+            "venue": 131
+          }
+        },
+        "artifact_sha256": "4938f25183493d99256e4cddd535c98428c67a684148d8896a5f6f337a9cb40d"
+      },
+      "local_challenger": {
+        "competition": "bra.1",
+        "version": "WCPP-NEIGHBOR-SCORE-1",
+        "policy": {
+          "first": "original",
+          "wdl": "original",
+          "total": "original",
+          "backups": "original"
+        },
+        "validation_head_hits": {
+          "first": {
+            "original": 57,
+            "local": 53
+          },
+          "wdl": {
+            "original": 205,
+            "local": 197
+          },
+          "total": {
+            "original": 4,
+            "local": 4
+          },
+          "backups": {
+            "original": 170,
+            "local": 162
+          }
+        },
+        "validation_n": 380,
+        "artifact_sha256": "b8432be00796b8284a9b5939ebaf64ef6eee91c029d7bc43e82cf08d7105f0cc",
+        "original_sha256": "4938f25183493d99256e4cddd535c98428c67a684148d8896a5f6f337a9cb40d"
+      },
+      "panel_sha256": "0f3b063b34f09c7f7f1a214fb0efca86fb2a95ee4b3f591ad98bebcbe210c7ce"
+    }
+  }
+}

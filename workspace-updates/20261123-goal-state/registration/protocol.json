@@ -1,0 +1,33 @@
+{
+  "version": "WCPP-GOAL-STATE-1",
+  "registered_at": "2026-11-23T04:05:24.657211+00:00",
+  "objective": {
+    "first": 0.2,
+    "three": 0.4,
+    "wdl": 0.65,
+    "real_total_full_win_ex_push": 0.7
+  },
+  "model": "Fit exposure-adjusted goal intensities for the scoring side trailing, tied or leading in minutes 0-30,30-60,60-90. Use actual goal timelines from the five leagues before 2024-07-01. Map stoppage to its own half endpoint; do not train on Extra Time, shootouts, ambiguous or unreconciled final counts. Use strictly earlier team league goals to estimate relative prematch strength, prior 30 rate-equivalent goals per time/score cell pooled across training leagues; tied/lead/trail group only, symmetric scoring-side factors. CTMC with state transition after each goal. Baseline game rates inferred from the same prematch 1X2 and actual total as market. No parameter sweep.",
+  "arms": [
+    "market",
+    "process",
+    "process_half",
+    "process_projected"
+  ],
+  "definitions": {
+    "market": "existing independent Poisson plus hard 1X2 and actual chosen Asian total projection",
+    "process": "unprojected continuous time Markov score-state distribution, from baseline market Poisson rates",
+    "process_half": "50% process + 50% reference market score matrix",
+    "process_projected": "project process grid to the same 1X2 and actual Asian total"
+  },
+  "selection": "Choose one challenger from process/process_half/process_projected maximizing first hit count, then three, then WDL, then full-win total, then lower exact-score log loss on all complete Big Five 2024/25 pairs. Keep the market separately regardless of who wins. Freeze choice and training artifact hashes before opening new panel comparison. Only one selection; no retuning.",
+  "populations": {
+    "selection": "eng.1 esp.1 ger.1 ita.1 fra.1 regular full 2425",
+    "known_diagnostics": "same regular five, 2526 (already reviewed in earlier work); optional latest known 2627 samples if available",
+    "new_in_scope": "ned.1 regular 2526 entire archived season, exclude only positively identified playoffs from universe, and keep missing-source games for coverage",
+    "new_external": "eng.2 and por.1 2526 all regular games; registered data collections outside configs/analysis-scope.json, separate external transfer controls",
+    "live": "first compare 36 previously registered Nov 27–29 Beijing fixtures on new independent research track; if available include separately three already registered early matches. Save pre-kickoff all fixtures, reasons for missing fresh WDL+actual-total pairs. Never modify existing originals."
+  },
+  "evaluation": "Report full selected slate totals and covered denominators, native correct first and ordered three score; WDL by largest aggregate margin; actual sourced OU direction by larger full-win probability with quarter legs; pushes excluded and half-results retained. Show paired first flip gains/losses, joint score log loss, predicted and observed 4+ rates, tail Brier, paired by-date bootstrap; no evaluation fixtures as inputs to fit or choices.",
+  "promotion": false
+}
