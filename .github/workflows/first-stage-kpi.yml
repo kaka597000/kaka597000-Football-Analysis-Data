@@ -1,0 +1,51 @@
+name: Verify first-stage score targets
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/first-stage-kpi.yml
+      - workspace-updates/20261123-kpi-integration/**
+      - workspace-updates/20261123-prematch-literature/manifest.json
+      - workspace-updates/20261123-prematch-literature/models/**
+      - workspace-updates/20261123-prematch-literature/results/scores.json
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/first-stage-kpi.yml
+      - workspace-updates/20261123-kpi-integration/**
+      - workspace-updates/20261123-prematch-literature/manifest.json
+      - workspace-updates/20261123-prematch-literature/models/**
+      - workspace-updates/20261123-prematch-literature/results/scores.json
+permissions:
+  contents: read
+jobs:
+  scorecard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: data
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /workspace-updates/20261123-kpi-integration/
+            /workspace-updates/20261123-prematch-literature/manifest.json
+            /workspace-updates/20261123-prematch-literature/models/
+            /workspace-updates/20261123-prematch-literature/results/scores.json
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 644b958a6d203ce25117b49cc8a5c2d4e24492a3
+          path: source
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r source/requirements.txt
+      - name: Check archived forecasts against the four target metrics
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          report=data/workspace-updates/20261123-kpi-integration
+          python "$report/replay.py" --source source > "$RUNNER_TEMP/football-kpis.json"
+          diff -u "$report/summary.json" "$RUNNER_TEMP/football-kpis.json"
