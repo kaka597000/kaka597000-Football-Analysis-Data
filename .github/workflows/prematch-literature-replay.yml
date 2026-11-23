@@ -1,0 +1,41 @@
+name: Replay pre-match literature study
+on:
+  push:
+    paths:
+      - workspace-updates/20261123-prematch-literature/**
+      - .github/workflows/prematch-literature-replay.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: data
+          sparse-checkout: workspace-updates/20261123-prematch-literature
+      - uses: actions/checkout@v4
+        with:
+          ref: a2c680dfe403e48d2745c722eb7f0c036ab8d651
+          path: previous
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261123-score-gap-repair
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: a6b0f9c31bcae9074b283333e45e1a268478e6b0
+          path: source
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0
+      - name: Refit league models, reconstruct scores, verify first issues
+        run: >-
+          python data/workspace-updates/20261123-prematch-literature/verify.py
+          --source source --prior previous/workspace-updates --workers 2

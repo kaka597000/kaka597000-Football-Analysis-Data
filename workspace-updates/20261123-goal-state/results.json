@@ -1,0 +1,1645 @@
+{
+  "artifact": {
+    "version": "WCPP-GOAL-STATE-1",
+    "train_before": "2024-07-01",
+    "first_date": "2017-08-04",
+    "last_date": "2018-05-20",
+    "source_sha256": "709b07b6276746bf6eb2bc231edd4ac1ee340593179504dda27af71eee001cec",
+    "n": 1823,
+    "fixture_ids_sha256": "b552891b1b9b03f80d288b6942d646f25613c9a7b2a93166d0afa15688328e09",
+    "coverage": {
+      "fra.1": 379,
+      "eng.1": 379,
+      "esp.1": 379,
+      "ger.1": 306,
+      "ita.1": 380
+    },
+    "scorer_states": [
+      "behind",
+      "level",
+      "ahead"
+    ],
+    "expected_exposure": [
+      [
+        185.98547498917688,
+        1198.9676956986864,
+        244.42158109520813
+      ],
+      [
+        410.05288968369234,
+        668.8583180326585,
+        550.463544066722
+      ],
+      [
+        494.4214516918604,
+        453.0559330910219,
+        681.8973670001917
+      ]
+    ],
+    "goals": [
+      [
+        165,
+        1020,
+        195
+      ],
+      [
+        406,
+        661,
+        521
+      ],
+      [
+        613,
+        525,
+        831
+      ]
+    ],
+    "prior": 30.0,
+    "factors": [
+      [
+        0.9028384895316295,
+        0.8543755899157783,
+        0.8199063612345352
+      ],
+      [
+        0.9907899941604621,
+        0.9887554918788399,
+        0.9492413531084128
+      ],
+      [
+        1.2261130774219624,
+        1.1489352722543245,
+        1.2094440012162149
+      ]
+    ]
+  },
+  "choice": {
+    "selected": "process_half",
+    "heads": {
+      "first": "process_half",
+      "wdl": "market",
+      "total": "market",
+      "backups": "process"
+    },
+    "conditional_backup_hits": {
+      "market": 574,
+      "process": 583,
+      "process_half": 581,
+      "process_projected": 579
+    },
+    "artifact_sha256": "f134b75a169e0cbc142f916bf05143bac1c99980cf4c9354746f0ba3d3ffcb12",
+    "selection_report_sha256": "4f5492a3ceaca21bd751eb6c443a372492925e52f2978ab503536338ea5be775"
+  },
+  "panels": {
+    "selection": {
+      "diagnostics": {
+        "market": {
+          "n": 1752,
+          "four_plus_n": 559,
+          "mean_p_four_plus": 0.3199421866947344,
+          "brier_four_plus": 0.20359114665064912,
+          "mean_p_00": 0.06938726271924571,
+          "observed_00": 101,
+          "mean_p_first": 0.12368953527396569,
+          "mean_p_top3": 0.3247382432234506,
+          "mean_p_wdl": 0.5303804467182096,
+          "implied_total_nonpush": 0.5868878512195239,
+          "four_plus_top3_hits": 8,
+          "four_plus_top3_offered": 129,
+          "joint_log_loss": 2.87170960579528
+        },
+        "process": {
+          "n": 1752,
+          "four_plus_n": 559,
+          "mean_p_four_plus": 0.32419369011902927,
+          "brier_four_plus": 0.20358164705706572,
+          "mean_p_00": 0.06519332121956946,
+          "observed_00": 101,
+          "mean_p_first": 0.12056473288744166,
+          "mean_p_top3": 0.3215557208144641,
+          "mean_p_wdl": 0.5382082464423769,
+          "implied_total_nonpush": 0.588303221841369,
+          "four_plus_top3_hits": 6,
+          "four_plus_top3_offered": 116,
+          "joint_log_loss": 2.8716437293813524
+        },
+        "process_half": {
+          "n": 1752,
+          "four_plus_n": 559,
+          "mean_p_four_plus": 0.32206793840688186,
+          "brier_four_plus": 0.20358096750763166,
+          "mean_p_00": 0.06729029196940758,
+          "observed_00": 101,
+          "mean_p_first": 0.12203953282685585,
+          "mean_p_top3": 0.3229774435156654,
+          "mean_p_wdl": 0.5342839964128044,
+          "implied_total_nonpush": 0.5875950132273833,
+          "four_plus_top3_hits": 6,
+          "four_plus_top3_offered": 118,
+          "joint_log_loss": 2.8714990336751
+        },
+        "process_projected": {
+          "n": 1752,
+          "four_plus_n": 559,
+          "mean_p_four_plus": 0.32248129334230774,
+          "brier_four_plus": 0.2035783466806653,
+          "mean_p_00": 0.0681152762791971,
+          "observed_00": 101,
+          "mean_p_first": 0.12446331869079265,
+          "mean_p_top3": 0.32486194624760256,
+          "mean_p_wdl": 0.5303804467182095,
+          "implied_total_nonpush": 0.5868878512195264,
+          "four_plus_top3_hits": 8,
+          "four_plus_top3_offered": 145,
+          "joint_log_loss": 2.8714926253870687
+        }
+      },
+      "comparisons": {
+        "process": {
+          "population": 1752,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                238,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                574,
+                1752,
+                1752
+              ],
+              "wdl": [
+                962,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1051,
+                1752,
+                1752
+              ]
+            },
+            "process": {
+              "score_top1": [
+                240,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                583,
+                1752,
+                1752
+              ],
+              "wdl": [
+                961,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1051,
+                1752,
+                1752
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 29,
+              "lost": 27,
+              "net_hits": 2,
+              "date_cluster_ci": [
+                -0.0076632312904386535,
+                0.009964878696646192
+              ]
+            },
+            "score_top3": {
+              "gained": 25,
+              "lost": 16,
+              "net_hits": 9,
+              "date_cluster_ci": [
+                -0.0017203319485647316,
+                0.012069237177629668
+              ]
+            },
+            "wdl": {
+              "gained": 1,
+              "lost": 2,
+              "net_hits": -1,
+              "date_cluster_ci": [
+                -0.0026578514879479747,
+                0.0012226063869680635
+              ]
+            },
+            "actual_ou": {
+              "gained": 2,
+              "lost": 2,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                -0.0022988836231682894,
+                0.002275475099731516
+              ]
+            }
+          }
+        },
+        "process_half": {
+          "population": 1752,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                238,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                574,
+                1752,
+                1752
+              ],
+              "wdl": [
+                962,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1051,
+                1752,
+                1752
+              ]
+            },
+            "process_half": {
+              "score_top1": [
+                241,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                581,
+                1752,
+                1752
+              ],
+              "wdl": [
+                962,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1051,
+                1752,
+                1752
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 10,
+              "lost": 7,
+              "net_hits": 3,
+              "date_cluster_ci": [
+                -0.003144852363844012,
+                0.006741745364306884
+              ]
+            },
+            "score_top3": {
+              "gained": 15,
+              "lost": 8,
+              "net_hits": 7,
+              "date_cluster_ci": [
+                -0.0011656205117293469,
+                0.009238008706870901
+              ]
+            },
+            "wdl": {
+              "gained": 1,
+              "lost": 1,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                -0.0016658107379474631,
+                0.0017055630317194626
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "process_projected": {
+          "population": 1752,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                238,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                574,
+                1752,
+                1752
+              ],
+              "wdl": [
+                962,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1051,
+                1752,
+                1752
+              ]
+            },
+            "process_projected": {
+              "score_top1": [
+                238,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                579,
+                1752,
+                1752
+              ],
+              "wdl": [
+                962,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1051,
+                1752,
+                1752
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 9,
+              "lost": 9,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                -0.004364217460172615,
+                0.004428060919359578
+              ]
+            },
+            "score_top3": {
+              "gained": 8,
+              "lost": 3,
+              "net_hits": 5,
+              "date_cluster_ci": [
+                -0.0006146565348899874,
+                0.006594823121706592
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "known": {
+      "diagnostics": {
+        "market": {
+          "n": 1752,
+          "four_plus_n": 520,
+          "mean_p_four_plus": 0.3103024064007003,
+          "brier_four_plus": 0.20088474552759353,
+          "mean_p_00": 0.0716370082925416,
+          "observed_00": 114,
+          "mean_p_first": 0.12493849768933549,
+          "mean_p_top3": 0.32686573266152125,
+          "mean_p_wdl": 0.5159733978174129,
+          "implied_total_nonpush": 0.5803497526374962,
+          "four_plus_top3_hits": 11,
+          "four_plus_top3_offered": 115,
+          "joint_log_loss": 2.865318377073128
+        },
+        "process_half": {
+          "n": 1752,
+          "four_plus_n": 520,
+          "mean_p_four_plus": 0.31241634579666494,
+          "brier_four_plus": 0.20095612009449068,
+          "mean_p_00": 0.06946999012833906,
+          "observed_00": 114,
+          "mean_p_first": 0.12321192164297827,
+          "mean_p_top3": 0.32494380613707297,
+          "mean_p_wdl": 0.5196933362918278,
+          "implied_total_nonpush": 0.5809522561416943,
+          "four_plus_top3_hits": 9,
+          "four_plus_top3_offered": 101,
+          "joint_log_loss": 2.865429013843755
+        }
+      },
+      "comparisons": {
+        "process_half": {
+          "population": 1752,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                228,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                598,
+                1752,
+                1752
+              ],
+              "wdl": [
+                934,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1021,
+                1752,
+                1752
+              ]
+            },
+            "process_half": {
+              "score_top1": [
+                231,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                602,
+                1752,
+                1752
+              ],
+              "wdl": [
+                934,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1021,
+                1752,
+                1752
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 11,
+              "lost": 8,
+              "net_hits": 3,
+              "date_cluster_ci": [
+                -0.003115712159293329,
+                0.006486424723679795
+              ]
+            },
+            "score_top3": {
+              "gained": 20,
+              "lost": 16,
+              "net_hits": 4,
+              "date_cluster_ci": [
+                -0.004616785180124697,
+                0.009209475518329723
+              ]
+            },
+            "wdl": {
+              "gained": 2,
+              "lost": 2,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                -0.0022650698633549303,
+                0.002279202279202279
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "composite": {
+          "population": 1752,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                228,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                598,
+                1752,
+                1752
+              ],
+              "wdl": [
+                934,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1021,
+                1752,
+                1752
+              ]
+            },
+            "composite": {
+              "score_top1": [
+                231,
+                1752,
+                1752
+              ],
+              "score_top3": [
+                600,
+                1752,
+                1752
+              ],
+              "wdl": [
+                934,
+                1752,
+                1752
+              ],
+              "actual_ou": [
+                1021,
+                1752,
+                1752
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 11,
+              "lost": 8,
+              "net_hits": 3,
+              "date_cluster_ci": [
+                -0.003115712159293329,
+                0.006486424723679795
+              ]
+            },
+            "score_top3": {
+              "gained": 32,
+              "lost": 30,
+              "net_hits": 2,
+              "date_cluster_ci": [
+                -0.00797081484843797,
+                0.010090269645177029
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "dutch": {
+      "diagnostics": {
+        "market": {
+          "n": 306,
+          "four_plus_n": 116,
+          "mean_p_four_plus": 0.395766815035473,
+          "brier_four_plus": 0.22742730582107984,
+          "mean_p_00": 0.046497061273235954,
+          "observed_00": 10,
+          "mean_p_first": 0.1092628687810209,
+          "mean_p_top3": 0.2855684155623182,
+          "mean_p_wdl": 0.5410886624877091,
+          "implied_total_nonpush": 0.6139337778555479,
+          "four_plus_top3_hits": 3,
+          "four_plus_top3_offered": 38,
+          "joint_log_loss": 2.9879335050206577
+        },
+        "process_half": {
+          "n": 306,
+          "four_plus_n": 116,
+          "mean_p_four_plus": 0.3985438793585728,
+          "brier_four_plus": 0.22754105427568097,
+          "mean_p_00": 0.045301691214632164,
+          "observed_00": 10,
+          "mean_p_first": 0.10805997546675834,
+          "mean_p_top3": 0.284530048895521,
+          "mean_p_wdl": 0.543849842031303,
+          "implied_total_nonpush": 0.6163788920320585,
+          "four_plus_top3_hits": 3,
+          "four_plus_top3_offered": 37,
+          "joint_log_loss": 2.988269244769801
+        }
+      },
+      "comparisons": {
+        "process_half": {
+          "population": 306,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                48,
+                306,
+                306
+              ],
+              "score_top3": [
+                104,
+                306,
+                306
+              ],
+              "wdl": [
+                164,
+                306,
+                306
+              ],
+              "actual_ou": [
+                186,
+                306,
+                306
+              ]
+            },
+            "process_half": {
+              "score_top1": [
+                50,
+                306,
+                306
+              ],
+              "score_top3": [
+                103,
+                306,
+                306
+              ],
+              "wdl": [
+                164,
+                306,
+                306
+              ],
+              "actual_ou": [
+                186,
+                306,
+                306
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 3,
+              "lost": 1,
+              "net_hits": 2,
+              "date_cluster_ci": [
+                -0.006309148264984227,
+                0.020081668957710016
+              ]
+            },
+            "score_top3": {
+              "gained": 0,
+              "lost": 1,
+              "net_hits": -1,
+              "date_cluster_ci": [
+                -0.01060070671378092,
+                0.0
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "composite": {
+          "population": 306,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                48,
+                306,
+                306
+              ],
+              "score_top3": [
+                104,
+                306,
+                306
+              ],
+              "wdl": [
+                164,
+                306,
+                306
+              ],
+              "actual_ou": [
+                186,
+                306,
+                306
+              ]
+            },
+            "composite": {
+              "score_top1": [
+                50,
+                306,
+                306
+              ],
+              "score_top3": [
+                104,
+                306,
+                306
+              ],
+              "wdl": [
+                164,
+                306,
+                306
+              ],
+              "actual_ou": [
+                186,
+                306,
+                306
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 3,
+              "lost": 1,
+              "net_hits": 2,
+              "date_cluster_ci": [
+                -0.006309148264984227,
+                0.020081668957710016
+              ]
+            },
+            "score_top3": {
+              "gained": 1,
+              "lost": 1,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                -0.009836065573770493,
+                0.009647080178404719
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "english_second": {
+      "diagnostics": {
+        "market": {
+          "n": 552,
+          "four_plus_n": 138,
+          "mean_p_four_plus": 0.27114357866101474,
+          "brier_four_plus": 0.18578098169751894,
+          "mean_p_00": 0.07825001984194513,
+          "observed_00": 34,
+          "mean_p_first": 0.1279370099007234,
+          "mean_p_top3": 0.33388986688742517,
+          "mean_p_wdl": 0.4807443617047983,
+          "implied_total_nonpush": 0.5463011624224764,
+          "four_plus_top3_hits": 0,
+          "four_plus_top3_offered": 2,
+          "joint_log_loss": 2.803586235373236
+        },
+        "process_half": {
+          "n": 552,
+          "four_plus_n": 138,
+          "mean_p_four_plus": 0.2735575282110251,
+          "brier_four_plus": 0.1858633969630626,
+          "mean_p_00": 0.07671849069089347,
+          "observed_00": 34,
+          "mean_p_first": 0.12708429225945603,
+          "mean_p_top3": 0.3327697648212497,
+          "mean_p_wdl": 0.48273900390037616,
+          "implied_total_nonpush": 0.5459479691224256,
+          "four_plus_top3_hits": 0,
+          "four_plus_top3_offered": 2,
+          "joint_log_loss": 2.8034621385600613
+        }
+      },
+      "comparisons": {
+        "process_half": {
+          "population": 552,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                77,
+                552,
+                552
+              ],
+              "score_top3": [
+                186,
+                552,
+                552
+              ],
+              "wdl": [
+                254,
+                552,
+                552
+              ],
+              "actual_ou": [
+                312,
+                552,
+                552
+              ]
+            },
+            "process_half": {
+              "score_top1": [
+                76,
+                552,
+                552
+              ],
+              "score_top3": [
+                191,
+                552,
+                552
+              ],
+              "wdl": [
+                254,
+                552,
+                552
+              ],
+              "actual_ou": [
+                312,
+                552,
+                552
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 0,
+              "lost": 1,
+              "net_hits": -1,
+              "date_cluster_ci": [
+                -0.005940888731730314,
+                0.0
+              ]
+            },
+            "score_top3": {
+              "gained": 7,
+              "lost": 2,
+              "net_hits": 5,
+              "date_cluster_ci": [
+                -0.0015777272978833644,
+                0.019880985335725247
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "composite": {
+          "population": 552,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                77,
+                552,
+                552
+              ],
+              "score_top3": [
+                186,
+                552,
+                552
+              ],
+              "wdl": [
+                254,
+                552,
+                552
+              ],
+              "actual_ou": [
+                312,
+                552,
+                552
+              ]
+            },
+            "composite": {
+              "score_top1": [
+                76,
+                552,
+                552
+              ],
+              "score_top3": [
+                191,
+                552,
+                552
+              ],
+              "wdl": [
+                254,
+                552,
+                552
+              ],
+              "actual_ou": [
+                312,
+                552,
+                552
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 0,
+              "lost": 1,
+              "net_hits": -1,
+              "date_cluster_ci": [
+                -0.005940888731730314,
+                0.0
+              ]
+            },
+            "score_top3": {
+              "gained": 9,
+              "lost": 4,
+              "net_hits": 5,
+              "date_cluster_ci": [
+                -0.0038463391136801537,
+                0.023051135347756102
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "portuguese": {
+      "diagnostics": {
+        "market": {
+          "n": 306,
+          "four_plus_n": 93,
+          "mean_p_four_plus": 0.2791266274418406,
+          "brier_four_plus": 0.21070233439070726,
+          "mean_p_00": 0.07949780822741906,
+          "observed_00": 20,
+          "mean_p_first": 0.1334281721679771,
+          "mean_p_top3": 0.35387777549881555,
+          "mean_p_wdl": 0.5548431914639013,
+          "implied_total_nonpush": 0.5751028283716042,
+          "four_plus_top3_hits": 1,
+          "four_plus_top3_offered": 5,
+          "joint_log_loss": 2.7637616603616437
+        },
+        "process_half": {
+          "n": 306,
+          "four_plus_n": 93,
+          "mean_p_four_plus": 0.2813370412996405,
+          "brier_four_plus": 0.21064957652342384,
+          "mean_p_00": 0.07773854875634906,
+          "observed_00": 20,
+          "mean_p_first": 0.13214166344214598,
+          "mean_p_top3": 0.351568075078729,
+          "mean_p_wdl": 0.5571851475106493,
+          "implied_total_nonpush": 0.5747205132857648,
+          "four_plus_top3_hits": 1,
+          "four_plus_top3_offered": 5,
+          "joint_log_loss": 2.7647270901787504
+        }
+      },
+      "comparisons": {
+        "process_half": {
+          "population": 306,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                40,
+                306,
+                306
+              ],
+              "score_top3": [
+                111,
+                306,
+                306
+              ],
+              "wdl": [
+                176,
+                306,
+                306
+              ],
+              "actual_ou": [
+                174,
+                306,
+                306
+              ]
+            },
+            "process_half": {
+              "score_top1": [
+                41,
+                306,
+                306
+              ],
+              "score_top3": [
+                109,
+                306,
+                306
+              ],
+              "wdl": [
+                176,
+                306,
+                306
+              ],
+              "actual_ou": [
+                174,
+                306,
+                306
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 1,
+              "lost": 0,
+              "net_hits": 1,
+              "date_cluster_ci": [
+                0.0,
+                0.01079136690647482
+              ]
+            },
+            "score_top3": {
+              "gained": 3,
+              "lost": 5,
+              "net_hits": -2,
+              "date_cluster_ci": [
+                -0.02446670794168964,
+                0.010490430622009557
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "composite": {
+          "population": 306,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                40,
+                306,
+                306
+              ],
+              "score_top3": [
+                111,
+                306,
+                306
+              ],
+              "wdl": [
+                176,
+                306,
+                306
+              ],
+              "actual_ou": [
+                174,
+                306,
+                306
+              ]
+            },
+            "composite": {
+              "score_top1": [
+                41,
+                306,
+                306
+              ],
+              "score_top3": [
+                107,
+                306,
+                306
+              ],
+              "wdl": [
+                176,
+                306,
+                306
+              ],
+              "actual_ou": [
+                174,
+                306,
+                306
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 1,
+              "lost": 0,
+              "net_hits": 1,
+              "date_cluster_ci": [
+                0.0,
+                0.01079136690647482
+              ]
+            },
+            "score_top3": {
+              "gained": 4,
+              "lost": 8,
+              "net_hits": -4,
+              "date_cluster_ci": [
+                -0.034482758620689655,
+                0.009347259250578596
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "recent": {
+      "diagnostics": {
+        "market": {
+          "n": 45,
+          "four_plus_n": 19,
+          "mean_p_four_plus": 0.38052807586794263,
+          "brier_four_plus": 0.22699104689325564,
+          "mean_p_00": 0.053226443888857694,
+          "observed_00": 2,
+          "mean_p_first": 0.11304965894474116,
+          "mean_p_top3": 0.3009629303264305,
+          "mean_p_wdl": 0.577765812015071,
+          "implied_total_nonpush": 0.4780213945932624,
+          "four_plus_top3_hits": 0,
+          "four_plus_top3_offered": 7,
+          "joint_log_loss": 3.008271692524728
+        },
+        "process_half": {
+          "n": 45,
+          "four_plus_n": 19,
+          "mean_p_four_plus": 0.38326973334383296,
+          "brier_four_plus": 0.22665296983890523,
+          "mean_p_00": 0.05157424267406773,
+          "observed_00": 2,
+          "mean_p_first": 0.1115953164532462,
+          "mean_p_top3": 0.2995171325719731,
+          "mean_p_wdl": 0.581491334767366,
+          "implied_total_nonpush": 0.47816115055799935,
+          "four_plus_top3_hits": 0,
+          "four_plus_top3_offered": 7,
+          "joint_log_loss": 3.0074250519066084
+        }
+      },
+      "comparisons": {
+        "process_half": {
+          "population": 45,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                5,
+                45,
+                45
+              ],
+              "score_top3": [
+                10,
+                45,
+                45
+              ],
+              "wdl": [
+                25,
+                45,
+                45
+              ],
+              "actual_ou": [
+                23,
+                44,
+                44
+              ]
+            },
+            "process_half": {
+              "score_top1": [
+                5,
+                45,
+                45
+              ],
+              "score_top3": [
+                11,
+                45,
+                45
+              ],
+              "wdl": [
+                25,
+                45,
+                45
+              ],
+              "actual_ou": [
+                23,
+                44,
+                44
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "score_top3": {
+              "gained": 1,
+              "lost": 0,
+              "net_hits": 1,
+              "date_cluster_ci": [
+                0.0,
+                0.038461538461538464
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "composite": {
+          "population": 45,
+          "tracks": {
+            "market": {
+              "score_top1": [
+                5,
+                45,
+                45
+              ],
+              "score_top3": [
+                10,
+                45,
+                45
+              ],
+              "wdl": [
+                25,
+                45,
+                45
+              ],
+              "actual_ou": [
+                23,
+                44,
+                44
+              ]
+            },
+            "composite": {
+              "score_top1": [
+                5,
+                45,
+                45
+              ],
+              "score_top3": [
+                11,
+                45,
+                45
+              ],
+              "wdl": [
+                25,
+                45,
+                45
+              ],
+              "actual_ou": [
+                23,
+                44,
+                44
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "score_top3": {
+              "gained": 1,
+              "lost": 0,
+              "net_hits": 1,
+              "date_cluster_ci": [
+                0.0,
+                0.038461538461538464
+              ]
+            },
+            "wdl": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 0,
+              "lost": 0,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "composite_vs_original": {
+          "population": 45,
+          "tracks": {
+            "issued": {
+              "score_top1": [
+                5,
+                45,
+                45
+              ],
+              "score_top3": [
+                10,
+                45,
+                45
+              ],
+              "wdl": [
+                25,
+                45,
+                45
+              ],
+              "actual_ou": [
+                25,
+                44,
+                44
+              ]
+            },
+            "composite": {
+              "score_top1": [
+                5,
+                45,
+                45
+              ],
+              "score_top3": [
+                11,
+                45,
+                45
+              ],
+              "wdl": [
+                25,
+                45,
+                45
+              ],
+              "actual_ou": [
+                23,
+                44,
+                44
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 1,
+              "lost": 1,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "score_top3": {
+              "gained": 3,
+              "lost": 2,
+              "net_hits": 1,
+              "date_cluster_ci": [
+                0.0,
+                0.0625
+              ]
+            },
+            "wdl": {
+              "gained": 1,
+              "lost": 1,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 7,
+              "lost": 9,
+              "net_hits": -2,
+              "date_cluster_ci": [
+                -0.2,
+                0.1875
+              ]
+            }
+          }
+        },
+        "vs_original": {
+          "population": 45,
+          "tracks": {
+            "issued": {
+              "score_top1": [
+                5,
+                45,
+                45
+              ],
+              "score_top3": [
+                10,
+                45,
+                45
+              ],
+              "wdl": [
+                25,
+                45,
+                45
+              ],
+              "actual_ou": [
+                25,
+                44,
+                44
+              ]
+            },
+            "process_half": {
+              "score_top1": [
+                5,
+                45,
+                45
+              ],
+              "score_top3": [
+                11,
+                45,
+                45
+              ],
+              "wdl": [
+                25,
+                45,
+                45
+              ],
+              "actual_ou": [
+                23,
+                44,
+                44
+              ]
+            }
+          },
+          "paired": {
+            "score_top1": {
+              "gained": 1,
+              "lost": 1,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "score_top3": {
+              "gained": 3,
+              "lost": 2,
+              "net_hits": 1,
+              "date_cluster_ci": [
+                0.0,
+                0.0625
+              ]
+            },
+            "wdl": {
+              "gained": 1,
+              "lost": 1,
+              "net_hits": 0,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "gained": 7,
+              "lost": 9,
+              "net_hits": -2,
+              "date_cluster_ci": [
+                -0.2,
+                0.1875
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
