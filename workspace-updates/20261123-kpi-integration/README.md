@@ -1,6 +1,6 @@
 # 四项首阶段目标的合并验收
 
-北京时间 2026 年 11 月 23 日。首选精确比分 20%，每场三个比分 40%，胜平负 60%，实际盘线大小球全赢率 70%。R6 是已归档的首选共识规则，R7 使用总进球分布及给定总进球后的主队进球分布。两者使用同场同窗数据。每场只计一次，旧登记的胜平负门槛仍为 65%。
+北京时间 2026 年 11 月 23 日。首选精确比分 20%，每场三个比分 40%，胜平负 65%，实际盘线大小球全赢率 70%。R6 是已归档的首选共识规则，R7 使用总进球分布及给定总进球后的主队进球分布。两者使用同场同窗数据。每场只计一次。新登记复用原有 65% 协议，曾按 60% 冻结的批次继续使用当时的门槛。
 
 | R7 历史窗口 | 首选 | 三选 | 胜平负 | 全赢／非走盘有效推荐 |
 |---|---:|---:|---:|---:|
@@ -21,4 +21,6 @@ python workspace-updates/20261123-kpi-integration/replay.py --source ../Football
 diff -u workspace-updates/20261123-kpi-integration/summary.json /tmp/football-kpi-summary.json
 ```
 
-归档输入来自[数据草稿 43 的固定提交](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/tree/949047955a2eba0c1cdec51ad08ac91bc5fb05d4/workspace-updates/20261123-prematch-literature)。重算使用[合并前已验证的源码树](https://github.com/kaka597000/Football-Analysis/tree/644b958a6d203ce25117b49cc8a5c2d4e24492a3)。
+此前 60% 门槛的统计表、命中数和复算入口保存在[原提交](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/tree/a4b8b272ee5beda5fc532b846b7b2ca58dbe1dcb/workspace-updates/20261123-kpi-integration)。
+
+归档输入来自[数据草稿 43 的固定提交](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/tree/949047955a2eba0c1cdec51ad08ac91bc5fb05d4/workspace-updates/20261123-prematch-literature)。重算使用[65% 门槛的固定源码](https://github.com/kaka597000/Football-Analysis/tree/6903c8b6b0b7eb7c7cbef1af54eb2908e292e2c9)。
