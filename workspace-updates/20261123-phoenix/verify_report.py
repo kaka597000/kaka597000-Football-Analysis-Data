@@ -42,4 +42,9 @@ proof=read('restore-verification.json')
 assert proof['restore_matches_unified_sql_audit'] and proof['sqlite_quick_check']=='ok' and proof['foreign_key_violations']==0
 assert proof['receipt_count']==bundle['frozen_response_receipts']
 assert proof['original_database_audit_sha256']==hashlib.sha256((root/'database-audit.json').read_bytes()).hexdigest()
+evidence=proof['identical_tables']
+assert evidence['phoenix_price_points']['rows']==sum(v['price_nodes'] for v in audit['archive_prices'])
+assert evidence['phoenix_fixtures']['rows']==sum(v['records'] for v in audit['records'])
+assert evidence['phoenix_review_details']['rows']==audit['review_detail_matches']
+assert all(v['rows']>=0 and len(v['sha256'])==64 for v in evidence.values())
 print('Verified 20 competitions, authenticated/archive/publisher denominators and the restore receipt.')
