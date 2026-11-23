@@ -1,0 +1,25 @@
+name: Verify Phoenix archive and competition coverage
+on:
+  push:
+    paths:
+      - workspace-updates/20261123-phoenix/**
+      - .github/workflows/phoenix-archive.yml
+  pull_request:
+    paths:
+      - workspace-updates/20261123-phoenix/**
+      - .github/workflows/phoenix-archive.yml
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all archive pieces, reporting data and audit
+        working-directory: workspace-updates/20261123-phoenix
+        run: |
+          python restore.py --verify-only
+          python verify_report.py
