@@ -37,7 +37,7 @@ def main(data, code):
         if sha(folder/name) != expected:
             raise ValueError('archive mismatch: '+name)
     sys.path.insert(0, str(code/'runtime'))
-    from research_program import goal_state_forward, goal_state_study
+    from research_program import goal_state_forward, goal_state_study, displayed_market_directions
     from argparse import Namespace
     expected = read(folder/'results.json')
     with TemporaryDirectory() as temp:
@@ -90,6 +90,29 @@ def main(data, code):
             for result in summaries.values():
                 assert result['population'] == result['pending'] == meta['registered']
             print(cohort, meta['registered'], 'first issues verified')
+        # Rebuild the UEFA direction trial from the actual named and grouped prices.
+        official=root/'hkjc-espn-uefa-window.json'
+        restore(folder/'market-evidence.tar.gz','uefa-prices/'+official.name,official)
+        source={f"espn:{r['id']}":r for r in read(official)['records']}
+        quotes=root/'live-uefa'
+        directions=root/'live-directions'
+        original=read(quotes/'receipts.json')['matches']
+        locked=read(directions/'receipts.json')['matches']
+        for mid, reference in original.items():
+            before=goal_state_forward._read(quotes,reference)['payload']
+            issued=goal_state_forward._read(directions,locked[mid])['payload']
+            if not before['forecasts']:
+                assert not issued['forecasts']
+                continue
+            pool=source[mid]['markets']['correct_score']['lines'][0]['selections']
+            groups=[dict(code=v['source_combination_code'],decimal=v['price_decimal'])
+                    for v in pool if v['selection_type']=='other_group']
+            rebuilt=displayed_market_directions.predict(before['exact_scores'],groups,before['line'])
+            assert rebuilt['wdl']==issued['estimate']['wdl'] and rebuilt['total_side']==issued['estimate']['total_side']
+            np.testing.assert_allclose(list(rebuilt['wdl_probabilities'].values()),
+                                       [issued['estimate']['wdl_probabilities'][k] for k in rebuilt['wdl_probabilities']])
+        print('Complete correct-score market directions reproduced from source prices')
+
 
 
 if __name__ == '__main__':

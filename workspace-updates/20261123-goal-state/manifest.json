@@ -1,10 +1,12 @@
 {
-  "source_commit": "bec7253351c18eb9e8200f91be69fc049be41e06",
+  "source_commit": "af5e5e1c990e872f16bc6059aba38066e3ea876b",
   "previous_source": "3e0845afc442ae8635811edd4dde74a2360d9039",
   "previous_data": "8a6039f9fd222edcf0cbd668f0754cc2275fa8de",
   "protocol_registration": "01f65877870d1b5a320281db3f0406ff155101c8",
   "selection_lock_commit": "60a4e2465d4f062ba84bbd4174529cd7e2b53413",
+  "algorithm_commit": "3655acc86e27a0eb54324dcea5ca602cbf5bc610",
   "protocols": {
+    "direction-protocol.json": "7d4624657eae7dcd946842013f74e4962435ff6181edfedaedfedf590fb5a9ee",
     "protocol.json": "f57b201346e9910b769daf12fda2a8badaf9dda3120aa2d6b4775bc4fa1472de",
     "direct-protocol.json": "4aa799a070a4d95e083a10165aa0996c207d73114673ccb35c7259f7dc16556d",
     "no-quote-forward-protocol.json": "dda0c0ab497c07f575a7952b563863d87575bbc0dbc53622afe89f74f800b856",
@@ -178,6 +180,31 @@
             "score_top3": 0,
             "wdl": 0,
             "actual_ou": 0
+          }
+        }
+      }
+    },
+    "live-directions": {
+      "registered": 18,
+      "registration": {
+        "id": "0064ce57cd06bdbb-v000001",
+        "sha256": "b03d65cd9309cf30705fca35e83a72a2f41e4cc08d25cecafd8e7d14a93ae616",
+        "file": "0064ce57cd06bdbb-v000001.json",
+        "recorded_at": "2026-11-23T12:35:26.586921+08:00"
+      },
+      "pairs": {
+        "direction": {
+          "market": {
+            "score_top1": 0,
+            "score_top3": 0,
+            "wdl": 9,
+            "actual_ou": 9
+          },
+          "correct_score_book": {
+            "score_top1": 0,
+            "score_top3": 0,
+            "wdl": 9,
+            "actual_ou": 9
           }
         }
       }
@@ -423,13 +450,16 @@
     },
     {
       "file": "research-and-freezes.tar.gz",
-      "sha256": "c93dea2ebc66e2160641e3bcdd8e6eba5c051e914096cc8eee758e6abf46b3bc",
-      "bytes": 1444268,
+      "sha256": "d2a5df6c3d01f9022922b58d7d6cf649c0929b72edcf4194bbfd801d83c89e69",
+      "bytes": 1484158,
       "members": {
         "direct-protocol.json": "4aa799a070a4d95e083a10165aa0996c207d73114673ccb35c7259f7dc16556d",
+        "direction-protocol.json": "7d4624657eae7dcd946842013f74e4962435ff6181edfedaedfedf590fb5a9ee",
+        "final-integration.log": "9a849017ffba5e137e14e49b0850e99d6e517052ad8420721d47adf04bcb7d38",
         "heads-protocol.json": "93891c5ca654f43a80ef60766cf3985efad5584c00bca86d948c2cf63ad71023",
         "integration-final.log": "f219a09edc6efafef509dc0c3cd41adb411c49089110ed2f9307386ba229a583",
         "issue_club_slate.py": "2ab289a2d5d5312b929333a551a326b4a668c4a06cc125657163c3b57ef302dd",
+        "issue_displayed_directions.py": "44277efd915f3355de2e118129b97371a52835fed2b8e80539e5eb7c3147add1",
         "issue_uefa.py": "1655f5547f9de75d31e3fa0b1593a70d1fd259c1fc70cfeba36dedffc58a8071",
         "live-36/054a6b2af42d724d-v000001.json": "26f17041503f8123d78ee961b437bb2a2865ab292123c132331176394733ff4e",
         "live-36/0c5366d232819499-v000001.json": "15f3c48cf8e1ef76f6be1435a838e5b79ea9ce9c2950aa440d5cc0e49fd8158f",
@@ -471,6 +501,27 @@
         "live-36/pending.json": "e6352ed9299d25b5b22749c7de081f72c88dabe798428f7e7d18ad880bd1e424",
         "live-36/receipts.json": "d4956aea87103ea32c48c1469fc4e9eb980e9c7304874b69af3551cfa4e514f6",
         "live-36/verified-pending.json": "300c02a28839dcbf54fb6ef245ee76591f5cba509ef04a5f08f32883b86fef34",
+        "live-directions/0064ce57cd06bdbb-v000001.json": "45575bb75b1920fff44ed76d88a2e66c5bdbf64d5ba184afa155b1f673eb64cc",
+        "live-directions/05f72968cc687782-v000001.json": "55804c262efe62d389009a28285d87af9bfcd584703ae724342e55c4e9b14a78",
+        "live-directions/18468ae5f5235c09-v000001.json": "6934d2b30603accfc475309318395c64895fb1b7b52eed59e94eeb5eabc1f400",
+        "live-directions/1c41ca86394b709d-v000001.json": "4b332fb04fc6bc2633c8c17f4ae4157cad42e3ab0ba1b03902f782b95e7534ed",
+        "live-directions/29e9f81bbf7ffe52-v000001.json": "6fe492d26bb093c7dcb73c26e51b7c84424941aeb144913c7998a8d17ba8bbf8",
+        "live-directions/3860e378574c5716-v000001.json": "cc396a26ddf0e776d2aa9d03813a7406aca28329e3d554bc823772d05bcf284d",
+        "live-directions/3886b1413d3edbec-v000001.json": "9b3065a5985f9a5c96a142a43a8ddc95950db279bb649c8199647c3ae88e6679",
+        "live-directions/3f08e00361fadb00-v000001.json": "20ba5594d8420e56463f17c5a179f13630044c70e0faba6033b6bc7740194aba",
+        "live-directions/65b9101e185fa8c5-v000001.json": "d54a9087cbe060a8c7c3b889d64d8f7ec0fbc870b038360c85ab8ae509548adc",
+        "live-directions/7c750afef7f90b25-v000001.json": "04d44f39df08c40c30fa892bbfc80c36b2c17e17621805d822c27f808ea10d0c",
+        "live-directions/82370fef0f546e19-v000001.json": "67f1cfb9c7062e027fb242e4a8d6d50fe7923913136f146dff43bc012004af0a",
+        "live-directions/8334d8e572c52ab0-v000001.json": "02a5759ea39b67b8561200063ab7dbea3d93277820da36a4040bd73995d95539",
+        "live-directions/ac2d6878762afa8b-v000001.json": "3404e1f5ef5f9c82c312a19dc9632e60b1b4bfde73acf53151a9fe3a506ee158",
+        "live-directions/bedb2e87e3f404c0-v000001.json": "70f358484f7988979f84faabdac46eed15b06dcd6d60b34f267f4ed690066a26",
+        "live-directions/d77f503f279ae3a2-v000001.json": "aa72608ff23d882f7f1cd6e7d6e82327a4852e2010fd28dfe2a54dc6e74fdda9",
+        "live-directions/dcde5cd5bf0bb2d0-v000001.json": "3614cb880a6b7f26569fd674fc9f704fe004bae7d3f26da9670b915c5b506cb4",
+        "live-directions/de8357fbb265d066-v000001.json": "8e199a45bf59c479047b00152e7eebb0b462b787d38902b6af923ab9977d1180",
+        "live-directions/f20ae0eb34fe2c0e-v000001.json": "8ad2d6367e3d6723b13a241ce13295763adf13a380832938f60e6d372285cc21",
+        "live-directions/faa505ecf53489d1-v000001.json": "a0562fc5e45adc8254eca43eb1b1e1f28354e297554e95c8e7530649da1396d3",
+        "live-directions/receipts.json": "33a144f4230654b1f728fe3ec6fa59c6748da868dc99c506906dda0a2255bf3f",
+        "live-directions/verified-pending.json": "50f8c37a41aa15a2f7fad9ffdf0e8356c77524a97202f0abc50341f4c08af97e",
         "live-early/45d15eed0bdd0cb0-v000001.json": "5151aa2b840139d63aed03c2257857cdcbbf4cc0103d5d1d4ea4b74b0bb87685",
         "live-early/8b72a6d72b38f53a-v000001.json": "b1b906a541daf7d5649dd21430ed384ebf8fed1168e7a4c4d2e3ed0c9bae9292",
         "live-early/b58b189b80fe41b8-v000001.json": "0485aab0b9cd82a5a968da8f79910b3c8d23a6a76267d0df526e3530e6790a5e",
@@ -542,7 +593,7 @@
         "live-uefa/verified-pending.json": "7394e9e1c470f281126fb7ddc4ca5c47e2f50b7dbd763759c523a392d8475e99",
         "no-quote-forward-protocol.json": "dda0c0ab497c07f575a7952b563863d87575bbc0dbc53622afe89f74f800b856",
         "opening-market-protocol.json": "f6cd654a2df827dcb0e465374a145274cdfc47950e5be8387261d0c3357ed15c",
-        "package.py": "1252549fa54db4d1d7f80de2dd87aae527825c6a537eef66c1986711a12a4c3d",
+        "package.py": "48c820368811a09f0e1971bbdf2eb7e1688675cba5a71b34591afdbdb0b38228",
         "protocol.json": "f57b201346e9910b769daf12fda2a8badaf9dda3120aa2d6b4775bc4fa1472de",
         "research-freeze.json": "eb4862bc3c98d9e6ba3ef7bd7fcc428f6a01bff26826ede27ef20579862af797",
         "research-record.json": "a8092e07aca30acd7091f8cbb0cafb678571a5158bb71e074f5eefb62463ad50",
@@ -560,6 +611,8 @@
         "study/recent-report.json": "657acc95b4b2fc2e5b291ce23e9be3c61911943be94f3708a889d48d911b660c",
         "study/selection-predictions.jsonl": "d26db4b862d997607306e216321345c3a9d3237001a6e2281a88eeec4bde329e",
         "study/selection-report.json": "4f5492a3ceaca21bd751eb6c443a372492925e52f2978ab503536338ea5be775",
+        "supplement-freeze.json": "1c82f4f6d90a3f2ac8885d85a5c40be0bc0bdc47bd2aacbb9f94906cbb8c8f5e",
+        "supplement-record.json": "084867463a9b4e1039c716557606f424461a65ab6d1a1c6aa8f6be549fa2d7f5",
         "verify_early.py": "8db60f57653165c5f5e0851f1790429e8bc66c295b05ec63ccb21b1faa187cae"
       }
     }
@@ -567,8 +620,8 @@
   "files": {
     "event-matches-and-provenance.tar.gz": "a769e99ed16edd8041ada4d449404e40d01f9ab2261a312befebecf3987482f1",
     "market-evidence.tar.gz": "0f3cb1a1b546dce376bc64fc4afb4f55ce9f07c4c3df6b9dab4d143cd46cafdf",
-    "replay.py": "c7e25bec4b9eb4639a7ba3e1bd2b53a799dea2d02576510b60b2fb9bd200799e",
-    "research-and-freezes.tar.gz": "c93dea2ebc66e2160641e3bcdd8e6eba5c051e914096cc8eee758e6abf46b3bc",
+    "replay.py": "f3742fdc5bfc81bbdac36bb2d0aed210e1b76908e4602f6244aaf02ba4cb8624",
+    "research-and-freezes.tar.gz": "d2a5df6c3d01f9022922b58d7d6cf649c0929b72edcf4194bbfd801d83c89e69",
     "results.json": "3c1d8ab26b05a2f4c3f9cfddf96ecda220456ee600d0f5997245ab1ab5055584",
     "tagged-goal-events.tar.gz": "6a78fefa5e3581d0663f0e48ae405ac6da5c7943d9ea9c157d9806691d38ccca",
     "training-and-panels.tar.gz": "c2d41f4e2476dbdc087fd0eaa766bf9c1b392368750364fee7f280319a35d16b"
