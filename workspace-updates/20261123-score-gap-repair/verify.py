@@ -55,15 +55,17 @@ def main():
             for part in sorted(archive.glob('raw-sources.tar.gz.part-*')):
                 with part.open('rb') as src:shutil.copyfileobj(src,destination)
         assert sha(assembled)==manifest['raw_archive_sha256']
-        with tarfile.open(assembled) as raw:
-            refs=obj(archive/'source-index.json')
-            parent_refs=obj(a.prior/'evidence/source-index.json')
-            for h,info in refs.items():
-                if info.get('prior'):
-                    assert h in parent_refs,h
-                else:
-                    with raw.extractfile(info['member']) as f:
-                        assert file_digest(f,'sha256').hexdigest()==h,h
+        refs=obj(archive/'source-index.json')
+        parent_refs=obj(a.prior/'evidence/source-index.json')
+        for h,info in refs.items():
+            if info.get('prior'):assert h in parent_refs,h
+        required={info['member']:h for h,info in refs.items() if not info.get('prior')}
+        with tarfile.open(assembled,mode='r|gz') as raw:
+            for member in raw:
+                expected=required.pop(member.name)
+                with raw.extractfile(member) as f:
+                    assert file_digest(f,'sha256').hexdigest()==expected,member.name
+        assert not required, list(required)[:3]
 
         def check(code):
             cd=root/code;cd.mkdir()
