@@ -1,0 +1,7 @@
+{
+  "version": "WCPP-NEIGHBOR-SCORE-1",
+  "registered_at": "2026-11-23T05:31:01.934563+00:00",
+  "universe": "Same independent 20 competitions, stages, all dates, panels and primary holdout as WCPP-ALL-SCOPE-5. Additional pre-specified challenger; no held-out results seen.",
+  "procedure": "At every new fixture estimate the expected score-cell residual from earlier matches in its competition and phase with similar pre-match home-away probability difference (scale 0.22), draw probability (0.065) and expected goals (0.65). Separate neutral matches. Up to 160 nearest by standardized squared distance; Gaussian spatial weights times fixed competition half-life, 36 prior games at the new anchor. Shrink 25 goal-cell observed/expected ratios to [0.5,1.8]. Reweight and normalize the anchor matrix. Feature metric and all numeric settings fixed.",
+  "selection": "On the same development selection season only, compare the additional arm with the locked original four-head candidate (baseline forecasts are constructed from its selected validation choices). Choose first, WDL and actual total independently; ties retain original. Choose the backup ranking conditional on that first. Freeze both new policy and model state before accessing primary evaluations. Historical, paired-market and prospective comparisons independent for each competition. Do not select the best achieved result on the grading matches."
+}
