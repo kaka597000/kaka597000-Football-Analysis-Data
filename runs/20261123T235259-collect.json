@@ -1,0 +1,328 @@
+{
+  "run_id": "20261123T235259-collect",
+  "started_at": "2026-11-23T23:52:59.385290+00:00",
+  "mode": "collect",
+  "policy": {
+    "max_cohorts": 17,
+    "historical_only_scopes_skipped": 0,
+    "max_requests": 100,
+    "lookback_days": 2,
+    "promotion": "NEVER",
+    "max_collection_seconds": 90,
+    "data_sources": "existing public JSON endpoints only",
+    "paid_api_calls": false
+  },
+  "github_run_id": "45292519402",
+  "github_run_attempt": "1",
+  "source_commit": "fbed25e9648e4ba4061042b7f97b6a2f23f1213c",
+  "source_worktree_dirty": false,
+  "seed_sha256": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
+  "active_model_modified": false,
+  "result": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-11-23T23:52:59.426184+00:00",
+    "request_count": 69,
+    "successful_requests": 68,
+    "max_requests": 100,
+    "retry_used": false,
+    "events_seen": 101,
+    "new_result_observations": 5,
+    "quarantined": 12,
+    "market_snapshot_saved": false,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 90,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false,
+    "coverage_by_competition": {
+      "afc.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 6,
+        "new_rows": 0,
+        "quarantined": 6
+      },
+      "aus.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "bra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 9,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "eng.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 10,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "esp.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 9,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "fifa.world": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 8,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ger.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 8,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ita.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 10,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "jpn.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 7,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ned.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 9,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "nor.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 7,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "swe.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 8,
+        "new_rows": 2,
+        "quarantined": 0
+      },
+      "uefa.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.europa": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.europa.conf": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "usa.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 7,
+        "new_rows": 0,
+        "quarantined": 6
+      }
+    },
+    "new_rows": [
+      {
+        "match_id": "espn:401879237",
+        "cohort": "eng.1",
+        "competition": "eng.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-23",
+        "kickoff_at": "2026-11-23T20:00:00+00:00",
+        "home": "espn:337",
+        "away": "espn:368",
+        "home_goals": 4,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-23T23:53:03.753640+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879237",
+        "provider_final_score": [
+          "4",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/22a42655d9a6038b294d2ae0b8dd4522b521880436940bbd00625b2bdad7e1fa.json.gz",
+          "sha256": "22a42655d9a6038b294d2ae0b8dd4522b521880436940bbd00625b2bdad7e1fa",
+          "captured_at": "2026-11-23T23:53:03.753640+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=401879237"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401882802",
+        "cohort": "esp.1",
+        "competition": "esp.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-23",
+        "kickoff_at": "2026-11-23T20:00:00+00:00",
+        "home": "espn:1538",
+        "away": "espn:3751",
+        "home_goals": 1,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-23T23:53:04.431911+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882802",
+        "provider_final_score": [
+          "1",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/e133e832d2325585dc9a9403f9f4e212ea4563b54d4321196eedc895374a54f4.json.gz",
+          "sha256": "e133e832d2325585dc9a9403f9f4e212ea4563b54d4321196eedc895374a54f4",
+          "captured_at": "2026-11-23T23:53:04.431911+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882802"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401875009",
+        "cohort": "ita.1",
+        "competition": "ita.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-23",
+        "kickoff_at": "2026-11-23T19:45:00+00:00",
+        "home": "espn:4007",
+        "away": "espn:109",
+        "home_goals": 3,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-23T23:53:05.972903+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401875009",
+        "provider_final_score": [
+          "3",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/ce20b1a0c814b4d16f215875f6be305cd0bd0d059652852dbd9a7c230ae5a045.json.gz",
+          "sha256": "ce20b1a0c814b4d16f215875f6be305cd0bd0d059652852dbd9a7c230ae5a045",
+          "captured_at": "2026-11-23T23:53:05.972903+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401875009"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401842888",
+        "cohort": "swe.1",
+        "competition": "swe.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-23",
+        "kickoff_at": "2026-11-23T18:00:00+00:00",
+        "home": "espn:2495",
+        "away": "espn:2556",
+        "home_goals": 3,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-23T23:53:07.704221+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842888",
+        "provider_final_score": [
+          "3",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/83ab850311adf2af4288481ae6589e7cc02593093439fdb8255f87e461548b67.json.gz",
+          "sha256": "83ab850311adf2af4288481ae6589e7cc02593093439fdb8255f87e461548b67",
+          "captured_at": "2026-11-23T23:53:07.704221+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842888"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401842884",
+        "cohort": "swe.1",
+        "competition": "swe.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-23",
+        "kickoff_at": "2026-11-23T18:00:00+00:00",
+        "home": "espn:131552",
+        "away": "espn:3052",
+        "home_goals": 3,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-23T23:53:08.024374+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842884",
+        "provider_final_score": [
+          "3",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/83508d95c82eb2fd8464199c32697686a032a488936950ab3b20e6ec461c0f62.json.gz",
+          "sha256": "83508d95c82eb2fd8464199c32697686a032a488936950ab3b20e6ec461c0f62",
+          "captured_at": "2026-11-23T23:53:08.024374+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/swe.1/summary?event=401842884"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      }
+    ],
+    "channels": {
+      "history": {
+        "requests": 68,
+        "successful_requests": 68,
+        "failures": {},
+        "status": "RESPONSE_RECEIVED",
+        "new_result_observations": 5,
+        "quarantined": 12,
+        "training_eligibility": "SEPARATE_RAW_EVIDENCE_AND_VENUE_AUDIT_REQUIRED"
+      },
+      "market": {
+        "requests": 1,
+        "successful_requests": 0,
+        "failures": {
+          "TLS": 1
+        },
+        "status": "FAILED",
+        "raw_snapshot_saved": false,
+        "verified_quote_count": 0,
+        "model_ready": false,
+        "quote_status": "NO_RESPONSE"
+      }
+    },
+    "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+    "market_model_ready": false
+  },
+  "status": "COMPLETED",
+  "status_scope": "REQUEST_EXECUTION_NOT_MODEL_READINESS",
+  "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+  "market_model_ready": false,
+  "finished_at": "2026-11-23T23:53:23.447199+00:00"
+}
