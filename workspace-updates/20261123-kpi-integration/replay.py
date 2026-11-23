@@ -52,19 +52,40 @@ def report(source):
     if checksum(published) != manifest['files']['results/scores.json']:
         raise ValueError('archived score table checksum mismatch')
     original = json.loads(published.read_bytes())
+    def compare_archive(rows, stored):
+        checked = compare(rows, baseline='r6', candidate='candidate', draws=1000)
+        for track, stats in checked['tracks'].items():
+            for metric, value in stats['metrics'].items():
+                if [value['hits'], value['eligible']] != stored['scores'][track]['counts'][metric]:
+                    raise ValueError(f'archived counts differ for {track}/{metric}')
+        return checked
+
     results = {}
     for window, rows in load_windows(scope, manifest).items():
         fingerprint = sha256('\n'.join(sorted(r['cohort'] + '|' + r['id'] for r in rows)).encode()).hexdigest()
         if fingerprint != original[window]['fixture_set_sha256']:
             raise ValueError(f'fixture population differs in {window}')
-        analysis = compare(rows, baseline='r6', candidate='candidate', draws=1000)
-        for track in ('r6', 'candidate'):
-            for k, m in analysis['tracks'][track]['metrics'].items():
-                if [m['hits'], m['eligible']] != original[window]['overall']['scores'][track]['counts'][k]:
-                    raise ValueError(f'archived counts differ in {window}/{track}/{k}')
+        analysis = compare_archive(rows, original[window]['overall'])
+        by_competition = defaultdict(list)
+        for row in rows:
+            by_competition[row['cohort']].append(row)
+        if set(by_competition) != set(original[window]['competitions']):
+            raise ValueError(f'competition coverage differs in {window}')
+        competitions = {}
+        for code, games in by_competition.items():
+            checked = compare_archive(games, original[window]['competitions'][code])
+            metrics = checked['tracks']['candidate']['metrics']
+            competitions[code] = {
+                'population': len(games), 'common_pushes': checked['common_total_pushes'],
+                'metrics': {k: {f: v[f] for f in ('hits', 'eligible', 'issued', 'resolved_gate_denominator')}
+                            for k, v in metrics.items()},
+                'four_targets_on_fixed_population': all(
+                    v['resolved_gate_rate'] is not None and v['resolved_gate_rate'] >= v['target']
+                    for v in metrics.values()),
+            }
         results[window] = {
             'fixture_set_sha256': fingerprint, 'population': analysis['population'],
-            'competitions_with_matches': dict(sorted(analysis['cohorts'].items())),
+            'competitions': competitions,
             'common_pushes': analysis['common_total_pushes'], 'tracks': analysis['tracks'],
             'paired': analysis['paired'],
         }
