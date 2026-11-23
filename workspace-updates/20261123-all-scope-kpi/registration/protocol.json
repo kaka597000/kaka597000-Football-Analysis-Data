@@ -1,0 +1,52 @@
+{
+  "version": "WCPP-ALL-SCOPE-5",
+  "registered_at": "2026-11-23T05:15:07.455932+00:00",
+  "scope_bytes_sha256": "eed6fcdfe58e94646767c5f081a2a80d991fb3c33e5fc3dd86bb92e05bdd4fff",
+  "competitions": [
+    "eng.1",
+    "esp.1",
+    "ger.1",
+    "ita.1",
+    "fra.1",
+    "jpn.1",
+    "kor.1",
+    "aus.1",
+    "usa.1",
+    "nor.1",
+    "swe.1",
+    "ned.1",
+    "uefa.champions",
+    "uefa.europa",
+    "uefa.europa.conf",
+    "afc.champions",
+    "fifa.world",
+    "uefa.nations",
+    "jpn.league_cup",
+    "bra.1"
+  ],
+  "targets": {
+    "score_top1": 0.2,
+    "score_top3": 0.4,
+    "wdl": 0.65,
+    "actual_ou": 0.7
+  },
+  "acceptance": "Each of all 20 individually, all four metrics, full intended fixture denominator, 90-minute result only. Track observed actual-OU coverage, strict full win excluding a push. Missing quotes or fixtures do not become successes. Recommend three scores per fixture; no selective-slate substitute. Forward first issues distinct from historical performance.",
+  "calendar": {
+    "European fall-to-spring leagues and continental cups plus Australia": "selection 2024-07-01..2025-06-30, evaluation 2025-07-01..2026-06-30; additional locked recent 2026-07-01..2026-11-22",
+    "calendar-year regular/cups Japan Korea MLS Norway Sweden Brazil": "selection calendar 2024, evaluation 2025; additional locked recent 2026-01-01..2026-11-22",
+    "UEFA Nations": "selection 2022-06-01..2024-06-30 (2022/23 cycle), primary evaluation 2024-07-01..2025-06-30 (2024/25); additional most recent following cycle through 2026-11-22",
+    "World Cup finals": "selection 2022 calendar, evaluation 2026 calendar through Nov22; train strictly before 2022, no qualifiers; no future fixture is counted as complete"
+  },
+  "training": "Fit separately per competition and phase. Each Nations division and phase/leg isolated; regular/cup and two-leg identities retained. All score features strictly before the target day. Ratings/history updated only after the full date. Locked tree models trained only before selection. Later observations update online team state and calibration under fixed rules. Cold stage uses symmetric goal prior at neutral venues, venue prior otherwise. No other competition labels train any model.",
+  "candidate_arms": [
+    "historical venue/phase frequency-shrunk Poisson control",
+    "dynamic log-rate team attack and defence with time decay and true neutral treatment",
+    "market-informed anchor: exact same-book 1X2 plus available fair Asian total, or explicitly identified one-market projection on team prior; missing market falls back to team, never counted as an independent market comparison",
+    "empirical phase score-cell calibration with earlier-day expected vs observed 0,1,2,3,4+ cells and 120-game prior",
+    "per-route fixed-recipe Poisson boosted rate residuals from prior team rates and matchday market values, 40 boosting rounds, 7 leaves, regularization; fixed 50/50 matrix with anchor. No sweep, small samples retain base signal"
+  ],
+  "selection": "Use earlier selection season only within each competition to choose first arm (hits, deterministic tie toward anchor then team), backup arm maximizing coverage conditional on that fixed first, WDL and full-win actual-total separately; four choices locked and published before evaluating all 20 primary panels. Same trained algorithms/heads applied to latest window and future. Stage-specific training, competition-level head selection pools past validation games within competition only. For no selection results choose anchor. Published existing European benchmark where paired quotes are available is an additional comparator. Executable replay includes all fixtures without prices via declared prior.",
+  "quality": "No duplicates by fixture ID or identifiable same game. Keep original phase, regulation score, source lineage and remaining omissions. Distinguish full market from HDA-only and line-only. Quote clocks unknown on historical archive must be labeled. Stage-/coverage-specific diagnostics and 95% paired matchday intervals. Scorecards show market scores only with complete actual paired quote, WDL if 1X2 available and OU if actual two-way prices. Asian quarter-line direction maximizes full-win probability. Full-slate gate separate from paired comparison and active issued performance.",
+  "prospective": "Scan Beijing 2026-11-24 00:00 incl to 2026-12-01 00:00 excl across every configured competition; register all scheduled in-scope games. Forecast each identifiable future game using locked per-competition rules. Report odds observed before kickoff versus those with provider clock separately. Keep source failures, empty calendars, ineligible conflict records, true coverage, pending outcome. Keep current/test and old freezes.",
+  "automatic_promotion": false
+}

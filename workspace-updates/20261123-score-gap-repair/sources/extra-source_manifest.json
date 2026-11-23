@@ -1,0 +1,435 @@
+{
+  "provider": "ESPN public Site API",
+  "captured_at_utc": "2026-11-23T06:49:07Z",
+  "scope": [
+    "aus.1",
+    "kor.1",
+    "jpn.league_cup",
+    "afc.champions",
+    "uefa.champions",
+    "uefa.europa"
+  ],
+  "phase_policy": "Europe: test 2016-07-01..2017-06-30, validation 2015-07-01..2016-06-30, train_dev 2011-07-01..2015-06-30. Calendar competitions: test 2017, validation 2016, train_dev 2011-2015.",
+  "capture_files": [
+    {
+      "competition": "aus.1",
+      "calendar_year": 2011,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2011&limit=1000",
+      "http_status": 200,
+      "file": "raw/aus_1-2011-scoreboard.json",
+      "bytes": 1036336,
+      "sha256": "9a50f9ab0b9217d7c23fc2bba36107d32e9448c397a1087508d0aa0b58d6a42d"
+    },
+    {
+      "competition": "aus.1",
+      "calendar_year": 2012,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2012&limit=1000",
+      "http_status": 200,
+      "file": "raw/aus_1-2012-scoreboard.json",
+      "bytes": 1406140,
+      "sha256": "5d68e2c83e13686c55812625de43b2b62d3860a3656fa49c369f04494ac67a8e"
+    },
+    {
+      "competition": "aus.1",
+      "calendar_year": 2013,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2013&limit=1000",
+      "http_status": 200,
+      "file": "raw/aus_1-2013-scoreboard.json",
+      "bytes": 1062467,
+      "sha256": "c5f81044af307a9f4dfde675a746b9ea1e5578da445ab3654483157672b71579"
+    },
+    {
+      "competition": "aus.1",
+      "calendar_year": 2014,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2014&limit=1000",
+      "http_status": 200,
+      "file": "raw/aus_1-2014-scoreboard.json",
+      "bytes": 1197508,
+      "sha256": "e53669090e5024606a7bd186986c5fb1db05d735edb39fb643f67963f2f5a2e2"
+    },
+    {
+      "competition": "aus.1",
+      "calendar_year": 2015,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2015&limit=1000",
+      "http_status": 200,
+      "file": "raw/aus_1-2015-scoreboard.json",
+      "bytes": 1405251,
+      "sha256": "e3b4600856f266742af738bb0354fbf7f032dc9766d0faefe15126e3f2dc116f"
+    },
+    {
+      "competition": "aus.1",
+      "calendar_year": 2016,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2016&limit=1000",
+      "http_status": 200,
+      "file": "raw/aus_1-2016-scoreboard.json",
+      "bytes": 1564904,
+      "sha256": "6f571a3dd10c71d10128ed34e970abf4d5a4f5659db2906454f51870bd5f5b7f"
+    },
+    {
+      "competition": "aus.1",
+      "calendar_year": 2017,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard?dates=2017&limit=1000",
+      "http_status": 200,
+      "file": "raw/aus_1-2017-scoreboard.json",
+      "bytes": 1555625,
+      "sha256": "5f9971199a8c032e0394d15ff3f2f76c8e7e5aeddc9348856af0bb35ec9803bb"
+    },
+    {
+      "competition": "afc.champions",
+      "calendar_year": 2011,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2011&limit=1000",
+      "http_status": 200,
+      "file": "raw/afc_champions-2011-scoreboard.json",
+      "bytes": 1064026,
+      "sha256": "1bc0c331bbeb7f2a655ce0d6157a7f4157412a1f858fdf2b5ede2f9bce35b4f0"
+    },
+    {
+      "competition": "afc.champions",
+      "calendar_year": 2012,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2012&limit=1000",
+      "http_status": 200,
+      "file": "raw/afc_champions-2012-scoreboard.json",
+      "bytes": 1010836,
+      "sha256": "aada4863655be27bf2cc250d62f7462a576feb69fb5040e74890394a7e94f550"
+    },
+    {
+      "competition": "afc.champions",
+      "calendar_year": 2013,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2013&limit=1000",
+      "http_status": 200,
+      "file": "raw/afc_champions-2013-scoreboard.json",
+      "bytes": 994498,
+      "sha256": "83ec2eaa0134bae986ede703ef39bf79f6ed3c827dda5a87b404cbe30fd0406c"
+    },
+    {
+      "competition": "afc.champions",
+      "calendar_year": 2014,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2014&limit=1000",
+      "http_status": 200,
+      "file": "raw/afc_champions-2014-scoreboard.json",
+      "bytes": 943362,
+      "sha256": "9d70d1c9d8e5cfd0890ebd914739f86841387a128a7c28a26dd082684e8f8c60"
+    },
+    {
+      "competition": "afc.champions",
+      "calendar_year": 2015,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2015&limit=1000",
+      "http_status": 200,
+      "file": "raw/afc_champions-2015-scoreboard.json",
+      "bytes": 213002,
+      "sha256": "d8b6d3c0fab47b7bc4a18ddf7ca8776b62f38c99f91e2b4fbb9cf53da21003c0"
+    },
+    {
+      "competition": "afc.champions",
+      "calendar_year": 2016,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2016&limit=1000",
+      "http_status": 200,
+      "file": "raw/afc_champions-2016-scoreboard.json",
+      "bytes": 1265072,
+      "sha256": "4a0265fba74306bdf64a333ad8988ee4b83f0c767936aef1aea3394482992084"
+    },
+    {
+      "competition": "afc.champions",
+      "calendar_year": 2017,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=2017&limit=1000",
+      "http_status": 200,
+      "file": "raw/afc_champions-2017-scoreboard.json",
+      "bytes": 1230584,
+      "sha256": "f2d69a48b6543b28fef908c7c58e63a20e19e173228ccf05b84b1c56903162e0"
+    },
+    {
+      "competition": "uefa.champions",
+      "calendar_year": 2011,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=2011&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_champions-2011-scoreboard.json",
+      "bytes": 1856809,
+      "sha256": "ce8bf998c9824f9801fb4ba39173c536e033bc08dc8d668086e4abc32bc5608f"
+    },
+    {
+      "competition": "uefa.champions",
+      "calendar_year": 2012,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=2012&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_champions-2012-scoreboard.json",
+      "bytes": 2104509,
+      "sha256": "855473077e6c0e8b62bd2e046b051f744320e0d4449bee07fd66e15154fb0b69"
+    },
+    {
+      "competition": "uefa.champions",
+      "calendar_year": 2013,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=2013&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_champions-2013-scoreboard.json",
+      "bytes": 2074432,
+      "sha256": "a1b7cbe5d3a8acc70ebc94079db27558c40576703baf21a796e4a1d3d9bfe6e3"
+    },
+    {
+      "competition": "uefa.champions",
+      "calendar_year": 2014,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=2014&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_champions-2014-scoreboard.json",
+      "bytes": 2146533,
+      "sha256": "fa87014c02e8fd04c51763e44e4d29e815346753413c7abe4ebbb96fda9d80e4"
+    },
+    {
+      "competition": "uefa.champions",
+      "calendar_year": 2015,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=2015&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_champions-2015-scoreboard.json",
+      "bytes": 2335234,
+      "sha256": "4acae4a69b7a1dcdf9e6cc868cfac73237561eb2cb1cecf5fd6952dbef894af2"
+    },
+    {
+      "competition": "uefa.champions",
+      "calendar_year": 2016,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=2016&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_champions-2016-scoreboard.json",
+      "bytes": 2297715,
+      "sha256": "d0325148062282aeb0fb04762f6b78633e9147f111a763375882731e6f159957"
+    },
+    {
+      "competition": "uefa.champions",
+      "calendar_year": 2017,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=2017&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_champions-2017-scoreboard.json",
+      "bytes": 2343018,
+      "sha256": "1a21106d72bcdd62d5a7616734e916fff53ca7bd89dfedc7537550a682697bb1"
+    },
+    {
+      "competition": "uefa.europa",
+      "calendar_year": 2011,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=2011&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_europa-2011-scoreboard.json",
+      "bytes": 3841941,
+      "sha256": "d8e80ba874cc3ad32d98247bdb319b578033aae8ed12af02ffe9085106a66fb9"
+    },
+    {
+      "competition": "uefa.europa",
+      "calendar_year": 2012,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=2012&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_europa-2012-scoreboard.json",
+      "bytes": 4114674,
+      "sha256": "7023ff0ecf16caff0bef75af31841d850dfbca8f8986dc8fc7e7dddb879187d3"
+    },
+    {
+      "competition": "uefa.europa",
+      "calendar_year": 2013,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=2013&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_europa-2013-scoreboard.json",
+      "bytes": 3768903,
+      "sha256": "6fdbc7b32d9bf8d8fa07a3f26db2b646b0d6eb6415dc612746ddbc2bebe7595f"
+    },
+    {
+      "competition": "uefa.europa",
+      "calendar_year": 2014,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=2014&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_europa-2014-scoreboard.json",
+      "bytes": 3487574,
+      "sha256": "9e04c85e848ecea0e8692ba078fc8690052418fc4b9823bc1810b9ad60febaa2"
+    },
+    {
+      "competition": "uefa.europa",
+      "calendar_year": 2015,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=2015&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_europa-2015-scoreboard.json",
+      "bytes": 4532904,
+      "sha256": "8c23fb08b456020f010f7c10e5a802a2394e3538c536f220cc98316f7df30b91"
+    },
+    {
+      "competition": "uefa.europa",
+      "calendar_year": 2016,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=2016&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_europa-2016-scoreboard.json",
+      "bytes": 4432785,
+      "sha256": "e86a1586893adde3a6db37b42f8d0a3db43b8f7d083933dc9a1ecab8561b8edc"
+    },
+    {
+      "competition": "uefa.europa",
+      "calendar_year": 2017,
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard?dates=2017&limit=1000",
+      "http_status": 200,
+      "file": "raw/uefa_europa-2017-scoreboard.json",
+      "bytes": 4452212,
+      "sha256": "a9e4b1e40c943ac4fdfa88f7d40c715fa47d2ddda9a3264d7e9be8966040c957"
+    }
+  ],
+  "failures": [
+    {
+      "competition": "kor.1",
+      "calendar_year": 2011,
+      "http_status": 400,
+      "error_body_file": "raw/kor_1-2011-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/kor.1/scoreboard?dates=2011&limit=1000"
+    },
+    {
+      "competition": "kor.1",
+      "calendar_year": 2012,
+      "http_status": 400,
+      "error_body_file": "raw/kor_1-2012-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/kor.1/scoreboard?dates=2012&limit=1000"
+    },
+    {
+      "competition": "kor.1",
+      "calendar_year": 2013,
+      "http_status": 400,
+      "error_body_file": "raw/kor_1-2013-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/kor.1/scoreboard?dates=2013&limit=1000"
+    },
+    {
+      "competition": "kor.1",
+      "calendar_year": 2014,
+      "http_status": 400,
+      "error_body_file": "raw/kor_1-2014-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/kor.1/scoreboard?dates=2014&limit=1000"
+    },
+    {
+      "competition": "kor.1",
+      "calendar_year": 2015,
+      "http_status": 400,
+      "error_body_file": "raw/kor_1-2015-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/kor.1/scoreboard?dates=2015&limit=1000"
+    },
+    {
+      "competition": "kor.1",
+      "calendar_year": 2016,
+      "http_status": 400,
+      "error_body_file": "raw/kor_1-2016-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/kor.1/scoreboard?dates=2016&limit=1000"
+    },
+    {
+      "competition": "kor.1",
+      "calendar_year": 2017,
+      "http_status": 400,
+      "error_body_file": "raw/kor_1-2017-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/kor.1/scoreboard?dates=2017&limit=1000"
+    },
+    {
+      "competition": "jpn.league_cup",
+      "calendar_year": 2011,
+      "http_status": 400,
+      "error_body_file": "raw/jpn_league_cup-2011-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.league_cup/scoreboard?dates=2011&limit=1000"
+    },
+    {
+      "competition": "jpn.league_cup",
+      "calendar_year": 2012,
+      "http_status": 400,
+      "error_body_file": "raw/jpn_league_cup-2012-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.league_cup/scoreboard?dates=2012&limit=1000"
+    },
+    {
+      "competition": "jpn.league_cup",
+      "calendar_year": 2013,
+      "http_status": 400,
+      "error_body_file": "raw/jpn_league_cup-2013-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.league_cup/scoreboard?dates=2013&limit=1000"
+    },
+    {
+      "competition": "jpn.league_cup",
+      "calendar_year": 2014,
+      "http_status": 400,
+      "error_body_file": "raw/jpn_league_cup-2014-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.league_cup/scoreboard?dates=2014&limit=1000"
+    },
+    {
+      "competition": "jpn.league_cup",
+      "calendar_year": 2015,
+      "http_status": 400,
+      "error_body_file": "raw/jpn_league_cup-2015-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.league_cup/scoreboard?dates=2015&limit=1000"
+    },
+    {
+      "competition": "jpn.league_cup",
+      "calendar_year": 2016,
+      "http_status": 400,
+      "error_body_file": "raw/jpn_league_cup-2016-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.league_cup/scoreboard?dates=2016&limit=1000"
+    },
+    {
+      "competition": "jpn.league_cup",
+      "calendar_year": 2017,
+      "http_status": 400,
+      "error_body_file": "raw/jpn_league_cup-2017-error-400.body",
+      "error_body_sha256": "8781b617bdd8e883084d6bac29a4d45bd0a23b01720032b73ae16f319f68b4e0",
+      "error": "HTTP Error 400: Bad Request",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.league_cup/scoreboard?dates=2017&limit=1000"
+    }
+  ],
+  "rows": 3672,
+  "score_policy": "Only status-FT scoreboard values or event-level goal events through minute 90 are scored; AET/PEN with unavailable event detail is retained with null regulation score. Markets null.",
+  "alternate_verified_sources": [
+    {
+      "competition": "kor.1",
+      "source_manifest": "kleague_manifest.json",
+      "provider": "K League official public schedule/result API",
+      "rows": 1188,
+      "note": "ESPN historical endpoint HTTP 400; official archive used."
+    },
+    {
+      "competition": "jpn.league_cup",
+      "source_manifest": "jleague_cup_manifest.json",
+      "provider": "J.League official Data Site",
+      "rows": 361,
+      "note": "ESPN historical endpoint HTTP 400; official match cards used."
+    }
+  ],
+  "scope_cleaning": {
+    "UEFA": "Only main-draw group stage through final. Qualifying and play-off rounds excluded. Stage field uses normalized ESPN round slug plus leg prefix only; no aggregate-result or team-outcome text.",
+    "AFC": "Only old-format 2011-2017 main draw. Qualifying stages excluded; stage prefixed legacy to distinguish from post-2024 Elite format.",
+    "AUS": "Season-dependent ESPN slug normalized to stable regular/playoffs stage; year removed from stage."
+  },
+  "final_panel_rows": 5221,
+  "per_competition_outputs": [
+    "aus.1.jsonl",
+    "kor.1.jsonl",
+    "jpn.league_cup.jsonl",
+    "afc.champions.jsonl",
+    "uefa.champions.jsonl",
+    "uefa.europa.jsonl"
+  ],
+  "combined_output": "panel.jsonl",
+  "phase_index": "phase-index.jsonl",
+  "panel_schema": "Common R5 match panel fields, no split field; date phase is in phase-index.jsonl.",
+  "no_fixture_windows": {
+    "fifa.world": "No 2017 or 2016-17 senior World Cup final tournament fixtures",
+    "uefa.nations": "not established until 2018",
+    "uefa.europa.conf": "not established until 2021"
+  }
+}
