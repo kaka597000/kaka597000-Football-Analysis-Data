@@ -1,0 +1,154 @@
+{
+  "created_at_utc": "2026-11-23",
+  "timezone_note": "Dates include UTC and Beijing UTC+8",
+  "dataset": "Wyscout Open Access 2017/18 five European domestic leagues",
+  "attribution": "Pappalardo et al. (2019), Scientific Data 6:236, DOI 10.1038/s41597-019-0247-7; Pappalardo et al. (2019), PlayeRank, DOI 10.1145/3343172; attribute Wyscout/Figshare dataset. The mirror README says it is only a convenience snapshot and is not meant for public use; consult original source for research/production.",
+  "source_manifest": "/workspace/WCPP/reports/kpi-optimization-20261123-r4/events/source-manifest.json",
+  "source_manifest_sha256": "405a587dd4f08b9d74ee6c8c9a35795592d0eccdaaaf7e51a6656f599e1ed685",
+  "extraction_script": "build_pass_graphs.py",
+  "extraction_script_sha256": "bd56691724be51eeb01d92e2e477b1fd72a49b153b2f957059b42bfe4f9b64ac",
+  "sources": [
+    {
+      "file": "raw/events_England.json",
+      "bytes": 188888614,
+      "sha256": "301599543aa1a7fa457bb8ef33c9fe860bf81dca65d418d618d68abcda3defad",
+      "source_url": "https://media.githubusercontent.com/media/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/events/events_England.json",
+      "pinned_git_lfs_sha256": "301599543aa1a7fa457bb8ef33c9fe860bf81dca65d418d618d68abcda3defad",
+      "sha_matches_pinned_lfs": true
+    },
+    {
+      "file": "raw/events_Spain.json",
+      "bytes": 184164406,
+      "sha256": "b55fabec6624e469b9396100de915eaca334d4457de2c61a887a7a67de79a154",
+      "source_url": "https://media.githubusercontent.com/media/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/events/events_Spain.json",
+      "pinned_git_lfs_sha256": "b55fabec6624e469b9396100de915eaca334d4457de2c61a887a7a67de79a154",
+      "sha_matches_pinned_lfs": true
+    },
+    {
+      "file": "raw/events_Germany.json",
+      "bytes": 152916631,
+      "sha256": "2612a6f8cbd8209acf39d5e3c7d2a43689138b1134d09b36e23a4b0422a781f3",
+      "source_url": "https://media.githubusercontent.com/media/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/events/events_Germany.json",
+      "pinned_git_lfs_sha256": "2612a6f8cbd8209acf39d5e3c7d2a43689138b1134d09b36e23a4b0422a781f3",
+      "sha_matches_pinned_lfs": true
+    },
+    {
+      "file": "raw/events_Italy.json",
+      "bytes": 190544685,
+      "sha256": "b41f2d545b5cf80aeab0f9619e3091dbce159ca8e0a6e2d87ae2daee4d040a84",
+      "source_url": "https://media.githubusercontent.com/media/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/events/events_Italy.json",
+      "pinned_git_lfs_sha256": "b41f2d545b5cf80aeab0f9619e3091dbce159ca8e0a6e2d87ae2daee4d040a84",
+      "sha_matches_pinned_lfs": true
+    },
+    {
+      "file": "raw/events_France.json",
+      "bytes": 186374196,
+      "sha256": "18e6316ab3efd357e99f90847791780e279765ba06b4bd60cf483adba5b9a317",
+      "source_url": "https://media.githubusercontent.com/media/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/events/events_France.json",
+      "pinned_git_lfs_sha256": "18e6316ab3efd357e99f90847791780e279765ba06b4bd60cf483adba5b9a317",
+      "sha_matches_pinned_lfs": true
+    },
+    {
+      "file": "raw/matches_England.json",
+      "bytes": 1694720,
+      "sha256": "620725c2e6a58b4db3e574ed6c559136477451d81af543f8a06bd85c3da3fe29",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/matches/matches_England.json",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    },
+    {
+      "file": "raw/matches_Spain.json",
+      "bytes": 1705380,
+      "sha256": "9787475e64c496d44dc394f98def2610cc31809637fc10c13ec151b37b6118ce",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/matches/matches_Spain.json",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    },
+    {
+      "file": "raw/matches_Germany.json",
+      "bytes": 1377328,
+      "sha256": "6f962a20f50b174939c7b24d51169aaee10ae896b05dca89fc33aa81b585c0a9",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/matches/matches_Germany.json",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    },
+    {
+      "file": "raw/matches_Italy.json",
+      "bytes": 2019196,
+      "sha256": "afb21c3fa8bd4b1d30af158fa3edfae1e61127825b481e49b32bd7d1d3b99725",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/matches/matches_Italy.json",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    },
+    {
+      "file": "raw/matches_France.json",
+      "bytes": 1707222,
+      "sha256": "851fad20616a99383ec8a6ef2136c141700cd44af235a3da6c10008dbac37cea",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/matches/matches_France.json",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    },
+    {
+      "file": "raw/teams.json",
+      "bytes": 27404,
+      "sha256": "9f7a4a3b3d92c0be33f40613ad6e6eb4316c3b9771ec74c61a22c9b8ece23a4d",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/teams.json",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    },
+    {
+      "file": "raw/competitions.json",
+      "bytes": 1209,
+      "sha256": "39a738d2bc97638502e1ead01d661b54c623d6d6b37f77de3846f9a94db7a3a1",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/competitions.json",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    },
+    {
+      "file": "raw/eventid2name.csv",
+      "bytes": 1001,
+      "sha256": "ce7bafb341b36ab4c6093bf1c09c967e9cea10d4223724a1fc679086e5d16842",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/eventid2name.csv",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    },
+    {
+      "file": "raw/tags2name.csv",
+      "bytes": 1754,
+      "sha256": "e0bc1bd8ff6ea5339586fdfc3e8e9b285a4a18f1ae2f5868ccc9ec9cecc8a922",
+      "source_url": "https://raw.githubusercontent.com/zoid-archive/football-data/bdf35deec5e62de68f55e96cf6d3a0954d24645a/wyscout-data/tags2name.csv",
+      "pinned_git_lfs_sha256": null,
+      "sha_matches_pinned_lfs": null
+    }
+  ],
+  "method": {
+    "event_order": "source array order within each match; only immediately adjacent event records are paired",
+    "edge_rule": "source event is Pass with tag 1801 accurate; next event must be same matchPeriod and teamId, and both playerIds present and different. It is an inferred recipient proxy, never a stated recipient. No cross-team possession or half/terminal boundary is bridged.",
+    "pass_volume": "all eventName=Pass records by the team, successful or unsuccessful",
+    "eligible_edge_count": "number of accepted event pairs (sum of edge weights)",
+    "active_nodes": "unique sender or inferred receiver player IDs among accepted edges",
+    "density": "number of distinct directed non-self edges / (active_nodes * (active_nodes-1))",
+    "weighted_outgoing_entropy_normalized": "unweighted mean across nodes with outgoing edges of Shannon entropy of outgoing edge weight shares divided by ln(active_nodes); null if no outgoing edge",
+    "largest_sender_share": "maximum player outgoing edge weight / total accepted edge weight",
+    "largest_receiver_share": "maximum player incoming edge weight / total accepted edge weight",
+    "reciprocity": "sum over directed edges min(weight(a,b),weight(b,a)) / total edge weight; weighted share of edge volume with a reciprocal counterpart, range [0,1]",
+    "forward_edge_share": "fraction of accepted pass pairs with pass destination x > origin x, only pairs with both x coordinates present",
+    "final_third_edge_share": "fraction of accepted pass pairs with pass destination x >= 66.67, only pairs with both x coordinates present",
+    "coordinate_caveat": "Coordinates are source-native 0-100; forward means numeric x increases, without asserting team attacking orientation. Exact pass origin/destination and next-event start positions retained per edge."
+  },
+  "output": {
+    "file": "graph-matches.jsonl",
+    "records": 1826,
+    "unique_wyscout_match_ids": 1826,
+    "competition_counts": {
+      "eng.1": 380,
+      "esp.1": 380,
+      "ger.1": 306,
+      "ita.1": 380,
+      "fra.1": 380
+    },
+    "bytes": 147314425,
+    "sha256": "c4d79fbd128b76a466238a0f8b1d1f5559ded533292f7b59f1c94c7fd28576ce"
+  },
+  "alignments": "football_data_match_id is copied only from existing build_events output when exact one-to-one alignment was established; null otherwise."
+}
