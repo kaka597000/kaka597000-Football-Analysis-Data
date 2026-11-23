@@ -1,0 +1,414 @@
+{
+  "version": "WCPP-KPI-SCORE-1",
+  "selected_recipe": "market",
+  "population": {
+    "fit": 8955,
+    "select": 1752,
+    "known_holdout": 1752,
+    "final": 500
+  },
+  "training_xg_pair_count": 7222,
+  "pricing_method": "archival closing proxy; phase valid; total at actual source line",
+  "time_partitions": {
+    "fit": [
+      "1920",
+      "2021",
+      "2122",
+      "2223",
+      "2324"
+    ],
+    "select": [
+      "2425"
+    ],
+    "known_holdout": [
+      "2526"
+    ],
+    "final": [
+      "2627"
+    ]
+  },
+  "selection": {
+    "market": {
+      "n": 1752,
+      "primary": 238,
+      "top3": 574,
+      "wdl": 960,
+      "total_full_win": 1051,
+      "total_non_push": 1752,
+      "settlements": {
+        "win": 1051,
+        "half_win": 0,
+        "push": 0,
+        "half_loss": 0,
+        "loss": 701
+      },
+      "joint_log_loss": 2.8717096057934097
+    },
+    "market_tilt": {
+      "n": 1752,
+      "primary": 232,
+      "top3": 601,
+      "wdl": 957,
+      "total_full_win": 1044,
+      "total_non_push": 1752,
+      "settlements": {
+        "win": 1044,
+        "half_win": 0,
+        "push": 0,
+        "half_loss": 0,
+        "loss": 708
+      },
+      "joint_log_loss": 2.86755073336034
+    },
+    "form_goals": {
+      "n": 1752,
+      "primary": 223,
+      "top3": 572,
+      "wdl": 854,
+      "total_full_win": 968,
+      "total_non_push": 1752,
+      "settlements": {
+        "win": 968,
+        "half_win": 0,
+        "push": 0,
+        "half_loss": 0,
+        "loss": 784
+      },
+      "joint_log_loss": 2.975750073508225
+    },
+    "form_xg": {
+      "n": 1752,
+      "primary": 219,
+      "top3": 566,
+      "wdl": 885,
+      "total_full_win": 986,
+      "total_non_push": 1752,
+      "settlements": {
+        "win": 986,
+        "half_win": 0,
+        "push": 0,
+        "half_loss": 0,
+        "loss": 766
+      },
+      "joint_log_loss": 2.947939445921773
+    },
+    "blend_25": {
+      "n": 1752,
+      "primary": 225,
+      "top3": 594,
+      "wdl": 945,
+      "total_full_win": 1043,
+      "total_non_push": 1752,
+      "settlements": {
+        "win": 1043,
+        "half_win": 0,
+        "push": 0,
+        "half_loss": 0,
+        "loss": 709
+      },
+      "joint_log_loss": 2.8745467215502463
+    },
+    "blend_50": {
+      "n": 1752,
+      "primary": 221,
+      "top3": 585,
+      "wdl": 947,
+      "total_full_win": 1040,
+      "total_non_push": 1752,
+      "settlements": {
+        "win": 1040,
+        "half_win": 0,
+        "push": 0,
+        "half_loss": 0,
+        "loss": 712
+      },
+      "joint_log_loss": 2.889970147518899
+    }
+  },
+  "checks": {
+    "known_holdout": {
+      "all_trials": {
+        "market": {
+          "n": 1752,
+          "primary": 228,
+          "top3": 598,
+          "wdl": 936,
+          "total_full_win": 1021,
+          "total_non_push": 1752,
+          "settlements": {
+            "win": 1021,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 731
+          },
+          "joint_log_loss": 2.865318377071765
+        },
+        "market_tilt": {
+          "n": 1752,
+          "primary": 228,
+          "top3": 603,
+          "wdl": 932,
+          "total_full_win": 1017,
+          "total_non_push": 1752,
+          "settlements": {
+            "win": 1017,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 735
+          },
+          "joint_log_loss": 2.862958940786362
+        },
+        "form_goals": {
+          "n": 1752,
+          "primary": 203,
+          "top3": 553,
+          "wdl": 836,
+          "total_full_win": 954,
+          "total_non_push": 1752,
+          "settlements": {
+            "win": 954,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 798
+          },
+          "joint_log_loss": 2.944074951353314
+        },
+        "form_xg": {
+          "n": 1752,
+          "primary": 195,
+          "top3": 562,
+          "wdl": 866,
+          "total_full_win": 962,
+          "total_non_push": 1752,
+          "settlements": {
+            "win": 962,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 790
+          },
+          "joint_log_loss": 2.9319119946647407
+        },
+        "blend_25": {
+          "n": 1752,
+          "primary": 229,
+          "top3": 599,
+          "wdl": 929,
+          "total_full_win": 1021,
+          "total_non_push": 1752,
+          "settlements": {
+            "win": 1021,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 731
+          },
+          "joint_log_loss": 2.869918574424477
+        },
+        "blend_50": {
+          "n": 1752,
+          "primary": 216,
+          "top3": 581,
+          "wdl": 917,
+          "total_full_win": 992,
+          "total_non_push": 1752,
+          "settlements": {
+            "win": 992,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 760
+          },
+          "joint_log_loss": 2.8836317145058534
+        }
+      },
+      "selected": {
+        "n": 1752,
+        "primary": 228,
+        "top3": 598,
+        "wdl": 936,
+        "total_full_win": 1021,
+        "total_non_push": 1752,
+        "settlements": {
+          "win": 1021,
+          "half_win": 0,
+          "push": 0,
+          "half_loss": 0,
+          "loss": 731
+        },
+        "joint_log_loss": 2.865318377071765
+      },
+      "paired_market": {
+        "exact": {
+          "n": 1752,
+          "gains": 0,
+          "losses": 0,
+          "net": 0
+        },
+        "three": {
+          "n": 1752,
+          "gains": 0,
+          "losses": 0,
+          "net": 0
+        },
+        "wdl_hit": {
+          "n": 1752,
+          "gains": 0,
+          "losses": 0,
+          "net": 0
+        },
+        "settlement": {
+          "n": 1752,
+          "gains": 0,
+          "losses": 0,
+          "net": 0
+        }
+      }
+    },
+    "final": {
+      "all_trials": {
+        "market": {
+          "n": 500,
+          "primary": 63,
+          "top3": 161,
+          "wdl": 281,
+          "total_full_win": 301,
+          "total_non_push": 500,
+          "settlements": {
+            "win": 301,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 199
+          },
+          "joint_log_loss": 2.9745589757594852
+        },
+        "market_tilt": {
+          "n": 500,
+          "primary": 64,
+          "top3": 159,
+          "wdl": 281,
+          "total_full_win": 301,
+          "total_non_push": 500,
+          "settlements": {
+            "win": 301,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 199
+          },
+          "joint_log_loss": 2.972961122745864
+        },
+        "form_goals": {
+          "n": 500,
+          "primary": 51,
+          "top3": 142,
+          "wdl": 242,
+          "total_full_win": 297,
+          "total_non_push": 500,
+          "settlements": {
+            "win": 297,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 203
+          },
+          "joint_log_loss": 3.0785925294764964
+        },
+        "form_xg": {
+          "n": 500,
+          "primary": 56,
+          "top3": 143,
+          "wdl": 248,
+          "total_full_win": 285,
+          "total_non_push": 500,
+          "settlements": {
+            "win": 285,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 215
+          },
+          "joint_log_loss": 3.0500719685694793
+        },
+        "blend_25": {
+          "n": 500,
+          "primary": 64,
+          "top3": 154,
+          "wdl": 276,
+          "total_full_win": 305,
+          "total_non_push": 500,
+          "settlements": {
+            "win": 305,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 195
+          },
+          "joint_log_loss": 2.977575655343021
+        },
+        "blend_50": {
+          "n": 500,
+          "primary": 58,
+          "top3": 160,
+          "wdl": 272,
+          "total_full_win": 301,
+          "total_non_push": 500,
+          "settlements": {
+            "win": 301,
+            "half_win": 0,
+            "push": 0,
+            "half_loss": 0,
+            "loss": 199
+          },
+          "joint_log_loss": 2.9911273378179892
+        }
+      },
+      "selected": {
+        "n": 500,
+        "primary": 63,
+        "top3": 161,
+        "wdl": 281,
+        "total_full_win": 301,
+        "total_non_push": 500,
+        "settlements": {
+          "win": 301,
+          "half_win": 0,
+          "push": 0,
+          "half_loss": 0,
+          "loss": 199
+        },
+        "joint_log_loss": 2.9745589757594852
+      },
+      "paired_market": {
+        "exact": {
+          "n": 500,
+          "gains": 0,
+          "losses": 0,
+          "net": 0
+        },
+        "three": {
+          "n": 500,
+          "gains": 0,
+          "losses": 0,
+          "net": 0
+        },
+        "wdl_hit": {
+          "n": 500,
+          "gains": 0,
+          "losses": 0,
+          "net": 0
+        },
+        "settlement": {
+          "n": 500,
+          "gains": 0,
+          "losses": 0,
+          "net": 0
+        }
+      }
+    }
+  }
+}
