@@ -1,0 +1,517 @@
+{
+  "competition": "afc.champions:ELITE:league_phase",
+  "score_scope": "regulation_90",
+  "data_source": "https://site.api.espn.com/apis/site/v2/sports/soccer/afc.champions/scoreboard?dates=20261124",
+  "fixtures": [
+    {
+      "match_id": "espn:401912609",
+      "status": "ABSTAIN_KICKOFF_PASSED"
+    },
+    {
+      "match_id": "espn:401912588",
+      "status": "FROZEN_PREMATCH",
+      "receipt": {
+        "freeze_id": "aa623c0c7b5c0e1e-v000001",
+        "recorded_at": "2026-11-24T15:45:29.581759+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/aa623c0c7b5c0e1ed0895c4c5e8ac0815472e26c402511ebdf9249e6cc84fa47/000001.json",
+        "sha256": "b2c2349ffed76d3c83eabc80a7c4a38e3821f9e854fd81b3a195bd93df2f2153",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "total_line": 2.5,
+      "models": [
+        {
+          "version": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.1119842603601089
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09521367064434379
+            },
+            {
+              "score": "1-0",
+              "probability": 0.09235355336471131
+            }
+          ],
+          "wdl": {
+            "主胜": 0.48814813073665847,
+            "平局": 0.23909925346261796,
+            "客胜": 0.2727526158007236
+          },
+          "matrix_hash": "b08ddc2a397a91adf0313d088933e0443759319a91e5a059b51e097f61c279a9",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "under_probability": 0.4429514147638862
+        },
+        {
+          "version": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.10718392234009609
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09386485756776909
+            },
+            {
+              "score": "1-0",
+              "probability": 0.08124440258700658
+            }
+          ],
+          "wdl": {
+            "主胜": 0.47643304591187696,
+            "平局": 0.23390606938061387,
+            "客胜": 0.28966088470750906
+          },
+          "matrix_hash": "a88aab623c288dbc00c57b96f1799ab1c453c125a2804efde77ef22b0a79342d",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "under_probability": 0.407527351611577
+        }
+      ]
+    },
+    {
+      "match_id": "espn:401912587",
+      "status": "FROZEN_PREMATCH",
+      "receipt": {
+        "freeze_id": "82849af50f893782-v000001",
+        "recorded_at": "2026-11-24T15:45:29.915767+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/82849af50f893782bd36c6ec36a3e702dec67c8b8b5d380411aaed37056fd1b0/000001.json",
+        "sha256": "939c4e5c7216ec804b7ae9e2edfe7824095286646beac5fa243c60f3a82b5952",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "total_line": 2.5,
+      "models": [
+        {
+          "version": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.1119842603601089
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09521367064434379
+            },
+            {
+              "score": "1-0",
+              "probability": 0.09235355336471131
+            }
+          ],
+          "wdl": {
+            "主胜": 0.48814813073665847,
+            "平局": 0.23909925346261796,
+            "客胜": 0.2727526158007236
+          },
+          "matrix_hash": "772e1dc6a7ceeff985eb7a41a829fdf147dad50a976be0ddc4e531554680b80c",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "under_probability": 0.4429514147638862
+        },
+        {
+          "version": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.09968829709529596
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09670341700689901
+            },
+            {
+              "score": "1-0",
+              "probability": 0.0792859196602059
+            }
+          ],
+          "wdl": {
+            "主胜": 0.5330975977873225,
+            "平局": 0.22060111186622364,
+            "客胜": 0.2463012903464539
+          },
+          "matrix_hash": "69ebc0689780a082eb560d1cb7662854cc970fa607f86328c5474553f9079948",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "under_probability": 0.38043778417500096
+        }
+      ]
+    },
+    {
+      "match_id": "espn:401912599",
+      "status": "FROZEN_PREMATCH",
+      "receipt": {
+        "freeze_id": "00a42af578f86d86-v000001",
+        "recorded_at": "2026-11-24T15:45:30.361605+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/00a42af578f86d865a9c0a62baabae8181ac326ef7ac1c3d23468b4f746ee9d6/000001.json",
+        "sha256": "ac96a2102b889231d7b227758a82e12b6cc5de01645e451b791eef90c00d6268",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "total_line": 2.5,
+      "models": [
+        {
+          "version": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.1119842603601089
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09521367064434379
+            },
+            {
+              "score": "1-0",
+              "probability": 0.09235355336471131
+            }
+          ],
+          "wdl": {
+            "主胜": 0.48814813073665847,
+            "平局": 0.23909925346261796,
+            "客胜": 0.2727526158007236
+          },
+          "matrix_hash": "b08ddc2a397a91adf0313d088933e0443759319a91e5a059b51e097f61c279a9",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "under_probability": 0.4429514147638862
+        },
+        {
+          "version": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.10057551326157035
+            },
+            {
+              "score": "2-1",
+              "probability": 0.08354401566252032
+            },
+            {
+              "score": "1-2",
+              "probability": 0.08219225372474322
+            }
+          ],
+          "wdl": {
+            "主胜": 0.3904693895383623,
+            "平局": 0.2303933257158002,
+            "客胜": 0.3791372847458377
+          },
+          "matrix_hash": "3e313dff054745ddd39dcd8e3af99fc55eac986dd094f0a65bd0faf8ad6e5d56",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "under_probability": 0.36027912135762635
+        }
+      ]
+    },
+    {
+      "match_id": "espn:401912585",
+      "status": "FROZEN_PREMATCH",
+      "receipt": {
+        "freeze_id": "971b8b0a95404ab6-v000001",
+        "recorded_at": "2026-11-24T15:45:29.632481+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/971b8b0a95404ab61c99fdf3a220300bb74283094cef7fe0d883f27e1db0d6a6/000001.json",
+        "sha256": "6f7badf0b4df97b3dab812f6891877d60def328a4bdc9e99b07b2580a0079086",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "total_line": 3.5,
+      "models": [
+        {
+          "version": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.1119842603601089
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09521367064434379
+            },
+            {
+              "score": "1-0",
+              "probability": 0.09235355336471131
+            }
+          ],
+          "wdl": {
+            "主胜": 0.48814813073665847,
+            "平局": 0.23909925346261796,
+            "客胜": 0.2727526158007236
+          },
+          "matrix_hash": "b08ddc2a397a91adf0313d088933e0443759319a91e5a059b51e097f61c279a9",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "under_probability": 0.6667054836328177
+        },
+        {
+          "version": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.09863248012423531
+            },
+            {
+              "score": "2-1",
+              "probability": 0.08721785338804791
+            },
+            {
+              "score": "1-2",
+              "probability": 0.07729639881115444
+            }
+          ],
+          "wdl": {
+            "主胜": 0.4282618053458972,
+            "平局": 0.22770203700886726,
+            "客胜": 0.34403615764523543
+          },
+          "matrix_hash": "201f2f3196bfe4122b8f4d529bac665f013d57d111eab36c101193f554ffc47a",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "under_probability": 0.5724199353990018
+        }
+      ]
+    },
+    {
+      "match_id": "espn:401912586",
+      "status": "FROZEN_PREMATCH",
+      "receipt": {
+        "freeze_id": "99f9591892c1ce27-v000001",
+        "recorded_at": "2026-11-24T15:45:29.593222+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/99f9591892c1ce27fb84f231f41d470c79eaf5dd98261a1d21692c107949c458/000001.json",
+        "sha256": "4035f6747525c83863479ac09d32d3d728fb4864c8cbc479ffe90243de600e55",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "total_line": 3.5,
+      "models": [
+        {
+          "version": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.1119842603601089
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09521367064434379
+            },
+            {
+              "score": "1-0",
+              "probability": 0.09235355336471131
+            }
+          ],
+          "wdl": {
+            "主胜": 0.48814813073665847,
+            "平局": 0.23909925346261796,
+            "客胜": 0.2727526158007236
+          },
+          "matrix_hash": "b08ddc2a397a91adf0313d088933e0443759319a91e5a059b51e097f61c279a9",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "under_probability": 0.6667054836328177
+        },
+        {
+          "version": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.11683716239264101
+            },
+            {
+              "score": "2-1",
+              "probability": 0.08997135208357131
+            },
+            {
+              "score": "1-0",
+              "probability": 0.08955415559445683
+            }
+          ],
+          "wdl": {
+            "主胜": 0.42862149408161015,
+            "平局": 0.2485642028118424,
+            "客胜": 0.3228143031065475
+          },
+          "matrix_hash": "fb7c0746934a051885d7ac4cf47ef1b592621588c2215abb2ee537e891c7f59d",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "under_probability": 0.6819623709212554
+        }
+      ]
+    },
+    {
+      "match_id": "espn:401912598",
+      "status": "FROZEN_PREMATCH",
+      "receipt": {
+        "freeze_id": "afcb1090972495ad-v000001",
+        "recorded_at": "2026-11-24T15:45:29.972186+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/afcb1090972495add6f5f49f8b704633c6053b8fcc7358c9115c53d2ec317d5a/000001.json",
+        "sha256": "3c293181abf667d78b519c21a7e97c9f6e0128ea1d67eece8883e3f9440c1eda",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "total_line": null,
+      "models": [
+        {
+          "version": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.1119842603601089
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09521367064434379
+            },
+            {
+              "score": "1-0",
+              "probability": 0.09235355336471131
+            }
+          ],
+          "wdl": {
+            "主胜": 0.48814813073665847,
+            "平局": 0.23909925346261796,
+            "客胜": 0.2727526158007236
+          },
+          "matrix_hash": "772e1dc6a7ceeff985eb7a41a829fdf147dad50a976be0ddc4e531554680b80c",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "under_probability": null
+        },
+        {
+          "version": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.1041130053216725
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09455286750186677
+            },
+            {
+              "score": "1-0",
+              "probability": 0.07877796095931501
+            }
+          ],
+          "wdl": {
+            "主胜": 0.4909522452913429,
+            "平局": 0.22938715652974087,
+            "客胜": 0.27966059817891636
+          },
+          "matrix_hash": "8b9922b9e1be1e59ff88fcd2d3495071bcdded15981bb8e576649ce2456a561b",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "under_probability": null
+        }
+      ]
+    },
+    {
+      "match_id": "espn:401912584",
+      "status": "FROZEN_PREMATCH",
+      "receipt": {
+        "freeze_id": "b9b1e875a8e10322-v000001",
+        "recorded_at": "2026-11-24T15:45:30.046189+08:00",
+        "path": "/workspace/WCPP/forecasts/issued-analyses/b9b1e875a8e10322083272cf6ab8b3b226518b73c3e46dc44d868a16b556cc70/000001.json",
+        "sha256": "41e3a787aa2aaab0cc6abefcdfaa0b2b274964689de765c79b64aa562ec267a9",
+        "evaluation_slot": "FIRST_PREMATCH"
+      },
+      "total_line": 3.5,
+      "models": [
+        {
+          "version": "WCPP-AFC-ELITE-CURRENT-CONSTANT-0.1",
+          "primary": "1-1",
+          "top3": [
+            {
+              "score": "1-1",
+              "probability": 0.1119842603601089
+            },
+            {
+              "score": "2-1",
+              "probability": 0.09521367064434379
+            },
+            {
+              "score": "1-0",
+              "probability": 0.09235355336471131
+            }
+          ],
+          "wdl": {
+            "主胜": 0.48814813073665847,
+            "平局": 0.23909925346261796,
+            "客胜": 0.2727526158007236
+          },
+          "matrix_hash": "5b5a74254c13abc4f33f71603898bb1b43a377db6c4b0d36002fc5228647b505",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "c6528dec375c8d03986abc3fbe07a6312b5fb4567828e71193ea0e8a6e07ce4d",
+          "under_probability": 0.6667054836328177
+        },
+        {
+          "version": "WCPP-AFC-ELITE-TEST-POISSON-0.1",
+          "primary": "2-1",
+          "top3": [
+            {
+              "score": "2-1",
+              "probability": 0.09578430024414847
+            },
+            {
+              "score": "1-1",
+              "probability": 0.09269839617036602
+            },
+            {
+              "score": "2-0",
+              "probability": 0.07365968364387261
+            }
+          ],
+          "wdl": {
+            "主胜": 0.5508327960673288,
+            "平局": 0.21155121659111686,
+            "客胜": 0.2376159873415542
+          },
+          "matrix_hash": "cb161a1c75bcdaf201bfca5c1bfac0c3ad47a876c66a4c57a91f5c3297859b85",
+          "training_data_cutoff": "2026-10-12",
+          "source_artifact_sha256": "5c30631e3f3552aa8d9d60812848695e04393c73ccd9a22d12551009a5b4e9de",
+          "under_probability": 0.5655978109580861
+        }
+      ]
+    }
+  ],
+  "execution": {
+    "commit": "7a18cee715acb0633904af434b3f743d870c0951",
+    "worktree_dirty": false,
+    "status": "GIT_IDENTIFIED"
+  },
+  "files": {
+    "espn-scoreboard.json": "1dda545b9ab2cabf7c49effd1851198fa133472a8a5610f37f22cabe0d8243df",
+    "401912609.fixture.json": "e9a7a943295959b418a330c789567f1ea7017a700a1e88184a2c959e1d345d9f",
+    "401912588.fixture.json": "7676f86ea9220be4c1ab6484bbbfd795a861f0dfcad18d4c9f3d8642288f7bb8",
+    "401912588.pair.json": "50c95838e99882adb8b6f29de0fc4fe49cc7d479d0832655030cf30845f3db4f",
+    "freezes/401912588.json": "a3d3494aa7c618e9c4f3c46c520349cd798c8587f61e28879453c15965db3651",
+    "401912587.fixture.json": "acbc4118ea89a1e590b25612a5f62b70134effedb8c37b0d771b13331558208e",
+    "401912587.pair.json": "0fcb684f8e3bb54cc8bd06389427d0afcf9601e3523694eea785eadbc461ec3b",
+    "freezes/401912587.json": "b4e03e310f5c2e385a3820674b9437df7e8794907a7544e37554cc95ea6d6459",
+    "401912599.fixture.json": "162d01e7e7db860f3b9ebeadb1a1963459c780d6db1d0eb185fdebfef8be16ca",
+    "401912599.pair.json": "586c323880edcacc4789cd867a16e35e52a5d24c57f50bfa514773173e03e81b",
+    "freezes/401912599.json": "d6f9e45b5032e4f74d5344df5eca6f86a28daed5fd94df75b6e59becd6ff1095",
+    "401912585.fixture.json": "a5638e06ca31f0d580177a951a89b0126c78aebd4fbdfb220ed804d67166ab50",
+    "401912585.pair.json": "e3e59cb4e4b0441ad53cde7e21436e2d9ffdbef52ac4fd78c63d9a6a32a664ce",
+    "freezes/401912585.json": "2b9238fa9e2b821237c90282a8a5b38c10d4a748e90fb892ad53e0f7a9bd08b6",
+    "401912586.fixture.json": "6eea35d36695a20fc81ea7df3b68fabb086be1df7b5d3b6d75e4f5416fe8c3a4",
+    "401912586.pair.json": "f330e6cfffacc79cb1b49f717de6400cb66f71ad63a03add65f6e77975471064",
+    "freezes/401912586.json": "2d948093f82df787ec85f56bc5af1048c0137c665da4953cbb5d0848e9f88f60",
+    "401912598.fixture.json": "dfad30a4eb946289bd4ec7defa78b771ea044d022f41c3284a25d16831481b14",
+    "401912598.pair.json": "6ab6573a84e741cb418a64949ccaa523305fd771a5bbbd6faa5efab465169d40",
+    "freezes/401912598.json": "ff4ad4c1bc072f7b340919e952af04f7d552f49acde986c004cd2e104c80c06f",
+    "401912584.fixture.json": "0abed7b9a4bd9bad5c778afcf44394c919b9d078031b70af55ef9b15dfcb024d",
+    "401912584.pair.json": "e155ed50bc8595b2e6ad180b215ff9f57f412db37856bfe35742e6fb206be27d",
+    "freezes/401912584.json": "f46d1eb37ec20508f7cda40068ad571ff5b872f42798bc519ee3b68d28943ebd"
+  }
+}
