@@ -65,3 +65,12 @@ The forward lock was recorded at 2026-11-25 18:05:59 Beijing time. It covers
 2026-11-26 01:45 Beijing time. The verifier recomputes both selected-seat
 orders and checks every cited R7 issue hash and timestamp. This research lock
 does not replace any user-facing R7 selections.
+
+After settlement we counted the correct original scores across the entire
+eligible pool for each full historical batch. Of 416 batches, 231 contained
+zero correct first scores, 138 contained one, 38 contained two and 9 contained
+at least three. In 85 batches at least three different fixtures contained the
+actual score somewhere among their three ordered scores. Both original ranking
+rules achieved zero three-first-score sweeps. Each count can be rebuilt from
+the frozen slates. The per-competition table includes the empty World Cup
+sample. [Batch score coverage](replay/batch-score-coverage.csv)

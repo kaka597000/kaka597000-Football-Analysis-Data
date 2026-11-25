@@ -206,11 +206,11 @@ def _check_tables(source):
     with tempfile.TemporaryDirectory(prefix="r16-tables-") as tmp:
         temp_root = Path(tmp)
         (temp_root / "replay").mkdir()
-        for name in ("metrics.json", "weights.json"):
+        for name in ("metrics.json", "weights.json", "ranked-slates.jsonl.gz"):
             (temp_root / "replay" / name).write_bytes((ROOT / "replay" / name).read_bytes())
         module.build(temp_root)
         for name in ("competition-seat.csv", "same-fixture-market-coverage.csv",
-                     "fallback-by-competition.csv", "uncertainty.json"):
+                     "fallback-by-competition.csv", "uncertainty.json", "batch-score-coverage.csv"):
             if (temp_root / "replay" / name).read_bytes() != (ROOT / "replay" / name).read_bytes():
                 raise ValueError(f"descriptive table does not rebuild exactly: {name}")
 

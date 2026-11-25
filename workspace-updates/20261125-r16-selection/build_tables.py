@@ -2,6 +2,7 @@
 """Build descriptive R16 tables from the frozen replay artifacts."""
 
 import csv
+import gzip
 import json
 from pathlib import Path
 
@@ -16,6 +17,33 @@ def _write_csv(path, rows, fields):
         writer.writerows(rows)
 
 
+def batch_score_coverage(replay, competitions):
+    """Count how many correct original fixture picks each full pool contained after settlement."""
+    fields = ("full_batches", "zero_first", "one_first", "two_first", "at_least_three_first",
+              "at_least_three_ordered_scores", "raw_selected_first_sweeps", "calibrated_selected_first_sweeps")
+    counts = {code: dict.fromkeys(fields, 0) for code in competitions}
+    with gzip.open(replay / "ranked-slates.jsonl.gz", "rt", encoding="utf-8") as stream:
+        for line in stream:
+            batch = json.loads(line)
+            fixtures = batch["fixtures"]
+            if len(fixtures) < 3:
+                continue
+            group = counts[batch["cohort"]]
+            first_hits = 0
+            ordered_hits = 0
+            for fixture in fixtures:
+                actual = "-".join(map(str, fixture["actual"]))
+                first_hits += fixture["primary"] == actual
+                ordered_hits += actual in fixture["top3"]
+            group["full_batches"] += 1
+            group[("zero_first", "one_first", "two_first", "at_least_three_first")[min(first_hits, 3)]] += 1
+            group["at_least_three_ordered_scores"] += ordered_hits >= 3
+            for rule, outcome in batch["results"].items():
+                group[rule + "_selected_first_sweeps"] += outcome["sweep"]
+    counts["ALL"] = {key: sum(row[key] for row in counts.values()) for key in fields}
+    return [dict(competition=code, **row) for code, row in sorted(counts.items())]
+
+
 def build(root=ROOT):
     root = Path(root)
     metrics = json.loads((root / "replay/metrics.json").read_text(encoding="utf-8"))
@@ -23,6 +51,8 @@ def build(root=ROOT):
     competition_rows = []
     coverage_rows = []
     fallback_rows = []
+    batch_rows = batch_score_coverage(root / "replay", metrics["competitions"])
+    _write_csv(root / "replay/batch-score-coverage.csv", batch_rows, list(batch_rows[0]))
 
     for code, summary in sorted(metrics["competitions"].items()):
         for rule, result in summary["rules"].items():
