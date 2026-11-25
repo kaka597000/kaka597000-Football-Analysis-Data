@@ -1,0 +1,25 @@
+name: UEFA Thursday two-window evidence
+
+on:
+  push:
+    paths:
+      - 'workspace-updates/20261125-uefa-thursday-two-windows/**'
+      - '.github/workflows/uefa-thursday-two-windows.yml'
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-uefa-thursday-two-windows/**'
+      - '.github/workflows/uefa-thursday-two-windows.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen calendars, first issues and upstream market clocks
+        run: python -B workspace-updates/20261125-uefa-thursday-two-windows/verify.py
