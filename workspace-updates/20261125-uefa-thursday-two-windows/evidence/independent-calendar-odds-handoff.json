@@ -1,0 +1,95 @@
+{
+  "to": "Jason — UEFA Thursday data PR",
+  "collector_and_verifier": "Euclid (task sub-agent running as Codex driver) collected the single public upstream acquisition; the package verifier independently recalculates from the same archived raw responses.",
+  "bundle": "archives/uefa-thursday-20261125-5c03f3517796c580.tar.gz",
+  "sha256": "5c03f3517796c580862fca0f42c343542f8099b0fcc4ebbf292d6a84d1d81bbf",
+  "bytes": 2158344,
+  "member_count": 225,
+  "raw_responses": 99,
+  "registration_join": "All 72 tuples in this PR fixtures.jsonl exactly match the frozen calendar by competition, stage, window, round, three source fixture IDs, six team IDs and kickoff.",
+  "pr_fixture_file_sha256": "d4edf9c0b745e0b9a0b925d71d1baca47dd7df802bdfd52b608f22e9d6d9b51b",
+  "fixtures": {
+    "registered": 72,
+    "uel_md5": 18,
+    "uel_md6": 18,
+    "uecl_md4": 18,
+    "uecl_md5": 18,
+    "extra_in_interval_per_competition": 0
+  },
+  "original_draftkings": {
+    "first_window": 36,
+    "complete": 35,
+    "rows_with_quote_clock": 0,
+    "missing_espn_id": "401915809"
+  },
+  "separate_infersports": {
+    "fixtures": 36,
+    "books": 6,
+    "eligible_market_rows": 704,
+    "same_book_pairs": 491,
+    "equal_clock_fixtures": 36,
+    "equal_clock_pairs": 182,
+    "both_at_most_1h_old_fixtures": 36,
+    "both_at_most_1h_old_pairs": 147,
+    "both_equal_and_at_most_1h_old_fixtures": 20,
+    "both_equal_and_at_most_1h_old_pairs": 35
+  },
+  "provider_clock_definition": "InferSports OddsQuote.as_of = ISO-8601 UTC, last upstream update applied to this bookmaker × market line (raw odds[i].as_of). Separate 1x2 and totals timestamps. Receipt, HTTP Date and response-level as_of are stored independently. Direct operator issuance time is unverified. Freshness is measured at the receipt of this specific response.",
+  "role": "Additional independently captured prematch controls. Preserve the original 35/36 ESPN/DraftKings observation and all first issues.",
+  "member_sha256": {
+    "derived/fixed-calendar.json": "b85023e264593458aa852cef65a7ae8c35ae74a72ceaa387235bf3a164099db2",
+    "derived/calendar.csv": "965fd7274d9baf6fe03b195f18690b8d9ef3117894c21c19929e71bdc1de87b6",
+    "derived/interval-audit.json": "4785ce4984ad4137e7665a3dd8771b231a6ec8551f7c86adc0997a61aac4f753",
+    "derived/first-round-draftkings.csv": "6fa09a4eda042157f2cc7d08efeae706aae6281226c4297d07c4a6a16cb0ef0c",
+    "alternatives/infersports-markets.jsonl": "5d74cc04d0ee4892fbb9571530a20b061f83236352a6bf930e8adc71ade9a1fb",
+    "alternatives/infersports-same-book.csv": "960d17cc7c4a8cda52beafa91b971353f032198a1506d76ddc4a0aaad604ba8a",
+    "alternatives/coverage.json": "9a70d41c3446708f4a77f80bd5da039a1f91589a8c159d9fac389256c031a575",
+    "raw/alternative/infer-public-guide.txt": "29f28a777ed60dd71214d138cde9b5255b116e32628d60a0f3913aff619e58c9",
+    "source-manifest.json": "a0a8cd7b058ca2b781b70b6267d35128a5430bc714ca6b5bee61ef768dbea162",
+    "archive-source-manifest.json": "9393e5ff883795af91ef6435d3224faf5f51971c295f5c8e051d14281db05854",
+    "SHA256SUMS": "a0a7bcc4f9f4fa07f70e61b6c2b8fac0d10f8ac5b9eb7bac9d12d3d020b9e5f5"
+  },
+  "offline_replay": [
+    "sha256sum --check uefa-thursday-20261125-5c03f3517796c580.tar.gz.sha256",
+    "tar -xzf uefa-thursday-20261125-5c03f3517796c580.tar.gz",
+    "python3 -B verify.py",
+    "python3 -B archive.py replay uefa-thursday-20261125-5c03f3517796c580.tar.gz"
+  ],
+  "separate_market_clock_evidence": {
+    "provider": "InferSports",
+    "clock_field": "odds[i].as_of",
+    "direct_bookmaker_issued": false,
+    "one_acquisition": true,
+    "first_request_utc": "2026-11-25T13:18:47.851409Z",
+    "last_response_utc": "2026-11-25T13:24:40.902950Z",
+    "fixtures_with_same_book_fulltime_1x2_totals_and_both_clocks_within_1h": 36,
+    "fixtures_with_equal_market_clocks_within_1h": 20,
+    "equal_clock_pairs_within_1h": 35,
+    "raw_archive": "archives/first-round-upstream-market-raw.tar.gz"
+  },
+  "research_reference_index": "evidence/research-reference-index.csv",
+  "research_reference_count": {
+    "R7": 36,
+    "R8": 36,
+    "R9": 36,
+    "R10": 36,
+    "R13": 36,
+    "total": 180
+  },
+  "supplementary_team_collection": {
+    "archive": "archives/uefa-thursday-teams-20261125.tar.gz",
+    "archive_sha256": "ab32734d0e5d8025338bc0a26cc261ba715ea5cff31d2d4dc29c594efa96bd92",
+    "prior_first_records_csv": "evidence/prior-first-prematch-records.csv",
+    "prior_first_records_csv_sha256": "fa69b8ad3245de83f3cad8c3c01e5262d950f391b43f2f933ad867572151e265",
+    "resolved_archive_references": "evidence/prior-first-prematch-reference-index.csv",
+    "coverage": {
+      "schedule_events": 36,
+      "team_count": 72,
+      "teams_with_prior_primary_league_match": 70,
+      "xg": 47,
+      "sot": 62,
+      "prior_first_records": 180
+    }
+  },
+  "supplemental_material_added_after_canonical_seal": true
+}

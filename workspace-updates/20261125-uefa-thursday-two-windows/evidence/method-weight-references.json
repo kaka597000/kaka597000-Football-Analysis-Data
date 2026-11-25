@@ -1,0 +1,85 @@
+{
+  "schema": "UEFA-THURSDAY-R7-R13-WEIGHTS-1",
+  "r13_weight_table_path": "workspace-updates/20261125-r13-domestic-form/replay/weights.csv",
+  "r13_weight_table_sha256": "c947636734ae354bee20e57f319c20193f2b16c22af3c461f664e38368e40a4f",
+  "competitions": {
+    "uefa.europa": {
+      "R7": {
+        "track": "research-prematch-continuation-20261123",
+        "model_sha256_values": [
+          "e9dbec5c2c8e37d679fa68c28dd59d7b53ebdf1ae558c7906575a17add161b6f"
+        ],
+        "actual_weight_reference": "R7 signed issue payload.model_sha256; exact by-match issue references are in issued-firsts-comparison.csv",
+        "training_through": "2026-11-05"
+      },
+      "R13": {
+        "track": "research-r13-domestic-form-20261125",
+        "source_repository": "/workspace/scratch/r13-source",
+        "source_commit": "f2bccb7a418ea04fff9504b7395214cdb85438c3",
+        "recipe_sha256_values": [
+          "af24b5ee496a840c3a14c1e99cc8ec62dfc9d8237d3c0e50da806465df419e14"
+        ],
+        "training_through": "2026-11-05",
+        "forward_through": "2026-11-24",
+        "score_dose_values": [
+          1.0
+        ],
+        "wdl_dose_values": [
+          0.5
+        ],
+        "total_dose_values": [
+          0.0
+        ],
+        "registered_fitted_forward_weights": {
+          "score_dose": "1.0",
+          "wdl_dose": "0.5",
+          "total_dose": "0.0",
+          "forward_attack": "0.040034147501434865",
+          "forward_concessions": "-0.051239376700811176",
+          "forward_short_rest": "0.0709018133567017",
+          "forward_games_14d": "0.08029173652735302"
+        },
+        "different_from_R7": true
+      }
+    },
+    "uefa.europa.conf": {
+      "R7": {
+        "track": "research-prematch-continuation-20261123",
+        "model_sha256_values": [
+          "b72bafcd9ed60810937286f46665f3449716e3101ec32be4c0347ef764ec1e19"
+        ],
+        "actual_weight_reference": "R7 signed issue payload.model_sha256; exact by-match issue references are in issued-firsts-comparison.csv",
+        "training_through": "2026-11-05"
+      },
+      "R13": {
+        "track": "research-r13-domestic-form-20261125",
+        "source_repository": "/workspace/scratch/r13-source",
+        "source_commit": "f2bccb7a418ea04fff9504b7395214cdb85438c3",
+        "recipe_sha256_values": [
+          "bc9a01563e0d2f5b5d62324f3ae639b4e09e20cbab5622a13c0e0bae23776756"
+        ],
+        "training_through": "2026-11-05",
+        "forward_through": "2026-11-24",
+        "score_dose_values": [
+          0.5
+        ],
+        "wdl_dose_values": [
+          0.0
+        ],
+        "total_dose_values": [
+          0.0
+        ],
+        "registered_fitted_forward_weights": {
+          "score_dose": "0.5",
+          "wdl_dose": "0.0",
+          "total_dose": "0.0",
+          "forward_attack": "0.1190043678126657",
+          "forward_concessions": "0.11429118912639932",
+          "forward_short_rest": "0.178902813495035",
+          "forward_games_14d": "0.12213714961517727"
+        },
+        "different_from_R7": true
+      }
+    }
+  }
+}
