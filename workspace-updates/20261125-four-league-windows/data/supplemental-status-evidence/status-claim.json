@@ -1,0 +1,94 @@
+{
+  "schema": "suspended-fixture-evidence-v1",
+  "fixture": {
+    "competition": "esp.1",
+    "season": "2026/27",
+    "stage": "regular",
+    "match_id": "espn:401882849",
+    "home_name": "Rayo Vallecano",
+    "away_name": "Athletic Club",
+    "kickoff_utc": "2026-12-09T19:00:00Z",
+    "kickoff_beijing": "2026-12-10T03:00:00+08:00",
+    "matchday": 8,
+    "included_in_second_window_denominator": true
+  },
+  "source_states": {
+    "ESPN": {
+      "status": "STATUS_SUSPENDED",
+      "status_completed": false,
+      "score": {
+        "home": "0",
+        "away": "0"
+      },
+      "period": 1,
+      "clock_seconds": 1980.0,
+      "display_clock": "33'",
+      "timeValid": true,
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=2026&limit=1000",
+      "observed_request_start_utc": "2026-11-25T11:39:08.887850Z",
+      "observed_response_end_utc": "2026-11-25T11:39:13.741277Z",
+      "body_sha256": "adff0f5077b943b1c47d19169f63c0024317a3c393445300588454d2b0a5ea90",
+      "compressed_path": "raw/espn/esp-2026.json.gz"
+    },
+    "FotMob": {
+      "source_match_id": "fotmob:5868088",
+      "status": {
+        "started": false,
+        "finished": false,
+        "cancelled": false,
+        "utcTime": "2026-12-09T19:00:00Z"
+      },
+      "source_url": "https://www.fotmob.com/api/data/leagues?id=87&ccode3=USA&season=2026%2F2027",
+      "observed_request_start_utc": "2026-11-25T11:39:18.711481Z",
+      "observed_response_end_utc": "2026-11-25T11:39:20.497828Z",
+      "body_sha256": "98bed29edf88fc541d8db73139f76a138f9e32b9691244d3dc4baabc49dcd628",
+      "compressed_path": "raw/fotmob/esp-2026-2027.json.gz"
+    },
+    "Athletic_Club_official_site": {
+      "match_id": "1_8579",
+      "published_pairing": "Athletic Club vs Rayo Vallecano",
+      "competition": "Liga",
+      "matchday": 8,
+      "local_date": "2026-12-09",
+      "local_time": "20:00",
+      "local_timezone": "Europe/Madrid",
+      "isMatchPlayed": false,
+      "hasResult": false,
+      "isPostponed": false,
+      "source_url": "https://www.athletic-club.eus/en/",
+      "observed_request_start_utc": "2026-11-25T12:00:03.600627Z",
+      "observed_response_end_utc": "2026-11-25T12:00:05.175015Z",
+      "body_sha256": "9d88266e51af690f0dc1012319e43247fbbf8c75bc4cd5183642bc90fb3b1e62",
+      "compressed_path": "supplemental-status-evidence/raw/athletic-official-home.html.gz"
+    }
+  },
+  "assessment": {
+    "calendar_identity_and_kickoff_agree": true,
+    "ESPN_source_reports_suspended_at_33_minutes_0_0": true,
+    "FotMob_source_lists_future_fixture_not_started": true,
+    "official_club_calendar_lists_upcoming_fixture_and_isPostponed_false": true,
+    "official_evidence_of_first_start": false,
+    "official_evidence_announcing_suspension": false,
+    "official_evidence_confirming_restart_or_continuation_time": false,
+    "first_prematch_issue_allowed_now": false,
+    "hold_reason": "Keep in the 11-match calendar denominator. Do not backfill or issue its first prematch item until a public organizer/club source confirms the match continuation/restart status and time."
+  },
+  "additional_source_discovery": {
+    "laliga_calendar": {
+      "url": "https://www.laliga.com/en-GB/laliga-easports/calendar",
+      "capture": "supplemental-status-evidence/raw/laliga-calendar.html.gz",
+      "finding": "Public calendar shell returned no match-specific Rayo-Vallecano/Athletic/suspension/restart text in captured HTML."
+    },
+    "rayo_vallecano_official_home": {
+      "url": "https://www.rayovallecano.es/",
+      "capture": "supplemental-status-evidence/raw/rayo-official-home.html.gz",
+      "finding": "Public homepage capture contained no Rayo-Athletic fixture or suspension/restart announcement."
+    },
+    "public_search": {
+      "url": "https://www.google.com/search?q=site%3Alaliga.com+Rayo+Vallecano+Athletic+Club+suspended+2026",
+      "capture": "supplemental-status-evidence/raw/public-search.html.gz",
+      "finding": "Search request returned an access-interstitial page with no usable result; not treated as match evidence."
+    }
+  },
+  "original_calendar_manifest_sha256": "8683ce6d41586fd73b831ae54c387d228008927005e45e7306426095fb75237d"
+}

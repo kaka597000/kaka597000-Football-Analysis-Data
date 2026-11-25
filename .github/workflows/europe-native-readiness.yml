@@ -1,0 +1,30 @@
+name: Verify archived four-league native readiness
+on:
+  push:
+    paths:
+      - 'workspace-updates/20261125-four-league-windows/native-readiness/**'
+      - 'workspace-updates/20261125-four-league-windows/*/registration/**'
+      - 'workspace-updates/20261125-four-league-windows/model-evidence/**'
+      - '.github/workflows/europe-native-readiness.yml'
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-four-league-windows/native-readiness/**'
+      - 'workspace-updates/20261125-four-league-windows/*/registration/**'
+      - 'workspace-updates/20261125-four-league-windows/model-evidence/**'
+      - '.github/workflows/europe-native-readiness.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independently verify original registrations, eight weights and two execution passes
+        run: python -B workspace-updates/20261125-four-league-windows/native-readiness/verify.py
