@@ -1,0 +1,390 @@
+{
+  "run_id": "20261125T214034-collect",
+  "started_at": "2026-11-25T21:40:34.728182+00:00",
+  "mode": "collect",
+  "policy": {
+    "max_cohorts": 17,
+    "historical_only_scopes_skipped": 0,
+    "max_requests": 100,
+    "lookback_days": 2,
+    "promotion": "NEVER",
+    "max_collection_seconds": 90,
+    "data_sources": "existing public JSON endpoints only",
+    "paid_api_calls": false
+  },
+  "github_run_id": "45706460523",
+  "github_run_attempt": "1",
+  "source_commit": "fbed25e9648e4ba4061042b7f97b6a2f23f1213c",
+  "source_worktree_dirty": false,
+  "seed_sha256": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
+  "active_model_modified": false,
+  "result": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-11-25T21:40:34.784716+00:00",
+    "request_count": 88,
+    "successful_requests": 87,
+    "max_requests": 100,
+    "retry_used": false,
+    "events_seen": 53,
+    "new_result_observations": 7,
+    "quarantined": 29,
+    "market_snapshot_saved": false,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 90,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false,
+    "coverage_by_competition": {
+      "afc.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 16,
+        "new_rows": 0,
+        "quarantined": 16
+      },
+      "aus.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "bra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 5,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "eng.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "esp.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fifa.world": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ger.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ita.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "jpn.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 7,
+        "new_rows": 7,
+        "quarantined": 0
+      },
+      "ned.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "nor.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "swe.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 2,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 18,
+        "new_rows": 0,
+        "quarantined": 11
+      },
+      "uefa.europa": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.europa.conf": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "usa.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 2,
+        "new_rows": 0,
+        "quarantined": 2
+      }
+    },
+    "new_rows": [
+      {
+        "match_id": "espn:401877527",
+        "cohort": "jpn.1",
+        "competition": "jpn.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-25",
+        "kickoff_at": "2026-11-25T10:00:00+00:00",
+        "home": "espn:7107",
+        "away": "espn:7116",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-25T21:40:38.481546+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877527",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/aef24aa1c34c603584b6b1b43f943784063289eecf73696959f62ae3c4cec2e9.json.gz",
+          "sha256": "aef24aa1c34c603584b6b1b43f943784063289eecf73696959f62ae3c4cec2e9",
+          "captured_at": "2026-11-25T21:40:38.481546+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877527"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401877528",
+        "cohort": "jpn.1",
+        "competition": "jpn.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-25",
+        "kickoff_at": "2026-11-25T10:00:00+00:00",
+        "home": "espn:22522",
+        "away": "espn:7104",
+        "home_goals": 2,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-25T21:40:38.757009+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877528",
+        "provider_final_score": [
+          "2",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/c7e49f78187be10020ba83a6838002f16eeb744c5bda367377102135a6a6438b.json.gz",
+          "sha256": "c7e49f78187be10020ba83a6838002f16eeb744c5bda367377102135a6a6438b",
+          "captured_at": "2026-11-25T21:40:38.757009+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877528"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401877546",
+        "cohort": "jpn.1",
+        "competition": "jpn.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-25",
+        "kickoff_at": "2026-11-25T10:00:00+00:00",
+        "home": "espn:3384",
+        "away": "espn:7114",
+        "home_goals": 2,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-25T21:40:39.036049+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877546",
+        "provider_final_score": [
+          "2",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/cbb471756319de46f5531c8b840133b5129962b951086ddad4adda822563d7fa.json.gz",
+          "sha256": "cbb471756319de46f5531c8b840133b5129962b951086ddad4adda822563d7fa",
+          "captured_at": "2026-11-25T21:40:39.036049+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877546"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401877529",
+        "cohort": "jpn.1",
+        "competition": "jpn.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-25",
+        "kickoff_at": "2026-11-25T10:00:00+00:00",
+        "home": "espn:7111",
+        "away": "espn:7108",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-25T21:40:39.295805+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877529",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/1cf0e1b5c65cd275851c921aeac82843e7f577e08339cf38d883d443a1cadc57.json.gz",
+          "sha256": "1cf0e1b5c65cd275851c921aeac82843e7f577e08339cf38d883d443a1cadc57",
+          "captured_at": "2026-11-25T21:40:39.295805+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877529"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401877530",
+        "cohort": "jpn.1",
+        "competition": "jpn.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-25",
+        "kickoff_at": "2026-11-25T10:00:00+00:00",
+        "home": "espn:131701",
+        "away": "espn:3393",
+        "home_goals": 1,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-25T21:40:39.567967+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877530",
+        "provider_final_score": [
+          "1",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/99d4183db523202f51c8a971c337c2ac6653811aa526ba13da056a09d8f8f83a.json.gz",
+          "sha256": "99d4183db523202f51c8a971c337c2ac6653811aa526ba13da056a09d8f8f83a",
+          "captured_at": "2026-11-25T21:40:39.567967+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877530"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401877545",
+        "cohort": "jpn.1",
+        "competition": "jpn.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-25",
+        "kickoff_at": "2026-11-25T10:00:00+00:00",
+        "home": "espn:19001",
+        "away": "espn:7112",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-25T21:40:39.860788+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877545",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/75775391549c39062cde8492a7f7b3c6ec536557461f705c96acb1f1c535dc5e.json.gz",
+          "sha256": "75775391549c39062cde8492a7f7b3c6ec536557461f705c96acb1f1c535dc5e",
+          "captured_at": "2026-11-25T21:40:39.860788+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877545"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401877547",
+        "cohort": "jpn.1",
+        "competition": "jpn.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-25",
+        "kickoff_at": "2026-11-25T10:30:00+00:00",
+        "home": "espn:3385",
+        "away": "espn:7109",
+        "home_goals": 2,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-25T21:40:40.153260+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877547",
+        "provider_final_score": [
+          "2",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/5a6765e5d1ae42ea89a24a30237c68430c507bbca931ef8281bcfe13fd9bbf2e.json.gz",
+          "sha256": "5a6765e5d1ae42ea89a24a30237c68430c507bbca931ef8281bcfe13fd9bbf2e",
+          "captured_at": "2026-11-25T21:40:40.153260+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877547"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      }
+    ],
+    "channels": {
+      "history": {
+        "requests": 87,
+        "successful_requests": 87,
+        "failures": {},
+        "status": "RESPONSE_RECEIVED",
+        "new_result_observations": 7,
+        "quarantined": 29,
+        "training_eligibility": "SEPARATE_RAW_EVIDENCE_AND_VENUE_AUDIT_REQUIRED"
+      },
+      "market": {
+        "requests": 1,
+        "successful_requests": 0,
+        "failures": {
+          "TLS": 1
+        },
+        "status": "FAILED",
+        "raw_snapshot_saved": false,
+        "verified_quote_count": 0,
+        "model_ready": false,
+        "quote_status": "NO_RESPONSE"
+      }
+    },
+    "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+    "market_model_ready": false
+  },
+  "status": "COMPLETED",
+  "status_scope": "REQUEST_EXECUTION_NOT_MODEL_READINESS",
+  "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+  "market_model_ready": false,
+  "finished_at": "2026-11-25T21:41:00.307066+00:00"
+}
