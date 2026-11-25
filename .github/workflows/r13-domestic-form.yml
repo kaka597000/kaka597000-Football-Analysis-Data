@@ -1,0 +1,46 @@
+name: Verify continental domestic-form study
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-r13-domestic-form/**'
+      - '.github/workflows/r13-domestic-form.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONPATH: source/runtime
+      OPENBLAS_NUM_THREADS: 1
+      OMP_NUM_THREADS: 1
+      DATA: workspace-updates
+      R13: workspace-updates/20261125-r13-domestic-form
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: f2bccb7a418ea04fff9504b7395214cdb85438c3
+          path: source
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0
+      - run: python "$R13/verify.py" --extract "$RUNNER_TEMP/r13-inputs"
+      - run: |
+          python -m research_program.domestic_form_study \
+            --r5 "$DATA/20261123-all-scope-kpi" --r7 "$DATA/20261123-prematch-literature" \
+            --r10 "$DATA/20261125-r10-shot-conversion" \
+            --domestic "$RUNNER_TEMP/r13-inputs/domestic/domestic.jsonl" \
+            --identities "$RUNNER_TEMP/r13-inputs/continental/identities.jsonl" \
+            --extension "$RUNNER_TEMP/r13-inputs/continental/extension.jsonl" --out "$RUNNER_TEMP/replay"
+          python "$R13/verify.py" --compare "$RUNNER_TEMP/replay"
+          python -m research_program.domestic_form_study \
+            --r5 "$DATA/20261123-all-scope-kpi" --r7 "$DATA/20261123-prematch-literature" \
+            --r10 "$DATA/20261125-r10-shot-conversion" \
+            --domestic "$RUNNER_TEMP/r13-inputs/domestic/domestic-regular.jsonl" \
+            --identities "$RUNNER_TEMP/r13-inputs/continental/identities.jsonl" \
+            --extension "$RUNNER_TEMP/r13-inputs/continental/extension.jsonl" --out "$RUNNER_TEMP/regular"
+          python "$R13/verify.py" --compare "$RUNNER_TEMP/regular" --regular
