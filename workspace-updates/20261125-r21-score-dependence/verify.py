@@ -7,9 +7,11 @@ from collections import Counter
 import csv
 import hashlib
 import importlib
+import importlib.metadata
 import json
 import os
 from pathlib import Path, PurePosixPath
+import platform
 import shutil
 import subprocess
 import sys
@@ -71,7 +73,26 @@ def tree_hashes(root: Path) -> dict[str, str]:
 
 def compare_trees(left: Path, right: Path, what: str) -> dict[str, str]:
     a, b = tree_hashes(left), tree_hashes(right)
-    check(a == b, f"{what}: path inventory or bytes differ")
+    if a != b:
+        different = []
+        for name in sorted(set(a) | set(b)):
+            if a.get(name) != b.get(name):
+                different.append({"path": name, "expected_sha256": b.get(name), "actual_sha256": a.get(name)})
+        versions = {}
+        for package in ("numpy", "scipy", "lightgbm"):
+            try:
+                versions[package] = importlib.metadata.version(package)
+            except importlib.metadata.PackageNotFoundError:
+                versions[package] = None
+        context = {
+            "python": platform.python_version(), "packages": versions,
+            "cpu_environment": {key: os.environ.get(key) for key in (
+                "OPENBLAS_NUM_THREADS", "OPENBLAS_CORETYPE", "NPY_DISABLE_CPU_FEATURES",
+                "OMP_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS")},
+            "mismatch_count": len(different), "mismatches": different[:80],
+        }
+        raise ValueError(f"{what}: archived/fresh tree mismatch diagnostics: "
+                         + json.dumps(context, sort_keys=True))
     return a
 
 
@@ -110,6 +131,8 @@ def verify_package(data_root: Path) -> tuple[dict, dict[str, Path]]:
     understat_sha = lock["understat_archive_sha256"]
     check(file_sha(understat_source) == understat_sha == file_sha(understat_copy),
           "R14 #51 Understat original archive SHA differs")
+    posthoc = HERE / "diagnostics/actual-ranks.csv"
+    check(file_sha(posthoc) == lock["posthoc_actual_ranks_sha256"], "post-hoc actual-ranks CSV SHA differs")
     return lock, paths
 
 
@@ -221,15 +244,22 @@ def verify(source: Path, data_root: Path) -> None:
     data_root = data_root.resolve()
     lock, paths = verify_package(data_root)
     verify_source_lock(source)
-    check(lock["runtime"]["python"] == "3.12" and lock["runtime"]["lightgbm"] == "4.6.0",
-          "runtime pins differ")
+    versions = {name: importlib.metadata.version(name) for name in ("numpy", "scipy", "lightgbm")}
+    expected_versions = {name: lock["runtime"][name] for name in versions}
+    check(versions == expected_versions, "installed numeric package versions differ from source-lock.json: "
+          + json.dumps({"expected": expected_versions, "actual": versions}, sort_keys=True))
+    check(platform.python_version_tuple()[:2] == tuple(lock["runtime"]["python"].split(".")),
+          "Python major/minor differs from source lock: " + platform.python_version())
+    reproducibility_env = lock["runtime"]["reproducibility_environment"]
+    actual_env = {key: os.environ.get(key) for key in reproducibility_env}
+    check(actual_env == reproducibility_env, "CPU/thread environment differs from source lock: "
+          + json.dumps({"expected": reproducibility_env, "actual": actual_env}, sort_keys=True))
     freeze_command = [sys.executable, "-B", str(HERE / "verify_freezes.py")]
     subprocess.run(freeze_command, cwd=HERE, check=True, stdout=subprocess.DEVNULL)
     r14_archive = data_root / "workspace-updates/20261125-r14-territory-press/inputs/understat.tar.gz"
 
-    env = dict(os.environ, PYTHONPATH=str(source / "runtime"), PYTHONDONTWRITEBYTECODE="1",
-               PYTHONHASHSEED="0", OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1",
-               MKL_NUM_THREADS="1", NUMEXPR_NUM_THREADS="1")
+    env = dict(os.environ, **reproducibility_env, PYTHONPATH=str(source / "runtime"),
+               PYTHONDONTWRITEBYTECODE="1")
     with tempfile.TemporaryDirectory(prefix="r21-verify-") as raw_temp:
         temp = Path(raw_temp)
         events = audit_understat(r14_archive, temp)
@@ -240,7 +270,8 @@ def verify(source: Path, data_root: Path) -> None:
         reference = HERE / "replay/reference"
         repeat = HERE / "replay/repeat"
         archived = compare_trees(reference, repeat, "Dalton's two retained R21 output directories")
-        check(tree_hashes(a) == archived, "fresh R21 training differs from both retained outputs")
+        compare_trees(a, reference, "fresh R21 training vs retained historical output")
+        check(tree_hashes(a) == archived, "fresh R21 training differs from retained repeat output")
         metrics = json.loads((a / "metrics.json").read_bytes())
         check(metrics["overall"]["evaluation"]["population"] == 1752,
               "2025/26 fixed evaluation population differs")
@@ -249,6 +280,13 @@ def verify(source: Path, data_root: Path) -> None:
         for name in ("competition-window-coverage.csv", "paired-gains.csv", "fitted-weights-and-doses.csv"):
             check((temp / "tables" / name).read_bytes() == (HERE / "reports" / name).read_bytes(),
                   "recomputed report table differs: " + name)
+        actual_ranks = temp / "actual-ranks.csv"
+        subprocess.run([sys.executable, "-B", str(HERE / "diagnostics/actual_ranks.py"),
+                        str(data_root / "workspace-updates"), str(reference), str(actual_ranks)],
+                       cwd=temp, env=env, check=True)
+        check(file_sha(actual_ranks) == lock["posthoc_actual_ranks_sha256"]
+              and actual_ranks.read_bytes() == (HERE / "diagnostics/actual-ranks.csv").read_bytes(),
+              "post-hoc actual-rank CSV differs from the archived calculation")
         forecast_summary = rebuild_frozen_payloads(source, paths, a, events, temp)
         check(forecast_summary["forecast_payloads_recomputed"] == 45
               and forecast_summary["seats_recomputed"] == 15,

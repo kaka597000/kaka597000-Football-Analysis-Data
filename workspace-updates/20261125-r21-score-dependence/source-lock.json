@@ -5,8 +5,19 @@
   "protocol_sha256": "a4eb968e0965882c0844235fb0e9448a25a172f4a4ea8f16ec6d5e490439ed52",
   "runtime": {
     "python": "3.12",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
     "lightgbm": "4.6.0",
-    "requirements_file": "requirements.txt"
+    "requirements_file": "requirements.txt",
+    "reproducibility_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OPENBLAS_CORETYPE": "Haswell",
+      "NPY_DISABLE_CPU_FEATURES": "AVX512F",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "PYTHONHASHSEED": "0"
+    }
   },
   "committed_source_files_sha256": {
     "requirements.txt": "7fc1d6710436a33fe8d0ced77a592d3320d2fc583124b5624f127670d934e9a0",
@@ -25,6 +36,7 @@
   ],
   "forward_registration_sha256": "03fbf89faf84312015532a3d935824bfe6e5eb0560c609a2f3654cc873aea33c",
   "ranked_plan_sha256": "2b8e50f9248f21685b19f5236c10c6a02fe6926bd52ac3b4da1d4c4b7936cf35",
+  "posthoc_actual_ranks_sha256": "aba78fa049eee88b73ca67410df4079f10b764f2323b74b6c92f88a898fbcda7",
   "understat_archive_sha256": "c83b75b247ad86e1fa8b52fa7063e666837be02016386188e250a128a73225c2",
   "r14_archive_source_path": "workspace-updates/20261125-r14-territory-press/inputs/understat.tar.gz",
   "python": "3.12",

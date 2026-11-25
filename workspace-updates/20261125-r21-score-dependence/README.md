@@ -14,7 +14,7 @@
 | R10 | `workspace-updates/20261125-r10-shot-conversion`：逐场市场/模型对照与前向首发 | manifest `f136707b0d5cbbac883f74cc9ce8dc85e9bc434ece591a2ba8c72c327faaf8cb` |
 | R11 | 本包 `inputs/r11/`：真实来源扩展及来源 manifest | manifest `d76cdbc338407c9962122f70aa69a071c0df51203fc2cb6e74d9a722054543bb` |
 
-R5、R7、R10 的原件直接复用此数据分支现存文件，并由上游 manifest 逐文件校验；R11 的 manifest 与扩展原档在本包内保留。详细路径和各文件散列列于 [source-inputs.json](inputs/source-inputs.json) 与 [source-lock.json](source-lock.json)。重训环境固定 Python 3.12、LightGBM 4.6.0，并使用锁定源码的 `requirements.txt`。
+R5、R7、R10 的原件直接复用此数据分支现存文件，并由上游 manifest 逐文件校验；R11 的 manifest 与扩展原档在本包内保留。详细路径和各文件散列列于 [source-inputs.json](inputs/source-inputs.json) 与 [source-lock.json](source-lock.json)。重训环境固定 Python 3.12、NumPy 2.3.5、SciPy 1.17.0、LightGBM 4.6.0，并使用锁定源码的 `requirements.txt`。为匹配历史生产的数值路径，CI 固定 `OPENBLAS_CORETYPE=Haswell`、`NPY_DISABLE_CPU_FEATURES=AVX512F`、单线程 BLAS/OMP 和 `PYTHONHASHSEED=0`。
 
 ## 包内结构
 
@@ -30,6 +30,7 @@ ranked/                           原 15 席排序计划
 replay/reference/                 Dalton 首次完整历史重训输出（27 文件）
 replay/repeat/                    Dalton 独立重复输出（27 文件）
 reports/                          逐赛事/窗口覆盖、权重、剂量、配对增益表
+diagnostics/                      冻结预测上的事后实际比分排名诊断
 verify_understat.py               标准库离线原始审计
 verify_freezes.py                 冻结 SHA、身份、时序和席位核验；不签发
 verify.py                         CI 全流程复算包装
@@ -65,6 +66,12 @@ PYTHONPATH=source/runtime OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
   --source source --data-root .
 ```
 
-CI 使用相同命令和完整源码 SHA。它先从 R14 #51 Understat 压缩档恢复原件并运行独立核验，再离线重建 `events.jsonl`；然后对五联赛完整训练/历史重放两次，验证逐字节确定性、27 文件参考结果、权重和报告表，并在原登记时钟对 45 份冻结 forecast payload 做纯函数重算、重新排序 15 席。运行期间不会写入共享冻结库、不会重新签发，也不会修改两个历史输入目录。
+CI 使用相同命令和完整源码 SHA。它先从 R14 #51 Understat 压缩档恢复原件并运行独立核验，再离线重建 `events.jsonl`；然后对五联赛完整训练/历史重放两次，验证逐字节确定性、27 文件参考结果、权重和报告表，并在原登记时钟对 45 份冻结 forecast payload 做纯函数重算、重新排序 15 席。另对事后实际比分排名 CSV 重新计算并逐字节校验。若重训与归档不一致，CI 日志打印相异文件路径、期望/实际 SHA-256、Python 与 NumPy/SciPy/LightGBM 版本及 CPU 环境。运行期间不会写入共享冻结库、不会重新签发，也不会修改两个历史输入目录。
 
 本次归档由 Codex 工作区代理整理和独立复算；历史参考与重复输出由 Dalton 提供；Understat/R5/R7/R10/R11 来源及提交号保留在锁文件和输入审计中。GitHub Actions CI 的训练执行记录将作为后续 PR 检查结果。
+
+## 事后实际比分排名诊断
+
+`diagnostics/actual_ranks.py` 与 `diagnostics/actual-ranks.csv` 保留原始事后诊断及逐场计算。CI 从 R5 原始面板、原 R7 权重和冻结历史 forecast 重建实际比分在完整分布中的名次，先核对冻结的观测比分与三项有序比分概率，再逐字节比较 CSV SHA。此诊断只读取实际结果作事后排序，不改动训练样本、拟合权重、剂量或冻结预测。
+
+在 1,752 场 2025/26 评估窗口中，R21 三选漏掉的 26 个 R7 命中比分里，23 个排第 4、2 个排第 5、1 个排第 6；损失比分包含 8 个 0–0、8 个 1–1 和 1 个 2–2。14 个 R21 新增三选命中中没有平局。后续 500 场窗口里，7 个 R7 三选命中被 R21 漏掉，其中 5 个是 2–2；5 个新增命中也没有平局。原 CSV SHA-256 为 `aba78fa049eee88b73ca67410df4079f10b764f2323b74b6c92f88a898fbcda7`。
