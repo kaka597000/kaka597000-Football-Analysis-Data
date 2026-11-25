@@ -41,3 +41,5 @@ jobs:
           if saved["stages"] != json.loads(goals.read_bytes())["research_roadmap_20261124"]["stages"]:
               raise ValueError("registered stage thresholds changed")
           PY
+      - name: Recover earlier results, named starting lineups and the observed bookmaker entries
+        run: python -B workspace-updates/20261125-epl-stage-windows/nov25-evidence/verify.py
