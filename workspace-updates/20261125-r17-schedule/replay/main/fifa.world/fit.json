@@ -1,0 +1,78 @@
+{
+  "version": "R17-within-competition-schedule-1",
+  "competition": "fifa.world",
+  "panel_sha256": "8df8ea03f8fecd9c44517d41646e7103ac00b16e3497ce86e135fb6d4ff76e64",
+  "r7_fit_sha256": "7b83c2c0a2ed4713d35a857328c0af55c5381eb62c617f1ac1ed6b1e1f9509e5",
+  "bounds": [
+    "2022-01-01",
+    "2026-01-01",
+    "2027-01-01"
+  ],
+  "train_games": 64,
+  "validation_games": 64,
+  "withheld": {},
+  "registered_games": 232,
+  "through_train": "2018-07-15",
+  "through_validation": "2022-12-18",
+  "fitted": {
+    "features": [
+      "own_short_gap",
+      "opponent_short_gap",
+      "own_extra_in_14",
+      "opponent_extra_in_14",
+      "own_away_in_7",
+      "opponent_away_in_7"
+    ],
+    "penalty": 24.0,
+    "scoring_beta": [
+      0.018127752004779778,
+      0.01940889667524544,
+      0.011159173983258688,
+      0.010444232329064615,
+      0.08462900886306783,
+      0.049926886633193335
+    ],
+    "additional_beta": [
+      -0.027757395614175295,
+      0.02489306599128009,
+      0.04000261740732577,
+      0.06625632509837534,
+      -0.02222898567194466,
+      -0.025641331189786055
+    ]
+  },
+  "doses": {
+    "score": 0.0,
+    "wdl": 0.0,
+    "total": 0.0
+  },
+  "validation_trials": [
+    {
+      "dose": 0.0,
+      "first": 5,
+      "three": 14,
+      "wdl": 27,
+      "total": 0,
+      "total_n": 0,
+      "loss": 197.0914608908843
+    },
+    {
+      "dose": 0.5,
+      "first": 5,
+      "three": 13,
+      "wdl": 27,
+      "total": 0,
+      "total_n": 0,
+      "loss": 197.08207109737688
+    },
+    {
+      "dose": 1.0,
+      "first": 5,
+      "three": 13,
+      "wdl": 27,
+      "total": 0,
+      "total_n": 0,
+      "loss": 197.0963097487581
+    }
+  ]
+}

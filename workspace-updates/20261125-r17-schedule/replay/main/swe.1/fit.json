@@ -1,0 +1,78 @@
+{
+  "version": "R17-within-competition-schedule-1",
+  "competition": "swe.1",
+  "panel_sha256": "7a1d1ba305f5c22dd3d9957f1fae19d7e0248d7729e69207db45f5728cd70c31",
+  "r7_fit_sha256": "88b57114dc0907e8c2a095b41745e9263e370c322dd78897772564de10ffd201",
+  "bounds": [
+    "2024-01-01",
+    "2025-01-01",
+    "2026-01-01"
+  ],
+  "train_games": 1450,
+  "validation_games": 242,
+  "withheld": {},
+  "registered_games": 2156,
+  "through_train": "2023-11-12",
+  "through_validation": "2024-11-24",
+  "fitted": {
+    "features": [
+      "own_short_gap",
+      "opponent_short_gap",
+      "own_extra_in_14",
+      "opponent_extra_in_14",
+      "own_away_in_7",
+      "opponent_away_in_7"
+    ],
+    "penalty": 24.0,
+    "scoring_beta": [
+      -0.062082952198574924,
+      0.09644622968856205,
+      0.14274782525742366,
+      0.05017438718219222,
+      -6.96906289600688e-06,
+      0.07754959615348618
+    ],
+    "additional_beta": [
+      -0.09718392351342912,
+      -0.0220503346392162,
+      0.10286594831062691,
+      0.0985786341830921,
+      0.023314705116129292,
+      0.04350476187874224
+    ]
+  },
+  "doses": {
+    "score": 1.0,
+    "wdl": 0.0,
+    "total": 0.0
+  },
+  "validation_trials": [
+    {
+      "dose": 0.0,
+      "first": 27,
+      "three": 73,
+      "wdl": 117,
+      "total": 2,
+      "total_n": 5,
+      "loss": 718.3561022700828
+    },
+    {
+      "dose": 0.5,
+      "first": 27,
+      "three": 73,
+      "wdl": 116,
+      "total": 2,
+      "total_n": 5,
+      "loss": 718.1578944447599
+    },
+    {
+      "dose": 1.0,
+      "first": 30,
+      "three": 74,
+      "wdl": 117,
+      "total": 2,
+      "total_n": 5,
+      "loss": 718.0640078701399
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "version": "R17-within-competition-schedule-1",
+  "competition": "uefa.europa",
+  "panel_sha256": "085ed13058b00ffcae33b24af150c716427ff0f3b33228b9c549cbdde60c1e4e",
+  "r7_fit_sha256": "6855270acfb4666484be2f21fa243c5d7e938626aca7a01d1ac102c74c21fda0",
+  "bounds": [
+    "2024-07-01",
+    "2025-07-01",
+    "2026-07-01"
+  ],
+  "train_games": 1027,
+  "validation_games": 189,
+  "withheld": {},
+  "registered_games": 1477,
+  "through_train": "2024-05-22",
+  "through_validation": "2025-05-21",
+  "fitted": {
+    "features": [
+      "own_short_gap",
+      "opponent_short_gap",
+      "own_extra_in_14",
+      "opponent_extra_in_14",
+      "own_away_in_7",
+      "opponent_away_in_7"
+    ],
+    "penalty": 24.0,
+    "scoring_beta": [
+      -0.01690753817978124,
+      -0.012456792554999704,
+      0.0,
+      0.0,
+      -0.10513570065646738,
+      -0.16994068033047866
+    ],
+    "additional_beta": [
+      -0.009264121087795002,
+      0.032116600028110856,
+      0.0,
+      0.0,
+      0.1276639835387813,
+      0.050509722634950495
+    ]
+  },
+  "doses": {
+    "score": 1.0,
+    "wdl": 0.0,
+    "total": 0.0
+  },
+  "validation_trials": [
+    {
+      "dose": 0.0,
+      "first": 19,
+      "three": 55,
+      "wdl": 101,
+      "total": 95,
+      "total_n": 174,
+      "loss": 545.7617156824193
+    },
+    {
+      "dose": 0.5,
+      "first": 19,
+      "three": 56,
+      "wdl": 100,
+      "total": 94,
+      "total_n": 174,
+      "loss": 545.4493485577106
+    },
+    {
+      "dose": 1.0,
+      "first": 21,
+      "three": 56,
+      "wdl": 100,
+      "total": 92,
+      "total_n": 174,
+      "loss": 545.1873593786719
+    }
+  ]
+}
