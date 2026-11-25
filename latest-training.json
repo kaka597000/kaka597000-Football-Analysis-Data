@@ -1,7 +1,7 @@
 {
   "schema": "WCPP-UNATTENDED-CANDIDATE-1",
-  "run_id": "20261124T125348Z-da28596a",
-  "created_at": "2026-11-24T12:53:48.735140+00:00",
+  "run_id": "20261125T114035Z-1675193c",
+  "created_at": "2026-11-25T11:40:35.915615+00:00",
   "code_sha256": "9b0b2e2406e9901f4176faa213e7686b46d4456c8daf92e225e19de190e3758b",
   "configuration": {
     "half_life": 365,
@@ -15,7 +15,7 @@
     "config/scopes.json": "100e87301817e200878e78e60e96af017a918235d00a59509a8f3c5171ccf61d",
     "seed/training.json.gz": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
     "seed/manifest.json": "9b2f21041001710584f9bc7c45c53caecdc050a4c31983454850bc977605cb77",
-    "normalized-results.jsonl": "2a15e01dcc65dd5485190d6f58dfb1113c211c31ebd2922b918e0fffbead5292"
+    "normalized-results.jsonl": "6e81e1aca9f863c2b4253fddca12e69451f9d5cbc0343265ff9d17a4e25aff3f"
   },
   "scope_count": 17,
   "accepted_rows": 8038,
@@ -9784,6 +9784,10 @@
     {
       "match_id": "espn:401841320",
       "reason": "OUTSIDE_FORMAL_18_SCOPE_HISTORY_RETAINED"
+    },
+    {
+      "match_id": "espn:401841335",
+      "reason": "OUTSIDE_FORMAL_18_SCOPE_HISTORY_RETAINED"
     }
   ],
   "source_evidence_counts": {
@@ -9810,25 +9814,13 @@
       "cohort": "eng.1",
       "rows": 390,
       "input_sha256": "fc554cb4fae0ffea5c1c3c1a9481bbda1ade2b5296a102da17c8bbd9db8c8960",
-      "status": "TRAINED_CANDIDATE",
-      "artifact": "candidates/20261124T125348Z-da28596a/eng.1-14668862/artifact.json",
-      "artifact_sha256": "c8e6d4505586c5d10aae63e6b7570b2444017249935799dbc63a068272f866ef",
-      "fit_end": "2026-11-23",
-      "audit_n": 99,
-      "baseline_top1_hits": 13,
-      "candidate_top1_hits": 14
+      "status": "SKIPPED_UNCHANGED"
     },
     {
       "cohort": "esp.1",
       "rows": 399,
       "input_sha256": "6306a51de549259e247a9814840f050fb38e8d6c8eac40cefcaa60d67158a815",
-      "status": "TRAINED_CANDIDATE",
-      "artifact": "candidates/20261124T125348Z-da28596a/esp.1-55a8cf5e/artifact.json",
-      "artifact_sha256": "c5d323f2f8cc42fa597cf80f0718575bd4b289885579ba2c19840c0280acc9c7",
-      "fit_end": "2026-11-23",
-      "audit_n": 95,
-      "baseline_top1_hits": 13,
-      "candidate_top1_hits": 13
+      "status": "SKIPPED_UNCHANGED"
     },
     {
       "cohort": "fifa.world",
@@ -9852,13 +9844,7 @@
       "cohort": "ita.1",
       "rows": 407,
       "input_sha256": "523176b818ee9c4463d2cdbca8e238c91d220508d2e50d931d3f00c21e6dff9f",
-      "status": "TRAINED_CANDIDATE",
-      "artifact": "candidates/20261124T125348Z-da28596a/ita.1-682ccbf0/artifact.json",
-      "artifact_sha256": "f1a156a619839647c8fc46ab9a663a4dcaaa84d271d7f08b5ed5a729be00d4a1",
-      "fit_end": "2026-11-23",
-      "audit_n": 116,
-      "baseline_top1_hits": 11,
-      "candidate_top1_hits": 16
+      "status": "SKIPPED_UNCHANGED"
     },
     {
       "cohort": "jpn.1",
@@ -9888,13 +9874,7 @@
       "cohort": "swe.1",
       "rows": 431,
       "input_sha256": "c3736608bca3977cfb20465352b6e8644d4764ccfc47e9126768dfb4f32a16d3",
-      "status": "TRAINED_CANDIDATE",
-      "artifact": "candidates/20261124T125348Z-da28596a/swe.1-d6cfff45/artifact.json",
-      "artifact_sha256": "f9608686977a664bc9ba0fd82995cd7dfb736d31257f09ddbdc68977a3f1eb8e",
-      "fit_end": "2026-11-23",
-      "audit_n": 101,
-      "baseline_top1_hits": 10,
-      "candidate_top1_hits": 10
+      "status": "SKIPPED_UNCHANGED"
     },
     {
       "cohort": "uefa.champions:NEW_FORMAT:league_phase",
