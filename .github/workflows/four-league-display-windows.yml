@@ -33,5 +33,7 @@ jobs:
         run: python -B workspace-updates/20261125-four-league-windows/first-window-team-form/verify.py
       - name: Rebuild the nine German quote checkpoints and intervening club fixtures
         run: python -B workspace-updates/20261125-four-league-windows/ger.1/market-checkpoints/verify.py
+      - name: Verify German early prospective quotes, source clocks and fixture identity
+        run: python -B workspace-updates/20261125-four-league-windows/ger.1/early-prices/verify.py
       - name: Replay the seven original J1 firsts at their archived pregame cutoff
         run: python -B workspace-updates/20261125-j1-stage-windows/review/verify_pending.py
