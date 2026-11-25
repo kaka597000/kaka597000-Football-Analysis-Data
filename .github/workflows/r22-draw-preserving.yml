@@ -1,0 +1,55 @@
+name: Rebuild five-league R22 draw-preserving scores
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-r22-draw-preserving/**'
+      - 'workspace-updates/20261125-r21-score-dependence/**'
+      - '.github/workflows/r22-draw-preserving.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  historical-and-forward:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      R22_PACKAGE: workspace-updates/20261125-r22-draw-preserving
+      R22_SOURCE: 46de33168c093816ac7cd19a57e36e51286b408f
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ env.R22_SOURCE }}
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the pinned numerical dependencies
+        run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Test the projection, fitted dose and first-issue entry points
+        run: >-
+          python -B -m unittest
+          research_program.test_draw_preserving
+          research_program.test_draw_preserving_study
+          research_program.test_draw_preserving_forward
+          research_program.test_score_dependence_forward
+          research_program.test_territory_forward
+      - name: Retrain twice and independently recompute the original forecasts and ranked seats
+        run: python -B "$R22_PACKAGE/verify.py" --source source --data-root .
+      - name: Rebuild the pinned rank-depth diagnostic
+        run: bash "$R22_PACKAGE/verification/rank-depth/replay.sh" source

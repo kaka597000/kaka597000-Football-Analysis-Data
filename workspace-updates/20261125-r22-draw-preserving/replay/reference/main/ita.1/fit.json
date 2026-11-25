@@ -1,0 +1,33 @@
+{
+  "competition": "ita.1",
+  "dose": 1.0,
+  "version": "R22-five-league-draw-preserving-1",
+  "validation_through": "2025-05-25",
+  "r21_fit_sha256": "445411a3a0f2b65377765df86b828f7a51e4832b099a3df952e0c1593e1a1a55",
+  "r21_original_score_dose": 1.0,
+  "validation_games": 380,
+  "validation_trials": [
+    {
+      "dose": 0.0,
+      "first_hits": 59,
+      "top3_hits": 141,
+      "negative_log_likelihood": 1032.9256346527602,
+      "validation_games": 380
+    },
+    {
+      "dose": 0.5,
+      "first_hits": 61,
+      "top3_hits": 139,
+      "negative_log_likelihood": 1033.2921487036574,
+      "validation_games": 380
+    },
+    {
+      "dose": 1.0,
+      "first_hits": 64,
+      "top3_hits": 141,
+      "negative_log_likelihood": 1033.9350785251775,
+      "validation_games": 380
+    }
+  ],
+  "selection": "first hits, then three-score hits, then exact negative log likelihood, then lower dose"
+}
