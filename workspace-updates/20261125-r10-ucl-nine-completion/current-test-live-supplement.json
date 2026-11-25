@@ -1,0 +1,504 @@
+{
+  "schema": "R10-UCL-LIVE-PAIRS-1",
+  "registration_sha256": "1823c3846b5e21c479cb57f1a2e426ceb590e35f71f53b9a20990f2cb02e6755",
+  "source_directory": "/workspace/scratch/ucl-six-issued",
+  "source_archive": "current-test-live-supplement.tar.gz",
+  "archive_sha256": "29ef31824c7c8cf05a548f30c334dd988baa9c5eb21fd49bc34c91c873d5ae47",
+  "archive_bytes": 1150100,
+  "fixture_count": 6,
+  "contains_comprehensive_first_issues": false,
+  "entries": [
+    {
+      "match_id": "espn:401915292",
+      "home": "Club Brugge",
+      "away": "Liverpool",
+      "kickoff_at": "2026-11-25T20:00:00+00:00",
+      "source_files": [
+        {
+          "original_name": "401915292.fixture.json",
+          "archive_member": "live-pairs/401915292.fixture.json",
+          "sha256": "c908af91eb11829ab3703b91e7dc1495954602f68ec6f58fc779f0824aa9a73a",
+          "bytes": 2153
+        },
+        {
+          "original_name": "401915292.pair.json",
+          "archive_member": "live-pairs/401915292.pair.json",
+          "sha256": "02abf8acd4d90190f56affb3d3d581c1dfd57f2156f6ed8bcce7d65d74c75193",
+          "bytes": 273587
+        },
+        {
+          "original_name": "401915292.pair.json.publication.json",
+          "archive_member": "live-pairs/401915292.pair.json.publication.json",
+          "sha256": "316c45353cf3e748a633824d4f98c655906f42beaa3928a697f5a79a8c3582d5",
+          "bytes": 293358
+        }
+      ],
+      "publication": {
+        "status": "DELIVERED",
+        "stage": "prematch",
+        "freeze_id": "40c00a017407c43e-v000002",
+        "recorded_at": "2026-11-25T20:28:05.923229+08:00",
+        "receipt_sha256": "348fb8985c0a1392f062e12917614479287929c7f91031bf1ca0ed784ef06948",
+        "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+        "request_sha256": "3896b71979aaebb2f5dd6545b6a1799973236b8d410689803e0bbcad2d45c6d5"
+      },
+      "models": {
+        "current_model": {
+          "version": "WCPP-MAIN-1.2",
+          "generated_at": "2026-11-25T12:28:05.174123+00:00"
+        },
+        "test_model": {
+          "version": "WCPP-ML-UCL-0.1",
+          "generated_at": "2026-11-25T12:28:05.644212+00:00"
+        }
+      },
+      "public_sources": [
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915292",
+          "query_time": "2026-11-25T12:23:42.661226Z",
+          "response_sha256": "fa644497e64d63534b4541de8d6e7b0b6bffe884e7061f2e90b0919e749c1db7",
+          "raw_archive_member": "public-inputs/espn-summary-401915292.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915292.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915292",
+          "query_time": "2026-11-25T12:23:42.661226Z",
+          "response_sha256": "fa644497e64d63534b4541de8d6e7b0b6bffe884e7061f2e90b0919e749c1db7",
+          "raw_archive_member": "public-inputs/espn-summary-401915292.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915292.json.meta.json"
+        }
+      ],
+      "comprehensive_first_issue": "not present in this pair publication; reserved six-slot registration remains unissued",
+      "pair_request_sha256": null,
+      "publication_json_sha256": "316c45353cf3e748a633824d4f98c655906f42beaa3928a697f5a79a8c3582d5"
+    },
+    {
+      "match_id": "espn:401915293",
+      "home": "Slavia Prague",
+      "away": "Villarreal",
+      "kickoff_at": "2026-11-25T17:45:00+00:00",
+      "source_files": [
+        {
+          "original_name": "401915293.fixture.json",
+          "archive_member": "live-pairs/401915293.fixture.json",
+          "sha256": "77cc052a83f9a587cce4a20e598560bc8541986e15a786abcb2cecdef22651a7",
+          "bytes": 2169
+        },
+        {
+          "original_name": "401915293.pair.json",
+          "archive_member": "live-pairs/401915293.pair.json",
+          "sha256": "ffb7d6deb4c0a8936dec8096c38bd9bccc6debda09b47b674987df96352cbed1",
+          "bytes": 273677
+        },
+        {
+          "original_name": "401915293.pair.json.publication.json",
+          "archive_member": "live-pairs/401915293.pair.json.publication.json",
+          "sha256": "2398de2e900b9f5cf18016886f230f880c640e61925068d791d8aa3c072c388b",
+          "bytes": 293456
+        }
+      ],
+      "publication": {
+        "status": "DELIVERED",
+        "stage": "prematch",
+        "freeze_id": "ada9521e0070e50c-v000002",
+        "recorded_at": "2026-11-25T20:28:01.651462+08:00",
+        "receipt_sha256": "61a006da997e13b4fa4cb920354abcdce246a45331406fcc761d8a3ee44741fb",
+        "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+        "request_sha256": "86248b24fc0896a9ca3710fea4394bea4fd6e57b6ce1604311e1a6e573a80450"
+      },
+      "models": {
+        "current_model": {
+          "version": "WCPP-MAIN-1.2",
+          "generated_at": "2026-11-25T12:28:00.652099+00:00"
+        },
+        "test_model": {
+          "version": "WCPP-ML-UCL-0.1",
+          "generated_at": "2026-11-25T12:28:01.293675+00:00"
+        }
+      },
+      "public_sources": [
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915293",
+          "query_time": "2026-11-25T12:23:37.256481Z",
+          "response_sha256": "b82e12a1afefa08fd77ec92bb5d3f87f3dc83ffc1048903cb4031e9daee90996",
+          "raw_archive_member": "public-inputs/espn-summary-401915293.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915293.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915293",
+          "query_time": "2026-11-25T12:23:37.256481Z",
+          "response_sha256": "b82e12a1afefa08fd77ec92bb5d3f87f3dc83ffc1048903cb4031e9daee90996",
+          "raw_archive_member": "public-inputs/espn-summary-401915293.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915293.json.meta.json"
+        }
+      ],
+      "comprehensive_first_issue": "not present in this pair publication; reserved six-slot registration remains unissued",
+      "pair_request_sha256": null,
+      "publication_json_sha256": "2398de2e900b9f5cf18016886f230f880c640e61925068d791d8aa3c072c388b"
+    },
+    {
+      "match_id": "espn:401915374",
+      "home": "Paris Saint-Germain",
+      "away": "AS Roma",
+      "kickoff_at": "2026-11-25T20:00:00+00:00",
+      "source_files": [
+        {
+          "original_name": "401915374.fixture.json",
+          "archive_member": "live-pairs/401915374.fixture.json",
+          "sha256": "d5cf74a808fc0317c302848b09c6b980e656108c84a96a6fa539059543e5fc18",
+          "bytes": 2192
+        },
+        {
+          "original_name": "401915374.pair.json",
+          "archive_member": "live-pairs/401915374.pair.json",
+          "sha256": "21788d4ff08a21632052c7ce40004f45c9b39ea7f0a3b7ee838dcc0d9bafdb70",
+          "bytes": 273345
+        },
+        {
+          "original_name": "401915374.pair.json.publication.json",
+          "archive_member": "live-pairs/401915374.pair.json.publication.json",
+          "sha256": "e006dec767d075ad9ee1d4d395981700cf292e0ca413dfca0b6f9792d41dbfc5",
+          "bytes": 293143
+        }
+      ],
+      "publication": {
+        "status": "DELIVERED",
+        "stage": "prematch",
+        "freeze_id": "939a35d522fe27c4-v000002",
+        "recorded_at": "2026-11-25T20:28:08.300375+08:00",
+        "receipt_sha256": "4a78857512f532066e3677e45dcb23eaeb00d5273361f52e75cfd61c289eaa87",
+        "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+        "request_sha256": "00c0e526602f030a5e71f2459d03a2d4071d94f2922b889ef3070896fba6616a"
+      },
+      "models": {
+        "current_model": {
+          "version": "WCPP-MAIN-1.2",
+          "generated_at": "2026-11-25T12:28:07.386500+00:00"
+        },
+        "test_model": {
+          "version": "WCPP-ML-UCL-0.1",
+          "generated_at": "2026-11-25T12:28:07.914581+00:00"
+        }
+      },
+      "public_sources": [
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915374",
+          "query_time": "2026-11-25T12:23:45.026492Z",
+          "response_sha256": "390f5f349753d923299595dbddb45fac6f7ab0af329fd4b847660ffdd750a7a5",
+          "raw_archive_member": "public-inputs/espn-summary-401915374.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915374.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915374",
+          "query_time": "2026-11-25T12:23:45.026492Z",
+          "response_sha256": "390f5f349753d923299595dbddb45fac6f7ab0af329fd4b847660ffdd750a7a5",
+          "raw_archive_member": "public-inputs/espn-summary-401915374.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915374.json.meta.json"
+        }
+      ],
+      "comprehensive_first_issue": "not present in this pair publication; reserved six-slot registration remains unissued",
+      "pair_request_sha256": null,
+      "publication_json_sha256": "e006dec767d075ad9ee1d4d395981700cf292e0ca413dfca0b6f9792d41dbfc5"
+    },
+    {
+      "match_id": "espn:401915376",
+      "home": "Internazionale",
+      "away": "VfB Stuttgart",
+      "kickoff_at": "2026-11-25T20:00:00+00:00",
+      "source_files": [
+        {
+          "original_name": "401915376.fixture.json",
+          "archive_member": "live-pairs/401915376.fixture.json",
+          "sha256": "a65c67a83cd19935d9ab7bbef0b05ca0ef02e58dc857019b64e24f014ae098be",
+          "bytes": 2171
+        },
+        {
+          "original_name": "401915376.pair.json",
+          "archive_member": "live-pairs/401915376.pair.json",
+          "sha256": "c8e070c464fa681fcd9ce9dd011a5364bed037292d351efa44eb13101ec3cc2e",
+          "bytes": 273586
+        },
+        {
+          "original_name": "401915376.pair.json.publication.json",
+          "archive_member": "live-pairs/401915376.pair.json.publication.json",
+          "sha256": "ad163c8de82893e58ac44fed16273149d604741a0c91d9157f07fc9274f90e2f",
+          "bytes": 293365
+        }
+      ],
+      "publication": {
+        "status": "DELIVERED",
+        "stage": "prematch",
+        "freeze_id": "bd3f362f877343f3-v000002",
+        "recorded_at": "2026-11-25T20:28:10.583597+08:00",
+        "receipt_sha256": "74b3a2365d9d6b5dc9a5eebe5a240d9de9f006ed0a453aa0c6c7ed90e3217fa4",
+        "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+        "request_sha256": "4191218c95b857199d61d9ad20789e36674620246021d873cea99696c45e9918"
+      },
+      "models": {
+        "current_model": {
+          "version": "WCPP-MAIN-1.2",
+          "generated_at": "2026-11-25T12:28:09.696978+00:00"
+        },
+        "test_model": {
+          "version": "WCPP-ML-UCL-0.1",
+          "generated_at": "2026-11-25T12:28:10.257240+00:00"
+        }
+      },
+      "public_sources": [
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915376",
+          "query_time": "2026-11-25T12:23:47.725828Z",
+          "response_sha256": "959df86a06d62febfa4cd9cd02299bae3f1a2c7fc0c4bdfbad019547e1f7612e",
+          "raw_archive_member": "public-inputs/espn-summary-401915376.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915376.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915376",
+          "query_time": "2026-11-25T12:23:47.725828Z",
+          "response_sha256": "959df86a06d62febfa4cd9cd02299bae3f1a2c7fc0c4bdfbad019547e1f7612e",
+          "raw_archive_member": "public-inputs/espn-summary-401915376.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915376.json.meta.json"
+        }
+      ],
+      "comprehensive_first_issue": "not present in this pair publication; reserved six-slot registration remains unissued",
+      "pair_request_sha256": null,
+      "publication_json_sha256": "ad163c8de82893e58ac44fed16273149d604741a0c91d9157f07fc9274f90e2f"
+    },
+    {
+      "match_id": "espn:401915377",
+      "home": "Lille",
+      "away": "Bayern Munich",
+      "kickoff_at": "2026-11-25T20:00:00+00:00",
+      "source_files": [
+        {
+          "original_name": "401915377.fixture.json",
+          "archive_member": "live-pairs/401915377.fixture.json",
+          "sha256": "b7a89f3a848a0c510b5a842071fffeafd3d059a9c510cf0e526e021ed81e64eb",
+          "bytes": 2183
+        },
+        {
+          "original_name": "401915377.pair.json",
+          "archive_member": "live-pairs/401915377.pair.json",
+          "sha256": "ebc9396cf5483076406c5097953901b26f4b63fe68fdaadc61d80f21e2af70bc",
+          "bytes": 273646
+        },
+        {
+          "original_name": "401915377.pair.json.publication.json",
+          "archive_member": "live-pairs/401915377.pair.json.publication.json",
+          "sha256": "12c9e5570dc8e22e1182c78fdd779f927ab3522a2f9f80d1f5edb21479d02386",
+          "bytes": 293439
+        }
+      ],
+      "publication": {
+        "status": "DELIVERED",
+        "stage": "prematch",
+        "freeze_id": "66b9e555d9da6fc9-v000002",
+        "recorded_at": "2026-11-25T20:28:12.521645+08:00",
+        "receipt_sha256": "42f2d592fbec696c094815ba0a134beee25ba98e7a8ec6d77222382ba65d6ddb",
+        "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+        "request_sha256": "7e77b70fc4b32b7ad85021654d0264d5c308befb371a0bb951fb25725dc3a01f"
+      },
+      "models": {
+        "current_model": {
+          "version": "WCPP-MAIN-1.2",
+          "generated_at": "2026-11-25T12:28:11.808972+00:00"
+        },
+        "test_model": {
+          "version": "WCPP-ML-UCL-0.1",
+          "generated_at": "2026-11-25T12:28:12.254974+00:00"
+        }
+      },
+      "public_sources": [
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915377",
+          "query_time": "2026-11-25T12:23:50.382770Z",
+          "response_sha256": "62e80ba2b65ef4cf21126bb8edd31c43eadf0d55925a166818629add6fa65648",
+          "raw_archive_member": "public-inputs/espn-summary-401915377.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915377.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915377",
+          "query_time": "2026-11-25T12:23:50.382770Z",
+          "response_sha256": "62e80ba2b65ef4cf21126bb8edd31c43eadf0d55925a166818629add6fa65648",
+          "raw_archive_member": "public-inputs/espn-summary-401915377.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915377.json.meta.json"
+        }
+      ],
+      "comprehensive_first_issue": "not present in this pair publication; reserved six-slot registration remains unissued",
+      "pair_request_sha256": null,
+      "publication_json_sha256": "12c9e5570dc8e22e1182c78fdd779f927ab3522a2f9f80d1f5edb21479d02386"
+    },
+    {
+      "match_id": "espn:401915378",
+      "home": "Sabah FK",
+      "away": "Barcelona",
+      "kickoff_at": "2026-11-25T17:45:00+00:00",
+      "source_files": [
+        {
+          "original_name": "401915378.fixture.json",
+          "archive_member": "live-pairs/401915378.fixture.json",
+          "sha256": "3470c84c040b6f40a59b4db9039d68df9a85a693eb5903ca2af637bcfdc9fd91",
+          "bytes": 2179
+        },
+        {
+          "original_name": "401915378.pair.json",
+          "archive_member": "live-pairs/401915378.pair.json",
+          "sha256": "19d1f780dc58013a18097be8a92b596fa3ce09d2df8d0062be8a562c383ddcb6",
+          "bytes": 273332
+        },
+        {
+          "original_name": "401915378.pair.json.publication.json",
+          "archive_member": "live-pairs/401915378.pair.json.publication.json",
+          "sha256": "c569819c48c44638fc81c99ee2fac65ed8be0973112c29e82f7d85bd4db76d46",
+          "bytes": 293117
+        }
+      ],
+      "publication": {
+        "status": "DELIVERED",
+        "stage": "prematch",
+        "freeze_id": "02f6b5723d37f268-v000002",
+        "recorded_at": "2026-11-25T20:28:03.867705+08:00",
+        "receipt_sha256": "fdb30c62960f2dd216897bfaa862de8c80a101bbf319499292401319c9d966e3",
+        "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+        "request_sha256": "c7121f86883b03b50b4041a92179f1a8c72dc63f673377a8b6634dae989e6472"
+      },
+      "models": {
+        "current_model": {
+          "version": "WCPP-MAIN-1.2",
+          "generated_at": "2026-11-25T12:28:02.995440+00:00"
+        },
+        "test_model": {
+          "version": "WCPP-ML-UCL-0.1",
+          "generated_at": "2026-11-25T12:28:03.528888+00:00"
+        }
+      },
+      "public_sources": [
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "current_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915378",
+          "query_time": "2026-11-25T12:23:40.083341Z",
+          "response_sha256": "c0bebb81cc98d2f447186346fb008bc15cc0d2827a4a47b472bc4775a3913298",
+          "raw_archive_member": "public-inputs/espn-summary-401915378.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915378.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+          "query_time": "2026-11-25T12:23:31.856027Z",
+          "response_sha256": "e9f320b65624f67e85bc3d780dae232376e59e0d4b3bb067ae2c3f8932896a5b",
+          "raw_archive_member": "public-inputs/espn-scoreboard.json",
+          "meta_archive_member": "public-inputs/espn-scoreboard.json.meta.json"
+        },
+        {
+          "model_track": "test_model",
+          "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/summary?event=401915378",
+          "query_time": "2026-11-25T12:23:40.083341Z",
+          "response_sha256": "c0bebb81cc98d2f447186346fb008bc15cc0d2827a4a47b472bc4775a3913298",
+          "raw_archive_member": "public-inputs/espn-summary-401915378.json",
+          "meta_archive_member": "public-inputs/espn-summary-401915378.json.meta.json"
+        }
+      ],
+      "comprehensive_first_issue": "not present in this pair publication; reserved six-slot registration remains unissued",
+      "pair_request_sha256": null,
+      "publication_json_sha256": "c569819c48c44638fc81c99ee2fac65ed8be0973112c29e82f7d85bd4db76d46"
+    }
+  ]
+}

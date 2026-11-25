@@ -114,6 +114,51 @@ def verify():
     require({s["match_id"].removeprefix("espn:") for s in REG["slots"]}.issubset(ids),
             "ESPN scoreboard does not contain all registered fixtures")
 
+    live_index = json.loads((ROOT / "current-test-live-supplement.json").read_text(encoding="utf-8"))
+    live_archive = ROOT / live_index["source_archive"]
+    require(live_index["schema"] == "R10-UCL-LIVE-PAIRS-1" and
+            live_index["registration_sha256"] == expected_sha and
+            sha(live_archive.read_bytes()) == live_index["archive_sha256"],
+            "live dual-model archive or registration binding differs")
+    six_reserved = {s["match_id"] for s in REG["slots"] if s["comprehensive_first_issue"] is None}
+    require(live_index["fixture_count"] == 6 and
+            {row["match_id"] for row in live_index["entries"]} == six_reserved and
+            live_index["contains_comprehensive_first_issues"] is False,
+            "live dual-model records must cover the six reserved slots only")
+    with tarfile.open(live_archive, "r:gz") as tar:
+        members = set(tar.getnames())
+        for row in live_index["entries"]:
+            indexed = {entry["archive_member"]: entry for entry in row["source_files"]}
+            fixture_name = f"live-pairs/{row['match_id'].split(':', 1)[1]}.fixture.json"
+            pair_name = f"live-pairs/{row['match_id'].split(':', 1)[1]}.pair.json"
+            publication_name = pair_name + ".publication.json"
+            require({fixture_name, pair_name, publication_name}.issubset(members),
+                    f"live issue archive incomplete: {row['match_id']}")
+            for member, detail in indexed.items():
+                raw = tar.extractfile(member).read()
+                require(sha(raw) == detail["sha256"] and len(raw) == detail["bytes"],
+                        f"live original byte hash differs: {member}")
+            fixture = json.loads(tar.extractfile(fixture_name).read())
+            pair = json.loads(tar.extractfile(pair_name).read())
+            publication = json.loads(tar.extractfile(publication_name).read())
+            receipt = publication["receipt"]
+            require(pair["match_id"] == fixture["match_id"] == row["match_id"] and
+                    publication["status"] == "DELIVERED" and
+                    receipt["freeze_id"] == row["publication"]["freeze_id"] and
+                    receipt["recorded_at"] == row["publication"]["recorded_at"] and
+                    receipt["sha256"] == row["publication"]["receipt_sha256"] and
+                    receipt["evaluation_slot"] == "SEPARATE_REVISION_OR_STAGE",
+                    f"live pair is not the retained separate dual-model issue: {row['match_id']}")
+            for track in ("current_model", "test_model"):
+                require(track in pair and pair[track]["generated_at"] == row["models"][track]["generated_at"],
+                        f"missing or changed model track: {row['match_id']} {track}")
+            for source in row["public_sources"]:
+                raw = tar.extractfile(source["raw_archive_member"]).read()
+                meta = json.loads(tar.extractfile(source["meta_archive_member"]).read())
+                require(sha(raw) == source["response_sha256"] == meta["sha256"] ==
+                        meta["readback_sha256"] and meta["readback_verified"] is True,
+                        f"public input raw response/readback differs: {row['match_id']}")
+
     for item in REG["inputs"]:
         path = REPO / item["path"] if not item["path"].startswith("/") else None
         if path is not None:
