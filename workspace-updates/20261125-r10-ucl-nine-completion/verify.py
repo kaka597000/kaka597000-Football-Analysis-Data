@@ -51,7 +51,8 @@ def verify():
     manifest = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     manifest_files = manifest.get("files", {})
     actual_files = {p.relative_to(ROOT).as_posix(): sha(p.read_bytes())
-                    for p in ROOT.rglob("*") if p.is_file() and p.name != "manifest.json"}
+                    for p in ROOT.rglob("*") if p.is_file() and p.name != "manifest.json" and
+                    "__pycache__" not in p.relative_to(ROOT).parts}
     require(manifest.get("schema") == "R10-UCL-NINE-SUPPLEMENT-1" and
             manifest_files == actual_files, "supplement package manifest differs")
     reg_path = ROOT / "registration.json"
