@@ -107,12 +107,20 @@ def verify():
                     f"unissued slot was filled or substituted: {slot['match_id']}")
 
     public = REG["public_source"]
-    raw_scoreboard = load_archive_bytes(R10 / "formal/nov26-ucl-three.tar.gz", public["raw_archive_member"])
+    evidence_archive = R10 / "formal/nov26-ucl-three.tar.gz"
+    raw_scoreboard = load_archive_bytes(evidence_archive, public["raw_archive_member"])
     require(sha(raw_scoreboard) == public["raw_sha256"], "public scoreboard raw SHA differs")
     scoreboard = json.loads(raw_scoreboard)
     ids = {str(event["id"]) for day in scoreboard.get("events", []) for event in [day]}
     require({s["match_id"].removeprefix("espn:") for s in REG["slots"]}.issubset(ids),
             "ESPN scoreboard does not contain all registered fixtures")
+    request_log = json.loads(load_archive_bytes(evidence_archive, "evidence/request-log.json"))
+    scoreboard_request = next(row for row in request_log if row["name"] == public["request_name"])
+    require(scoreboard_request["url"] == public["url"] and
+            scoreboard_request["accessed_at_utc"] == public["accessed_at_utc"] and
+            scoreboard_request["status"] == public["http_status"] and
+            scoreboard_request["sha256"] == public["raw_sha256"],
+            "public schedule source time or receipt differs")
 
     live_index = json.loads((ROOT / "current-test-live-supplement.json").read_text(encoding="utf-8"))
     live_archive = ROOT / live_index["source_archive"]
@@ -159,11 +167,23 @@ def verify():
                         meta["readback_sha256"] and meta["readback_verified"] is True,
                         f"public input raw response/readback differs: {row['match_id']}")
 
+    ranked_archive = R10 / "forward/ranked.tar.gz"
+    archived_sources = {
+        "ranked_batch_plan": load_archive_bytes(ranked_archive, "plan.json"),
+        "ranked_batch_scorecard": load_archive_bytes(ranked_archive, "scorecard.json"),
+        "nine_match_ranking": load_archive_bytes(evidence_archive, "evidence/r10-nine-match-ranking.csv"),
+        "nine_fixture_source": load_archive_bytes(evidence_archive, "evidence/espn-nine-fixtures.csv"),
+        "original_three_ranked_firsts": load_archive_bytes(evidence_archive, "issuance/ranked-firsts.json"),
+        "r10_forward_receipts": load_archive_bytes(first_archive, "receipts.json"),
+    }
     for item in REG["inputs"]:
-        path = REPO / item["path"] if not item["path"].startswith("/") else None
-        if path is not None:
-            require(path.is_file() and sha(path.read_bytes()) == item["sha256"],
-                    f"embedded source digest differs: {item['name']}")
+        if item["name"] in archived_sources:
+            actual = sha(archived_sources[item["name"]])
+        else:
+            path = REPO / item["path"]
+            require(path.is_file(), f"embedded source is missing: {item['name']}")
+            actual = sha(path.read_bytes())
+        require(actual == item["sha256"], f"registered source digest differs: {item['name']}")
     return {"status": "PASS", "registration_sha256": expected_sha,
             "fixtures": 9, "original_selected_seats": 3, "unissued_comprehensive_slots": 6,
             **parent}
