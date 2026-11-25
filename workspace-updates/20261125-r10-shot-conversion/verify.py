@@ -145,6 +145,21 @@ def verify_forward():
                     require(all(item[k]==rec['payload'][k] for k in ('primary','top3','wdl','total_line','total_direction')),item['match_id'])
         v=rows['ranked_batch'];rec=record(tar_json(t,'canonical/'+v['freeze_id']+'.json'),v)
         require(rec['payload']['top3']==rows['actual_display'],'AFC selected display')
+    with tarfile.open(ROOT/'formal/nov26-ucl-three.tar.gz') as t:
+        ucl=read('formal/nov26-ucl-firsts.json')
+        v=ucl['batch'];batch=record(tar_json(t,'canonical/'+v['freeze_id']+'.json'),v)
+        require(len(batch['payload']['top3'])==3 and batch['payload']['top3']==ucl['selections'],'complete UCL batch')
+        text=t.extractfile('issuance/message.txt').read()
+        require(sha(text)==batch['payload']['text_sha256'] and text.decode()==ucl['text'],'UCL body commitment')
+        for item in ucl['selections']:
+            v=item['comprehensive_reference'];rec=record(tar_json(t,'canonical/'+v['freeze_id']+'.json'),v)
+            require(rec['payload']['displayed_scores']==item['top3'] and rec['payload']['authored_display']['text'] in ucl['text'],
+                    item['match_id'])
+            pair=rec['payload']['current_test_reference']
+            snapshot=tar_json(t,'canonical/'+pair['freeze_id']+'.json'); signature=snapshot.pop('record_sha256')
+            first=tar_json(t,'canonical/'+pair['freeze_id'].split('-v')[0]+'-v000001.json')
+            require(signature==digest(snapshot)==pair['sha256'] and snapshot['previous_sha256']==first['record_sha256']
+                    and snapshot['match_id']==item['match_id'], 'UCL model revision')
     return len(idx['matches'])
 
 
