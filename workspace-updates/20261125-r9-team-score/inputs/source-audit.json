@@ -1,0 +1,107 @@
+{
+  "official_source_files": 24,
+  "http_status_counts": {
+    "200": 24
+  },
+  "csv_sha256_verified": 24,
+  "panel_rows": 8380,
+  "checks": {
+    "all_24_http_200": true,
+    "all_csv_hashes_match": true,
+    "source_row_team_score_crosscheck": true,
+    "panel_ids_unique": true,
+    "all_dates_before_cutoff": true,
+    "all_prices_finite_and_gt1": true,
+    "paired_market_policy": true,
+    "all_receipt_replacement_counts_zero": true,
+    "no_source_label_replacement_character": true,
+    "no_duplicates": true,
+    "no_ftr_conflicts": true
+  },
+  "anomalies": {
+    "same_date_same_home_away": [],
+    "ftr_score_disagreements": [],
+    "blank_unidentifiable_source_rows": {
+      "0203-D1": [
+        {
+          "row": 308,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        }
+      ],
+      "0203-I1": [
+        {
+          "row": 308,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        },
+        {
+          "row": 309,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        },
+        {
+          "row": 310,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        },
+        {
+          "row": 311,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        },
+        {
+          "row": 312,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        },
+        {
+          "row": 313,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        },
+        {
+          "row": 314,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        },
+        {
+          "row": 315,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        },
+        {
+          "row": 316,
+          "reason": "invalid_or_missing_date",
+          "date": ""
+        }
+      ]
+    }
+  },
+  "season_competition_rows": {
+    "eng.1/0203": 380,
+    "esp.1/0203": 380,
+    "ger.1/0203": 306,
+    "ita.1/0203": 306,
+    "fra.1/0203": 380,
+    "ned.1/0203": 306,
+    "eng.1/0304": 380,
+    "esp.1/0304": 380,
+    "ger.1/0304": 306,
+    "ita.1/0304": 306,
+    "fra.1/0304": 380,
+    "ned.1/0304": 306,
+    "eng.1/0405": 380,
+    "esp.1/0405": 380,
+    "ger.1/0405": 306,
+    "ita.1/0405": 380,
+    "fra.1/0405": 380,
+    "ned.1/0405": 306,
+    "eng.1/0506": 380,
+    "esp.1/0506": 380,
+    "ger.1/0506": 306,
+    "ita.1/0506": 380,
+    "fra.1/0506": 380,
+    "ned.1/0506": 306
+  }
+}
