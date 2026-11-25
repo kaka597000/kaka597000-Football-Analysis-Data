@@ -192,8 +192,16 @@ def verify():
             require(path.is_file(), f"embedded source is missing: {item['name']}")
             actual = sha(path.read_bytes())
         require(actual == item["sha256"], f"registered source digest differs: {item['name']}")
+    first_index = json.loads((ROOT / "nine-firsts-index.json").read_text(encoding="utf-8"))
+    market_index = json.loads((ROOT / "same-price-market-index.json").read_text(encoding="utf-8"))
     return {"status": "PASS", "registration_sha256": expected_sha,
-            "fixtures": 9, "original_selected_seats": 3, "unissued_comprehensive_slots": 6,
+            "fixtures": 9, "original_selected_seats": 3,
+            "at_registration_unissued": 6,
+            "issued_now": len(first_index["rows"]),
+            "pending_comprehensive_now": sum(
+                s["comprehensive_first_issue"] is None for s in REG["slots"]
+                if s["match_id"] not in {r["match_id"] for r in first_index["rows"]}),
+            "market_same_price": len(market_index["rows"]),
             **parent}
 
 
@@ -310,7 +318,7 @@ def verify_nine_canonical_records(registration_sha):
         with tempfile.TemporaryDirectory(prefix="r10-market-verify-") as tmp:
             tmp = Path(tmp)
             with tarfile.open(ROOT / "same-price-market-runtime.tar.gz", "r:gz") as runtime:
-                runtime.extractall(tmp)
+                runtime.extractall(tmp, filter="data")
             runtime_path = tmp / "runtime"
             for rel, expected in source_pin.get("additional_runtime_files", {}).items():
                 require(sha((tmp / rel).read_bytes()) == expected,

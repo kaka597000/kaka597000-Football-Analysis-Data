@@ -29,3 +29,5 @@ python -B workspace-updates/20261125-r10-ucl-nine-completion/verify.py
 ```
 
 GitHub Actions 使用 Python 3.12，并安装固定的 NumPy 2.3.5、SciPy 1.17.0、LightGBM 4.6.0；设置 `NPY_DISABLE_CPU_FEATURES=AVX512F`、`OPENBLAS_CORETYPE=Haswell`、单线程 OpenBLAS/OMP 后运行同一校验器。校验器先运行 R10 原包校验，再核验登记、全部原件和签发回执、赛前时间、市场代码 pin 与九场复算结果。
+
+验证输出区分登记时与当前状态：`at_registration_unissued=6`、`issued_now=9`、`pending_comprehensive_now=0`、`market_same_price=9`。登记中六个空位已由真实签发填入；原三席仍为原件。
