@@ -1,5 +1,6 @@
 """Create or independently replay a portable November 25 data package without contacting any service."""
 import argparse
+from contextlib import contextmanager
 import gzip
 from hashlib import sha256
 from io import BytesIO
@@ -74,7 +75,8 @@ def pack(folder, intake, updates, out):
     return target
 
 
-def verify(path):
+@contextmanager
+def verified_package(path):
     with TemporaryDirectory() as tmp:
         root = Path(tmp)
         with tarfile.open(path,'r:gz') as tar:
@@ -111,6 +113,11 @@ def verify(path):
                       r7_settled=ft['research']['R7']['cumulative_settled'],package_sha256=review.originals.sha(path))
         if 'result_crosscheck' in ft:
             result['official_secondary'] = ft['independent_official_secondary']
+        yield root, ft, result
+
+
+def verify(path):
+    with verified_package(path) as (_, _, result):
         return result
 
 

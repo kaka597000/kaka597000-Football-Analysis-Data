@@ -1,19 +1,22 @@
 """Publish the original nine firsts, signed native tracks, market and every reserved seat."""
 import argparse
+from collections import defaultdict
 import csv
 from hashlib import sha256
 from io import BytesIO, StringIO
 import json
 from pathlib import Path
 import tarfile
+from tempfile import TemporaryDirectory
 
 from research.analysis_freeze import aware
 from research_program.display_market import WDL
 from research_program.kpi_validation import _first
-from research_program.paired_kpi_inference import compare
+from research_program.paired_kpi_inference import METRICS, compare
 
 import package_review
 import afc_finals
+import review
 
 
 def native_pairs(archive, prefix):
@@ -63,6 +66,64 @@ def observed_ranks(rows, arm):
             key = ranks[scores.index(actual)] if actual in scores else 'outside_three'
             counts[key] += 1
     return counts
+
+
+def r7_competitions(root, snapshot):
+    summary = snapshot['research']['R7']
+    source = review.originals.Sources(root / 'updates')
+    with TemporaryDirectory() as tmp:
+        area = Path(tmp)
+        plan, records, _ = review.originals.research_firsts(source, 'R7', area)
+        prior = review.originals.r7_prior(source, area, records, aware(snapshot['at']))
+    actuals = {mid: entry['score'] for mid, entry in prior.items()}
+    for mid, entry in summary['tonight_firsts'].items():
+        if mid in actuals or entry['first_sha256'] != records[mid]['record_sha256']:
+            raise ValueError('R7 result conflicts with its first issue or an earlier settlement')
+        if entry['actual'] is not None:
+            actuals[mid] = entry['actual']
+    if plan['record_sha256'] != summary['registration'] or len(actuals) != summary['cumulative_settled']:
+        raise ValueError('R7 registration or cumulative result population differs')
+    scope_file = Path(review.core.__file__).resolve().parents[2] / 'configs/analysis-scope.json'
+    scope = json.loads(scope_file.read_bytes())
+    names = {item['code']: item['name'] for item in scope['competitions']}
+    if len(names) != scope['expected_competition_count'] or len(names) != len(scope['competitions']):
+        raise ValueError('configured competition count differs')
+    grouped = defaultdict(list)
+    for mid, rec in records.items():
+        fx, pick = rec['fixture'], rec['payload']
+        grouped[fx['cohort']].append(review.matchrow(fx, pick['forecasts'], pick['line'], actuals.get(mid)))
+    aggregate = summary['original_first_vs_market']
+    if set(grouped) - names.keys() or {k: len(v) for k,v in grouped.items()} != aggregate['cohorts']:
+        raise ValueError('competition populations do not match the signed review')
+    rows = []
+    for code, label in names.items():
+        group = grouped.get(code, [])
+        scores = compare(group, baseline='market', candidate='candidate') if group else {}
+        tracks = scores.get('tracks', {})
+        for metric in METRICS:
+            pair = scores.get('paired', {}).get(metric, {})
+            ci = pair.get('date_cluster_ci') or [None, None]
+            row = dict(competition=code, competition_name=label, metric=metric, registered=len(group),
+                       settled=scores.get('settled_population', 0), pending=scores.get('pending', 0),
+                       pushes=scores.get('common_total_pushes', 0) if metric == 'actual_ou' else '')
+            for name in ('candidate', 'market'):
+                metrics = tracks.get(name, {}).get('metrics', {}).get(metric, {})
+                for key in ('issued', 'eligible', 'hits'):
+                    row[name + '_' + key] = metrics.get(key, 0)
+            for key in ('eligible', 'gained', 'lost', 'net_hits', 'matchday_clusters'):
+                row['paired_' + key] = pair.get(key, 0)
+            row.update(paired_net_rate_ci_low=ci[0], paired_net_rate_ci_high=ci[1])
+            rows.append(row)
+    for metric in METRICS:
+        subset = [r for r in rows if r['metric'] == metric]
+        for name, track in aggregate['tracks'].items():
+            for key in ('issued', 'eligible', 'hits'):
+                if sum(r[name + '_' + key] for r in subset) != track['metrics'][metric][key]:
+                    raise ValueError('competition KPI does not reconcile: ' + name + ' ' + metric + ' ' + key)
+        for key in ('eligible', 'gained', 'lost', 'net_hits'):
+            if sum(r['paired_' + key] for r in subset) != aggregate['paired'][metric][key]:
+                raise ValueError('competition market differences do not reconcile: ' + metric + ' ' + key)
+    return as_csv(rows)
 
 
 def report_from(archive_path):
@@ -133,11 +194,13 @@ def main():
     parser.add_argument('archive', type=Path)
     parser.add_argument('--write-new', type=Path)
     args = parser.parse_args()
-    integrity = package_review.verify(args.archive)
+    with package_review.verified_package(args.archive) as (verified, snapshot, integrity):
+        outputs = report_from(args.archive)
+        outputs['r7-competition-kpis.csv'] = r7_competitions(verified, snapshot)
     root = args.write_new or Path(__file__).resolve().parent
     if args.write_new:
         root.mkdir(parents=True, exist_ok=True)
-    for name, body in report_from(args.archive).items():
+    for name, body in outputs.items():
         path = root / name
         if args.write_new and not path.exists():
             with path.open('xb') as dest:
