@@ -1,0 +1,47 @@
+{
+  "version": "R21-five-league-score-dependence-1",
+  "competition": "eng.1",
+  "through": "2026-11-23",
+  "baseline_sha256": "8c8447902bf0f45bb4d124286cdcde25916d5a33d14bfa75573717d6cf1aeeaf",
+  "fit_sha256": "c29568c9f66941888c9f1b458a711c61980a1813e190b7082307d453c6d6433c",
+  "fitted": {
+    "context": {
+      "version": "R21-five-league-score-dependence-1",
+      "features": [
+        "intercept",
+        "club_concordance",
+        "club_chance_volume"
+      ],
+      "beta": [
+        -0.11153417890150488,
+        -0.3124281718279587,
+        0.16978807920964056
+      ],
+      "training_rows": 2770,
+      "penalized_relative_loss": -1.2046175706151199
+    },
+    "constant": {
+      "version": "R21-five-league-score-dependence-1",
+      "features": [
+        "intercept"
+      ],
+      "beta": [
+        -0.07847770199447082
+      ],
+      "training_rows": 2770,
+      "penalized_relative_loss": -0.7278008798883846
+    }
+  },
+  "doses": {
+    "context": {
+      "score": 0.0,
+      "wdl": 0.0,
+      "total": 0.5
+    },
+    "constant": {
+      "score": 0.0,
+      "wdl": 0.0,
+      "total": 1.0
+    }
+  }
+}
