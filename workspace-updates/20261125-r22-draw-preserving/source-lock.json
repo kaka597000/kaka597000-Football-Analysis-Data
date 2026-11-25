@@ -1,6 +1,6 @@
 {
   "schema": "r22-data-source-lock-preparation-v1",
-  "status": "LOCAL_VERIFICATION_PENDING_REMOTE_CI",
+  "status": "LOCAL_VERIFIED_REMOTE_CI_PENDING",
   "source_repository": "https://github.com/kaka597000/Football-Analysis",
   "preregistration_commit": "c15f9dfadf4a0c8ae38c53c68ecd647bcaa8712e",
   "final_source_commit": "46de33168c093816ac7cd19a57e36e51286b408f",
@@ -91,5 +91,19 @@
     "*.pyo",
     "manifest.json",
     "SHA256SUMS"
-  ]
+  ],
+  "local_verification": {
+    "verified": true,
+    "source_commit": "46de33168c093816ac7cd19a57e36e51286b408f",
+    "data_parent": "02828b3a726b2338f0880e9383c3f8bdf5c08bab",
+    "historical_tree_sha256": "a8f6a23c7e0ee8d48093f8e8c35e9f6e535bd7d5022efd32d9de710a70251c5d",
+    "historical_files": 38,
+    "training_runs": 2,
+    "official_firsts_recomputed": 45,
+    "official_ranked_seats_recomputed": 15,
+    "registration_sha256": "4f14e72cce5aa9a29c4faf88c82cc23f6b76ac7b05de967c7fc12dbb9da591bb",
+    "rank_sha256": "45814f434785f55ed592f9d6fa319b064ac6fe59fcf3d4443a9a7ea8f9998857",
+    "promotion": false,
+    "method": "pure forecast/rank functions at original cutoff; no issuance writer or seat writer"
+  }
 }
