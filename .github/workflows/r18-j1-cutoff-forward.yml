@@ -1,0 +1,51 @@
+name: Replay R18 J1 prospective firsts offline
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-r18-j1-cutoff-forward/**'
+      - 'workspace-updates/20261125-r15-j1-lineups/**'
+      - 'workspace-updates/20261125-r15-j1-lineups-forward/**'
+      - 'workspace-updates/20261125-j1-stage-windows/**'
+      - 'workspace-updates/20261125-r10-shot-conversion/**'
+      - 'workspace-updates/20261123-prematch-literature/**'
+      - 'workspace-updates/20261123-all-scope-kpi/**'
+      - '.github/workflows/r18-j1-cutoff-forward.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prospective:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      R18: workspace-updates/20261125-r18-j1-cutoff-forward
+      REGISTRATION_SHA: 9ba2b89ecb7e504ce9eef40701cbf002082c7548df3f06bce458b286852249be
+      RECEIPTS_SHA: 0a9de0ba4f2e2b1a4ad63821b1ea335cbbdbecc73a4dd47f1d88d8552132a30a
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 16fc96be434d231aa41df7c86f10bf24ac884e9a
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Provision pinned numerical dependencies
+        run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 threadpoolctl==3.7.0
+      - name: Recover ten original firsts from the R15 raw archives with networking disabled
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "$(cat "$R18/source-commit.txt")"
+          py="$(command -v python)"
+          offline=(sudo unshare --net -- setpriv --reuid="$(id -u)" --regid="$(id -g)" --clear-groups
+                   env "LD_LIBRARY_PATH=$(dirname "$py")/../lib" "R18_SOURCE=$GITHUB_WORKSPACE/source" "$py" -B)
+          "${offline[@]}" -m unittest discover -v -s "$R18" -p 'test_*.py'
+          restored="$RUNNER_TEMP/recovered-r18/firsts"
+          "${offline[@]}" "$R18/forward_bundle.py" verify --data-root . --source source --restore "$restored" \
+            --registration-sha256 "$REGISTRATION_SHA" --receipts-sha256 "$RECEIPTS_SHA"
+          echo "$RECEIPTS_SHA  $restored/receipts.json" | sha256sum --check

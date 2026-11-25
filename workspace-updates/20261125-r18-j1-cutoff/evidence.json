@@ -1,0 +1,97 @@
+{
+  "schema": "WCPP-R18-J1-CUTOFF-1",
+  "source_commit": "102e4c5b4b9e3897c36686a227374d36a68c484b",
+  "protocol_sha256": "b639ff78f360e4f7ad458b3df285cb0253ee164ea8524cb6c9ee0c4a4755d915",
+  "numerical_environment": {
+    "python": "3.12",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "lightgbm": "4.6.0",
+    "NPY_DISABLE_CPU_FEATURES": "AVX512F",
+    "OPENBLAS_CORETYPE": "Haswell",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "float_comparison": {
+    "atol": 1e-09,
+    "rtol": 1e-07
+  },
+  "inputs": {
+    "r5": {
+      "manifest_sha256": "f3b6fa64903e97a6c74966362894c3378dfe5bca03a4a84709d4c694946ed3d8"
+    },
+    "r7": {
+      "manifest_sha256": "e2ed191e29150ba59bf9623ce2a44b265e8b71c9e777d9197ec869975a957df3"
+    },
+    "r15_final_inventory": {
+      "coverage.json": "5f69ef80fc45b3719067c9cea536c88cad05341fa72f34e0346629dcd983c0a0",
+      "fit.json": "e191a95ad260edc70a009bb528eec549aceb2ee9445c8e34daa269ceddba8385",
+      "forecasts.jsonl.gz": "c68e666597e821c35b12d41c31173dd2d5f8ba2a184b906886a56b280a81cdb4",
+      "forward.json": "7da35a25fe6ed1b852d94549aedf9d1e17a19403470304d3c83954d4a2b53b93",
+      "inputs.json": "9966f80cc36e3c9a795f8e35ef59b3cc154679c07ac6895e16e32805eef5165e",
+      "metrics.json": "33e30db98b329ac85437158c4775e2246a863e64151809ef956d8c9b625a45da",
+      "roster-coverage.jsonl.gz": "9329487c1969132c9fb89398f8ee4e274cfe75e23ff4c07ec91c83a1e5c086b2",
+      "selected-days.jsonl.gz": "b4c6bed650ea78ba39a7f97c061b903a3635b039865a429e5cc7514dc48e1706"
+    },
+    "r15_repeat_inventory": {
+      "coverage.json": "5f69ef80fc45b3719067c9cea536c88cad05341fa72f34e0346629dcd983c0a0",
+      "fit.json": "e191a95ad260edc70a009bb528eec549aceb2ee9445c8e34daa269ceddba8385",
+      "forecasts.jsonl.gz": "c68e666597e821c35b12d41c31173dd2d5f8ba2a184b906886a56b280a81cdb4",
+      "forward.json": "7da35a25fe6ed1b852d94549aedf9d1e17a19403470304d3c83954d4a2b53b93",
+      "inputs.json": "9966f80cc36e3c9a795f8e35ef59b3cc154679c07ac6895e16e32805eef5165e",
+      "metrics.json": "33e30db98b329ac85437158c4775e2246a863e64151809ef956d8c9b625a45da",
+      "roster-coverage.jsonl.gz": "9329487c1969132c9fb89398f8ee4e274cfe75e23ff4c07ec91c83a1e5c086b2",
+      "selected-days.jsonl.gz": "b4c6bed650ea78ba39a7f97c061b903a3635b039865a429e5cc7514dc48e1706"
+    },
+    "r15_package_manifest_sha256": "97a3cdc153035f4c1bea4f292cbb5a2cec7351deec2cbf4c92f199ec4f09f243",
+    "rosters": {
+      "sha256": "40599f252e115f57b98d6e1450a7eb4ea205a25908204083c7356bd6d99cf58e",
+      "snapshot_manifest_sha256": "896f2c0e076b16aafda40975324002f393127983146c19668574e17a68d44dbb"
+    }
+  },
+  "r18_historical_final_inventory": {
+    "evaluation-seats.json": "24ba1ebc246227307e31d1a31ee77b3613772a5306684e234f94da7ef96d7843",
+    "forecasts.jsonl.gz": "ebf0025b3246cbd46d29630b45bf28ed243e6ee54b8acd0162923428093dbfa4",
+    "inputs.json": "4ca3e5b29cdee20c79c32aeebd73876276c6fd89b2d29541f86d0d79cef6c44d",
+    "metrics.json": "2b4b03a82bc0f979ef203f69e6541b9a6159106242204980e9e154d7b655aa4c",
+    "recent-seats.json": "6c3cb5610be4c8326cd7f8c03d040c06c98d680be0b33409d1eea484b0f0f86d"
+  },
+  "r18_historical_repeat_inventory": {
+    "evaluation-seats.json": "24ba1ebc246227307e31d1a31ee77b3613772a5306684e234f94da7ef96d7843",
+    "forecasts.jsonl.gz": "ebf0025b3246cbd46d29630b45bf28ed243e6ee54b8acd0162923428093dbfa4",
+    "inputs.json": "4ca3e5b29cdee20c79c32aeebd73876276c6fd89b2d29541f86d0d79cef6c44d",
+    "metrics.json": "2b4b03a82bc0f979ef203f69e6541b9a6159106242204980e9e154d7b655aa4c",
+    "recent-seats.json": "6c3cb5610be4c8326cd7f8c03d040c06c98d680be0b33409d1eea484b0f0f86d"
+  },
+  "r15_originals": {
+    "fit.json": "e191a95ad260edc70a009bb528eec549aceb2ee9445c8e34daa269ceddba8385",
+    "inputs.json": "9966f80cc36e3c9a795f8e35ef59b3cc154679c07ac6895e16e32805eef5165e",
+    "forward.json": "7da35a25fe6ed1b852d94549aedf9d1e17a19403470304d3c83954d4a2b53b93",
+    "forecasts.jsonl.gz": "c68e666597e821c35b12d41c31173dd2d5f8ba2a184b906886a56b280a81cdb4",
+    "events.jsonl.gz": "d5bc4f3d6d23654eff2e8852b67178517efa05437589e27bd9b2c9b3af5b2b48",
+    "snapshot-manifest.json": "896f2c0e076b16aafda40975324002f393127983146c19668574e17a68d44dbb"
+  },
+  "same_machine_refits_byte_identical": true,
+  "windows": {
+    "evaluation": 380,
+    "recent": 150
+  },
+  "feature_changes": {
+    "evaluation": 268,
+    "recent": 112
+  },
+  "r15_full_doses": {
+    "score": 0.0,
+    "wdl": 0.0,
+    "total": 0.0
+  },
+  "historical_predictions_unchanged_by_cutoff": true,
+  "market_wdl_coverage": {
+    "evaluation": 270,
+    "recent": 76
+  },
+  "forward_bundle": {
+    "status": "historical-only",
+    "files": {}
+  }
+}

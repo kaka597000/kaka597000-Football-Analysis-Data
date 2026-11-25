@@ -1,0 +1,620 @@
+{
+  "acquisitions": [
+    {
+      "kind": null,
+      "log": "audit/espn-j1-scoreboard-observations.jsonl",
+      "provider_fields": {
+        "date_query": "20261122",
+        "http_status": 200
+      },
+      "source": {
+        "bytes": 3210,
+        "captured_at_utc": "2026-11-25T11:09:12.262145+00:00",
+        "path": "audit/espn-j1-daily-scoreboards/20261122-scoreboard-20261125T110912262145Z.json",
+        "requested_at_utc": "2026-11-25T11:09:11.180013+00:00",
+        "sha256": "0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=20261122"
+      },
+      "uses": [
+        {
+          "role": "dated_calendar",
+          "subject": "20261122"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "audit/espn-j1-scoreboard-observations.jsonl",
+      "provider_fields": {
+        "date_query": "20261123",
+        "http_status": 200
+      },
+      "source": {
+        "bytes": 3210,
+        "captured_at_utc": "2026-11-25T11:09:13.606175+00:00",
+        "path": "audit/espn-j1-daily-scoreboards/20261123-scoreboard-20261125T110913606175Z.json",
+        "requested_at_utc": "2026-11-25T11:09:12.665813+00:00",
+        "sha256": "0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=20261123"
+      },
+      "uses": [
+        {
+          "role": "dated_calendar",
+          "subject": "20261123"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "audit/espn-j1-scoreboard-observations.jsonl",
+      "provider_fields": {
+        "date_query": "20261124",
+        "http_status": 200
+      },
+      "source": {
+        "bytes": 3210,
+        "captured_at_utc": "2026-11-25T11:09:14.848636+00:00",
+        "path": "audit/espn-j1-daily-scoreboards/20261124-scoreboard-20261125T110914848636Z.json",
+        "requested_at_utc": "2026-11-25T11:09:14.013327+00:00",
+        "sha256": "0cfe631d144de57580bc7b24624e3843fb0a1ee89d7d4f7db3130960aeae35a4",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=20261124"
+      },
+      "uses": [
+        {
+          "role": "dated_calendar",
+          "subject": "20261124"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "audit/espn-j1-scoreboard-observations.jsonl",
+      "provider_fields": {
+        "date_query": "20261125",
+        "http_status": 200
+      },
+      "source": {
+        "bytes": 94205,
+        "captured_at_utc": "2026-11-25T11:09:16.282480+00:00",
+        "path": "audit/espn-j1-daily-scoreboards/20261125-scoreboard-20261125T110916282480Z.json",
+        "requested_at_utc": "2026-11-25T11:09:15.249256+00:00",
+        "sha256": "5ed95aecc33217fac2466104921674b4fa4ad9f8fcbcecb96e48198f128c2486",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=20261125"
+      },
+      "uses": [
+        {
+          "role": "dated_calendar",
+          "subject": "20261125"
+        }
+      ]
+    },
+    {
+      "kind": "match-card-FT",
+      "log": "jleague-live-captures.jsonl",
+      "provider_fields": {
+        "event_id": "401877530",
+        "http_status": 200,
+        "jleague_match_code": "112501"
+      },
+      "source": {
+        "bytes": 1818595,
+        "captured_at_utc": "2026-11-25T12:01:04.662001+00:00",
+        "path": "raw/jleague-official/match-112501-FT-refresh-20261125T120104662001Z.html",
+        "requested_at_utc": "2026-11-25T12:01:00.390487+00:00",
+        "sha256": "736c7e66762646d319214f773492350cb940d943ff4e96ce958060a5d72e0830",
+        "url": "https://www.jleague.jp/match/j1/2026/112501/"
+      },
+      "uses": [
+        {
+          "role": "official_final",
+          "subject": "espn:401877530"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "raw/jleague-official/match-card-captures.jsonl",
+      "provider_fields": {
+        "http_status": 200,
+        "match_code": "112501"
+      },
+      "source": {
+        "bytes": 1330167,
+        "captured_at_utc": "2026-11-25T10:12:38.585693+00:00",
+        "path": "raw/jleague-official/match-112501.html",
+        "requested_at_utc": "2026-11-25T10:12:35.290093+00:00",
+        "sha256": "4fdc2bba6214f800e6d2fb5e6e1e0cc824fe004c1a7ff5cffda59d5f06a6236c",
+        "url": "https://www.jleague.jp/match/j1/2026/112501/"
+      },
+      "uses": [
+        {
+          "role": "official_kickoff_minute",
+          "subject": "espn:401877530"
+        }
+      ]
+    },
+    {
+      "kind": "postgame-state-check",
+      "log": "jleague-live-captures.jsonl",
+      "provider_fields": {
+        "event_id": "401877529",
+        "http_status": 200,
+        "jleague_match_code": "112502"
+      },
+      "source": {
+        "bytes": 1827003,
+        "captured_at_utc": "2026-11-25T12:12:03.896007+00:00",
+        "path": "raw/jleague-official/match-112502-postgame-check-20261125T121203896007Z.html",
+        "requested_at_utc": "2026-11-25T12:11:58.271660+00:00",
+        "sha256": "1549dcd3da34b0377ee6ba908df23be157a0dbb01289ea9cd8d6fe36618bdbb1",
+        "url": "https://www.jleague.jp/match/j1/2026/112502/"
+      },
+      "uses": [
+        {
+          "role": "official_final",
+          "subject": "espn:401877529"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "raw/jleague-official/match-card-captures.jsonl",
+      "provider_fields": {
+        "http_status": 200,
+        "match_code": "112502"
+      },
+      "source": {
+        "bytes": 1318916,
+        "captured_at_utc": "2026-11-25T10:12:45.103302+00:00",
+        "path": "raw/jleague-official/match-112502.html",
+        "requested_at_utc": "2026-11-25T10:12:38.676749+00:00",
+        "sha256": "ad5658e3803754cb6f989d43e1835b2cb89c9e432b2d0085d9ca2b19278ccd1f",
+        "url": "https://www.jleague.jp/match/j1/2026/112502/"
+      },
+      "uses": [
+        {
+          "role": "official_kickoff_minute",
+          "subject": "espn:401877529"
+        }
+      ]
+    },
+    {
+      "kind": "postgame-state-check",
+      "log": "jleague-live-captures.jsonl",
+      "provider_fields": {
+        "event_id": "401877546",
+        "http_status": 200,
+        "jleague_match_code": "112503"
+      },
+      "source": {
+        "bytes": 1796516,
+        "captured_at_utc": "2026-11-25T12:12:13.369333+00:00",
+        "path": "raw/jleague-official/match-112503-postgame-check-20261125T121213369333Z.html",
+        "requested_at_utc": "2026-11-25T12:12:10.206108+00:00",
+        "sha256": "887aef857d929feca0715b9d486bf2c7f3f8e9a32dc962555dd56aa4092250fe",
+        "url": "https://www.jleague.jp/match/j1/2026/112503/"
+      },
+      "uses": [
+        {
+          "role": "official_final",
+          "subject": "espn:401877546"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "raw/jleague-official/match-card-captures.jsonl",
+      "provider_fields": {
+        "http_status": 200,
+        "match_code": "112503"
+      },
+      "source": {
+        "bytes": 1327952,
+        "captured_at_utc": "2026-11-25T10:12:48.511405+00:00",
+        "path": "raw/jleague-official/match-112503.html",
+        "requested_at_utc": "2026-11-25T10:12:45.196954+00:00",
+        "sha256": "71e6f555b952f65068f2d20848f6f673decab4d93059619de1c148ee106057fa",
+        "url": "https://www.jleague.jp/match/j1/2026/112503/"
+      },
+      "uses": [
+        {
+          "role": "official_kickoff_minute",
+          "subject": "espn:401877546"
+        }
+      ]
+    },
+    {
+      "kind": "match-card-FT",
+      "log": "jleague-live-captures.jsonl",
+      "provider_fields": {
+        "event_id": "401877528",
+        "http_status": 200,
+        "jleague_match_code": "112504"
+      },
+      "source": {
+        "bytes": 1791096,
+        "captured_at_utc": "2026-11-25T11:56:03.956000+00:00",
+        "path": "raw/jleague-official/match-112504-FT-refresh-20261125T115603956000Z.html",
+        "requested_at_utc": "2026-11-25T11:55:59.769638+00:00",
+        "sha256": "512f641d1e20ef708937d8cae4b9bca8bcf60d90fac9cb43b4eb5e4cae209cd7",
+        "url": "https://www.jleague.jp/match/j1/2026/112504/"
+      },
+      "uses": [
+        {
+          "role": "official_final",
+          "subject": "espn:401877528"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "raw/jleague-official/match-card-captures.jsonl",
+      "provider_fields": {
+        "http_status": 200,
+        "match_code": "112504"
+      },
+      "source": {
+        "bytes": 1330540,
+        "captured_at_utc": "2026-11-25T10:12:52.302615+00:00",
+        "path": "raw/jleague-official/match-112504.html",
+        "requested_at_utc": "2026-11-25T10:12:48.586917+00:00",
+        "sha256": "f91f7d1aeac1999d145c1a68efc20e7ba31bc067d06889b5ebcb84434dbae8ee",
+        "url": "https://www.jleague.jp/match/j1/2026/112504/"
+      },
+      "uses": [
+        {
+          "role": "official_kickoff_minute",
+          "subject": "espn:401877528"
+        }
+      ]
+    },
+    {
+      "kind": "match-card-FT",
+      "log": "jleague-live-captures.jsonl",
+      "provider_fields": {
+        "event_id": "401877527",
+        "http_status": 200,
+        "jleague_match_code": "112505"
+      },
+      "source": {
+        "bytes": 1816763,
+        "captured_at_utc": "2026-11-25T11:58:07.312114+00:00",
+        "path": "raw/jleague-official/match-112505-FT-refresh-20261125T115807312114Z.html",
+        "requested_at_utc": "2026-11-25T11:58:03.929994+00:00",
+        "sha256": "34e49615a612c8505f4e11f96fad1a57ae489c95bf4cb50c6c3160dbf9044261",
+        "url": "https://www.jleague.jp/match/j1/2026/112505/"
+      },
+      "uses": [
+        {
+          "role": "official_final",
+          "subject": "espn:401877527"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "raw/jleague-official/match-card-captures.jsonl",
+      "provider_fields": {
+        "http_status": 200,
+        "match_code": "112505"
+      },
+      "source": {
+        "bytes": 1333807,
+        "captured_at_utc": "2026-11-25T10:12:56.342296+00:00",
+        "path": "raw/jleague-official/match-112505.html",
+        "requested_at_utc": "2026-11-25T10:12:52.379226+00:00",
+        "sha256": "be0ad8a4f3b4fed5ce2195e1adc14e0a7c2f6d5dc766fbf9430f9077db6f316b",
+        "url": "https://www.jleague.jp/match/j1/2026/112505/"
+      },
+      "uses": [
+        {
+          "role": "official_kickoff_minute",
+          "subject": "espn:401877527"
+        }
+      ]
+    },
+    {
+      "kind": "postgame-state-check",
+      "log": "jleague-live-captures.jsonl",
+      "provider_fields": {
+        "event_id": "401877545",
+        "http_status": 200,
+        "jleague_match_code": "112506"
+      },
+      "source": {
+        "bytes": 1836811,
+        "captured_at_utc": "2026-11-25T12:12:09.787829+00:00",
+        "path": "raw/jleague-official/match-112506-postgame-check-20261125T121209787829Z.html",
+        "requested_at_utc": "2026-11-25T12:12:04.312586+00:00",
+        "sha256": "f7e609e468c181a66debfd1711269b1e1b63fd58f78ef2f31e596dc386bb49c3",
+        "url": "https://www.jleague.jp/match/j1/2026/112506/"
+      },
+      "uses": [
+        {
+          "role": "official_final",
+          "subject": "espn:401877545"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "raw/jleague-official/match-card-captures.jsonl",
+      "provider_fields": {
+        "http_status": 200,
+        "match_code": "112506"
+      },
+      "source": {
+        "bytes": 1315690,
+        "captured_at_utc": "2026-11-25T10:12:59.563385+00:00",
+        "path": "raw/jleague-official/match-112506.html",
+        "requested_at_utc": "2026-11-25T10:12:56.448507+00:00",
+        "sha256": "8d16cbeefc7cf7fbe73e41201f795e39207d7d31428e1f7dd4ab6e074618d834",
+        "url": "https://www.jleague.jp/match/j1/2026/112506/"
+      },
+      "uses": [
+        {
+          "role": "official_kickoff_minute",
+          "subject": "espn:401877545"
+        }
+      ]
+    },
+    {
+      "kind": "match-card-FT",
+      "log": "jleague-live-captures.jsonl",
+      "provider_fields": {
+        "event_id": "401877547",
+        "http_status": 200,
+        "jleague_match_code": "112507"
+      },
+      "source": {
+        "bytes": 1872440,
+        "captured_at_utc": "2026-11-25T12:27:41.369198+00:00",
+        "path": "raw/jleague-official/match-112507-FT-refresh-20261125T122741369198Z.html",
+        "requested_at_utc": "2026-11-25T12:27:35.875376+00:00",
+        "sha256": "96e53f4202844d2f46fc0cf89b7ae86cef7394454c94d05804cff84e4f987aee",
+        "url": "https://www.jleague.jp/match/j1/2026/112507/"
+      },
+      "uses": [
+        {
+          "role": "official_final",
+          "subject": "espn:401877547"
+        }
+      ]
+    },
+    {
+      "kind": null,
+      "log": "jleague-live-captures.jsonl",
+      "provider_fields": {
+        "event_id": "401877547",
+        "http_status": 200,
+        "jleague_match_code": "112507"
+      },
+      "source": {
+        "bytes": 1308787,
+        "captured_at_utc": "2026-11-25T10:38:17.841354+00:00",
+        "path": "raw/jleague-official/match-112507-refresh-20261125T103817841354Z.html",
+        "requested_at_utc": "2026-11-25T10:38:15.430832+00:00",
+        "sha256": "4070c341af7f54a79e527d982cd4f7b16d91ce4b23b9ac13526474c8219342f7",
+        "url": "https://www.jleague.jp/match/j1/2026/112507/"
+      },
+      "uses": [
+        {
+          "role": "official_kickoff_minute",
+          "subject": "espn:401877547"
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "log": "refreshes.jsonl",
+      "provider_fields": {
+        "event_id": "401877528",
+        "http_status": 200,
+        "league_slug": "jpn.1"
+      },
+      "source": {
+        "bytes": 309519,
+        "captured_at_utc": "2026-11-25T11:55:25.509250+00:00",
+        "path": "raw/refreshes/20261125T115525509250Z-jpn.1-summary-401877528.json",
+        "requested_at_utc": "2026-11-25T11:55:24.172677+00:00",
+        "sha256": "a0213f27994375e60d6c421eb9e43ac89385859666e6740ff25e3929f17999b6",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877528"
+      },
+      "uses": [
+        {
+          "role": "espn_certified_ft90",
+          "subject": "espn:401877528"
+        },
+        {
+          "role": "espn_ft_starters",
+          "subject": "espn:401877528"
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "log": "refreshes.jsonl",
+      "provider_fields": {
+        "event_id": "401877529",
+        "http_status": 200,
+        "league_slug": "jpn.1"
+      },
+      "source": {
+        "bytes": 323999,
+        "captured_at_utc": "2026-11-25T11:55:27.011596+00:00",
+        "path": "raw/refreshes/20261125T115527011596Z-jpn.1-summary-401877529.json",
+        "requested_at_utc": "2026-11-25T11:55:25.781435+00:00",
+        "sha256": "6266db9a71d4fc194a6bed768d59c5d17aea712a8694789ccb80e2b57c5d51be",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877529"
+      },
+      "uses": [
+        {
+          "role": "espn_certified_ft90",
+          "subject": "espn:401877529"
+        },
+        {
+          "role": "espn_ft_starters",
+          "subject": "espn:401877529"
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "log": "refreshes.jsonl",
+      "provider_fields": {
+        "event_id": "401877527",
+        "http_status": 200,
+        "league_slug": "jpn.1"
+      },
+      "source": {
+        "bytes": 322918,
+        "captured_at_utc": "2026-11-25T11:57:43.464179+00:00",
+        "path": "raw/refreshes/20261125T115743464179Z-jpn.1-summary-401877527.json",
+        "requested_at_utc": "2026-11-25T11:57:41.998588+00:00",
+        "sha256": "b9853c76fda531795b478659f91f017addd074441ddd168b1e40012f6e79a5f2",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877527"
+      },
+      "uses": [
+        {
+          "role": "espn_certified_ft90",
+          "subject": "espn:401877527"
+        },
+        {
+          "role": "espn_ft_starters",
+          "subject": "espn:401877527"
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "log": "refreshes.jsonl",
+      "provider_fields": {
+        "event_id": "401877545",
+        "http_status": 200,
+        "league_slug": "jpn.1"
+      },
+      "source": {
+        "bytes": 338616,
+        "captured_at_utc": "2026-11-25T11:57:47.009503+00:00",
+        "path": "raw/refreshes/20261125T115747009503Z-jpn.1-summary-401877545.json",
+        "requested_at_utc": "2026-11-25T11:57:45.275471+00:00",
+        "sha256": "4ee2838959fc9b5f19d5f7f053b7e5446b01fcda14d148cc7b2ae8cd02d054ba",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877545"
+      },
+      "uses": [
+        {
+          "role": "espn_certified_ft90",
+          "subject": "espn:401877545"
+        },
+        {
+          "role": "espn_ft_starters",
+          "subject": "espn:401877545"
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "log": "refreshes.jsonl",
+      "provider_fields": {
+        "event_id": "401877546",
+        "http_status": 200,
+        "league_slug": "jpn.1"
+      },
+      "source": {
+        "bytes": 312464,
+        "captured_at_utc": "2026-11-25T11:57:48.698662+00:00",
+        "path": "raw/refreshes/20261125T115748698662Z-jpn.1-summary-401877546.json",
+        "requested_at_utc": "2026-11-25T11:57:47.329067+00:00",
+        "sha256": "89d2fdeb3b9151cf91d0d0c6be60892cc8e383be57036e5014e4bca51b8f3f06",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877546"
+      },
+      "uses": [
+        {
+          "role": "espn_certified_ft90",
+          "subject": "espn:401877546"
+        },
+        {
+          "role": "espn_ft_starters",
+          "subject": "espn:401877546"
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "log": "refreshes.jsonl",
+      "provider_fields": {
+        "event_id": "401877530",
+        "http_status": 200,
+        "league_slug": "jpn.1"
+      },
+      "source": {
+        "bytes": 306700,
+        "captured_at_utc": "2026-11-25T12:00:45.759210+00:00",
+        "path": "raw/refreshes/20261125T120045759210Z-jpn.1-summary-401877530.json",
+        "requested_at_utc": "2026-11-25T12:00:43.934751+00:00",
+        "sha256": "91a9eac5349472674505364e78f49ffbee6e82162561cee37619e9652ac218c1",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877530"
+      },
+      "uses": [
+        {
+          "role": "espn_certified_ft90",
+          "subject": "espn:401877530"
+        },
+        {
+          "role": "espn_ft_starters",
+          "subject": "espn:401877530"
+        }
+      ]
+    },
+    {
+      "kind": "summary",
+      "log": "refreshes.jsonl",
+      "provider_fields": {
+        "event_id": "401877547",
+        "http_status": 200,
+        "league_slug": "jpn.1"
+      },
+      "source": {
+        "bytes": 317369,
+        "captured_at_utc": "2026-11-25T12:27:25.266144+00:00",
+        "path": "raw/refreshes/20261125T122725266144Z-jpn.1-summary-401877547.json",
+        "requested_at_utc": "2026-11-25T12:27:23.545302+00:00",
+        "sha256": "d9caa0d38ecb89e0b84406d43e3339fc39b3ce056b69c38a3377f8177460f46b",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/summary?event=401877547"
+      },
+      "uses": [
+        {
+          "role": "espn_certified_ft90",
+          "subject": "espn:401877547"
+        },
+        {
+          "role": "espn_ft_starters",
+          "subject": "espn:401877547"
+        }
+      ]
+    }
+  ],
+  "annual": {
+    "archive": "evidence/prematch-07.tar.gz",
+    "member": "raw/espn_calendar_2026.json",
+    "source": {
+      "bytes": 3989920,
+      "captured_at_utc": "2026-11-25T08:49:14.772983+00:00",
+      "path": "schedule-recovery/espn_calendar_2026.json",
+      "requested_at_utc": null,
+      "sha256": "88ae1a444b952f521beda041b3c8cc4784421e88484032a3450e9075fb0c2fa4",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=2026&limit=1000"
+    }
+  },
+  "audit": {
+    "created_at_utc": "2026-11-25T11:09:40.755817+00:00",
+    "path": "audit/nov22-25-annual-calendar-audit.json",
+    "sha256": "8dcd13be030766b95fa02a3bd1baef19d2e8c1ee55238fed973925e16c846e2f"
+  },
+  "full_log_sha256": {
+    "audit/espn-j1-scoreboard-observations.jsonl": "90938795a0b6b1be91483b58a7420f3061fa1d9d9d4995879152952b61fb27d6",
+    "jleague-live-captures.jsonl": "229f6b46911008cf2416e5c6c7cbdb917233424a1b02389fda13ab5d990a077a",
+    "raw/jleague-official/match-card-captures.jsonl": "5483c3b2c5b7e47b9de1d9472ca317ce2944b4d1f1f1e3871892bd59e2026005",
+    "refreshes.jsonl": "2022c84536ff5991b7a8680ac8b3d6812696c5681da4ef27631cd0e4d1684a47"
+  }
+}
