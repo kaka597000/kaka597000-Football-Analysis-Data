@@ -1,0 +1,59 @@
+name: Verify R15 J1 original prospective issues
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-r15-j1-lineups/**'
+      - 'workspace-updates/20261125-r15-j1-lineups-forward/**'
+      - '.github/workflows/r15-j1-lineups-forward.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      R15: workspace-updates/20261125-r15-j1-lineups
+      BUNDLE: workspace-updates/20261125-r15-j1-lineups-forward/first-issues.tar.gz
+      RECEIPTS_SHA256: 6ee26b469e23febecde863caf0f4f07bcf96b5e42362a4ed66a7e3400e86bb52
+      REGISTRATION_SHA256: 45804bc3636bac38293bf037b887e8cb1e385fd93d981dbdafde419c15336fb0
+      TMPDIR: /tmp
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify the independently retained firsts index and original registration
+        run: |
+          python -B "$R15/prospective.py" verify --study-package "$R15" --data-root . --bundle "$BUNDLE" \
+            --receipts-sha256 "$RECEIPTS_SHA256" --registration-sha256 "$REGISTRATION_SHA256"
+      - id: pin
+        name: Read the source pin bound to the verified training recipe
+        shell: python
+        run: |
+          import json, os, pathlib, re
+          revision = json.loads((pathlib.Path(os.environ["R15"]) / "manifest.json").read_bytes())["source_commit"]
+          if not re.fullmatch(r"[0-9a-f]{40}", revision):
+              raise ValueError("A full source commit SHA is required")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              print(f"revision={revision}", file=output)
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ steps.pin.outputs.revision }}
+          path: source
+          persist-credentials: false
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 threadpoolctl==3.7.0
+      - name: Reconstruct the roster history and all ten signed payloads
+        run: |
+          python -B "$R15/prospective.py" recalc --study-package "$R15" --data-root . --bundle "$BUNDLE" \
+            --source source --receipts-sha256 "$RECEIPTS_SHA256" --registration-sha256 "$REGISTRATION_SHA256"

@@ -1,0 +1,51 @@
+name: Verify R15 J1 historical lineups
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-r15-j1-lineups/**'
+      - '.github/workflows/r15-j1-lineups.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      R15: workspace-updates/20261125-r15-j1-lineups
+      TMPDIR: /tmp
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify original responses, rows, calendars, comparisons and weights
+        run: python -B "$R15/verify.py" --light --data-root .
+      - id: pin
+        name: Read the finalized source commit from the verified manifest
+        shell: python
+        run: |
+          import json, os, pathlib, re
+          revision = json.loads((pathlib.Path(os.environ["R15"]) / "manifest.json").read_bytes())["source_commit"]
+          if not isinstance(revision, str) or not re.fullmatch(r"[0-9a-f]{40}", revision):
+              raise ValueError("A full source commit SHA is required")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              print(f"revision={revision}", file=output)
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ steps.pin.outputs.revision }}
+          path: source
+          persist-credentials: false
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 threadpoolctl==3.7.0
+      - name: Retrain twice independently from the verified raw snapshot
+        run: python -B "$R15/verify.py" --full --source source --data-root .
