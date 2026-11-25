@@ -4,7 +4,7 @@
 
 ## 本次交付
 
-2026-11-25 铺入七场双确认 FT90 后，签发人于北京时间 20:28:48.878425 登记，输入截止为 20:28:40.319007。浦和的双确认时刻为 20:27:41.369198。完整 R15 历史为 2,822/2,822 行。七场的十四侧都读到 11 名明确首发，按原 R15 四大位置口径，十四侧的位置均为 `unknown_or_ambiguous_position`。开球证据为 J.LEAGUE 的七个 JST 分钟区间，此次 ESPN summary 均无可核的实际开球时刻。
+2026-11-25 七场 FT90 均获双确认后，签发人于北京时间 20:28:48.878425 登记，输入截止为 20:28:40.319007。浦和的双确认时刻为 20:27:41.369198。完整 R15 历史为 2,822/2,822 行。七场的十四侧都读到 11 名明确首发，按原 R15 四大位置口径，十四侧的位置均为 `unknown_or_ambiguous_position`。开球证据为 J.LEAGUE 的七个 JST 分钟区间，此次 ESPN summary 均无可核的实际开球时刻。
 
 十场双方特征复算后，每场都有特征变化。正式 full 的比分、胜平负、总球剂量均为零，两臂的十场决策、排序和三席相同。三席依次为 `espn:401877524`（1–0）、`espn:401877541`（1–1）、`espn:401877538`（1–0）。十场原市场均缺价格和总球线。
 
@@ -76,8 +76,19 @@ receipts=$(jq -er .receipts_sha256 <<<"$original_pins")
 仅需数据仓库、含指定 Git 对象的源码仓库和以上环境。默认复算仅使用前向包及其归档依赖。下面的 `--restore` 在独立目录中还原 `receipts.json`、一份登记和十份原始比赛首次，各自保留 UTC、冻结 ID、记录 SHA 及原始 JSON 字节。
 
 ```bash
+reg=9ba2b89ecb7e504ce9eef40701cbf002082c7548df3f06bce458b286852249be
+receipts=0a9de0ba4f2e2b1a4ad63821b1ea335cbbdbecc73a4dd47f1d88d8552132a30a
 restored=$(mktemp -d)/firsts
 "$py" -B "$tool" verify "${base[@]}" --release "$pkg/release" --restore "$restored" \
+  --registration-sha256 "$reg" --receipts-sha256 "$receipts"
+```
+
+本次还用北京时间 20:27:41.369198 截面的九场最终包独立验证了所有 J1 原始回读，得到同一登记和十份预测。下面的命令可在共享主机复现这一步。
+
+```bash
+review=/workspace/scratch/nov25-live-review-tools/packages/20261125T122741369198Z-nov25-first-review-jleague.tar.gz
+echo "2ad0d42fa60f2ddde28a2cf4a161f1ac8cae1c2afef27dcf8083b53a466ace38  $review" | sha256sum --check
+"$py" -B "$tool" verify "${base[@]}" --review-bundle "$review" \
   --registration-sha256 "$reg" --receipts-sha256 "$receipts"
 ```
 
