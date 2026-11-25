@@ -63,6 +63,10 @@ jobs:
           python -B "$J1/review/verify_pending.py"
           python -B workspace-updates/20261125-forward-settlement/verify_mls.py
           python -B workspace-updates/20261125-forward-settlement/verify_correct_score.py
+      - name: Rebuild the nine issued picks and selected seats from original scores and prices
+        run: |
+          folder=workspace-updates/20261125-forward-settlement/nov25
+          python -B "$folder/scorecards.py" "$folder/evidence.tar.gz"
       - name: Recover the fixed secondary team history in temporary storage
         shell: python
         run: |
