@@ -21,6 +21,7 @@ jobs:
       J1: workspace-updates/20261125-j1-stage-windows
       PYTHONPATH: source/runtime
       OPENBLAS_NUM_THREADS: '1'
+      OPENBLAS_CORETYPE: Haswell
       OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
