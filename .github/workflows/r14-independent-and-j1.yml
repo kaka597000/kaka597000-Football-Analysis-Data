@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'workspace-updates/20261125-j1-stage-windows/**'
+      - 'workspace-updates/20261125-forward-settlement/**'
       - 'workspace-updates/20261125-r14-territory-independent/**'
       - 'workspace-updates/20261125-r14-territory-press/manifest.json'
       - '.github/workflows/r14-independent-and-j1.yml'
@@ -20,6 +21,7 @@ jobs:
       J1: workspace-updates/20261125-j1-stage-windows
       PYTHONPATH: source/runtime
       OPENBLAS_NUM_THREADS: '1'
+      OPENBLAS_CORETYPE: Haswell
       OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
@@ -56,6 +58,7 @@ jobs:
         run: |
           python -B "$J1/verify.py"
           python -B "$J1/review/verify_pending.py"
+          python -B workspace-updates/20261125-forward-settlement/verify_mls.py
       - name: Recover the fixed secondary team history in temporary storage
         shell: python
         run: |
