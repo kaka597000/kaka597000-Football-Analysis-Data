@@ -1,0 +1,88 @@
+{
+  "as_of_utc": "2026-11-25T09:23:03.302039+00:00",
+  "attempts": [
+    {
+      "provider": "ESPN public summary",
+      "scope": "17 registered events; one summary each",
+      "status": "HTTP 200 for 17/17",
+      "result": "DraftKings odds object on 7 Nov25 games; 0 odds objects on Nov28/29; odds.lastUpdated null on every observed object; retrieval time kept separately",
+      "source_records": "../raw/espn-summary-manifest.json",
+      "quote_clock_found": false
+    },
+    {
+      "provider": "ESPN core odds resource",
+      "scope": "one registered event probe",
+      "status": "HTTP 404",
+      "result": "no instance found; no market clock",
+      "source_records": "../espn/core-odds-401877527-metadata.json",
+      "quote_clock_found": false
+    },
+    {
+      "provider": "5DollarFootballAPI",
+      "scope": "status, league catalog, J1 fixture windows",
+      "status": "HTTP 200; Community status, league ID 3836571083; Nov25 returns 7 fixtures and empty events; Nov28/29 returns 0 fixtures",
+      "result": "No bookmaker, market, price, or provider quote timestamp in fixtures payloads. Existing repo record documents prior odds endpoint HTTP 403; project rule says stop provider after 403, so not retried.",
+      "source_records": [
+        "5dollar-status-metadata.json",
+        "5dollar-leagues-metadata.json",
+        "5dollar-fixture-windows.json"
+      ],
+      "quote_clock_found": false
+    },
+    {
+      "provider": "InferSports",
+      "scope": "one scheduled event query per target date",
+      "status": "HTTP 404 for date queries 2026-11-25, 2026-11-28, 2026-11-29",
+      "result": "No events returned; no odds requests; official adapter path used",
+      "source_records": "infersports-event-windows.json",
+      "quote_clock_found": false
+    },
+    {
+      "provider": "The Odds API",
+      "scope": "No request this task",
+      "status": "NOT_RETRIED; existing same-day request HTTP 401 with remaining quota 0/used 500",
+      "result": "User explicitly forbids a retry; no quote is included from this source.",
+      "quote_clock_found": false,
+      "source_records": "/workspace/scratch/stage-j1-20261125/odds/the-odds-api-metadata.json",
+      "source_sha256": null
+    },
+    {
+      "provider": "Chinese sports lottery / mirrors",
+      "scope": "Not accessed",
+      "status": "PROHIBITED_SOURCE_NOT_VISITED",
+      "result": null,
+      "quote_clock_found": false
+    },
+    {
+      "provider": "Pinnacle official public J1 page",
+      "scope": "one ordinary unauthenticated GET of league route; no endpoint discovery or auth workarounds",
+      "status": "HTTP 200 HTML client shell",
+      "result": "No target team/event names or market/price/clock in returned HTML. Standard local Chromium render attempt failed in managed runtime before producing a DOM; no quote captured.",
+      "source_records": [
+        "pinnacle-public-page-metadata.json",
+        "pinnacle-j1-public-page.html"
+      ],
+      "source_sha256": "0c19f42f39fe39ffc51d1add16e6d380d7c4807100d3ffe7695078e393a28c26",
+      "quote_clock_found": false
+    },
+    {
+      "provider": "AsianOdds.org public football feed",
+      "scope": "one public football-feed request using route documented by existing repository source audit",
+      "status": "HTTP 503 Service Unavailable",
+      "result": "No response body retained; one request and no retry. Project source audit reports a BetInAsia-only feed with a 30-second page refresh, but no per-market quote timestamp/tick history.",
+      "source_records": "asianodds-feed-metadata.json",
+      "quote_clock_found": false,
+      "response_sha256": null
+    },
+    {
+      "provider": "Pinnacle browser rendering",
+      "scope": "ordinary rendered league page only; no login, hidden endpoint probing, or auth workaround",
+      "status": "NOT_AVAILABLE_IN_CHAT; headless local attempt failed to return DOM",
+      "result": "Remote desktop capability was enabled but its JavaScript control tool was not exposed; managed headless Chromium did not return a DOM. The ordinary HTTPS HTML response remains archived.",
+      "source_records": "pinnacle-public-page-metadata.json",
+      "quote_clock_found": false
+    }
+  ],
+  "strict_quote_definition": "Same identified bookmaker, market and both sides/prices, with bookmaker/market provider last_update distinct from retrieval time.",
+  "strict_quote_found": false
+}

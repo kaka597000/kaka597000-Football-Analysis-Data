@@ -1,0 +1,45 @@
+name: Verify R14 territory and pressing hurdles
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-r14-territory-press/**'
+      - '.github/workflows/r14-territory-press.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      R14: workspace-updates/20261125-r14-territory-press
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - id: pin
+        name: Read the full source revision from the data manifest
+        shell: python
+        run: |
+          import json, os, pathlib, re
+          manifest = json.loads((pathlib.Path(os.environ['R14']) / 'manifest.json').read_bytes())
+          revision = manifest['source_commit']
+          if not isinstance(revision, str) or not re.fullmatch('[0-9a-f]{40}', revision):
+              raise ValueError('The data PR requires a finalized source commit')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              print(f'revision={revision}', file=output)
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ steps.pin.outputs.revision }}
+          path: source
+          persist-credentials: false
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0
+      - name: Rebuild from archived raw and train twice
+        run: python -B "$R14/verify.py" --source source --data-root .

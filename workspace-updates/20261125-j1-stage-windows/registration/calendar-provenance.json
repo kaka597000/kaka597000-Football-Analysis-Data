@@ -1,0 +1,50 @@
+{
+  "requested_pre_registration_sha256": "35c141399c7e32c0f0f02b530455b38f035ec30417ef59efcab54a39997f7fec",
+  "status": "NOT_RECOVERED_EXACT_BYTES_OR_PRINTED_VARIANT",
+  "search_scope": [
+    "workspace scratch files by name",
+    "workspace text search for requested SHA256",
+    "R14 J1 staging evidence archives by member name"
+  ],
+  "later_capture": [
+    {
+      "year": 2026,
+      "path": "schedule-recovery/espn_calendar_2026.json",
+      "sha256": "88ae1a444b952f521beda041b3c8cc4784421e88484032a3450e9075fb0c2fa4",
+      "bytes": 3989920,
+      "source_capture": {
+        "year": 2026,
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=2026&limit=1000",
+        "retrieved_at_utc": "2026-11-25T08:49:14.772983+00:00",
+        "http_status": 200,
+        "content_type": "application/json;charset=UTF-8",
+        "sha256": "88ae1a444b952f521beda041b3c8cc4784421e88484032a3450e9075fb0c2fa4",
+        "bytes": 3989920,
+        "response_event_count": 399,
+        "regular_season_count": 199,
+        "limit": 1000
+      },
+      "matches_requested_preschedule_sha256": false
+    },
+    {
+      "year": 2027,
+      "path": "schedule-recovery/espn_calendar_2027.json",
+      "sha256": "2f4bbe9d0ce4f52c507e977df680031a6e1ac3311c7029983f99b33496eabe6b",
+      "bytes": 1257041,
+      "source_capture": {
+        "year": 2027,
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/jpn.1/scoreboard?dates=2027&limit=1000",
+        "retrieved_at_utc": "2026-11-25T08:49:19.138382+00:00",
+        "http_status": 200,
+        "content_type": "application/json;charset=UTF-8",
+        "sha256": "2f4bbe9d0ce4f52c507e977df680031a6e1ac3311c7029983f99b33496eabe6b",
+        "bytes": 1257041,
+        "response_event_count": 181,
+        "regular_season_count": 181,
+        "limit": 1000
+      },
+      "matches_requested_preschedule_sha256": false
+    }
+  ],
+  "interpretation": "The preserved annual ESPN 2026 bytes are a later capture and do not match the supplied pre-registration hash. They are copied byte-for-byte as that later capture only; no equivalence is claimed."
+}

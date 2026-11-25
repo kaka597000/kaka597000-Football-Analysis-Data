@@ -1,0 +1,104 @@
+{
+  "as_of": "2026-11-25T17:31:00+08:00",
+  "registration": {
+    "record_sha256": "72c7037d45286dfc846f930a027b3b0b728cbc019180e1217b80d989e94e92f2",
+    "track": "j1-comprehensive-windows-20261125-registration",
+    "windows": {
+      "nov25": 7,
+      "nov28_29": 10
+    }
+  },
+  "windows": {
+    "nov25": {
+      "registered": 7,
+      "settled": 0,
+      "authored_firsts": 7,
+      "authored_ordered_threes": 7,
+      "original_channel_confirmed": 0,
+      "original_body_verified": true,
+      "observed_lines": 7,
+      "fully_timestamped_prices": 0,
+      "selected": [
+        "espn:401877528",
+        "espn:401877527",
+        "espn:401877546"
+      ],
+      "selected_firsts_all_hit": null,
+      "coverage_blockers": [
+        "UNSETTLED_REGISTERED_FIXTURES",
+        "CONFIRMED_DISPLAY_MINIMUM_NOT_MET",
+        "INDEPENDENT_FIRST_RECEIPT_OR_READBACK_UNCERTIFIED",
+        "STRICT_BOOKMAKER_MARKET_COVERAGE_BELOW_REGISTERED_MINIMUM",
+        "NONPUSH_MARKET_SETTLEMENT_MINIMUM_NOT_MET",
+        "SELECTED_THREE_PRIMARY_SWEEP_INCOMPLETE"
+      ]
+    },
+    "nov28_29": {
+      "registered": 10,
+      "settled": 0,
+      "authored_firsts": 0,
+      "authored_ordered_threes": 0,
+      "original_channel_confirmed": 0,
+      "original_body_verified": false,
+      "observed_lines": 0,
+      "fully_timestamped_prices": 0,
+      "selected": [],
+      "selected_firsts_all_hit": null,
+      "coverage_blockers": [
+        "UNSETTLED_REGISTERED_FIXTURES",
+        "CONFIRMED_DISPLAY_MINIMUM_NOT_MET",
+        "INDEPENDENT_FIRST_RECEIPT_OR_READBACK_UNCERTIFIED",
+        "STRICT_BOOKMAKER_MARKET_COVERAGE_BELOW_REGISTERED_MINIMUM",
+        "NONPUSH_MARKET_SETTLEMENT_MINIMUM_NOT_MET",
+        "COMPLETE_PREKICKOFF_SELECTED_BATCH_NOT_LOCKED",
+        "SELECTED_THREE_PRIMARY_SWEEP_INCOMPLETE"
+      ]
+    }
+  },
+  "both_windows_phases": [
+    {
+      "stage": "stage_1",
+      "pass_": false,
+      "per_window_thresholds_met": {
+        "nov25": false,
+        "nov28_29": false
+      },
+      "blockers": [
+        "SAME_STAGE_MUST_PASS_IN_BOTH_REGISTERED_WINDOWS"
+      ]
+    },
+    {
+      "stage": "stage_2",
+      "pass_": false,
+      "per_window_thresholds_met": {
+        "nov25": false,
+        "nov28_29": false
+      },
+      "blockers": [
+        "SAME_STAGE_MUST_PASS_IN_BOTH_REGISTERED_WINDOWS"
+      ]
+    },
+    {
+      "stage": "stage_3",
+      "pass_": false,
+      "per_window_thresholds_met": {
+        "nov25": false,
+        "nov28_29": false
+      },
+      "blockers": [
+        "SAME_STAGE_MUST_PASS_IN_BOTH_REGISTERED_WINDOWS"
+      ]
+    },
+    {
+      "stage": "final",
+      "pass_": false,
+      "per_window_thresholds_met": {
+        "nov25": false,
+        "nov28_29": false
+      },
+      "blockers": [
+        "SAME_STAGE_MUST_PASS_IN_BOTH_REGISTERED_WINDOWS"
+      ]
+    }
+  ]
+}
