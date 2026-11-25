@@ -43,6 +43,7 @@ def crosscheck(rows, as_of):
         teams, status = header['teams'], header['status']
         if (fixture['cohort'] != 'afc.champions:ELITE:league_phase' or fixture['stage'] != 'league_phase'
                 or game['matchId'] != fid or game['leagueId'] != 943984 or game['leagueRoundName'] != '5'
+                or game['parentLeagueId'] != 525 or game['leagueName'] != 'AFC Champions League Elite East'
                 or aware(game['matchTimeUTCDate']) != kickoff or aware(status['utcTime']) != kickoff
                 or at < kickoff + timedelta(minutes=90) or len(teams) != 2):
             raise ValueError('independent AFC competition, stage, teams or kickoff differ')
