@@ -37,6 +37,14 @@
 
 从数据仓库根目录运行 `python -B workspace-updates/20261125-four-league-windows/ger.1/early-prices/verify.py` 可离线重算首版登记签名、九个比赛身份、供应方逐行价格和时钟及全部组合分母。[原件归档与 SHA-256](ger.1/early-prices/SHA256SUMS)
 
+## 德甲首窗 18 家俱乐部的近况和人员资料
+
+Dalton 的赛前资料对应首版登记的全部 9 场、18 家俱乐部。历史截于北京时间 11 月 25 日 21:23:02，人员来源最后收齐于 22:07:23。每队分别取各项正式赛事最近五场、德甲最近五场，各有 90 个球队比赛席位。两组共涉及 67 场不同比赛。两组均有 90/90 席可核对 ESPN 和 FotMob 的 90 分钟比分，并读出双方 xG、射正。加时比赛用 90 分钟节点及常规时间分项统计。五场在德甲前进行的欧战也与已归档的逐队赛历一致。[逐场近况](ger.1/club-inputs/last-five-fixtures.csv) · [五场汇总](ger.1/club-inputs/last-five-metrics.csv)
+
+德国职业足球联盟（DFL）已刊出 18 队的预计首发，共 198 人。采集时正式比赛首发和比赛名单的已发布队数均为 0。FotMob 的具名缺阵记录有球员伤情 78 条、球员停赛 2 条、教练停赛 1 条。奥格斯堡的 Han-Noah Massengo 同时出现在预计首发和供方缺阵表，两条原始记录并列保存。各俱乐部的发布状态、原行及来源时间可逐项回查。[俱乐部发布状态](ger.1/club-inputs/club-status.csv) · [DFL 预计首发](ger.1/club-inputs/projected-lineups.csv) · [具名缺阵](ger.1/club-inputs/availability.csv)
+
+资料包有 799 个成员，同时保留九场既有 R5 首版及其来源回执。运行 `python -B workspace-updates/20261125-four-league-windows/ger.1/club-inputs/verify.py` 可从原始证据复算两套近况、人员状态及签名，再与仓库内的逐场表核对。[Dalton 完整原包](ger.1/club-inputs/bundesliga-nine-prematch-da43c45b1d0da247.tar.gz) · [归档及各表 SHA-256](ger.1/club-inputs/bundle.json)
+
 ## 独立验证
 
 注册使用源码提交 `e8109accb50dd09c8b3f9e48f1282f53901965bb`。独立复算使用后续包含逐赛事验收入口的提交 `e11bb6f8144828a84e99973d69518ae5364133d0`、Python 3.12 和项目依赖。在数据仓库根目录运行下列命令，把 `/path/to/Football-Analysis` 换成实际源码目录。
