@@ -3,8 +3,8 @@
   "plan_sha256": "25eb46a2c5e4ebfbc917c0c918cea68d03f2f3d6c010276f0269b42257fe9b7a",
   "population": 6,
   "issued": 6,
-  "settled": 0,
-  "pending": 6,
+  "settled": 6,
+  "pending": 0,
   "automatic_promotion": false,
   "arms": {
     "market_baseline": {
@@ -13,30 +13,30 @@
       "real_line_selections": 6,
       "metrics": {
         "score_top1": {
-          "n": 0,
-          "hits": 0,
-          "accuracy": null
+          "n": 6,
+          "hits": 1,
+          "accuracy": 0.16666666666666666
         },
         "wdl": {
-          "n": 0,
-          "hits": 0,
-          "accuracy": null
+          "n": 6,
+          "hits": 4,
+          "accuracy": 0.6666666666666666
         },
         "total_strict_full_win": {
-          "n": 0,
-          "hits": 0,
-          "accuracy": null
+          "n": 6,
+          "hits": 4,
+          "accuracy": 0.6666666666666666
         }
       },
       "total_settlements": {
-        "FULL_WIN": 0,
+        "FULL_WIN": 4,
         "HALF_WIN": 0,
         "PUSH": 0,
-        "HALF_LOSS": 0,
+        "HALF_LOSS": 2,
         "FULL_LOSS": 0
       },
-      "mean_score_log_loss": null,
-      "mean_wdl_brier": null
+      "mean_score_log_loss": 2.682859287942341,
+      "mean_wdl_brier": 0.43086776854404757
     },
     "lightgbm": {
       "forecasts": 6,
@@ -44,30 +44,30 @@
       "real_line_selections": 6,
       "metrics": {
         "score_top1": {
-          "n": 0,
+          "n": 6,
           "hits": 0,
-          "accuracy": null
+          "accuracy": 0.0
         },
         "wdl": {
-          "n": 0,
-          "hits": 0,
-          "accuracy": null
+          "n": 6,
+          "hits": 4,
+          "accuracy": 0.6666666666666666
         },
         "total_strict_full_win": {
-          "n": 0,
-          "hits": 0,
-          "accuracy": null
+          "n": 6,
+          "hits": 4,
+          "accuracy": 0.6666666666666666
         }
       },
       "total_settlements": {
-        "FULL_WIN": 0,
+        "FULL_WIN": 4,
         "HALF_WIN": 0,
         "PUSH": 0,
-        "HALF_LOSS": 0,
+        "HALF_LOSS": 2,
         "FULL_LOSS": 0
       },
-      "mean_score_log_loss": null,
-      "mean_wdl_brier": null
+      "mean_score_log_loss": 2.6707119350239434,
+      "mean_wdl_brier": 0.4234126619010121
     },
     "lstm": {
       "forecasts": 6,
@@ -75,117 +75,117 @@
       "real_line_selections": 6,
       "metrics": {
         "score_top1": {
-          "n": 0,
+          "n": 6,
           "hits": 0,
-          "accuracy": null
+          "accuracy": 0.0
         },
         "wdl": {
-          "n": 0,
-          "hits": 0,
-          "accuracy": null
+          "n": 6,
+          "hits": 4,
+          "accuracy": 0.6666666666666666
         },
         "total_strict_full_win": {
-          "n": 0,
-          "hits": 0,
-          "accuracy": null
+          "n": 6,
+          "hits": 4,
+          "accuracy": 0.6666666666666666
         }
       },
       "total_settlements": {
-        "FULL_WIN": 0,
+        "FULL_WIN": 4,
         "HALF_WIN": 0,
         "PUSH": 0,
-        "HALF_LOSS": 0,
+        "HALF_LOSS": 2,
         "FULL_LOSS": 0
       },
-      "mean_score_log_loss": null,
-      "mean_wdl_brier": null
+      "mean_score_log_loss": 2.6733275357764046,
+      "mean_wdl_brier": 0.4236136688218946
     }
   },
   "paired": {
     "lightgbm_minus_market_baseline": {
       "score_top1": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
-        "lost": 0,
-        "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "lost": 1,
+        "net_hits": -1,
+        "net_rate": -0.16666666666666666,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       },
       "wdl": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
         "lost": 0,
         "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "net_rate": 0.0,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       },
       "total_strict_full_win": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
         "lost": 0,
         "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "net_rate": 0.0,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       }
     },
     "lstm_minus_market_baseline": {
       "score_top1": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
-        "lost": 0,
-        "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "lost": 1,
+        "net_hits": -1,
+        "net_rate": -0.16666666666666666,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       },
       "wdl": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
         "lost": 0,
         "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "net_rate": 0.0,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       },
       "total_strict_full_win": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
         "lost": 0,
         "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "net_rate": 0.0,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       }
     },
     "lstm_minus_lightgbm": {
       "score_top1": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
         "lost": 0,
         "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "net_rate": 0.0,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       },
       "wdl": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
         "lost": 0,
         "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "net_rate": 0.0,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       },
       "total_strict_full_win": {
-        "eligible": 0,
+        "eligible": 6,
         "gained": 0,
         "lost": 0,
         "net_hits": 0,
-        "net_rate": null,
-        "matchday_blocks": 0,
+        "net_rate": 0.0,
+        "matchday_blocks": 1,
         "date_block_bootstrap_95pct_rate": null
       }
     }
@@ -197,10 +197,44 @@
       "matchday": "2026-11-18",
       "matchday_timezone": "America/Sao_Paulo",
       "freeze_sha256": "b6dd661083fc53087c7eaf403432af316ebe6f012b831dd3e2b34c035836bc33",
-      "result": null,
-      "status": "PENDING",
+      "result": {
+        "home": 0,
+        "away": 1,
+        "source": {
+          "captured_at": "2026-11-19T07:24:31.433073+00:00",
+          "path": "raw/89798dd99fb2532bb64554327ec0d4ac70b81c80de3db205a44d49e5a8d4764d.json.gz",
+          "sha256": "89798dd99fb2532bb64554327ec0d4ac70b81c80de3db205a44d49e5a8d4764d",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary?event=401841315"
+        }
+      },
+      "status": "SETTLED",
       "source_issues": [],
-      "outcomes": {}
+      "outcomes": {
+        "lightgbm": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.4142374083985656,
+          "wdl_brier": 0.44872949621128605
+        },
+        "lstm": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.4065080562382297,
+          "wdl_brier": 0.443612830970372
+        },
+        "market_baseline": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.4106615320672122,
+          "wdl_brier": 0.44911583996140314
+        }
+      }
     },
     {
       "match_id": "espn:401841310",
@@ -208,10 +242,44 @@
       "matchday": "2026-11-18",
       "matchday_timezone": "America/Sao_Paulo",
       "freeze_sha256": "c23e27b26de5f9d6f81ee899b3cf07930bd4e8b3b39a4ed19d886c884d508d22",
-      "result": null,
-      "status": "PENDING",
+      "result": {
+        "home": 2,
+        "away": 0,
+        "source": {
+          "captured_at": "2026-11-19T07:24:31.709857+00:00",
+          "path": "raw/3ba08e2023e13d9bbc8a1beab65662c836b57e2a5cc578451fe2cc70d419744e.json.gz",
+          "sha256": "3ba08e2023e13d9bbc8a1beab65662c836b57e2a5cc578451fe2cc70d419744e",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary?event=401841310"
+        }
+      },
+      "status": "SETTLED",
       "source_issues": [],
-      "outcomes": {}
+      "outcomes": {
+        "lightgbm": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.377900288614042,
+          "wdl_brier": 0.21999260707546908
+        },
+        "lstm": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.363777028460521,
+          "wdl_brier": 0.22804251972973616
+        },
+        "market_baseline": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.3865257657282064,
+          "wdl_brier": 0.2435162077866812
+        }
+      }
     },
     {
       "match_id": "espn:401841313",
@@ -219,10 +287,44 @@
       "matchday": "2026-11-18",
       "matchday_timezone": "America/Sao_Paulo",
       "freeze_sha256": "a48720f1d2a2ad913b7dea596e8555d48a20b538420afa171951846de1a41120",
-      "result": null,
-      "status": "PENDING",
+      "result": {
+        "home": 2,
+        "away": 1,
+        "source": {
+          "captured_at": "2026-11-19T07:24:32.242119+00:00",
+          "path": "raw/ff947f2783ca63c76ff6e0cb3f8b3808f114ed4ea69b536303199d987b46836c.json.gz",
+          "sha256": "ff947f2783ca63c76ff6e0cb3f8b3808f114ed4ea69b536303199d987b46836c",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary?event=401841313"
+        }
+      },
+      "status": "SETTLED",
       "source_issues": [],
-      "outcomes": {}
+      "outcomes": {
+        "lightgbm": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "HALF_LOSS",
+          "total_strict_full_win": false,
+          "score_log_loss": 2.1462731146171374,
+          "wdl_brier": 0.08289135160019291
+        },
+        "lstm": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "HALF_LOSS",
+          "total_strict_full_win": false,
+          "score_log_loss": 2.1656379789548104,
+          "wdl_brier": 0.07274691511867439
+        },
+        "market_baseline": {
+          "score_top1": true,
+          "wdl": true,
+          "total_settlement": "HALF_LOSS",
+          "total_strict_full_win": false,
+          "score_log_loss": 2.1468267174906353,
+          "wdl_brier": 0.08303098017238093
+        }
+      }
     },
     {
       "match_id": "espn:401841314",
@@ -230,10 +332,44 @@
       "matchday": "2026-11-18",
       "matchday_timezone": "America/Sao_Paulo",
       "freeze_sha256": "5a613f8cc556289c173e7cb10623374fdd99df5cd477fc84eca0f14eb7435057",
-      "result": null,
-      "status": "PENDING",
+      "result": {
+        "home": 2,
+        "away": 1,
+        "source": {
+          "captured_at": "2026-11-19T07:24:31.988450+00:00",
+          "path": "raw/03167cc2d776f6455b879e4822c11141e3e1fe564bb4babfda6c3f30a20a6598.json.gz",
+          "sha256": "03167cc2d776f6455b879e4822c11141e3e1fe564bb4babfda6c3f30a20a6598",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary?event=401841314"
+        }
+      },
+      "status": "SETTLED",
       "source_issues": [],
-      "outcomes": {}
+      "outcomes": {
+        "lightgbm": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "HALF_LOSS",
+          "total_strict_full_win": false,
+          "score_log_loss": 2.4026314483614883,
+          "wdl_brier": 0.6255923200797708
+        },
+        "lstm": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "HALF_LOSS",
+          "total_strict_full_win": false,
+          "score_log_loss": 2.4056082586239587,
+          "wdl_brier": 0.6319702267900997
+        },
+        "market_baseline": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "HALF_LOSS",
+          "total_strict_full_win": false,
+          "score_log_loss": 2.406095023035679,
+          "wdl_brier": 0.6329488351190127
+        }
+      }
     },
     {
       "match_id": "espn:401841312",
@@ -241,10 +377,44 @@
       "matchday": "2026-11-18",
       "matchday_timezone": "America/Sao_Paulo",
       "freeze_sha256": "94a9cfb052b4e0762b5afb052eb9e576f0039bbccdca028f86f0aec7c00f2bf5",
-      "result": null,
-      "status": "PENDING",
+      "result": {
+        "home": 0,
+        "away": 0,
+        "source": {
+          "captured_at": "2026-11-19T07:24:32.836534+00:00",
+          "path": "raw/b1988d3ee9005e14efc14034f962b6ba11f418d282d8ac6141b468302a07ae86.json.gz",
+          "sha256": "b1988d3ee9005e14efc14034f962b6ba11f418d282d8ac6141b468302a07ae86",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary?event=401841312"
+        }
+      },
+      "status": "SETTLED",
       "source_issues": [],
-      "outcomes": {}
+      "outcomes": {
+        "lightgbm": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.690443347329329,
+          "wdl_brier": 0.8197028637934799
+        },
+        "lstm": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.6967110832418784,
+          "wdl_brier": 0.8210566364572707
+        },
+        "market_baseline": {
+          "score_top1": false,
+          "wdl": false,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 2.699663527837848,
+          "wdl_brier": 0.8200623910574258
+        }
+      }
     },
     {
       "match_id": "espn:401841316",
@@ -252,17 +422,51 @@
       "matchday": "2026-11-18",
       "matchday_timezone": "America/Sao_Paulo",
       "freeze_sha256": "dec720eca6da697ae310738e6a33f28d8655c470aae4ef91a007fba525fd0d1f",
-      "result": null,
-      "status": "PENDING",
+      "result": {
+        "home": 4,
+        "away": 0,
+        "source": {
+          "captured_at": "2026-11-19T07:24:32.497984+00:00",
+          "path": "raw/f5be88a1162521920b95302fa4af4e3051960f43c8b847c0c32dc7b2966ef99a.json.gz",
+          "sha256": "f5be88a1162521920b95302fa4af4e3051960f43c8b847c0c32dc7b2966ef99a",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/summary?event=401841316"
+        }
+      },
+      "status": "SETTLED",
       "source_issues": [],
-      "outcomes": {}
+      "outcomes": {
+        "lightgbm": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 3.9927860028230997,
+          "wdl_brier": 0.343567332645874
+        },
+        "lstm": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 4.001722809139029,
+          "wdl_brier": 0.3442528838652148
+        },
+        "market_baseline": {
+          "score_top1": false,
+          "wdl": true,
+          "total_settlement": "FULL_WIN",
+          "total_strict_full_win": true,
+          "score_log_loss": 4.047383161494468,
+          "wdl_brier": 0.3565323571673816
+        }
+      }
     }
   ],
   "freeze_receipt": {
-    "freeze_id": "cae979e1f93bc35a-v000001",
-    "recorded_at": "2026-11-18T12:08:26.079721+08:00",
-    "path": "reviews/cae979e1f93bc35a8945bc2f56542dc87934c0a4c32684feee4c51b7d10197b1/000001.json",
-    "sha256": "bd53cf6580d6c3288d8c04cfda4fefe806c303ab13167099584bd6953224fbb3",
+    "freeze_id": "cae979e1f93bc35a-v000002",
+    "recorded_at": "2026-11-19T15:24:55.750124+08:00",
+    "path": "reviews/cae979e1f93bc35a8945bc2f56542dc87934c0a4c32684feee4c51b7d10197b1/000002.json",
+    "sha256": "db79140fb9f10c28287ec21ed87b9fa2ec260e0ec9c212dbc029b2120a39656f",
     "evaluation_slot": "SEPARATE_REVISION_OR_STAGE"
   }
 }
