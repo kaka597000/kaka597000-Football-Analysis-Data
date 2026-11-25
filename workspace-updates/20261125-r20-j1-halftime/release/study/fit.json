@@ -1,0 +1,88 @@
+{
+  "version": "R20-J1-latent-halftime-1",
+  "competition": "jpn.1",
+  "protocol_sha256": "1d9e483923e84facc6f674411dc8e25c8543453d9778a671acd9dd1498aa1d30",
+  "halves_sha256": "923dfda86ab85343a59a3b97f9cdeb816633fd47c29d450a3934b57ec7565839",
+  "panel_sha256": "d0e9591d8221bd3e1f41b480a7f14c5eb743f1020ca2afaae23454bad49c8140",
+  "calibration": {
+    "version": "R20-J1-latent-halftime-1",
+    "training_observed": 1910,
+    "shares": [
+      0.4130841121495327,
+      0.4329501915708812
+    ],
+    "exposure": {
+      "leading": {
+        "team_halves": 1068,
+        "goals": 875,
+        "expected": 857.8820501811354
+      },
+      "trailing": {
+        "team_halves": 1068,
+        "goals": 799,
+        "expected": 761.4274995898594
+      }
+    },
+    "leading": 1.019499145489229,
+    "trailing": 1.0480818763479158
+  },
+  "doses": {
+    "score": 0.0,
+    "wdl": 0.0,
+    "total": 0.0
+  },
+  "trials": [
+    {
+      "dose": 0.0,
+      "first": 49,
+      "three": 115,
+      "wdl": 158,
+      "total": 0,
+      "total_n": 0,
+      "loss": 1125.8568919566146
+    },
+    {
+      "dose": 0.5,
+      "first": 48,
+      "three": 114,
+      "wdl": 158,
+      "total": 0,
+      "total_n": 0,
+      "loss": 1125.5702074619653
+    },
+    {
+      "dose": 1.0,
+      "first": 46,
+      "three": 113,
+      "wdl": 158,
+      "total": 0,
+      "total_n": 0,
+      "loss": 1125.3394112871513
+    }
+  ],
+  "bounds": [
+    "2024-01-01",
+    "2025-01-01",
+    "2026-01-01"
+  ],
+  "training_through": "2023-12-03",
+  "validation_through": "2024-12-08",
+  "coverage": {
+    "training": {
+      "fixtures": 1912,
+      "verified_halves": 1910
+    },
+    "validation": {
+      "fixtures": 380,
+      "verified_halves": 378
+    },
+    "evaluation": {
+      "fixtures": 380,
+      "verified_halves": 380
+    },
+    "recent": {
+      "fixtures": 150,
+      "verified_halves": 150
+    }
+  }
+}
