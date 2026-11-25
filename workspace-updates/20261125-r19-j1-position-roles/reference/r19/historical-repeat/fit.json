@@ -1,0 +1,164 @@
+{
+  "version": "R15-J1-prior-starters-1",
+  "competition": "jpn.1",
+  "bounds": [
+    "2024-01-01",
+    "2025-01-01",
+    "2026-01-01"
+  ],
+  "features": [
+    "own_attack_form",
+    "opponent_concession_form",
+    "own_attack_rating",
+    "opponent_defensive_concession_rating",
+    "own_attack_retention",
+    "opponent_defence_retention"
+  ],
+  "roster_coverage": "PARTIAL",
+  "training_games": 1912,
+  "training_through": "2023-12-03",
+  "validation_games": 380,
+  "validation_through": "2024-12-08",
+  "fitted": {
+    "full": {
+      "version": "R15-J1-prior-starters-1",
+      "features": [
+        "own_attack_form",
+        "opponent_concession_form",
+        "own_attack_rating",
+        "opponent_defensive_concession_rating",
+        "own_attack_retention",
+        "opponent_defence_retention"
+      ],
+      "ridge": 24.0,
+      "coefficient_bound": 1.5,
+      "feature_limit": 1.0,
+      "shift_limit": 0.65,
+      "ipf_rtol": 1e-12,
+      "ipf_max_iter": 1024,
+      "training_games": 1912,
+      "games_with_signal": 1885,
+      "fit_games": 1885,
+      "scoring_fit_sides": 3770,
+      "positive_fit_sides": 2688,
+      "scoring_beta": [
+        -0.11058505334255525,
+        -0.3353210180559144,
+        -0.0938542896449733,
+        0.012656257662119728,
+        -0.13363485142771217,
+        -0.04107342584996134
+      ],
+      "positive_beta": [
+        -0.33081452252334925,
+        -0.2639018036313142,
+        0.07070428603533466,
+        -0.03538675364226676,
+        -0.022728466653635558,
+        -0.15796067148620863
+      ],
+      "estimator": "R14-territory-press-hurdle-1",
+      "form_only": false
+    },
+    "form": {
+      "version": "R15-J1-prior-starters-1",
+      "features": [
+        "own_attack_form",
+        "opponent_concession_form"
+      ],
+      "ridge": 24.0,
+      "coefficient_bound": 1.5,
+      "feature_limit": 1.0,
+      "shift_limit": 0.65,
+      "ipf_rtol": 1e-12,
+      "ipf_max_iter": 1024,
+      "training_games": 1912,
+      "games_with_signal": 1885,
+      "fit_games": 1885,
+      "scoring_fit_sides": 3770,
+      "positive_fit_sides": 2688,
+      "scoring_beta": [
+        -0.12553215384455882,
+        -0.33156199254350355
+      ],
+      "positive_beta": [
+        -0.3253711675998805,
+        -0.25105331731859326
+      ],
+      "estimator": "R14-territory-press-hurdle-1",
+      "form_only": true
+    }
+  },
+  "doses": {
+    "full": {
+      "score": 0.0,
+      "wdl": 0.0,
+      "total": 0.0
+    },
+    "form": {
+      "score": 1.0,
+      "wdl": 0.0,
+      "total": 0.0
+    }
+  },
+  "trials": {
+    "full": [
+      {
+        "dose": 0.0,
+        "first": 49,
+        "three": 115,
+        "wdl": 158,
+        "total": 0,
+        "total_n": 0,
+        "loss": 1125.8568919566146
+      },
+      {
+        "dose": 0.5,
+        "first": 48,
+        "three": 115,
+        "wdl": 158,
+        "total": 0,
+        "total_n": 0,
+        "loss": 1121.6110391531902
+      },
+      {
+        "dose": 1.0,
+        "first": 47,
+        "three": 117,
+        "wdl": 153,
+        "total": 0,
+        "total_n": 0,
+        "loss": 1119.2079763174806
+      }
+    ],
+    "form": [
+      {
+        "dose": 0.0,
+        "first": 49,
+        "three": 115,
+        "wdl": 158,
+        "total": 0,
+        "total_n": 0,
+        "loss": 1125.8568919566146
+      },
+      {
+        "dose": 0.5,
+        "first": 48,
+        "three": 117,
+        "wdl": 157,
+        "total": 0,
+        "total_n": 0,
+        "loss": 1121.7015296249724
+      },
+      {
+        "dose": 1.0,
+        "first": 51,
+        "three": 119,
+        "wdl": 152,
+        "total": 0,
+        "total_n": 0,
+        "loss": 1119.1271182225753
+      }
+    ]
+  }
+}
