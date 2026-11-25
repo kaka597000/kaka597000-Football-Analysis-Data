@@ -29,7 +29,7 @@ jobs:
         shell: python
         run: |
           import json, os, pathlib, re
-          revision = json.loads((pathlib.Path(os.environ['R14']) / 'manifest.json').read_bytes())['source_commit']
+          revision = (pathlib.Path(os.environ['J1']) / 'review/source-commit.txt').read_text().strip()
           if not re.fullmatch('[0-9a-f]{40}', revision):
               raise ValueError('Missing source revision')
           with open(os.environ['GITHUB_OUTPUT'],'a') as output:
@@ -43,9 +43,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install -r source/requirements.txt
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0
+      - name: Verify shared numerical code matches the R14 training manifest
+        shell: python
+        run: |
+          import hashlib, json, os, pathlib
+          files = json.loads((pathlib.Path(os.environ['R14']) / 'manifest.json').read_bytes())['source_files']
+          for name, expected in files.items():
+              if hashlib.sha256((pathlib.Path('source') / name).read_bytes()).hexdigest() != expected:
+                  raise ValueError('R14 numerical source mismatch ' + name)
       - name: Verify full J1 schedule, first user-facing text, market prices and original ranked slots
-        run: python -B "$J1/verify.py"
+        run: |
+          python -B "$J1/verify.py"
+          python -B "$J1/review/verify_pending.py"
       - name: Recover the fixed secondary team history in temporary storage
         shell: python
         run: |
