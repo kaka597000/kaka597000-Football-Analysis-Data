@@ -111,6 +111,11 @@ def main():
         files(pkg / "replay/reference") == files(pkg / "replay/repeat"), "reference and repeat tree differ"
     )
     check(len(files(pkg / "replay/reference")) == 38, "historical output file count differs")
+    ordered_ranks = pkg / "verification/independent/ordered-ranks.csv"
+    check(
+        fsha(ordered_ranks) == lock["independent_ordered_csv_sha256"],
+        "independent ordered-ranks CSV SHA differs",
+    )
     # Check source parents through their original manifests, using R21's independently retained input index.
     inp = json.loads((r21 / "inputs/source-inputs.json").read_bytes())
     paths = {
@@ -268,11 +273,26 @@ def main():
             env=env,
             stdout=subprocess.DEVNULL,
         )
-        for name, digest in files(pkg / "reports").items():
-            if name == "build_reports.py":
-                continue
+        run(
+            [
+                sys.executable,
+                "-B",
+                pkg / "reports/build_coverage_bottleneck.py",
+                "--replay",
+                aout,
+                "--ordered-ranks",
+                ordered_ranks,
+                "--output",
+                reports / "coverage-bottleneck.json",
+            ],
+            env=env,
+        )
+        expected_reports = files(pkg / "reports")
+        del expected_reports["build_reports.py"], expected_reports["build_coverage_bottleneck.py"]
+        rebuilt_reports = files(reports)
+        for name in sorted(expected_reports.keys() | rebuilt_reports.keys()):
             check(
-                (reports / name).is_file() and fsha(reports / name) == digest,
+                expected_reports.get(name) == rebuilt_reports.get(name),
                 "derived report differs: " + name,
             )
         # Secondary independent projection implementation is re-executed against the same pinned inputs.
