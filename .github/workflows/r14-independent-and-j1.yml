@@ -59,6 +59,7 @@ jobs:
           python -B "$J1/verify.py"
           python -B "$J1/review/verify_pending.py"
           python -B workspace-updates/20261125-forward-settlement/verify_mls.py
+          python -B workspace-updates/20261125-forward-settlement/verify_correct_score.py
       - name: Recover the fixed secondary team history in temporary storage
         shell: python
         run: |
@@ -78,3 +79,13 @@ jobs:
           python "$EARLY/verify_comparisons.py" --r10 "$R10" --early-aggregate "$RUNNER_TEMP/r14-early.json" \
             --archive "$RUNNER_TEMP/r14-history.zip" --out "$RUNNER_TEMP/r14-early-audit.json"
           python "$EARLY/check_rebuild.py" --aggregate "$RUNNER_TEMP/r14-early.json" --audit "$RUNNER_TEMP/r14-early-audit.json"
+      - name: Retain independent numerical output for comparison on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r14-independent-numerical-output
+          path: |
+            ${{ runner.temp }}/r14-early.json
+            ${{ runner.temp }}/r14-early-audit.json
+          if-no-files-found: ignore
+          retention-days: 5
