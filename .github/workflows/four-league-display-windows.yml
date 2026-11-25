@@ -1,0 +1,33 @@
+name: Verify four complete domestic league registrations
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-four-league-windows/**'
+      - '.github/workflows/four-league-display-windows.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONPATH: source/runtime
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: e11bb6f8144828a84e99973d69518ae5364133d0
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0
+      - run: python -B workspace-updates/20261125-four-league-windows/verify_registrations.py
+      - name: Replay the seven original J1 firsts at their archived pregame cutoff
+        run: python -B workspace-updates/20261125-j1-stage-windows/review/verify_pending.py
