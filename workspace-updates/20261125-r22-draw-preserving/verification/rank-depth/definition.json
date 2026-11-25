@@ -1,0 +1,129 @@
+{
+  "evidence_status": "已见开发诊断。1752 场与 500 场已用于 R22 及 Astra 诊断，实际 2–2 的频次已知；历史报价缺逐场可核原始时钟，不能认证为逐时点回测。45 场只按 R22 原首单时点重放可得特征与触发，不结算。",
+  "forward_reconstruction": [
+    "从锁定 R22 原登记与 45 份原首单读取原始 cutoff_at、recorded_at 与 kickoff_at。核验 R22、R21、R7 与 R5 对应首单登记、记录哈希、赛事身份、先后时点、R7 配方哈希及原盘口来源时点。",
+    "只读取赛前首单/登记回执与 R7 forward.json 配方。取 R22 使用的 R5 原始赛前价格及比赛信息，以原 R22 代码的 UTC 开球日期语义调用 continuation_forward.matrix。核对有序前三原件，并清点四套前三、R7 第 3/4 位、2–2 位次与概率、概率差、原盘口及触发。仅作可行性检测，无新首单或冻结。"
+  ],
+  "historical_reconstruction": [
+    "按联赛使用 R22 replay/reference/inputs.json 锁定的 R5 panel.jsonl 和 R7 main/fit.json。用项目 all_scope_study.check_panel、continuation_scores.inputs 与 r8_score_study.matrices 重建完整 R7 概率矩阵。R7 状态按日期先预测再更新，拟合及选混合剂量早于两个目标窗口。",
+    "按 R7 的 three_arm_model.top_three_scores 排序语义，为完整网格按概率降序稳定排序，精确并列按矩阵 C 序（主队进球升序，随后客队进球升序）。不取整概率、不使用近似相等来分组。",
+    "以联赛、场 ID、原窗口、日期、球队、赛制阶段、赛果、来源 SHA 与盘口核对 R5/R7/R22 历史记录；对独立有序 CSV 核对四套完整有序前三。对每场比较重建有序前三与 R7 原件及 R22 所载 R7 有序前三，同时核对原 R7 的前三概率质量及 R22 所载已存概率（绝对容差 1e-12）。",
+    "仅在四套有序前三（R7、市场、R21、R22）均未覆盖真实 90 分钟比分的完整子集计分桶。第 4、5、6、7–10、10 名外/网格外。保留后两项明细。网格外表示任一实际进球数为非负且超过网格边界。"
+  ],
+  "populations": {
+    "competitions": [
+      "eng.1",
+      "esp.1",
+      "fra.1",
+      "ger.1",
+      "ita.1"
+    ],
+    "evaluation": {
+      "eligible": 1752,
+      "expected_four_arm_misses": 1100
+    },
+    "forward": {
+      "eligible": 45,
+      "source_registration_recorded_at": "2026-11-25T22:10:19.032503+08:00",
+      "source_registration_sha256": "4f14e72cce5aa9a29c4faf88c82cc23f6b76ac7b05de967c7fc12dbb9da591bb"
+    },
+    "historical_exclusions": "validation 和 48 场 November extension 在定义范围之外。",
+    "recent": {
+      "eligible": 500,
+      "expected_four_arm_misses": 316
+    }
+  },
+  "publication_gate": "在每个模式的所有输入、身份、时点、全覆盖与排序核验通过后才写统计。任何不匹配使该模式失败，保留报错，不能用 L3 文件拼概率或缩小分母。",
+  "purpose": "独立于 R22 交付的可行性检测，用完整 R7 排名定位四套前三共同漏分与第三位替换的代价，识别后续首选排序需要验证的能力。",
+  "references": {
+    "data": {
+      "archive_members": {
+        "r21_and_r22_firsts": "forward/{receipts.json,<receipt file>}",
+        "r5_firsts": "forward-first-issues.tar.gz::issued/{receipts.json,<receipt file>}",
+        "r5_history": "models/<league>.tar.gz::panel.jsonl",
+        "r7_firsts": "first-issues.tar.gz::{receipts.json,<receipt file>}",
+        "r7_forward": "models/<league>.tar.gz::main/forward.json",
+        "r7_history": "models/<league>.tar.gz::main/{fit.json,forecasts.jsonl.gz}"
+      },
+      "checkout": "/workspace/scratch/r22-data",
+      "commit": "64efb374fb598b39c1c14048573c3e8754633c76",
+      "files_sha256": {
+        "workspace-updates/20261123-all-scope-kpi/forward-first-issues.tar.gz": "11eeb44fab0fd49602c8f9b04e00979318391d6242d483efc82034a3bdcf8d7a",
+        "workspace-updates/20261123-all-scope-kpi/manifest.json": "f3b6fa64903e97a6c74966362894c3378dfe5bca03a4a84709d4c694946ed3d8",
+        "workspace-updates/20261123-all-scope-kpi/models/eng.1.tar.gz": "24c16ba4bf9b5162065a4a61fe2530f9cb60651d04dadd77ed4d9b4f1aefea89",
+        "workspace-updates/20261123-all-scope-kpi/models/esp.1.tar.gz": "896ea97482cf7e46ac008fa065cecfebf62eb3edfd06f0faf7657ccd68c51d6b",
+        "workspace-updates/20261123-all-scope-kpi/models/fra.1.tar.gz": "422fed4a570fd5cf9ec92aad483b2ba7135efc81964420963f49b874799145b3",
+        "workspace-updates/20261123-all-scope-kpi/models/ger.1.tar.gz": "90079c9a2e94734b70975cb57d8fc6b207800810ea340e8d0926610c058730dc",
+        "workspace-updates/20261123-all-scope-kpi/models/ita.1.tar.gz": "ddfa214515150604da52bf7917eac3809f4796e89d56c64e80cbeb093cec5cc9",
+        "workspace-updates/20261123-prematch-literature/first-issues.tar.gz": "52f1dd07d146a93ba9cec41ce9e1c9cdf75b3db43f8a65da7ffea222467f385d",
+        "workspace-updates/20261123-prematch-literature/manifest.json": "e2ed191e29150ba59bf9623ce2a44b265e8b71c9e777d9197ec869975a957df3",
+        "workspace-updates/20261123-prematch-literature/models/eng.1.tar.gz": "3d3cbb1eb5928792075c31d122ec585f8c78d5d59cacfdb4223d05a3ef5ade79",
+        "workspace-updates/20261123-prematch-literature/models/esp.1.tar.gz": "59b37c994bb214ec1e0ce6b33c04ce37385b96824bd8eefc2b5b08288b8aceed",
+        "workspace-updates/20261123-prematch-literature/models/fra.1.tar.gz": "d63534b44d31a391db1f095c29b20ddaeeabee8c2792778e8483ee8a5459885d",
+        "workspace-updates/20261123-prematch-literature/models/ger.1.tar.gz": "871e07c4fec619dc8be419b1eb1349d25ad8b5c2ff6ee511d684a381b5b820b5",
+        "workspace-updates/20261123-prematch-literature/models/ita.1.tar.gz": "a5e44f036cda468d24f2aa9cb84d9ab5fa06256f4ed86406956d7ce4adb1f093",
+        "workspace-updates/20261125-r21-score-dependence/forward/receipts.json": "8d73bc3014ba52c75565d132ca1a449bad34af7756408a763c2b9581a5e024d0",
+        "workspace-updates/20261125-r21-score-dependence/manifest.json": "d0c3f905be2599cdbcf22d6ec98ea07e87fe99911ec2174a4bab0a0f208ab89f",
+        "workspace-updates/20261125-r21-score-dependence/source-lock.json": "2e7742a88b6a0ee6b51ac20206691b1081755b1962a629a9ea28969e804ba42d",
+        "workspace-updates/20261125-r22-draw-preserving/forward/receipts.json": "c88d46e96fbe8f88e32127614948f99c34a27403d5b682071cd72df005c1f2b7",
+        "workspace-updates/20261125-r22-draw-preserving/manifest.json": "4fe70a743c3ba3450c095448810e932ab09c71a3770ff63447668102f602510c",
+        "workspace-updates/20261125-r22-draw-preserving/replay/reference/inputs.json": "ed7d14b27066488a59b26e619233cfc2fe596f7b3381b7941c11f1826fefd958",
+        "workspace-updates/20261125-r22-draw-preserving/replay/reference/main/eng.1/forecasts.jsonl.gz": "074e070bf7418d7bbfd326430ed88dffa05c41675072a32e34af65c4dac58483",
+        "workspace-updates/20261125-r22-draw-preserving/replay/reference/main/esp.1/forecasts.jsonl.gz": "3bd2b0ce52257ef1941c31aafa3896d213dd593d1e5337244a3d5c334958b1ac",
+        "workspace-updates/20261125-r22-draw-preserving/replay/reference/main/fra.1/forecasts.jsonl.gz": "0fbd424bc45b42570f0c0793b8a8f649bb2d3c76c3adfa011eb9cfc9e6449b41",
+        "workspace-updates/20261125-r22-draw-preserving/replay/reference/main/ger.1/forecasts.jsonl.gz": "6f9057f1ed2968bae4999c532ac9ccac160f5df0cf0d5dd91f1ed41a188671db",
+        "workspace-updates/20261125-r22-draw-preserving/replay/reference/main/ita.1/forecasts.jsonl.gz": "619d31626a5aa8ed63305cf73ce732b610aa6975e406ed937950aca79b78fdf0",
+        "workspace-updates/20261125-r22-draw-preserving/source-lock.json": "d77aaea324ca299973b5f05f8f061dfd0e723ee13cd7aa0c34470fa522e276a8",
+        "workspace-updates/20261125-r22-draw-preserving/verification/independent/ordered-ranks.csv": "ee2f581ac7c91d2129296049f157012233c87ea88868a9ad6fe027d32b2b9a69"
+      },
+      "packages": {
+        "r21": "workspace-updates/20261125-r21-score-dependence",
+        "r22": "workspace-updates/20261125-r22-draw-preserving",
+        "r5": "workspace-updates/20261123-all-scope-kpi",
+        "r7": "workspace-updates/20261123-prematch-literature"
+      },
+      "r22_locked_parent_commit": "02828b3a726b2338f0880e9383c3f8bdf5c08bab",
+      "repository": "https://github.com/kaka597000/kaka597000-Football-Analysis-Data"
+    },
+    "source": {
+      "checkout": "/workspace/scratch/r22-source",
+      "commit": "46de33168c093816ac7cd19a57e36e51286b408f",
+      "files_sha256": {
+        "research/20261125-r22-draw-preserving/protocol.json": "71ffd263c1d1835ef008d594f39e6e6112c0902b2b872887ab080fb443ea594c",
+        "runtime/research/analysis_freeze.py": "d2e9c7f8ab24aac0624d4799351c16bad16768a18602a8fcf01949ab63603425",
+        "runtime/research_program/all_scope_model.py": "dcac85753e9f7c57d1c9dc6c109dd0cfc2f6752a6641012997e377de737cfa45",
+        "runtime/research_program/all_scope_study.py": "7c60b5e2762ae1bddc256339d6b32cf3c8249b92b491a0135c1502197e751430",
+        "runtime/research_program/continuation_forward.py": "683b79526f4773c65d85f0e878f0ef4d2535405613be3d7c1a2f9578fd4450f0",
+        "runtime/research_program/continuation_scores.py": "949d85f027bee7d0c5cc04e62235d59a6ccb5f0e1a574021f6a4b08b11463885",
+        "runtime/research_program/continuation_study.py": "9703d68b7ddfddb168fab604fdef86b14dbda2e7c3d169dcff8ec5c1b6be8408",
+        "runtime/research_program/draw_preserving_forward.py": "05beacfab61036a8eda41c1a62cafa03424df01044071c4cad8c12d2593259be",
+        "runtime/research_program/draw_preserving_study.py": "facabcd7cbf059ee9b6d2d004c35dc8b83948c493f0184b42afef386c5a4b152",
+        "runtime/research_program/goal_state_forward.py": "2e3539f4fbe20cc3f4a141199f16c9a6b227e66e9ee9682d3bc69ac699bf326f",
+        "runtime/research_program/kpi_validation.py": "9dbec056eb72f0ffdf6079cd5287015a72071dcd86816bd04a2f449d610e98ae",
+        "runtime/research_program/r8_score_study.py": "62d2ee0cd386f930b5424ab763de187edc47b214db0756bddc5fcaa4b9597d55",
+        "runtime/research_program/r9_team_shape.py": "65639321c6f45785da5210d1760e1c3004d1076def1baa0969f692de54ee7bb7",
+        "runtime/research_program/territory_forward.py": "d600f9b1bcf959fe37634affeab04adcd6f74f5e0b6bf9b639d695e2caf2211c",
+        "runtime/research_program/three_arm_model.py": "ce27142d7c6031e5df22a95b0367d5bf8424e2ca3fbdf15c1b9807045761ea0d"
+      },
+      "original_r7_source_commit": "a6b0f9c31bcae9074b283333e45e1a268478e6b0",
+      "repository": "https://github.com/kaka597000/Football-Analysis"
+    }
+  },
+  "rule": {
+    "denominators": "每窗在全体合法配对上统计触发、补中（触发且实际 2–2）、丢失原第三（触发且实际等于原 R7 第 3 位）、差值和替换前后 R7 Top3。各联赛和合计均保留全体分母、触发分母及共同漏分分母；同时保留共同漏分中的实际 2–2 数供比对。",
+    "replacement": "触发时只以 2–2 替换 R7 第 3 位。其余场维持原 R7 有序前三。",
+    "trigger": "四套有序前三均没有 2–2 且按原并列规则重建的 R7 第 4 位为 2–2。先用预测特征判定触发，再匹配赛果。"
+  },
+  "runtime": {
+    "packages": {
+      "lightgbm": "4.6.0",
+      "numpy": "2.3.5",
+      "pandas": "3.1.0",
+      "scipy": "1.17.0"
+    },
+    "python": "3.12.14",
+    "venv_python": "/workspace/football-venv/bin/python"
+  },
+  "saved_at": "2026-11-25T22:49:01.438824+08:00",
+  "schema": "r22-rank-depth-definition-v1"
+}

@@ -11,7 +11,7 @@ EXCLUDED = {"manifest.json", "SHA256SUMS"}
 def files():
     return {
         p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
-        for p in sorted(ROOT.rglob("*"))
+        for p in sorted(ROOT.rglob("*"), key=lambda path: path.relative_to(ROOT).as_posix())
         if p.is_file()
         and p.relative_to(ROOT).as_posix() not in EXCLUDED
         and "__pycache__" not in p.parts

@@ -40,7 +40,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install the pinned numerical dependencies
-        run: python -m pip install -r source/requirements.txt lightgbm==4.6.0
+        run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
       - name: Test the projection, fitted dose and first-issue entry points
         run: >-
           python -B -m unittest
@@ -51,3 +51,5 @@ jobs:
           research_program.test_territory_forward
       - name: Retrain twice and independently recompute the original forecasts and ranked seats
         run: python -B "$R22_PACKAGE/verify.py" --source source --data-root .
+      - name: Rebuild the pinned rank-depth diagnostic
+        run: bash "$R22_PACKAGE/verification/rank-depth/replay.sh" source
