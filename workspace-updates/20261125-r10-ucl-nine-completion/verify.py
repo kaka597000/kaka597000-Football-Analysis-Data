@@ -5,8 +5,12 @@ import hashlib
 import importlib.util
 import io
 import json
+import os
 from pathlib import Path
+import sys
 import tarfile
+import tempfile
+from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
@@ -167,6 +171,10 @@ def verify():
                         meta["readback_sha256"] and meta["readback_verified"] is True,
                         f"public input raw response/readback differs: {row['match_id']}")
 
+    verify_nine_canonical_records(expected_sha)
+    verify_observed_inputs(expected_sha)
+    verify_post_issue_pages(expected_sha)
+
     ranked_archive = R10 / "forward/ranked.tar.gz"
     archived_sources = {
         "ranked_batch_plan": load_archive_bytes(ranked_archive, "plan.json"),
@@ -187,6 +195,250 @@ def verify():
     return {"status": "PASS", "registration_sha256": expected_sha,
             "fixtures": 9, "original_selected_seats": 3, "unissued_comprehensive_slots": 6,
             **parent}
+
+
+def verify_nine_canonical_records(registration_sha):
+    """Bind all nine genuine first issues and market-only records to archived bytes."""
+    first_index = json.loads((ROOT / "nine-firsts-index.json").read_text(encoding="utf-8"))
+    market_index = json.loads((ROOT / "same-price-market-index.json").read_text(encoding="utf-8"))
+    require(first_index["schema"] == "R10-UCL-NINE-FIRST-ISSUES-1" and
+            first_index["registration_sha256"] == registration_sha and
+            first_index["conversation_text_display_reported_by_user"] is True and
+            first_index["independent_platform_readback_receipt"] == "not included" and
+            len(first_index["rows"]) == 9, "nine first-issue index or receipt status differs")
+    require(market_index["schema"] == "R10-UCL-SAME-PRICE-MARKETS-1" and
+            market_index["registration_sha256"] == registration_sha and
+            market_index["same_comprehensive_source_quote"] is True and
+            market_index["provider_quote_time_available"] is False and
+            len(market_index["rows"]) == 9, "nine same-price market index differs")
+    with tarfile.open(ROOT / "canonical-records.tar.gz", "r:gz") as tar:
+        names = set(tar.getnames())
+        require({"six-firsts.json", "message.txt", "same-price-markets.json"}.issubset(names),
+                "canonical archive missing original issue text or source indexes")
+        six = json.load(tar.extractfile("six-firsts.json"))
+        six_ids = {row["match_id"] for row in six["rows"]}
+        six_ids_expected = {s["match_id"] for s in REG["slots"]
+                            if s["comprehensive_first_issue"] is None}
+        require(six_ids == six_ids_expected and
+                six["registration_sha256"] == registration_sha and
+                sha(tar.extractfile("message.txt").read()) ==
+                "f10ca4a0fd821841334fb7e1827d4d0996d502721176786e8d37892fda7588b6",
+                "six actual first issues or original displayed message changed")
+        market_exports = json.load(tar.extractfile("same-price-markets.json"))
+        require(len(market_exports) == 9, "same-price market exports must cover all nine fixtures")
+        by_first = {r["match_id"]: r for r in first_index["rows"]}
+        by_market = {r["match_id"]: r for r in market_index["rows"]}
+        exports = {r["match_id"]: r for r in market_exports}
+        original_first_archive = R10 / "formal/nov26-ucl-three.tar.gz"
+        def first_canonical(match_id):
+            eid = match_id.split(":", 1)[1]
+            member = f"canonical/comprehensive/espn-{eid}.json"
+            if member in names:
+                return json.load(tar.extractfile(member))
+            selected_row = by_first[match_id]
+            with tarfile.open(original_first_archive, "r:gz") as original:
+                return json.load(original.extractfile(
+                    f"canonical/{selected_row['freeze_id']}.json"))
+        require(set(by_first) == set(by_market) == set(exports) ==
+                {s["match_id"] for s in REG["slots"]}, "nine canonical indexes have different fixture sets")
+        for match_id in by_first:
+            eid = match_id.split(":", 1)[1]
+            first = first_canonical(match_id)
+            market = json.load(tar.extractfile(f"canonical/same-price-market/espn-{eid}.json"))
+            first_meta, market_meta = by_first[match_id], by_market[match_id]
+            payload = first["payload"]
+            primary = payload.get("primary", payload.get("forecasts", {}).get("candidate", {}).get("primary"))
+            displayed = payload.get("displayed_scores")
+            quote = first["fixture"].get("total_quote", payload.get("bookmaker"))
+            require(first["match_id"] == market["match_id"] == match_id and
+                    first["evaluation_slot"] == market["evaluation_slot"] == "FIRST_PREMATCH" and
+                    first["record_sha256"] == first_meta["record_sha256"] and
+                    canonical_digest(first) == first_meta["raw_canonical_sha256"] and
+                    first["freeze_id"] == first_meta["freeze_id"] and
+                    first["recorded_at"] == first_meta["recorded_at"] and
+                    payload["authored_display"]["first"] == first_meta["primary"] and
+                    displayed == first_meta["displayed_scores"] and primary == first_meta["primary"] and
+                    first["fixture"]["kickoff_at"] == first_meta["kickoff_at"],
+                    f"comprehensive first canonical differs: {match_id}")
+            from datetime import datetime
+            issue = datetime.fromisoformat(first["recorded_at"])
+            kickoff = datetime.fromisoformat(first["fixture"]["kickoff_at"])
+            require(issue < kickoff, f"first issue not pre-kickoff: {match_id}")
+            require(market["record_sha256"] == market_meta["record_sha256"] and
+                    canonical_digest(market) == market_meta["canonical_raw_sha256"] and
+                    market["freeze_id"] == market_meta["freeze_id"] and
+                    market["recorded_at"] == market_meta["recorded_at"] and
+                    market["payload"]["comprehensive_first_sha256"] == first["record_sha256"] and
+                    market["payload"]["source_sha256"] == quote["source_sha256"] and
+                    market["fixture"]["total_quote"]["quoted_at"] is None and
+                    market["fixture"]["total_quote"]["query_time"] == market_meta["market_source_query_time"] and
+                    exports[match_id]["authored_sha"] == first["record_sha256"] and
+                    exports[match_id]["market"]["sha256"] == market["record_sha256"] and
+                    exports[match_id]["forecast"] == market["payload"]["forecast"],
+                    f"same-price market canonical differs or quote was relabeled: {match_id}")
+            require(market["recorded_at"] > first["recorded_at"],
+                    f"same-price comparison chronology invalid: {match_id}")
+        review_rows = list(csv.DictReader((ROOT / "nine-match-review.csv").open(
+            encoding="utf-8", newline="")))
+        require(len(review_rows) == 9 and {r["match_id"] for r in review_rows} == set(by_first),
+                "nine-match review table fixture coverage differs")
+        for row in review_rows:
+            mid = row["match_id"]
+            eid = mid.split(":", 1)[1]
+            first = first_canonical(mid)
+            market = json.load(tar.extractfile(f"canonical/same-price-market/espn-{eid}.json"))
+            slot = next(s for s in REG["slots"] if s["match_id"] == mid)
+            fi, mi = by_first[mid], by_market[mid]
+            fixture = first["fixture"]
+            require(row["home"] == (fixture.get("display_home") or fixture.get("home_display_name")) and
+                    row["away"] == (fixture.get("display_away") or fixture.get("away_display_name")) and
+                    row["kickoff_utc"] == fixture["kickoff_at"] and
+                    row["r10_rank"] == str(slot["rank_in_nine"]) and
+                    row["comprehensive_first_id"] == fi["freeze_id"] and
+                    row["comprehensive_first_at"] == fi["recorded_at"] and
+                    row["comprehensive_primary"] == fi["primary"] and
+                    row["same_price_market_id"] == mi["freeze_id"] and
+                    row["same_price_market_at"] == mi["recorded_at"] and
+                    row["same_price_baseline_primary"] == market["payload"]["forecast"]["primary"] and
+                    row["market_quote_clock"] == "query_time only; provider quoted_at absent",
+                    f"nine-match review table row differs from source: {mid}")
+        # Re-execute the pinned implementation against the exact preserved ESPN response.
+        source_pin = json.loads((ROOT / "same-price-market-source-pin.json").read_text())
+        require(source_pin["runtime_archive_sha256"] == sha((ROOT / "same-price-market-runtime.tar.gz").read_bytes()) and
+                source_pin["script_sha256"] == sha((ROOT / "nov26_same_price_markets.py").read_bytes()),
+                "same-price source/runtime pin differs")
+        with tempfile.TemporaryDirectory(prefix="r10-market-verify-") as tmp:
+            tmp = Path(tmp)
+            with tarfile.open(ROOT / "same-price-market-runtime.tar.gz", "r:gz") as runtime:
+                runtime.extractall(tmp)
+            runtime_path = tmp / "runtime"
+            for rel, expected in source_pin.get("additional_runtime_files", {}).items():
+                require(sha((tmp / rel).read_bytes()) == expected,
+                        f"pinned runtime dependency differs: {rel}")
+            script = tmp / "nov26_same_price_markets.py"
+            source_script = (ROOT / "nov26_same_price_markets.py").read_bytes()
+            # The pinned file's CLI imports a writer unrelated to market(); omit that
+            # unused import so replay does not load its unrelated CLI dependency tree.
+            source_script = source_script.replace(
+                b"from research_program.goal_state_study import write_new\n", b"")
+            script.write_bytes(source_script)
+            sys.path.insert(0, str(runtime_path))
+            sys.path.insert(0, str(tmp))
+            try:
+                spec = importlib.util.spec_from_file_location("r10_pinned_market", script)
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
+                with tarfile.open(ROOT / "observed-inputs.tar.gz", "r:gz") as observed, \
+                     tarfile.open(R10 / "formal/nov26-ucl-three.tar.gz", "r:gz") as original:
+                    for match_id, first_row in by_first.items():
+                        eid = match_id.split(":", 1)[1]
+                        first = first_canonical(match_id)
+                        if match_id in six_ids_expected:
+                            raw = observed.extractfile(f"intake/raw/current/espn-summary-{eid}.json").read()
+                        else:
+                            raw = original.extractfile(f"evidence/raw/espn-summary-{eid}.json").read()
+                        actual = module.market(first, raw)
+                        expected = json.load(tar.extractfile(f"canonical/same-price-market/espn-{eid}.json"))["payload"]
+                        require(actual == expected, f"pinned market replay differs: {match_id}")
+            finally:
+                sys.path.remove(str(runtime_path))
+                sys.path.remove(str(tmp))
+
+
+def verify_observed_inputs(registration_sha):
+    archive = ROOT / "observed-inputs.tar.gz"
+    classification_path = ROOT / "source-time-classification.csv"
+    rows = list(csv.DictReader(classification_path.open(encoding="utf-8", newline="")))
+    earliest = datetime.fromisoformat("2026-11-25T12:45:40.368501+00:00")
+    registered = datetime.fromisoformat("2026-11-25T12:30:35+00:00")
+    with tarfile.open(archive, "r:gz") as tar:
+        manifest = json.load(tar.extractfile("intake/pre-issue-capture-manifest.json"))
+        entries = {Path(r["path"]).name: r for r in manifest["captures"]}
+        require(manifest["schema"] == "ucl-other-six-capture-manifest-v1" and
+                len(rows) == len(manifest["captures"]) == 142,
+                "pre-issue source capture inventory count differs")
+        for row in rows:
+            is_meta_path = row["path"].endswith(".meta.json")
+            if is_meta_path:
+                prefix = row["path"][:-10]
+                body_rel = prefix if prefix.endswith(".json") else prefix + ".json"
+            else:
+                body_rel = row["path"]
+            meta_rel = row["path"] if is_meta_path else row["path"] + ".meta.json"
+            body_path = "intake/" + body_rel
+            body = tar.extractfile(body_path).read()
+            meta_path = "intake/" + meta_rel
+            meta = json.loads(tar.extractfile(meta_path).read())
+            capture = next((c for c in manifest["captures"]
+                            if c["path"] in {body_rel, meta_rel}), None)
+            require(capture is not None and sha(body) == row["sha256"] == meta["sha256"] ==
+                    meta["readback_sha256"] == capture["sha256"] and
+                    row["observed_request_start_utc"] == meta["observed_request_start_utc"] ==
+                    capture["observed_request_start_utc"] and meta["readback_verified"] is True,
+                    f"source metadata or readback differs: {row['path']}")
+            observed = datetime.fromisoformat(meta["observed_response_end_utc"].replace("Z", "+00:00"))
+            require(observed < earliest, f"post-issue input was included as pre-issue: {row['path']}")
+            expected_class = "pre_registration" if observed <= registered else "later_than_registration_pre_first_issue"
+            require(row["classification"] == expected_class,
+                    f"source capture classification differs: {row['path']}")
+        require(sum(r["classification"] == "later_than_registration_pre_first_issue" for r in rows) == 114,
+                "later-than-registration pre-issue source count differs")
+        # The six canonical availability payloads cite these exact pre-issue FotMob bodies.
+        with tarfile.open(ROOT / "canonical-records.tar.gz", "r:gz") as canonical:
+            for slot in REG["slots"]:
+                if slot["comprehensive_first_issue"] is not None:
+                    continue
+                eid = slot["match_id"].split(":", 1)[1]
+                record = json.load(canonical.extractfile(f"canonical/comprehensive/espn-{eid}.json"))
+                avail = record["payload"]["availability"]
+                path = f"intake/raw/current/fotmob-target-details/{eid}.json"
+                body = tar.extractfile(path).read()
+                meta = json.loads(tar.extractfile(path[:-5] + ".meta.json").read())
+                require(sha(body) == avail["source_sha256"] == meta["sha256"] and
+                        meta["readback_verified"] is True and
+                        datetime.fromisoformat(meta["observed_response_end_utc"].replace("Z", "+00:00")) < earliest,
+                        f"FotMob target availability provenance differs: {slot['match_id']}")
+                for side in ("home", "away"):
+                    for item in record["payload"]["source_form"][side]:
+                        recent_path = f"intake/raw/current/fotmob-recent-details/{item['id']}.json"
+                        recent_raw = tar.extractfile(recent_path).read()
+                        recent_meta = json.loads(tar.extractfile(
+                            f"intake/raw/current/fotmob-recent-details/{item['id']}.meta.json").read())
+                        require(sha(recent_raw) == item["source_sha256"] == recent_meta["sha256"] and
+                                recent_meta["observed_response_end_utc"] == item["query"] and
+                                datetime.fromisoformat(recent_meta["observed_response_end_utc"].replace("Z", "+00:00")) < earliest,
+                                f"recent-match source provenance differs: {slot['match_id']} {item['id']}")
+
+
+def verify_post_issue_pages(registration_sha):
+    index = json.loads((ROOT / "post-issue-club-pages.json").read_text(encoding="utf-8"))
+    require(index["schema"] == "R10-UCL-POST-ISSUE-CLUB-SOURCES-1" and
+            index["registration_sha256"] == registration_sha and
+            index["model_input_use"].startswith("none;") and len(index["pages"]) == 10,
+            "post-issue club source index differs")
+    earliest = datetime.fromisoformat(index["earliest_comprehensive_first_utc"])
+    with tarfile.open(ROOT / "post-issue-club-pages.tar.gz", "r:gz") as tar:
+        for page in index["pages"]:
+            body = tar.extractfile("official-news/" + page["body_file"]).read()
+            meta_raw = tar.extractfile("official-news/" + page["meta_file"]).read()
+            meta = json.loads(meta_raw)
+            observed = datetime.fromisoformat(meta["observed_response_end_utc"].replace("Z", "+00:00"))
+            require(sha(body) == page["body_sha256"] == meta["sha256"] == meta["readback_sha256"] ==
+                    page["source_sha256"] and sha(meta_raw) == page["meta_sha256"] and
+                    page["url"] == meta["url"] and
+                    page["observed_response_end_utc"] == meta["observed_response_end_utc"] and
+                    observed > earliest and page["status"] == "post_issue_only" and
+                    page["pre_match_inputs_used"] is False,
+                    f"post-issue club page body/meta receipt differs: {page['body_file']}")
+        for orphan in index["orphan_metadata"]:
+            raw = tar.extractfile("official-news/" + orphan["meta_file"]).read()
+            meta = json.loads(raw)
+            observed = datetime.fromisoformat(meta["observed_response_end_utc"].replace("Z", "+00:00"))
+            require(sha(raw) == orphan["meta_sha256"] and
+                    meta["sha256"] == orphan["source_sha256"] and observed > earliest and
+                    orphan["body_available_with_matching_sha256"] is False and
+                    orphan["included_in_model_or_preissue_evidence"] is False,
+                    "orphan post-issue metadata was incorrectly used")
 
 
 def load_archive_bytes(archive, member):

@@ -12,6 +12,12 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      MPLCONFIGDIR: /tmp/mpl-r10
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,5 +25,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install pinned numerical runtime
+        run: python -m pip install numpy==2.3.5 scipy==1.17.0 lightgbm==4.6.0
       - name: Verify original R10 registration and nine-fixture archive
         run: python -B workspace-updates/20261125-r10-ucl-nine-completion/verify.py
