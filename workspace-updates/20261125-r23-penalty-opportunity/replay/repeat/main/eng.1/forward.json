@@ -1,0 +1,62 @@
+{
+  "version": "R23-penalty-opportunity-1",
+  "competition": "eng.1",
+  "through": "2026-11-23",
+  "dose": 1.0,
+  "fitted": {
+    "version": "R23-penalty-opportunity-1",
+    "features": [
+      "home_attack",
+      "away_allowance",
+      "away_attack",
+      "home_allowance"
+    ],
+    "beta": [
+      0.06594479853406551,
+      0.11159039637917284
+    ],
+    "training_rows": 2770,
+    "outside_grid": 0,
+    "zero_prior_cells": 0,
+    "penalized_loss": 8116.005777969
+  },
+  "training_games": 2770,
+  "training_outside_grid": 0,
+  "fit_sha256": "c068d589be19f84e17d9bac8eb519b1e9830f6cead9073151d73f988343d2d8e",
+  "inputs": {
+    "panel_sha256": "ad17ee00756bc3fabd88cb6e0d92f20014a58d490309bb8c92e73e702a4b84b3",
+    "r7_fit_sha256": "2deb1e73006b90b494fa405dde397c5d116e347cf0d32b7938fd2f550f5827eb",
+    "r7_recipe_sha256": "8c8447902bf0f45bb4d124286cdcde25916d5a33d14bfa75573717d6cf1aeeaf",
+    "r7_forecasts_sha256": "a0bb040f7f17464f4dc7c0f670e94097a4afff1644742e30c8fe1bc542ac958d",
+    "r10_forecasts_sha256": "4c7ed86aac0fcc34069ca89c0cb4a06e1a2a9cb3c9c2aa402dc4af2e99f97f65",
+    "r5_evaluation_sha256": "e65602b3883148e51ffbf63d77cabf50b0360b74ee694427b1cb3e7793cf75ce",
+    "r5_recent_sha256": "8c473d32af8898aefbaa0d7389fd347bf9990d3ac7c7061bf3cc23a265c16708",
+    "r22_fit_sha256": "bdef209ac6dcc91c146a8cdbb2c2c69c445acad9f6f9a2f9dca89bda98e88cc2",
+    "r22_forecasts_sha256": "074e070bf7418d7bbfd326430ed88dffa05c41675072a32e34af65c4dac58483",
+    "r22_validation_sha256": "6db5e4969f9b6db69b88ff65042cfd7404badbc5ef0b279767053d27e7841919"
+  },
+  "protocol_sha256": "c6c3672cc729f18ba3233cba005e604153e1da08a30d4693491b5e521e94d654",
+  "training_coverage": {
+    "fixtures": 2770,
+    "both_clubs": 2344,
+    "one_club": 37,
+    "neither_club": 389,
+    "both_club_coverage": 0.8462093862815885,
+    "neutral_fallback_matches": 426,
+    "neutral_feature_vectors": 389,
+    "sides": {
+      "home": {
+        "with_valid_observations": 2358,
+        "valid_observations": 27363,
+        "missing_identity": 412,
+        "neutral_fallback": 412
+      },
+      "away": {
+        "with_valid_observations": 2367,
+        "valid_observations": 27414,
+        "missing_identity": 403,
+        "neutral_fallback": 403
+      }
+    }
+  }
+}

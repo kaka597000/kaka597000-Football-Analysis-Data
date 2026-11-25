@@ -1,0 +1,5179 @@
+{
+  "competition": "ita.1",
+  "weights": {
+    "dose": 1.0,
+    "beta": [
+      0.0506555787209037,
+      -0.11291071381210481
+    ],
+    "training_through": "2024-06-02",
+    "training_games": 1900,
+    "training_outside_grid": 0,
+    "validation_through": "2025-05-25",
+    "forward_beta": [
+      0.12674395021440288,
+      -0.17453930200334333
+    ],
+    "forward_through": "2026-11-23",
+    "forward_games": 2780,
+    "forward_outside_grid": 0,
+    "r22_dose": 1.0
+  },
+  "windows": {
+    "validation_2024_25": {
+      "population": 380,
+      "tracks": {
+        "r7": {
+          "metrics": {
+            "score_top1": {
+              "hits": 59,
+              "eligible": 380,
+              "eligible_rate": 0.15526315789473685,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.15526315789473685,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 141,
+              "eligible": 380,
+              "eligible_rate": 0.37105263157894736,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.37105263157894736,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 205,
+              "eligible": 380,
+              "eligible_rate": 0.5394736842105263,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5394736842105263,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 219,
+              "eligible": 380,
+              "eligible_rate": 0.5763157894736842,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5763157894736842,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 219,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 161
+          }
+        },
+        "r22": {
+          "metrics": {
+            "score_top1": {
+              "hits": 64,
+              "eligible": 380,
+              "eligible_rate": 0.16842105263157894,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.16842105263157894,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 141,
+              "eligible": 380,
+              "eligible_rate": 0.37105263157894736,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.37105263157894736,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 205,
+              "eligible": 380,
+              "eligible_rate": 0.5394736842105263,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5394736842105263,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 219,
+              "eligible": 380,
+              "eligible_rate": 0.5763157894736842,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5763157894736842,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 219,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 161
+          }
+        },
+        "market": {
+          "metrics": {
+            "score_top1": {
+              "hits": 70,
+              "eligible": 380,
+              "eligible_rate": 0.18421052631578946,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.18421052631578946,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 142,
+              "eligible": 380,
+              "eligible_rate": 0.3736842105263158,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.3736842105263158,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 205,
+              "eligible": 380,
+              "eligible_rate": 0.5394736842105263,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5394736842105263,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 225,
+              "eligible": 380,
+              "eligible_rate": 0.5921052631578947,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5921052631578947,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 225,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 155
+          }
+        },
+        "candidate": {
+          "metrics": {
+            "score_top1": {
+              "hits": 61,
+              "eligible": 380,
+              "eligible_rate": 0.16052631578947368,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.16052631578947368,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 144,
+              "eligible": 380,
+              "eligible_rate": 0.37894736842105264,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.37894736842105264,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 205,
+              "eligible": 380,
+              "eligible_rate": 0.5394736842105263,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5394736842105263,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 219,
+              "eligible": 380,
+              "eligible_rate": 0.5763157894736842,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5763157894736842,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 219,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 161
+          }
+        },
+        "full_dose": {
+          "metrics": {
+            "score_top1": {
+              "hits": 61,
+              "eligible": 380,
+              "eligible_rate": 0.16052631578947368,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.16052631578947368,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 144,
+              "eligible": 380,
+              "eligible_rate": 0.37894736842105264,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.37894736842105264,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 205,
+              "eligible": 380,
+              "eligible_rate": 0.5394736842105263,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5394736842105263,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 219,
+              "eligible": 380,
+              "eligible_rate": 0.5763157894736842,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5763157894736842,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 219,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 161
+          }
+        }
+      },
+      "paired": {
+        "r7_vs_r22": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 8,
+            "lost": 3,
+            "tied": 369,
+            "net_hits": 5,
+            "net_rate": 0.013157894736842105,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.004819277108433735,
+              0.03234501347708895
+            ],
+            "fixed_population_net_hits": 5,
+            "fixed_population_net_rate": 0.013157894736842105,
+            "fixed_population_date_cluster_ci": [
+              -0.004819277108433735,
+              0.03234501347708895
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 4,
+            "lost": 4,
+            "tied": 372,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.014204545454545454,
+              0.01488926336061626
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              -0.014204545454545454,
+              0.01488926336061626
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "r7_vs_market": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 11,
+            "lost": 0,
+            "tied": 369,
+            "net_hits": 11,
+            "net_rate": 0.02894736842105263,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.011111111111111112,
+              0.050399950265251965
+            ],
+            "fixed_population_net_hits": 11,
+            "fixed_population_net_rate": 0.02894736842105263,
+            "fixed_population_date_cluster_ci": [
+              0.011111111111111112,
+              0.050399950265251965
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 12,
+            "lost": 11,
+            "tied": 357,
+            "net_hits": 1,
+            "net_rate": 0.002631578947368421,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.021565124144723193,
+              0.027228228613052033
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.002631578947368421,
+            "fixed_population_date_cluster_ci": [
+              -0.021565124144723193,
+              0.027228228613052033
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 1,
+            "tied": 378,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.007895257603110677,
+              0.007751937984496124
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              -0.007895257603110677,
+              0.007751937984496124
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 15,
+            "lost": 9,
+            "tied": 356,
+            "net_hits": 6,
+            "net_rate": 0.015789473684210527,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.010471204188481676,
+              0.043718841230630995
+            ],
+            "fixed_population_net_hits": 6,
+            "fixed_population_net_rate": 0.015789473684210527,
+            "fixed_population_date_cluster_ci": [
+              -0.010471204188481676,
+              0.043718841230630995
+            ]
+          }
+        },
+        "r7_vs_candidate": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 2,
+            "lost": 0,
+            "tied": 378,
+            "net_hits": 2,
+            "net_rate": 0.005263157894736842,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.014125294089403164
+            ],
+            "fixed_population_net_hits": 2,
+            "fixed_population_net_rate": 0.005263157894736842,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.014125294089403164
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 3,
+            "lost": 0,
+            "tied": 377,
+            "net_hits": 3,
+            "net_rate": 0.007894736842105263,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.017721518987341773
+            ],
+            "fixed_population_net_hits": 3,
+            "fixed_population_net_rate": 0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.017721518987341773
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "r22_vs_candidate": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 4,
+            "lost": 7,
+            "tied": 369,
+            "net_hits": -3,
+            "net_rate": -0.007894736842105263,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.02710027100271003,
+              0.010283438899636912
+            ],
+            "fixed_population_net_hits": -3,
+            "fixed_population_net_rate": -0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              -0.02710027100271003,
+              0.010283438899636912
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 7,
+            "lost": 4,
+            "tied": 369,
+            "net_hits": 3,
+            "net_rate": 0.007894736842105263,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.008645533141210375,
+              0.024878731343283538
+            ],
+            "fixed_population_net_hits": 3,
+            "fixed_population_net_rate": 0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              -0.008645533141210375,
+              0.024878731343283538
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "market_vs_candidate": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 9,
+            "tied": 371,
+            "net_hits": -9,
+            "net_rate": -0.02368421052631579,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.041884816753926704,
+              -0.00828672206748551
+            ],
+            "fixed_population_net_hits": -9,
+            "fixed_population_net_rate": -0.02368421052631579,
+            "fixed_population_date_cluster_ci": [
+              -0.041884816753926704,
+              -0.00828672206748551
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 13,
+            "lost": 11,
+            "tied": 356,
+            "net_hits": 2,
+            "net_rate": 0.005263157894736842,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.020887728459530026,
+              0.031413612565445025
+            ],
+            "fixed_population_net_hits": 2,
+            "fixed_population_net_rate": 0.005263157894736842,
+            "fixed_population_date_cluster_ci": [
+              -0.020887728459530026,
+              0.031413612565445025
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 1,
+            "tied": 378,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.007751937984496124,
+              0.007895257603110672
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              -0.007751937984496124,
+              0.007895257603110672
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 9,
+            "lost": 15,
+            "tied": 356,
+            "net_hits": -6,
+            "net_rate": -0.015789473684210527,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              -0.04371884123063102,
+              0.010471204188481676
+            ],
+            "fixed_population_net_hits": -6,
+            "fixed_population_net_rate": -0.015789473684210527,
+            "fixed_population_date_cluster_ci": [
+              -0.04371884123063102,
+              0.010471204188481676
+            ]
+          }
+        },
+        "r7_vs_full_dose": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 2,
+            "lost": 0,
+            "tied": 378,
+            "net_hits": 2,
+            "net_rate": 0.005263157894736842,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.014125294089403164
+            ],
+            "fixed_population_net_hits": 2,
+            "fixed_population_net_rate": 0.005263157894736842,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.014125294089403164
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 3,
+            "lost": 0,
+            "tied": 377,
+            "net_hits": 3,
+            "net_rate": 0.007894736842105263,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.017721518987341773
+            ],
+            "fixed_population_net_hits": 3,
+            "fixed_population_net_rate": 0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.017721518987341773
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "candidate_vs_full_dose": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 135,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "bootstrap": {
+        "unit": "whole match date",
+        "confidence": 0.95,
+        "repetitions": 5000,
+        "seed": 20261125,
+        "per_metric_percentile_intervals": true
+      },
+      "coverage": {
+        "fixtures": 380,
+        "both_clubs": 375,
+        "one_club": 5,
+        "neither_club": 0,
+        "both_club_coverage": 0.9868421052631579,
+        "neutral_fallback_matches": 5,
+        "neutral_feature_vectors": 0,
+        "sides": {
+          "home": {
+            "with_valid_observations": 377,
+            "valid_observations": 4500,
+            "missing_identity": 3,
+            "neutral_fallback": 3
+          },
+          "away": {
+            "with_valid_observations": 378,
+            "valid_observations": 4494,
+            "missing_identity": 2,
+            "neutral_fallback": 2
+          }
+        },
+        "market_time_basis": {
+          "archived_closing_category_no_quote_clock": 380
+        },
+        "certified_market_as_of": 0
+      },
+      "three_seat_sweep": {
+        "r7": {
+          "batches": 135,
+          "full_batches": 76,
+          "short_batches": 59,
+          "planned_slots": 405,
+          "occupied_slots": 305,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 3,
+          "short_batch_sizes": {
+            "1": 41,
+            "2": 18
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 135,
+              "metrics": {
+                "score_top1": {
+                  "hits": 22,
+                  "eligible": 135
+                },
+                "score_top3": {
+                  "hits": 56,
+                  "eligible": 135
+                },
+                "wdl": {
+                  "hits": 70,
+                  "eligible": 135
+                },
+                "actual_ou": {
+                  "hits": 71,
+                  "eligible": 135
+                }
+              }
+            },
+            "2": {
+              "occupied": 94,
+              "metrics": {
+                "score_top1": {
+                  "hits": 19,
+                  "eligible": 94
+                },
+                "score_top3": {
+                  "hits": 33,
+                  "eligible": 94
+                },
+                "wdl": {
+                  "hits": 46,
+                  "eligible": 94
+                },
+                "actual_ou": {
+                  "hits": 58,
+                  "eligible": 94
+                }
+              }
+            },
+            "3": {
+              "occupied": 76,
+              "metrics": {
+                "score_top1": {
+                  "hits": 10,
+                  "eligible": 76
+                },
+                "score_top3": {
+                  "hits": 29,
+                  "eligible": 76
+                },
+                "wdl": {
+                  "hits": 44,
+                  "eligible": 76
+                },
+                "actual_ou": {
+                  "hits": 48,
+                  "eligible": 76
+                }
+              }
+            }
+          }
+        },
+        "r22": {
+          "batches": 135,
+          "full_batches": 76,
+          "short_batches": 59,
+          "planned_slots": 405,
+          "occupied_slots": 305,
+          "three_first_sweeps": 1,
+          "three_score_sweeps": 3,
+          "short_batch_sizes": {
+            "1": 41,
+            "2": 18
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 135,
+              "metrics": {
+                "score_top1": {
+                  "hits": 23,
+                  "eligible": 135
+                },
+                "score_top3": {
+                  "hits": 57,
+                  "eligible": 135
+                },
+                "wdl": {
+                  "hits": 70,
+                  "eligible": 135
+                },
+                "actual_ou": {
+                  "hits": 71,
+                  "eligible": 135
+                }
+              }
+            },
+            "2": {
+              "occupied": 94,
+              "metrics": {
+                "score_top1": {
+                  "hits": 16,
+                  "eligible": 94
+                },
+                "score_top3": {
+                  "hits": 33,
+                  "eligible": 94
+                },
+                "wdl": {
+                  "hits": 46,
+                  "eligible": 94
+                },
+                "actual_ou": {
+                  "hits": 58,
+                  "eligible": 94
+                }
+              }
+            },
+            "3": {
+              "occupied": 76,
+              "metrics": {
+                "score_top1": {
+                  "hits": 13,
+                  "eligible": 76
+                },
+                "score_top3": {
+                  "hits": 26,
+                  "eligible": 76
+                },
+                "wdl": {
+                  "hits": 45,
+                  "eligible": 76
+                },
+                "actual_ou": {
+                  "hits": 48,
+                  "eligible": 76
+                }
+              }
+            }
+          }
+        },
+        "market": {
+          "batches": 135,
+          "full_batches": 76,
+          "short_batches": 59,
+          "planned_slots": 405,
+          "occupied_slots": 305,
+          "three_first_sweeps": 2,
+          "three_score_sweeps": 6,
+          "short_batch_sizes": {
+            "1": 41,
+            "2": 18
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 135,
+              "metrics": {
+                "score_top1": {
+                  "hits": 22,
+                  "eligible": 135
+                },
+                "score_top3": {
+                  "hits": 56,
+                  "eligible": 135
+                },
+                "wdl": {
+                  "hits": 74,
+                  "eligible": 135
+                },
+                "actual_ou": {
+                  "hits": 75,
+                  "eligible": 135
+                }
+              }
+            },
+            "2": {
+              "occupied": 94,
+              "metrics": {
+                "score_top1": {
+                  "hits": 24,
+                  "eligible": 94
+                },
+                "score_top3": {
+                  "hits": 38,
+                  "eligible": 94
+                },
+                "wdl": {
+                  "hits": 45,
+                  "eligible": 94
+                },
+                "actual_ou": {
+                  "hits": 57,
+                  "eligible": 94
+                }
+              }
+            },
+            "3": {
+              "occupied": 76,
+              "metrics": {
+                "score_top1": {
+                  "hits": 14,
+                  "eligible": 76
+                },
+                "score_top3": {
+                  "hits": 28,
+                  "eligible": 76
+                },
+                "wdl": {
+                  "hits": 42,
+                  "eligible": 76
+                },
+                "actual_ou": {
+                  "hits": 53,
+                  "eligible": 76
+                }
+              }
+            }
+          }
+        },
+        "candidate": {
+          "batches": 135,
+          "full_batches": 76,
+          "short_batches": 59,
+          "planned_slots": 405,
+          "occupied_slots": 305,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 4,
+          "short_batch_sizes": {
+            "1": 41,
+            "2": 18
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 135,
+              "metrics": {
+                "score_top1": {
+                  "hits": 22,
+                  "eligible": 135
+                },
+                "score_top3": {
+                  "hits": 55,
+                  "eligible": 135
+                },
+                "wdl": {
+                  "hits": 70,
+                  "eligible": 135
+                },
+                "actual_ou": {
+                  "hits": 71,
+                  "eligible": 135
+                }
+              }
+            },
+            "2": {
+              "occupied": 94,
+              "metrics": {
+                "score_top1": {
+                  "hits": 19,
+                  "eligible": 94
+                },
+                "score_top3": {
+                  "hits": 35,
+                  "eligible": 94
+                },
+                "wdl": {
+                  "hits": 46,
+                  "eligible": 94
+                },
+                "actual_ou": {
+                  "hits": 57,
+                  "eligible": 94
+                }
+              }
+            },
+            "3": {
+              "occupied": 76,
+              "metrics": {
+                "score_top1": {
+                  "hits": 11,
+                  "eligible": 76
+                },
+                "score_top3": {
+                  "hits": 30,
+                  "eligible": 76
+                },
+                "wdl": {
+                  "hits": 45,
+                  "eligible": 76
+                },
+                "actual_ou": {
+                  "hits": 48,
+                  "eligible": 76
+                }
+              }
+            }
+          }
+        },
+        "full_dose": {
+          "batches": 135,
+          "full_batches": 76,
+          "short_batches": 59,
+          "planned_slots": 405,
+          "occupied_slots": 305,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 4,
+          "short_batch_sizes": {
+            "1": 41,
+            "2": 18
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 135,
+              "metrics": {
+                "score_top1": {
+                  "hits": 22,
+                  "eligible": 135
+                },
+                "score_top3": {
+                  "hits": 55,
+                  "eligible": 135
+                },
+                "wdl": {
+                  "hits": 70,
+                  "eligible": 135
+                },
+                "actual_ou": {
+                  "hits": 71,
+                  "eligible": 135
+                }
+              }
+            },
+            "2": {
+              "occupied": 94,
+              "metrics": {
+                "score_top1": {
+                  "hits": 19,
+                  "eligible": 94
+                },
+                "score_top3": {
+                  "hits": 35,
+                  "eligible": 94
+                },
+                "wdl": {
+                  "hits": 46,
+                  "eligible": 94
+                },
+                "actual_ou": {
+                  "hits": 57,
+                  "eligible": 94
+                }
+              }
+            },
+            "3": {
+              "occupied": 76,
+              "metrics": {
+                "score_top1": {
+                  "hits": 11,
+                  "eligible": 76
+                },
+                "score_top3": {
+                  "hits": 30,
+                  "eligible": 76
+                },
+                "wdl": {
+                  "hits": 45,
+                  "eligible": 76
+                },
+                "actual_ou": {
+                  "hits": 48,
+                  "eligible": 76
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "evaluation": {
+      "population": 380,
+      "tracks": {
+        "r7": {
+          "metrics": {
+            "score_top1": {
+              "hits": 50,
+              "eligible": 380,
+              "eligible_rate": 0.13157894736842105,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.13157894736842105,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 138,
+              "eligible": 380,
+              "eligible_rate": 0.3631578947368421,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.3631578947368421,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 206,
+              "eligible": 380,
+              "eligible_rate": 0.5421052631578948,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5421052631578948,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 207,
+              "eligible": 380,
+              "eligible_rate": 0.5447368421052632,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5447368421052632,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 207,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 173
+          }
+        },
+        "r22": {
+          "metrics": {
+            "score_top1": {
+              "hits": 48,
+              "eligible": 380,
+              "eligible_rate": 0.12631578947368421,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.12631578947368421,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 135,
+              "eligible": 380,
+              "eligible_rate": 0.35526315789473684,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.35526315789473684,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 206,
+              "eligible": 380,
+              "eligible_rate": 0.5421052631578948,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5421052631578948,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 207,
+              "eligible": 380,
+              "eligible_rate": 0.5447368421052632,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5447368421052632,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 207,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 173
+          }
+        },
+        "market": {
+          "metrics": {
+            "score_top1": {
+              "hits": 51,
+              "eligible": 380,
+              "eligible_rate": 0.13421052631578947,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.13421052631578947,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 135,
+              "eligible": 380,
+              "eligible_rate": 0.35526315789473684,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.35526315789473684,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 203,
+              "eligible": 380,
+              "eligible_rate": 0.5342105263157895,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5342105263157895,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 208,
+              "eligible": 380,
+              "eligible_rate": 0.5473684210526316,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5473684210526316,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 208,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 172
+          }
+        },
+        "candidate": {
+          "metrics": {
+            "score_top1": {
+              "hits": 49,
+              "eligible": 380,
+              "eligible_rate": 0.12894736842105264,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.12894736842105264,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 138,
+              "eligible": 380,
+              "eligible_rate": 0.3631578947368421,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.3631578947368421,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 206,
+              "eligible": 380,
+              "eligible_rate": 0.5421052631578948,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5421052631578948,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 207,
+              "eligible": 380,
+              "eligible_rate": 0.5447368421052632,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5447368421052632,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 207,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 173
+          }
+        },
+        "full_dose": {
+          "metrics": {
+            "score_top1": {
+              "hits": 49,
+              "eligible": 380,
+              "eligible_rate": 0.12894736842105264,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.12894736842105264,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 138,
+              "eligible": 380,
+              "eligible_rate": 0.3631578947368421,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.3631578947368421,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 206,
+              "eligible": 380,
+              "eligible_rate": 0.5421052631578948,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5421052631578948,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 207,
+              "eligible": 380,
+              "eligible_rate": 0.5447368421052632,
+              "issued": 380,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 380,
+              "resolved_gate_rate": 0.5447368421052632,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 207,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 173
+          }
+        }
+      },
+      "paired": {
+        "r7_vs_r22": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 4,
+            "lost": 6,
+            "tied": 370,
+            "net_hits": -2,
+            "net_rate": -0.005263157894736842,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.021791932493682827,
+              0.010666666666666666
+            ],
+            "fixed_population_net_hits": -2,
+            "fixed_population_net_rate": -0.005263157894736842,
+            "fixed_population_date_cluster_ci": [
+              -0.021791932493682827,
+              0.010666666666666666
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 4,
+            "tied": 375,
+            "net_hits": -3,
+            "net_rate": -0.007894736842105263,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.01808785529715762,
+              0.0
+            ],
+            "fixed_population_net_hits": -3,
+            "fixed_population_net_rate": -0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              -0.01808785529715762,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "r7_vs_market": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 5,
+            "lost": 4,
+            "tied": 371,
+            "net_hits": 1,
+            "net_rate": 0.002631578947368421,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.013663078724554125,
+              0.017677886459532013
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.002631578947368421,
+            "fixed_population_date_cluster_ci": [
+              -0.013663078724554125,
+              0.017677886459532013
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 9,
+            "lost": 12,
+            "tied": 359,
+            "net_hits": -3,
+            "net_rate": -0.007894736842105263,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.030472500052864174,
+              0.0136986301369863
+            ],
+            "fixed_population_net_hits": -3,
+            "fixed_population_net_rate": -0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              -0.030472500052864174,
+              0.0136986301369863
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 3,
+            "tied": 377,
+            "net_hits": -3,
+            "net_rate": -0.007894736842105263,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.017722643449206446,
+              0.0
+            ],
+            "fixed_population_net_hits": -3,
+            "fixed_population_net_rate": -0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              -0.017722643449206446,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 11,
+            "lost": 10,
+            "tied": 359,
+            "net_hits": 1,
+            "net_rate": 0.002631578947368421,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.02127659574468085,
+              0.02887214965181374
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.002631578947368421,
+            "fixed_population_date_cluster_ci": [
+              -0.02127659574468085,
+              0.02887214965181374
+            ]
+          }
+        },
+        "r7_vs_candidate": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 1,
+            "tied": 379,
+            "net_hits": -1,
+            "net_rate": -0.002631578947368421,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.008379888268156424,
+              0.0
+            ],
+            "fixed_population_net_hits": -1,
+            "fixed_population_net_rate": -0.002631578947368421,
+            "fixed_population_date_cluster_ci": [
+              -0.008379888268156424,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "r22_vs_candidate": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 5,
+            "lost": 4,
+            "tied": 371,
+            "net_hits": 1,
+            "net_rate": 0.002631578947368421,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.012987012987012988,
+              0.01877056010434021
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.002631578947368421,
+            "fixed_population_date_cluster_ci": [
+              -0.012987012987012988,
+              0.01877056010434021
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 4,
+            "lost": 1,
+            "tied": 375,
+            "net_hits": 3,
+            "net_rate": 0.007894736842105263,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.01808785529715762
+            ],
+            "fixed_population_net_hits": 3,
+            "fixed_population_net_rate": 0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.01808785529715762
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "market_vs_candidate": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 3,
+            "lost": 5,
+            "tied": 372,
+            "net_hits": -2,
+            "net_rate": -0.005263157894736842,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.01975430876420975,
+              0.01015228426395939
+            ],
+            "fixed_population_net_hits": -2,
+            "fixed_population_net_rate": -0.005263157894736842,
+            "fixed_population_date_cluster_ci": [
+              -0.01975430876420975,
+              0.01015228426395939
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 12,
+            "lost": 9,
+            "tied": 359,
+            "net_hits": 3,
+            "net_rate": 0.007894736842105263,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.0136986301369863,
+              0.030472500052864157
+            ],
+            "fixed_population_net_hits": 3,
+            "fixed_population_net_rate": 0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              -0.0136986301369863,
+              0.030472500052864157
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 3,
+            "lost": 0,
+            "tied": 377,
+            "net_hits": 3,
+            "net_rate": 0.007894736842105263,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.017722643449206436
+            ],
+            "fixed_population_net_hits": 3,
+            "fixed_population_net_rate": 0.007894736842105263,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.017722643449206436
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 10,
+            "lost": 11,
+            "tied": 359,
+            "net_hits": -1,
+            "net_rate": -0.002631578947368421,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.028872149651813752,
+              0.02127659574468085
+            ],
+            "fixed_population_net_hits": -1,
+            "fixed_population_net_rate": -0.002631578947368421,
+            "fixed_population_date_cluster_ci": [
+              -0.028872149651813752,
+              0.02127659574468085
+            ]
+          }
+        },
+        "r7_vs_full_dose": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 1,
+            "tied": 379,
+            "net_hits": -1,
+            "net_rate": -0.002631578947368421,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              -0.008379888268156424,
+              0.0
+            ],
+            "fixed_population_net_hits": -1,
+            "fixed_population_net_rate": -0.002631578947368421,
+            "fixed_population_date_cluster_ci": [
+              -0.008379888268156424,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "candidate_vs_full_dose": {
+          "score_top1": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 380,
+            "resolved_gate_denominator": 380,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 380,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 132,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "bootstrap": {
+        "unit": "whole match date",
+        "confidence": 0.95,
+        "repetitions": 5000,
+        "seed": 20261125,
+        "per_metric_percentile_intervals": true
+      },
+      "coverage": {
+        "fixtures": 380,
+        "both_clubs": 379,
+        "one_club": 1,
+        "neither_club": 0,
+        "both_club_coverage": 0.9973684210526316,
+        "neutral_fallback_matches": 1,
+        "neutral_feature_vectors": 0,
+        "sides": {
+          "home": {
+            "with_valid_observations": 380,
+            "valid_observations": 4519,
+            "missing_identity": 0,
+            "neutral_fallback": 0
+          },
+          "away": {
+            "with_valid_observations": 379,
+            "valid_observations": 4523,
+            "missing_identity": 1,
+            "neutral_fallback": 1
+          }
+        },
+        "market_time_basis": {
+          "archived_closing_category_no_quote_clock": 380
+        },
+        "certified_market_as_of": 0
+      },
+      "three_seat_sweep": {
+        "r7": {
+          "batches": 132,
+          "full_batches": 73,
+          "short_batches": 59,
+          "planned_slots": 396,
+          "occupied_slots": 301,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 4,
+          "short_batch_sizes": {
+            "1": 36,
+            "2": 23
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 132,
+              "metrics": {
+                "score_top1": {
+                  "hits": 21,
+                  "eligible": 132
+                },
+                "score_top3": {
+                  "hits": 48,
+                  "eligible": 132
+                },
+                "wdl": {
+                  "hits": 72,
+                  "eligible": 132
+                },
+                "actual_ou": {
+                  "hits": 69,
+                  "eligible": 132
+                }
+              }
+            },
+            "2": {
+              "occupied": 96,
+              "metrics": {
+                "score_top1": {
+                  "hits": 4,
+                  "eligible": 96
+                },
+                "score_top3": {
+                  "hits": 30,
+                  "eligible": 96
+                },
+                "wdl": {
+                  "hits": 44,
+                  "eligible": 96
+                },
+                "actual_ou": {
+                  "hits": 56,
+                  "eligible": 96
+                }
+              }
+            },
+            "3": {
+              "occupied": 73,
+              "metrics": {
+                "score_top1": {
+                  "hits": 12,
+                  "eligible": 73
+                },
+                "score_top3": {
+                  "hits": 30,
+                  "eligible": 73
+                },
+                "wdl": {
+                  "hits": 45,
+                  "eligible": 73
+                },
+                "actual_ou": {
+                  "hits": 40,
+                  "eligible": 73
+                }
+              }
+            }
+          }
+        },
+        "r22": {
+          "batches": 132,
+          "full_batches": 73,
+          "short_batches": 59,
+          "planned_slots": 396,
+          "occupied_slots": 301,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 5,
+          "short_batch_sizes": {
+            "1": 36,
+            "2": 23
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 132,
+              "metrics": {
+                "score_top1": {
+                  "hits": 17,
+                  "eligible": 132
+                },
+                "score_top3": {
+                  "hits": 49,
+                  "eligible": 132
+                },
+                "wdl": {
+                  "hits": 76,
+                  "eligible": 132
+                },
+                "actual_ou": {
+                  "hits": 69,
+                  "eligible": 132
+                }
+              }
+            },
+            "2": {
+              "occupied": 96,
+              "metrics": {
+                "score_top1": {
+                  "hits": 9,
+                  "eligible": 96
+                },
+                "score_top3": {
+                  "hits": 29,
+                  "eligible": 96
+                },
+                "wdl": {
+                  "hits": 40,
+                  "eligible": 96
+                },
+                "actual_ou": {
+                  "hits": 57,
+                  "eligible": 96
+                }
+              }
+            },
+            "3": {
+              "occupied": 73,
+              "metrics": {
+                "score_top1": {
+                  "hits": 9,
+                  "eligible": 73
+                },
+                "score_top3": {
+                  "hits": 28,
+                  "eligible": 73
+                },
+                "wdl": {
+                  "hits": 47,
+                  "eligible": 73
+                },
+                "actual_ou": {
+                  "hits": 38,
+                  "eligible": 73
+                }
+              }
+            }
+          }
+        },
+        "market": {
+          "batches": 132,
+          "full_batches": 73,
+          "short_batches": 59,
+          "planned_slots": 396,
+          "occupied_slots": 301,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 1,
+          "short_batch_sizes": {
+            "1": 36,
+            "2": 23
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 132,
+              "metrics": {
+                "score_top1": {
+                  "hits": 18,
+                  "eligible": 132
+                },
+                "score_top3": {
+                  "hits": 47,
+                  "eligible": 132
+                },
+                "wdl": {
+                  "hits": 72,
+                  "eligible": 132
+                },
+                "actual_ou": {
+                  "hits": 70,
+                  "eligible": 132
+                }
+              }
+            },
+            "2": {
+              "occupied": 96,
+              "metrics": {
+                "score_top1": {
+                  "hits": 7,
+                  "eligible": 96
+                },
+                "score_top3": {
+                  "hits": 32,
+                  "eligible": 96
+                },
+                "wdl": {
+                  "hits": 51,
+                  "eligible": 96
+                },
+                "actual_ou": {
+                  "hits": 55,
+                  "eligible": 96
+                }
+              }
+            },
+            "3": {
+              "occupied": 73,
+              "metrics": {
+                "score_top1": {
+                  "hits": 11,
+                  "eligible": 73
+                },
+                "score_top3": {
+                  "hits": 25,
+                  "eligible": 73
+                },
+                "wdl": {
+                  "hits": 37,
+                  "eligible": 73
+                },
+                "actual_ou": {
+                  "hits": 39,
+                  "eligible": 73
+                }
+              }
+            }
+          }
+        },
+        "candidate": {
+          "batches": 132,
+          "full_batches": 73,
+          "short_batches": 59,
+          "planned_slots": 396,
+          "occupied_slots": 301,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 4,
+          "short_batch_sizes": {
+            "1": 36,
+            "2": 23
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 132,
+              "metrics": {
+                "score_top1": {
+                  "hits": 20,
+                  "eligible": 132
+                },
+                "score_top3": {
+                  "hits": 47,
+                  "eligible": 132
+                },
+                "wdl": {
+                  "hits": 73,
+                  "eligible": 132
+                },
+                "actual_ou": {
+                  "hits": 68,
+                  "eligible": 132
+                }
+              }
+            },
+            "2": {
+              "occupied": 96,
+              "metrics": {
+                "score_top1": {
+                  "hits": 5,
+                  "eligible": 96
+                },
+                "score_top3": {
+                  "hits": 30,
+                  "eligible": 96
+                },
+                "wdl": {
+                  "hits": 43,
+                  "eligible": 96
+                },
+                "actual_ou": {
+                  "hits": 57,
+                  "eligible": 96
+                }
+              }
+            },
+            "3": {
+              "occupied": 73,
+              "metrics": {
+                "score_top1": {
+                  "hits": 10,
+                  "eligible": 73
+                },
+                "score_top3": {
+                  "hits": 30,
+                  "eligible": 73
+                },
+                "wdl": {
+                  "hits": 44,
+                  "eligible": 73
+                },
+                "actual_ou": {
+                  "hits": 41,
+                  "eligible": 73
+                }
+              }
+            }
+          }
+        },
+        "full_dose": {
+          "batches": 132,
+          "full_batches": 73,
+          "short_batches": 59,
+          "planned_slots": 396,
+          "occupied_slots": 301,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 4,
+          "short_batch_sizes": {
+            "1": 36,
+            "2": 23
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 132,
+              "metrics": {
+                "score_top1": {
+                  "hits": 20,
+                  "eligible": 132
+                },
+                "score_top3": {
+                  "hits": 47,
+                  "eligible": 132
+                },
+                "wdl": {
+                  "hits": 73,
+                  "eligible": 132
+                },
+                "actual_ou": {
+                  "hits": 68,
+                  "eligible": 132
+                }
+              }
+            },
+            "2": {
+              "occupied": 96,
+              "metrics": {
+                "score_top1": {
+                  "hits": 5,
+                  "eligible": 96
+                },
+                "score_top3": {
+                  "hits": 30,
+                  "eligible": 96
+                },
+                "wdl": {
+                  "hits": 43,
+                  "eligible": 96
+                },
+                "actual_ou": {
+                  "hits": 57,
+                  "eligible": 96
+                }
+              }
+            },
+            "3": {
+              "occupied": 73,
+              "metrics": {
+                "score_top1": {
+                  "hits": 10,
+                  "eligible": 73
+                },
+                "score_top3": {
+                  "hits": 30,
+                  "eligible": 73
+                },
+                "wdl": {
+                  "hits": 44,
+                  "eligible": 73
+                },
+                "actual_ou": {
+                  "hits": 41,
+                  "eligible": 73
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "recent": {
+      "population": 110,
+      "tracks": {
+        "r7": {
+          "metrics": {
+            "score_top1": {
+              "hits": 12,
+              "eligible": 110,
+              "eligible_rate": 0.10909090909090909,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.10909090909090909,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 41,
+              "eligible": 110,
+              "eligible_rate": 0.37272727272727274,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.37272727272727274,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 71,
+              "eligible": 110,
+              "eligible_rate": 0.6454545454545455,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.6454545454545455,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 62,
+              "eligible": 110,
+              "eligible_rate": 0.5636363636363636,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.5636363636363636,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 62,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 48
+          }
+        },
+        "r22": {
+          "metrics": {
+            "score_top1": {
+              "hits": 9,
+              "eligible": 110,
+              "eligible_rate": 0.08181818181818182,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.08181818181818182,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 42,
+              "eligible": 110,
+              "eligible_rate": 0.38181818181818183,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.38181818181818183,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 71,
+              "eligible": 110,
+              "eligible_rate": 0.6454545454545455,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.6454545454545455,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 62,
+              "eligible": 110,
+              "eligible_rate": 0.5636363636363636,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.5636363636363636,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 62,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 48
+          }
+        },
+        "market": {
+          "metrics": {
+            "score_top1": {
+              "hits": 11,
+              "eligible": 110,
+              "eligible_rate": 0.1,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.1,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 37,
+              "eligible": 110,
+              "eligible_rate": 0.33636363636363636,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.33636363636363636,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 70,
+              "eligible": 110,
+              "eligible_rate": 0.6363636363636364,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.6363636363636364,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 62,
+              "eligible": 110,
+              "eligible_rate": 0.5636363636363636,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.5636363636363636,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 62,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 48
+          }
+        },
+        "candidate": {
+          "metrics": {
+            "score_top1": {
+              "hits": 13,
+              "eligible": 110,
+              "eligible_rate": 0.11818181818181818,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.11818181818181818,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 41,
+              "eligible": 110,
+              "eligible_rate": 0.37272727272727274,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.37272727272727274,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 71,
+              "eligible": 110,
+              "eligible_rate": 0.6454545454545455,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.6454545454545455,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 62,
+              "eligible": 110,
+              "eligible_rate": 0.5636363636363636,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.5636363636363636,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 62,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 48
+          }
+        },
+        "full_dose": {
+          "metrics": {
+            "score_top1": {
+              "hits": 13,
+              "eligible": 110,
+              "eligible_rate": 0.11818181818181818,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.11818181818181818,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 41,
+              "eligible": 110,
+              "eligible_rate": 0.37272727272727274,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.37272727272727274,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 71,
+              "eligible": 110,
+              "eligible_rate": 0.6454545454545455,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.6454545454545455,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 62,
+              "eligible": 110,
+              "eligible_rate": 0.5636363636363636,
+              "issued": 110,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 110,
+              "resolved_gate_rate": 0.5636363636363636,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 62,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 48
+          }
+        }
+      },
+      "paired": {
+        "r7_vs_r22": {
+          "score_top1": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 3,
+            "tied": 107,
+            "net_hits": -3,
+            "net_rate": -0.02727272727272727,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.058333333333333334,
+              0.0
+            ],
+            "fixed_population_net_hits": -3,
+            "fixed_population_net_rate": -0.02727272727272727,
+            "fixed_population_date_cluster_ci": [
+              -0.058333333333333334,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 3,
+            "lost": 2,
+            "tied": 105,
+            "net_hits": 1,
+            "net_rate": 0.00909090909090909,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.0196078431372549,
+              0.04201680672268908
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.00909090909090909,
+            "fixed_population_date_cluster_ci": [
+              -0.0196078431372549,
+              0.04201680672268908
+            ]
+          },
+          "wdl": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "r7_vs_market": {
+          "score_top1": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 2,
+            "tied": 107,
+            "net_hits": -1,
+            "net_rate": -0.00909090909090909,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.03968253968253968,
+              0.020618556701030927
+            ],
+            "fixed_population_net_hits": -1,
+            "fixed_population_net_rate": -0.00909090909090909,
+            "fixed_population_date_cluster_ci": [
+              -0.03968253968253968,
+              0.020618556701030927
+            ]
+          },
+          "score_top3": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 2,
+            "lost": 6,
+            "tied": 102,
+            "net_hits": -4,
+            "net_rate": -0.03636363636363636,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.07964601769911504,
+              0.0
+            ],
+            "fixed_population_net_hits": -4,
+            "fixed_population_net_rate": -0.03636363636363636,
+            "fixed_population_date_cluster_ci": [
+              -0.07964601769911504,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 1,
+            "tied": 109,
+            "net_hits": -1,
+            "net_rate": -0.00909090909090909,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.028846153846153848,
+              0.0
+            ],
+            "fixed_population_net_hits": -1,
+            "fixed_population_net_rate": -0.00909090909090909,
+            "fixed_population_date_cluster_ci": [
+              -0.028846153846153848,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 3,
+            "lost": 3,
+            "tied": 104,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.04504504504504504,
+              0.04673999294657011
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              -0.04504504504504504,
+              0.04673999294657011
+            ]
+          }
+        },
+        "r7_vs_candidate": {
+          "score_top1": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 0,
+            "tied": 109,
+            "net_hits": 1,
+            "net_rate": 0.00909090909090909,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0297029702970297
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.00909090909090909,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0297029702970297
+            ]
+          },
+          "score_top3": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "r22_vs_candidate": {
+          "score_top1": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 4,
+            "lost": 0,
+            "tied": 106,
+            "net_hits": 4,
+            "net_rate": 0.03636363636363636,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.008695652173913044,
+              0.07142857142857142
+            ],
+            "fixed_population_net_hits": 4,
+            "fixed_population_net_rate": 0.03636363636363636,
+            "fixed_population_date_cluster_ci": [
+              0.008695652173913044,
+              0.07142857142857142
+            ]
+          },
+          "score_top3": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 2,
+            "lost": 3,
+            "tied": 105,
+            "net_hits": -1,
+            "net_rate": -0.00909090909090909,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.04201680672268908,
+              0.0196078431372549
+            ],
+            "fixed_population_net_hits": -1,
+            "fixed_population_net_rate": -0.00909090909090909,
+            "fixed_population_date_cluster_ci": [
+              -0.04201680672268908,
+              0.0196078431372549
+            ]
+          },
+          "wdl": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "market_vs_candidate": {
+          "score_top1": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 3,
+            "lost": 1,
+            "tied": 106,
+            "net_hits": 2,
+            "net_rate": 0.01818181818181818,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.018691588785046728,
+              0.05357142857142857
+            ],
+            "fixed_population_net_hits": 2,
+            "fixed_population_net_rate": 0.01818181818181818,
+            "fixed_population_date_cluster_ci": [
+              -0.018691588785046728,
+              0.05357142857142857
+            ]
+          },
+          "score_top3": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 6,
+            "lost": 2,
+            "tied": 102,
+            "net_hits": 4,
+            "net_rate": 0.03636363636363636,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.07964601769911504
+            ],
+            "fixed_population_net_hits": 4,
+            "fixed_population_net_rate": 0.03636363636363636,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.07964601769911504
+            ]
+          },
+          "wdl": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 0,
+            "tied": 109,
+            "net_hits": 1,
+            "net_rate": 0.00909090909090909,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.028846153846153848
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.00909090909090909,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.028846153846153848
+            ]
+          },
+          "actual_ou": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 3,
+            "lost": 3,
+            "tied": 104,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              -0.04673999294657022,
+              0.04504504504504504
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              -0.04673999294657022,
+              0.04504504504504504
+            ]
+          }
+        },
+        "r7_vs_full_dose": {
+          "score_top1": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 0,
+            "tied": 109,
+            "net_hits": 1,
+            "net_rate": 0.00909090909090909,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0297029702970297
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.00909090909090909,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0297029702970297
+            ]
+          },
+          "score_top3": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "candidate_vs_full_dose": {
+          "score_top1": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 110,
+            "resolved_gate_denominator": 110,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 110,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 37,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "bootstrap": {
+        "unit": "whole match date",
+        "confidence": 0.95,
+        "repetitions": 5000,
+        "seed": 20261125,
+        "per_metric_percentile_intervals": true
+      },
+      "coverage": {
+        "fixtures": 110,
+        "both_clubs": 106,
+        "one_club": 4,
+        "neither_club": 0,
+        "both_club_coverage": 0.9636363636363636,
+        "neutral_fallback_matches": 4,
+        "neutral_feature_vectors": 0,
+        "sides": {
+          "home": {
+            "with_valid_observations": 108,
+            "valid_observations": 1296,
+            "missing_identity": 2,
+            "neutral_fallback": 2
+          },
+          "away": {
+            "with_valid_observations": 108,
+            "valid_observations": 1296,
+            "missing_identity": 2,
+            "neutral_fallback": 2
+          }
+        },
+        "market_time_basis": {
+          "archived_closing_category_no_quote_clock": 110
+        },
+        "certified_market_as_of": 0
+      },
+      "three_seat_sweep": {
+        "r7": {
+          "batches": 37,
+          "full_batches": 23,
+          "short_batches": 14,
+          "planned_slots": 111,
+          "occupied_slots": 90,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 1,
+          "short_batch_sizes": {
+            "1": 7,
+            "2": 7
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 37,
+              "metrics": {
+                "score_top1": {
+                  "hits": 2,
+                  "eligible": 37
+                },
+                "score_top3": {
+                  "hits": 15,
+                  "eligible": 37
+                },
+                "wdl": {
+                  "hits": 24,
+                  "eligible": 37
+                },
+                "actual_ou": {
+                  "hits": 18,
+                  "eligible": 37
+                }
+              }
+            },
+            "2": {
+              "occupied": 30,
+              "metrics": {
+                "score_top1": {
+                  "hits": 6,
+                  "eligible": 30
+                },
+                "score_top3": {
+                  "hits": 11,
+                  "eligible": 30
+                },
+                "wdl": {
+                  "hits": 18,
+                  "eligible": 30
+                },
+                "actual_ou": {
+                  "hits": 19,
+                  "eligible": 30
+                }
+              }
+            },
+            "3": {
+              "occupied": 23,
+              "metrics": {
+                "score_top1": {
+                  "hits": 2,
+                  "eligible": 23
+                },
+                "score_top3": {
+                  "hits": 10,
+                  "eligible": 23
+                },
+                "wdl": {
+                  "hits": 14,
+                  "eligible": 23
+                },
+                "actual_ou": {
+                  "hits": 16,
+                  "eligible": 23
+                }
+              }
+            }
+          }
+        },
+        "r22": {
+          "batches": 37,
+          "full_batches": 23,
+          "short_batches": 14,
+          "planned_slots": 111,
+          "occupied_slots": 90,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 1,
+          "short_batch_sizes": {
+            "1": 7,
+            "2": 7
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 37,
+              "metrics": {
+                "score_top1": {
+                  "hits": 2,
+                  "eligible": 37
+                },
+                "score_top3": {
+                  "hits": 15,
+                  "eligible": 37
+                },
+                "wdl": {
+                  "hits": 24,
+                  "eligible": 37
+                },
+                "actual_ou": {
+                  "hits": 18,
+                  "eligible": 37
+                }
+              }
+            },
+            "2": {
+              "occupied": 30,
+              "metrics": {
+                "score_top1": {
+                  "hits": 4,
+                  "eligible": 30
+                },
+                "score_top3": {
+                  "hits": 13,
+                  "eligible": 30
+                },
+                "wdl": {
+                  "hits": 19,
+                  "eligible": 30
+                },
+                "actual_ou": {
+                  "hits": 18,
+                  "eligible": 30
+                }
+              }
+            },
+            "3": {
+              "occupied": 23,
+              "metrics": {
+                "score_top1": {
+                  "hits": 2,
+                  "eligible": 23
+                },
+                "score_top3": {
+                  "hits": 8,
+                  "eligible": 23
+                },
+                "wdl": {
+                  "hits": 13,
+                  "eligible": 23
+                },
+                "actual_ou": {
+                  "hits": 17,
+                  "eligible": 23
+                }
+              }
+            }
+          }
+        },
+        "market": {
+          "batches": 37,
+          "full_batches": 23,
+          "short_batches": 14,
+          "planned_slots": 111,
+          "occupied_slots": 90,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 0,
+          "short_batch_sizes": {
+            "1": 7,
+            "2": 7
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 37,
+              "metrics": {
+                "score_top1": {
+                  "hits": 3,
+                  "eligible": 37
+                },
+                "score_top3": {
+                  "hits": 12,
+                  "eligible": 37
+                },
+                "wdl": {
+                  "hits": 24,
+                  "eligible": 37
+                },
+                "actual_ou": {
+                  "hits": 19,
+                  "eligible": 37
+                }
+              }
+            },
+            "2": {
+              "occupied": 30,
+              "metrics": {
+                "score_top1": {
+                  "hits": 5,
+                  "eligible": 30
+                },
+                "score_top3": {
+                  "hits": 10,
+                  "eligible": 30
+                },
+                "wdl": {
+                  "hits": 17,
+                  "eligible": 30
+                },
+                "actual_ou": {
+                  "hits": 18,
+                  "eligible": 30
+                }
+              }
+            },
+            "3": {
+              "occupied": 23,
+              "metrics": {
+                "score_top1": {
+                  "hits": 2,
+                  "eligible": 23
+                },
+                "score_top3": {
+                  "hits": 8,
+                  "eligible": 23
+                },
+                "wdl": {
+                  "hits": 15,
+                  "eligible": 23
+                },
+                "actual_ou": {
+                  "hits": 15,
+                  "eligible": 23
+                }
+              }
+            }
+          }
+        },
+        "candidate": {
+          "batches": 37,
+          "full_batches": 23,
+          "short_batches": 14,
+          "planned_slots": 111,
+          "occupied_slots": 90,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 1,
+          "short_batch_sizes": {
+            "1": 7,
+            "2": 7
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 37,
+              "metrics": {
+                "score_top1": {
+                  "hits": 2,
+                  "eligible": 37
+                },
+                "score_top3": {
+                  "hits": 15,
+                  "eligible": 37
+                },
+                "wdl": {
+                  "hits": 24,
+                  "eligible": 37
+                },
+                "actual_ou": {
+                  "hits": 18,
+                  "eligible": 37
+                }
+              }
+            },
+            "2": {
+              "occupied": 30,
+              "metrics": {
+                "score_top1": {
+                  "hits": 6,
+                  "eligible": 30
+                },
+                "score_top3": {
+                  "hits": 11,
+                  "eligible": 30
+                },
+                "wdl": {
+                  "hits": 18,
+                  "eligible": 30
+                },
+                "actual_ou": {
+                  "hits": 19,
+                  "eligible": 30
+                }
+              }
+            },
+            "3": {
+              "occupied": 23,
+              "metrics": {
+                "score_top1": {
+                  "hits": 3,
+                  "eligible": 23
+                },
+                "score_top3": {
+                  "hits": 10,
+                  "eligible": 23
+                },
+                "wdl": {
+                  "hits": 14,
+                  "eligible": 23
+                },
+                "actual_ou": {
+                  "hits": 16,
+                  "eligible": 23
+                }
+              }
+            }
+          }
+        },
+        "full_dose": {
+          "batches": 37,
+          "full_batches": 23,
+          "short_batches": 14,
+          "planned_slots": 111,
+          "occupied_slots": 90,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 1,
+          "short_batch_sizes": {
+            "1": 7,
+            "2": 7
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 37,
+              "metrics": {
+                "score_top1": {
+                  "hits": 2,
+                  "eligible": 37
+                },
+                "score_top3": {
+                  "hits": 15,
+                  "eligible": 37
+                },
+                "wdl": {
+                  "hits": 24,
+                  "eligible": 37
+                },
+                "actual_ou": {
+                  "hits": 18,
+                  "eligible": 37
+                }
+              }
+            },
+            "2": {
+              "occupied": 30,
+              "metrics": {
+                "score_top1": {
+                  "hits": 6,
+                  "eligible": 30
+                },
+                "score_top3": {
+                  "hits": 11,
+                  "eligible": 30
+                },
+                "wdl": {
+                  "hits": 18,
+                  "eligible": 30
+                },
+                "actual_ou": {
+                  "hits": 19,
+                  "eligible": 30
+                }
+              }
+            },
+            "3": {
+              "occupied": 23,
+              "metrics": {
+                "score_top1": {
+                  "hits": 3,
+                  "eligible": 23
+                },
+                "score_top3": {
+                  "hits": 10,
+                  "eligible": 23
+                },
+                "wdl": {
+                  "hits": 14,
+                  "eligible": 23
+                },
+                "actual_ou": {
+                  "hits": 16,
+                  "eligible": 23
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "november_extension": {
+      "population": 10,
+      "tracks": {
+        "r7": {
+          "metrics": {
+            "score_top1": {
+              "hits": 2,
+              "eligible": 10,
+              "eligible_rate": 0.2,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.2,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 3,
+              "eligible": 10,
+              "eligible_rate": 0.3,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.3,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 7,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 3
+          }
+        },
+        "r22": {
+          "metrics": {
+            "score_top1": {
+              "hits": 3,
+              "eligible": 10,
+              "eligible_rate": 0.3,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.3,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 3,
+              "eligible": 10,
+              "eligible_rate": 0.3,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.3,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 7,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 3
+          }
+        },
+        "market": {
+          "metrics": {
+            "score_top1": {
+              "hits": 2,
+              "eligible": 10,
+              "eligible_rate": 0.2,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.2,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 3,
+              "eligible": 10,
+              "eligible_rate": 0.3,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.3,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 6,
+              "eligible": 10,
+              "eligible_rate": 0.6,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.6,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 6,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 4
+          }
+        },
+        "candidate": {
+          "metrics": {
+            "score_top1": {
+              "hits": 2,
+              "eligible": 10,
+              "eligible_rate": 0.2,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.2,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 3,
+              "eligible": 10,
+              "eligible_rate": 0.3,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.3,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 7,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 3
+          }
+        },
+        "full_dose": {
+          "metrics": {
+            "score_top1": {
+              "hits": 2,
+              "eligible": 10,
+              "eligible_rate": 0.2,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.2,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 3,
+              "eligible": 10,
+              "eligible_rate": 0.3,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.3,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 7,
+              "eligible": 10,
+              "eligible_rate": 0.7,
+              "issued": 10,
+              "registered_coverage": 1.0,
+              "resolved_gate_denominator": 10,
+              "resolved_gate_rate": 0.7,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 7,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 3
+          }
+        }
+      },
+      "paired": {
+        "r7_vs_r22": {
+          "score_top1": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 0,
+            "tied": 9,
+            "net_hits": 1,
+            "net_rate": 0.1,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.25
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.1,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.25
+            ]
+          },
+          "score_top3": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "r7_vs_market": {
+          "score_top1": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 1,
+            "tied": 9,
+            "net_hits": -1,
+            "net_rate": -0.1,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              -0.2,
+              0.0
+            ],
+            "fixed_population_net_hits": -1,
+            "fixed_population_net_rate": -0.1,
+            "fixed_population_date_cluster_ci": [
+              -0.2,
+              0.0
+            ]
+          }
+        },
+        "r7_vs_candidate": {
+          "score_top1": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "r22_vs_candidate": {
+          "score_top1": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 1,
+            "tied": 9,
+            "net_hits": -1,
+            "net_rate": -0.1,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              -0.25,
+              0.0
+            ],
+            "fixed_population_net_hits": -1,
+            "fixed_population_net_rate": -0.1,
+            "fixed_population_date_cluster_ci": [
+              -0.25,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "market_vs_candidate": {
+          "score_top1": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 1,
+            "lost": 0,
+            "tied": 9,
+            "net_hits": 1,
+            "net_rate": 0.1,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.2
+            ],
+            "fixed_population_net_hits": 1,
+            "fixed_population_net_rate": 0.1,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.2
+            ]
+          }
+        },
+        "r7_vs_full_dose": {
+          "score_top1": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "candidate_vs_full_dose": {
+          "score_top1": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "score_top3": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "wdl": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          },
+          "actual_ou": {
+            "eligible": 10,
+            "resolved_gate_denominator": 10,
+            "coverage": 1.0,
+            "gained": 0,
+            "lost": 0,
+            "tied": 10,
+            "net_hits": 0,
+            "net_rate": 0.0,
+            "matchday_clusters": 3,
+            "date_cluster_ci": [
+              0.0,
+              0.0
+            ],
+            "fixed_population_net_hits": 0,
+            "fixed_population_net_rate": 0.0,
+            "fixed_population_date_cluster_ci": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "bootstrap": {
+        "unit": "whole match date",
+        "confidence": 0.95,
+        "repetitions": 5000,
+        "seed": 20261125,
+        "per_metric_percentile_intervals": true
+      },
+      "coverage": {
+        "fixtures": 10,
+        "both_clubs": 8,
+        "one_club": 2,
+        "neither_club": 0,
+        "both_club_coverage": 0.8,
+        "neutral_fallback_matches": 2,
+        "neutral_feature_vectors": 0,
+        "sides": {
+          "home": {
+            "with_valid_observations": 8,
+            "valid_observations": 96,
+            "missing_identity": 2,
+            "neutral_fallback": 2
+          },
+          "away": {
+            "with_valid_observations": 10,
+            "valid_observations": 120,
+            "missing_identity": 0,
+            "neutral_fallback": 0
+          }
+        },
+        "market_time_basis": {
+          "archived_nonclosing_category_no_quote_clock": 10
+        },
+        "certified_market_as_of": 0
+      },
+      "three_seat_sweep": {
+        "r7": {
+          "batches": 3,
+          "full_batches": 2,
+          "short_batches": 1,
+          "planned_slots": 9,
+          "occupied_slots": 7,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 0,
+          "short_batch_sizes": {
+            "1": 1
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 3,
+              "metrics": {
+                "score_top1": {
+                  "hits": 1,
+                  "eligible": 3
+                },
+                "score_top3": {
+                  "hits": 1,
+                  "eligible": 3
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 3
+                },
+                "actual_ou": {
+                  "hits": 1,
+                  "eligible": 3
+                }
+              }
+            },
+            "2": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 2
+                }
+              }
+            },
+            "3": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 2
+                }
+              }
+            }
+          }
+        },
+        "r22": {
+          "batches": 3,
+          "full_batches": 2,
+          "short_batches": 1,
+          "planned_slots": 9,
+          "occupied_slots": 7,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 0,
+          "short_batch_sizes": {
+            "1": 1
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 3,
+              "metrics": {
+                "score_top1": {
+                  "hits": 0,
+                  "eligible": 3
+                },
+                "score_top3": {
+                  "hits": 0,
+                  "eligible": 3
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 3
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 3
+                }
+              }
+            },
+            "2": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 2,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 2,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 1,
+                  "eligible": 2
+                }
+              }
+            },
+            "3": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 2
+                }
+              }
+            }
+          }
+        },
+        "market": {
+          "batches": 3,
+          "full_batches": 2,
+          "short_batches": 1,
+          "planned_slots": 9,
+          "occupied_slots": 7,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 0,
+          "short_batch_sizes": {
+            "1": 1
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 3,
+              "metrics": {
+                "score_top1": {
+                  "hits": 1,
+                  "eligible": 3
+                },
+                "score_top3": {
+                  "hits": 1,
+                  "eligible": 3
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 3
+                },
+                "actual_ou": {
+                  "hits": 1,
+                  "eligible": 3
+                }
+              }
+            },
+            "2": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 2
+                }
+              }
+            },
+            "3": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 1,
+                  "eligible": 2
+                }
+              }
+            }
+          }
+        },
+        "candidate": {
+          "batches": 3,
+          "full_batches": 2,
+          "short_batches": 1,
+          "planned_slots": 9,
+          "occupied_slots": 7,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 0,
+          "short_batch_sizes": {
+            "1": 1
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 3,
+              "metrics": {
+                "score_top1": {
+                  "hits": 1,
+                  "eligible": 3
+                },
+                "score_top3": {
+                  "hits": 1,
+                  "eligible": 3
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 3
+                },
+                "actual_ou": {
+                  "hits": 1,
+                  "eligible": 3
+                }
+              }
+            },
+            "2": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 2
+                }
+              }
+            },
+            "3": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 2
+                }
+              }
+            }
+          }
+        },
+        "full_dose": {
+          "batches": 3,
+          "full_batches": 2,
+          "short_batches": 1,
+          "planned_slots": 9,
+          "occupied_slots": 7,
+          "three_first_sweeps": 0,
+          "three_score_sweeps": 0,
+          "short_batch_sizes": {
+            "1": 1
+          },
+          "per_seat": {
+            "1": {
+              "occupied": 3,
+              "metrics": {
+                "score_top1": {
+                  "hits": 1,
+                  "eligible": 3
+                },
+                "score_top3": {
+                  "hits": 1,
+                  "eligible": 3
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 3
+                },
+                "actual_ou": {
+                  "hits": 1,
+                  "eligible": 3
+                }
+              }
+            },
+            "2": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 1,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 2
+                }
+              }
+            },
+            "3": {
+              "occupied": 2,
+              "metrics": {
+                "score_top1": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "score_top3": {
+                  "hits": 0,
+                  "eligible": 2
+                },
+                "wdl": {
+                  "hits": 2,
+                  "eligible": 2
+                },
+                "actual_ou": {
+                  "hits": 2,
+                  "eligible": 2
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

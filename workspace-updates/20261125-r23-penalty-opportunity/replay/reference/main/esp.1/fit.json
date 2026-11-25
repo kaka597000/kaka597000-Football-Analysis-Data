@@ -1,0 +1,86 @@
+{
+  "version": "R23-penalty-opportunity-1",
+  "competition": "esp.1",
+  "training_through": "2024-05-26",
+  "validation_through": "2025-05-25",
+  "dose": 0.0,
+  "fitted": {
+    "version": "R23-penalty-opportunity-1",
+    "features": [
+      "home_attack",
+      "away_allowance",
+      "away_attack",
+      "home_allowance"
+    ],
+    "beta": [
+      -0.1089206181628817,
+      -0.12604479820075548
+    ],
+    "training_rows": 1900,
+    "outside_grid": 0,
+    "zero_prior_cells": 0,
+    "penalized_loss": 5251.802386017611
+  },
+  "training_games": 1900,
+  "validation_games": 380,
+  "training_outside_grid": 0,
+  "protocol_sha256": "c6c3672cc729f18ba3233cba005e604153e1da08a30d4693491b5e521e94d654",
+  "inputs": {
+    "panel_sha256": "b65ec79d6f8202811ad680ebcaf9366baf48c3f695e706c6c5aa56c3ea878945",
+    "r7_fit_sha256": "e3f224bff9fd694dc876f461aef136167dbb9be760e145056ee508f5596a50fa",
+    "r7_recipe_sha256": "e0239122473255eeb99c718f9876ce79228ebac80525d651ccfe2638ca4c83d2",
+    "r7_forecasts_sha256": "a757921d644241cc423a75f79136d29b9ecfeb3a74541b8637d0358cd799efa0",
+    "r10_forecasts_sha256": "229f3c222e5ec72e6c73ec24566ddd0218f645e455f6bb4e1aa5b8534a8136a4",
+    "r5_evaluation_sha256": "e941a4757cdfa63622d33cc51d9f26782eb47be7c4b9043e94b787c9be2818db",
+    "r5_recent_sha256": "651f925212b6379b5b38c98eaf031a93edfdf8ef1d3bcf5a6b82101eab4f22c6",
+    "r22_fit_sha256": "cfac90808fae5bdd7b13fcee6a9db26842629e29a31a2f4e800497ed5795ef7e",
+    "r22_forecasts_sha256": "3bd2b0ce52257ef1941c31aafa3896d213dd593d1e5337244a3d5c334958b1ac",
+    "r22_validation_sha256": "4a93ecdab7e377a83bfdf88b495d33edbc0252d154413b4315fbd7f8b6c301bd"
+  },
+  "training_coverage": {
+    "fixtures": 1900,
+    "both_clubs": 1489,
+    "one_club": 24,
+    "neither_club": 387,
+    "both_club_coverage": 0.7836842105263158,
+    "neutral_fallback_matches": 411,
+    "neutral_feature_vectors": 387,
+    "sides": {
+      "home": {
+        "with_valid_observations": 1500,
+        "valid_observations": 17194,
+        "missing_identity": 400,
+        "neutral_fallback": 400
+      },
+      "away": {
+        "with_valid_observations": 1502,
+        "valid_observations": 17189,
+        "missing_identity": 398,
+        "neutral_fallback": 398
+      }
+    }
+  },
+  "validation_trials": [
+    {
+      "dose": 0.0,
+      "first_hits": 57,
+      "top3_hits": 160,
+      "negative_log_likelihood": 1026.0238979586811,
+      "validation_games": 380
+    },
+    {
+      "dose": 0.5,
+      "first_hits": 57,
+      "top3_hits": 159,
+      "negative_log_likelihood": 1026.0291522024838,
+      "validation_games": 380
+    },
+    {
+      "dose": 1.0,
+      "first_hits": 57,
+      "top3_hits": 160,
+      "negative_log_likelihood": 1026.0513649072775,
+      "validation_games": 380
+    }
+  ]
+}

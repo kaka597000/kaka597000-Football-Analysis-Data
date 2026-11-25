@@ -1,0 +1,98 @@
+{
+  "schema": "r23-evidence-source-lock-v1",
+  "input_data_commit": "64efb374fb598b39c1c14048573c3e8754633c76",
+  "stack_base": "7f2ea66f23ba512178a66de7761c6b4ed6b5f370",
+  "preregistration": {
+    "commit": "c43eb3dc678028994a85da5d94340f16f1a74cce",
+    "path": "research/20261125-r23-penalty-opportunity/protocol.json",
+    "sha256": "c6c3672cc729f18ba3233cba005e604153e1da08a30d4693491b5e521e94d654"
+  },
+  "upstream": {
+    "r5": {
+      "path": "workspace-updates/20261123-all-scope-kpi",
+      "files": 65,
+      "tree_sha256": "cdf679167077197b29e67a4bcdb48ab8da545208089fcc13842b1d43ea8d4b2e",
+      "manifest_sha256": "f3b6fa64903e97a6c74966362894c3378dfe5bca03a4a84709d4c694946ed3d8"
+    },
+    "r7": {
+      "path": "workspace-updates/20261123-prematch-literature",
+      "files": 48,
+      "tree_sha256": "ec080c30f3004dbf24e93134bf5665756a020487888b2882fae380e422e2cdf5",
+      "manifest_sha256": "e2ed191e29150ba59bf9623ce2a44b265e8b71c9e777d9197ec869975a957df3"
+    },
+    "r10": {
+      "path": "workspace-updates/20261125-r10-shot-conversion",
+      "files": 35,
+      "tree_sha256": "dc22e5cf7f4fc3c1c0510041a6435e845bf9fc20f4efeb31273ca47724f038f1",
+      "manifest_sha256": "f136707b0d5cbbac883f74cc9ce8dc85e9bc434ece591a2ba8c72c327faaf8cb"
+    },
+    "r14": {
+      "path": "workspace-updates/20261125-r14-territory-press",
+      "files": 17,
+      "tree_sha256": "3ca84463a496f4927340bde069bea7a8b7f2852c818bdab78dd230d0419f7767",
+      "manifest_sha256": "40aba01bc24d22fd0c6827753b27b1416ba2e6a337dcefdef4d8ba5e2312efc7"
+    },
+    "r21": {
+      "path": "workspace-updates/20261125-r21-score-dependence",
+      "files": 131,
+      "tree_sha256": "7385a698fca5e06fb96ff0626b8a92f49f2f330267743bc07cc21c4edbf07801",
+      "manifest_sha256": "d0c3f905be2599cdbcf22d6ec98ea07e87fe99911ec2174a4bab0a0f208ab89f"
+    },
+    "r22": {
+      "path": "workspace-updates/20261125-r22-draw-preserving",
+      "files": 155,
+      "tree_sha256": "364558005e75ce351dbf2134eac33ea6b76fc42527b429d51d63942524affbed",
+      "manifest_sha256": "4fe70a743c3ba3450c095448810e932ab09c71a3770ff63447668102f602510c"
+    }
+  },
+  "understat": {
+    "archive_path": "workspace-updates/20261125-r14-territory-press/inputs/understat.tar.gz",
+    "archive_sha256": "c83b75b247ad86e1fa8b52fa7063e666837be02016386188e250a128a73225c2",
+    "events_sha256": "63f853739198298cbbde9dfce2cb02c582cb9dccb4070215c51453325f553bd5"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "lightgbm": "4.6.0",
+      "pandas": "3.1.0"
+    },
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "0",
+      "OPENBLAS_CORETYPE": "Haswell",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NPY_DISABLE_CPU_FEATURES": "AVX512F",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "historical": {
+    "files": 42,
+    "tree_sha256": "76c693be9e953aabab2700938ce8c62f2346ead04a11f2492c152357d9d253ed"
+  },
+  "source_commit": "313d9e96253a0fc6dab0e99b2db4b342d1d84d70",
+  "source_files_sha256": {
+    "configs/analysis-scope.json": "eed6fcdfe58e94646767c5f081a2a80d991fb3c33e5fc3dd86bb92e05bdd4fff",
+    "project-goals.json": "b7a585bf733a5754d755843ebd08fc9b28f5483f8cfe42edd76fc8d190196886",
+    "requirements.txt": "7fc1d6710436a33fe8d0ced77a592d3320d2fc583124b5624f127670d934e9a0",
+    "research/20261125-r23-penalty-opportunity/protocol.json": "c6c3672cc729f18ba3233cba005e604153e1da08a30d4693491b5e521e94d654",
+    "runtime/research_program/penalty_opportunity.py": "3b8e7567919d80b6687da9e74b8bc0a7b0f3dc1cdeb7a1b9d81572668c6d8fe0",
+    "runtime/research_program/penalty_opportunity_forward.py": "c94822d306982aeea00fb733b0002e4305b68e7b9bb52b0bd4e39b098a2feb5f",
+    "runtime/research_program/penalty_opportunity_study.py": "e1b6a6bb46e6584574e067d9ff3fe813f9a3c43197981a8a9d4dc21b30f6226a",
+    "runtime/research_program/test_penalty_opportunity.py": "f4cc120a64ed5acb4f1b8b9a96a1c990bec48c203b5a79ce3f829f7228931623",
+    "runtime/research_program/test_penalty_opportunity_forward.py": "4055a05fb00599489a1f2c959acb9801e152b67828b1c6fdb8f9beb17e1536fa",
+    "runtime/research_program/test_penalty_opportunity_study.py": "73a5a23a3dea7a45a5639708c1ec5f4aefb62f85738d0c364f9d1773c2512f85"
+  },
+  "forward": {
+    "original_fixtures": 45,
+    "issued_firsts": 45,
+    "recorded_at": "2026-11-25T23:33:56.207324+08:00",
+    "registration_sha256": "7fad1b56f54acf292ef3313306318ae8deab2dfa8c41f20d0abe2335257b37b6",
+    "rank_recorded_at": "2026-11-25T23:33:56.400234+08:00",
+    "rank_sha256": "20d5a82c467e2f91a872a3328195d91adff4e109dc9244a201d4a009ab6b5c3e",
+    "ranked_seats": 15
+  }
+}
