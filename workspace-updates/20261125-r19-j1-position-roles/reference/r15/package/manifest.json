@@ -1,0 +1,105 @@
+{
+  "schema": "r15-j1-lineup-evidence-v1",
+  "source_commit": "993686077a360705fb02c0667de96fc32b590e3b",
+  "source": {
+    "repository": "kaka597000/Football-Analysis",
+    "commit": "993686077a360705fb02c0667de96fc32b590e3b",
+    "registration": "d2ccb7b10163abba583374cdd3023b7441bceeb7",
+    "protocol_sha256": "da900a991d6801de4547605b452d699dc71bcba28b6b6115b77ae583eb370e91",
+    "runtime_tree": "41c3fbff7a31b1240f6edfa2c6297b6e31f8a0a3",
+    "module_sha256": {
+      "lineup_study": "88034c34480eef27aa969b0afc986b4693b3809b4a7c1c507cc9756bf5f16943",
+      "lineup_history": "9c70959b3f527ac0237a6c23a8332966985b6a18a6226c04d08baac48de46e27",
+      "territory_hurdle": "ad03f53f0070ed22a1751eebdaf7f42f7e9812804280def47c1be814b1106608",
+      "paired_kpi_inference": "d5135d158f74907abb1886abc76c97d365222667f6fe208b163d8378c839d74c"
+    },
+    "requirements_sha256": "7fc1d6710436a33fe8d0ced77a592d3320d2fc583124b5624f127670d934e9a0"
+  },
+  "dependencies": {
+    "r5": {
+      "directory": "workspace-updates/20261123-all-scope-kpi",
+      "archive": "models/jpn.1.tar.gz",
+      "archive_sha256": "b9c883ee9055b0e562e8ad5b482a26dab219d1c0d6bd76ae0c16f74a42f23edb",
+      "manifest_sha256": "f3b6fa64903e97a6c74966362894c3378dfe5bca03a4a84709d4c694946ed3d8"
+    },
+    "r7": {
+      "directory": "workspace-updates/20261123-prematch-literature",
+      "archive": "models/jpn.1.tar.gz",
+      "archive_sha256": "b6261ab328fe4ade9178dacb587fb819e765c80ef7fb2c6721abe0b16b98d183",
+      "manifest_sha256": "e2ed191e29150ba59bf9623ce2a44b265e8b71c9e777d9197ec869975a957df3"
+    },
+    "r10": {
+      "directory": "workspace-updates/20261125-r10-shot-conversion",
+      "archive": "replay/main.tar.gz",
+      "archive_sha256": "7aa2c0d85ccc82779a7e922d3ed1b5184f576362ef958590ecce71bc80039f77",
+      "manifest_sha256": "f136707b0d5cbbac883f74cc9ce8dc85e9bc434ece591a2ba8c72c327faaf8cb"
+    }
+  },
+  "rosters_sha256": "40599f252e115f57b98d6e1450a7eb4ea205a25908204083c7356bd6d99cf58e",
+  "counts": {
+    "fixture_slots": 2822,
+    "training_rows": 2822,
+    "original_bodies": 2835,
+    "capture_receipts": 2840,
+    "folds": {
+      "train": {
+        "fixtures": 1912,
+        "missing_event": 0,
+        "both_complete": 1911
+      },
+      "validation": {
+        "fixtures": 380,
+        "missing_event": 0,
+        "both_complete": 217
+      },
+      "evaluation": {
+        "fixtures": 380,
+        "missing_event": 0,
+        "both_complete": 0
+      },
+      "recent": {
+        "fixtures": 150,
+        "missing_event": 0,
+        "both_complete": 0
+      }
+    }
+  },
+  "files": {
+    "README.md": "66b601698f483dc3832eaf639c29d43c63e98589e43b7e7dd3aacf58d836ba69",
+    "VERIFYING.md": "4bfa8e4649015ba760be4f9a24e12de4f119826d66c74e4698b4ce798b4dfa3e",
+    "baselines.py": "a2d4a92c9ff55a9d3bfeb397a365ea0f5709a83d338a5d871c73e37b399a47de",
+    "common.py": "bd859b7b58198f608884ba6dc4b2ad48254f34b3a465a887289bed5562c6cabb",
+    "data_readme.py": "fe0ae0135f7f4f0cd8a046c4a300c6761afae185642a14905fa26436c3e93333",
+    "day-counts.csv": "608b456227112197e6f0ea8a2582070fee498a5d07a13c4bfb6eb3985fd848d9",
+    "extract_v1.py": "5784ee713b7fc79cde2e73ddc07c0545dcb784122be233cb5a0c101b2cf84351",
+    "intake.py": "60330ae75c117a27018bb1da0d0a77b53d11888461d1c6043778178094af33ba",
+    "intake.tar.gz": "7a786366e2821752dcd10ed431468cf7c8e19fb61bbddf7490a8682363fe4662",
+    "metric-counts.csv": "7e72c0861d5e873d958c6462444d5400268e8d82659c7b33833ff4a09baf8057",
+    "normalized-starters.jsonl.gz": "a538af8138dd083026eaf33c5c9982315eeff39f76c8489f82819e6de1ad5c02",
+    "package.py": "6d7601daf161a3e45c6cc759bea6d1663ad7586953cf0c48d59cba82275a01e0",
+    "paired-counts.csv": "7272482629a46ff6c3b1c8c29fbbabb352195140dd329ebf5a066f626e2d0bbe",
+    "prospective.py": "5a88f2c97c8295a0cb46804c74a91a6c81460438fda1c00ba565df792fbe3cf4",
+    "prospective_records.py": "f04e5878c35a37561953d0c51d9153e2140626cc7b3489ae173f279671fdaf26",
+    "raw/part-0001.tar": "d02908ab83371629546bed9323e60b79ebeba0fa31a88f4e6e5e7e881468712d",
+    "raw/part-0002.tar": "999bcb0ce44f87e9e20e68f83d1a6286604c5c3462b923a7fdd0784d15877df0",
+    "raw/part-0003.tar": "92c62aac6852dafae2377da1d2ef106b0e61c053b14f5a9c19f5a9a075b6a6cb",
+    "raw/part-0004.tar": "2dc502927785466f48a81541df5f9fa341482414d96586919e98354978c2e6a3",
+    "raw/part-0005.tar": "211bc83908879493e1690db710cb94d528c15e51c37eebf7db06bf74d95e3fda",
+    "raw/part-0006.tar": "426e98047e356e5c4c1fb4d55777757ca8a0e1adfe9b2bd7e6007de42c471528",
+    "raw/part-0007.tar": "8ee7d3913782987610b33fb12ceeea8e1b520ecc44246b8c9d9bb5cf7852d11c",
+    "raw/part-0008.tar": "11c16e6eabadfa356b746ece02c2ff53c482a197296ca3f8d64233a04ec6e4f5",
+    "replay/coverage.json": "5f69ef80fc45b3719067c9cea536c88cad05341fa72f34e0346629dcd983c0a0",
+    "replay/fit.json": "e191a95ad260edc70a009bb528eec549aceb2ee9445c8e34daa269ceddba8385",
+    "replay/forecasts.jsonl.gz": "c68e666597e821c35b12d41c31173dd2d5f8ba2a184b906886a56b280a81cdb4",
+    "replay/forward.json": "7da35a25fe6ed1b852d94549aedf9d1e17a19403470304d3c83954d4a2b53b93",
+    "replay/inputs.json": "9966f80cc36e3c9a795f8e35ef59b3cc154679c07ac6895e16e32805eef5165e",
+    "replay/metrics.json": "33e30db98b329ac85437158c4775e2246a863e64151809ef956d8c9b625a45da",
+    "replay/roster-coverage.jsonl.gz": "9329487c1969132c9fb89398f8ee4e274cfe75e23ff4c07ec91c83a1e5c086b2",
+    "replay/selected-days.jsonl.gz": "b4c6bed650ea78ba39a7f97c061b903a3635b039865a429e5cc7514dc48e1706",
+    "replay.py": "8f5e1c97536aaeba23d48ff6414674876cc6ea2e535c9b7bc86f6f0d2bef14ad",
+    "starters.py": "05fdebd5e1109e3bfb17d740f465bb61a030295fba66d14c81cab0ae0385f727",
+    "verify.py": "38561a2c448d95b09476deb04e5349278534cf0ee7daac5080a3e0cffee13601",
+    "weights.csv": "ee9c28a3248f6dee1c9f494f940e82ca5c88e43ae123a0afece8ee47bac8de13"
+  },
+  "workflow_sha256": "6cb5b8cf8da484a2c0268a1ea3c6a9cb6a75b7667c3a0655971af85e5b2dac65"
+}

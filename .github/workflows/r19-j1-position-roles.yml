@@ -1,0 +1,38 @@
+name: Verify R19 J1 position-role evidence
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-r19-j1-position-roles/**'
+      - '.github/workflows/r19-j1-position-roles.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      R19: workspace-updates/20261125-r19-j1-position-roles
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLCONFIGDIR: /tmp/mpl-r19
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: f17c40be7a611998db3b755c65c1d2ebb1f39dc8
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0
+      - name: Rebuild the R15 roster, refit R19, and recheck original first issues
+        run: |
+          python -B "$R19/verify.py" \
+            --package "$R19" --data-root . --source source

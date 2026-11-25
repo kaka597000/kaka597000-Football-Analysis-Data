@@ -1,0 +1,122 @@
+{
+  "protocol_sha256": "79c475cc0311ddc605071bd579103c91c6e41e9fc89f773e7f30a6248adfe3ef",
+  "panel_sha256": "d0e9591d8221bd3e1f41b480a7f14c5eb743f1020ca2afaae23454bad49c8140",
+  "rosters_sha256": "40599f252e115f57b98d6e1450a7eb4ea205a25908204083c7356bd6d99cf58e",
+  "schedule_index_sha256": "e2702f5daa863ace42cca32a91387d74aa26d493f316c948b408c47dc9aff36a",
+  "r7_fit_sha256": "88f677a3c56449b75e12598713d7d5376921d55f55d670175561f6e3714b4c61",
+  "baseline_sha256": "92635a750d65f82f3055ba3b82ae61d0d83120766c6b67b9c6a893aa629c47d3",
+  "r10_fit_sha256": "44979def1e9c1662a0d8d8e9601a79844607c795ecdecbcc4922f92e75560951",
+  "archive_sha256": {
+    "r5": "b9c883ee9055b0e562e8ad5b482a26dab219d1c0d6bd76ae0c16f74a42f23edb",
+    "r7": "b6261ab328fe4ade9178dacb587fb819e765c80ef7fb2c6721abe0b16b98d183",
+    "r10": "7aa2c0d85ccc82779a7e922d3ed1b5184f576362ef958590ecce71bc80039f77"
+  },
+  "roster_manifest_sha256": "896f2c0e076b16aafda40975324002f393127983146c19668574e17a68d44dbb",
+  "roster_snapshot_at": "2026-11-25T11:33:21.513516+00:00",
+  "version": "R15-J1-prior-starters-1",
+  "competition": "jpn.1",
+  "mode": "retrospective_prior_match_rosters",
+  "formal_kpi_eligible": false,
+  "roster_coverage": "PARTIAL",
+  "roster_rows": 2822,
+  "outside_panel_rows": 0,
+  "experiment": "R19-J1-provider-position-roles-1",
+  "r15_protocol_sha256": "da900a991d6801de4547605b452d699dc71bcba28b6b6115b77ae583eb370e91",
+  "r15_inputs_sha256": "9966f80cc36e3c9a795f8e35ef59b3cc154679c07ac6895e16e32805eef5165e",
+  "r15_original_fit_sha256": "e191a95ad260edc70a009bb528eec549aceb2ee9445c8e34daa269ceddba8385",
+  "r15_original_forecasts_sha256": "c68e666597e821c35b12d41c31173dd2d5f8ba2a184b906886a56b280a81cdb4",
+  "through": "2026-11-21",
+  "games": 2822,
+  "features": [
+    "own_attack_form",
+    "opponent_concession_form",
+    "own_attack_rating",
+    "opponent_defensive_concession_rating",
+    "own_attack_retention",
+    "opponent_defence_retention"
+  ],
+  "study_inputs_sha256": "1254eff6d704fe0bb21e0d8cf116b7bae715fe12a5e016299133e9991c0cfaeb",
+  "fit_sha256": "04a59a670d59164c41f8d8e9aa6339694e42bf926bf00cf15e16f60f64f51cc1",
+  "doses": {
+    "full": {
+      "score": 0.0,
+      "wdl": 0.0,
+      "total": 0.0
+    },
+    "form": {
+      "score": 1.0,
+      "wdl": 0.0,
+      "total": 0.0
+    }
+  },
+  "fitted": {
+    "full": {
+      "version": "R15-J1-prior-starters-1",
+      "features": [
+        "own_attack_form",
+        "opponent_concession_form",
+        "own_attack_rating",
+        "opponent_defensive_concession_rating",
+        "own_attack_retention",
+        "opponent_defence_retention"
+      ],
+      "ridge": 24.0,
+      "coefficient_bound": 1.5,
+      "feature_limit": 1.0,
+      "shift_limit": 0.65,
+      "ipf_rtol": 1e-12,
+      "ipf_max_iter": 1024,
+      "training_games": 2822,
+      "games_with_signal": 2785,
+      "fit_games": 2785,
+      "scoring_fit_sides": 5570,
+      "positive_fit_sides": 3966,
+      "scoring_beta": [
+        -0.19639643816466149,
+        -0.3326131649100141,
+        0.004111504038107012,
+        0.08475337373525708,
+        -0.04321271181235848,
+        -0.07760240896604262
+      ],
+      "positive_beta": [
+        -0.3038055247356432,
+        -0.28380945253781137,
+        0.011567882602943932,
+        -0.06399072341923641,
+        -0.05229757736971775,
+        -0.09677417619834199
+      ],
+      "estimator": "R14-territory-press-hurdle-1",
+      "form_only": false
+    },
+    "form": {
+      "version": "R15-J1-prior-starters-1",
+      "features": [
+        "own_attack_form",
+        "opponent_concession_form"
+      ],
+      "ridge": 24.0,
+      "coefficient_bound": 1.5,
+      "feature_limit": 1.0,
+      "shift_limit": 0.65,
+      "ipf_rtol": 1e-12,
+      "ipf_max_iter": 1024,
+      "training_games": 2822,
+      "games_with_signal": 2785,
+      "fit_games": 2785,
+      "scoring_fit_sides": 5570,
+      "positive_fit_sides": 3966,
+      "scoring_beta": [
+        -0.19817805584074666,
+        -0.31997309214612407
+      ],
+      "positive_beta": [
+        -0.3063119074809674,
+        -0.28064983914484776
+      ],
+      "estimator": "R14-territory-press-hurdle-1",
+      "form_only": true
+    }
+  }
+}
