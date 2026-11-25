@@ -1,0 +1,341 @@
+{
+  "schema": "R10-UCL-NINE-SUPPLEMENT-REGISTRATION-1",
+  "parent_pull_request": 47,
+  "branch": "research/r10-shot-conversion-evidence-20261125",
+  "parent_head_at_registration": "c17f983d279c64518ccb2392465fdf66e3f0bdbb",
+  "source_issue": "R10 original nine-fixture UEFA Champions League slate; preserve three original seats and six unissued slots.",
+  "registered_at_utc": "2026-11-25T12:30:35Z",
+  "kickoff_scope": "2026-11-25 17:45Z and 20:00Z",
+  "fixture_count": 9,
+  "selected_original_seats": 3,
+  "comprehensive_unissued_slots": 6,
+  "public_source": {
+    "provider": "ESPN public site.api",
+    "request_name": "espn-scoreboard",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard?dates=20261125",
+    "accessed_at_utc": "2026-11-25T07:20:46.216418+00:00",
+    "http_status": 200,
+    "raw_sha256": "2288de9524f664db8e0934ee7a09b75294472e06585ee1c6c63737b751e7822d",
+    "raw_bytes": 111433,
+    "raw_archive_member": "evidence/raw/espn-scoreboard.json",
+    "archive": "../20261125-r10-shot-conversion/formal/nov26-ucl-three.tar.gz"
+  },
+  "inputs": [
+    {
+      "name": "ranked_batch_plan",
+      "path": "/workspace/scratch/r10-ranked-20261125/plan.json",
+      "sha256": "2063753b322c6d7f6ba11e06c1d415a38f2a790ac392d74df8d6eb888084f0bb",
+      "registration": {
+        "id": "19e72b2300cc9337-v000001",
+        "sha256": "5bb4bf0254c93d78e83770bfa1a774bc70a8d2ac3ffc3785b84d21bf3094337f",
+        "file": "19e72b2300cc9337-v000001.json",
+        "recorded_at": "2026-11-25T15:21:26.290592+08:00"
+      }
+    },
+    {
+      "name": "ranked_batch_scorecard",
+      "path": "/workspace/scratch/r10-ranked-20261125/scorecard.json",
+      "sha256": "abba25d8bfd4cb8774187d7dcef07386d8aea15ff8f39d5e4f3233573d792927"
+    },
+    {
+      "name": "nine_match_ranking",
+      "path": "/workspace/scratch/r10-ucl-three-evidence/r10-nine-match-ranking.csv",
+      "sha256": "08bafbda4935a4bb9616d4f5a6d38df8be8be92588eb06c9bb24154257dada95"
+    },
+    {
+      "name": "nine_fixture_source",
+      "path": "/workspace/scratch/r10-ucl-three-evidence/espn-nine-fixtures.csv",
+      "sha256": "13e973f972457aa3a5d5bdc5d1ba0ddf67dcd64d916937fe4cd070f7bd71111f"
+    },
+    {
+      "name": "original_three_ranked_firsts",
+      "path": "/workspace/scratch/r10-ucl-issued/ranked-firsts.json",
+      "sha256": "e57f7848e94109eabb078a92b0a241cd6d40dde0b9eabf8186ac1a7f6b614900"
+    },
+    {
+      "name": "r10_forward_receipts",
+      "path": "/workspace/scratch/r10-forward-20261125/receipts.json",
+      "sha256": "f0313232ce15764ce0bfb7ecd9899acde169c8da217a98e2f85273f99e99f3ef"
+    },
+    {
+      "name": "original_three_package",
+      "path": "workspace-updates/20261125-r10-shot-conversion/formal/nov26-ucl-three.tar.gz",
+      "sha256": "138879a6e87a4bd90c2c1e9949272bf830b115c8b807a8417308697f0f7f77bd"
+    },
+    {
+      "name": "r10_forward_first_issue_archive",
+      "path": "workspace-updates/20261125-r10-shot-conversion/forward/first-issues.tar.gz",
+      "sha256": "f2f44fa476bfd0645bbdfa5f218782716683857b7d4ba407e64442e1a54fc602"
+    },
+    {
+      "name": "r10_ranked_archive",
+      "path": "workspace-updates/20261125-r10-shot-conversion/forward/ranked.tar.gz",
+      "sha256": "b20064dab9bd826f590babce135ba10462c35f95f3071265990e3b66be682d0e"
+    }
+  ],
+  "slots": [
+    {
+      "rank_in_nine": 1,
+      "match_id": "espn:401915375",
+      "home_name": "Shakhtar Donetsk",
+      "away_name": "Fenerbahce",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "a92137263ee303e4-v000001",
+        "recorded_at": "2026-11-25T15:17:31.014508+08:00",
+        "record_sha256": "9f07983fe5480c7c9312bba9f8f8809e5909ad1e3de661b45bbe279d0eeb4ab0",
+        "raw_file_sha256": "03652e24a51a348427d106b2b46854dc1d7f24382e90a20ffa0b3e5dae4c33b5",
+        "original_path": "/workspace/scratch/r10-forward-20261125/a92137263ee303e4-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 1,
+        "p_first": 0.11686394928559006,
+        "score": "1-1"
+      },
+      "comprehensive_first_issue": {
+        "status": "already-issued",
+        "freeze_id": "be578f705c891ec6-v000001",
+        "recorded_at": "2026-11-25T15:37:01.252025+08:00",
+        "reference_sha256": "1ad3a04c8fc424e7cf0271ed1515ca02c3b76cf08dcc9d2b3701cb90c0f89184",
+        "canonical_record_sha256": "1ad3a04c8fc424e7cf0271ed1515ca02c3b76cf08dcc9d2b3701cb90c0f89184",
+        "raw_file_sha256": "5da0b1271b232ff0ecd59e2a5c6197fed372417985096fe5192b06e0ce966a57",
+        "archive_member": "canonical/be578f705c891ec6-v000001.json",
+        "original_ranked_firsts_file": "../20261125-r10-shot-conversion/formal/nov26-ucl-firsts.json",
+        "current_test_reference": {
+          "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+          "freeze_id": "9510a71ba974cde5-v000002",
+          "path": "/workspace/WCPP/forecasts/issued-analyses/9510a71ba974cde5c244963492fc6e80d965c315e33e0ef2a5dc4a7d141bdbb4/000002.json",
+          "recorded_at": "2026-11-25T15:33:34.126385+08:00",
+          "sha256": "90ff8c66cba5deafc7c681ec00877cf3626fdfce366c204a7231cb5d9def37b0"
+        },
+        "published_text_sha256": "130368908efb4a7bd75ff214e244326487482c7ca390162a4ff4ff18a8a2b801"
+      },
+      "original_seat": 1
+    },
+    {
+      "rank_in_nine": 2,
+      "match_id": "espn:401915291",
+      "home_name": "Atlético Madrid",
+      "away_name": "Viking FK",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "a8672bd1a9951019-v000001",
+        "recorded_at": "2026-11-25T15:17:30.999718+08:00",
+        "record_sha256": "8d6c221416b21f3fe6f5c951d9a9967032fedddaaf6e291ad2ce6f18fa416ca0",
+        "raw_file_sha256": "dac7da3d87225b48c99140fe7ec21331ee26c0bfb58a79e659d5cc2bdf268f3c",
+        "original_path": "/workspace/scratch/r10-forward-20261125/a8672bd1a9951019-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 2,
+        "p_first": 0.10435768010481006,
+        "score": "3-0"
+      },
+      "comprehensive_first_issue": {
+        "status": "already-issued",
+        "freeze_id": "1b2d28f2912ca56e-v000001",
+        "recorded_at": "2026-11-25T15:37:01.288013+08:00",
+        "reference_sha256": "b33f7cfe7528a6ee7b4219f116b862541ff29533dae8f8c1bc884f6b20fc4c84",
+        "canonical_record_sha256": "b33f7cfe7528a6ee7b4219f116b862541ff29533dae8f8c1bc884f6b20fc4c84",
+        "raw_file_sha256": "c715b503b603bc8983981f1cf03d87d909934fe9cea75536457e265e79b6cc70",
+        "archive_member": "canonical/1b2d28f2912ca56e-v000001.json",
+        "original_ranked_firsts_file": "../20261125-r10-shot-conversion/formal/nov26-ucl-firsts.json",
+        "current_test_reference": {
+          "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+          "freeze_id": "e428af0253244221-v000002",
+          "path": "/workspace/WCPP/forecasts/issued-analyses/e428af0253244221e3f7a036f83c25983e72beb58aeef3efc3d0b4fe3940af1e/000002.json",
+          "recorded_at": "2026-11-25T15:33:34.188426+08:00",
+          "sha256": "d61aeb98534d5a079ecb5848525c84915d2e13449dfedada12b302bf10c75bcc"
+        },
+        "published_text_sha256": "130368908efb4a7bd75ff214e244326487482c7ca390162a4ff4ff18a8a2b801"
+      },
+      "original_seat": 2
+    },
+    {
+      "rank_in_nine": 3,
+      "match_id": "espn:401915373",
+      "home_name": "Sporting CP",
+      "away_name": "Manchester United",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "6cb1a6981bae6e2d-v000001",
+        "recorded_at": "2026-11-25T15:17:31.017626+08:00",
+        "record_sha256": "81c3463a6d2d9a7a42de93020ff9a1876aa65927c4c85f8c6820f71a89d97ff3",
+        "raw_file_sha256": "c099b07d4755db464c8f70e0cf4d194e2ce41685112b624c12defe04d7753571",
+        "original_path": "/workspace/scratch/r10-forward-20261125/6cb1a6981bae6e2d-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 3,
+        "p_first": 0.10399796212290906,
+        "score": "1-1"
+      },
+      "comprehensive_first_issue": {
+        "status": "already-issued",
+        "freeze_id": "d5192f47e87c90f8-v000001",
+        "recorded_at": "2026-11-25T15:37:01.324312+08:00",
+        "reference_sha256": "c5934e5a15b401a89ccf1010e1aa7262655d7e8fbbca65b925605120311f46c9",
+        "canonical_record_sha256": "c5934e5a15b401a89ccf1010e1aa7262655d7e8fbbca65b925605120311f46c9",
+        "raw_file_sha256": "fb8920d5df193a3bc826bd8565360c3a3714d64757fe89468190481069a3560a",
+        "archive_member": "canonical/d5192f47e87c90f8-v000001.json",
+        "original_ranked_firsts_file": "../20261125-r10-shot-conversion/formal/nov26-ucl-firsts.json",
+        "current_test_reference": {
+          "evaluation_slot": "SEPARATE_REVISION_OR_STAGE",
+          "freeze_id": "74bae8db79daadc7-v000002",
+          "path": "/workspace/WCPP/forecasts/issued-analyses/74bae8db79daadc7fc6efe37df87739386df823033a3c612fa9672ffdbe639fa/000002.json",
+          "recorded_at": "2026-11-25T15:33:34.124166+08:00",
+          "sha256": "9ac502597bd71dd8142be1eddeca7dc69c95d3c78238967cc16b5c7fa09d33fe"
+        },
+        "published_text_sha256": "130368908efb4a7bd75ff214e244326487482c7ca390162a4ff4ff18a8a2b801"
+      },
+      "original_seat": 3
+    },
+    {
+      "rank_in_nine": 4,
+      "match_id": "espn:401915293",
+      "home_name": "Slavia Prague",
+      "away_name": "Villarreal",
+      "kickoff_utc": "2026-11-25T17:45:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "66877789d5f1e3ea-v000001",
+        "recorded_at": "2026-11-25T15:17:30.997158+08:00",
+        "record_sha256": "7867eb0d6ea09f477277b098c4de153c77eb27c2c3ba46dadae0488c367ca60c",
+        "raw_file_sha256": "a3c54427d8e475ce408ea10131f2f065120f017817a9af1417730d67b50d4e79",
+        "original_path": "/workspace/scratch/r10-forward-20261125/66877789d5f1e3ea-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 4,
+        "p_first": 0.09721286776383284,
+        "score": "1-1"
+      },
+      "comprehensive_first_issue": null,
+      "original_seat": null,
+      "status": "NOT_ISSUED_AT_REGISTRATION",
+      "unissued_reason": "No comprehensive FIRST_PREMATCH record was present in the inspected original nine-match package at registration time."
+    },
+    {
+      "rank_in_nine": 5,
+      "match_id": "espn:401915377",
+      "home_name": "Lille",
+      "away_name": "Bayern Munich",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "6dae31f3a8f523c3-v000001",
+        "recorded_at": "2026-11-25T15:17:31.008506+08:00",
+        "record_sha256": "b88de206730c49df6e33546f0ef5a7be84ccd34a4a34d9baedbe20408f443517",
+        "raw_file_sha256": "aad1ec58fd2ea68a54494be6cbb062096f1f5b68c1174a9301ad18c42c8d62ab",
+        "original_path": "/workspace/scratch/r10-forward-20261125/6dae31f3a8f523c3-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 5,
+        "p_first": 0.08989976120776311,
+        "score": "1-1"
+      },
+      "comprehensive_first_issue": null,
+      "original_seat": null,
+      "status": "NOT_ISSUED_AT_REGISTRATION",
+      "unissued_reason": "No comprehensive FIRST_PREMATCH record was present in the inspected original nine-match package at registration time."
+    },
+    {
+      "rank_in_nine": 6,
+      "match_id": "espn:401915374",
+      "home_name": "Paris Saint-Germain",
+      "away_name": "AS Roma",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "9aae7454b19d8784-v000001",
+        "recorded_at": "2026-11-25T15:17:31.011396+08:00",
+        "record_sha256": "6f926851f591f66e73dbc8ede6bb53047908f5b874111819a405fa96bb75d943",
+        "raw_file_sha256": "3bb0de867f1fe34e844d655ff7c006a389bbca7abc743e5f14cf7acdc0a0b776",
+        "original_path": "/workspace/scratch/r10-forward-20261125/9aae7454b19d8784-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 6,
+        "p_first": 0.08281684657857635,
+        "score": "2-1"
+      },
+      "comprehensive_first_issue": null,
+      "original_seat": null,
+      "status": "NOT_ISSUED_AT_REGISTRATION",
+      "unissued_reason": "No comprehensive FIRST_PREMATCH record was present in the inspected original nine-match package at registration time."
+    },
+    {
+      "rank_in_nine": 7,
+      "match_id": "espn:401915292",
+      "home_name": "Club Brugge",
+      "away_name": "Liverpool",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "932a0d31752943b7-v000001",
+        "recorded_at": "2026-11-25T15:17:31.002363+08:00",
+        "record_sha256": "e92a0d807b0ea38f8c9dd490b9b2b0e092ec3a420a88d9cd2980d88653209225",
+        "raw_file_sha256": "9bee1b80caf400e8786b98429d88329a2d4b100d30b56204641eaa072f794458",
+        "original_path": "/workspace/scratch/r10-forward-20261125/932a0d31752943b7-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 7,
+        "p_first": 0.08028410280174264,
+        "score": "1-2"
+      },
+      "comprehensive_first_issue": null,
+      "original_seat": null,
+      "status": "NOT_ISSUED_AT_REGISTRATION",
+      "unissued_reason": "No comprehensive FIRST_PREMATCH record was present in the inspected original nine-match package at registration time."
+    },
+    {
+      "rank_in_nine": 8,
+      "match_id": "espn:401915376",
+      "home_name": "Internazionale",
+      "away_name": "VfB Stuttgart",
+      "kickoff_utc": "2026-11-25T20:00:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "8f10b19ff53d3ddc-v000001",
+        "recorded_at": "2026-11-25T15:17:31.005389+08:00",
+        "record_sha256": "771c9af64c7191b6bd7fc92885731f94b85b1ab9293f71ad400ba657b68c872e",
+        "raw_file_sha256": "01934adb63bf7804770a651a04b9d65da75843d9bbea39417e123e8daa4d80d2",
+        "original_path": "/workspace/scratch/r10-forward-20261125/8f10b19ff53d3ddc-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 8,
+        "p_first": 0.07624272585678835,
+        "score": "2-1"
+      },
+      "comprehensive_first_issue": null,
+      "original_seat": null,
+      "status": "NOT_ISSUED_AT_REGISTRATION",
+      "unissued_reason": "No comprehensive FIRST_PREMATCH record was present in the inspected original nine-match package at registration time."
+    },
+    {
+      "rank_in_nine": 9,
+      "match_id": "espn:401915378",
+      "home_name": "Sabah FK",
+      "away_name": "Barcelona",
+      "kickoff_utc": "2026-11-25T17:45:00+00:00",
+      "r10_forward_issue": {
+        "freeze_id": "524b472aafc1dec5-v000001",
+        "recorded_at": "2026-11-25T15:17:30.994466+08:00",
+        "record_sha256": "077412e7ef59ef2c6c56353827da081707c736f1fe1786b6747fb619a66018f5",
+        "raw_file_sha256": "d2ca2e97e102b4bd1396d460bc0b371637db539ce4222a8606a7d6d465036e8f",
+        "original_path": "/workspace/scratch/r10-forward-20261125/524b472aafc1dec5-v000001.json",
+        "embedded_source": "../20261125-r10-shot-conversion/forward/first-issues.tar.gz"
+      },
+      "ranking_source": {
+        "rank_csv_row": 9,
+        "p_first": 0.06400129827704107,
+        "score": "0-4"
+      },
+      "comprehensive_first_issue": null,
+      "original_seat": null,
+      "status": "NOT_ISSUED_AT_REGISTRATION",
+      "unissued_reason": "No comprehensive FIRST_PREMATCH record was present in the inspected original nine-match package at registration time."
+    }
+  ],
+  "immutability": "This registration is a fixed snapshot. Later actual six-file evidence is added separately and cannot replace or edit slots or original three records.",
+  "no_new_forecast_or_top3_created": true
+}
