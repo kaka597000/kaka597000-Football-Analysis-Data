@@ -4,6 +4,7 @@ from datetime import timedelta, timezone
 from hashlib import sha256
 import json
 from pathlib import Path
+import tarfile
 from urllib.parse import parse_qs, urlsplit
 
 from research.analysis_freeze import aware, verify
@@ -110,6 +111,42 @@ def identity(root, fixtures, slates):
                 roadmap=read(root/"goals.json"), slates=slates, earlier_firsts=bindings(root, fixtures))
 
 
+def earlier_team_study(root, fixtures):
+    folder = root.parent/"20261123-team-strength"
+    package = folder/"research-and-freezes.tar.gz"
+    expected = "7165ba80bbd0801a4de0fc13d452b0a283fa4e2988642f728335b63b77ae3efc"
+    if sha(package) != expected or read(folder/"manifest.json")["files"][package.name] != expected:
+        raise ValueError("prior team-strength archive differs")
+    with tarfile.open(package) as archive:
+        refs = json.load(archive.extractfile("forward/receipts.json"))
+        def original(ref):
+            value = verify(json.load(archive.extractfile("issued/"+ref["freeze_id"]+".json")))
+            if (value["record_sha256"] != ref["sha256"] or value["freeze_id"] != ref["freeze_id"]
+                    or value["revision"] != 1 or value["evaluation_slot"] != "FIRST_PREMATCH"):
+                raise ValueError("prior team-strength first differs")
+            return value
+        plan = original(refs["register"])
+        if set(refs["matches"]) != set(plan["payload"]["fixtures"]) or plan["track"] != "kpi-preregistration":
+            raise ValueError("earlier team-strength calendar differs")
+        records = {}
+        for mid in sorted(set(fixtures) & refs["matches"].keys()):
+            record = original(refs["matches"][mid])
+            row, payload = record["fixture"], record["payload"]
+            for f in (row, plan["payload"]["fixtures"][mid]):
+                if (any(f[k] != fixtures[mid][k] for k in ("match_id","home","away","stage","cohort"))
+                        or aware(f["kickoff_at"]) != aware(fixtures[mid]["kickoff_at"])):
+                    raise ValueError("older team-strength input differs from calendar: "+mid)
+            candidate = payload["candidate"]
+            if (record["track"] != "kpi-first-forecast" or payload["plan_sha256"] != plan["record_sha256"]
+                    or candidate["version"] != "WCPP-PRIOR-TEAM-STRENGTH-1"
+                    or candidate["artifact_sha256"] != plan["payload"]["candidate"]["artifact_sha256"]
+                    or not aware(plan["recorded_at"]) <= aware(record["recorded_at"]) < aware(row["kickoff_at"])):
+                raise ValueError("prior team-strength track, weights or time differs: "+mid)
+            records[mid] = dict(first_sha256=record["record_sha256"], track=record["track"], recorded_at=record["recorded_at"],
+                                candidate=candidate, market=payload["market_baseline"])
+    return dict(source_archive_sha256=expected, registration=plan["record_sha256"], matches=records)
+
+
 def verify_package(root=ROOT):
     fixtures, slates = population(root)
     record = ledger._read(root/"registration", read(root/"registration/plan.json"))
@@ -124,8 +161,12 @@ def verify_package(root=ROOT):
     for tracks in expected["earlier_firsts"].values():
         if any(r and aware(r["recorded_at"]) > recorded for r in tracks.values()):
             raise ValueError("referenced earlier first is too late")
+    research = earlier_team_study(root, fixtures)
+    if research != read(root/"prior-team-strength.json"):
+        raise ValueError("prior research choices or market reference differ")
     return {"windows":{k:len(v) for k,v in slates.items()}, "prior_native_pairs":sum(
-        bool(v["current-test-pair"]) for v in expected["earlier_firsts"].values()), "registered_at":record["recorded_at"]}
+        bool(v["current-test-pair"]) for v in expected["earlier_firsts"].values()),
+        "previous_team_strength_issues":len(research["matches"]), "registered_at":record["recorded_at"]}
 
 
 if __name__ == "__main__":
