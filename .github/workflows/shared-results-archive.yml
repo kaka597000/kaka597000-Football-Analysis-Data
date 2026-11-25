@@ -1,0 +1,20 @@
+name: Verify retained shared results
+on:
+  pull_request:
+    paths: &archive_paths
+      - workspace-updates/20261119-shared-results/**
+      - runtime/verify_shared_results_archive.py
+      - .github/workflows/shared-results-archive.yml
+  push:
+    branches: [main, fix/shared-results-display-20261119]
+    paths: *archive_paths
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 -B runtime/verify_shared_results_archive.py

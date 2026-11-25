@@ -1,0 +1,23 @@
+import json,hashlib,collections,sys
+from pathlib import Path
+s=Path('/workspace/shared-results-source');d=Path('/workspace/brazil-results-data');out=d/'workspace-updates/20261119-shared-results'
+sys.path.insert(0,str(s/'runtime'));from automation.collector import REGULAR,PHASED_RESEARCH
+scope=json.loads((s/'configs/analysis-scope.json').read_text());reg=json.loads(Path('/workspace/WCPP/runtime/active-model.json').read_text());scopes=json.loads((d/'config/scopes.json').read_text());counts=collections.Counter();latest={}
+for line in (d/'normalized-results.jsonl').open():
+ r=json.loads(line);c=r.get('competition',r['cohort'].split(':')[0]);counts[c]+=1;latest[c]=max(latest.get(c,''),r.get('known_at',''))
+rows=[]
+for c in scope['competitions']:
+ code=c['code'];routes=[k for k in reg['models'] if k.split(':')[0]==code];ss=[v for v in scopes if v['competition']==code];notes=[]
+ if not routes:notes.append('NO_ACTIVE_REGISTRY_ROUTE; separate research artifacts are not active routing')
+ if not ss:notes.append('NOT_IN_PERSISTENT_COLLECTION_SCOPES')
+ if code=='bra.1':notes.append('existing workflow temporarily adds Brazil then restores scopes; no collection run since 2026-11-18T20:29:37Z visible')
+ if code=='kor.1':notes.append('ESPN omitted by workflow; dedicated collect_kor1 fallback, not ESPN coverage')
+ if code in ['uefa.nations','jpn.league_cup']:notes.append('generic ESPN normalizer lacks explicit competition/phase adapter; independent research does not fill shared scope')
+ if code=='uefa.champions':notes.append('scope stage NEW_FORMAT:league_phase versus collector expected league_phase; needs dedicated phase-contract audit before claiming full coverage')
+ if c['requires_phase_identity']:notes.append('route presence does not cover all stages/formats')
+ rows.append({'competition':code,'name':c['name'],'active_registry_routes':routes,'persistent_collection_scopes':ss,'retained_normalized_observations':counts[code],'latest_observed_at':latest.get(code),'current_batch_recommendation_n':None,'display_triples_certified_n':None,'notes':notes})
+result={'formal_competitions':len(rows),'persistent_scope_count':len(scopes),'formal_with_registry_route':sum(bool(r['active_registry_routes']) for r in rows),'formal_missing_registry_route':[r['competition'] for r in rows if not r['active_registry_routes']],'formal_missing_persistent_scope':[r['competition'] for r in rows if not r['persistent_collection_scopes']],'historical_out_of_scope_routes':[k for k in reg['models'] if k.split(':')[0] not in {c['code'] for c in scope['competitions']}],'denominator_policy':'scope inventory, route availability, retained observations and issued batch counts are separate; no batch requested, no inference test, no live collection','rows':rows,'identities':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [s/'configs/analysis-scope.json',Path('/workspace/WCPP/runtime/active-model.json'),d/'config/scopes.json',d/'normalized-results.jsonl']}}
+(out/'coverage.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k not in ['rows','identities']},ensure_ascii=False))
+text=['|赛事|活动注册表路由|持久采集scope|已有标准化观察数（非本批分母）|限制|','|---|---|---|---:|---|']
+for r in rows:text.append('|'+ '|'.join([r['name'],','.join(r['active_registry_routes']) or '缺', '有' if r['persistent_collection_scopes'] else '缺',str(r['retained_normalized_observations']),'; '.join(r['notes']) or '未在本轮执行真实采集/推理'])+'|')
+(out/'coverage-table.md').write_text('\n'.join(text)+'\n')
