@@ -1,6 +1,6 @@
 {
   "schema": "UEFA-THURSDAY-TWO-COMPETITIONS-TWO-WINDOWS-REGISTRATION-1",
-  "created_at_utc": "2026-11-25T13:36:30.726553Z",
+  "created_at_utc": "2026-11-25T13:57:39.043375Z",
   "parent_pr": 57,
   "parent_branch": "research/four-league-display-windows-20261125",
   "parent_head": "6a014e9f2225a2aaad029e0f8dab17d07148a52d",
@@ -52,8 +52,18 @@
         "wdl": 1.0,
         "selected_seat_count": 3,
         "all_three_seat_first_score_sweep": 1.0,
-        "genuine_bookmaker_quote_clock_and_total_line": 0.8,
-        "nonpush_total_settlement_full_win_rate_minimum": 0.7
+        "actual_market_specific_upstream_quote_clock_and_total_line": {
+          "minimum_count": 15,
+          "denominator": 18,
+          "rate": 0.8,
+          "max_age_at_response_seconds": 3600
+        },
+        "eligible_nonpush_actual_total_settlement_coverage": {
+          "minimum_count": 13,
+          "denominator": 18,
+          "rate": 0.7222222222222222
+        },
+        "actual_total_full_win_rate_among_nonpush": 0.7
       },
       "existing_research_firsts": {
         "R7_actual_first_issues": 18,
@@ -67,14 +77,36 @@
       },
       "selected_seats": [],
       "selected_seat_status": "not_selected_by_this_registration",
-      "settlement_status": "not_yet_played_or_not_yet_settled",
+      "settlement_status": "pending_future_matches",
       "phase_status": "registered_pending",
       "market_observation": {
-        "complete_same_bookmaker_1x2_ou_line": 18,
-        "observations_with_provider_quote_clock": 0,
-        "strict_clock_line_coverage": 0.0,
-        "nonpush_settlement_eligible": 0,
-        "settlement_denominator": 0,
+        "original_ESPN_DraftKings_snapshot": {
+          "fixtures": 18,
+          "complete_same_book_1x2_ou_line": 18,
+          "direct_bookmaker_issued_quote_clock": 0
+        },
+        "independent_InferSports_upstream_clock": {
+          "fixtures_with_same_book_1x2_and_totals": 18,
+          "both_market_specific_as_of_within_one_hour_of_response_receipt": 18,
+          "minimum_count": 15,
+          "denominator": 18,
+          "rate": 1.0,
+          "direct_bookmaker_issued_time": false,
+          "source": "raw odds[i].as_of plus per-response acquisition sidecar"
+        },
+        "eligible_nonpush_actual_total_settlements": {
+          "count": 0,
+          "minimum_count": 13,
+          "denominator": 18,
+          "status": "pending_future_matches"
+        },
+        "nonpush_actual_total_full_wins": {
+          "hits": 0,
+          "eligible": 0,
+          "rate": null,
+          "minimum_rate": 0.7,
+          "status": "not_evaluated"
+        },
         "threshold_pass": "not_evaluated"
       },
       "source_slatest_observed_at_utc": "2026-11-25T13:03:20.714877Z"
@@ -121,8 +153,18 @@
         "wdl": 1.0,
         "selected_seat_count": 3,
         "all_three_seat_first_score_sweep": 1.0,
-        "genuine_bookmaker_quote_clock_and_total_line": 0.8,
-        "nonpush_total_settlement_full_win_rate_minimum": 0.7
+        "actual_market_specific_upstream_quote_clock_and_total_line": {
+          "minimum_count": 15,
+          "denominator": 18,
+          "rate": 0.8,
+          "max_age_at_response_seconds": 3600
+        },
+        "eligible_nonpush_actual_total_settlement_coverage": {
+          "minimum_count": 13,
+          "denominator": 18,
+          "rate": 0.7222222222222222
+        },
+        "actual_total_full_win_rate_among_nonpush": 0.7
       },
       "existing_research_firsts": {
         "R7_actual_first_issues": 0,
@@ -136,14 +178,36 @@
       },
       "selected_seats": [],
       "selected_seat_status": "not_selected_by_this_registration",
-      "settlement_status": "not_yet_played_or_not_yet_settled",
+      "settlement_status": "pending_future_matches",
       "phase_status": "registered_pending",
       "market_observation": {
-        "complete_same_bookmaker_1x2_ou_line": 0,
-        "observations_with_provider_quote_clock": 0,
-        "strict_clock_line_coverage": 0.0,
-        "nonpush_settlement_eligible": 0,
-        "settlement_denominator": 0,
+        "original_ESPN_DraftKings_snapshot": {
+          "fixtures": 0,
+          "complete_same_book_1x2_ou_line": 0,
+          "direct_bookmaker_issued_quote_clock": 0
+        },
+        "independent_InferSports_upstream_clock": {
+          "fixtures_with_same_book_1x2_and_totals": 0,
+          "both_market_specific_as_of_within_one_hour_of_response_receipt": 0,
+          "minimum_count": 15,
+          "denominator": 18,
+          "rate": 0.0,
+          "direct_bookmaker_issued_time": false,
+          "source": "raw odds[i].as_of plus per-response acquisition sidecar"
+        },
+        "eligible_nonpush_actual_total_settlements": {
+          "count": 0,
+          "minimum_count": 13,
+          "denominator": 18,
+          "status": "pending_future_matches"
+        },
+        "nonpush_actual_total_full_wins": {
+          "hits": 0,
+          "eligible": 0,
+          "rate": null,
+          "minimum_rate": 0.7,
+          "status": "not_evaluated"
+        },
         "threshold_pass": "not_evaluated"
       },
       "source_slatest_observed_at_utc": "2026-11-25T13:03:20.714877Z"
@@ -190,8 +254,18 @@
         "wdl": 1.0,
         "selected_seat_count": 3,
         "all_three_seat_first_score_sweep": 1.0,
-        "genuine_bookmaker_quote_clock_and_total_line": 0.8,
-        "nonpush_total_settlement_full_win_rate_minimum": 0.7
+        "actual_market_specific_upstream_quote_clock_and_total_line": {
+          "minimum_count": 15,
+          "denominator": 18,
+          "rate": 0.8,
+          "max_age_at_response_seconds": 3600
+        },
+        "eligible_nonpush_actual_total_settlement_coverage": {
+          "minimum_count": 13,
+          "denominator": 18,
+          "rate": 0.7222222222222222
+        },
+        "actual_total_full_win_rate_among_nonpush": 0.7
       },
       "existing_research_firsts": {
         "R7_actual_first_issues": 18,
@@ -205,14 +279,36 @@
       },
       "selected_seats": [],
       "selected_seat_status": "not_selected_by_this_registration",
-      "settlement_status": "not_yet_played_or_not_yet_settled",
+      "settlement_status": "pending_future_matches",
       "phase_status": "registered_pending",
       "market_observation": {
-        "complete_same_bookmaker_1x2_ou_line": 17,
-        "observations_with_provider_quote_clock": 0,
-        "strict_clock_line_coverage": 0.0,
-        "nonpush_settlement_eligible": 0,
-        "settlement_denominator": 0,
+        "original_ESPN_DraftKings_snapshot": {
+          "fixtures": 18,
+          "complete_same_book_1x2_ou_line": 17,
+          "direct_bookmaker_issued_quote_clock": 0
+        },
+        "independent_InferSports_upstream_clock": {
+          "fixtures_with_same_book_1x2_and_totals": 18,
+          "both_market_specific_as_of_within_one_hour_of_response_receipt": 18,
+          "minimum_count": 15,
+          "denominator": 18,
+          "rate": 1.0,
+          "direct_bookmaker_issued_time": false,
+          "source": "raw odds[i].as_of plus per-response acquisition sidecar"
+        },
+        "eligible_nonpush_actual_total_settlements": {
+          "count": 0,
+          "minimum_count": 13,
+          "denominator": 18,
+          "status": "pending_future_matches"
+        },
+        "nonpush_actual_total_full_wins": {
+          "hits": 0,
+          "eligible": 0,
+          "rate": null,
+          "minimum_rate": 0.7,
+          "status": "not_evaluated"
+        },
         "threshold_pass": "not_evaluated"
       },
       "source_slatest_observed_at_utc": "2026-11-25T13:05:57.644373Z"
@@ -259,8 +355,18 @@
         "wdl": 1.0,
         "selected_seat_count": 3,
         "all_three_seat_first_score_sweep": 1.0,
-        "genuine_bookmaker_quote_clock_and_total_line": 0.8,
-        "nonpush_total_settlement_full_win_rate_minimum": 0.7
+        "actual_market_specific_upstream_quote_clock_and_total_line": {
+          "minimum_count": 15,
+          "denominator": 18,
+          "rate": 0.8,
+          "max_age_at_response_seconds": 3600
+        },
+        "eligible_nonpush_actual_total_settlement_coverage": {
+          "minimum_count": 13,
+          "denominator": 18,
+          "rate": 0.7222222222222222
+        },
+        "actual_total_full_win_rate_among_nonpush": 0.7
       },
       "existing_research_firsts": {
         "R7_actual_first_issues": 0,
@@ -274,17 +380,86 @@
       },
       "selected_seats": [],
       "selected_seat_status": "not_selected_by_this_registration",
-      "settlement_status": "not_yet_played_or_not_yet_settled",
+      "settlement_status": "pending_future_matches",
       "phase_status": "registered_pending",
       "market_observation": {
-        "complete_same_bookmaker_1x2_ou_line": 0,
-        "observations_with_provider_quote_clock": 0,
-        "strict_clock_line_coverage": 0.0,
-        "nonpush_settlement_eligible": 0,
-        "settlement_denominator": 0,
+        "original_ESPN_DraftKings_snapshot": {
+          "fixtures": 0,
+          "complete_same_book_1x2_ou_line": 0,
+          "direct_bookmaker_issued_quote_clock": 0
+        },
+        "independent_InferSports_upstream_clock": {
+          "fixtures_with_same_book_1x2_and_totals": 0,
+          "both_market_specific_as_of_within_one_hour_of_response_receipt": 0,
+          "minimum_count": 15,
+          "denominator": 18,
+          "rate": 0.0,
+          "direct_bookmaker_issued_time": false,
+          "source": "raw odds[i].as_of plus per-response acquisition sidecar"
+        },
+        "eligible_nonpush_actual_total_settlements": {
+          "count": 0,
+          "minimum_count": 13,
+          "denominator": 18,
+          "status": "pending_future_matches"
+        },
+        "nonpush_actual_total_full_wins": {
+          "hits": 0,
+          "eligible": 0,
+          "rate": null,
+          "minimum_rate": 0.7,
+          "status": "not_evaluated"
+        },
         "threshold_pass": "not_evaluated"
       },
       "source_slatest_observed_at_utc": "2026-11-25T13:05:57.644373Z"
     }
-  }
+  },
+  "draft_created_at_utc": "2026-11-25T13:36:30.726553Z",
+  "amendment_reason": "Formal minimum quote-clock and nonpush-total coverage gates were sealed in the canonical registration at the timestamp above.",
+  "canonical_registration": {
+    "track": "research-uefa-thursday-two-windows-20261125-registration",
+    "freeze_id": "3908ff15e2181192-v000001",
+    "record_sha256": "ab5753d3c6484449182fe8d4cc23e71955b7d53f03faa9c786445efd1cc0e397",
+    "file": "evidence/canonical-registration-record.json",
+    "canonical_freeze_root": "/workspace/WCPP/forecasts/issued-analyses"
+  },
+  "required_per_window_targets": {
+    "unique_first_score_coverage": {
+      "count": 18,
+      "denominator": 18,
+      "rate": 1.0
+    },
+    "top3_all_three_score_coverage": {
+      "count": 18,
+      "denominator": 18,
+      "rate": 1.0
+    },
+    "wdl_coverage": {
+      "count": 18,
+      "denominator": 18,
+      "rate": 1.0
+    },
+    "selected_seat_count": 3,
+    "all_three_selected_seat_primary_first_score_sweep": {
+      "count": 18,
+      "denominator": 18,
+      "rate": 1.0
+    },
+    "actual_market_specific_upstream_quote_clock_and_total_line": {
+      "minimum_count": 15,
+      "denominator": 18,
+      "rate": 0.8,
+      "age_at_actual_response_receipt_max_seconds": 3600
+    },
+    "eligible_nonpush_actual_total_settlement_coverage": {
+      "minimum_count": 13,
+      "denominator": 18,
+      "rate": 0.7222222222222222
+    },
+    "actual_total_full_win_rate_among_eligible_nonpush": {
+      "minimum_rate": 0.7
+    }
+  },
+  "canonical_recorded_at_local": "2026-11-25T21:57:39.043375+08:00"
 }

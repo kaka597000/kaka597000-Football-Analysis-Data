@@ -1,10 +1,12 @@
 {
   "schema": "UEFA-THURSDAY-UPSTREAM-MARKET-CLOCK-COVERAGE-1",
   "attribution": {
+    "collector": "Euclid, the task sub-agent operating as Codex driver",
+    "collection_unit": "single upstream provider acquisition; no second acquisition is represented",
+    "independent_recomputation": "The package verifier recomputes coverage from these same archived raw responses and acquisition sidecars.",
     "market_data_provider": "InferSports",
     "field": "odds[i].as_of",
-    "semantics": "provider-documented last upstream update applied to a bookmaker and market line; not a bookmaker-issued timestamp",
-    "Euclid_claim": "User reports Euclid independently observed 36/36 same-book 1X2+totals pairs with upstream market clocks within one hour; the available archived raw capture is InferSports and does not contain a separate Euclid execution receipt."
+    "semantics": "Provider-documented last upstream update applied to a bookmaker and market line; it is an upstream market-specific timestamp, not a direct bookmaker-issued timestamp."
   },
   "retrieval_clock": "each raw response sidecar request_started_utc/response_received_utc; age is measured against response_received_utc",
   "registered_fixtures": 36,
@@ -1167,5 +1169,38 @@
     }
   ],
   "raw_archive": "archives/first-round-upstream-market-raw.tar.gz",
-  "source_derived_capture": "archives/uefa-thursday-20261125-5c03f3517796c580.tar.gz"
+  "source_derived_capture": "archives/uefa-thursday-20261125-5c03f3517796c580.tar.gz",
+  "provider_quote_clock_is_direct_bookmaker_issued": false,
+  "window_coverage": {
+    "uefa.europa": {
+      "window_1": {
+        "fixtures": 18,
+        "same_book_1x2_totals_with_both_clocks_within_1h": 18,
+        "minimum": 15
+      },
+      "window_2": {
+        "fixtures": 18,
+        "same_book_1x2_totals_with_both_clocks_within_1h": 0,
+        "minimum": 15,
+        "status": "not_observed_yet"
+      }
+    },
+    "uefa.europa.conf": {
+      "window_1": {
+        "fixtures": 18,
+        "same_book_1x2_totals_with_both_clocks_within_1h": 18,
+        "minimum": 15
+      },
+      "window_2": {
+        "fixtures": 18,
+        "same_book_1x2_totals_with_both_clocks_within_1h": 0,
+        "minimum": 15,
+        "status": "not_observed_yet"
+      }
+    }
+  },
+  "collection_time_utc": {
+    "first_request": "2026-11-25T13:18:47.851409Z",
+    "last_response": "2026-11-25T13:24:40.902950Z"
+  }
 }

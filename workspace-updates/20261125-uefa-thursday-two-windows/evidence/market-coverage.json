@@ -114,5 +114,55 @@
     "eligible_nonpush_settlements": 0,
     "status": "not_evaluated; no completed match in these future windows"
   },
-  "chronology": "Observed Nov 25 ESPN summaries were captured after R7 and R13 research firsts; they are reported separately and are not joined into those issues."
+  "chronology": "Observed Nov 25 ESPN summaries were captured after R7 and R13 research firsts; they are reported separately and are not joined into those issues.",
+  "upstream_market_specific_clock_observation": {
+    "provider": "InferSports",
+    "field": "odds[i].as_of",
+    "definition": "Provider-documented last upstream update for the bookmaker × market line; not directly bookmaker-issued.",
+    "freshness_reference": "Each fixture response_received_utc from its original metadata sidecar.",
+    "acquisition_interval_utc": {
+      "first_request": "2026-11-25T13:18:47.851409Z",
+      "last_response": "2026-11-25T13:24:40.902950Z"
+    },
+    "required_per_competition_window": {
+      "minimum_count": 15,
+      "denominator": 18,
+      "rate": 0.8
+    },
+    "window_1": {
+      "uefa.europa": {
+        "valid_same_book_1x2_total_with_both_clocks_within_1h": 18,
+        "fixtures": 18
+      },
+      "uefa.europa.conf": {
+        "valid_same_book_1x2_total_with_both_clocks_within_1h": 18,
+        "fixtures": 18
+      }
+    },
+    "window_2": {
+      "uefa.europa": {
+        "valid_same_book_1x2_total_with_both_clocks_within_1h": 0,
+        "fixtures": 18,
+        "status": "not_observed_yet"
+      },
+      "uefa.europa.conf": {
+        "valid_same_book_1x2_total_with_both_clocks_within_1h": 0,
+        "fixtures": 18,
+        "status": "not_observed_yet"
+      }
+    },
+    "identical_market_clocks_within_1h": {
+      "fixtures": 20,
+      "pairs": 35
+    },
+    "direct_bookmaker_issued_clocks": 0,
+    "distinct_from_original_ESPN_DraftKings_snapshot": true,
+    "actual_total_settlements": "pending_future_matches",
+    "eligible_nonpush_total_minimum_count": 13,
+    "eligible_nonpush_total_coverage_minimum_rate": 0.7222222222222222,
+    "nonpush_total_full_win_rate_minimum": 0.7,
+    "observed_nonpush_eligible": 0,
+    "observed_nonpush_full_wins": 0,
+    "nonpush_full_win_rate": "not_evaluated"
+  }
 }

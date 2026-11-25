@@ -1,6 +1,6 @@
 {
   "to": "Jason — UEFA Thursday data PR",
-  "collector_and_verifier": "current GPT-6 Codex driver",
+  "collector_and_verifier": "Euclid (task sub-agent running as Codex driver) collected the single public upstream acquisition; the package verifier independently recalculates from the same archived raw responses.",
   "bundle": "archives/uefa-thursday-20261125-5c03f3517796c580.tar.gz",
   "sha256": "5c03f3517796c580862fca0f42c343542f8099b0fcc4ebbf292d6a84d1d81bbf",
   "bytes": 2158344,
@@ -54,5 +54,42 @@
     "tar -xzf uefa-thursday-20261125-5c03f3517796c580.tar.gz",
     "python3 -B verify.py",
     "python3 -B archive.py replay uefa-thursday-20261125-5c03f3517796c580.tar.gz"
-  ]
+  ],
+  "separate_market_clock_evidence": {
+    "provider": "InferSports",
+    "clock_field": "odds[i].as_of",
+    "direct_bookmaker_issued": false,
+    "one_acquisition": true,
+    "first_request_utc": "2026-11-25T13:18:47.851409Z",
+    "last_response_utc": "2026-11-25T13:24:40.902950Z",
+    "fixtures_with_same_book_fulltime_1x2_totals_and_both_clocks_within_1h": 36,
+    "fixtures_with_equal_market_clocks_within_1h": 20,
+    "equal_clock_pairs_within_1h": 35,
+    "raw_archive": "archives/first-round-upstream-market-raw.tar.gz"
+  },
+  "research_reference_index": "evidence/research-reference-index.csv",
+  "research_reference_count": {
+    "R7": 36,
+    "R8": 36,
+    "R9": 36,
+    "R10": 36,
+    "R13": 36,
+    "total": 180
+  },
+  "supplementary_team_collection": {
+    "archive": "archives/uefa-thursday-teams-20261125.tar.gz",
+    "archive_sha256": "ab32734d0e5d8025338bc0a26cc261ba715ea5cff31d2d4dc29c594efa96bd92",
+    "prior_first_records_csv": "evidence/prior-first-prematch-records.csv",
+    "prior_first_records_csv_sha256": "fa69b8ad3245de83f3cad8c3c01e5262d950f391b43f2f933ad867572151e265",
+    "resolved_archive_references": "evidence/prior-first-prematch-reference-index.csv",
+    "coverage": {
+      "schedule_events": 36,
+      "team_count": 72,
+      "teams_with_prior_primary_league_match": 70,
+      "xg": 47,
+      "sot": 62,
+      "prior_first_records": 180
+    }
+  },
+  "supplemental_material_added_after_canonical_seal": true
 }

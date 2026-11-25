@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Independently verify source calendars, four registered windows and historical first issues."""
 import csv
+from collections import Counter
 from datetime import datetime, timezone
 import gzip
 import hashlib
+import io
 import io
 import json
 from pathlib import Path
@@ -86,12 +88,13 @@ def verify_source_rebuild():
                        cwd=source, check=True, stdout=subprocess.DEVNULL)
         derived = source / "derived"
         manifest = read_json(source / "source-manifest.json")
+        archive_manifest = read_json(source / "archive-source-manifest.json")
         captures = {c["path"]: c for c in manifest["sources"]}
         fixtures = list(csv.DictReader((derived / "calendar.csv").open(encoding="utf-8", newline="")))
         quotes = [json.loads(line) for line in (derived / "first-round-draftkings.jsonl").read_text().splitlines()]
         upstream_pairs = list(csv.DictReader((source / "alternatives/infersports-same-book.csv").open(
             encoding="utf-8", newline="")))
-        return source, manifest, captures, fixtures, quotes, upstream_pairs
+        return source, manifest, archive_manifest, captures, fixtures, quotes, upstream_pairs
 
 
 def verify_registration_and_rows(fixtures, captures):
@@ -103,6 +106,13 @@ def verify_registration_and_rows(fixtures, captures):
             and registration["no_three_seats_selected"] is True
             and registration["no_model_promotion"] is True,
             "registration scope or parent pin differs")
+    seal = read_json(ROOT / "evidence/canonical-registration-seal.json")
+    require(registration["canonical_registration"]["record_sha256"] == seal["record_sha256"]
+            and registration["created_at_utc"] == dt(seal["recorded_at"]).astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+            and dt(registration["draft_created_at_utc"]) <= dt(registration["created_at_utc"])
+            and seal["track"] == "research-uefa-thursday-two-windows-20261125-registration"
+            and seal["fixture_count"] == 72,
+            "registered window document does not point to the durable canonical seal")
     rows = [json.loads(line) for line in (ROOT / "evidence/fixtures.jsonl").read_text().splitlines()]
     require(len(rows) == 72 and len({r["stable_match_id"] for r in rows}) == 72,
             "calendar rows are not 72 unique official fixtures")
@@ -145,20 +155,256 @@ def verify_registration_and_rows(fixtures, captures):
                 and set(stage["stable_match_ids"]) == {r["stable_match_id"] for r in subset},
                 "window slate incomplete: " + key)
         targets = stage["required_registered_coverage"]
-        require(targets == {
-            "unique_first_score": 1.0,
-            "top3_all_three_scores": 1.0,
-            "wdl": 1.0,
-            "selected_seat_count": 3,
-            "all_three_seat_first_score_sweep": 1.0,
-            "genuine_bookmaker_quote_clock_and_total_line": 0.80,
-            "nonpush_total_settlement_full_win_rate_minimum": 0.70,
-        }, "registered minima differ: " + key)
+        require(targets["unique_first_score"] == 1.0
+                and targets["top3_all_three_scores"] == 1.0
+                and targets["wdl"] == 1.0
+                and targets["selected_seat_count"] == 3
+                and targets["all_three_seat_first_score_sweep"] == 1.0
+                and targets["actual_market_specific_upstream_quote_clock_and_total_line"] == {
+                    "minimum_count": 15, "denominator": 18, "rate": 0.80,
+                    "max_age_at_response_seconds": 3600}
+                and targets["eligible_nonpush_actual_total_settlement_coverage"] == {
+                    "minimum_count": 13, "denominator": 18, "rate": 13 / 18}
+                and targets["actual_total_full_win_rate_among_nonpush"] == 0.70,
+                "registered minima differ: " + key)
+        quote_observed = stage["market_observation"]["independent_InferSports_upstream_clock"]
+        expected_upstream = 18 if stage["window"] == "window_1" else 0
+        require(quote_observed["fixtures_with_same_book_1x2_and_totals"] == expected_upstream
+                and quote_observed["both_market_specific_as_of_within_one_hour_of_response_receipt"] == expected_upstream
+                and quote_observed["minimum_count"] == 15
+                and quote_observed["denominator"] == 18
+                and quote_observed["direct_bookmaker_issued_time"] is False
+                and stage["market_observation"]["original_ESPN_DraftKings_snapshot"]["direct_bookmaker_issued_quote_clock"] == 0,
+                "upstream/direct bookmaker clock tracks are conflated or inaccurate: " + key)
+        require(stage["market_observation"]["eligible_nonpush_actual_total_settlements"] == {
+                    "count": 0, "minimum_count": 13, "denominator": 18,
+                    "status": "pending_future_matches"}
+                and stage["market_observation"]["nonpush_actual_total_full_wins"] == {
+                    "hits": 0, "eligible": 0, "rate": None, "minimum_rate": 0.70,
+                    "status": "not_evaluated"},
+                "actual total outcome coverage/hit rate must remain distinct and pending: " + key)
         require(stage["selected_seats"] == [] and stage["selected_seat_status"] == "not_selected_by_this_registration"
                 and stage["phase_status"] == "registered_pending"
                 and stage["market_observation"]["threshold_pass"] == "not_evaluated",
                 "registration incorrectly grants seats or phase pass: " + key)
     return registration, rows
+
+
+def verify_canonical_registration(rows, registration):
+    seal = read_json(ROOT / "evidence/canonical-registration-seal.json")
+    record_path = ROOT / seal["canonical_copy_file"]
+    raw = record_path.read_bytes()
+    record = json.loads(raw)
+    require(canonical_sha(record) == seal["record_sha256"] == record["record_sha256"]
+            and sha(raw) == seal["canonical_record_bytes_sha256"]
+            and sha(json.dumps(record["payload"]["identity"], sort_keys=True,
+                               separators=(",", ":"), ensure_ascii=False).encode()) == seal["identity_sha256"]
+            and record["freeze_id"] == seal["freeze_id"]
+            and record["track"] == seal["track"]
+            and record["evaluation_slot"] == "FIRST_PREMATCH"
+            and record["stage"] == "prematch"
+            and record["previous_sha256"] is None
+            and record["revision"] == 1
+            and record["payload"]["track"] == "research-uefa-thursday-two-windows-20261125"
+            and len(record["payload"]["fixtures"]) == 72,
+            "canonical registration freeze is not sealed or is not the 72-fixture plan")
+    canonical_scope = {
+        "match_id": record["match_id"],
+        "stage": record["stage"],
+        "track": record["track"],
+    }
+    require(sha(json.dumps(canonical_scope, sort_keys=True, separators=(",", ":"),
+                         ensure_ascii=False).encode()) == seal["canonical_record_directory"]
+            and "supplementary_team_evidence" not in record["payload"]["identity"]
+            and set(record["payload"]["identity"]["research_first_issue_references"])
+                == {"R7", "R13", "reference_index"},
+            "canonical directory or R7/R13-only identity scope differs")
+    expected = {}
+    for row in rows:
+        expected["uefa:" + row["uefa_event_id"]] = {
+            "match_id": "uefa:" + row["uefa_event_id"],
+            "cohort": row["competition"],
+            "stage": ("UEFA Europa League, League Phase" if row["competition"] == "uefa.europa"
+                      else "UEFA Conference League, League Phase"),
+            "kickoff_at": row["kickoff_utc"],
+            "home": "uefa:" + row["uefa_home_id"],
+            "away": "uefa:" + row["uefa_away_id"],
+        }
+    require(record["payload"]["fixtures"] == expected
+            and record["payload"]["identity"]["no_comprehensive_forecast_created"] is True
+            and record["payload"]["identity"]["no_three_seats_selected"] is True
+            and record["payload"]["identity"]["no_model_promotion"] is True,
+            "sealed canonical plan changed fixtures or issued an unregistered promotion")
+    canonical_stages = record["payload"]["identity"]["stages"]
+    for key, stage in registration["stages"].items():
+        sealed = canonical_stages[key]
+        require(sealed["stable_match_ids"] == stage["stable_match_ids"]
+                and sealed["required_targets"]["actual_market_specific_quote_clock_and_line_coverage"] == {
+                    "minimum_count": 15, "denominator": 18, "rate": 0.80}
+                and sealed["required_targets"]["eligible_nonpush_actual_total_coverage"] == {
+                    "minimum_count": 13, "denominator": 18, "rate": 13 / 18}
+                and sealed["required_targets"]["actual_total_full_win_rate_on_nonpush"] == {
+                    "minimum_rate": 0.70},
+                "canonical seal and public registration targets differ: " + key)
+    recorded = dt(record["recorded_at"])
+    require(recorded.isoformat() == seal["recorded_at"]
+            and dt(seal["readback_at_utc"]) >= recorded.astimezone(timezone.utc)
+            and recorded < min(dt(row["kickoff_utc"]) for row in rows)
+            and dt(record["fixture"]["cutoff_at"]) <= recorded,
+            "canonical registration is late, backdated or has a mismatched clock")
+    canonical_path = Path(seal["canonical_record_path"])
+    if canonical_path.exists():
+        require(canonical_path.read_bytes() == raw,
+                "live canonical append-only registration differs from the archived sealed bytes")
+    refs = list(csv.DictReader((ROOT / "evidence/research-reference-index.csv").open(
+        encoding="utf-8", newline="")))
+    require(len(refs) == 72 and {r["method"] for r in refs} == {"R7", "R13"},
+            "row-level original R7/R13 research reference index is incomplete")
+    row_ids = {r["stable_match_id"] for r in rows if r["window"] == "window_1"}
+    require({r["stable_match_id"] for r in refs} == row_ids
+            and all(r["window"] == "window_1" for r in refs)
+            and sum(r["method"] == "R7" for r in refs) == 36
+            and sum(r["method"] == "R13" for r in refs) == 36,
+            "research reference index includes a fabricated or out-of-window issue")
+    with tarfile.open(ROOT / "archives/research-first-issues.tar.gz", "r:gz") as tar:
+        by_name = {m.name: m for m in tar.getmembers()}
+        for ref in refs:
+            require(ref["archive_member"] in by_name, "research source member missing: " + ref["archive_member"])
+            body = tar.extractfile(ref["archive_member"]).read()
+            issue = json.loads(body)
+            require(sha(body) == ref["archive_member_sha256"]
+                    and issue["record_sha256"] == ref["record_sha256"]
+                    and issue["freeze_id"] == ref["freeze_id"]
+                    and issue["recorded_at"] == ref["recorded_at"],
+                    "original research reference/hash differs: " + ref["stable_match_id"] + " " + ref["method"])
+    return {"canonical_registration_sha256": record["record_sha256"],
+            "canonical_registration_freeze_id": record["freeze_id"],
+            "canonical_registration_time": record["recorded_at"],
+            "in_scope_research_reference_rows": len(refs),
+            "R7_reference_rows": 36, "R13_reference_rows": 36}
+
+
+def verify_team_supplement(rows):
+    """Read the post-seal 180-row reference appendix and original team-evidence bundle."""
+    reference = read_json(ROOT / "evidence/team-collection-reference.json")
+    archive_path = ROOT / reference["archive_path"]
+    archive_bytes = archive_path.read_bytes()
+    require(sha(archive_bytes) == reference["archive_sha256"]
+            == "ab32734d0e5d8025338bc0a26cc261ba715ea5cff31d2d4dc29c594efa96bd92"
+            and reference["supplemental_only_postseal"] is True
+            and reference["not_bound_into_R7_R13_only_canonical_registration"] is True,
+            "supplemental team archive or post-seal scope differs")
+    prefix = "uefa-thursday-teams-20261125/"
+    with tarfile.open(archive_path, "r:gz") as tar:
+        members = {}
+        member_bytes = {}
+        for member in tar:
+            members[member.name] = member
+            if member.isfile():
+                with tar.extractfile(member) as stream:
+                    member_bytes[member.name] = stream.read()
+        csv_member = prefix + "derived/prior-first-prematch-records.csv"
+        index_member = prefix + "raw/issued-firsts/index.json"
+        coverage_member = prefix + "derived/coverage.json"
+        source_manifest_member = reference["source_manifest_member"]
+        checksums_member = prefix + "SHA256SUMS"
+        require(all(name in members for name in (csv_member, index_member, coverage_member,
+                                                 source_manifest_member, checksums_member)),
+                "team archive is missing its 180 references, coverage, or source checksum index")
+        source_csv = member_bytes[csv_member]
+        published_csv = (ROOT / reference["csv_path"]).read_bytes()
+        require(source_csv == published_csv
+                and len(source_csv) == reference["csv_bytes"]
+                and sha(source_csv) == reference["csv_sha256"]
+                == "fa69b8ad3245de83f3cad8c3c01e5262d950f391b43f2f933ad867572151e265",
+                "published 180-row CSV is not the original archived member")
+        source_rows = list(csv.DictReader(io.StringIO(source_csv.decode("utf-8"))))
+        index = json.loads(member_bytes[index_member])
+        require(len(source_rows) == len(index) == 180 == reference["csv_rows"],
+                "team research-reference population differs")
+        tracks = {
+            "research-prematch-continuation-20261123": "R7",
+            "research-r8-conditional-score-20261125": "R8",
+            "research-r9-team-goal-buckets-20261125": "R9",
+            "research-r10-shot-volume-20261125": "R10",
+            "research-r13-domestic-form-20261125": "R13",
+        }
+        track_counts = Counter(r["track"] for r in source_rows)
+        require(track_counts == Counter({track: 36 for track in tracks})
+                and reference["track_counts"] == dict(sorted(track_counts.items())),
+                "180 original research references are not 36 for each R7/R8/R9/R10/R13 track")
+        index_by_key = {(r["match_id"], r["track"]): r for r in index}
+        require(len(index_by_key) == 180, "team archive first-issue index has duplicate references")
+        resolved = list(csv.DictReader((ROOT / "evidence/prior-first-prematch-reference-index.csv").open(
+            encoding="utf-8", newline="")))
+        require(len(resolved) == 180, "resolved team archive reference index is incomplete")
+        with tarfile.open(ROOT / "archives/research-first-issues.tar.gz", "r:gz") as r7tar:
+            r7_members = {m.name for m in r7tar.getmembers()}
+            comparison = {"espn:" + r["espn_event_id"]: r for r in csv.DictReader(
+                (ROOT / "evidence/issued-firsts-comparison.csv").open(encoding="utf-8", newline=""))}
+            target_ids = {mid for mid, r in comparison.items() if r["window"] == "window_1"}
+            linked_firsts = {}
+            for source_row, resolved_row in zip(source_rows, resolved):
+                mid = "espn:" + source_row["espn_event_id"]
+                ref = index_by_key[(mid, source_row["track"])]
+                require(resolved_row["match_id"] == mid
+                        and resolved_row["track"] == source_row["track"]
+                        and resolved_row["archive_member"] == prefix + ref["retained_path"]
+                        and resolved_row["record_sha256"] == source_row["record_sha256"] == ref["record_sha256"]
+                        and resolved_row["raw_file_sha256"] == source_row["file_sha256"] == ref["file_sha256"],
+                        "resolved 180-row reference differs from original team CSV/index")
+                member = prefix + ref["retained_path"]
+                require(member in members, "team issue archive member is missing: " + member)
+                body = member_bytes[member]
+                issue = json.loads(body)
+                require(sha(body) == ref["file_sha256"]
+                        and canonical_sha(issue) == ref["record_sha256"]
+                        and issue["record_sha256"] == ref["record_sha256"]
+                        and issue["freeze_id"] == ref["freeze_id"]
+                        and issue["track"] == ref["track"]
+                        and issue["recorded_at"] == ref["recorded_at"],
+                        "original research issue bytes or canonical seal differs: " + member)
+                if ref["track"] in ("research-prematch-continuation-20261123",
+                                     "research-r13-domestic-form-20261125") and mid in target_ids:
+                    target = comparison[mid]
+                    method = "r7" if ref["track"] == "research-prematch-continuation-20261123" else "r13"
+                    require(target[method + "_record_sha256"] == ref["record_sha256"],
+                            "supplementary R7/R13 record differs from the bound original first issue: " + mid)
+                    linked_firsts[method + ":" + mid] = ref["record_sha256"]
+            require(len(linked_firsts) == 72, "R7/R13 target first issues do not link to the supplementary 180 set")
+
+        checksum_text = member_bytes[checksums_member].decode("utf-8")
+        checksum_rows = [line.split("  ", 1) for line in checksum_text.splitlines() if "  " in line]
+        require(len(checksum_rows) == 676, "team bundle checksum index row count differs")
+        for expected_sha, relative in checksum_rows:
+            relative = relative.removeprefix("./")
+            member = prefix + relative
+            require(member in members and sha(member_bytes[member]) == expected_sha,
+                    "team archive SHA256SUMS mismatch: " + relative)
+        coverage_bytes = member_bytes[coverage_member]
+        coverage = json.loads(coverage_bytes)
+        source_manifest_bytes = member_bytes[source_manifest_member]
+        source_manifest = json.loads(source_manifest_bytes)
+        require(sha(coverage_bytes) == reference["coverage_sha256"]
+                and sha(source_manifest_bytes) == reference["source_manifest_sha256"]
+                and source_manifest["generated_utc"] == reference["source_manifest_generated_utc"]
+                and source_manifest["raw_file_count"] == reference["source_raw_file_count"] == 664
+                and coverage["schedule_events"] == 36 and coverage["team_count"] == 72
+                and coverage["teams_with_prior_primary_league_match"] == 70
+                and coverage["teams_with_xg"] == 47 and coverage["teams_with_sot"] == 62
+                and coverage["prior_first_record_count"] == 180
+                and coverage["current_test_route_for_both"] is False,
+                "team evidence coverage summary differs")
+        require(reference["collector"] == "Euclid, the task sub-agent operating as Codex driver"
+                and reference["source_bundle_executor_label"] == "current Codex driver (GPT-6); no Luna delegate invoked"
+                and dt(reference["appended_after_canonical_seal_at_utc"])
+                    > dt(read_json(ROOT / "evidence/canonical-registration-seal.json")["recorded_at"]),
+                "post-seal team appendix attribution or timestamp differs")
+    return {"supplemental_team_archive_sha256": reference["archive_sha256"],
+            "supplemental_prior_first_records": 180,
+            "supplemental_prior_first_by_track": {tracks[k]: v for k, v in track_counts.items()},
+            "team_prior_FT": "70/72", "team_xG": 47, "team_SOT": 62,
+            "supplemental_scope_was_added_after_canonical_seal": True}
 
 
 def verify_research_issues(rows):
@@ -276,6 +522,21 @@ def verify_market_coverage(rows, source_quotes, captures, registration):
             and coverage["ou_nonpush_gate"]["eligible_nonpush_settlements"] == 0
             and coverage["ou_nonpush_gate"]["status"].startswith("not_evaluated"),
             "strict market coverage or unsettled OU status is inaccurate")
+    upstream = coverage["upstream_market_specific_clock_observation"]
+    require(upstream["provider"] == "InferSports"
+            and upstream["field"] == "odds[i].as_of"
+            and upstream["acquisition_interval_utc"] == {
+                "first_request": "2026-11-25T13:18:47.851409Z",
+                "last_response": "2026-11-25T13:24:40.902950Z"}
+            and upstream["window_1"]["uefa.europa"]["valid_same_book_1x2_total_with_both_clocks_within_1h"] == 18
+            and upstream["window_1"]["uefa.europa.conf"]["valid_same_book_1x2_total_with_both_clocks_within_1h"] == 18
+            and upstream["window_2"]["uefa.europa"]["valid_same_book_1x2_total_with_both_clocks_within_1h"] == 0
+            and upstream["window_2"]["uefa.europa.conf"]["valid_same_book_1x2_total_with_both_clocks_within_1h"] == 0
+            and upstream["direct_bookmaker_issued_clocks"] == 0
+            and upstream["eligible_nonpush_total_minimum_count"] == 13
+            and upstream["nonpush_total_full_win_rate_minimum"] == 0.70
+            and upstream["observed_nonpush_eligible"] == 0,
+            "per-window upstream clocks or nonpush totals gates are inaccurate")
     return dict(market_fixture_snapshots=36, complete_same_bookmaker_1x2_ou_line=35,
                 explicit_provider_quote_clock=0, strict_clock_line_coverage=0.0,
                 nonpush_settlements=0)
@@ -284,11 +545,12 @@ def verify_market_coverage(rows, source_quotes, captures, registration):
 def verify_upstream_market_clock_evidence(rows, source_pairs):
     """Verify the separate InferSports upstream odds clocks against captured raw rows."""
     coverage = read_json(ROOT / "evidence/upstream-market-fixture-coverage.json")
-    require(coverage["attribution"]["market_data_provider"] == "InferSports"
+    require(coverage["attribution"]["collector"] == "Euclid, the task sub-agent operating as Codex driver"
+            and coverage["attribution"]["market_data_provider"] == "InferSports"
             and coverage["attribution"]["field"] == "odds[i].as_of"
-            and "not a bookmaker-issued timestamp" in coverage["attribution"]["semantics"]
-            and "does not contain a separate Euclid execution receipt" in coverage["attribution"]["Euclid_claim"],
-            "upstream quote clocks or Euclid execution provenance misattributed")
+            and coverage["attribution"]["collection_unit"] == "single upstream provider acquisition; no second acquisition is represented"
+            and "not a direct bookmaker-issued timestamp" in coverage["attribution"]["semantics"],
+            "upstream quote clocks or one-acquisition provenance misattributed")
     raw_archive = ROOT / coverage["raw_archive"]
     with tarfile.open(raw_archive, "r:gz") as tar:
         members = {m.name: m for m in tar.getmembers()}
@@ -316,6 +578,10 @@ def verify_upstream_market_clock_evidence(rows, source_pairs):
                     and fixture["fotmob_event_id"] == crosswalk["fotmob_event_id"],
                     "upstream event crosswalk differs from official three-source identity: " + mid)
             require(meta["sha256"] == sha(body) and meta["path"] == path
+                    and crosswalk["source_path"] == path
+                    and crosswalk["source_sha256"] == meta["sha256"]
+                    and crosswalk["source_request_utc"] == meta["request_started_utc"]
+                    and crosswalk["source_response_utc"] == meta["response_received_utc"]
                     and meta["request_started_utc"] <= meta["response_received_utc"]
                     and dt(meta["response_received_utc"]) < dt(fixture["kickoff_utc"])
                     and data["stale"] is False,
@@ -350,6 +616,15 @@ def verify_upstream_market_clock_evidence(rows, source_pairs):
         first_ids = {r["stable_match_id"] for r in rows if r["window"] == "window_1"}
         require(observed_fixture_ids == first_ids,
                 "upstream odds archive does not map 1:1 to first window")
+        observed_interval = {
+            "first_request": min(m["request_started_utc"] for m in meta_by_path.values()),
+            "last_response": max(m["response_received_utc"] for m in meta_by_path.values()),
+        }
+        require(observed_interval == coverage["collection_time_utc"]
+                and observed_interval == {
+                    "first_request": "2026-11-25T13:18:47.851409Z",
+                    "last_response": "2026-11-25T13:24:40.902950Z"},
+                "actual upstream quote acquisition interval differs from retained sidecars")
 
     require(len(source_pairs) == 491, "original all-pair source table has unexpected denominator")
     calculated_pairs = []
@@ -436,7 +711,8 @@ def verify_upstream_market_clock_evidence(rows, source_pairs):
             "identical_upstream_clock_fixtures_within_1h": 20,
             "identical_upstream_clock_pairs_within_1h": 35,
             "direct_bookmaker_issued_clock_claimed": False,
-            "separate_euclid_execution_receipt_archived": False}
+            "single_upstream_acquisition": True,
+            "independent_recomputation_uses_same_archived_responses": True}
 
 
 def verify_native_routes():
@@ -468,8 +744,10 @@ def verify_native_routes():
 
 def verify():
     manifest = verify_manifest()
-    source_root, source_manifest, captures, source_fixtures, source_quotes, source_upstream_pairs = verify_source_rebuild()
+    source_root, source_manifest, archive_manifest, captures, source_fixtures, source_quotes, source_upstream_pairs = verify_source_rebuild()
     registration, rows = verify_registration_and_rows(source_fixtures, captures)
+    canonical = verify_canonical_registration(rows, registration)
+    supplementary = verify_team_supplement(rows)
     r7, r13 = verify_research_issues(rows)
     market = verify_market_coverage(rows, source_quotes, captures, registration)
     upstream = verify_upstream_market_clock_evidence(rows, source_upstream_pairs)
@@ -487,9 +765,12 @@ def verify():
         "selected_seats_created": 0,
         **market,
         **upstream,
+        **canonical,
+        **supplementary,
         **native,
         "package_files": len(manifest),
-        "source_capture_rows": len(source_manifest["sources"]),
+        "calendar_source_capture_rows": len(source_manifest["sources"]),
+        "full_archived_source_capture_rows": len(archive_manifest["sources"]),
     }
 
 
