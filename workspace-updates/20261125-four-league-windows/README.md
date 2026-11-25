@@ -32,3 +32,15 @@ PYTHONPATH=/path/to/Football-Analysis/runtime python -B workspace-updates/202611
 ```
 
 验证程序从原始赛历重建四项赛事的八张名单，再核对原模型权重、当时的研究目标、整窗覆盖、赛事状态和四份首次登记回执。
+
+## 双模型两轮回执独立复核
+
+随 `native-readiness/europe-native-readiness-de2fbd292081209a.tar.gz` 保存 40 场、76 支不同球队（80 个主客球队席位）的逐场审计清单和两轮真实时钟执行回执。每轮均有 40 个不同赛事 ID、每场各一份 Current 与 Test 执行回执，共 80 个角色结果；两轮合计 160 个角色结果。四项赛事原始登记 ID、主客队及开球时间均逐场与归档清单对应，8 个 Current/Test 原生权重均从本仓库文件按压缩与解压后 SHA-256 双重核验。两轮 40/40 场均为双角色 `SUCCESS`，矩阵有效且 `prior_sides` 为空，未记录先验回退或角色失败。此核验不调用预测入口、不改变登记，也不产生正式推荐。
+
+可移植核验器只使用仓库相对路径，CI 无需访问归档生成时的 `/workspace` 目录、原运行时或模型源码：
+
+```bash
+python -B workspace-updates/20261125-four-league-windows/native-readiness/verify.py
+```
+
+CI 工作流为 `.github/workflows/europe-native-readiness.yml`，在相关文件推送或 PR 时运行，并可手动触发。它会重新核对原登记文件及其记录哈希、注册表、8 个权重文件、归档内逐场 ID、两轮执行时钟和回执状态。
