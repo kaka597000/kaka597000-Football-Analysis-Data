@@ -1,0 +1,4731 @@
+{
+  "archive_sha256": "430b2c76bd3607c6bc5b4430e803b95fb3da52332d09577a18712e4e432210ac",
+  "calibration": "Per league, train both R14 hurdles on pre-date R7 input anchors in 2015/16\u20132016/17. For validation and test use the R10 independent r7-control.json selection and fitted R7 distribution. The 2017/18 validation alone chooses score, WDL and total doses. Test 2018/19 once. No fitted parameters from modern R14.",
+  "cold_start": "Sources join only to supplied independent calendar beginning in 2015/16.",
+  "csv_member": "understat_per_game.csv",
+  "csv_sha256": "700350a60d2aa8cb74306728965f75b24ca1c7dec5755066940de7f8df33f643",
+  "eligibility": "Both source sides must be uniquely identified. Each statistic needs a valid own value and agreeing opponent mirror. Pressing uses only raw paired integer att >= 0, def > 0. Unpaired source team rows occupy their actual last-eight calendar slots without metrics. Every original test fixture remains eligible for scoring.",
+  "leagues": {
+    "eng.1": {
+      "doses": {
+        "full": {
+          "score": 0.0,
+          "total": 0.0,
+          "wdl": 0.0
+        },
+        "xg": {
+          "score": 0.5,
+          "total": 0.5,
+          "wdl": 0.0
+        }
+      },
+      "fits": {
+        "full": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession",
+            "own_deep_attack",
+            "opponent_deep_concession",
+            "own_pressing",
+            "opponent_pressing"
+          ],
+          "fit_games": 750,
+          "games_with_signal": 750,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            -0.06370385914489961,
+            0.07159618854519176,
+            0.0916855505775383,
+            0.023832091223004972,
+            0.03909913422838809,
+            -0.059238236173997746
+          ],
+          "positive_fit_sides": 1076,
+          "ridge": 24.0,
+          "scoring_beta": [
+            0.027940716701689468,
+            -0.0019577250086247455,
+            0.21024838563728293,
+            0.022226678315302232,
+            0.10183527206956108,
+            -0.06913623136182662
+          ],
+          "scoring_fit_sides": 1500,
+          "shift_limit": 0.65,
+          "training_games": 760,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": false
+        },
+        "xg": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession"
+          ],
+          "fit_games": 750,
+          "games_with_signal": 750,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            0.006840472150338456,
+            0.09906632266287117
+          ],
+          "positive_fit_sides": 1076,
+          "ridge": 24.0,
+          "scoring_beta": [
+            0.09784042656449006,
+            0.010665647189325417
+          ],
+          "scoring_fit_sides": 1500,
+          "shift_limit": 0.65,
+          "training_games": 760,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": true
+        }
+      },
+      "joins": {
+        "accepted_side_alias": 403,
+        "accepted_side_calendar": 112,
+        "accepted_side_exact": 2372,
+        "accepted_side_fixture_name": 25,
+        "joined_at_multi_fixture_timestamp": 875,
+        "joined_fixtures": 1456,
+        "source_team_rows": 3040,
+        "target_games": 1520,
+        "unmatched_target_games": 64,
+        "unresolved_name_or_side": 64,
+        "unused_source_sides": 128
+      },
+      "mirrors": {
+        "calendar_only_unjoined_team_rows": 128,
+        "deep_mirror_verified_sides": 2912,
+        "paired_count_ppda_sides": 2912,
+        "ppda_att_mirror_verified_sides": 2912,
+        "ppda_def_mirror_verified_sides": 2912,
+        "xg_mirror_verified_sides": 2912
+      },
+      "panel_sha256": "b2767ad8dd6f48d587c3476d59c7675661d6b710452cd835a9f82d2a192bd490",
+      "r7_control_sha256": "ce55aa09d32082246a7d1b51cedba1196f87ca708d9c76cbf2ad72e127a2710e",
+      "r7_selection": {
+        "arm": "linear",
+        "log_loss": 2.851070266904845,
+        "mix": 0.75,
+        "validation_games": 380
+      },
+      "test": {
+        "any_history": 380,
+        "contemporaneous_source_pairs": 370,
+        "deep_against": {
+          "any_team": 380,
+          "both_teams": 368,
+          "historical_side_exposures": 5805
+        },
+        "deep_for": {
+          "any_team": 380,
+          "both_teams": 368,
+          "historical_side_exposures": 5805
+        },
+        "end": "2019-05-12",
+        "games": 380,
+        "ppda": {
+          "any_team": 380,
+          "both_teams": 368,
+          "historical_side_exposures": 5805
+        },
+        "start": "2018-08-10",
+        "xg_against": {
+          "any_team": 380,
+          "both_teams": 368,
+          "historical_side_exposures": 5805
+        },
+        "xg_for": {
+          "any_team": 380,
+          "both_teams": 368,
+          "historical_side_exposures": 5805
+        }
+      },
+      "train": {
+        "any_history": 750,
+        "contemporaneous_source_pairs": 706,
+        "deep_against": {
+          "any_team": 750,
+          "both_teams": 716,
+          "historical_side_exposures": 10375
+        },
+        "deep_for": {
+          "any_team": 750,
+          "both_teams": 716,
+          "historical_side_exposures": 10375
+        },
+        "end": "2017-05-21",
+        "games": 760,
+        "ppda": {
+          "any_team": 750,
+          "both_teams": 716,
+          "historical_side_exposures": 10375
+        },
+        "start": "2015-08-08",
+        "xg_against": {
+          "any_team": 750,
+          "both_teams": 716,
+          "historical_side_exposures": 10375
+        },
+        "xg_for": {
+          "any_team": 750,
+          "both_teams": 716,
+          "historical_side_exposures": 10375
+        }
+      },
+      "validation": {
+        "any_history": 380,
+        "contemporaneous_source_pairs": 380,
+        "deep_against": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5972
+        },
+        "deep_for": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5972
+        },
+        "end": "2018-05-13",
+        "games": 380,
+        "ppda": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5972
+        },
+        "start": "2017-08-11",
+        "xg_against": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5972
+        },
+        "xg_for": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5972
+        }
+      }
+    },
+    "esp.1": {
+      "doses": {
+        "full": {
+          "score": 0.0,
+          "total": 1.0,
+          "wdl": 0.5
+        },
+        "xg": {
+          "score": 0.0,
+          "total": 0.5,
+          "wdl": 0.0
+        }
+      },
+      "fits": {
+        "full": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession",
+            "own_deep_attack",
+            "opponent_deep_concession",
+            "own_pressing",
+            "opponent_pressing"
+          ],
+          "fit_games": 737,
+          "games_with_signal": 737,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            -0.17108939501566997,
+            0.11364256360425495,
+            0.2489646734029831,
+            0.07681684030763503,
+            0.06621498064033729,
+            0.02840989146242995
+          ],
+          "positive_fit_sides": 1087,
+          "ridge": 24.0,
+          "scoring_beta": [
+            -0.028536777512351008,
+            0.09436206173100913,
+            0.016695895557305353,
+            0.061879390515519335,
+            0.03602320513483332,
+            -0.009834410019932125
+          ],
+          "scoring_fit_sides": 1474,
+          "shift_limit": 0.65,
+          "training_games": 760,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": false
+        },
+        "xg": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession"
+          ],
+          "fit_games": 737,
+          "games_with_signal": 737,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            0.04674077769516042,
+            0.11606839338827356
+          ],
+          "positive_fit_sides": 1087,
+          "ridge": 24.0,
+          "scoring_beta": [
+            -0.01992997741781729,
+            0.1055270287739815
+          ],
+          "scoring_fit_sides": 1474,
+          "shift_limit": 0.65,
+          "training_games": 760,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": true
+        }
+      },
+      "joins": {
+        "accepted_side_alias": 811,
+        "accepted_side_calendar": 315,
+        "accepted_side_exact": 1686,
+        "accepted_side_fixture_name": 12,
+        "joined_at_multi_fixture_timestamp": 236,
+        "joined_fixtures": 1412,
+        "source_team_rows": 3040,
+        "target_games": 1520,
+        "unmatched_target_games": 108,
+        "unresolved_name_or_side": 108,
+        "unused_source_sides": 216
+      },
+      "mirrors": {
+        "calendar_only_unjoined_team_rows": 216,
+        "deep_mirror_verified_sides": 2824,
+        "paired_count_ppda_sides": 2824,
+        "ppda_att_mirror_verified_sides": 2824,
+        "ppda_def_mirror_verified_sides": 2824,
+        "xg_mirror_verified_sides": 2824
+      },
+      "panel_sha256": "ae0a006c0cfb8a95ddde31f22127b140873b7ea27c5070c52b6d22f7e6124a8a",
+      "r7_control_sha256": "1f021e60978e2e5e7aa82e8d9e3ba41bd7b10617874404b77d60e1abef0e2732",
+      "r7_selection": {
+        "arm": "linear",
+        "log_loss": 2.8962174295226997,
+        "mix": 0.0,
+        "validation_games": 380
+      },
+      "test": {
+        "any_history": 380,
+        "contemporaneous_source_pairs": 376,
+        "deep_against": {
+          "any_team": 380,
+          "both_teams": 373,
+          "historical_side_exposures": 5905
+        },
+        "deep_for": {
+          "any_team": 380,
+          "both_teams": 373,
+          "historical_side_exposures": 5905
+        },
+        "end": "2019-05-19",
+        "games": 380,
+        "ppda": {
+          "any_team": 380,
+          "both_teams": 373,
+          "historical_side_exposures": 5905
+        },
+        "start": "2018-08-17",
+        "xg_against": {
+          "any_team": 380,
+          "both_teams": 373,
+          "historical_side_exposures": 5905
+        },
+        "xg_for": {
+          "any_team": 380,
+          "both_teams": 373,
+          "historical_side_exposures": 5905
+        }
+      },
+      "train": {
+        "any_history": 737,
+        "contemporaneous_source_pairs": 659,
+        "deep_against": {
+          "any_team": 737,
+          "both_teams": 682,
+          "historical_side_exposures": 9633
+        },
+        "deep_for": {
+          "any_team": 737,
+          "both_teams": 682,
+          "historical_side_exposures": 9633
+        },
+        "end": "2017-05-21",
+        "games": 760,
+        "ppda": {
+          "any_team": 737,
+          "both_teams": 682,
+          "historical_side_exposures": 9633
+        },
+        "start": "2015-08-21",
+        "xg_against": {
+          "any_team": 737,
+          "both_teams": 682,
+          "historical_side_exposures": 9633
+        },
+        "xg_for": {
+          "any_team": 737,
+          "both_teams": 682,
+          "historical_side_exposures": 9633
+        }
+      },
+      "validation": {
+        "any_history": 380,
+        "contemporaneous_source_pairs": 377,
+        "deep_against": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5907
+        },
+        "deep_for": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5907
+        },
+        "end": "2018-05-20",
+        "games": 380,
+        "ppda": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5907
+        },
+        "start": "2017-08-18",
+        "xg_against": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5907
+        },
+        "xg_for": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5907
+        }
+      }
+    },
+    "fra.1": {
+      "doses": {
+        "full": {
+          "score": 0.0,
+          "total": 0.5,
+          "wdl": 0.0
+        },
+        "xg": {
+          "score": 0.0,
+          "total": 0.5,
+          "wdl": 0.0
+        }
+      },
+      "fits": {
+        "full": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession",
+            "own_deep_attack",
+            "opponent_deep_concession",
+            "own_pressing",
+            "opponent_pressing"
+          ],
+          "fit_games": 749,
+          "games_with_signal": 749,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            0.10463051327259601,
+            -0.11531016969197355,
+            -0.05254263432982075,
+            0.11924923441445094,
+            0.12215955269933089,
+            -0.021377273839057024
+          ],
+          "positive_fit_sides": 1043,
+          "ridge": 24.0,
+          "scoring_beta": [
+            0.020251565109710983,
+            0.11906115281409206,
+            0.11752930421183116,
+            -0.028009099431620374,
+            0.1358927078968047,
+            -0.08596499005595334
+          ],
+          "scoring_fit_sides": 1498,
+          "shift_limit": 0.65,
+          "training_games": 760,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": false
+        },
+        "xg": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession"
+          ],
+          "fit_games": 749,
+          "games_with_signal": 749,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            0.11586609273947396,
+            -0.06629637438399842
+          ],
+          "positive_fit_sides": 1043,
+          "ridge": 24.0,
+          "scoring_beta": [
+            0.054942316772040506,
+            0.1231265746830171
+          ],
+          "scoring_fit_sides": 1498,
+          "shift_limit": 0.65,
+          "training_games": 760,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": true
+        }
+      },
+      "joins": {
+        "accepted_side_alias": 142,
+        "accepted_side_calendar": 230,
+        "accepted_side_exact": 2532,
+        "accepted_side_fixture_name": 20,
+        "joined_at_multi_fixture_timestamp": 822,
+        "joined_fixtures": 1462,
+        "source_team_rows": 3040,
+        "target_games": 1520,
+        "unmatched_target_games": 58,
+        "unresolved_name_or_side": 58,
+        "unused_source_sides": 116
+      },
+      "mirrors": {
+        "calendar_only_unjoined_team_rows": 116,
+        "deep_mirror_verified_sides": 2924,
+        "paired_count_ppda_sides": 2922,
+        "ppda_att_mirror_verified_sides": 2924,
+        "ppda_def_mirror_verified_sides": 2924,
+        "unusable_ppda_sides": 2,
+        "xg_mirror_verified_sides": 2924
+      },
+      "panel_sha256": "eb7b59a67b3935f3199adcf2b60c3375232ce6603560a2ba8d47b14d0c10b09d",
+      "r7_control_sha256": "0d416897e050f5955cdc0ba4f488b03437d5973c515c4e36338cd8086b622253",
+      "r7_selection": {
+        "arm": "tree",
+        "log_loss": 2.833258944416647,
+        "mix": 0.5,
+        "validation_games": 380
+      },
+      "test": {
+        "any_history": 380,
+        "contemporaneous_source_pairs": 380,
+        "deep_against": {
+          "any_team": 380,
+          "both_teams": 378,
+          "historical_side_exposures": 5988
+        },
+        "deep_for": {
+          "any_team": 380,
+          "both_teams": 378,
+          "historical_side_exposures": 5988
+        },
+        "end": "2019-05-24",
+        "games": 380,
+        "ppda": {
+          "any_team": 380,
+          "both_teams": 378,
+          "historical_side_exposures": 5988
+        },
+        "start": "2018-08-10",
+        "xg_against": {
+          "any_team": 380,
+          "both_teams": 378,
+          "historical_side_exposures": 5988
+        },
+        "xg_for": {
+          "any_team": 380,
+          "both_teams": 378,
+          "historical_side_exposures": 5988
+        }
+      },
+      "train": {
+        "any_history": 749,
+        "contemporaneous_source_pairs": 704,
+        "deep_against": {
+          "any_team": 749,
+          "both_teams": 711,
+          "historical_side_exposures": 10383
+        },
+        "deep_for": {
+          "any_team": 749,
+          "both_teams": 711,
+          "historical_side_exposures": 10383
+        },
+        "end": "2017-05-20",
+        "games": 760,
+        "ppda": {
+          "any_team": 749,
+          "both_teams": 711,
+          "historical_side_exposures": 10373
+        },
+        "start": "2015-08-07",
+        "xg_against": {
+          "any_team": 749,
+          "both_teams": 711,
+          "historical_side_exposures": 10383
+        },
+        "xg_for": {
+          "any_team": 749,
+          "both_teams": 711,
+          "historical_side_exposures": 10383
+        }
+      },
+      "validation": {
+        "any_history": 380,
+        "contemporaneous_source_pairs": 378,
+        "deep_against": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5958
+        },
+        "deep_for": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5958
+        },
+        "end": "2018-05-19",
+        "games": 380,
+        "ppda": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5955
+        },
+        "start": "2017-08-04",
+        "xg_against": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5958
+        },
+        "xg_for": {
+          "any_team": 380,
+          "both_teams": 377,
+          "historical_side_exposures": 5958
+        }
+      }
+    },
+    "ger.1": {
+      "doses": {
+        "full": {
+          "score": 0.5,
+          "total": 1.0,
+          "wdl": 1.0
+        },
+        "xg": {
+          "score": 1.0,
+          "total": 0.0,
+          "wdl": 0.0
+        }
+      },
+      "fits": {
+        "full": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession",
+            "own_deep_attack",
+            "opponent_deep_concession",
+            "own_pressing",
+            "opponent_pressing"
+          ],
+          "fit_games": 603,
+          "games_with_signal": 603,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            -0.05177693112682059,
+            0.09433384930251987,
+            0.15886680592164587,
+            -0.08513171238093602,
+            0.018136437178887597,
+            0.07825716050485566
+          ],
+          "positive_fit_sides": 891,
+          "ridge": 24.0,
+          "scoring_beta": [
+            -0.10810233509782438,
+            0.06576745482701715,
+            0.01793992339980323,
+            -0.043361671762547294,
+            -0.04527825453741039,
+            0.00424440919039066
+          ],
+          "scoring_fit_sides": 1206,
+          "shift_limit": 0.65,
+          "training_games": 612,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": false
+        },
+        "xg": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession"
+          ],
+          "fit_games": 603,
+          "games_with_signal": 603,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            0.057650014702576836,
+            0.05023322028450009
+          ],
+          "positive_fit_sides": 891,
+          "ridge": 24.0,
+          "scoring_beta": [
+            -0.10837175343261107,
+            0.058386286889989515
+          ],
+          "scoring_fit_sides": 1206,
+          "shift_limit": 0.65,
+          "training_games": 612,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": true
+        }
+      },
+      "joins": {
+        "accepted_side_alias": 953,
+        "accepted_side_calendar": 346,
+        "accepted_side_exact": 1029,
+        "accepted_side_fixture_name": 14,
+        "joined_at_multi_fixture_timestamp": 698,
+        "joined_fixtures": 1171,
+        "source_team_rows": 2448,
+        "target_games": 1224,
+        "unmatched_target_games": 53,
+        "unresolved_name_or_side": 53,
+        "unused_source_sides": 106
+      },
+      "mirrors": {
+        "calendar_only_unjoined_team_rows": 106,
+        "deep_mirror_verified_sides": 2342,
+        "paired_count_ppda_sides": 2342,
+        "ppda_att_mirror_verified_sides": 2342,
+        "ppda_def_mirror_verified_sides": 2342,
+        "xg_mirror_verified_sides": 2342
+      },
+      "panel_sha256": "5c8bb6cb767e32f06e49900e44d31484d60df6fe045f3d0dd549c8a05836b040",
+      "r7_control_sha256": "008ff70d0949a0f311913e543cb14ad943dc0e5cd9a2be5883906a99296955d4",
+      "r7_selection": {
+        "arm": "tree",
+        "log_loss": 2.8874517804640703,
+        "mix": 0.5,
+        "validation_games": 306
+      },
+      "test": {
+        "any_history": 305,
+        "contemporaneous_source_pairs": 291,
+        "deep_against": {
+          "any_team": 305,
+          "both_teams": 289,
+          "historical_side_exposures": 4377
+        },
+        "deep_for": {
+          "any_team": 305,
+          "both_teams": 289,
+          "historical_side_exposures": 4377
+        },
+        "end": "2019-05-18",
+        "games": 306,
+        "ppda": {
+          "any_team": 305,
+          "both_teams": 289,
+          "historical_side_exposures": 4377
+        },
+        "start": "2018-08-24",
+        "xg_against": {
+          "any_team": 305,
+          "both_teams": 289,
+          "historical_side_exposures": 4377
+        },
+        "xg_for": {
+          "any_team": 305,
+          "both_teams": 289,
+          "historical_side_exposures": 4377
+        }
+      },
+      "train": {
+        "any_history": 603,
+        "contemporaneous_source_pairs": 584,
+        "deep_against": {
+          "any_team": 603,
+          "both_teams": 570,
+          "historical_side_exposures": 8375
+        },
+        "deep_for": {
+          "any_team": 603,
+          "both_teams": 570,
+          "historical_side_exposures": 8375
+        },
+        "end": "2017-05-20",
+        "games": 612,
+        "ppda": {
+          "any_team": 603,
+          "both_teams": 570,
+          "historical_side_exposures": 8375
+        },
+        "start": "2015-08-14",
+        "xg_against": {
+          "any_team": 603,
+          "both_teams": 570,
+          "historical_side_exposures": 8375
+        },
+        "xg_for": {
+          "any_team": 603,
+          "both_teams": 570,
+          "historical_side_exposures": 8375
+        }
+      },
+      "validation": {
+        "any_history": 305,
+        "contemporaneous_source_pairs": 296,
+        "deep_against": {
+          "any_team": 305,
+          "both_teams": 294,
+          "historical_side_exposures": 4623
+        },
+        "deep_for": {
+          "any_team": 305,
+          "both_teams": 294,
+          "historical_side_exposures": 4623
+        },
+        "end": "2018-05-12",
+        "games": 306,
+        "ppda": {
+          "any_team": 305,
+          "both_teams": 294,
+          "historical_side_exposures": 4623
+        },
+        "start": "2017-08-18",
+        "xg_against": {
+          "any_team": 305,
+          "both_teams": 294,
+          "historical_side_exposures": 4623
+        },
+        "xg_for": {
+          "any_team": 305,
+          "both_teams": 294,
+          "historical_side_exposures": 4623
+        }
+      }
+    },
+    "ita.1": {
+      "doses": {
+        "full": {
+          "score": 1.0,
+          "total": 0.0,
+          "wdl": 0.5
+        },
+        "xg": {
+          "score": 0.5,
+          "total": 0.0,
+          "wdl": 0.5
+        }
+      },
+      "fits": {
+        "full": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession",
+            "own_deep_attack",
+            "opponent_deep_concession",
+            "own_pressing",
+            "opponent_pressing"
+          ],
+          "fit_games": 750,
+          "games_with_signal": 750,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            0.03724328106545503,
+            0.010472429577451972,
+            0.1395006641470482,
+            0.1438736260342221,
+            0.010949166436491513,
+            0.062164346651777044
+          ],
+          "positive_fit_sides": 1106,
+          "ridge": 24.0,
+          "scoring_beta": [
+            0.14919940896237557,
+            0.0023259792231426117,
+            0.10208301147125169,
+            0.06814439128555595,
+            0.10839577612021327,
+            -0.1051795970554345
+          ],
+          "scoring_fit_sides": 1500,
+          "shift_limit": 0.65,
+          "training_games": 760,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": false
+        },
+        "xg": {
+          "coefficient_bound": 1.5,
+          "feature_limit": 1.0,
+          "features": [
+            "own_xg_attack",
+            "opponent_xg_concession"
+          ],
+          "fit_games": 750,
+          "games_with_signal": 750,
+          "ipf_max_iter": 1024,
+          "ipf_rtol": 1e-12,
+          "positive_beta": [
+            0.1185374538644666,
+            0.06057129263479087
+          ],
+          "positive_fit_sides": 1106,
+          "ridge": 24.0,
+          "scoring_beta": [
+            0.18215097097194408,
+            0.02705783935812319
+          ],
+          "scoring_fit_sides": 1500,
+          "shift_limit": 0.65,
+          "training_games": 760,
+          "version": "R14-territory-press-hurdle-1",
+          "xg_only": true
+        }
+      },
+      "joins": {
+        "accepted_side_calendar": 215,
+        "accepted_side_exact": 2695,
+        "accepted_side_fixture_name": 22,
+        "joined_at_multi_fixture_timestamp": 741,
+        "joined_fixtures": 1466,
+        "source_team_rows": 3040,
+        "target_games": 1520,
+        "unmatched_target_games": 54,
+        "unresolved_name_or_side": 54,
+        "unused_source_sides": 108
+      },
+      "mirrors": {
+        "calendar_only_unjoined_team_rows": 108,
+        "deep_mirror_verified_sides": 2932,
+        "paired_count_ppda_sides": 2932,
+        "ppda_att_mirror_verified_sides": 2932,
+        "ppda_def_mirror_verified_sides": 2932,
+        "xg_mirror_verified_sides": 2932
+      },
+      "panel_sha256": "c9877ef58eb6e740676a06008feec6f53ca55d0a9fe09a7bd25c99b58a239bfa",
+      "r7_control_sha256": "c5afc6bfd06e467066da0185f058f29ce9daeb5b40db0250d96bad968fcb79ad",
+      "r7_selection": {
+        "arm": "linear",
+        "log_loss": 2.8455855954097586,
+        "mix": 0.25,
+        "validation_games": 380
+      },
+      "test": {
+        "any_history": 379,
+        "contemporaneous_source_pairs": 365,
+        "deep_against": {
+          "any_team": 379,
+          "both_teams": 362,
+          "historical_side_exposures": 5654
+        },
+        "deep_for": {
+          "any_team": 379,
+          "both_teams": 362,
+          "historical_side_exposures": 5654
+        },
+        "end": "2019-05-26",
+        "games": 380,
+        "ppda": {
+          "any_team": 379,
+          "both_teams": 362,
+          "historical_side_exposures": 5654
+        },
+        "start": "2018-08-18",
+        "xg_against": {
+          "any_team": 379,
+          "both_teams": 362,
+          "historical_side_exposures": 5654
+        },
+        "xg_for": {
+          "any_team": 379,
+          "both_teams": 362,
+          "historical_side_exposures": 5654
+        }
+      },
+      "train": {
+        "any_history": 750,
+        "contemporaneous_source_pairs": 746,
+        "deep_against": {
+          "any_team": 750,
+          "both_teams": 740,
+          "historical_side_exposures": 11071
+        },
+        "deep_for": {
+          "any_team": 750,
+          "both_teams": 740,
+          "historical_side_exposures": 11071
+        },
+        "end": "2017-05-28",
+        "games": 760,
+        "ppda": {
+          "any_team": 750,
+          "both_teams": 740,
+          "historical_side_exposures": 11071
+        },
+        "start": "2015-08-22",
+        "xg_against": {
+          "any_team": 750,
+          "both_teams": 740,
+          "historical_side_exposures": 11071
+        },
+        "xg_for": {
+          "any_team": 750,
+          "both_teams": 740,
+          "historical_side_exposures": 11071
+        }
+      },
+      "validation": {
+        "any_history": 379,
+        "contemporaneous_source_pairs": 355,
+        "deep_against": {
+          "any_team": 379,
+          "both_teams": 354,
+          "historical_side_exposures": 5498
+        },
+        "deep_for": {
+          "any_team": 379,
+          "both_teams": 354,
+          "historical_side_exposures": 5498
+        },
+        "end": "2018-05-20",
+        "games": 380,
+        "ppda": {
+          "any_team": 379,
+          "both_teams": 354,
+          "historical_side_exposures": 5498
+        },
+        "start": "2017-08-19",
+        "xg_against": {
+          "any_team": 379,
+          "both_teams": 354,
+          "historical_side_exposures": 5498
+        },
+        "xg_for": {
+          "any_team": 379,
+          "both_teams": 354,
+          "historical_side_exposures": 5498
+        }
+      }
+    }
+  },
+  "metrics": {
+    "competitions": {
+      "eng.1": {
+        "comparisons": {
+          "fixed_increment": {
+            "actual_ou": {
+              "candidate_hits": 218,
+              "control_hits": 218,
+              "delta_pp_ci95": [
+                -1.913973913613423,
+                1.9181721924425914
+              ],
+              "disagreements": 12,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 41,
+              "control_hits": 41,
+              "delta_pp_ci95": [
+                -1.0960413600513226,
+                1.078167115902965
+              ],
+              "disagreements": 4,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 125,
+              "control_hits": 124,
+              "delta_pp_ci95": [
+                -1.7903960915469868,
+                2.3992915759135798
+              ],
+              "disagreements": 15,
+              "net": 1,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 222,
+              "control_hits": 224,
+              "delta_pp_ci95": [
+                -1.617691341612991,
+                0.5050505050505051
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 380
+            }
+          },
+          "market": {
+            "actual_ou": {
+              "candidate_hits": 215,
+              "control_hits": 218,
+              "delta_pp_ci95": [
+                -2.958799360876512,
+                1.6221608932876534
+              ],
+              "disagreements": 21,
+              "net": -3,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "score_top3": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "wdl": {
+              "candidate_hits": 224,
+              "control_hits": 223,
+              "delta_pp_ci95": [
+                -0.5449963520495525,
+                1.1994783735055747
+              ],
+              "disagreements": 3,
+              "net": 1,
+              "paired": 380
+            }
+          },
+          "r10": {
+            "actual_ou": {
+              "candidate_hits": 215,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                -1.2955054512089808,
+                0.0
+              ],
+              "disagreements": 2,
+              "net": -2,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 41,
+              "control_hits": 41,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 124,
+              "control_hits": 127,
+              "delta_pp_ci95": [
+                -1.9957700684996371,
+                0.26118294721427876
+              ],
+              "disagreements": 5,
+              "net": -3,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 224,
+              "control_hits": 224,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          },
+          "r7": {
+            "actual_ou": {
+              "candidate_hits": 215,
+              "control_hits": 215,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 41,
+              "control_hits": 41,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 124,
+              "control_hits": 124,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 224,
+              "control_hits": 224,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          },
+          "same_runtime": {
+            "actual_ou": {
+              "candidate_hits": 215,
+              "control_hits": 215,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 41,
+              "control_hits": 41,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 124,
+              "control_hits": 124,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 224,
+              "control_hits": 224,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          },
+          "xg": {
+            "actual_ou": {
+              "candidate_hits": 215,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                -1.626639438564197,
+                0.49754345479584616
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 41,
+              "control_hits": 41,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 124,
+              "control_hits": 127,
+              "delta_pp_ci95": [
+                -1.7418788410886743,
+                0.0
+              ],
+              "disagreements": 3,
+              "net": -3,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 224,
+              "control_hits": 224,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          },
+          "xg_matched_dose": {
+            "actual_ou": {
+              "candidate_hits": 215,
+              "control_hits": 215,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 41,
+              "control_hits": 41,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 124,
+              "control_hits": 124,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 224,
+              "control_hits": 224,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          }
+        },
+        "coverage_and_changes": {
+          "first_gained": 0,
+          "first_lost": 0,
+          "nonzero_press": 380,
+          "nonzero_territory": 380,
+          "nonzero_xg": 380,
+          "three_gained": 0,
+          "three_lost": 0
+        },
+        "scores": {
+          "candidate": {
+            "counts": {
+              "actual_ou": [
+                215,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                124,
+                380
+              ],
+              "wdl": [
+                224,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": 0.13080899021154632,
+            "score_log_loss": 2.8831085862767227,
+            "settlements": {
+              "FULL_LOSS": 165,
+              "FULL_WIN": 215
+            },
+            "wdl_log_loss": 0.89244210164884
+          },
+          "fixed_full": {
+            "counts": {
+              "actual_ou": [
+                218,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                125,
+                380
+              ],
+              "wdl": [
+                222,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 162,
+              "FULL_WIN": 218
+            },
+            "wdl_log_loss": null
+          },
+          "fixed_xg": {
+            "counts": {
+              "actual_ou": [
+                218,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                124,
+                380
+              ],
+              "wdl": [
+                224,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 162,
+              "FULL_WIN": 218
+            },
+            "wdl_log_loss": null
+          },
+          "local_candidate": {
+            "counts": {
+              "actual_ou": [
+                215,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                124,
+                380
+              ],
+              "wdl": [
+                224,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 165,
+              "FULL_WIN": 215
+            },
+            "wdl_log_loss": null
+          },
+          "local_r7": {
+            "counts": {
+              "actual_ou": [
+                215,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                124,
+                380
+              ],
+              "wdl": [
+                224,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": 0.13080899021154632,
+            "score_log_loss": 2.8831085862767227,
+            "settlements": {
+              "FULL_LOSS": 165,
+              "FULL_WIN": 215
+            },
+            "wdl_log_loss": 0.89244210164884
+          },
+          "market": {
+            "counts": {
+              "actual_ou": [
+                218,
+                380
+              ],
+              "score_top1": [
+                0,
+                0
+              ],
+              "score_top3": [
+                0,
+                0
+              ],
+              "wdl": [
+                223,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 162,
+              "FULL_WIN": 218
+            },
+            "wdl_log_loss": null
+          },
+          "r10": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                127,
+                380
+              ],
+              "wdl": [
+                224,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          },
+          "r7": {
+            "counts": {
+              "actual_ou": [
+                215,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                124,
+                380
+              ],
+              "wdl": [
+                224,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 165,
+              "FULL_WIN": 215
+            },
+            "wdl_log_loss": null
+          },
+          "xg": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                127,
+                380
+              ],
+              "wdl": [
+                224,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          },
+          "xg_matched_dose": {
+            "counts": {
+              "actual_ou": [
+                215,
+                380
+              ],
+              "score_top1": [
+                41,
+                380
+              ],
+              "score_top3": [
+                124,
+                380
+              ],
+              "wdl": [
+                224,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 165,
+              "FULL_WIN": 215
+            },
+            "wdl_log_loss": null
+          }
+        }
+      },
+      "esp.1": {
+        "comparisons": {
+          "fixed_increment": {
+            "actual_ou": {
+              "candidate_hits": 221,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                -1.5548110571575835,
+                3.7234423581052245
+              ],
+              "disagreements": 18,
+              "net": 4,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 48,
+              "control_hits": 48,
+              "delta_pp_ci95": [
+                -1.3228390383562798,
+                1.2862821506780369
+              ],
+              "disagreements": 6,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 134,
+              "delta_pp_ci95": [
+                -1.090067560001493,
+                1.5707836913056021
+              ],
+              "disagreements": 7,
+              "net": 1,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 186,
+              "delta_pp_ci95": [
+                -1.5077280341099435,
+                0.51703386372909
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 380
+            }
+          },
+          "market": {
+            "actual_ou": {
+              "candidate_hits": 221,
+              "control_hits": 218,
+              "delta_pp_ci95": [
+                -1.4730905451185707,
+                3.234501347708895
+              ],
+              "disagreements": 17,
+              "net": 3,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "score_top3": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 183,
+              "delta_pp_ci95": [
+                -0.5305392516507703,
+                1.232225062351875
+              ],
+              "disagreements": 3,
+              "net": 1,
+              "paired": 380
+            }
+          },
+          "r10": {
+            "actual_ou": {
+              "candidate_hits": 221,
+              "control_hits": 215,
+              "delta_pp_ci95": [
+                -0.7540085925812268,
+                3.955434690952019
+              ],
+              "disagreements": 16,
+              "net": 6,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 47,
+              "control_hits": 47,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 135,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 183,
+              "delta_pp_ci95": [
+                -0.5305392516507703,
+                1.232225062351875
+              ],
+              "disagreements": 3,
+              "net": 1,
+              "paired": 380
+            }
+          },
+          "r7": {
+            "actual_ou": {
+              "candidate_hits": 221,
+              "control_hits": 218,
+              "delta_pp_ci95": [
+                -1.4730905451185707,
+                3.234501347708895
+              ],
+              "disagreements": 17,
+              "net": 3,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 47,
+              "control_hits": 47,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 135,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 183,
+              "delta_pp_ci95": [
+                -0.5305392516507703,
+                1.232225062351875
+              ],
+              "disagreements": 3,
+              "net": 1,
+              "paired": 380
+            }
+          },
+          "same_runtime": {
+            "actual_ou": {
+              "candidate_hits": 221,
+              "control_hits": 218,
+              "delta_pp_ci95": [
+                -1.4730905451185707,
+                3.234501347708895
+              ],
+              "disagreements": 17,
+              "net": 3,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 47,
+              "control_hits": 47,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 135,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 183,
+              "delta_pp_ci95": [
+                -0.5305392516507703,
+                1.232225062351875
+              ],
+              "disagreements": 3,
+              "net": 1,
+              "paired": 380
+            }
+          },
+          "xg": {
+            "actual_ou": {
+              "candidate_hits": 221,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                -1.3306955586559703,
+                3.6363636363636362
+              ],
+              "disagreements": 16,
+              "net": 4,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 47,
+              "control_hits": 47,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 135,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 183,
+              "delta_pp_ci95": [
+                -0.5305392516507703,
+                1.232225062351875
+              ],
+              "disagreements": 3,
+              "net": 1,
+              "paired": 380
+            }
+          },
+          "xg_matched_dose": {
+            "actual_ou": {
+              "candidate_hits": 221,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                -1.5548110571575835,
+                3.7234423581052245
+              ],
+              "disagreements": 18,
+              "net": 4,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 47,
+              "control_hits": 47,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 135,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 185,
+              "delta_pp_ci95": [
+                -0.8242896606156274,
+                0.0
+              ],
+              "disagreements": 1,
+              "net": -1,
+              "paired": 380
+            }
+          }
+        },
+        "coverage_and_changes": {
+          "first_gained": 0,
+          "first_lost": 0,
+          "nonzero_press": 380,
+          "nonzero_territory": 380,
+          "nonzero_xg": 380,
+          "three_gained": 0,
+          "three_lost": 0
+        },
+        "scores": {
+          "candidate": {
+            "counts": {
+              "actual_ou": [
+                221,
+                380
+              ],
+              "score_top1": [
+                47,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": 0.1387999992491301,
+            "score_log_loss": 2.8358298795625645,
+            "settlements": {
+              "FULL_LOSS": 159,
+              "FULL_WIN": 221
+            },
+            "wdl_log_loss": 1.011144765886954
+          },
+          "fixed_full": {
+            "counts": {
+              "actual_ou": [
+                221,
+                380
+              ],
+              "score_top1": [
+                48,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 159,
+              "FULL_WIN": 221
+            },
+            "wdl_log_loss": null
+          },
+          "fixed_xg": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                48,
+                380
+              ],
+              "score_top3": [
+                134,
+                380
+              ],
+              "wdl": [
+                186,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          },
+          "local_candidate": {
+            "counts": {
+              "actual_ou": [
+                221,
+                380
+              ],
+              "score_top1": [
+                47,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 159,
+              "FULL_WIN": 221
+            },
+            "wdl_log_loss": null
+          },
+          "local_r7": {
+            "counts": {
+              "actual_ou": [
+                218,
+                380
+              ],
+              "score_top1": [
+                47,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                183,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": 0.1387999992491301,
+            "score_log_loss": 2.8358298795625645,
+            "settlements": {
+              "FULL_LOSS": 162,
+              "FULL_WIN": 218
+            },
+            "wdl_log_loss": 1.0102501469680756
+          },
+          "market": {
+            "counts": {
+              "actual_ou": [
+                218,
+                380
+              ],
+              "score_top1": [
+                0,
+                0
+              ],
+              "score_top3": [
+                0,
+                0
+              ],
+              "wdl": [
+                183,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 162,
+              "FULL_WIN": 218
+            },
+            "wdl_log_loss": null
+          },
+          "r10": {
+            "counts": {
+              "actual_ou": [
+                215,
+                380
+              ],
+              "score_top1": [
+                47,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                183,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 165,
+              "FULL_WIN": 215
+            },
+            "wdl_log_loss": null
+          },
+          "r7": {
+            "counts": {
+              "actual_ou": [
+                218,
+                380
+              ],
+              "score_top1": [
+                47,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                183,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 162,
+              "FULL_WIN": 218
+            },
+            "wdl_log_loss": null
+          },
+          "xg": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                47,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                183,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          },
+          "xg_matched_dose": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                47,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                185,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          }
+        }
+      },
+      "fra.1": {
+        "comparisons": {
+          "fixed_increment": {
+            "actual_ou": {
+              "candidate_hits": 221,
+              "control_hits": 221,
+              "delta_pp_ci95": [
+                -1.3093345091449442,
+                1.1206059888744229
+              ],
+              "disagreements": 4,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 60,
+              "control_hits": 60,
+              "delta_pp_ci95": [
+                -0.7063075832742736,
+                0.7936507936507936
+              ],
+              "disagreements": 2,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 138,
+              "control_hits": 138,
+              "delta_pp_ci95": [
+                -1.253773820741111,
+                1.2963758277686948
+              ],
+              "disagreements": 6,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 181,
+              "control_hits": 183,
+              "delta_pp_ci95": [
+                -1.3732031556190498,
+                0.0
+              ],
+              "disagreements": 2,
+              "net": -2,
+              "paired": 380
+            }
+          },
+          "market": {
+            "actual_ou": {
+              "candidate_hits": 219,
+              "control_hits": 219,
+              "delta_pp_ci95": [
+                -1.3484514342147276,
+                1.3409379006877256
+              ],
+              "disagreements": 8,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "score_top3": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 186,
+              "delta_pp_ci95": [
+                -1.2919896640826873,
+                0.0
+              ],
+              "disagreements": 2,
+              "net": -2,
+              "paired": 380
+            }
+          },
+          "r10": {
+            "actual_ou": {
+              "candidate_hits": 219,
+              "control_hits": 220,
+              "delta_pp_ci95": [
+                -1.1601602546808394,
+                0.555594243268338
+              ],
+              "disagreements": 3,
+              "net": -1,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 61,
+              "control_hits": 61,
+              "delta_pp_ci95": [
+                -1.5191805971591457,
+                1.4678178484107571
+              ],
+              "disagreements": 8,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 136,
+              "control_hits": 139,
+              "delta_pp_ci95": [
+                -2.6629014189693803,
+                0.8678771371283577
+              ],
+              "disagreements": 11,
+              "net": -3,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 183,
+              "delta_pp_ci95": [
+                -0.8064516129032258,
+                1.4205557174307173
+              ],
+              "disagreements": 5,
+              "net": 1,
+              "paired": 380
+            }
+          },
+          "r7": {
+            "actual_ou": {
+              "candidate_hits": 219,
+              "control_hits": 219,
+              "delta_pp_ci95": [
+                -0.7595902985795728,
+                0.783496490007371
+              ],
+              "disagreements": 2,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 61,
+              "control_hits": 61,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 136,
+              "control_hits": 136,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 184,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          },
+          "same_runtime": {
+            "actual_ou": {
+              "candidate_hits": 219,
+              "control_hits": 219,
+              "delta_pp_ci95": [
+                -0.7595902985795728,
+                0.783496490007371
+              ],
+              "disagreements": 2,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 61,
+              "control_hits": 61,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 136,
+              "control_hits": 136,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 184,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          },
+          "xg": {
+            "actual_ou": {
+              "candidate_hits": 219,
+              "control_hits": 221,
+              "delta_pp_ci95": [
+                -1.6132310516653554,
+                0.5142052436845286
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 61,
+              "control_hits": 61,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 136,
+              "control_hits": 136,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 184,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          },
+          "xg_matched_dose": {
+            "actual_ou": {
+              "candidate_hits": 219,
+              "control_hits": 221,
+              "delta_pp_ci95": [
+                -1.6132310516653554,
+                0.5142052436845286
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 61,
+              "control_hits": 61,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 136,
+              "control_hits": 136,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 184,
+              "control_hits": 184,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            }
+          }
+        },
+        "coverage_and_changes": {
+          "first_gained": 0,
+          "first_lost": 0,
+          "nonzero_press": 380,
+          "nonzero_territory": 380,
+          "nonzero_xg": 380,
+          "three_gained": 0,
+          "three_lost": 0
+        },
+        "scores": {
+          "candidate": {
+            "counts": {
+              "actual_ou": [
+                219,
+                380
+              ],
+              "score_top1": [
+                61,
+                380
+              ],
+              "score_top3": [
+                136,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": 0.13886112091512723,
+            "score_log_loss": 2.795565149729842,
+            "settlements": {
+              "FULL_LOSS": 161,
+              "FULL_WIN": 219
+            },
+            "wdl_log_loss": 1.0066109492576492
+          },
+          "fixed_full": {
+            "counts": {
+              "actual_ou": [
+                221,
+                380
+              ],
+              "score_top1": [
+                60,
+                380
+              ],
+              "score_top3": [
+                138,
+                380
+              ],
+              "wdl": [
+                181,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 159,
+              "FULL_WIN": 221
+            },
+            "wdl_log_loss": null
+          },
+          "fixed_xg": {
+            "counts": {
+              "actual_ou": [
+                221,
+                380
+              ],
+              "score_top1": [
+                60,
+                380
+              ],
+              "score_top3": [
+                138,
+                380
+              ],
+              "wdl": [
+                183,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 159,
+              "FULL_WIN": 221
+            },
+            "wdl_log_loss": null
+          },
+          "local_candidate": {
+            "counts": {
+              "actual_ou": [
+                219,
+                380
+              ],
+              "score_top1": [
+                61,
+                380
+              ],
+              "score_top3": [
+                136,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 161,
+              "FULL_WIN": 219
+            },
+            "wdl_log_loss": null
+          },
+          "local_r7": {
+            "counts": {
+              "actual_ou": [
+                219,
+                380
+              ],
+              "score_top1": [
+                61,
+                380
+              ],
+              "score_top3": [
+                136,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": 0.13886112091512723,
+            "score_log_loss": 2.795565149729842,
+            "settlements": {
+              "FULL_LOSS": 161,
+              "FULL_WIN": 219
+            },
+            "wdl_log_loss": 1.0066109492576492
+          },
+          "market": {
+            "counts": {
+              "actual_ou": [
+                219,
+                380
+              ],
+              "score_top1": [
+                0,
+                0
+              ],
+              "score_top3": [
+                0,
+                0
+              ],
+              "wdl": [
+                186,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 161,
+              "FULL_WIN": 219
+            },
+            "wdl_log_loss": null
+          },
+          "r10": {
+            "counts": {
+              "actual_ou": [
+                220,
+                380
+              ],
+              "score_top1": [
+                61,
+                380
+              ],
+              "score_top3": [
+                139,
+                380
+              ],
+              "wdl": [
+                183,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 160,
+              "FULL_WIN": 220
+            },
+            "wdl_log_loss": null
+          },
+          "r7": {
+            "counts": {
+              "actual_ou": [
+                219,
+                380
+              ],
+              "score_top1": [
+                61,
+                380
+              ],
+              "score_top3": [
+                136,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 161,
+              "FULL_WIN": 219
+            },
+            "wdl_log_loss": null
+          },
+          "xg": {
+            "counts": {
+              "actual_ou": [
+                221,
+                380
+              ],
+              "score_top1": [
+                61,
+                380
+              ],
+              "score_top3": [
+                136,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 159,
+              "FULL_WIN": 221
+            },
+            "wdl_log_loss": null
+          },
+          "xg_matched_dose": {
+            "counts": {
+              "actual_ou": [
+                221,
+                380
+              ],
+              "score_top1": [
+                61,
+                380
+              ],
+              "score_top3": [
+                136,
+                380
+              ],
+              "wdl": [
+                184,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 159,
+              "FULL_WIN": 221
+            },
+            "wdl_log_loss": null
+          }
+        }
+      },
+      "ger.1": {
+        "comparisons": {
+          "fixed_increment": {
+            "actual_ou": {
+              "candidate_hits": 191,
+              "control_hits": 191,
+              "delta_pp_ci95": [
+                -1.7551691729323309,
+                1.7861164736164732
+              ],
+              "disagreements": 8,
+              "net": 0,
+              "paired": 306
+            },
+            "score_top1": {
+              "candidate_hits": 36,
+              "control_hits": 33,
+              "delta_pp_ci95": [
+                0.0,
+                2.236781278571648
+              ],
+              "disagreements": 3,
+              "net": 3,
+              "paired": 306
+            },
+            "score_top3": {
+              "candidate_hits": 87,
+              "control_hits": 86,
+              "delta_pp_ci95": [
+                -0.6851092572403659,
+                1.369980699524549
+              ],
+              "disagreements": 3,
+              "net": 1,
+              "paired": 306
+            },
+            "wdl": {
+              "candidate_hits": 167,
+              "control_hits": 167,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 306
+            }
+          },
+          "market": {
+            "actual_ou": {
+              "candidate_hits": 191,
+              "control_hits": 192,
+              "delta_pp_ci95": [
+                -2.85782967032967,
+                2.364864864864865
+              ],
+              "disagreements": 19,
+              "net": -1,
+              "paired": 306
+            },
+            "score_top1": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "score_top3": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "wdl": {
+              "candidate_hits": 167,
+              "control_hits": 166,
+              "delta_pp_ci95": [
+                -0.7221529373153922,
+                1.453514799154334
+              ],
+              "disagreements": 3,
+              "net": 1,
+              "paired": 306
+            }
+          },
+          "r10": {
+            "actual_ou": {
+              "candidate_hits": 191,
+              "control_hits": 191,
+              "delta_pp_ci95": [
+                -1.5981583937245123,
+                1.5340984634086114
+              ],
+              "disagreements": 6,
+              "net": 0,
+              "paired": 306
+            },
+            "score_top1": {
+              "candidate_hits": 34,
+              "control_hits": 32,
+              "delta_pp_ci95": [
+                0.0,
+                1.7302539888504422
+              ],
+              "disagreements": 2,
+              "net": 2,
+              "paired": 306
+            },
+            "score_top3": {
+              "candidate_hits": 86,
+              "control_hits": 88,
+              "delta_pp_ci95": [
+                -2.0003355704697987,
+                0.37327566711895055
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 306
+            },
+            "wdl": {
+              "candidate_hits": 167,
+              "control_hits": 167,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 306
+            }
+          },
+          "r7": {
+            "actual_ou": {
+              "candidate_hits": 191,
+              "control_hits": 191,
+              "delta_pp_ci95": [
+                -1.5981583937245123,
+                1.5340984634086114
+              ],
+              "disagreements": 6,
+              "net": 0,
+              "paired": 306
+            },
+            "score_top1": {
+              "candidate_hits": 34,
+              "control_hits": 32,
+              "delta_pp_ci95": [
+                0.0,
+                1.7302539888504422
+              ],
+              "disagreements": 2,
+              "net": 2,
+              "paired": 306
+            },
+            "score_top3": {
+              "candidate_hits": 86,
+              "control_hits": 88,
+              "delta_pp_ci95": [
+                -2.0003355704697987,
+                0.37327566711895055
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 306
+            },
+            "wdl": {
+              "candidate_hits": 167,
+              "control_hits": 167,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 306
+            }
+          },
+          "same_runtime": {
+            "actual_ou": {
+              "candidate_hits": 191,
+              "control_hits": 191,
+              "delta_pp_ci95": [
+                -1.5981583937245123,
+                1.5340984634086114
+              ],
+              "disagreements": 6,
+              "net": 0,
+              "paired": 306
+            },
+            "score_top1": {
+              "candidate_hits": 34,
+              "control_hits": 32,
+              "delta_pp_ci95": [
+                0.0,
+                1.7302539888504422
+              ],
+              "disagreements": 2,
+              "net": 2,
+              "paired": 306
+            },
+            "score_top3": {
+              "candidate_hits": 86,
+              "control_hits": 88,
+              "delta_pp_ci95": [
+                -2.0003355704697987,
+                0.37327566711895055
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 306
+            },
+            "wdl": {
+              "candidate_hits": 167,
+              "control_hits": 167,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 306
+            }
+          },
+          "xg": {
+            "actual_ou": {
+              "candidate_hits": 191,
+              "control_hits": 191,
+              "delta_pp_ci95": [
+                -1.5981583937245123,
+                1.5340984634086114
+              ],
+              "disagreements": 6,
+              "net": 0,
+              "paired": 306
+            },
+            "score_top1": {
+              "candidate_hits": 34,
+              "control_hits": 33,
+              "delta_pp_ci95": [
+                0.0,
+                1.0639244340122662
+              ],
+              "disagreements": 1,
+              "net": 1,
+              "paired": 306
+            },
+            "score_top3": {
+              "candidate_hits": 86,
+              "control_hits": 86,
+              "delta_pp_ci95": [
+                -1.3032530430310303,
+                1.2780576718276397
+              ],
+              "disagreements": 4,
+              "net": 0,
+              "paired": 306
+            },
+            "wdl": {
+              "candidate_hits": 167,
+              "control_hits": 167,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 306
+            }
+          },
+          "xg_matched_dose": {
+            "actual_ou": {
+              "candidate_hits": 191,
+              "control_hits": 191,
+              "delta_pp_ci95": [
+                -1.7551691729323309,
+                1.7861164736164732
+              ],
+              "disagreements": 8,
+              "net": 0,
+              "paired": 306
+            },
+            "score_top1": {
+              "candidate_hits": 34,
+              "control_hits": 33,
+              "delta_pp_ci95": [
+                0.0,
+                1.0639244340122662
+              ],
+              "disagreements": 1,
+              "net": 1,
+              "paired": 306
+            },
+            "score_top3": {
+              "candidate_hits": 86,
+              "control_hits": 87,
+              "delta_pp_ci95": [
+                -1.0870553359683794,
+                0.0
+              ],
+              "disagreements": 1,
+              "net": -1,
+              "paired": 306
+            },
+            "wdl": {
+              "candidate_hits": 167,
+              "control_hits": 167,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 306
+            }
+          }
+        },
+        "coverage_and_changes": {
+          "first_gained": 2,
+          "first_lost": 0,
+          "nonzero_press": 305,
+          "nonzero_territory": 305,
+          "nonzero_xg": 305,
+          "three_gained": 1,
+          "three_lost": 3
+        },
+        "scores": {
+          "candidate": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                34,
+                306
+              ],
+              "score_top3": [
+                86,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": 0.12255176404464431,
+            "score_log_loss": 3.1335012933420465,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": 0.965215941731245
+          },
+          "fixed_full": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                36,
+                306
+              ],
+              "score_top3": [
+                87,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": null
+          },
+          "fixed_xg": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                33,
+                306
+              ],
+              "score_top3": [
+                86,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": null
+          },
+          "local_candidate": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                34,
+                306
+              ],
+              "score_top3": [
+                86,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": null
+          },
+          "local_r7": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                32,
+                306
+              ],
+              "score_top3": [
+                88,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": 0.12170926866999716,
+            "score_log_loss": 3.132771790783115,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": 0.9634057993125178
+          },
+          "market": {
+            "counts": {
+              "actual_ou": [
+                192,
+                306
+              ],
+              "score_top1": [
+                0,
+                0
+              ],
+              "score_top3": [
+                0,
+                0
+              ],
+              "wdl": [
+                166,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 114,
+              "FULL_WIN": 192
+            },
+            "wdl_log_loss": null
+          },
+          "r10": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                32,
+                306
+              ],
+              "score_top3": [
+                88,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": null
+          },
+          "r7": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                32,
+                306
+              ],
+              "score_top3": [
+                88,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": null
+          },
+          "xg": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                33,
+                306
+              ],
+              "score_top3": [
+                86,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": null
+          },
+          "xg_matched_dose": {
+            "counts": {
+              "actual_ou": [
+                191,
+                306
+              ],
+              "score_top1": [
+                33,
+                306
+              ],
+              "score_top3": [
+                87,
+                306
+              ],
+              "wdl": [
+                167,
+                306
+              ]
+            },
+            "games": 306,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 115,
+              "FULL_WIN": 191
+            },
+            "wdl_log_loss": null
+          }
+        }
+      },
+      "ita.1": {
+        "comparisons": {
+          "fixed_increment": {
+            "actual_ou": {
+              "candidate_hits": 219,
+              "control_hits": 216,
+              "delta_pp_ci95": [
+                -0.955418131370728,
+                2.740853129876885
+              ],
+              "disagreements": 13,
+              "net": 3,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 54,
+              "control_hits": 56,
+              "delta_pp_ci95": [
+                -1.4124293785310735,
+                0.0
+              ],
+              "disagreements": 2,
+              "net": -2,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 133,
+              "delta_pp_ci95": [
+                -0.4666227492314449,
+                1.6439161966156322
+              ],
+              "disagreements": 4,
+              "net": 2,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 211,
+              "control_hits": 208,
+              "delta_pp_ci95": [
+                -0.2779356060606061,
+                1.8970189701897018
+              ],
+              "disagreements": 5,
+              "net": 3,
+              "paired": 380
+            }
+          },
+          "market": {
+            "actual_ou": {
+              "candidate_hits": 217,
+              "control_hits": 218,
+              "delta_pp_ci95": [
+                -1.8716577540106951,
+                1.2545398423782754
+              ],
+              "disagreements": 9,
+              "net": -1,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "score_top3": {
+              "candidate_hits": 0,
+              "control_hits": 0,
+              "delta_pp_ci95": null,
+              "disagreements": 0,
+              "net": 0,
+              "paired": 0
+            },
+            "wdl": {
+              "candidate_hits": 207,
+              "control_hits": 209,
+              "delta_pp_ci95": [
+                -1.5916177549523112,
+                0.5089709298920364
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 380
+            }
+          },
+          "r10": {
+            "actual_ou": {
+              "candidate_hits": 217,
+              "control_hits": 215,
+              "delta_pp_ci95": [
+                -0.9136307731455956,
+                2.021167557932263
+              ],
+              "disagreements": 8,
+              "net": 2,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 54,
+              "control_hits": 55,
+              "delta_pp_ci95": [
+                -1.4709522422830519,
+                0.8100860040820765
+              ],
+              "disagreements": 5,
+              "net": -1,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 135,
+              "delta_pp_ci95": [
+                -1.1364445739445739,
+                1.3159635199108881
+              ],
+              "disagreements": 6,
+              "net": 0,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 207,
+              "control_hits": 209,
+              "delta_pp_ci95": [
+                -1.3966968785404539,
+                0.0
+              ],
+              "disagreements": 2,
+              "net": -2,
+              "paired": 380
+            }
+          },
+          "r7": {
+            "actual_ou": {
+              "candidate_hits": 217,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 54,
+              "control_hits": 53,
+              "delta_pp_ci95": [
+                -1.0754873677769037,
+                1.6175170814266906
+              ],
+              "disagreements": 7,
+              "net": 1,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 137,
+              "delta_pp_ci95": [
+                -2.100720030317066,
+                1.075935306140584
+              ],
+              "disagreements": 10,
+              "net": -2,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 207,
+              "control_hits": 209,
+              "delta_pp_ci95": [
+                -1.3966968785404539,
+                0.0
+              ],
+              "disagreements": 2,
+              "net": -2,
+              "paired": 380
+            }
+          },
+          "same_runtime": {
+            "actual_ou": {
+              "candidate_hits": 217,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 54,
+              "control_hits": 53,
+              "delta_pp_ci95": [
+                -1.0754873677769037,
+                1.6175170814266906
+              ],
+              "disagreements": 7,
+              "net": 1,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 137,
+              "delta_pp_ci95": [
+                -2.100720030317066,
+                1.075935306140584
+              ],
+              "disagreements": 10,
+              "net": -2,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 207,
+              "control_hits": 209,
+              "delta_pp_ci95": [
+                -1.3966968785404539,
+                0.0
+              ],
+              "disagreements": 2,
+              "net": -2,
+              "paired": 380
+            }
+          },
+          "xg": {
+            "actual_ou": {
+              "candidate_hits": 217,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 54,
+              "control_hits": 56,
+              "delta_pp_ci95": [
+                -1.724512743628186,
+                0.48673756702953774
+              ],
+              "disagreements": 4,
+              "net": -2,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 136,
+              "delta_pp_ci95": [
+                -1.7635598204810188,
+                1.2987858495670994
+              ],
+              "disagreements": 9,
+              "net": -1,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 207,
+              "control_hits": 208,
+              "delta_pp_ci95": [
+                -0.8823529411764706,
+                0.0
+              ],
+              "disagreements": 1,
+              "net": -1,
+              "paired": 380
+            }
+          },
+          "xg_matched_dose": {
+            "actual_ou": {
+              "candidate_hits": 217,
+              "control_hits": 217,
+              "delta_pp_ci95": [
+                0.0,
+                0.0
+              ],
+              "disagreements": 0,
+              "net": 0,
+              "paired": 380
+            },
+            "score_top1": {
+              "candidate_hits": 54,
+              "control_hits": 56,
+              "delta_pp_ci95": [
+                -1.4124293785310735,
+                0.0
+              ],
+              "disagreements": 2,
+              "net": -2,
+              "paired": 380
+            },
+            "score_top3": {
+              "candidate_hits": 135,
+              "control_hits": 133,
+              "delta_pp_ci95": [
+                -0.4666227492314449,
+                1.6439161966156322
+              ],
+              "disagreements": 4,
+              "net": 2,
+              "paired": 380
+            },
+            "wdl": {
+              "candidate_hits": 207,
+              "control_hits": 208,
+              "delta_pp_ci95": [
+                -0.8823529411764706,
+                0.0
+              ],
+              "disagreements": 1,
+              "net": -1,
+              "paired": 380
+            }
+          }
+        },
+        "coverage_and_changes": {
+          "first_gained": 4,
+          "first_lost": 3,
+          "nonzero_press": 379,
+          "nonzero_territory": 379,
+          "nonzero_xg": 379,
+          "three_gained": 4,
+          "three_lost": 6
+        },
+        "scores": {
+          "candidate": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                54,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                207,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": 0.13595808483138094,
+            "score_log_loss": 2.8317279954972983,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": 0.943884284129805
+          },
+          "fixed_full": {
+            "counts": {
+              "actual_ou": [
+                219,
+                380
+              ],
+              "score_top1": [
+                54,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                211,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 161,
+              "FULL_WIN": 219
+            },
+            "wdl_log_loss": null
+          },
+          "fixed_xg": {
+            "counts": {
+              "actual_ou": [
+                216,
+                380
+              ],
+              "score_top1": [
+                56,
+                380
+              ],
+              "score_top3": [
+                133,
+                380
+              ],
+              "wdl": [
+                208,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 164,
+              "FULL_WIN": 216
+            },
+            "wdl_log_loss": null
+          },
+          "local_candidate": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                54,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                207,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          },
+          "local_r7": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                53,
+                380
+              ],
+              "score_top3": [
+                137,
+                380
+              ],
+              "wdl": [
+                209,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": 0.13612435014783403,
+            "score_log_loss": 2.8333588661470683,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": 0.9445626953465568
+          },
+          "market": {
+            "counts": {
+              "actual_ou": [
+                218,
+                380
+              ],
+              "score_top1": [
+                0,
+                0
+              ],
+              "score_top3": [
+                0,
+                0
+              ],
+              "wdl": [
+                209,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 162,
+              "FULL_WIN": 218
+            },
+            "wdl_log_loss": null
+          },
+          "r10": {
+            "counts": {
+              "actual_ou": [
+                215,
+                380
+              ],
+              "score_top1": [
+                55,
+                380
+              ],
+              "score_top3": [
+                135,
+                380
+              ],
+              "wdl": [
+                209,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 165,
+              "FULL_WIN": 215
+            },
+            "wdl_log_loss": null
+          },
+          "r7": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                53,
+                380
+              ],
+              "score_top3": [
+                137,
+                380
+              ],
+              "wdl": [
+                209,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          },
+          "xg": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                56,
+                380
+              ],
+              "score_top3": [
+                136,
+                380
+              ],
+              "wdl": [
+                208,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          },
+          "xg_matched_dose": {
+            "counts": {
+              "actual_ou": [
+                217,
+                380
+              ],
+              "score_top1": [
+                56,
+                380
+              ],
+              "score_top3": [
+                133,
+                380
+              ],
+              "wdl": [
+                208,
+                380
+              ]
+            },
+            "games": 380,
+            "mean_first_probability": null,
+            "score_log_loss": null,
+            "settlements": {
+              "FULL_LOSS": 163,
+              "FULL_WIN": 217
+            },
+            "wdl_log_loss": null
+          }
+        }
+      }
+    },
+    "fixture_set_sha256": "817336f7e7bddb3df739b5cb9c50fc52e30ed4f303ee27d5d062ca7275e9a9d8",
+    "overall": {
+      "all_four_targets_met": [],
+      "comparisons": {
+        "fixed_increment": {
+          "actual_ou": {
+            "candidate_hits": 1070,
+            "control_hits": 1063,
+            "delta_pp_ci95": [
+              -0.4787313670531278,
+              1.2876681776534695
+            ],
+            "disagreements": 55,
+            "net": 7,
+            "paired": 1826
+          },
+          "score_top1": {
+            "candidate_hits": 239,
+            "control_hits": 238,
+            "delta_pp_ci95": [
+              -0.3760110503531556,
+              0.4972789136480013
+            ],
+            "disagreements": 17,
+            "net": 1,
+            "paired": 1826
+          },
+          "score_top3": {
+            "candidate_hits": 620,
+            "control_hits": 615,
+            "delta_pp_ci95": [
+              -0.42261856967838357,
+              0.9678918370327229
+            ],
+            "disagreements": 35,
+            "net": 5,
+            "paired": 1826
+          },
+          "wdl": {
+            "candidate_hits": 965,
+            "control_hits": 968,
+            "delta_pp_ci95": [
+              -0.5369142763278035,
+              0.19627085377821393
+            ],
+            "disagreements": 15,
+            "net": -3,
+            "paired": 1826
+          }
+        },
+        "market": {
+          "actual_ou": {
+            "candidate_hits": 1063,
+            "control_hits": 1065,
+            "delta_pp_ci95": [
+              -0.9728602916493366,
+              0.7465322228413932
+            ],
+            "disagreements": 74,
+            "net": -2,
+            "paired": 1826
+          },
+          "score_top1": {
+            "candidate_hits": 0,
+            "control_hits": 0,
+            "delta_pp_ci95": null,
+            "disagreements": 0,
+            "net": 0,
+            "paired": 0
+          },
+          "score_top3": {
+            "candidate_hits": 0,
+            "control_hits": 0,
+            "delta_pp_ci95": null,
+            "disagreements": 0,
+            "net": 0,
+            "paired": 0
+          },
+          "wdl": {
+            "candidate_hits": 966,
+            "control_hits": 967,
+            "delta_pp_ci95": [
+              -0.48667417343002256,
+              0.3448184215461976
+            ],
+            "disagreements": 15,
+            "net": -1,
+            "paired": 1826
+          }
+        },
+        "r10": {
+          "actual_ou": {
+            "candidate_hits": 1063,
+            "control_hits": 1058,
+            "delta_pp_ci95": [
+              -0.36094727940622007,
+              0.9772613818460323
+            ],
+            "disagreements": 35,
+            "net": 5,
+            "paired": 1826
+          },
+          "score_top1": {
+            "candidate_hits": 237,
+            "control_hits": 236,
+            "delta_pp_ci95": [
+              -0.302131991855312,
+              0.4362516845069184
+            ],
+            "disagreements": 15,
+            "net": 1,
+            "paired": 1826
+          },
+          "score_top3": {
+            "candidate_hits": 616,
+            "control_hits": 624,
+            "delta_pp_ci95": [
+              -1.0220409386499307,
+              0.15871240630932665
+            ],
+            "disagreements": 26,
+            "net": -8,
+            "paired": 1826
+          },
+          "wdl": {
+            "candidate_hits": 966,
+            "control_hits": 966,
+            "delta_pp_ci95": [
+              -0.3413951150158866,
+              0.3125163100208768
+            ],
+            "disagreements": 10,
+            "net": 0,
+            "paired": 1826
+          }
+        },
+        "r7": {
+          "actual_ou": {
+            "candidate_hits": 1063,
+            "control_hits": 1060,
+            "delta_pp_ci95": [
+              -0.42999906548606404,
+              0.7580520382404804
+            ],
+            "disagreements": 25,
+            "net": 3,
+            "paired": 1826
+          },
+          "score_top1": {
+            "candidate_hits": 237,
+            "control_hits": 234,
+            "delta_pp_ci95": [
+              -0.11650101290385574,
+              0.4475219265870988
+            ],
+            "disagreements": 9,
+            "net": 3,
+            "paired": 1826
+          },
+          "score_top3": {
+            "candidate_hits": 616,
+            "control_hits": 620,
+            "delta_pp_ci95": [
+              -0.646078067128078,
+              0.1629338611212977
+            ],
+            "disagreements": 14,
+            "net": -4,
+            "paired": 1826
+          },
+          "wdl": {
+            "candidate_hits": 966,
+            "control_hits": 967,
+            "delta_pp_ci95": [
+              -0.3078288100208768,
+              0.17089760475719815
+            ],
+            "disagreements": 5,
+            "net": -1,
+            "paired": 1826
+          }
+        },
+        "same_runtime": {
+          "actual_ou": {
+            "candidate_hits": 1063,
+            "control_hits": 1060,
+            "delta_pp_ci95": [
+              -0.42999906548606404,
+              0.7580520382404804
+            ],
+            "disagreements": 25,
+            "net": 3,
+            "paired": 1826
+          },
+          "score_top1": {
+            "candidate_hits": 237,
+            "control_hits": 234,
+            "delta_pp_ci95": [
+              -0.11650101290385574,
+              0.4475219265870988
+            ],
+            "disagreements": 9,
+            "net": 3,
+            "paired": 1826
+          },
+          "score_top3": {
+            "candidate_hits": 616,
+            "control_hits": 620,
+            "delta_pp_ci95": [
+              -0.646078067128078,
+              0.1629338611212977
+            ],
+            "disagreements": 14,
+            "net": -4,
+            "paired": 1826
+          },
+          "wdl": {
+            "candidate_hits": 966,
+            "control_hits": 967,
+            "delta_pp_ci95": [
+              -0.3078288100208768,
+              0.17089760475719815
+            ],
+            "disagreements": 5,
+            "net": -1,
+            "paired": 1826
+          }
+        },
+        "xg": {
+          "actual_ou": {
+            "candidate_hits": 1063,
+            "control_hits": 1063,
+            "delta_pp_ci95": [
+              -0.5753950911465947,
+              0.6699334158846018
+            ],
+            "disagreements": 30,
+            "net": 0,
+            "paired": 1826
+          },
+          "score_top1": {
+            "candidate_hits": 237,
+            "control_hits": 238,
+            "delta_pp_ci95": [
+              -0.3014466546112116,
+              0.18234174261773628
+            ],
+            "disagreements": 5,
+            "net": -1,
+            "paired": 1826
+          },
+          "score_top3": {
+            "candidate_hits": 616,
+            "control_hits": 620,
+            "delta_pp_ci95": [
+              -0.6283777153524953,
+              0.16652132551133655
+            ],
+            "disagreements": 16,
+            "net": -4,
+            "paired": 1826
+          },
+          "wdl": {
+            "candidate_hits": 966,
+            "control_hits": 966,
+            "delta_pp_ci95": [
+              -0.21486345734466036,
+              0.22188651354884714
+            ],
+            "disagreements": 4,
+            "net": 0,
+            "paired": 1826
+          }
+        },
+        "xg_matched_dose": {
+          "actual_ou": {
+            "candidate_hits": 1063,
+            "control_hits": 1061,
+            "delta_pp_ci95": [
+              -0.5217581719200586,
+              0.7952522410933595
+            ],
+            "disagreements": 30,
+            "net": 2,
+            "paired": 1826
+          },
+          "score_top1": {
+            "candidate_hits": 237,
+            "control_hits": 238,
+            "delta_pp_ci95": [
+              -0.2534308340258464,
+              0.11772498997604673
+            ],
+            "disagreements": 3,
+            "net": -1,
+            "paired": 1826
+          },
+          "score_top3": {
+            "candidate_hits": 616,
+            "control_hits": 615,
+            "delta_pp_ci95": [
+              -0.16921910146251495,
+              0.30882473680057154
+            ],
+            "disagreements": 5,
+            "net": 1,
+            "paired": 1826
+          },
+          "wdl": {
+            "candidate_hits": 966,
+            "control_hits": 968,
+            "delta_pp_ci95": [
+              -0.27440178638483403,
+              0.0
+            ],
+            "disagreements": 2,
+            "net": -2,
+            "paired": 1826
+          }
+        }
+      },
+      "coverage_and_changes": {
+        "first_gained": 6,
+        "first_lost": 3,
+        "nonzero_press": 1824,
+        "nonzero_territory": 1824,
+        "nonzero_xg": 1824,
+        "three_gained": 5,
+        "three_lost": 9
+      },
+      "scores": {
+        "candidate": {
+          "counts": {
+            "actual_ou": [
+              1063,
+              1826
+            ],
+            "score_top1": [
+              237,
+              1826
+            ],
+            "score_top3": [
+              616,
+              1826
+            ],
+            "wdl": [
+              966,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": 0.13383546219955714,
+          "score_log_loss": 2.88631950053007,
+          "settlements": {
+            "FULL_LOSS": 763,
+            "FULL_WIN": 1063
+          },
+          "wdl_log_loss": 0.963804642125189
+        },
+        "fixed_full": {
+          "counts": {
+            "actual_ou": [
+              1070,
+              1826
+            ],
+            "score_top1": [
+              239,
+              1826
+            ],
+            "score_top3": [
+              620,
+              1826
+            ],
+            "wdl": [
+              965,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": null,
+          "score_log_loss": null,
+          "settlements": {
+            "FULL_LOSS": 756,
+            "FULL_WIN": 1070
+          },
+          "wdl_log_loss": null
+        },
+        "fixed_xg": {
+          "counts": {
+            "actual_ou": [
+              1063,
+              1826
+            ],
+            "score_top1": [
+              238,
+              1826
+            ],
+            "score_top3": [
+              615,
+              1826
+            ],
+            "wdl": [
+              968,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": null,
+          "score_log_loss": null,
+          "settlements": {
+            "FULL_LOSS": 763,
+            "FULL_WIN": 1063
+          },
+          "wdl_log_loss": null
+        },
+        "local_candidate": {
+          "counts": {
+            "actual_ou": [
+              1063,
+              1826
+            ],
+            "score_top1": [
+              237,
+              1826
+            ],
+            "score_top3": [
+              616,
+              1826
+            ],
+            "wdl": [
+              966,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": null,
+          "score_log_loss": null,
+          "settlements": {
+            "FULL_LOSS": 763,
+            "FULL_WIN": 1063
+          },
+          "wdl_log_loss": null
+        },
+        "local_r7": {
+          "counts": {
+            "actual_ou": [
+              1060,
+              1826
+            ],
+            "score_top1": [
+              234,
+              1826
+            ],
+            "score_top3": [
+              620,
+              1826
+            ],
+            "wdl": [
+              967,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": 0.13372887799123848,
+          "score_log_loss": 2.8865366435004316,
+          "settlements": {
+            "FULL_LOSS": 766,
+            "FULL_WIN": 1060
+          },
+          "wdl_log_loss": 0.9634563055934593
+        },
+        "market": {
+          "counts": {
+            "actual_ou": [
+              1065,
+              1826
+            ],
+            "score_top1": [
+              0,
+              0
+            ],
+            "score_top3": [
+              0,
+              0
+            ],
+            "wdl": [
+              967,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": null,
+          "score_log_loss": null,
+          "settlements": {
+            "FULL_LOSS": 761,
+            "FULL_WIN": 1065
+          },
+          "wdl_log_loss": null
+        },
+        "r10": {
+          "counts": {
+            "actual_ou": [
+              1058,
+              1826
+            ],
+            "score_top1": [
+              236,
+              1826
+            ],
+            "score_top3": [
+              624,
+              1826
+            ],
+            "wdl": [
+              966,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": null,
+          "score_log_loss": null,
+          "settlements": {
+            "FULL_LOSS": 768,
+            "FULL_WIN": 1058
+          },
+          "wdl_log_loss": null
+        },
+        "r7": {
+          "counts": {
+            "actual_ou": [
+              1060,
+              1826
+            ],
+            "score_top1": [
+              234,
+              1826
+            ],
+            "score_top3": [
+              620,
+              1826
+            ],
+            "wdl": [
+              967,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": null,
+          "score_log_loss": null,
+          "settlements": {
+            "FULL_LOSS": 766,
+            "FULL_WIN": 1060
+          },
+          "wdl_log_loss": null
+        },
+        "xg": {
+          "counts": {
+            "actual_ou": [
+              1063,
+              1826
+            ],
+            "score_top1": [
+              238,
+              1826
+            ],
+            "score_top3": [
+              620,
+              1826
+            ],
+            "wdl": [
+              966,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": null,
+          "score_log_loss": null,
+          "settlements": {
+            "FULL_LOSS": 763,
+            "FULL_WIN": 1063
+          },
+          "wdl_log_loss": null
+        },
+        "xg_matched_dose": {
+          "counts": {
+            "actual_ou": [
+              1061,
+              1826
+            ],
+            "score_top1": [
+              238,
+              1826
+            ],
+            "score_top3": [
+              615,
+              1826
+            ],
+            "wdl": [
+              968,
+              1826
+            ]
+          },
+          "games": 1826,
+          "mean_first_probability": null,
+          "score_log_loss": null,
+          "settlements": {
+            "FULL_LOSS": 765,
+            "FULL_WIN": 1061
+          },
+          "wdl_log_loss": null
+        }
+      }
+    }
+  },
+  "protocol_sha256": "aa3409f7ac03cb0893d2ef445be8ce78858676344a6d1355747f4aa4b9a22a9d",
+  "r10_archives": {
+    "inputs/independent.tar.gz": "f5dafa480a2d7b5dc63dd911bcc326e291cd1dacb0e42054eff4f0bd166047ce",
+    "replay/independent.tar.gz": "3e14e7b4660705614efe8090f0afb6aee02ea88ce156e6907440a127113dc5df"
+  },
+  "source_clock": "Unzoned Understat source calendar day. No historical publication timestamp.",
+  "source_identity": "No provider IDs or opponent column. R10 ordered fixture names and league/date, with unique normalized names, documented league aliases or prior calendar links. Exact source timestamp agreement and one-to-one use of both source rows required.",
+  "source_url": "https://www.kaggle.com/api/v1/datasets/download/slehkyi/extended-football-stats-for-european-leagues-xg?datasetVersionNumber=4",
+  "split_dates": [
+    "2017-07-01",
+    "2018-07-01",
+    "2019-07-01"
+  ],
+  "version": "R14-secondary-Kaggle-v4-independent-1"
+}

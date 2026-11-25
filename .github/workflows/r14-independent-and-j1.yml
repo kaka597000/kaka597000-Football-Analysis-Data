@@ -1,0 +1,67 @@
+name: Verify J1 first publication and R14 independent season
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-j1-stage-windows/**'
+      - 'workspace-updates/20261125-r14-territory-independent/**'
+      - 'workspace-updates/20261125-r14-territory-press/manifest.json'
+      - '.github/workflows/r14-independent-and-j1.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      R10: workspace-updates/20261125-r10-shot-conversion
+      R14: workspace-updates/20261125-r14-territory-press
+      EARLY: workspace-updates/20261125-r14-territory-independent
+      J1: workspace-updates/20261125-j1-stage-windows
+      PYTHONPATH: source/runtime
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - id: pin
+        shell: python
+        run: |
+          import json, os, pathlib, re
+          revision = json.loads((pathlib.Path(os.environ['R14']) / 'manifest.json').read_bytes())['source_commit']
+          if not re.fullmatch('[0-9a-f]{40}', revision):
+              raise ValueError('Missing source revision')
+          with open(os.environ['GITHUB_OUTPUT'],'a') as output:
+              print(f'revision={revision}',file=output)
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ steps.pin.outputs.revision }}
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r source/requirements.txt
+      - name: Verify full J1 schedule, first user-facing text, market prices and original ranked slots
+        run: python -B "$J1/verify.py"
+      - name: Recover the fixed secondary team history in temporary storage
+        shell: python
+        run: |
+          import hashlib, json, os, pathlib, urllib.request
+          root = pathlib.Path(os.environ['EARLY'])
+          info = json.loads((root / 'source.json').read_bytes())
+          req = urllib.request.Request(info['url'],headers={'User-Agent':'R14-registered-sensitivity/1.0'})
+          with urllib.request.urlopen(req,timeout=90) as response:
+              content = response.read()
+          if hashlib.sha256(content).hexdigest() != info['archive_sha256']:
+              raise ValueError('Original archive digest mismatch')
+          (pathlib.Path(os.environ['RUNNER_TEMP']) / 'r14-history.zip').write_bytes(content)
+      - name: Refit the historical model and independently recompute date-clustered results
+        run: |
+          python -m research_program.territory_early --r10 "$R10" --protocol source/research/20261125-r14/protocol.json \
+            --archive "$RUNNER_TEMP/r14-history.zip" --out "$RUNNER_TEMP/r14-early.json"
+          python "$EARLY/verify_comparisons.py" --r10 "$R10" --early-aggregate "$RUNNER_TEMP/r14-early.json" \
+            --archive "$RUNNER_TEMP/r14-history.zip" --out "$RUNNER_TEMP/r14-early-audit.json"
+          python "$EARLY/check_rebuild.py" --aggregate "$RUNNER_TEMP/r14-early.json" --audit "$RUNNER_TEMP/r14-early-audit.json"
