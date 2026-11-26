@@ -1,0 +1,88 @@
+{
+  "competition": "uefa.europa.conf",
+  "registered_historical_fixtures": 18,
+  "verified_regulation_scores": 18,
+  "provider_clock_samples": 3,
+  "scheduled_source": {
+    "source": "ESPN public JSON",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/scoreboard?dates=20261105",
+    "queried_at": "2026-11-05T13:17:43.829628+00:00",
+    "http_status": 200,
+    "content_type": null,
+    "sha256": "a44996b55f666fa31d7ddf633642d2954e9b41866625177d4de0381f23f29786",
+    "bytes": 216400,
+    "event_count": 18
+  },
+  "official_source": {
+    "path": "uefa-uecl-2026-11-05.json.gz",
+    "url": "https://match.uefa.com/v5/matches?competitionId=2019&seasonYear=2027&limit=100&offset=0&fromDate=2026-11-05&toDate=2026-11-05",
+    "captured_at": "2026-11-26T09:39:54.994218+00:00",
+    "sha256": "914201c9061de668c2f51873b32380120061a8bff29377d898284b4d05bedf7f",
+    "http_status": 200
+  },
+  "clock_evidence": {
+    "espn:401915740": {
+      "uefa_match_id": "2050347",
+      "regulation_score": [
+        2,
+        1
+      ],
+      "scheduled": "2026-11-06T04:00:00+08:00",
+      "actual_kickoff": {
+        "match_id": "espn:401915740",
+        "competition": "uefa.europa.conf",
+        "home": "espn:909",
+        "away": "espn:20025",
+        "identity_verified": true,
+        "actual_kickoff_at": "2026-11-06T04:00:50+08:00",
+        "observed_at": "2026-11-26T11:14:04.715494+00:00",
+        "raw_file": "raw/5b5c18240bb55159188d3198510a169b0c72fe629ce4645169b6f86662c59bb3.json",
+        "source_sha256": "5b5c18240bb55159188d3198510a169b0c72fe629ce4645169b6f86662c59bb3",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915740"
+      },
+      "difference_seconds": 50.0
+    },
+    "espn:401915821": {
+      "uefa_match_id": "2050352",
+      "regulation_score": [
+        0,
+        1
+      ],
+      "scheduled": "2026-11-06T04:00:00+08:00",
+      "actual_kickoff": {
+        "match_id": "espn:401915821",
+        "competition": "uefa.europa.conf",
+        "home": "espn:2922",
+        "away": "espn:331",
+        "identity_verified": true,
+        "actual_kickoff_at": "2026-11-06T04:01:45+08:00",
+        "observed_at": "2026-11-26T11:14:07.716929+00:00",
+        "raw_file": "raw/012baaf0098a70aa386a3a0cf836b3dec5ccc53487844995a64a364261c55e77.json",
+        "source_sha256": "012baaf0098a70aa386a3a0cf836b3dec5ccc53487844995a64a364261c55e77",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915821"
+      },
+      "difference_seconds": 105.0
+    },
+    "espn:401915831": {
+      "uefa_match_id": "2050360",
+      "regulation_score": [
+        0,
+        0
+      ],
+      "scheduled": "2026-11-06T01:45:00+08:00",
+      "actual_kickoff": {
+        "match_id": "espn:401915831",
+        "competition": "uefa.europa.conf",
+        "home": "espn:7853",
+        "away": "espn:2994",
+        "identity_verified": true,
+        "actual_kickoff_at": "2026-11-06T01:48:31+08:00",
+        "observed_at": "2026-11-26T11:14:10.214630+00:00",
+        "raw_file": "raw/70d515036a6282dfef0f1e0b93319ce8f7206b989ecd2cde5fcff19f801a3638.json",
+        "source_sha256": "70d515036a6282dfef0f1e0b93319ce8f7206b989ecd2cde5fcff19f801a3638",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915831"
+      },
+      "difference_seconds": 211.0
+    }
+  }
+}
