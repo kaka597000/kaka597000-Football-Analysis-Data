@@ -1,7 +1,7 @@
 {
   "schema": "WCPP-UNATTENDED-CANDIDATE-1",
-  "run_id": "20261125T114035Z-1675193c",
-  "created_at": "2026-11-25T11:40:35.915615+00:00",
+  "run_id": "20261126T112701Z-9e2baf21",
+  "created_at": "2026-11-26T11:27:01.920996+00:00",
   "code_sha256": "9b0b2e2406e9901f4176faa213e7686b46d4456c8daf92e225e19de190e3758b",
   "configuration": {
     "half_life": 365,
@@ -15,10 +15,10 @@
     "config/scopes.json": "100e87301817e200878e78e60e96af017a918235d00a59509a8f3c5171ccf61d",
     "seed/training.json.gz": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
     "seed/manifest.json": "9b2f21041001710584f9bc7c45c53caecdc050a4c31983454850bc977605cb77",
-    "normalized-results.jsonl": "6e81e1aca9f863c2b4253fddca12e69451f9d5cbc0343265ff9d17a4e25aff3f"
+    "normalized-results.jsonl": "f6c73c3495243882b5734d3e03813ea4354f20bc9979a8677bc23110c4ff236b"
   },
   "scope_count": 17,
-  "accepted_rows": 8038,
+  "accepted_rows": 8045,
   "quarantined": 2,
   "excluded_by_time": [
     {
@@ -9788,11 +9788,15 @@
     {
       "match_id": "espn:401841335",
       "reason": "OUTSIDE_FORMAL_18_SCOPE_HISTORY_RETAINED"
+    },
+    {
+      "match_id": "espn:401841319",
+      "reason": "OUTSIDE_FORMAL_18_SCOPE_HISTORY_RETAINED"
     }
   ],
   "source_evidence_counts": {
     "RETROSPECTIVE_SEED": 6772,
-    "VERIFIED_RAW_REGULATION_90": 1266
+    "VERIFIED_RAW_REGULATION_90": 1273
   },
   "diagnostic_scope": "RETROSPECTIVE_CHRONOLOGICAL_NOT_PROSPECTIVE_ASOF_RECONSTRUCTION",
   "active_models_modified": false,
@@ -9848,9 +9852,15 @@
     },
     {
       "cohort": "jpn.1",
-      "rows": 490,
-      "input_sha256": "33d2714aef314919b97fada781d37347f3914a9a331ec0d6b0c29910c60d3914",
-      "status": "SKIPPED_UNCHANGED"
+      "rows": 497,
+      "input_sha256": "38d29507e3da3efdd2fe8bdef326d84de6b5acbcba2710b3d2aac14bfbe139e9",
+      "status": "TRAINED_CANDIDATE",
+      "artifact": "candidates/20261126T112701Z-9e2baf21/jpn.1-e968f412/artifact.json",
+      "artifact_sha256": "8b5d3781c6a25be56b07b8753f12a06358316886d0d15f9dea317640fff8b109",
+      "fit_end": "2026-11-25",
+      "audit_n": 139,
+      "baseline_top1_hits": 14,
+      "candidate_top1_hits": 20
     },
     {
       "cohort": "kor.1",
