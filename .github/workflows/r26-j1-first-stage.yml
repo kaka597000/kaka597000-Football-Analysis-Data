@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: ac154f467f63d08390422a8ba91d1daaea26efa3
+          ref: 71ba85c405c825d3fff10894de6b7dcf2eb3e5e3
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -50,6 +50,12 @@ jobs:
         run: |
           (cd "$R26" && sha256sum -c SHA256SUMS)
           python -B "$R26/verify_publication.py"
+      - name: Verify the original Current and Test matrix ranks on the ten fixtures
+        run: |
+          proof="$R26/score-grids"
+          (cd "$proof" && sha256sum -c SHA256SUMS)
+          python -B "$proof/compare.py" > "$RUNNER_TEMP/j1-score-grids.json"
+          cmp "$proof/verified.json" "$RUNNER_TEMP/j1-score-grids.json"
       - name: Verify the public first-score archive and independent official calendar
         run: |
           proof="$R26/public-archive"
