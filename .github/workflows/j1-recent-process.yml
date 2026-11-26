@@ -1,0 +1,42 @@
+name: Replay J1 recent process evidence
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-j1-recent-process/**'
+      - '.github/workflows/j1-recent-process.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PACKAGE: workspace-updates/20261126-j1-recent-process
+      PYTHONPATH: source/runtime
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261125-j1-stage-windows
+            workspace-updates/20261126-r26-j1-first-stage
+            workspace-updates/20261126-j1-december-windows
+            workspace-updates/20261126-j1-recent-process
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: d751e07a5f51d411663561fb20f8c67599f67c3e
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Rebuild the seven matches and 20 team histories
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/replay.py" > "$RUNNER_TEMP/j1-process.json"
+          cmp "$PACKAGE/replay.json" "$RUNNER_TEMP/j1-process.json"
