@@ -7,9 +7,11 @@ import gzip
 from hashlib import sha256
 import json
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import benchmarks
 import prepare
+import result_intake
 from research.analysis_freeze import aware
 from research_program.display_window_review import summary_kickoff
 from research_program.nov25_first_review import seats
@@ -56,15 +58,15 @@ def certify_result(row, fixture, state, at):
     try:
         start = summary_kickoff(raw, reference['source_url'], kickoff_fixture, aware(reference['captured_at']))
     except (AttributeError, KeyError, TypeError, ValueError) as error:
-        return dict(result, actual_kickoff=None, kickoff_issue=str(error))
+        return dict(result, provider='espn', actual_kickoff=None, kickoff_issue=str(error))
     evidence = dict(match_id=fixture['match_id'], competition=code, home=fixture['home'], away=fixture['away'],
                     identity_verified=True, actual_kickoff_at=start.astimezone(prepare.BEIJING).isoformat(),
                     observed_at=reference['captured_at'], raw_file=reference['path'],
                     source_sha256=sha256(raw).hexdigest(), source_url=reference['source_url'])
-    return dict(result, actual_kickoff=evidence, kickoff_issue=None)
+    return dict(result, provider='espn', actual_kickoff=evidence, kickoff_issue=None)
 
 
-def results(state, fixtures, at):
+def results(state, fixtures, at, official=None):
     if state is None:
         return {}, {}
     state = state.resolve()
@@ -78,8 +80,14 @@ def results(state, fixtures, at):
         mid = row['match_id']
         if mid in fixtures:
             try:
-                pending[mid].append(certify_result(row, fixtures[mid], state, at))
-            except (ValueError, TypeError, KeyError, EOFError, OSError) as error:
+                if urlsplit(row.get('source_url', '')).hostname == 'match.uefa.com':
+                    if official is None:
+                        official = result_intake.official_bindings(fixtures)
+                    verified = result_intake.certify_official(row, fixtures[mid], official[mid], state, at)
+                else:
+                    verified = certify_result(row, fixtures[mid], state, at)
+                pending[mid].append(verified)
+            except result_intake.EVIDENCE_ERRORS as error:
                 issues[mid].append(str(error))
     accepted = {}
     for mid, versions in pending.items():
@@ -87,7 +95,10 @@ def results(state, fixtures, at):
             issues[mid].append('conflicting verified regulation scores')
             continue
         ordered = sorted(versions, key=lambda r: (aware(r['source']['captured_at']), r['source']['sha256']))
-        first = ordered[0]
+        providers = {}
+        for result in ordered:
+            providers.setdefault(result['provider'], result['source'])
+        first = dict(ordered[0], confirmed_result_sources=providers)
         starts = [r['actual_kickoff'] for r in ordered if r['actual_kickoff'] is not None]
         if len({r['actual_kickoff_at'] for r in starts}) > 1:
             first = dict(first, actual_kickoff=None, kickoff_issue='conflicting verified actual kickoffs')
@@ -124,10 +135,12 @@ def grade(group, observed, benchmark=None):
         outcomes[mid] = dict(actual=actual, original_first=record['first'], original_forecast=original,
                              hit=metrics, hit_rank=rank, research_line_settlement=settlement,
                              result_source=verified['source'] if verified else None,
+                             confirmed_result_sources=verified.get('confirmed_result_sources', {}) if verified else {},
                              actual_kickoff=verified['actual_kickoff'] if verified else None,
                              kickoff_issue=verified['kickoff_issue'] if verified else None)
     report = dict(registered=len(group), verified_results=len(actuals), pending=len(group) - len(actuals),
                 verified_actual_kickoffs=sum(row['actual_kickoff'] is not None for row in outcomes.values()),
+                dual_source_results=sum(row['confirmed_result_sources'].keys() >= {'espn', 'uefa'} for row in outcomes.values()),
                 first_choices=dict(sorted(Counter(pick['primary'] for pick in picks.values()).items())),
                 first_different_from_r7=sum(r['forecast']['r13']['primary'] != r['forecast']['r7']['primary']
                                             for r in rows),

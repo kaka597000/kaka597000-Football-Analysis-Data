@@ -21,7 +21,7 @@ folder=workspace-updates/20261126-europe-first-display
 PYTHONPATH=/path/to/Football-Analysis/runtime python -B "$folder/prepare.py" verify
 ```
 
-赛后复盘读取状态目录下的 `normalized-results.jsonl` 和其中各条 `raw_reference.path` 对应的 ESPN 比赛摘要原件。可保留多次采集。程序核对原始主客队和开球时间、成年男子联赛阶段、完整 90 分钟、采集时刻和原始响应哈希。赛果冲突或待完赛保留在原分母。输出含首选、三选命中顺位、同场 R7 与市场净得失、水位对应的五类原盘口结算和原三席结果。研究复盘输出保留严格盘口与独立展示证据的状态，正式阶段仍按原验收协议。
+赛后复盘读取状态目录下的 `normalized-results.jsonl` 和其中各条 `raw_reference.path` 对应的 ESPN 比赛摘要或欧足联官方赛果原件。可保留多次采集。程序核对原始主客队和开球时间、成年男子联赛阶段、完整 90 分钟、采集时刻和原始响应哈希。赛果冲突或待完赛保留在原分母。输出含首选、三选命中顺位、同场 R7 与市场净得失、水位对应的五类原盘口结算和原三席结果。研究复盘输出保留严格盘口与独立展示证据的状态，正式阶段仍按原验收协议。
 
 ```bash
 PYTHONPATH=/path/to/Football-Analysis/runtime \
@@ -40,3 +40,16 @@ PYTHONPATH=/path/to/Football-Analysis/runtime \
 | 比尔森胜利对本菲卡 | 0–2 | 1–2 |
 
 两个 R10 首选均在 R13 的备选中。欧协联 5 场、欧联 4 场的三选成员有变化。复盘命令会列每场在各轨的命中顺位、最接近候选的双方进球数差、实际赛果方向是否在三选内，以及各原始模型同场的首选和三选净得失。第一阶段按原实际展示、盘口和真实赛果证据结算。
+
+## 原始赛果接入与双来源核对
+
+已留存的 ESPN 比赛摘要及欧足联官方赛果可统一接入。清单采用一个 JSON 数组，各项包含 `path`、`url`、`captured_at`、`sha256` 和 `http_status`。`path` 相对清单所在目录，`sha256` 为原响应的 SHA-256，压缩留档使用解压后的原响应哈希。脚本复用原欧足联比赛与球队对照，只纳入本次两项赛事各 18 场。`intake.json` 逐场保留来源状态和缺项，`normalized-results.jsonl` 提供待复盘认证的常规时间终场记录。[欧足联测试来源](result-intake-preflight/captures.json)
+
+```bash
+PYTHONPATH=/path/to/Football-Analysis/runtime \
+  python -B "$folder/result_intake.py" --captures "$RESULT_CAPTURES" --out "$RESULT_STATE"
+PYTHONPATH=/path/to/Football-Analysis/runtime \
+  python -B "$folder/review.py" --result-state "$RESULT_STATE" > euro-review.json
+```
+
+欧足联以已验证赛事身份、`FINISHED` 状态及 `score.regular` 核实 90 分钟比分。ESPN 沿用原常规时间认证和开场事件取证。两个来源一致时，复盘保留两份原件及双来源计数。任一来源具备完整终场证据即可结算；已核实的比分冲突保留待核。延期和比赛尚未结束均留在原覆盖分母。两项赛事的官方历史快照含 35 场已完赛的联赛阶段比赛，其中米兰对费伦茨瓦罗斯 0–2、勒沃库森对马赛 0–1、水晶宫对霍芬海姆 1–1 已与 11 月 6 日留存的 ESPN 原件配对验证。[历史 ESPN 原件说明](../20261106-uel-review/README.md)
