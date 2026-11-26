@@ -1,0 +1,3144 @@
+{
+  "version": "R30-European-outcome-conditional-score-dispersion-1",
+  "protocol_sha256": "f8942bc68b404b4d9d03116409073f89b1be01413907c8a15af73562178118d5",
+  "competitions": {
+    "uefa.europa.conf": {
+      "training": 54,
+      "validation": 54,
+      "beta": {
+        "win": 0.011616,
+        "draw": -0.084217
+      },
+      "validation_trials": {
+        "r13": {
+          "first": 8,
+          "three": 23,
+          "log_loss": 2.588782534378
+        },
+        "third_half": {
+          "first": 8,
+          "three": 22,
+          "log_loss": 2.592343758729
+        },
+        "third_full": {
+          "first": 8,
+          "three": 22,
+          "log_loss": 2.596636302512
+        },
+        "rank_half": {
+          "first": 8,
+          "three": 22,
+          "log_loss": 2.592343758729
+        },
+        "rank_full": {
+          "first": 8,
+          "three": 22,
+          "log_loss": 2.596636302512
+        }
+      },
+      "selected": "r13",
+      "evaluation": {
+        "fixtures": 54,
+        "original_against_market": {
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "evidence": {
+            "mode": "REPLAY_COMPARISON",
+            "matchday_basis": "supplied date",
+            "prospective_certified": false
+          },
+          "population": 54,
+          "settled_population": 54,
+          "pending": 0,
+          "common_total_pushes": 0,
+          "cohorts": {
+            "uefa.europa.conf": 54
+          },
+          "tracks": {
+            "market": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 7,
+                  "eligible": 28,
+                  "eligible_rate": 0.25,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.12962962962962962,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 11,
+                  "eligible": 28,
+                  "eligible_rate": 0.39285714285714285,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.2037037037037037,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 20,
+                  "eligible": 28,
+                  "eligible_rate": 0.7142857142857143,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.37037037037037035,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 20,
+                  "eligible": 28,
+                  "eligible_rate": 0.7142857142857143,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.37037037037037035,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 20,
+                "HALF_WIN": 0,
+                "PUSH": 0,
+                "HALF_LOSS": 0,
+                "FULL_LOSS": 8
+              }
+            },
+            "r13": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 14,
+                  "eligible": 54,
+                  "eligible_rate": 0.25925925925925924,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.25925925925925924,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 25,
+                  "eligible": 54,
+                  "eligible_rate": 0.46296296296296297,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.46296296296296297,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 32,
+                  "eligible": 54,
+                  "eligible_rate": 0.5925925925925926,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.5925925925925926,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 19,
+                  "eligible": 28,
+                  "eligible_rate": 0.6785714285714286,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.35185185185185186,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 19,
+                "HALF_WIN": 0,
+                "PUSH": 0,
+                "HALF_LOSS": 0,
+                "FULL_LOSS": 9
+              }
+            }
+          },
+          "comparison": {
+            "baseline": "market",
+            "candidate": "r13"
+          },
+          "paired": {
+            "score_top1": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 1,
+              "lost": 0,
+              "tied": 27,
+              "net_hits": 1,
+              "net_rate": 0.03571428571428571,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.1
+              ],
+              "fixed_population_net_hits": 7,
+              "fixed_population_net_rate": 0.12962962962962962,
+              "fixed_population_date_cluster_ci": [
+                0.1111111111111111,
+                0.16666666666666666
+              ]
+            },
+            "score_top3": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 0,
+              "lost": 0,
+              "tied": 28,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 14,
+              "fixed_population_net_rate": 0.25925925925925924,
+              "fixed_population_date_cluster_ci": [
+                0.16666666666666666,
+                0.3333333333333333
+              ]
+            },
+            "wdl": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 0,
+              "lost": 0,
+              "tied": 28,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 12,
+              "fixed_population_net_rate": 0.2222222222222222,
+              "fixed_population_date_cluster_ci": [
+                0.1111111111111111,
+                0.3333333333333333
+              ]
+            },
+            "actual_ou": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 1,
+              "lost": 2,
+              "tied": 25,
+              "net_hits": -1,
+              "net_rate": -0.03571428571428571,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                -0.16666666666666666,
+                0.0
+              ],
+              "fixed_population_net_hits": -1,
+              "fixed_population_net_rate": -0.018518518518518517,
+              "fixed_population_date_cluster_ci": [
+                -0.05555555555555555,
+                0.0
+              ]
+            }
+          },
+          "bootstrap": {
+            "unit": "whole match date",
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "per_metric_percentile_intervals": true
+          }
+        },
+        "ablations": {
+          "third_half": {
+            "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+            "evidence": {
+              "mode": "REPLAY_COMPARISON",
+              "matchday_basis": "supplied date",
+              "prospective_certified": false
+            },
+            "population": 54,
+            "settled_population": 54,
+            "pending": 0,
+            "common_total_pushes": 0,
+            "cohorts": {
+              "uefa.europa.conf": 54
+            },
+            "tracks": {
+              "r13": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 14,
+                    "eligible": 54,
+                    "eligible_rate": 0.25925925925925924,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.25925925925925924,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 25,
+                    "eligible": 54,
+                    "eligible_rate": 0.46296296296296297,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.46296296296296297,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 32,
+                    "eligible": 54,
+                    "eligible_rate": 0.5925925925925926,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.5925925925925926,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 19,
+                    "eligible": 28,
+                    "eligible_rate": 0.6785714285714286,
+                    "issued": 28,
+                    "registered_coverage": 0.5185185185185185,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.35185185185185186,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 19,
+                  "HALF_WIN": 0,
+                  "PUSH": 0,
+                  "HALF_LOSS": 0,
+                  "FULL_LOSS": 9
+                }
+              },
+              "third_half": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 14,
+                    "eligible": 54,
+                    "eligible_rate": 0.25925925925925924,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.25925925925925924,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 24,
+                    "eligible": 54,
+                    "eligible_rate": 0.4444444444444444,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.4444444444444444,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 32,
+                    "eligible": 54,
+                    "eligible_rate": 0.5925925925925926,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.5925925925925926,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 19,
+                    "eligible": 28,
+                    "eligible_rate": 0.6785714285714286,
+                    "issued": 28,
+                    "registered_coverage": 0.5185185185185185,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.35185185185185186,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 19,
+                  "HALF_WIN": 0,
+                  "PUSH": 0,
+                  "HALF_LOSS": 0,
+                  "FULL_LOSS": 9
+                }
+              }
+            },
+            "comparison": {
+              "baseline": "r13",
+              "candidate": "third_half"
+            },
+            "paired": {
+              "score_top1": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 54,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "score_top3": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 1,
+                "tied": 53,
+                "net_hits": -1,
+                "net_rate": -0.018518518518518517,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  -0.05555555555555555,
+                  0.0
+                ],
+                "fixed_population_net_hits": -1,
+                "fixed_population_net_rate": -0.018518518518518517,
+                "fixed_population_date_cluster_ci": [
+                  -0.05555555555555555,
+                  0.0
+                ]
+              },
+              "wdl": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 54,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "actual_ou": {
+                "eligible": 28,
+                "resolved_gate_denominator": 54,
+                "coverage": 0.5185185185185185,
+                "gained": 0,
+                "lost": 0,
+                "tied": 28,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "bootstrap": {
+              "unit": "whole match date",
+              "confidence": 0.95,
+              "repetitions": 5000,
+              "seed": 20261123,
+              "per_metric_percentile_intervals": true
+            }
+          },
+          "third_full": {
+            "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+            "evidence": {
+              "mode": "REPLAY_COMPARISON",
+              "matchday_basis": "supplied date",
+              "prospective_certified": false
+            },
+            "population": 54,
+            "settled_population": 54,
+            "pending": 0,
+            "common_total_pushes": 0,
+            "cohorts": {
+              "uefa.europa.conf": 54
+            },
+            "tracks": {
+              "r13": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 14,
+                    "eligible": 54,
+                    "eligible_rate": 0.25925925925925924,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.25925925925925924,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 25,
+                    "eligible": 54,
+                    "eligible_rate": 0.46296296296296297,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.46296296296296297,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 32,
+                    "eligible": 54,
+                    "eligible_rate": 0.5925925925925926,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.5925925925925926,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 19,
+                    "eligible": 28,
+                    "eligible_rate": 0.6785714285714286,
+                    "issued": 28,
+                    "registered_coverage": 0.5185185185185185,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.35185185185185186,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 19,
+                  "HALF_WIN": 0,
+                  "PUSH": 0,
+                  "HALF_LOSS": 0,
+                  "FULL_LOSS": 9
+                }
+              },
+              "third_full": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 14,
+                    "eligible": 54,
+                    "eligible_rate": 0.25925925925925924,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.25925925925925924,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 24,
+                    "eligible": 54,
+                    "eligible_rate": 0.4444444444444444,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.4444444444444444,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 32,
+                    "eligible": 54,
+                    "eligible_rate": 0.5925925925925926,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.5925925925925926,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 19,
+                    "eligible": 28,
+                    "eligible_rate": 0.6785714285714286,
+                    "issued": 28,
+                    "registered_coverage": 0.5185185185185185,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.35185185185185186,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 19,
+                  "HALF_WIN": 0,
+                  "PUSH": 0,
+                  "HALF_LOSS": 0,
+                  "FULL_LOSS": 9
+                }
+              }
+            },
+            "comparison": {
+              "baseline": "r13",
+              "candidate": "third_full"
+            },
+            "paired": {
+              "score_top1": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 54,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "score_top3": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 1,
+                "lost": 2,
+                "tied": 51,
+                "net_hits": -1,
+                "net_rate": -0.018518518518518517,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  -0.1111111111111111,
+                  0.05555555555555555
+                ],
+                "fixed_population_net_hits": -1,
+                "fixed_population_net_rate": -0.018518518518518517,
+                "fixed_population_date_cluster_ci": [
+                  -0.1111111111111111,
+                  0.05555555555555555
+                ]
+              },
+              "wdl": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 54,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "actual_ou": {
+                "eligible": 28,
+                "resolved_gate_denominator": 54,
+                "coverage": 0.5185185185185185,
+                "gained": 0,
+                "lost": 0,
+                "tied": 28,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "bootstrap": {
+              "unit": "whole match date",
+              "confidence": 0.95,
+              "repetitions": 5000,
+              "seed": 20261123,
+              "per_metric_percentile_intervals": true
+            }
+          },
+          "rank_half": {
+            "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+            "evidence": {
+              "mode": "REPLAY_COMPARISON",
+              "matchday_basis": "supplied date",
+              "prospective_certified": false
+            },
+            "population": 54,
+            "settled_population": 54,
+            "pending": 0,
+            "common_total_pushes": 0,
+            "cohorts": {
+              "uefa.europa.conf": 54
+            },
+            "tracks": {
+              "r13": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 14,
+                    "eligible": 54,
+                    "eligible_rate": 0.25925925925925924,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.25925925925925924,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 25,
+                    "eligible": 54,
+                    "eligible_rate": 0.46296296296296297,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.46296296296296297,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 32,
+                    "eligible": 54,
+                    "eligible_rate": 0.5925925925925926,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.5925925925925926,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 19,
+                    "eligible": 28,
+                    "eligible_rate": 0.6785714285714286,
+                    "issued": 28,
+                    "registered_coverage": 0.5185185185185185,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.35185185185185186,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 19,
+                  "HALF_WIN": 0,
+                  "PUSH": 0,
+                  "HALF_LOSS": 0,
+                  "FULL_LOSS": 9
+                }
+              },
+              "rank_half": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 15,
+                    "eligible": 54,
+                    "eligible_rate": 0.2777777777777778,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.2777777777777778,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 24,
+                    "eligible": 54,
+                    "eligible_rate": 0.4444444444444444,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.4444444444444444,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 32,
+                    "eligible": 54,
+                    "eligible_rate": 0.5925925925925926,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.5925925925925926,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 19,
+                    "eligible": 28,
+                    "eligible_rate": 0.6785714285714286,
+                    "issued": 28,
+                    "registered_coverage": 0.5185185185185185,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.35185185185185186,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 19,
+                  "HALF_WIN": 0,
+                  "PUSH": 0,
+                  "HALF_LOSS": 0,
+                  "FULL_LOSS": 9
+                }
+              }
+            },
+            "comparison": {
+              "baseline": "r13",
+              "candidate": "rank_half"
+            },
+            "paired": {
+              "score_top1": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 1,
+                "lost": 0,
+                "tied": 53,
+                "net_hits": 1,
+                "net_rate": 0.018518518518518517,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.05555555555555555
+                ],
+                "fixed_population_net_hits": 1,
+                "fixed_population_net_rate": 0.018518518518518517,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.05555555555555555
+                ]
+              },
+              "score_top3": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 1,
+                "tied": 53,
+                "net_hits": -1,
+                "net_rate": -0.018518518518518517,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  -0.05555555555555555,
+                  0.0
+                ],
+                "fixed_population_net_hits": -1,
+                "fixed_population_net_rate": -0.018518518518518517,
+                "fixed_population_date_cluster_ci": [
+                  -0.05555555555555555,
+                  0.0
+                ]
+              },
+              "wdl": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 54,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "actual_ou": {
+                "eligible": 28,
+                "resolved_gate_denominator": 54,
+                "coverage": 0.5185185185185185,
+                "gained": 0,
+                "lost": 0,
+                "tied": 28,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "bootstrap": {
+              "unit": "whole match date",
+              "confidence": 0.95,
+              "repetitions": 5000,
+              "seed": 20261123,
+              "per_metric_percentile_intervals": true
+            }
+          },
+          "rank_full": {
+            "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+            "evidence": {
+              "mode": "REPLAY_COMPARISON",
+              "matchday_basis": "supplied date",
+              "prospective_certified": false
+            },
+            "population": 54,
+            "settled_population": 54,
+            "pending": 0,
+            "common_total_pushes": 0,
+            "cohorts": {
+              "uefa.europa.conf": 54
+            },
+            "tracks": {
+              "r13": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 14,
+                    "eligible": 54,
+                    "eligible_rate": 0.25925925925925924,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.25925925925925924,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 25,
+                    "eligible": 54,
+                    "eligible_rate": 0.46296296296296297,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.46296296296296297,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 32,
+                    "eligible": 54,
+                    "eligible_rate": 0.5925925925925926,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.5925925925925926,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 19,
+                    "eligible": 28,
+                    "eligible_rate": 0.6785714285714286,
+                    "issued": 28,
+                    "registered_coverage": 0.5185185185185185,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.35185185185185186,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 19,
+                  "HALF_WIN": 0,
+                  "PUSH": 0,
+                  "HALF_LOSS": 0,
+                  "FULL_LOSS": 9
+                }
+              },
+              "rank_full": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 14,
+                    "eligible": 54,
+                    "eligible_rate": 0.25925925925925924,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.25925925925925924,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 24,
+                    "eligible": 54,
+                    "eligible_rate": 0.4444444444444444,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.4444444444444444,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 32,
+                    "eligible": 54,
+                    "eligible_rate": 0.5925925925925926,
+                    "issued": 54,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.5925925925925926,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 19,
+                    "eligible": 28,
+                    "eligible_rate": 0.6785714285714286,
+                    "issued": 28,
+                    "registered_coverage": 0.5185185185185185,
+                    "resolved_gate_denominator": 54,
+                    "resolved_gate_rate": 0.35185185185185186,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 19,
+                  "HALF_WIN": 0,
+                  "PUSH": 0,
+                  "HALF_LOSS": 0,
+                  "FULL_LOSS": 9
+                }
+              }
+            },
+            "comparison": {
+              "baseline": "r13",
+              "candidate": "rank_full"
+            },
+            "paired": {
+              "score_top1": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 1,
+                "lost": 1,
+                "tied": 52,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "score_top3": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 1,
+                "lost": 2,
+                "tied": 51,
+                "net_hits": -1,
+                "net_rate": -0.018518518518518517,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  -0.1111111111111111,
+                  0.05555555555555555
+                ],
+                "fixed_population_net_hits": -1,
+                "fixed_population_net_rate": -0.018518518518518517,
+                "fixed_population_date_cluster_ci": [
+                  -0.1111111111111111,
+                  0.05555555555555555
+                ]
+              },
+              "wdl": {
+                "eligible": 54,
+                "resolved_gate_denominator": 54,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 54,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "actual_ou": {
+                "eligible": 28,
+                "resolved_gate_denominator": 54,
+                "coverage": 0.5185185185185185,
+                "gained": 0,
+                "lost": 0,
+                "tied": 28,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 3,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "bootstrap": {
+              "unit": "whole match date",
+              "confidence": 0.95,
+              "repetitions": 5000,
+              "seed": 20261123,
+              "per_metric_percentile_intervals": true
+            }
+          }
+        },
+        "selected_against_r13": {
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "evidence": {
+            "mode": "REPLAY_COMPARISON",
+            "matchday_basis": "supplied date",
+            "prospective_certified": false
+          },
+          "population": 54,
+          "settled_population": 54,
+          "pending": 0,
+          "common_total_pushes": 0,
+          "cohorts": {
+            "uefa.europa.conf": 54
+          },
+          "tracks": {
+            "r13": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 14,
+                  "eligible": 54,
+                  "eligible_rate": 0.25925925925925924,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.25925925925925924,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 25,
+                  "eligible": 54,
+                  "eligible_rate": 0.46296296296296297,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.46296296296296297,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 32,
+                  "eligible": 54,
+                  "eligible_rate": 0.5925925925925926,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.5925925925925926,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 19,
+                  "eligible": 28,
+                  "eligible_rate": 0.6785714285714286,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.35185185185185186,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 19,
+                "HALF_WIN": 0,
+                "PUSH": 0,
+                "HALF_LOSS": 0,
+                "FULL_LOSS": 9
+              }
+            },
+            "selected": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 14,
+                  "eligible": 54,
+                  "eligible_rate": 0.25925925925925924,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.25925925925925924,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 25,
+                  "eligible": 54,
+                  "eligible_rate": 0.46296296296296297,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.46296296296296297,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 32,
+                  "eligible": 54,
+                  "eligible_rate": 0.5925925925925926,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.5925925925925926,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 19,
+                  "eligible": 28,
+                  "eligible_rate": 0.6785714285714286,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.35185185185185186,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 19,
+                "HALF_WIN": 0,
+                "PUSH": 0,
+                "HALF_LOSS": 0,
+                "FULL_LOSS": 9
+              }
+            }
+          },
+          "comparison": {
+            "baseline": "r13",
+            "candidate": "selected"
+          },
+          "paired": {
+            "score_top1": {
+              "eligible": 54,
+              "resolved_gate_denominator": 54,
+              "coverage": 1.0,
+              "gained": 0,
+              "lost": 0,
+              "tied": 54,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "score_top3": {
+              "eligible": 54,
+              "resolved_gate_denominator": 54,
+              "coverage": 1.0,
+              "gained": 0,
+              "lost": 0,
+              "tied": 54,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "wdl": {
+              "eligible": 54,
+              "resolved_gate_denominator": 54,
+              "coverage": 1.0,
+              "gained": 0,
+              "lost": 0,
+              "tied": 54,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 0,
+              "lost": 0,
+              "tied": 28,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "bootstrap": {
+            "unit": "whole match date",
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "per_metric_percentile_intervals": true
+          }
+        },
+        "selected_against_market": {
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "evidence": {
+            "mode": "REPLAY_COMPARISON",
+            "matchday_basis": "supplied date",
+            "prospective_certified": false
+          },
+          "population": 54,
+          "settled_population": 54,
+          "pending": 0,
+          "common_total_pushes": 0,
+          "cohorts": {
+            "uefa.europa.conf": 54
+          },
+          "tracks": {
+            "market": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 7,
+                  "eligible": 28,
+                  "eligible_rate": 0.25,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.12962962962962962,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 11,
+                  "eligible": 28,
+                  "eligible_rate": 0.39285714285714285,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.2037037037037037,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 20,
+                  "eligible": 28,
+                  "eligible_rate": 0.7142857142857143,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.37037037037037035,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 20,
+                  "eligible": 28,
+                  "eligible_rate": 0.7142857142857143,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.37037037037037035,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 20,
+                "HALF_WIN": 0,
+                "PUSH": 0,
+                "HALF_LOSS": 0,
+                "FULL_LOSS": 8
+              }
+            },
+            "selected": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 14,
+                  "eligible": 54,
+                  "eligible_rate": 0.25925925925925924,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.25925925925925924,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 25,
+                  "eligible": 54,
+                  "eligible_rate": 0.46296296296296297,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.46296296296296297,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 32,
+                  "eligible": 54,
+                  "eligible_rate": 0.5925925925925926,
+                  "issued": 54,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.5925925925925926,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 19,
+                  "eligible": 28,
+                  "eligible_rate": 0.6785714285714286,
+                  "issued": 28,
+                  "registered_coverage": 0.5185185185185185,
+                  "resolved_gate_denominator": 54,
+                  "resolved_gate_rate": 0.35185185185185186,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 19,
+                "HALF_WIN": 0,
+                "PUSH": 0,
+                "HALF_LOSS": 0,
+                "FULL_LOSS": 9
+              }
+            }
+          },
+          "comparison": {
+            "baseline": "market",
+            "candidate": "selected"
+          },
+          "paired": {
+            "score_top1": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 1,
+              "lost": 0,
+              "tied": 27,
+              "net_hits": 1,
+              "net_rate": 0.03571428571428571,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.1
+              ],
+              "fixed_population_net_hits": 7,
+              "fixed_population_net_rate": 0.12962962962962962,
+              "fixed_population_date_cluster_ci": [
+                0.1111111111111111,
+                0.16666666666666666
+              ]
+            },
+            "score_top3": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 0,
+              "lost": 0,
+              "tied": 28,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 14,
+              "fixed_population_net_rate": 0.25925925925925924,
+              "fixed_population_date_cluster_ci": [
+                0.16666666666666666,
+                0.3333333333333333
+              ]
+            },
+            "wdl": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 0,
+              "lost": 0,
+              "tied": 28,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 12,
+              "fixed_population_net_rate": 0.2222222222222222,
+              "fixed_population_date_cluster_ci": [
+                0.1111111111111111,
+                0.3333333333333333
+              ]
+            },
+            "actual_ou": {
+              "eligible": 28,
+              "resolved_gate_denominator": 54,
+              "coverage": 0.5185185185185185,
+              "gained": 1,
+              "lost": 2,
+              "tied": 25,
+              "net_hits": -1,
+              "net_rate": -0.03571428571428571,
+              "matchday_clusters": 3,
+              "date_cluster_ci": [
+                -0.16666666666666666,
+                0.0
+              ],
+              "fixed_population_net_hits": -1,
+              "fixed_population_net_rate": -0.018518518518518517,
+              "fixed_population_date_cluster_ci": [
+                -0.05555555555555555,
+                0.0
+              ]
+            }
+          },
+          "bootstrap": {
+            "unit": "whole match date",
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "per_metric_percentile_intervals": true
+          }
+        },
+        "r13_actual_ranks": {
+          "1": 14,
+          "2": 5,
+          "3": 6,
+          "4": 6,
+          "5": 3,
+          "6": 2
+        },
+        "r13_rank_seven_or_lower": 18,
+        "first_changed": 0,
+        "three_members_changed": 0
+      },
+      "forward_screen_passed": false,
+      "numeric_error": {
+        "wdl": 0.0,
+        "conditional_mean": 6e-14
+      }
+    },
+    "uefa.europa": {
+      "training": 72,
+      "validation": 72,
+      "beta": {
+        "win": -0.010436,
+        "draw": 0.052018
+      },
+      "validation_trials": {
+        "r13": {
+          "first": 10,
+          "three": 30,
+          "log_loss": 2.851819725701
+        },
+        "third_half": {
+          "first": 10,
+          "three": 30,
+          "log_loss": 2.85116243557
+        },
+        "third_full": {
+          "first": 10,
+          "three": 29,
+          "log_loss": 2.851111171865
+        },
+        "rank_half": {
+          "first": 10,
+          "three": 30,
+          "log_loss": 2.85116243557
+        },
+        "rank_full": {
+          "first": 12,
+          "three": 28,
+          "log_loss": 2.851111171865
+        }
+      },
+      "selected": "third_half",
+      "evaluation": {
+        "fixtures": 72,
+        "original_against_market": {
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "evidence": {
+            "mode": "REPLAY_COMPARISON",
+            "matchday_basis": "supplied date",
+            "prospective_certified": false
+          },
+          "population": 72,
+          "settled_population": 72,
+          "pending": 0,
+          "common_total_pushes": 2,
+          "cohorts": {
+            "uefa.europa": 72
+          },
+          "tracks": {
+            "market": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 5,
+                  "eligible": 52,
+                  "eligible_rate": 0.09615384615384616,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.06944444444444445,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 14,
+                  "eligible": 52,
+                  "eligible_rate": 0.2692307692307692,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.19444444444444445,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 28,
+                  "eligible": 52,
+                  "eligible_rate": 0.5384615384615384,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.3888888888888889,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 26,
+                  "eligible": 50,
+                  "eligible_rate": 0.52,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 70,
+                  "resolved_gate_rate": 0.37142857142857144,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 26,
+                "HALF_WIN": 0,
+                "PUSH": 2,
+                "HALF_LOSS": 4,
+                "FULL_LOSS": 20
+              }
+            },
+            "r13": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 4,
+                  "eligible": 72,
+                  "eligible_rate": 0.05555555555555555,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.05555555555555555,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 21,
+                  "eligible": 72,
+                  "eligible_rate": 0.2916666666666667,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.2916666666666667,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 35,
+                  "eligible": 72,
+                  "eligible_rate": 0.4861111111111111,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.4861111111111111,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 27,
+                  "eligible": 50,
+                  "eligible_rate": 0.54,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 70,
+                  "resolved_gate_rate": 0.38571428571428573,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 27,
+                "HALF_WIN": 0,
+                "PUSH": 2,
+                "HALF_LOSS": 4,
+                "FULL_LOSS": 19
+              }
+            }
+          },
+          "comparison": {
+            "baseline": "market",
+            "candidate": "r13"
+          },
+          "paired": {
+            "score_top1": {
+              "eligible": 52,
+              "resolved_gate_denominator": 72,
+              "coverage": 0.7222222222222222,
+              "gained": 0,
+              "lost": 3,
+              "tied": 49,
+              "net_hits": -3,
+              "net_rate": -0.057692307692307696,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                -0.10204081632653061,
+                -0.01694915254237288
+              ],
+              "fixed_population_net_hits": -1,
+              "fixed_population_net_rate": -0.013888888888888888,
+              "fixed_population_date_cluster_ci": [
+                -0.06521739130434782,
+                0.03125
+              ]
+            },
+            "score_top3": {
+              "eligible": 52,
+              "resolved_gate_denominator": 72,
+              "coverage": 0.7222222222222222,
+              "gained": 0,
+              "lost": 1,
+              "tied": 51,
+              "net_hits": -1,
+              "net_rate": -0.019230769230769232,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                -0.075,
+                0.0
+              ],
+              "fixed_population_net_hits": 7,
+              "fixed_population_net_rate": 0.09722222222222222,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.15555555555555556
+              ]
+            },
+            "wdl": {
+              "eligible": 52,
+              "resolved_gate_denominator": 72,
+              "coverage": 0.7222222222222222,
+              "gained": 0,
+              "lost": 0,
+              "tied": 52,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 7,
+              "fixed_population_net_rate": 0.09722222222222222,
+              "fixed_population_date_cluster_ci": [
+                0.01818181818181818,
+                0.1518987341772152
+              ]
+            },
+            "actual_ou": {
+              "eligible": 50,
+              "resolved_gate_denominator": 70,
+              "coverage": 0.7142857142857143,
+              "gained": 5,
+              "lost": 4,
+              "tied": 41,
+              "net_hits": 1,
+              "net_rate": 0.02,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                -0.08571428571428572,
+                0.14285714285714285
+              ],
+              "fixed_population_net_hits": 1,
+              "fixed_population_net_rate": 0.014285714285714285,
+              "fixed_population_date_cluster_ci": [
+                -0.06779661016949153,
+                0.09836065573770492
+              ]
+            }
+          },
+          "bootstrap": {
+            "unit": "whole match date",
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "per_metric_percentile_intervals": true
+          }
+        },
+        "ablations": {
+          "third_half": {
+            "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+            "evidence": {
+              "mode": "REPLAY_COMPARISON",
+              "matchday_basis": "supplied date",
+              "prospective_certified": false
+            },
+            "population": 72,
+            "settled_population": 72,
+            "pending": 0,
+            "common_total_pushes": 2,
+            "cohorts": {
+              "uefa.europa": 72
+            },
+            "tracks": {
+              "r13": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 4,
+                    "eligible": 72,
+                    "eligible_rate": 0.05555555555555555,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.05555555555555555,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 21,
+                    "eligible": 72,
+                    "eligible_rate": 0.2916666666666667,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.2916666666666667,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 35,
+                    "eligible": 72,
+                    "eligible_rate": 0.4861111111111111,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.4861111111111111,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 27,
+                    "eligible": 50,
+                    "eligible_rate": 0.54,
+                    "issued": 52,
+                    "registered_coverage": 0.7222222222222222,
+                    "resolved_gate_denominator": 70,
+                    "resolved_gate_rate": 0.38571428571428573,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 27,
+                  "HALF_WIN": 0,
+                  "PUSH": 2,
+                  "HALF_LOSS": 4,
+                  "FULL_LOSS": 19
+                }
+              },
+              "third_half": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 4,
+                    "eligible": 72,
+                    "eligible_rate": 0.05555555555555555,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.05555555555555555,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 21,
+                    "eligible": 72,
+                    "eligible_rate": 0.2916666666666667,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.2916666666666667,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 35,
+                    "eligible": 72,
+                    "eligible_rate": 0.4861111111111111,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.4861111111111111,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 27,
+                    "eligible": 50,
+                    "eligible_rate": 0.54,
+                    "issued": 52,
+                    "registered_coverage": 0.7222222222222222,
+                    "resolved_gate_denominator": 70,
+                    "resolved_gate_rate": 0.38571428571428573,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 27,
+                  "HALF_WIN": 0,
+                  "PUSH": 2,
+                  "HALF_LOSS": 4,
+                  "FULL_LOSS": 19
+                }
+              }
+            },
+            "comparison": {
+              "baseline": "r13",
+              "candidate": "third_half"
+            },
+            "paired": {
+              "score_top1": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "score_top3": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "wdl": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "actual_ou": {
+                "eligible": 50,
+                "resolved_gate_denominator": 70,
+                "coverage": 0.7142857142857143,
+                "gained": 0,
+                "lost": 0,
+                "tied": 50,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "bootstrap": {
+              "unit": "whole match date",
+              "confidence": 0.95,
+              "repetitions": 5000,
+              "seed": 20261123,
+              "per_metric_percentile_intervals": true
+            }
+          },
+          "third_full": {
+            "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+            "evidence": {
+              "mode": "REPLAY_COMPARISON",
+              "matchday_basis": "supplied date",
+              "prospective_certified": false
+            },
+            "population": 72,
+            "settled_population": 72,
+            "pending": 0,
+            "common_total_pushes": 2,
+            "cohorts": {
+              "uefa.europa": 72
+            },
+            "tracks": {
+              "r13": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 4,
+                    "eligible": 72,
+                    "eligible_rate": 0.05555555555555555,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.05555555555555555,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 21,
+                    "eligible": 72,
+                    "eligible_rate": 0.2916666666666667,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.2916666666666667,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 35,
+                    "eligible": 72,
+                    "eligible_rate": 0.4861111111111111,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.4861111111111111,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 27,
+                    "eligible": 50,
+                    "eligible_rate": 0.54,
+                    "issued": 52,
+                    "registered_coverage": 0.7222222222222222,
+                    "resolved_gate_denominator": 70,
+                    "resolved_gate_rate": 0.38571428571428573,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 27,
+                  "HALF_WIN": 0,
+                  "PUSH": 2,
+                  "HALF_LOSS": 4,
+                  "FULL_LOSS": 19
+                }
+              },
+              "third_full": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 4,
+                    "eligible": 72,
+                    "eligible_rate": 0.05555555555555555,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.05555555555555555,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 21,
+                    "eligible": 72,
+                    "eligible_rate": 0.2916666666666667,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.2916666666666667,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 35,
+                    "eligible": 72,
+                    "eligible_rate": 0.4861111111111111,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.4861111111111111,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 27,
+                    "eligible": 50,
+                    "eligible_rate": 0.54,
+                    "issued": 52,
+                    "registered_coverage": 0.7222222222222222,
+                    "resolved_gate_denominator": 70,
+                    "resolved_gate_rate": 0.38571428571428573,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 27,
+                  "HALF_WIN": 0,
+                  "PUSH": 2,
+                  "HALF_LOSS": 4,
+                  "FULL_LOSS": 19
+                }
+              }
+            },
+            "comparison": {
+              "baseline": "r13",
+              "candidate": "third_full"
+            },
+            "paired": {
+              "score_top1": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "score_top3": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "wdl": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "actual_ou": {
+                "eligible": 50,
+                "resolved_gate_denominator": 70,
+                "coverage": 0.7142857142857143,
+                "gained": 0,
+                "lost": 0,
+                "tied": 50,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "bootstrap": {
+              "unit": "whole match date",
+              "confidence": 0.95,
+              "repetitions": 5000,
+              "seed": 20261123,
+              "per_metric_percentile_intervals": true
+            }
+          },
+          "rank_half": {
+            "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+            "evidence": {
+              "mode": "REPLAY_COMPARISON",
+              "matchday_basis": "supplied date",
+              "prospective_certified": false
+            },
+            "population": 72,
+            "settled_population": 72,
+            "pending": 0,
+            "common_total_pushes": 2,
+            "cohorts": {
+              "uefa.europa": 72
+            },
+            "tracks": {
+              "r13": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 4,
+                    "eligible": 72,
+                    "eligible_rate": 0.05555555555555555,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.05555555555555555,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 21,
+                    "eligible": 72,
+                    "eligible_rate": 0.2916666666666667,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.2916666666666667,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 35,
+                    "eligible": 72,
+                    "eligible_rate": 0.4861111111111111,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.4861111111111111,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 27,
+                    "eligible": 50,
+                    "eligible_rate": 0.54,
+                    "issued": 52,
+                    "registered_coverage": 0.7222222222222222,
+                    "resolved_gate_denominator": 70,
+                    "resolved_gate_rate": 0.38571428571428573,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 27,
+                  "HALF_WIN": 0,
+                  "PUSH": 2,
+                  "HALF_LOSS": 4,
+                  "FULL_LOSS": 19
+                }
+              },
+              "rank_half": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 3,
+                    "eligible": 72,
+                    "eligible_rate": 0.041666666666666664,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.041666666666666664,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 21,
+                    "eligible": 72,
+                    "eligible_rate": 0.2916666666666667,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.2916666666666667,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 35,
+                    "eligible": 72,
+                    "eligible_rate": 0.4861111111111111,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.4861111111111111,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 27,
+                    "eligible": 50,
+                    "eligible_rate": 0.54,
+                    "issued": 52,
+                    "registered_coverage": 0.7222222222222222,
+                    "resolved_gate_denominator": 70,
+                    "resolved_gate_rate": 0.38571428571428573,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 27,
+                  "HALF_WIN": 0,
+                  "PUSH": 2,
+                  "HALF_LOSS": 4,
+                  "FULL_LOSS": 19
+                }
+              }
+            },
+            "comparison": {
+              "baseline": "r13",
+              "candidate": "rank_half"
+            },
+            "paired": {
+              "score_top1": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 1,
+                "lost": 2,
+                "tied": 69,
+                "net_hits": -1,
+                "net_rate": -0.013888888888888888,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  -0.038461538461538464,
+                  0.0
+                ],
+                "fixed_population_net_hits": -1,
+                "fixed_population_net_rate": -0.013888888888888888,
+                "fixed_population_date_cluster_ci": [
+                  -0.038461538461538464,
+                  0.0
+                ]
+              },
+              "score_top3": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "wdl": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "actual_ou": {
+                "eligible": 50,
+                "resolved_gate_denominator": 70,
+                "coverage": 0.7142857142857143,
+                "gained": 0,
+                "lost": 0,
+                "tied": 50,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "bootstrap": {
+              "unit": "whole match date",
+              "confidence": 0.95,
+              "repetitions": 5000,
+              "seed": 20261123,
+              "per_metric_percentile_intervals": true
+            }
+          },
+          "rank_full": {
+            "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+            "evidence": {
+              "mode": "REPLAY_COMPARISON",
+              "matchday_basis": "supplied date",
+              "prospective_certified": false
+            },
+            "population": 72,
+            "settled_population": 72,
+            "pending": 0,
+            "common_total_pushes": 2,
+            "cohorts": {
+              "uefa.europa": 72
+            },
+            "tracks": {
+              "r13": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 4,
+                    "eligible": 72,
+                    "eligible_rate": 0.05555555555555555,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.05555555555555555,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 21,
+                    "eligible": 72,
+                    "eligible_rate": 0.2916666666666667,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.2916666666666667,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 35,
+                    "eligible": 72,
+                    "eligible_rate": 0.4861111111111111,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.4861111111111111,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 27,
+                    "eligible": 50,
+                    "eligible_rate": 0.54,
+                    "issued": 52,
+                    "registered_coverage": 0.7222222222222222,
+                    "resolved_gate_denominator": 70,
+                    "resolved_gate_rate": 0.38571428571428573,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 27,
+                  "HALF_WIN": 0,
+                  "PUSH": 2,
+                  "HALF_LOSS": 4,
+                  "FULL_LOSS": 19
+                }
+              },
+              "rank_full": {
+                "metrics": {
+                  "score_top1": {
+                    "hits": 3,
+                    "eligible": 72,
+                    "eligible_rate": 0.041666666666666664,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.041666666666666664,
+                    "target": 0.2
+                  },
+                  "score_top3": {
+                    "hits": 21,
+                    "eligible": 72,
+                    "eligible_rate": 0.2916666666666667,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.2916666666666667,
+                    "target": 0.4
+                  },
+                  "wdl": {
+                    "hits": 35,
+                    "eligible": 72,
+                    "eligible_rate": 0.4861111111111111,
+                    "issued": 72,
+                    "registered_coverage": 1.0,
+                    "resolved_gate_denominator": 72,
+                    "resolved_gate_rate": 0.4861111111111111,
+                    "target": 0.65
+                  },
+                  "actual_ou": {
+                    "hits": 27,
+                    "eligible": 50,
+                    "eligible_rate": 0.54,
+                    "issued": 52,
+                    "registered_coverage": 0.7222222222222222,
+                    "resolved_gate_denominator": 70,
+                    "resolved_gate_rate": 0.38571428571428573,
+                    "target": 0.7
+                  }
+                },
+                "total_settlements": {
+                  "FULL_WIN": 27,
+                  "HALF_WIN": 0,
+                  "PUSH": 2,
+                  "HALF_LOSS": 4,
+                  "FULL_LOSS": 19
+                }
+              }
+            },
+            "comparison": {
+              "baseline": "r13",
+              "candidate": "rank_full"
+            },
+            "paired": {
+              "score_top1": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 1,
+                "lost": 2,
+                "tied": 69,
+                "net_hits": -1,
+                "net_rate": -0.013888888888888888,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  -0.038461538461538464,
+                  0.0
+                ],
+                "fixed_population_net_hits": -1,
+                "fixed_population_net_rate": -0.013888888888888888,
+                "fixed_population_date_cluster_ci": [
+                  -0.038461538461538464,
+                  0.0
+                ]
+              },
+              "score_top3": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "wdl": {
+                "eligible": 72,
+                "resolved_gate_denominator": 72,
+                "coverage": 1.0,
+                "gained": 0,
+                "lost": 0,
+                "tied": 72,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "actual_ou": {
+                "eligible": 50,
+                "resolved_gate_denominator": 70,
+                "coverage": 0.7142857142857143,
+                "gained": 0,
+                "lost": 0,
+                "tied": 50,
+                "net_hits": 0,
+                "net_rate": 0.0,
+                "matchday_clusters": 6,
+                "date_cluster_ci": [
+                  0.0,
+                  0.0
+                ],
+                "fixed_population_net_hits": 0,
+                "fixed_population_net_rate": 0.0,
+                "fixed_population_date_cluster_ci": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "bootstrap": {
+              "unit": "whole match date",
+              "confidence": 0.95,
+              "repetitions": 5000,
+              "seed": 20261123,
+              "per_metric_percentile_intervals": true
+            }
+          }
+        },
+        "selected_against_r13": {
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "evidence": {
+            "mode": "REPLAY_COMPARISON",
+            "matchday_basis": "supplied date",
+            "prospective_certified": false
+          },
+          "population": 72,
+          "settled_population": 72,
+          "pending": 0,
+          "common_total_pushes": 2,
+          "cohorts": {
+            "uefa.europa": 72
+          },
+          "tracks": {
+            "r13": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 4,
+                  "eligible": 72,
+                  "eligible_rate": 0.05555555555555555,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.05555555555555555,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 21,
+                  "eligible": 72,
+                  "eligible_rate": 0.2916666666666667,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.2916666666666667,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 35,
+                  "eligible": 72,
+                  "eligible_rate": 0.4861111111111111,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.4861111111111111,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 27,
+                  "eligible": 50,
+                  "eligible_rate": 0.54,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 70,
+                  "resolved_gate_rate": 0.38571428571428573,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 27,
+                "HALF_WIN": 0,
+                "PUSH": 2,
+                "HALF_LOSS": 4,
+                "FULL_LOSS": 19
+              }
+            },
+            "selected": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 4,
+                  "eligible": 72,
+                  "eligible_rate": 0.05555555555555555,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.05555555555555555,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 21,
+                  "eligible": 72,
+                  "eligible_rate": 0.2916666666666667,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.2916666666666667,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 35,
+                  "eligible": 72,
+                  "eligible_rate": 0.4861111111111111,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.4861111111111111,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 27,
+                  "eligible": 50,
+                  "eligible_rate": 0.54,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 70,
+                  "resolved_gate_rate": 0.38571428571428573,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 27,
+                "HALF_WIN": 0,
+                "PUSH": 2,
+                "HALF_LOSS": 4,
+                "FULL_LOSS": 19
+              }
+            }
+          },
+          "comparison": {
+            "baseline": "r13",
+            "candidate": "selected"
+          },
+          "paired": {
+            "score_top1": {
+              "eligible": 72,
+              "resolved_gate_denominator": 72,
+              "coverage": 1.0,
+              "gained": 0,
+              "lost": 0,
+              "tied": 72,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "score_top3": {
+              "eligible": 72,
+              "resolved_gate_denominator": 72,
+              "coverage": 1.0,
+              "gained": 0,
+              "lost": 0,
+              "tied": 72,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "wdl": {
+              "eligible": 72,
+              "resolved_gate_denominator": 72,
+              "coverage": 1.0,
+              "gained": 0,
+              "lost": 0,
+              "tied": 72,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "actual_ou": {
+              "eligible": 50,
+              "resolved_gate_denominator": 70,
+              "coverage": 0.7142857142857143,
+              "gained": 0,
+              "lost": 0,
+              "tied": 50,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "bootstrap": {
+            "unit": "whole match date",
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "per_metric_percentile_intervals": true
+          }
+        },
+        "selected_against_market": {
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "evidence": {
+            "mode": "REPLAY_COMPARISON",
+            "matchday_basis": "supplied date",
+            "prospective_certified": false
+          },
+          "population": 72,
+          "settled_population": 72,
+          "pending": 0,
+          "common_total_pushes": 2,
+          "cohorts": {
+            "uefa.europa": 72
+          },
+          "tracks": {
+            "market": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 5,
+                  "eligible": 52,
+                  "eligible_rate": 0.09615384615384616,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.06944444444444445,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 14,
+                  "eligible": 52,
+                  "eligible_rate": 0.2692307692307692,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.19444444444444445,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 28,
+                  "eligible": 52,
+                  "eligible_rate": 0.5384615384615384,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.3888888888888889,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 26,
+                  "eligible": 50,
+                  "eligible_rate": 0.52,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 70,
+                  "resolved_gate_rate": 0.37142857142857144,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 26,
+                "HALF_WIN": 0,
+                "PUSH": 2,
+                "HALF_LOSS": 4,
+                "FULL_LOSS": 20
+              }
+            },
+            "selected": {
+              "metrics": {
+                "score_top1": {
+                  "hits": 4,
+                  "eligible": 72,
+                  "eligible_rate": 0.05555555555555555,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.05555555555555555,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "hits": 21,
+                  "eligible": 72,
+                  "eligible_rate": 0.2916666666666667,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.2916666666666667,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "hits": 35,
+                  "eligible": 72,
+                  "eligible_rate": 0.4861111111111111,
+                  "issued": 72,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 72,
+                  "resolved_gate_rate": 0.4861111111111111,
+                  "target": 0.65
+                },
+                "actual_ou": {
+                  "hits": 27,
+                  "eligible": 50,
+                  "eligible_rate": 0.54,
+                  "issued": 52,
+                  "registered_coverage": 0.7222222222222222,
+                  "resolved_gate_denominator": 70,
+                  "resolved_gate_rate": 0.38571428571428573,
+                  "target": 0.7
+                }
+              },
+              "total_settlements": {
+                "FULL_WIN": 27,
+                "HALF_WIN": 0,
+                "PUSH": 2,
+                "HALF_LOSS": 4,
+                "FULL_LOSS": 19
+              }
+            }
+          },
+          "comparison": {
+            "baseline": "market",
+            "candidate": "selected"
+          },
+          "paired": {
+            "score_top1": {
+              "eligible": 52,
+              "resolved_gate_denominator": 72,
+              "coverage": 0.7222222222222222,
+              "gained": 0,
+              "lost": 3,
+              "tied": 49,
+              "net_hits": -3,
+              "net_rate": -0.057692307692307696,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                -0.10204081632653061,
+                -0.01694915254237288
+              ],
+              "fixed_population_net_hits": -1,
+              "fixed_population_net_rate": -0.013888888888888888,
+              "fixed_population_date_cluster_ci": [
+                -0.06521739130434782,
+                0.03125
+              ]
+            },
+            "score_top3": {
+              "eligible": 52,
+              "resolved_gate_denominator": 72,
+              "coverage": 0.7222222222222222,
+              "gained": 0,
+              "lost": 1,
+              "tied": 51,
+              "net_hits": -1,
+              "net_rate": -0.019230769230769232,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                -0.075,
+                0.0
+              ],
+              "fixed_population_net_hits": 7,
+              "fixed_population_net_rate": 0.09722222222222222,
+              "fixed_population_date_cluster_ci": [
+                0.0,
+                0.15555555555555556
+              ]
+            },
+            "wdl": {
+              "eligible": 52,
+              "resolved_gate_denominator": 72,
+              "coverage": 0.7222222222222222,
+              "gained": 0,
+              "lost": 0,
+              "tied": 52,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                0.0,
+                0.0
+              ],
+              "fixed_population_net_hits": 7,
+              "fixed_population_net_rate": 0.09722222222222222,
+              "fixed_population_date_cluster_ci": [
+                0.01818181818181818,
+                0.1518987341772152
+              ]
+            },
+            "actual_ou": {
+              "eligible": 50,
+              "resolved_gate_denominator": 70,
+              "coverage": 0.7142857142857143,
+              "gained": 5,
+              "lost": 4,
+              "tied": 41,
+              "net_hits": 1,
+              "net_rate": 0.02,
+              "matchday_clusters": 6,
+              "date_cluster_ci": [
+                -0.08571428571428572,
+                0.14285714285714285
+              ],
+              "fixed_population_net_hits": 1,
+              "fixed_population_net_rate": 0.014285714285714285,
+              "fixed_population_date_cluster_ci": [
+                -0.06779661016949153,
+                0.09836065573770492
+              ]
+            }
+          },
+          "bootstrap": {
+            "unit": "whole match date",
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "per_metric_percentile_intervals": true
+          }
+        },
+        "r13_actual_ranks": {
+          "1": 4,
+          "2": 7,
+          "3": 10,
+          "4": 7,
+          "5": 2,
+          "6": 5
+        },
+        "r13_rank_seven_or_lower": 37,
+        "first_changed": 0,
+        "three_members_changed": 6
+      },
+      "forward_screen_passed": false,
+      "numeric_error": {
+        "wdl": 0.0,
+        "conditional_mean": 5e-14
+      }
+    }
+  }
+}
