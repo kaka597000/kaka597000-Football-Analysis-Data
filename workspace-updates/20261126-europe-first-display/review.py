@@ -12,6 +12,7 @@ from urllib.parse import urlsplit
 import benchmarks
 import prepare
 import result_intake
+import score_paths
 from research.analysis_freeze import aware
 from research_program.display_window_review import summary_kickoff
 from research_program.nov25_first_review import seats
@@ -161,7 +162,7 @@ def verify_kickoffs(state, fixtures, finalized, at):
     return reconciled
 
 
-def grade(group, observed, benchmark=None, *, kickoffs=None):
+def grade(group, observed, benchmark=None, *, kickoffs=None, grids=None):
     kickoffs = kickoffs or {}
     rows = []
     picks = {}
@@ -192,6 +193,8 @@ def grade(group, observed, benchmark=None, *, kickoffs=None):
                              result_source=verified['source'] if verified else None,
                              confirmed_result_sources=verified.get('confirmed_result_sources', {}) if verified else {},
                              actual_kickoff=kickoff.get('actual_kickoff'), kickoff_issue=kickoff.get('kickoff_issue'))
+        if grids is not None:
+            outcomes[mid]['score_grid_diagnosis'] = score_paths.settled(grids[mid]['matrix'], original['top3'], actual)
     report = dict(registered=len(group), verified_results=len(actuals), pending=len(group) - len(actuals),
                 verified_actual_kickoffs=sum(row['actual_kickoff'] is not None for row in outcomes.values()),
                 verified_actual_kickoffs_awaiting_result=sum(row['actual_kickoff'] is not None and row['actual'] is None
@@ -209,6 +212,8 @@ def grade(group, observed, benchmark=None, *, kickoffs=None):
                 against_market=compare(rows, baseline='market', candidate='r13'), per_match=outcomes)
     if benchmark is not None:
         report['original_r10_comparison'] = benchmarks.grade(rows, benchmark)
+    if grids is not None:
+        report['score_grid_diagnosis'] = score_paths.result_summary(row['score_grid_diagnosis'] for row in outcomes.values())
     return report
 
 
@@ -222,6 +227,7 @@ def review(state=None, *, at=None):
     if any(aware(ref['recorded_at']) > cutoff for ref in published.values()):
         raise ValueError('review cutoff predates the frozen score tables')
     comparisons = benchmarks.locks(original, published, at=cutoff)
+    grids, grid_sources = score_paths.retained_grids(original, published, at=cutoff)
     fixtures = {entry['fixture']['match_id']: entry['fixture']
                 for group in original.values() for entry in group['rows']}
     verified, issues = results(state, fixtures, cutoff)
@@ -229,9 +235,10 @@ def review(state=None, *, at=None):
     return dict(as_of=cutoff.astimezone(prepare.BEIJING).isoformat(),
                 scope='R13 original pregame research forecasts',
                 formal_display_status='INDEPENDENT_READBACK_PENDING',
-                timed_market_verified=0, result_issues=issues,
+                timed_market_verified=0, result_issues=issues, score_grid_sources=grid_sources,
                 competitions={short: dict(display=published[short],
-                                          **grade(group['rows'], verified, comparisons.get(short), kickoffs=kickoffs))
+                                          **grade(group['rows'], verified, comparisons.get(short), kickoffs=kickoffs,
+                                                  grids=grids if short in grid_sources else None))
                               for short, group in original.items()})
 
 

@@ -31,12 +31,14 @@ jobs:
             workspace-updates/20261125-r10-shot-conversion
             workspace-updates/20261125-r13-domestic-form
             workspace-updates/20261126-europe-first-display
+            workspace-updates/20261126-r34-europe-winning-margin/issued
+            workspace-updates/20261126-r38-europe-domestic-opponents/issued
             workspace-updates/20261105-europa-conference-analysis
             workspace-updates/20261106-uel-review
       - uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
-          ref: 71ba85c405c825d3fff10894de6b7dcf2eb3e5e3
+          ref: 2d7754822cc36e0387c61a140a4309be7d6e8ead
           path: source
           persist-credentials: false
       - uses: actions/setup-python@v5
@@ -54,6 +56,8 @@ jobs:
           cmp "$PACKAGE/result-intake-preflight/uecl-espn/verified.json" "$RUNNER_TEMP/conference-history.json"
           python -B "$PACKAGE/venue_check.py" > "$RUNNER_TEMP/europe-venues.json"
           cmp "$PACKAGE/prematch/venue-opening/verified.json" "$RUNNER_TEMP/europe-venues.json"
+          python -B "$PACKAGE/score_paths.py" > "$RUNNER_TEMP/europe-score-paths.json"
+          cmp "$PACKAGE/score-paths/round1.json" "$RUNNER_TEMP/europe-score-paths.json"
       - name: Check the public archive against the original display freezes
         run: |
           proof="$PACKAGE/public-archive"

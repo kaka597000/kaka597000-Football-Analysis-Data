@@ -8,12 +8,15 @@ import tarfile
 from tempfile import TemporaryDirectory
 import unittest
 
+import numpy as np
+
 from research.analysis_freeze import aware
 from research_program.display_window_review import _validate_kickoff_reports
 from review import certify_result, grade, results, review
 
 import benchmarks
 import prepare
+import score_paths
 
 
 HISTORY = '20261106-uel-review/parts/review.tar.gz.part000'
@@ -26,6 +29,7 @@ class FrozenReviewTest(unittest.TestCase):
     def test_complete_pending_rounds(self):
         status = review(at='2026-11-26T15:22:00+08:00')
         self.assertEqual(status['timed_market_verified'], 0)
+        self.assertEqual(status['score_grid_sources'], {})
         self.assertEqual(set(status['competitions']), {'uel', 'uecl'})
         expected_market = {'uecl': 17, 'uel': 18}
         for code, phase in status['competitions'].items():
@@ -39,8 +43,11 @@ class FrozenReviewTest(unittest.TestCase):
 
     def test_original_r10_prematch_comparison(self):
         report = review()
+        self.assertEqual(set(report['score_grid_sources']), {'uel', 'uecl'})
         for short, changed, exposure in (('uecl', 5, 13), ('uel', 4, 18)):
             current = report['competitions'][short]
+            self.assertEqual(current['score_grid_diagnosis']['verified'], 0)
+            self.assertTrue(all(row['score_grid_diagnosis'] is None for row in current['per_match'].values()))
             comparison = current['original_r10_comparison']
             self.assertEqual(comparison['first_relationships'], dict(same_first=17, r10_first_is_r13_alternate=1))
             self.assertEqual(comparison['three_members_changed'], changed)
@@ -62,6 +69,24 @@ class FrozenReviewTest(unittest.TestCase):
         self.assertEqual(output['per_match'][mid]['paths']['r13']['rank'], 2)
         self.assertEqual(benchmarks.score_path(['0-1', '1-1', '0-0'], [2, 1]),
                          dict(rank=None, minimum_goal_distance=1, actual_wdl_in_three=False))
+
+    def test_grid_rank_distinguishes_top_three_omission_and_low_probability(self):
+        matrix = np.zeros((3, 3))
+        matrix[1, 1], matrix[1, 0], matrix[2, 1], matrix[0, 1], matrix[0, 0] = .30, .25, .20, .15, .10
+        ordered = ['1-0', '2-1', '0-1']
+        missed = score_paths.settled(matrix, ordered, [1, 1])
+        self.assertEqual(missed['matrix_rank'], 1)
+        self.assertTrue(missed['matrix_first_not_displayed_first'])
+        self.assertTrue(missed['matrix_top_three_omitted'])
+        low = score_paths.settled(matrix, ordered, [0, 0])
+        self.assertEqual(low['matrix_rank'], 5)
+        self.assertFalse(low['matrix_top_three_omitted'])
+        outside = score_paths.settled(matrix, ordered, [3, 0])
+        self.assertFalse(outside['in_grid'])
+        report = score_paths.result_summary([None, missed, low, outside])
+        self.assertEqual(report['verified'], 3)
+        self.assertEqual(report['matrix_ranks'], dict(first=1, second_or_third=0, fourth_through_sixth=1,
+                                                     seventh_or_below=0, outside_grid=1))
 
     def test_real_europa_full_time_and_unverified_rows(self):
         archive = Path(__file__).resolve().parents[1] / HISTORY
