@@ -117,7 +117,7 @@ def register(issue):
                 or plan['payload']['fixtures'] != {f['match_id']: f for f in fixtures}
                 or aware(plan['recorded_at']) >= min(aware(f['kickoff_at']) for f in fixtures)):
             raise ValueError('window registration differed or followed kickoff')
-        current[short] = dict(plan=ref, today=today)
+        current[short] = dict(plan=ref, today=today, next_round=next_round)
     return current
 
 

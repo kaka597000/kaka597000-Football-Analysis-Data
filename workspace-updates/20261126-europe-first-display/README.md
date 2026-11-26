@@ -43,7 +43,7 @@ PYTHONPATH=/path/to/Football-Analysis/runtime \
 
 ## 原始赛果接入与双来源核对
 
-已留存的 ESPN 比赛摘要及欧足联官方赛果可统一接入。清单采用一个 JSON 数组，各项包含 `path`、`url`、`captured_at`、`sha256` 和 `http_status`。`path` 相对清单所在目录，`sha256` 为原响应的 SHA-256，压缩留档使用解压后的原响应哈希。脚本复用原欧足联比赛与球队对照，只纳入本次两项赛事各 18 场。`intake.json` 逐场保留来源状态和缺项，`normalized-results.jsonl` 提供待复盘认证的常规时间终场记录。[欧足联测试来源](result-intake-preflight/captures.json)
+已留存的 ESPN 比赛摘要及欧足联官方赛果可统一接入。清单采用一个 JSON 数组，各项包含 `path`、`url`、`captured_at`、`sha256` 和 `http_status`。`path` 相对清单所在目录，`sha256` 为原响应的 SHA-256，压缩留档使用解压后的原响应哈希。默认 `--window round1` 读取今晚的原登记，两项赛事各 18 场。`--window round2` 读取 12 月 10–11 日登记的另外 36 场，各自使用原赛轮和开球。待赛来源遇到开球时间差异会逐场留痕。`intake.json` 保留来源状态和缺项，`normalized-results.jsonl` 提供待复盘认证的常规时间记录。下方 `review.py` 用于已有比分展示的第一窗口。[欧足联测试来源](result-intake-preflight/captures.json)
 
 ```bash
 PYTHONPATH=/path/to/Football-Analysis/runtime \
@@ -53,3 +53,5 @@ PYTHONPATH=/path/to/Football-Analysis/runtime \
 ```
 
 欧足联以已验证赛事身份、`FINISHED` 状态及 `score.regular` 核实 90 分钟比分。ESPN 沿用原常规时间认证和开场事件取证。两个来源一致时，复盘保留两份原件及双来源计数。任一来源具备完整终场证据即可结算；已核实的比分冲突保留待核。延期和比赛尚未结束均留在原覆盖分母。两项赛事的官方历史快照含 35 场已完赛的联赛阶段比赛，其中米兰对费伦茨瓦罗斯 0–2、勒沃库森对马赛 0–1、水晶宫对霍芬海姆 1–1 已与 11 月 6 日留存的 ESPN 原件配对验证。[历史 ESPN 原件说明](../20261106-uel-review/README.md)
+
+用两份原欧足联赛历在同一入口分别回放两窗，72 个互异比赛均归入原轮次，每窗各保留 36 场待赛、0 条终场赛果。任意单一赛事响应只为该赛事提供状态，另一赛事的 18 场仍在所选窗口分母。[原两窗赛历](calendar/captures.json) · [回放测试](test_result_intake.py)

@@ -10,6 +10,8 @@ from tempfile import TemporaryDirectory
 from research.analysis_freeze import aware
 from research_program import display_window_review as review, goal_state_forward as ledger
 
+from official import official_rows
+
 
 ROOT = Path(__file__).resolve().parent
 ANNUAL_ARCHIVE = ROOT.parent / '20261125-j1-stage-windows/evidence/prematch-07.tar.gz'
@@ -135,4 +137,9 @@ if __name__ == '__main__':
         (args.prepare / 'annual.json').write_bytes(annual)
         (args.prepare / 'fixtures.json').write_text(json.dumps(fixtures, indent=2) + '\n')
     else:
-        print(json.dumps(check_registration(fixtures, slates), ensure_ascii=False, indent=2))
+        summary = check_registration(fixtures, slates)
+        official = official_rows(LATE_EVIDENCE, fixtures, slates)
+        if official != read(LATE_EVIDENCE/'jleague-december-comparison.json'):
+            raise ValueError('retained J.League comparison differs from the original public response')
+        summary['official_calendar'] = official
+        print(json.dumps(summary, ensure_ascii=False, indent=2))

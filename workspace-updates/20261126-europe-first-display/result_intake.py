@@ -18,6 +18,7 @@ import prepare
 
 UEFA_IDS = {'14': 'uefa.europa', '2019': 'uefa.europa.conf'}
 ESPN_TYPES = {entry[0]: entry[2] for entry in prepare.COMPETITIONS.values()}
+WINDOWS = {'round1': 'today', 'round2': 'next_round'}
 CROSSWALKS = {
     'uecl': '69f76f016296239ef34f5478ca4cae8a29debb650634fa00c9f1688ba309dff8',
     'uel': '73a7f90ef0ab485fd43d3c4eaa5adec761435db75309b64cdae1d098934c0b35',
@@ -55,10 +56,14 @@ def raw_result(root, relative, digest):
     return body
 
 
+def registered_fixtures(window):
+    return {mid: row['fixture'] for group in prepare.register(False).values() for mid, row in group[WINDOWS[window]].items()}
+
+
 def official_bindings(fixtures):
     bindings = {}
     for short, digest in CROSSWALKS.items():
-        code, _, _, _, matchday = prepare.COMPETITIONS[short]
+        code, _, _, _, first_matchday = prepare.COMPETITIONS[short]
         file = prepare.HERE/'calendar'/f'uefa-{short}-crosswalk.json'
         body = file.read_bytes()
         if sha256(body).hexdigest() != digest:
@@ -67,8 +72,9 @@ def official_bindings(fixtures):
             mid = 'espn:' + row['espn_event_id']
             if mid not in fixtures:
                 continue
-            if (mid in bindings or code != fixtures[mid]['cohort']
-                    or aware(row['kickoff_utc']) != aware(fixtures[mid]['kickoff_at'])):
+            kickoff = aware(row['kickoff_utc']).astimezone(timezone.utc)
+            matchday = first_matchday + prepare.SLATES.index(kickoff.date().isoformat())
+            if mid in bindings or code != fixtures[mid]['cohort'] or kickoff != aware(fixtures[mid]['kickoff_at']):
                 raise ValueError('UEFA identity binding differs from the original window')
             bindings[mid] = dict(id=row['uefa_match_id'], home=row['home_uefa_id'], away=row['away_uefa_id'], matchday=matchday)
     if bindings.keys() != fixtures.keys():
@@ -87,10 +93,10 @@ def uefa_score(game, fixture, binding, captured):
             or str(game['matchday']['sequenceNumber']) != str(binding['matchday'])):
         raise ValueError('UEFA match, ordered teams or stage differs')
     status = game['status']
+    if status in ('FINISHED', 'UPCOMING') and aware(game['kickOffTime']['dateTime']) != kickoff:
+        raise ValueError('UEFA result response has a different scheduled kickoff')
     if status != 'FINISHED':
         return status, None
-    if aware(game['kickOffTime']['dateTime']) != kickoff:
-        raise ValueError('UEFA full-time response has a different scheduled kickoff')
     score = game['score']
     regular = score['regular']
     values = tuple(regular[side] for side in ('home', 'away'))
@@ -118,10 +124,11 @@ def espn_score(document, fixture):
             or any('espn:' + str(teams[side]['team']['id']) != fixture[side] for side in teams)):
         raise ValueError('ESPN match, ordered teams or stage differs')
     status = game['status']['type']
+    if (status['name'] in ('STATUS_FULL_TIME', 'STATUS_SCHEDULED')
+            and aware(game['date']) != aware(fixture['kickoff_at'])):
+        raise ValueError('ESPN result response has a different scheduled kickoff')
     if status['name'] != 'STATUS_FULL_TIME' or status['completed'] is not True:
         return status['name'], None
-    if aware(game['date']) != aware(fixture['kickoff_at']):
-        raise ValueError('ESPN full-time response has a different scheduled kickoff')
     scores = [teams[side]['score'] for side in ('home', 'away')]
     values = tuple(int(score['displayValue'] if isinstance(score, dict) else score) for score in scores)
     return status['name'], values
@@ -204,8 +211,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--captures', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--window', choices=WINDOWS, default='round1')
     args = parser.parse_args()
-    plan = prepare.register(False)
-    fixtures = {mid: row['fixture'] for group in plan.values() for mid, row in group['today'].items()}
+    fixtures = registered_fixtures(args.window)
     report = assemble(args.captures, args.out, fixtures, official_bindings(fixtures), datetime.now(timezone.utc))
     print(json.dumps({key: value for key, value in report.items() if key != 'matches'}, ensure_ascii=False))
