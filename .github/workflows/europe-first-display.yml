@@ -48,6 +48,7 @@ jobs:
           python -B "$PACKAGE/prepare.py" verify
           python -B "$PACKAGE/benchmarks.py" verify
           python -B "$PACKAGE/test_review.py"
+          python -B "$PACKAGE/test_result_intake.py"
       - name: Check the public archive against the original display freezes
         run: |
           proof="$PACKAGE/public-archive"
