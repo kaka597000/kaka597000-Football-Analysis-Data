@@ -1,0 +1,46 @@
+name: Verify first European league-phase score displays
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-europe-first-display/**'
+      - '.github/workflows/europe-first-display.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261126-europe-first-display
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261123-prematch-literature
+            workspace-updates/20261125-r13-domestic-form
+            workspace-updates/20261126-europe-first-display
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 71ba85c405c825d3fff10894de6b7dcf2eb3e5e3
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Verify both competition windows and their original score tables
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/prepare.py" verify
