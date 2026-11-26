@@ -1,0 +1,42 @@
+{
+  "schema_sha256": "d7c4b06f143fdd4af7bde43c6a1bfd5b0aa8e20411bcde930653470dab1ca16d",
+  "routes": {
+    "/api/v2/bookmakers/": {
+      "description": "Bookmakers we currently receive football prices from, as {slug, name, last_seen_at}: only books with a price in the last 14 days are listed, so every slug here can return rows on /api/v2/odds/. No detail endpoint, no pagination, no filters. The `consensus` entry is a synthetic average across the rest, not a real bookmaker.",
+      "parameters": []
+    },
+    "/api/v2/odds/": {
+      "description": "Paginated list of latest odds across bookmakers. Each item is one (event, bookmaker, market, outcome) tuple at its most recent observation. Standard v2 wrapper (count + next + previous + results). Cached 3 min.\n\nWhen no event_id/league_id/season_id/team_id or updated_after filter is given, results default to the last 48h of observations (the meaningful \"latest odds\" window). Pass an explicit updated_after to widen it.\n\nMarket+outcome compatibility (incoherent combos return 400):\n- 1x2            → HOME, DRAW, AWAY\n- btts           → yes, no\n- over_under_05/15/25/35 → over, under\n- double_chance  → 1X, 12, X2\n- draw_no_bet    → HOME, AWAY\n- total_corners  → over, under (line in `line` field)\n- corners_1x2    → HOME, DRAW, AWAY (which team has more corners)\n- total_red_cards → over, under (line in `line` field)\n- red_card       → yes, no (a red card is shown in the match)\n- european_handicap → HOME, DRAW, AWAY (whole line in `line`, no push)\n- asian_handicap → HOME, AWAY (line in `line`, settlement in `push`)\n\nFor total_corners/total_red_cards/european_handicap/asian_handicap the line varies per quote and is returned in the `line` field (null for all other markets).\n\nAsian handicap lines are home-relative and may be quarter lines: `line=-0.25` means the home team starts a quarter goal down, and the AWAY leg of that same quote is +0.25. The `push` field carries the settlement rule the price alone cannot express — \"none\" on half lines, \"full\" on whole lines (stake returned), \"half\" on quarter lines (stake split, half returned).\n\nFor event-scoped side-by-side comparison use `/api/v2/events/{id}/odds/comparison/`.",
+      "parameters": [
+        {
+          "in": "query",
+          "name": "bookmaker_slug",
+          "schema": {
+            "type": "string"
+          },
+          "description": "Slug only (e.g. \"pinnacle\"). Display names rejected with 400."
+        },
+        {
+          "in": "query",
+          "name": "event_id",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "updated_after",
+          "schema": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": "ISO-8601 UTC. Only odds with observed_at >= this."
+        }
+      ]
+    },
+    "/api/v2/events/{id}/odds/comparison/": {
+      "description": "All bookmakers side-by-side for a single event. Outcome keys are codes (HOME/DRAW/AWAY/over/under/...), not team names — stable parsing even when teams are renamed. Bookmaker keys are slugs. Cached 3 min. Event with no odds returns {markets: {}}; missing event returns 404.\n\n**Requires Football Unlimited.** Every field in this response is per-bookmaker, so without the entitlement there is nothing to degrade to and the endpoint answers 403 (`bookmakers_not_entitled`) rather than a thinner grid that looks like live data. For the free consensus price use /api/v2/odds/.",
+      "parameters": []
+    }
+  }
+}

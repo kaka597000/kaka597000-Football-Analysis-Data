@@ -1,0 +1,51 @@
+name: Replay real J1 results and R28 ranked fixtures
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-j1-forward-result-review/**'
+      - '.github/workflows/j1-forward-result-review.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261126-j1-forward-result-review
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261125-j1-stage-windows
+            workspace-updates/20261125-forward-settlement
+            workspace-updates/20261126-r26-j1-first-stage
+            workspace-updates/20261126-j1-recent-process
+            workspace-updates/20261126-r28-j1-process-forward
+            workspace-updates/20261126-j1-forward-result-review
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 71ba85c405c825d3fff10894de6b7dcf2eb3e5e3
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Recheck the original results, ranked seats and provider response
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/verify.py" > "$RUNNER_TEMP/j1-results-proof.json"
+          cmp "$PACKAGE/verification.json" "$RUNNER_TEMP/j1-results-proof.json"
