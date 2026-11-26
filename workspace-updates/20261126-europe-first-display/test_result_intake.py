@@ -1,6 +1,6 @@
 """Check the intake against independent real responses and isolated failure cases."""
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -9,7 +9,7 @@ import tarfile
 from tempfile import TemporaryDirectory
 import unittest
 
-from review import results
+from review import KICKOFF_CONFLICT, grade, results, verify_kickoffs
 
 import prepare
 import result_intake as intake
@@ -142,6 +142,63 @@ class ResultIntakeTest(unittest.TestCase):
                 status, score = intake.uefa_score(game, fixture, binding, aware(capture['captured_at']))
                 self.assertEqual(status, 'FINISHED')
                 self.assertEqual(score, tuple(game['score']['regular'][s] for s in ('home','away')))
+
+    def test_in_play_kickoff_survives_pending_and_official_results(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            fixtures, espn, official = history(root)
+            final = espn[0]
+            mid = intake.endpoint(final['url'])[2]
+            fixture = fixtures[mid]
+            document = json.loads((root/final['path']).read_bytes())
+            opening, = (event for event in document['keyEvents']
+                        if event['type']['type'] == 'kickoff' and event['period']['number'] == 1)
+            start = aware(opening['wallclock'])
+            captured = start + timedelta(minutes=2)
+            # An isolated in-play test case keeps the real typed opening event and omits later play.
+            game, = document['header']['competitions']
+            game['status']['type'].update(state='in', name='STATUS_IN_PROGRESS', completed=False)
+            document['keyEvents'] = [opening]
+            for team in game['competitors']:
+                team.pop('score', None)
+                team.pop('linescores', None)
+            body = json.dumps(document).encode()
+            (root/'test-opening.json').write_bytes(body)
+            live = dict(final, path='test-opening.json', sha256=sha256(body).hexdigest(),
+                        captured_at=captured.isoformat())
+            manifest = write_manifest(root/'captures.json', [live])
+            state = root/'live'
+            progress = intake.assemble(manifest, state, fixtures, OLD_BINDINGS, captured)
+            self.assertEqual(progress['candidate_regulation_rows'], 0)
+            self.assertEqual(results(state, fixtures, captured, OLD_BINDINGS), ({}, {}))
+            readback = verify_kickoffs(state, fixtures, {}, captured)
+            self.assertEqual(aware(readback[mid]['actual_kickoff']['actual_kickoff_at']), start)
+            self.assertEqual(verify_kickoffs(state, fixtures, {}, start), {})
+            row = prepare.read(HERE/'publication/scorecard.json')['uel']['rows'][0]
+            progress = grade([dict(row, fixture=fixture, rank=None)], {}, kickoffs=readback)
+            self.assertEqual((progress['verified_actual_kickoffs_awaiting_result'], progress['verified_results']), (1, 0))
+            self.assertIsNone(progress['per_match'][mid]['actual'])
+
+            at = datetime.now(timezone.utc)
+            write_manifest(manifest, [live, official])
+            state = root/'with-official'
+            intake.assemble(manifest, state, fixtures, OLD_BINDINGS, at)
+            settled, issues = results(state, fixtures, at, OLD_BINDINGS)
+            self.assertEqual((settled[mid]['home'], settled[mid]['away']), OLD_RESULTS[mid.removeprefix('espn:')])
+            self.assertEqual(issues, {})
+            self.assertEqual(verify_kickoffs(state, fixtures, settled, at), readback)
+
+            opening['wallclock'] = (start + timedelta(seconds=1)).isoformat()
+            body = json.dumps(document).encode()
+            (root/'test-opening.json').write_bytes(body)
+            write_manifest(manifest, [dict(live, sha256=sha256(body).hexdigest()), final, official])
+            state = root/'clock-conflict'
+            intake.assemble(manifest, state, fixtures, OLD_BINDINGS, at)
+            settled, issues = results(state, fixtures, at, OLD_BINDINGS)
+            self.assertIn(mid, settled)
+            self.assertEqual(issues, {})
+            self.assertEqual(verify_kickoffs(state, fixtures, settled, at)[mid],
+                             dict(actual_kickoff=None, kickoff_issue=KICKOFF_CONFLICT))
 
 
 if __name__ == '__main__':
