@@ -1,0 +1,54 @@
+name: Reproduce the R33 European shot-score replay
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-r33-europe-shot-score/**'
+      - '.github/workflows/r33-europe-shot-score.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261126-r33-europe-shot-score
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261123-prematch-literature
+            workspace-updates/20261123-score-gap-repair
+            workspace-updates/20261125-r10-shot-conversion
+            workspace-updates/20261125-r13-domestic-form
+            workspace-updates/20261126-r33-europe-shot-score
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: f9e26bc5d23eb8ce76bcb798b08c93c5b86eb2ec
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Rebuild the signed grids and reproduce the score metrics
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          cmp "$PACKAGE/protocol.json" source/research/20261126-r33-europe-shot-score/protocol.json
+          python -B -m research_program.europe_shot_score --data . --out "$RUNNER_TEMP/r33-replay"
+          diff -qr "$PACKAGE/replay" "$RUNNER_TEMP/r33-replay"
