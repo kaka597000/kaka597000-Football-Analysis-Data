@@ -10,7 +10,10 @@ import unittest
 
 from research.analysis_freeze import aware
 from research_program.display_window_review import _validate_kickoff_reports
-from review import certify_result, results, review
+from review import certify_result, grade, results, review
+
+import benchmarks
+import prepare
 
 
 HISTORY = '20261106-uel-review/parts/review.tar.gz.part000'
@@ -28,10 +31,37 @@ class FrozenReviewTest(unittest.TestCase):
         for code, phase in status['competitions'].items():
             self.assertEqual((phase['registered'], phase['verified_results'], phase['pending']), (18, 0, 18))
             self.assertEqual(phase['verified_actual_kickoffs'], 0)
+            self.assertNotIn('original_r10_comparison', phase)
             self.assertEqual(phase['matched_market_firsts'], expected_market[code])
             self.assertEqual((phase['selected']['occupied'], phase['selected']['settled']), (3, 0))
             self.assertIsNone(phase['selected']['all_three_first_sweep'])
             self.assertEqual(phase['against_r7']['paired']['score_top1']['eligible'], 0)
+
+    def test_original_r10_prematch_comparison(self):
+        report = review()
+        for short, changed, exposure in (('uecl', 5, 13), ('uel', 4, 18)):
+            current = report['competitions'][short]
+            comparison = current['original_r10_comparison']
+            self.assertEqual(comparison['first_relationships'], dict(same_first=17, r10_first_is_r13_alternate=1))
+            self.assertEqual(comparison['three_members_changed'], changed)
+            self.assertEqual(comparison['r10_shot_exposure'], exposure)
+            self.assertEqual([(r['match_id'], r['primary']) for r in comparison['r10_selected']['seats']],
+                             [(r['match_id'], r['primary']) for r in current['selected']['seats']])
+            self.assertEqual(comparison['r13_against_r10']['paired']['score_top1']['eligible'], 0)
+
+        # A hypothetical 90-minute score exercises the scoring layer in isolation.
+        rounds = prepare.scores(prepare.register(False))
+        proof = benchmarks.locks(rounds, prepare.publication(rounds, False))
+        mid = 'espn:401915518'
+        result = {mid: dict(home=0, away=2, source={}, actual_kickoff=None, kickoff_issue=None)}
+        output = grade(rounds['uel']['rows'], result, proof['uel'])['original_r10_comparison']
+        pair = output['r13_against_r10']['paired']
+        self.assertEqual((pair['score_top1']['eligible'], pair['score_top1']['lost']), (1, 1))
+        self.assertEqual((pair['score_top3']['eligible'], pair['score_top3']['net_hits']), (1, 0))
+        self.assertEqual(output['per_match'][mid]['paths']['r10']['rank'], 1)
+        self.assertEqual(output['per_match'][mid]['paths']['r13']['rank'], 2)
+        self.assertEqual(benchmarks.score_path(['0-1', '1-1', '0-0'], [2, 1]),
+                         dict(rank=None, minimum_goal_distance=1, actual_wdl_in_three=False))
 
     def test_real_europa_full_time_and_unverified_rows(self):
         archive = Path(__file__).resolve().parents[1] / HISTORY
