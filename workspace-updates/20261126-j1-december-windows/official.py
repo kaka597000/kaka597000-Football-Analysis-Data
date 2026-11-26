@@ -12,6 +12,7 @@ from research.analysis_freeze import aware
 
 
 SOURCE_URL = 'https://www.jleague.jp/j1/match/search-list/?startdate=2026-12-04&enddate=2026-12-13&period=custom&sort_desc=true'
+TITLE = '【公式】明治安田Ｊ１リーグ 2026年12月4日〜2026年12月13日の日程・結果 | Ｊリーグ公式サイト'
 JST = ZoneInfo('Asia/Tokyo')
 BJT = ZoneInfo('Asia/Shanghai')
 LINK = re.compile(r'<a[^>]*href="(/match/j1/2026/([0-9]{6})/)"[^>]*>(.*?)</a>', re.DOTALL)
@@ -32,11 +33,15 @@ CLUBS = {
 def official_rows(evidence, fixtures, slates):
     metadata = json.loads((evidence/'jleague-december-capture.json').read_bytes())
     body = gzip.decompress((evidence/'jleague-december-calendar.html.gz').read_bytes())
-    if (metadata['url'] != SOURCE_URL or metadata['status'] != 200 or len(body) != metadata['bytes']
+    return check_schedule(metadata, body, fixtures, slates, expected_url=SOURCE_URL, expected_title=TITLE)
+
+
+def check_schedule(metadata, body, fixtures, slates, *, expected_url, expected_title):
+    if (metadata['url'] != expected_url or metadata['status'] != 200 or len(body) != metadata['bytes']
             or sha256(body).hexdigest() != metadata['sha256']):
         raise ValueError('official J.League calendar differs from its public capture')
     page = body.decode('utf-8')
-    if '<title>【公式】明治安田Ｊ１リーグ 2026年12月4日〜2026年12月13日の日程・結果 | Ｊリーグ公式サイト</title>' not in page:
+    if f'<title>{expected_title}</title>' not in page:
         raise ValueError('J.League search returned a different competition or date range')
     captured = aware(metadata['received_utc'])
     if aware(metadata['started_utc']) > captured or captured >= min(aware(f['kickoff_at']) for f in fixtures):
@@ -64,8 +69,8 @@ def official_rows(evidence, fixtures, slates):
         paired[mid] = dict(url='https://www.jleague.jp'+path, home=home, away=away,
                            kickoff_beijing=when.astimezone(BJT).isoformat())
         official_ids.add(key)
-    if len(official_ids) != 20 or paired.keys() != {f['match_id'] for f in fixtures}:
+    if len(official_ids) != len(fixtures) or paired.keys() != {f['match_id'] for f in fixtures}:
         raise ValueError('the official J.League capture must cover every registered match')
-    return dict(source_url=SOURCE_URL, captured_at=captured.astimezone(BJT).isoformat(), source_sha256=metadata['sha256'],
+    return dict(source_url=expected_url, captured_at=captured.astimezone(BJT).isoformat(), source_sha256=metadata['sha256'],
                 confirmed_per_window={name: sum(mid in paired for mid in ids) for name, ids in slates.items()},
                 fixtures=paired)

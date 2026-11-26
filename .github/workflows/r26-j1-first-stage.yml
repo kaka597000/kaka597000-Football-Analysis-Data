@@ -35,6 +35,7 @@ jobs:
             workspace-updates/20261125-j1-stage-windows
             workspace-updates/20261126-r25-j1-allocation
             workspace-updates/20261126-r26-j1-first-stage
+            workspace-updates/20261126-j1-december-windows
       - uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
@@ -49,6 +50,12 @@ jobs:
         run: |
           (cd "$R26" && sha256sum -c SHA256SUMS)
           python -B "$R26/verify_publication.py"
+      - name: Verify the public first-score archive and independent official calendar
+        run: |
+          proof="$R26/public-archive"
+          (cd "$proof" && sha256sum -c SHA256SUMS)
+          python -B "$proof/verify.py" > "$RUNNER_TEMP/j1-public-archive.json"
+          cmp "$proof/verified.json" "$RUNNER_TEMP/j1-public-archive.json"
       - name: Refit R26 and check the archived history
         shell: bash
         run: |
