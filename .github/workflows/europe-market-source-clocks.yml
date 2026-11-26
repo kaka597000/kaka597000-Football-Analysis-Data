@@ -1,0 +1,46 @@
+name: Verify European market source clock evidence
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-europe-market-source-clocks/**'
+      - '.github/workflows/europe-market-source-clocks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261126-europe-market-source-clocks
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261126-europe-first-display
+            workspace-updates/20261126-europe-market-source-clocks
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 01bf68219b3ff7d9108f1fd710078e43cd5e8ddc
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Verify the captured provider payloads and replay the 36 fixtures
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/audit.py" > "$RUNNER_TEMP/europe-market-audit.json"
+          cmp "$PACKAGE/audit.json" "$RUNNER_TEMP/europe-market-audit.json"
