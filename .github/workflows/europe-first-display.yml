@@ -58,6 +58,8 @@ jobs:
           cmp "$PACKAGE/prematch/venue-opening/verified.json" "$RUNNER_TEMP/europe-venues.json"
           python -B "$PACKAGE/score_paths.py" > "$RUNNER_TEMP/europe-score-paths.json"
           cmp "$PACKAGE/score-paths/round1.json" "$RUNNER_TEMP/europe-score-paths.json"
+          python -B "$PACKAGE/market_sensitivity.py" > "$RUNNER_TEMP/europe-market-sensitivity.json"
+          cmp "$PACKAGE/market-sensitivity/verified.json" "$RUNNER_TEMP/europe-market-sensitivity.json"
       - name: Check the public archive against the original display freezes
         run: |
           proof="$PACKAGE/public-archive"
