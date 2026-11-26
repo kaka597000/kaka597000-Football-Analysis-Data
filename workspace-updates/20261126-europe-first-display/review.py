@@ -4,11 +4,13 @@ import argparse
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 import gzip
+from hashlib import sha256
 import json
 from pathlib import Path
 
 import prepare
 from research.analysis_freeze import aware
+from research_program.display_window_review import summary_kickoff
 from research_program.nov25_first_review import seats
 from research_program.paired_kpi_inference import _decisions, compare
 from research_program.three_arm_review import _certify
@@ -31,7 +33,10 @@ def certify_result(row, fixture, state, at):
     if not file.is_relative_to(state):
         raise ValueError('result evidence outside retained state')
     raw = file.read_bytes()
-    document = json.loads(gzip.decompress(raw) if file.suffix == '.gz' else raw)
+    body = gzip.decompress(raw) if file.suffix == '.gz' else raw
+    if sha256(body).hexdigest() != reference['sha256']:
+        raise ValueError('result raw source checksum mismatch')
+    document = json.loads(body)
     header = document['header']
     game, = header['competitions']
     metadata = header['season']
@@ -45,7 +50,17 @@ def certify_result(row, fixture, state, at):
                                            != row[team['homeAway'] + '_goals']))):
             raise ValueError('extra periods or regulation half scores conflict')
     aligned = dict(row, cohort=code, stage=fixture['stage'])
-    return _certify(aligned, fixture, state, at)
+    result = _certify(aligned, fixture, state, at)
+    kickoff_fixture = dict(fixture, competition=code)
+    try:
+        start = summary_kickoff(raw, reference['source_url'], kickoff_fixture, aware(reference['captured_at']))
+    except (AttributeError, KeyError, TypeError, ValueError) as error:
+        return dict(result, actual_kickoff=None, kickoff_issue=str(error))
+    evidence = dict(match_id=fixture['match_id'], competition=code, home=fixture['home'], away=fixture['away'],
+                    identity_verified=True, actual_kickoff_at=start.astimezone(prepare.BEIJING).isoformat(),
+                    observed_at=reference['captured_at'], raw_file=reference['path'],
+                    source_sha256=sha256(raw).hexdigest(), source_url=reference['source_url'])
+    return dict(result, actual_kickoff=evidence, kickoff_issue=None)
 
 
 def results(state, fixtures, at):
@@ -69,8 +84,15 @@ def results(state, fixtures, at):
     for mid, versions in pending.items():
         if len({(r['home'], r['away']) for r in versions}) != 1:
             issues[mid].append('conflicting verified regulation scores')
-        else:
-            accepted[mid] = min(versions, key=lambda r: (aware(r['source']['captured_at']), r['source']['sha256']))
+            continue
+        ordered = sorted(versions, key=lambda r: (aware(r['source']['captured_at']), r['source']['sha256']))
+        first = ordered[0]
+        starts = [r['actual_kickoff'] for r in ordered if r['actual_kickoff'] is not None]
+        if len({r['actual_kickoff_at'] for r in starts}) > 1:
+            first = dict(first, actual_kickoff=None, kickoff_issue='conflicting verified actual kickoffs')
+        elif starts:
+            first = dict(first, actual_kickoff=starts[0], kickoff_issue=None)
+        accepted[mid] = first
     return accepted, dict(issues)
 
 
@@ -100,8 +122,11 @@ def grade(group, observed):
         rank = original['top3'].index(exact) + 1 if metrics['score_top3'] else None
         outcomes[mid] = dict(actual=actual, original_first=record['first'], original_forecast=original,
                              hit=metrics, hit_rank=rank, research_line_settlement=settlement,
-                             result_source=verified['source'] if verified else None)
+                             result_source=verified['source'] if verified else None,
+                             actual_kickoff=verified['actual_kickoff'] if verified else None,
+                             kickoff_issue=verified['kickoff_issue'] if verified else None)
     return dict(registered=len(group), verified_results=len(actuals), pending=len(group) - len(actuals),
+                verified_actual_kickoffs=sum(row['actual_kickoff'] is not None for row in outcomes.values()),
                 first_choices=dict(sorted(Counter(pick['primary'] for pick in picks.values()).items())),
                 first_different_from_r7=sum(r['forecast']['r13']['primary'] != r['forecast']['r7']['primary']
                                             for r in rows),
