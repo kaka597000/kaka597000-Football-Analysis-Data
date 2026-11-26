@@ -46,3 +46,9 @@ jobs:
           (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
           python -B "$PACKAGE/prepare.py" verify
           python -B "$PACKAGE/test_review.py"
+      - name: Check the public archive against the original display freezes
+        run: |
+          proof="$PACKAGE/public-archive"
+          (cd "$proof" && sha256sum -c SHA256SUMS)
+          python -B "$proof/verify.py" > "$RUNNER_TEMP/europe-public-archive.json"
+          cmp "$proof/verified.json" "$RUNNER_TEMP/europe-public-archive.json"
