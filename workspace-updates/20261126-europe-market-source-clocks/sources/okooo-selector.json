@@ -1,0 +1,94 @@
+{
+  "scope": "Okooo public UECL fixture row only: Kairat Almaty vs Mjallby, match ID 1347647",
+  "source_page": {
+    "url": "https://www.okooo.com/soccer/league/2598/",
+    "http_status": 200,
+    "observed_at_utc": "2026-11-26T07:38:10.574312+00:00",
+    "raw_html": "/workspace/europe-20261126-intake/okooo-connectivity/uecl-league-response.html",
+    "response_metadata": "/workspace/europe-20261126-intake/okooo-connectivity/uecl-league-result.json",
+    "sha256": "c3d9bfc2058fee69028e0949ddf627a048de5938b5c9451b4f5b735af58ea4ee"
+  },
+  "fixture": {
+    "round": 4,
+    "home": "阿拉木图凯拉特",
+    "away": "米亚尔比",
+    "displayed_kickoff": "11-26 23:30",
+    "timezone_interpretation": "BJT / Asia Shanghai; agrees with UEFA and ESPN UTC 2026-11-26 15:30Z"
+  },
+  "visible_selector_options": [
+    {
+      "value": "24_1",
+      "label": "99家平均初赔",
+      "market": "1X2 opening odds average"
+    },
+    {
+      "value": "84_1",
+      "label": "澳彩初赔",
+      "market": "named-book 1X2 opening odds"
+    },
+    {
+      "value": "27_1",
+      "label": "bet365初赔",
+      "market": "named-book 1X2 opening odds"
+    },
+    {
+      "value": "14_1",
+      "label": "威廉希尔初赔",
+      "market": "named-book 1X2 opening odds"
+    },
+    {
+      "value": "82_1",
+      "label": "立博初赔",
+      "market": "named-book 1X2 opening odds"
+    },
+    {
+      "value": "43_1",
+      "label": "Interwetten初赔",
+      "market": "named-book 1X2 opening odds"
+    },
+    {
+      "value": "27_2",
+      "label": "bet365初盘",
+      "market": "named-book Asian handicap opening line"
+    },
+    {
+      "value": "84_2",
+      "label": "澳彩初盘",
+      "market": "named-book Asian handicap opening line"
+    },
+    {
+      "value": "65_2",
+      "label": "伟德初盘",
+      "market": "named-book Asian handicap opening line"
+    }
+  ],
+  "frozen_default_row": {
+    "selector": "99家平均初赔",
+    "home_1x2_decimal": 2.32,
+    "draw_1x2_decimal": 3.38,
+    "away_1x2_decimal": 2.84,
+    "interpretation": "Average opening 1X2 odds; not a current bookmaker quote"
+  },
+  "market_availability": {
+    "named_book_1x2_value_for_this_match": "Not present in frozen HTML; selector requires a market-data request",
+    "named_book_asian_handicap_value_for_this_match": "Not present in frozen HTML",
+    "over_under_or_total_goals_selector": "Not visible",
+    "over_and_under_prices": "Not visible",
+    "bookmaker_own_updated_at": "No such field in page HTML or fetched selector script"
+  },
+  "public_selector_implementation": {
+    "script_url": "https://imgv1.okoooimg.cn/min/?b=JS&f=matchcenter/qytj.js,BuyJsP3.js,FunctionsMain.js&_v=202611241009",
+    "http_status": 200,
+    "observed_at_utc": "2026-11-26T08:10:16.283293+00:00",
+    "sha256": "1cc9840f6ae4a2f7aa562cceafdabe3dc84b6dccce56aaa219a39ecd238a76c3",
+    "saved_script": "/workspace/europe-20261126-intake/strict-market-probe/okooo/public-selector-js.js",
+    "visible_behavior": "Selector sends providerId and bettingTypeId to POST /ajax/?method=data.match.odds; response rendering fills only three numeric cells and shows no update timestamp."
+  },
+  "access_and_scope": {
+    "ordinary_gets_during_this_probe": 1,
+    "market_endpoint_called": false,
+    "reason": "Public selector data endpoint is POST; this probe was limited to ordinary GET. No POST or workaround attempted.",
+    "blocked_match_detail": "The single-match page already returned 405 in the prior connectivity probe; it was not retried.",
+    "lottery_selector": "The竞彩 option was not queried."
+  }
+}
