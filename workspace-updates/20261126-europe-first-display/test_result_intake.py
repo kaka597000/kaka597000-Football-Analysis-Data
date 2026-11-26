@@ -10,6 +10,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from review import KICKOFF_CONFLICT, grade, results, verify_kickoffs
+from capture_plan import plan
 
 import prepare
 import result_intake as intake
@@ -55,6 +56,55 @@ def history(root):
 
 
 class ResultIntakeTest(unittest.TestCase):
+    def test_first_round_status_matches_the_frozen_capture_plan(self):
+        folder = HERE/'capture-plan'
+        current = plan('round1')
+        later = plan('round2')
+        self.assertEqual(current, prepare.read(folder/'round1.json'))
+        self.assertEqual(later, prepare.read(folder/'round2.json'))
+        self.assertEqual([len(wave['fixtures']) for wave in current['waves']], [1, 17, 18])
+        self.assertTrue(all(group['score_display_freeze'] is not None for group in current['competitions'].values()))
+        self.assertTrue(all(group['score_display_freeze'] is None for group in later['competitions'].values()))
+        fixture_ids = {row['match_id'] for wave in current['waves'] for row in wave['fixtures']}
+        manifest = folder/'preflight/captures.json'
+        sources = prepare.read(manifest)
+        self.assertEqual({item['url'] for item in sources}, {item['url'] for item in current['official_result_sources']})
+        at = max(aware(item['captured_at']) for item in sources)
+        fixtures = intake.registered_fixtures('round1')
+        self.assertEqual(fixture_ids, fixtures.keys())
+        self.assertLess(at, min(aware(row['kickoff_at']) for row in fixtures.values()))
+        with TemporaryDirectory() as tmp:
+            state = Path(tmp)/'preflight'
+            report = intake.assemble(manifest, state, fixtures, intake.official_bindings(fixtures), at)
+            self.assertEqual(report['captures_with_errors'], [])
+            self.assertEqual(report['candidate_regulation_rows'], 0)
+            self.assertEqual(report['matches'].keys(), fixture_ids)
+            self.assertTrue(all([item['status'] for item in rows] == ['UPCOMING'] for rows in report['matches'].values()))
+            self.assertEqual(results(state, fixtures, at), ({}, {}))
+            self.assertEqual(verify_kickoffs(state, fixtures, {}, at), {})
+
+    def test_separate_wave_manifests_keep_their_own_paths_and_share_identical_captures(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            fixtures, espn, official = history(root)
+            paths = []
+            for folder, entries in (('first-wave', [official]), ('finals', espn)):
+                directory = root/folder
+                directory.mkdir()
+                for entry in entries:
+                    shutil.copyfile(root/entry['path'], directory/entry['path'])
+                paths.append(write_manifest(directory/'captures.json', entries))
+            at = datetime.now(timezone.utc)
+            state = root/'all-waves'
+            report = intake.assemble([*paths, paths[0]], state, fixtures, OLD_BINDINGS, at)
+            self.assertEqual(report['captures_with_errors'], [])
+            self.assertEqual(report['candidate_regulation_rows'], 6)
+            self.assertTrue(all(len(rows) == 2 for rows in report['matches'].values()))
+            settled, issues = results(state, fixtures, at, OLD_BINDINGS)
+            self.assertEqual(issues, {})
+            self.assertEqual(settled.keys(), fixtures.keys())
+            self.assertTrue(all(row['confirmed_result_sources'].keys() == {'espn', 'uefa'} for row in settled.values()))
+
     def test_real_calendars_preserve_each_registered_round(self):
         rosters = {window: intake.registered_fixtures(window) for window in ('round1', 'round2')}
         self.assertFalse(rosters['round1'].keys() & rosters['round2'].keys())

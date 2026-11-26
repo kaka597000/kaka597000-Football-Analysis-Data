@@ -45,6 +45,10 @@ PYTHONPATH=/path/to/Football-Analysis/runtime \
 
 ## 原始赛果接入与双来源核对
 
+北京时间 11 月 26 日 20:20 的欧足联原件显示首轮 36 场全部待赛，和原登记的主客、赛轮及时间逐场相符。北京时间三个计划开球时段依次为 11 月 26 日 23:30 的 1 场、11 月 27 日 01:45 的 17 场及 04:00 的 18 场。各场采集清单含 ESPN 摘要、欧足联比赛号、原首版回执和精选席位。欧足联按赛事与原 UTC 日期各一条结果入口。第二窗口也有对应赛历清单。[首轮采集顺序](capture-plan/round1.json) · [第二窗口采集顺序](capture-plan/round2.json) · [最新官方赛历原件](capture-plan/preflight/captures.json)
+
+各时段可分别保留自己的原件和清单。接入时重复传入 `--captures`，程序以每份清单所在目录读取相应原件，并按来源、采集时刻和响应哈希去除重复采集。赛中摘要可先验证实际开球，完赛后补入具备完整常规时间证据的原件。每次用新的状态目录生成完整快照。
+
 已留存的 ESPN 比赛摘要及欧足联官方赛果可统一接入。清单采用一个 JSON 数组，各项包含 `path`、`url`、`captured_at`、`sha256` 和 `http_status`。`path` 相对清单所在目录，`sha256` 为原响应的 SHA-256，压缩留档使用解压后的原响应哈希。默认 `--window round1` 读取今晚的原登记，两项赛事各 18 场。`--window round2` 读取 12 月 10–11 日登记的另外 36 场，各自使用原赛轮和开球。待赛来源遇到开球时间差异会逐场留痕。`intake.json` 保留来源状态和缺项，`normalized-results.jsonl` 提供待复盘认证的常规时间记录。下方 `review.py` 用于已有比分展示的第一窗口。[欧足联测试来源](result-intake-preflight/captures.json)
 
 ```bash
