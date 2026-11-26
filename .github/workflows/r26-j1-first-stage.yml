@@ -1,0 +1,62 @@
+name: Verify R26 and the J1 first-display evidence
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-r26-j1-first-stage/**'
+      - '.github/workflows/r26-j1-first-stage.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      R26: workspace-updates/20261126-r26-j1-first-stage
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261123-prematch-literature
+            workspace-updates/20261125-j1-stage-windows
+            workspace-updates/20261126-r25-j1-allocation
+            workspace-updates/20261126-r26-j1-first-stage
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ac154f467f63d08390422a8ba91d1daaea26efa3
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Verify the original ten first scores, selected seats, and next schedule
+        run: |
+          (cd "$R26" && sha256sum -c SHA256SUMS)
+          python -B "$R26/verify_publication.py"
+      - name: Refit R26 and check the archived history
+        shell: bash
+        run: |
+          replay="$RUNNER_TEMP/r26-j1-replay"
+          python -B -m research_program.j1_total_calibration --data . --out "$replay"
+          for file in fit.json metrics.json; do
+            cmp "$R26/replay/$file" "$replay/$file"
+          done
+          for file in forecasts.jsonl.gz validation.jsonl.gz; do
+            cmp <(gzip -dc "$R26/replay/$file") <(gzip -dc "$replay/$file")
+          done

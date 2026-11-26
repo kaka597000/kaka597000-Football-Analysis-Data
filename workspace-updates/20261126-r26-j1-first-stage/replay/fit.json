@@ -1,0 +1,52 @@
+{
+  "version": "R26-J1-total-goals-calibration-1",
+  "competition": "jpn.1",
+  "stage": "regular",
+  "label": "EXPERIMENTAL / OOD",
+  "protocol_sha256": "94ec4acde6aaaa8e4587c224b061d62553d831e704226d7fd8c0e6cc5eaed647",
+  "windows": {
+    "train": {
+      "before": "2025-01-01",
+      "fixtures": 2291
+    },
+    "validation": {
+      "from": "2025-01-01",
+      "before": "2025-07-01",
+      "fixtures": 218
+    },
+    "late_2025": {
+      "from": "2025-07-01",
+      "before": "2026-01-01",
+      "fixtures": 162
+    },
+    "early_2026_27": {
+      "from": "2026-01-01",
+      "before": "2026-11-22",
+      "fixtures": 150
+    }
+  },
+  "beta": [
+    0.010803765060865295,
+    -0.15316222433331428,
+    -0.25
+  ],
+  "validation_trials": {
+    "0.0": {
+      "first": 23,
+      "three": 71,
+      "log_loss": 2.712758886960732
+    },
+    "0.5": {
+      "first": 23,
+      "three": 70,
+      "log_loss": 2.7135572497417106
+    },
+    "1.0": {
+      "first": 22,
+      "three": 71,
+      "log_loss": 2.7155493666825317
+    }
+  },
+  "selected_dose": 0.0,
+  "prospective_screen_passed": false
+}
