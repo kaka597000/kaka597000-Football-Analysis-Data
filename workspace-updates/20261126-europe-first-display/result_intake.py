@@ -82,12 +82,12 @@ def official_bindings(fixtures):
     return bindings
 
 
-def uefa_score(game, fixture, binding, captured):
+def uefa_score(game, fixture, binding, captured, *, season_year='2027'):
     meta = game['competition']
     code = UEFA_IDS.get(str(meta['id']))
     kickoff = aware(fixture['kickoff_at'])
     if (code != fixture['cohort'] or meta['age'] != 'ADULT' or meta['sex'] != 'MALE'
-            or str(game['seasonYear']) != '2027' or game['round']['metaData']['name'] != 'League Phase'
+            or str(game['seasonYear']) != season_year or game['round']['metaData']['name'] != 'League Phase'
             or str(game['id']) != binding['id'] or str(game['homeTeam']['id']) != binding['home']
             or str(game['awayTeam']['id']) != binding['away']
             or str(game['matchday']['sequenceNumber']) != str(binding['matchday'])):

@@ -1,0 +1,48 @@
+name: Reproduce Conference League selected-three agreement
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-uecl-selected-agreement/**'
+      - '.github/workflows/uecl-selected-agreement.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261126-uecl-selected-agreement
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261125-r13-domestic-form
+            workspace-updates/20261126-europe-first-display
+            workspace-updates/20261126-europe-selected-history
+            workspace-updates/20261126-r35-europe-close-score-agreement
+            workspace-updates/20261126-uecl-selected-agreement
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 2d7754822cc36e0387c61a140a4309be7d6e8ead
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Bind nine official rounds and replay both selection policies
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/audit.py" > "$RUNNER_TEMP/uecl-selected-agreement.json"
+          cmp "$PACKAGE/comparison.json" "$RUNNER_TEMP/uecl-selected-agreement.json"
