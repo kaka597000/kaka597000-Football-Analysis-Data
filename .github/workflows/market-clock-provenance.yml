@@ -24,6 +24,8 @@ jobs:
             workspace-updates/20261115-remaining-nations-brazil
             workspace-updates/20261123-kpi-optimization
             workspace-updates/20261126-market-clock-provenance
+            workspace-updates/20261126-europe-first-display
+            workspace-updates/20261126-r26-j1-first-stage
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12.14'
@@ -32,3 +34,5 @@ jobs:
           (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
           python -B "$PACKAGE/audit_history.py" > "$RUNNER_TEMP/market-clock-history.json"
           cmp "$PACKAGE/history.json" "$RUNNER_TEMP/market-clock-history.json"
+          python -B "$PACKAGE/audit_recent_sources.py" > "$RUNNER_TEMP/recent-market-sources.json"
+          cmp "$PACKAGE/recent-source-results.json" "$RUNNER_TEMP/recent-market-sources.json"

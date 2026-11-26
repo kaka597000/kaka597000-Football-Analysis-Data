@@ -13,4 +13,12 @@ Oddschecker 每个胜平负报价对象带 UTC `betFeedTimestamp`，逐选项的
 
 北京时间 18:39，OddsPortal 的欧联入口及同一场贝西克塔斯比赛的公开链接均返回 HTTP 200。原文可核开球时刻与格鲁吉亚巴统场地，本次响应的具名盘口、大小球两侧和报价时间仍缺。保留两份响应的采集时刻与哈希。[OddsPortal 原响应核验](oddsportal-besiktas-followup.json)
 
+北京时间 20:29，SportyTrader 的公开赛事页实际显示贝西克塔斯对贝尔谢巴工人的全场胜平负和多条总球线。同机构两类市场在大小 2.5 有 8 家，在原首版引用的大小 3.5 有 11 家。以 Bet365 的 3.5 为例，大小两侧为 2.00 和 1.80，对应胜平负为 1.25、6.50、9.50。页面以比赛日期、赛事和双方名称连接官方赛程，准确开球和机构报价时钟在该页缺失。保存原始 HTML 响应的完整哈希和两条具名市场的结构化摘录。[公开页原文](https://www.sportytrader.com/en/odds/besiktas-jk-hapoel-beer-sheva-8787007/) · [市场字段与时钟核查](sources/sportytrader-besiktas.json)
+
+北京时间 20:31，5Dollar 以既有 Community 权限取得鹿岛鹿角对冈山绿雉的单场 Bet365 报价。5Dollar 比赛编号 1866646530 与原日职联首版的主客和 11 月 28 日 14:00 开球对齐。胜平负开盘 `opened_at` 为前一天 21:19，收到响应时已约 23 小时 12 分钟。`closing` 的胜平负报价以及大小 2.5 的开盘和 `closing` 都缺报价时钟。此前存档的七个联赛每项一场也有同机构完整胜平负和大小球，七场所核对的市场对象均无明确报价时钟。[当前接口记录](sources/fivedollar/recent/03-odds-metadata.json) · [原日职联首版](../20261126-r26-j1-first-stage/README.md) · [早期和近期接口复算](recent-source-results.json)
+
+两次当前报价观察均晚于对应原首版截止。正式盘线时间覆盖以原冻结及可核验机构时钟结算。[欧联首版](../20261126-europe-first-display/README.md)
+
 在本目录运行 `python -B audit_history.py` 即可复算历史逐场来源与时间，固定输入为数据仓内的两份原始打包文件。公开网站的原响应留在本次采集目录。`python -B audit_public.py --probe-root /workspace/europe-20261126-intake/strict-market-probe` 可从本次取回的响应重建 `public-probes.json`。两份输出各经两次本地复跑逐字节比对。[校验清单](SHA256SUMS)
+
+`python -B audit_recent_sources.py` 读取归档的原接口响应和核实过的公开表格，复算两类市场的同机构覆盖以及可用时间字段。5Dollar 当前响应采用采集端已脱敏的 JSON，分别保留采集时刻和脱敏文件哈希。[近期复算结果](recent-source-results.json)
