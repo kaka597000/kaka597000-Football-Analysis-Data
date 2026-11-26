@@ -15,4 +15,6 @@
 
 欧足联、ESPN 和 OddsPortal 均显示本场在格鲁吉亚巴统举行。原 R5 场地字段为空。绑定原 R5 报价和原 R13 参数，分别按原输入及中立场重建。两次首选均为 2–0，三选均为 2–0、3–0、2–1。首选概率由 11.39% 到 11.36%。正式复盘用原实际展示及核实后的 90 分钟赛果。[原始场地依据与敏感性](besiktas-venue-check.json) · [OddsPortal 观测](../20261126-market-clock-provenance/oddsportal-besiktas-followup.json)
 
+下一窗北京时间 12 月 11 日 01:45，欧足联和 ESPN 都将贝尔谢巴工人对尤文图斯列在罗马尼亚布加勒斯特的 Giulesti 球场，双方分别属于以色列、意大利足协。下一次赛前签发按最新场地核对。[原欧联赛事身份和赛历](../20261126-europe-first-display/calendar/uefa-uel-crosswalk.json)
+
 两次本地复算四份工件逐字节一致。378 场的主客、赛程、常规时间比分、原盘口与 R13、R7、市场选择逐场核对。[固定源码](https://github.com/kaka597000/Football-Analysis/commit/04ecf2adeba3172165d41a0f2caf30f160f07740) · [校验清单](SHA256SUMS)
