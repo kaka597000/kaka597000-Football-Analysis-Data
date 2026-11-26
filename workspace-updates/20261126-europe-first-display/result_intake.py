@@ -158,18 +158,31 @@ def certify_official(row, fixture, binding, root, at):
                 actual_kickoff=None, kickoff_issue='UEFA_RESULT_HAS_NO_TYPED_ACTUAL_KICKOFF')
 
 
+def capture_entries(manifests):
+    if isinstance(manifests, Path):
+        manifests = (manifests,)
+    for manifest in manifests:
+        for capture in prepare.read(manifest):
+            yield manifest.parent, capture
+
+
 def assemble(manifest, out, fixtures, bindings, at):
     observations = {mid: [] for mid in fixtures}
     capture_errors, labels, raw = [], [], {}
     routes = {value['id']: mid for mid, value in bindings.items()}
-    for index, capture in enumerate(prepare.read(manifest), 1):
+    seen = set()
+    for index, (directory, capture) in enumerate(capture_entries(manifest), 1):
         try:
             source = capture['url']
             provider, code, mid = endpoint(source)
             observed = aware(capture['captured_at'])
             if capture['http_status'] != 200 or observed > at:
                 raise ValueError('unavailable or late capture')
-            body = raw_result(manifest.parent, capture['path'], capture['sha256'])
+            body = raw_result(directory, capture['path'], capture['sha256'])
+            sample = (source, observed, capture['sha256'])
+            if sample in seen:
+                continue
+            seen.add(sample)
             data = json.loads(body)
             if provider == 'espn':
                 if mid not in fixtures or fixtures[mid]['cohort'] != code:
@@ -209,7 +222,8 @@ def assemble(manifest, out, fixtures, bindings, at):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--captures', type=Path, required=True)
+    parser.add_argument('--captures', type=Path, action='append', required=True,
+                        help='Retained capture manifest. Repeat for separately collected waves.')
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--window', choices=WINDOWS, default='round1')
     args = parser.parse_args()
