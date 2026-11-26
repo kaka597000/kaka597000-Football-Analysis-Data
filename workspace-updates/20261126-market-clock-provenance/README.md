@@ -11,4 +11,6 @@ Oddschecker 每个胜平负报价对象带 UTC `betFeedTimestamp`，逐选项的
 
 北京时间 17:55 沿网站索引的公开链接复查贝西克塔斯对贝尔谢巴工人，赛事页返回 HTTP 200。原响应的 William Hill 与 bet365 均有三项胜平负及各自的时间字段。两个大小球目录的价格行均为 0，字段对应的机构报价时间仍待核。这次观察在欧联原首版冻结之后，原截止的严格盘口仍待核。[赛事身份、原响应哈希和逐项报价](oddschecker-besiktas-followup.json)
 
+北京时间 18:39，OddsPortal 的欧联入口及同一场贝西克塔斯比赛的公开链接均返回 HTTP 200。原文可核开球时刻与格鲁吉亚巴统场地，本次响应的具名盘口、大小球两侧和报价时间仍缺。保留两份响应的采集时刻与哈希。[OddsPortal 原响应核验](oddsportal-besiktas-followup.json)
+
 在本目录运行 `python -B audit_history.py` 即可复算历史逐场来源与时间，固定输入为数据仓内的两份原始打包文件。公开网站的原响应留在本次采集目录。`python -B audit_public.py --probe-root /workspace/europe-20261126-intake/strict-market-probe` 可从本次取回的响应重建 `public-probes.json`。两份输出各经两次本地复跑逐字节比对。[校验清单](SHA256SUMS)
