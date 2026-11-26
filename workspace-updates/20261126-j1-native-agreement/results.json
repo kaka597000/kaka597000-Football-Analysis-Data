@@ -1,0 +1,1137 @@
+{
+  "as_of": "2026-11-26T06:50:52.778615+00:00",
+  "population": 18,
+  "settled": 18,
+  "metrics": {
+    "current": {
+      "first_hits": 2,
+      "first_eligible": 13,
+      "three_hits": 6,
+      "three_eligible": 13
+    },
+    "comprehensive": {
+      "first_hits": 2,
+      "first_eligible": 16,
+      "three_hits": 4,
+      "three_eligible": 7
+    },
+    "test": {
+      "first_hits": 1,
+      "first_eligible": 13,
+      "three_hits": 5,
+      "three_eligible": 13
+    }
+  },
+  "agreement": {
+    "counts": {
+      "both_models_agree": 11,
+      "author_abstained": 1,
+      "author_retained": 5,
+      "author_changed": 5,
+      "pending": 0,
+      "gained": 1,
+      "lost": 1,
+      "both_missed": 3
+    },
+    "net_hits": 0,
+    "changes": [
+      {
+        "match_id": "espn:401877549",
+        "model_first": "1-1",
+        "authored_first": "0-2",
+        "actual": "0-3",
+        "verdict": "both_missed"
+      },
+      {
+        "match_id": "espn:401877551",
+        "model_first": "1-1",
+        "authored_first": "2-1",
+        "actual": "1-0",
+        "verdict": "both_missed"
+      },
+      {
+        "match_id": "espn:401877530",
+        "model_first": "1-0",
+        "authored_first": "1-1",
+        "actual": "1-0",
+        "verdict": "lost"
+      },
+      {
+        "match_id": "espn:401877545",
+        "model_first": "1-1",
+        "authored_first": "1-2",
+        "actual": "1-2",
+        "verdict": "gained"
+      },
+      {
+        "match_id": "espn:401877547",
+        "model_first": "1-1",
+        "authored_first": "2-1",
+        "actual": "2-2",
+        "verdict": "both_missed"
+      }
+    ]
+  },
+  "paired": {
+    "current": {
+      "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+      "evidence": {
+        "mode": "REPLAY_COMPARISON",
+        "matchday_basis": "supplied date",
+        "prospective_certified": false
+      },
+      "population": 18,
+      "settled_population": 18,
+      "pending": 0,
+      "common_total_pushes": 0,
+      "cohorts": {
+        "jpn.1": 18
+      },
+      "tracks": {
+        "current": {
+          "metrics": {
+            "score_top1": {
+              "hits": 2,
+              "eligible": 13,
+              "eligible_rate": 0.15384615384615385,
+              "issued": 13,
+              "registered_coverage": 0.7222222222222222,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.1111111111111111,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 6,
+              "eligible": 13,
+              "eligible_rate": 0.46153846153846156,
+              "issued": 13,
+              "registered_coverage": 0.7222222222222222,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.3333333333333333,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 0,
+              "eligible": 0,
+              "eligible_rate": null,
+              "issued": 0,
+              "registered_coverage": 0.0,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.0,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 0,
+              "eligible": 0,
+              "eligible_rate": null,
+              "issued": 0,
+              "registered_coverage": 0.0,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.0,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 0,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 0
+          }
+        },
+        "comprehensive": {
+          "metrics": {
+            "score_top1": {
+              "hits": 2,
+              "eligible": 16,
+              "eligible_rate": 0.125,
+              "issued": 16,
+              "registered_coverage": 0.8888888888888888,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.1111111111111111,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 4,
+              "eligible": 7,
+              "eligible_rate": 0.5714285714285714,
+              "issued": 7,
+              "registered_coverage": 0.3888888888888889,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.2222222222222222,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 0,
+              "eligible": 0,
+              "eligible_rate": null,
+              "issued": 0,
+              "registered_coverage": 0.0,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.0,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 0,
+              "eligible": 0,
+              "eligible_rate": null,
+              "issued": 0,
+              "registered_coverage": 0.0,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.0,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 0,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 0
+          }
+        }
+      },
+      "comparison": {
+        "baseline": "current",
+        "candidate": "comprehensive"
+      },
+      "paired": {
+        "score_top1": {
+          "eligible": 11,
+          "resolved_gate_denominator": 18,
+          "coverage": 0.6111111111111112,
+          "gained": 1,
+          "lost": 1,
+          "tied": 9,
+          "net_hits": 0,
+          "net_rate": 0.0,
+          "matchday_clusters": 3,
+          "date_cluster_ci": [
+            0.0,
+            0.0
+          ],
+          "fixed_population_net_hits": 0,
+          "fixed_population_net_rate": 0.0,
+          "fixed_population_date_cluster_ci": [
+            -0.16666666666666666,
+            0.1875
+          ]
+        },
+        "score_top3": {
+          "eligible": 7,
+          "resolved_gate_denominator": 18,
+          "coverage": 0.3888888888888889,
+          "gained": 1,
+          "lost": 0,
+          "tied": 6,
+          "net_hits": 1,
+          "net_rate": 0.14285714285714285,
+          "matchday_clusters": 1,
+          "date_cluster_ci": null,
+          "fixed_population_net_hits": -2,
+          "fixed_population_net_rate": -0.1111111111111111,
+          "fixed_population_date_cluster_ci": [
+            -0.4375,
+            0.09523809523809523
+          ]
+        },
+        "wdl": {
+          "eligible": 0,
+          "resolved_gate_denominator": 18,
+          "coverage": 0.0,
+          "gained": 0,
+          "lost": 0,
+          "tied": 0,
+          "net_hits": 0,
+          "net_rate": null,
+          "matchday_clusters": 0,
+          "date_cluster_ci": null,
+          "fixed_population_net_hits": 0,
+          "fixed_population_net_rate": 0.0,
+          "fixed_population_date_cluster_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "actual_ou": {
+          "eligible": 0,
+          "resolved_gate_denominator": 18,
+          "coverage": 0.0,
+          "gained": 0,
+          "lost": 0,
+          "tied": 0,
+          "net_hits": 0,
+          "net_rate": null,
+          "matchday_clusters": 0,
+          "date_cluster_ci": null,
+          "fixed_population_net_hits": 0,
+          "fixed_population_net_rate": 0.0,
+          "fixed_population_date_cluster_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "bootstrap": {
+        "unit": "whole match date",
+        "confidence": 0.95,
+        "repetitions": 5000,
+        "seed": 20261123,
+        "per_metric_percentile_intervals": true
+      }
+    },
+    "test": {
+      "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+      "evidence": {
+        "mode": "REPLAY_COMPARISON",
+        "matchday_basis": "supplied date",
+        "prospective_certified": false
+      },
+      "population": 18,
+      "settled_population": 18,
+      "pending": 0,
+      "common_total_pushes": 0,
+      "cohorts": {
+        "jpn.1": 18
+      },
+      "tracks": {
+        "test": {
+          "metrics": {
+            "score_top1": {
+              "hits": 1,
+              "eligible": 13,
+              "eligible_rate": 0.07692307692307693,
+              "issued": 13,
+              "registered_coverage": 0.7222222222222222,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.05555555555555555,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 5,
+              "eligible": 13,
+              "eligible_rate": 0.38461538461538464,
+              "issued": 13,
+              "registered_coverage": 0.7222222222222222,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.2777777777777778,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 0,
+              "eligible": 0,
+              "eligible_rate": null,
+              "issued": 0,
+              "registered_coverage": 0.0,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.0,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 0,
+              "eligible": 0,
+              "eligible_rate": null,
+              "issued": 0,
+              "registered_coverage": 0.0,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.0,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 0,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 0
+          }
+        },
+        "comprehensive": {
+          "metrics": {
+            "score_top1": {
+              "hits": 2,
+              "eligible": 16,
+              "eligible_rate": 0.125,
+              "issued": 16,
+              "registered_coverage": 0.8888888888888888,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.1111111111111111,
+              "target": 0.2
+            },
+            "score_top3": {
+              "hits": 4,
+              "eligible": 7,
+              "eligible_rate": 0.5714285714285714,
+              "issued": 7,
+              "registered_coverage": 0.3888888888888889,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.2222222222222222,
+              "target": 0.4
+            },
+            "wdl": {
+              "hits": 0,
+              "eligible": 0,
+              "eligible_rate": null,
+              "issued": 0,
+              "registered_coverage": 0.0,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.0,
+              "target": 0.65
+            },
+            "actual_ou": {
+              "hits": 0,
+              "eligible": 0,
+              "eligible_rate": null,
+              "issued": 0,
+              "registered_coverage": 0.0,
+              "resolved_gate_denominator": 18,
+              "resolved_gate_rate": 0.0,
+              "target": 0.7
+            }
+          },
+          "total_settlements": {
+            "FULL_WIN": 0,
+            "HALF_WIN": 0,
+            "PUSH": 0,
+            "HALF_LOSS": 0,
+            "FULL_LOSS": 0
+          }
+        }
+      },
+      "comparison": {
+        "baseline": "test",
+        "candidate": "comprehensive"
+      },
+      "paired": {
+        "score_top1": {
+          "eligible": 11,
+          "resolved_gate_denominator": 18,
+          "coverage": 0.6111111111111112,
+          "gained": 1,
+          "lost": 1,
+          "tied": 9,
+          "net_hits": 0,
+          "net_rate": 0.0,
+          "matchday_clusters": 3,
+          "date_cluster_ci": [
+            0.0,
+            0.0
+          ],
+          "fixed_population_net_hits": 1,
+          "fixed_population_net_rate": 0.05555555555555555,
+          "fixed_population_date_cluster_ci": [
+            0.0,
+            0.2222222222222222
+          ]
+        },
+        "score_top3": {
+          "eligible": 7,
+          "resolved_gate_denominator": 18,
+          "coverage": 0.3888888888888889,
+          "gained": 2,
+          "lost": 0,
+          "tied": 5,
+          "net_hits": 2,
+          "net_rate": 0.2857142857142857,
+          "matchday_clusters": 1,
+          "date_cluster_ci": null,
+          "fixed_population_net_hits": -1,
+          "fixed_population_net_rate": -0.05555555555555555,
+          "fixed_population_date_cluster_ci": [
+            -0.4375,
+            0.19052197802197735
+          ]
+        },
+        "wdl": {
+          "eligible": 0,
+          "resolved_gate_denominator": 18,
+          "coverage": 0.0,
+          "gained": 0,
+          "lost": 0,
+          "tied": 0,
+          "net_hits": 0,
+          "net_rate": null,
+          "matchday_clusters": 0,
+          "date_cluster_ci": null,
+          "fixed_population_net_hits": 0,
+          "fixed_population_net_rate": 0.0,
+          "fixed_population_date_cluster_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "actual_ou": {
+          "eligible": 0,
+          "resolved_gate_denominator": 18,
+          "coverage": 0.0,
+          "gained": 0,
+          "lost": 0,
+          "tied": 0,
+          "net_hits": 0,
+          "net_rate": null,
+          "matchday_clusters": 0,
+          "date_cluster_ci": null,
+          "fixed_population_net_hits": 0,
+          "fixed_population_net_rate": 0.0,
+          "fixed_population_date_cluster_ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "bootstrap": {
+        "unit": "whole match date",
+        "confidence": 0.95,
+        "repetitions": 5000,
+        "seed": 20261123,
+        "per_metric_percentile_intervals": true
+      }
+    }
+  },
+  "per_match": [
+    {
+      "id": "espn:401877602",
+      "date": "2026-10-17",
+      "cohort": "jpn.1",
+      "actual": [
+        1,
+        3
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "2-1",
+          "top3": null
+        }
+      },
+      "native_status": {},
+      "result_source_sha256": "4ab5a3d8587a6bedaee9ed44ec51787084a8882b4601e04545eb4d79877981c5"
+    },
+    {
+      "id": "espn:401877594",
+      "date": "2026-10-21",
+      "cohort": "jpn.1",
+      "actual": [
+        2,
+        1
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "1-1",
+          "top3": null
+        },
+        "current": {
+          "primary": null,
+          "top3": null
+        },
+        "test": {
+          "primary": null,
+          "top3": null
+        }
+      },
+      "native_status": {
+        "current": "ABSTAIN_NO_ACTIVE_ROUTE",
+        "test": "ABSTAIN_NO_ACTIVE_ROUTE"
+      },
+      "result_source_sha256": "34cd0d85ceeaa7970280fcec16db49cb54a5f6aa1ff0ccae75939811b91fa3c9"
+    },
+    {
+      "id": "espn:401877595",
+      "date": "2026-10-21",
+      "cohort": "jpn.1",
+      "actual": [
+        0,
+        0
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "2-1",
+          "top3": null
+        },
+        "current": {
+          "primary": null,
+          "top3": null
+        },
+        "test": {
+          "primary": null,
+          "top3": null
+        }
+      },
+      "native_status": {
+        "current": "ABSTAIN_NO_ACTIVE_ROUTE",
+        "test": "ABSTAIN_NO_ACTIVE_ROUTE"
+      },
+      "result_source_sha256": "20221c8cb86e0b3df487263fcffb9dba0811d8f7385717d7b6f9cbfd463eef9a"
+    },
+    {
+      "id": "espn:401877569",
+      "date": "2026-10-25",
+      "cohort": "jpn.1",
+      "actual": [
+        2,
+        1
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "2-1",
+          "top3": null
+        },
+        "current": {
+          "primary": null,
+          "top3": null
+        },
+        "test": {
+          "primary": null,
+          "top3": null
+        }
+      },
+      "native_status": {
+        "current": "ABSTAIN_UNSUPPORTED_COHORT",
+        "test": "ABSTAIN_UNSUPPORTED_COHORT"
+      },
+      "result_source_sha256": "60393e14900ef73817f78118d317b14c51bd75312127314d8f264f0e06d2c597"
+    },
+    {
+      "id": "espn:401877585",
+      "date": "2026-10-25",
+      "cohort": "jpn.1",
+      "actual": [
+        6,
+        0
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "3-0",
+          "top3": null
+        },
+        "current": {
+          "primary": null,
+          "top3": null
+        },
+        "test": {
+          "primary": null,
+          "top3": null
+        }
+      },
+      "native_status": {
+        "current": "ABSTAIN_UNSUPPORTED_COHORT",
+        "test": "ABSTAIN_UNSUPPORTED_COHORT"
+      },
+      "result_source_sha256": "bb955edeaba4a0792fa296f3f12646c09ff6ec3efa0057fad16775cb3a4d7202"
+    },
+    {
+      "id": "espn:401877534",
+      "date": "2026-11-20",
+      "cohort": "jpn.1",
+      "actual": [
+        1,
+        1
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": null,
+          "top3": null
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-0",
+            "2-1"
+          ]
+        },
+        "test": {
+          "primary": "1-0",
+          "top3": [
+            "1-0",
+            "1-1",
+            "2-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "dcb8c9d5adc9cfe015a82d77f1c864ed651205981e3935da1af7e2cf6ec3c8ed"
+    },
+    {
+      "id": "espn:401877548",
+      "date": "2026-11-20",
+      "cohort": "jpn.1",
+      "actual": [
+        1,
+        2
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "2-0",
+          "top3": null
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-0",
+            "2-1"
+          ]
+        },
+        "test": {
+          "primary": "1-0",
+          "top3": [
+            "1-0",
+            "1-1",
+            "2-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "248d321858f0fe9c840a05b62e67aae8128bb456529d127d7bb743b9e03d5047"
+    },
+    {
+      "id": "espn:401877553",
+      "date": "2026-11-20",
+      "cohort": "jpn.1",
+      "actual": [
+        0,
+        1
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": null,
+          "top3": null
+        },
+        "current": {
+          "primary": "2-1",
+          "top3": [
+            "2-1",
+            "2-0",
+            "3-1"
+          ]
+        },
+        "test": {
+          "primary": "2-1",
+          "top3": [
+            "2-1",
+            "2-0",
+            "3-1"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "9fae0e673ca902624a1bde0332d49a3f0dbeaf95f4d025e4ec0c528b50c04c02"
+    },
+    {
+      "id": "espn:401877549",
+      "date": "2026-11-21",
+      "cohort": "jpn.1",
+      "actual": [
+        0,
+        3
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "0-2",
+          "top3": null
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-2"
+          ]
+        },
+        "test": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "5ef63a6aad9bfa474baba50b5fe3c8ad71199a6b3f5592de7edb49ac69f548e3"
+    },
+    {
+      "id": "espn:401877551",
+      "date": "2026-11-21",
+      "cohort": "jpn.1",
+      "actual": [
+        1,
+        0
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "2-1",
+          "top3": null
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "2-1",
+            "1-0"
+          ]
+        },
+        "test": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "2-1",
+            "1-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "128c7ea8141729fc39a7820523ee726a4d4bce8e01a00ddac1cd92ce95e53640"
+    },
+    {
+      "id": "espn:401877532",
+      "date": "2026-11-21",
+      "cohort": "jpn.1",
+      "actual": [
+        0,
+        1
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "1-1",
+          "top3": null
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-2"
+          ]
+        },
+        "test": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-0",
+            "0-1"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "b74aa0da38f34de6aa457078becf38329d9e1b7ded0e62a18cc4eae8f8afa6b1"
+    },
+    {
+      "id": "espn:401877527",
+      "date": "2026-11-25",
+      "cohort": "jpn.1",
+      "actual": [
+        1,
+        2
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-2"
+          ]
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-2"
+          ]
+        },
+        "test": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "dd196df2a239b1c0314a0eef8b2361b06d0b233512463a2b9cbc5d69120dc946"
+    },
+    {
+      "id": "espn:401877528",
+      "date": "2026-11-25",
+      "cohort": "jpn.1",
+      "actual": [
+        2,
+        0
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "1-0",
+          "top3": [
+            "1-0",
+            "1-1",
+            "2-0"
+          ]
+        },
+        "current": {
+          "primary": "1-0",
+          "top3": [
+            "1-0",
+            "1-1",
+            "0-0"
+          ]
+        },
+        "test": {
+          "primary": "1-0",
+          "top3": [
+            "1-0",
+            "1-1",
+            "0-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "8069f6a9a80a300219389bc25469334dcdc3cc70309e7b9e0b0033a1d1a2775d"
+    },
+    {
+      "id": "espn:401877529",
+      "date": "2026-11-25",
+      "cohort": "jpn.1",
+      "actual": [
+        1,
+        2
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-0",
+            "2-1"
+          ]
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-0",
+            "2-1"
+          ]
+        },
+        "test": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-0",
+            "0-1"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "89fbb7128761a862693b9777c792a9510c0805d25dad1c80053e38d415aceb06"
+    },
+    {
+      "id": "espn:401877530",
+      "date": "2026-11-25",
+      "cohort": "jpn.1",
+      "actual": [
+        1,
+        0
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-0"
+          ]
+        },
+        "current": {
+          "primary": "1-0",
+          "top3": [
+            "1-0",
+            "1-1",
+            "2-0"
+          ]
+        },
+        "test": {
+          "primary": "1-0",
+          "top3": [
+            "1-0",
+            "1-1",
+            "2-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "ef3f8a8705fab5016be0b7a07d7f45501542b439076d1c4ee49621aff43cbfde"
+    },
+    {
+      "id": "espn:401877545",
+      "date": "2026-11-25",
+      "cohort": "jpn.1",
+      "actual": [
+        1,
+        2
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "1-2",
+          "top3": [
+            "1-2",
+            "1-1",
+            "0-1"
+          ]
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-2",
+            "2-1"
+          ]
+        },
+        "test": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-2",
+            "2-1"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "447fc81d72e214ec41b9d23c6fd1c6503da1083bea1dea90a9869926e7657ee8"
+    },
+    {
+      "id": "espn:401877546",
+      "date": "2026-11-25",
+      "cohort": "jpn.1",
+      "actual": [
+        2,
+        2
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "1-0",
+            "2-1"
+          ]
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-2"
+          ]
+        },
+        "test": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "0-1",
+            "1-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "ee0d2b918397196463ca07777145da1e2ea3291990f48d431a9a178b1729ad8f"
+    },
+    {
+      "id": "espn:401877547",
+      "date": "2026-11-25",
+      "cohort": "jpn.1",
+      "actual": [
+        2,
+        2
+      ],
+      "line": null,
+      "forecast": {
+        "comprehensive": {
+          "primary": "2-1",
+          "top3": [
+            "2-1",
+            "1-1",
+            "2-0"
+          ]
+        },
+        "current": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "2-1",
+            "1-0"
+          ]
+        },
+        "test": {
+          "primary": "1-1",
+          "top3": [
+            "1-1",
+            "2-1",
+            "1-0"
+          ]
+        }
+      },
+      "native_status": {
+        "current": "PREDICTED_RESEARCH_ONLY",
+        "test": "PREDICTED"
+      },
+      "result_source_sha256": "15cd5b9b7745a9e8f86bf706047179244005f6e2fadbb6cb7067380dd9be5b7d"
+    }
+  ],
+  "result_issues": {}
+}
