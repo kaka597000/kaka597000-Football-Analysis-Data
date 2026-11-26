@@ -28,4 +28,4 @@ PYTHONPATH=/path/to/Football-Analysis/runtime \
   python -B "$folder/review.py" --result-state "$RESULT_STATE" > euro-review.json
 ```
 
-未供应赛果时可省略 `--result-state` 重放完整赛前覆盖。3 个来自 11 月 6 日原档的欧联完赛摘要用于回归校验。
+未供应赛果时可省略 `--result-state` 重放完整赛前覆盖。带有上半场开球事件和 `wallclock` 的完场摘要同时输出实际开球、来源与哈希，逐赛事列可核实的场数。多份摘要的实际开球时点冲突时保留待核实状态，已核实的 90 分钟比分继续参与比分研究。11 月 6 日原档的 3 个欧联完赛摘要均可核实实际开球，分别比计划开球晚 83、169 和 187 秒。[赛前公开留档核验](public-archive/README.md)

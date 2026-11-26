@@ -1,5 +1,6 @@
 """Exercise the result adapter with genuine archived full-time summaries."""
 
+from datetime import timedelta
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -8,6 +9,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from research.analysis_freeze import aware
+from research_program.display_window_review import _validate_kickoff_reports
 from review import certify_result, results, review
 
 
@@ -25,6 +27,7 @@ class FrozenReviewTest(unittest.TestCase):
         expected_market = {'uecl': 17, 'uel': 18}
         for code, phase in status['competitions'].items():
             self.assertEqual((phase['registered'], phase['verified_results'], phase['pending']), (18, 0, 18))
+            self.assertEqual(phase['verified_actual_kickoffs'], 0)
             self.assertEqual(phase['matched_market_firsts'], expected_market[code])
             self.assertEqual((phase['selected']['occupied'], phase['selected']['settled']), (3, 0))
             self.assertIsNone(phase['selected']['all_three_first_sweep'])
@@ -37,7 +40,7 @@ class FrozenReviewTest(unittest.TestCase):
         with TemporaryDirectory() as work, tarfile.open(archive) as bundle:
             state = Path(work)
             entries = json.load(bundle.extractfile(EVIDENCE + 'manifest.json'))
-            fixtures, rows = {}, []
+            fixtures, starts, offsets, rows = {}, {}, set(), []
             for item in entries:
                 if item['provider'] != 'ESPN':
                     continue
@@ -61,16 +64,51 @@ class FrozenReviewTest(unittest.TestCase):
                 # Use the checksummed raw bytes to test the same source path as future results.
                 proof = certify_result(row, fixture, state, cutoff)
                 self.assertEqual((proof['home'], proof['away']), (home, away))
+                start = proof['actual_kickoff']
+                self.assertIsNone(proof['kickoff_issue'])
+                offsets.add(round((aware(start['actual_kickoff_at']) - aware(game['date'])).total_seconds()))
+                starts[mid] = start
                 self.assertRaises(ValueError, certify_result, dict(row, stage='knockout'), fixture, state, cutoff)
                 fixtures[mid] = fixture
                 rows.append(row)
             self.assertEqual(len(rows), 3)
+            self.assertEqual(offsets, {83, 169, 187})
+            self.assertEqual(set(_validate_kickoff_reports(starts, set(fixtures), {
+                mid: dict(fixture, competition=fixture['cohort']) for mid, fixture in fixtures.items()
+            }, state, cutoff)), set(fixtures))
             damaged = dict(rows[0], event_status='IN_PROGRESS')
-            (state / 'normalized-results.jsonl').write_text('\n'.join(json.dumps(r) for r in [damaged, *rows]),
+            original = rows[0]['raw_reference']
+            no_clock = json.loads((state / original['path']).read_bytes())
+            no_clock.pop('keyEvents')
+            body = json.dumps(no_clock).encode()
+            (state / 'no-kickoff-event.json').write_bytes(body)
+            earlier = (aware(original['captured_at']) - timedelta(seconds=1)).isoformat()
+            missing = dict(rows[0], known_at=earlier, raw_reference=dict(original, captured_at=earlier,
+                           path='no-kickoff-event.json', sha256=sha256(body).hexdigest()))
+            missing_result = certify_result(missing, fixtures[missing['match_id']], state, cutoff)
+            self.assertIsNone(missing_result['actual_kickoff'])
+            (state / 'normalized-results.jsonl').write_text('\n'.join(json.dumps(r) for r in [damaged, missing, *rows]),
                                                           encoding='utf-8')
             certified, issues = results(state, fixtures, cutoff)
             self.assertEqual(set(certified), set(fixtures))
             self.assertEqual(set(issues), {rows[0]['match_id']})
+            self.assertEqual(certified[missing['match_id']]['source'], missing['raw_reference'])
+            self.assertEqual(certified[missing['match_id']]['actual_kickoff'], starts[missing['match_id']])
+
+            disagree = json.loads((state / original['path']).read_bytes())
+            kickoff, = (event for event in disagree['keyEvents']
+                        if event['type']['type'] == 'kickoff' and event['period']['number'] == 1)
+            kickoff['wallclock'] = (aware(kickoff['wallclock']) - timedelta(seconds=1)).isoformat()
+            body = json.dumps(disagree).encode()
+            (state / 'conflicting-kickoff.json').write_bytes(body)
+            conflicting = dict(rows[0], raw_reference=dict(original, path='conflicting-kickoff.json',
+                                                           sha256=sha256(body).hexdigest()))
+            with (state / 'normalized-results.jsonl').open('a', encoding='utf-8') as output:
+                output.write('\n' + json.dumps(conflicting))
+            certified, _ = results(state, fixtures, cutoff)
+            self.assertEqual(set(certified), set(fixtures))
+            self.assertIsNone(certified[conflicting['match_id']]['actual_kickoff'])
+            self.assertEqual(certified[conflicting['match_id']]['kickoff_issue'], 'conflicting verified actual kickoffs')
 
 
 if __name__ == '__main__':
