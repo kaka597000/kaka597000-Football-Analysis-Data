@@ -1,0 +1,39 @@
+{
+  "catalog_events": 20,
+  "checked_on_nearest_day": 1,
+  "competition": "eng.1",
+  "eligible_in_horizon": 10,
+  "ends_at": "2026-11-30T08:16:01.783488+00:00",
+  "exclusions": {},
+  "identity_verified": 1,
+  "requests": [
+    {
+      "captured_at": "2026-11-26T08:16:02.000384+00:00",
+      "http_status": 200,
+      "quota": {
+        "x-requests-last": 0,
+        "x-requests-remaining": 0
+      },
+      "requested_at": "2026-11-26T08:16:01.786754+00:00",
+      "source_file": "discovery-events.json",
+      "source_sha256": "e0524c0408adaf59f184706b9ec2d586317bfd800a5b33ad87a5004f6487eb61",
+      "source_url": "https://api.the-odds-api.com/v4/sports/soccer_epl/events",
+      "status": "OK"
+    },
+    {
+      "captured_at": "2026-11-26T08:16:02.157126+00:00",
+      "http_status": 200,
+      "quota": {},
+      "requested_at": "2026-11-26T08:16:02.000959+00:00",
+      "source_file": "discovery-espn-20261127.json",
+      "source_sha256": "0357b3ab3afb5eccd97b45df486cfdc70af5eb0d1f79155f3f43108861980347",
+      "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261127&limit=1000",
+      "status": "OK"
+    }
+  ],
+  "selected_utc_day": "2026-11-27",
+  "selection": "nearest listed UTC matchday in the horizon",
+  "sport_key": "soccer_epl",
+  "starts_at": "2026-11-26T08:16:01.783488+00:00",
+  "status": "VERIFIED_EVENTS"
+}
