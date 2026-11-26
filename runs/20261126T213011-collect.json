@@ -1,0 +1,731 @@
+{
+  "run_id": "20261126T213011-collect",
+  "started_at": "2026-11-26T21:30:11.230920+00:00",
+  "mode": "collect",
+  "policy": {
+    "max_cohorts": 17,
+    "historical_only_scopes_skipped": 0,
+    "max_requests": 100,
+    "lookback_days": 2,
+    "promotion": "NEVER",
+    "max_collection_seconds": 90,
+    "data_sources": "existing public JSON endpoints only",
+    "paid_api_calls": false
+  },
+  "github_run_id": "45898512566",
+  "github_run_attempt": "1",
+  "source_commit": "fbed25e9648e4ba4061042b7f97b6a2f23f1213c",
+  "source_worktree_dirty": false,
+  "seed_sha256": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
+  "active_model_modified": false,
+  "result": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-11-26T21:30:11.265397+00:00",
+    "request_count": 99,
+    "successful_requests": 98,
+    "max_requests": 100,
+    "retry_used": false,
+    "events_seen": 75,
+    "new_result_observations": 18,
+    "quarantined": 29,
+    "market_snapshot_saved": false,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 90,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false,
+    "coverage_by_competition": {
+      "afc.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 10,
+        "new_rows": 0,
+        "quarantined": 10
+      },
+      "aus.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "bra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "eng.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "esp.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fifa.world": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ger.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ita.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "jpn.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 7,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ned.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "nor.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "swe.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 18,
+        "new_rows": 0,
+        "quarantined": 18
+      },
+      "uefa.europa": {
+        "scoreboards_ok": 3,
+        "events_seen": 18,
+        "new_rows": 8,
+        "quarantined": 0
+      },
+      "uefa.europa.conf": {
+        "scoreboards_ok": 3,
+        "events_seen": 18,
+        "new_rows": 10,
+        "quarantined": 0
+      },
+      "usa.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 1
+      }
+    },
+    "new_rows": [
+      {
+        "match_id": "espn:401915816",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T15:30:00+00:00",
+        "home": "espn:2528",
+        "away": "espn:20301",
+        "home_goals": 1,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:16.740786+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915816",
+        "provider_final_score": [
+          "1",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/cd1f884a8b18d1c0ef96f2b1772476359fcf42b9fcd7644e87cb9c0387f8f4a6.json.gz",
+          "sha256": "cd1f884a8b18d1c0ef96f2b1772476359fcf42b9fcd7644e87cb9c0387f8f4a6",
+          "captured_at": "2026-11-26T21:30:16.740786+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915816"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915815",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:139",
+        "away": "espn:3024",
+        "home_goals": 4,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:17.256578+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915815",
+        "provider_final_score": [
+          "4",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/50b36d6a693f53d311d43e84235739a013fed2ac2e3b35bc158a1f13003d69e2.json.gz",
+          "sha256": "50b36d6a693f53d311d43e84235739a013fed2ac2e3b35bc158a1f13003d69e2",
+          "captured_at": "2026-11-26T21:30:17.256578+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915815"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915814",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:331",
+        "away": "espn:8089",
+        "home_goals": 4,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:17.703863+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915814",
+        "provider_final_score": [
+          "4",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/bbc8b18f3266fba95d73692bc71fbd4cc461490caca52ba2e33912c604679730.json.gz",
+          "sha256": "bbc8b18f3266fba95d73692bc71fbd4cc461490caca52ba2e33912c604679730",
+          "captured_at": "2026-11-26T21:30:17.703863+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915814"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915810",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:21943",
+        "away": "espn:17856",
+        "home_goals": 2,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:18.204803+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915810",
+        "provider_final_score": [
+          "2",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/4df7702bef8e196295d092872c6e83f95b349e950ebec4027c019b65434a5bed.json.gz",
+          "sha256": "4df7702bef8e196295d092872c6e83f95b349e950ebec4027c019b65434a5bed",
+          "captured_at": "2026-11-26T21:30:18.204803+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915810"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915811",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:262",
+        "away": "espn:174",
+        "home_goals": 2,
+        "away_goals": 3,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:18.518971+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915811",
+        "provider_final_score": [
+          "2",
+          "3"
+        ],
+        "raw_reference": {
+          "path": "raw/37909e2e05dcde4b69a81a41b2e87fbf100aa39deb0ba3db9fbf83ebe65f1d21.json.gz",
+          "sha256": "37909e2e05dcde4b69a81a41b2e87fbf100aa39deb0ba3db9fbf83ebe65f1d21",
+          "captured_at": "2026-11-26T21:30:18.518971+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915811"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915813",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:20025",
+        "away": "espn:2922",
+        "home_goals": 1,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:18.964207+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915813",
+        "provider_final_score": [
+          "1",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/a8b3322b966a81755d7e1626a01352d25fa34042cab107e9fcc2434342832b54.json.gz",
+          "sha256": "a8b3322b966a81755d7e1626a01352d25fa34042cab107e9fcc2434342832b54",
+          "captured_at": "2026-11-26T21:30:18.964207+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915813"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915812",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:7922",
+        "away": "espn:7672",
+        "home_goals": 2,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:19.327659+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915812",
+        "provider_final_score": [
+          "2",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/1eabc85bd6daf129080a2e34c5aea4a2df9c873c78daa06eedfa79f5b648453c.json.gz",
+          "sha256": "1eabc85bd6daf129080a2e34c5aea4a2df9c873c78daa06eedfa79f5b648453c",
+          "captured_at": "2026-11-26T21:30:19.327659+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915812"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915739",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:20028",
+        "away": "espn:19246",
+        "home_goals": 2,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:19.662217+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915739",
+        "provider_final_score": [
+          "2",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/b93a618cbac202784c177812c94432048a584b1584c637123015b72d679d4dc2.json.gz",
+          "sha256": "b93a618cbac202784c177812c94432048a584b1584c637123015b72d679d4dc2",
+          "captured_at": "2026-11-26T21:30:19.662217+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915739"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915809",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:22281",
+        "away": "espn:572",
+        "home_goals": 0,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:20.210246+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915809",
+        "provider_final_score": [
+          "0",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/f6f53fbc162b868725e8097806a5490c9210ddcf1a1dc3a1c2203ed6f7c1ba8f.json.gz",
+          "sha256": "f6f53fbc162b868725e8097806a5490c9210ddcf1a1dc3a1c2203ed6f7c1ba8f",
+          "captured_at": "2026-11-26T21:30:20.210246+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915809"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915808",
+        "cohort": "uefa.europa.conf",
+        "competition": "uefa.europa.conf",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:620",
+        "away": "espn:7853",
+        "home_goals": 1,
+        "away_goals": 4,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:20.731615+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915808",
+        "provider_final_score": [
+          "1",
+          "4"
+        ],
+        "raw_reference": {
+          "path": "raw/67c3b70876a89af37a3a3b3206f44628d8e3033d5bbdd1d34cc62487882e96a3.json.gz",
+          "sha256": "67c3b70876a89af37a3a3b3206f44628d8e3033d5bbdd1d34cc62487882e96a3",
+          "captured_at": "2026-11-26T21:30:20.731615+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915808"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915506",
+        "cohort": "uefa.europa",
+        "competition": "uefa.europa",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:1895",
+        "away": "espn:13083",
+        "home_goals": 2,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:21.820046+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915506",
+        "provider_final_score": [
+          "2",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/7564f89a87c846814995f9f7a7011adcde57e39daa675663de92dccb257fb52e.json.gz",
+          "sha256": "7564f89a87c846814995f9f7a7011adcde57e39daa675663de92dccb257fb52e",
+          "captured_at": "2026-11-26T21:30:21.820046+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915506"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915519",
+        "cohort": "uefa.europa",
+        "competition": "uefa.europa",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:85",
+        "away": "espn:349",
+        "home_goals": 1,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:22.207051+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915519",
+        "provider_final_score": [
+          "1",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/a40ac7f432ddcab701f142537fb5a48a23ade5474c7301eb329ff35d1587088a.json.gz",
+          "sha256": "a40ac7f432ddcab701f142537fb5a48a23ade5474c7301eb329ff35d1587088a",
+          "captured_at": "2026-11-26T21:30:22.207051+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915519"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915517",
+        "cohort": "uefa.europa",
+        "competition": "uefa.europa",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:597",
+        "away": "espn:131",
+        "home_goals": 0,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:22.637874+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915517",
+        "provider_final_score": [
+          "0",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/d5d726a85d97b8f0a6052983cf33e83fdfedef12b500a65cd0d03678d260e53d.json.gz",
+          "sha256": "d5d726a85d97b8f0a6052983cf33e83fdfedef12b500a65cd0d03678d260e53d",
+          "captured_at": "2026-11-26T21:30:22.637874+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915517"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915507",
+        "cohort": "uefa.europa",
+        "competition": "uefa.europa",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:176",
+        "away": "espn:490",
+        "home_goals": 1,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:23.393397+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915507",
+        "provider_final_score": [
+          "1",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/c7c3bba2dd93568a7202505908717411088a0de6e3443f60574c756155135823.json.gz",
+          "sha256": "c7c3bba2dd93568a7202505908717411088a0de6e3443f60574c756155135823",
+          "captured_at": "2026-11-26T21:30:23.393397+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915507"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915521",
+        "cohort": "uefa.europa",
+        "competition": "uefa.europa",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:435",
+        "away": "espn:103",
+        "home_goals": 2,
+        "away_goals": 4,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:23.765458+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915521",
+        "provider_final_score": [
+          "2",
+          "4"
+        ],
+        "raw_reference": {
+          "path": "raw/c5ae5ba12ab3aacead6d92df3fe5c1a6d0137569db825c43a95c11ae6659061f.json.gz",
+          "sha256": "c5ae5ba12ab3aacead6d92df3fe5c1a6d0137569db825c43a95c11ae6659061f",
+          "captured_at": "2026-11-26T21:30:23.765458+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915521"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915520",
+        "cohort": "uefa.europa",
+        "competition": "uefa.europa",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:2790",
+        "away": "espn:20024",
+        "home_goals": 2,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:24.136785+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915520",
+        "provider_final_score": [
+          "2",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/f3ae664201b668c14a07b7b02f587418af3ca34d392aa18da387b8ecdbffea73.json.gz",
+          "sha256": "f3ae664201b668c14a07b7b02f587418af3ca34d392aa18da387b8ecdbffea73",
+          "captured_at": "2026-11-26T21:30:24.136785+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915520"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915508",
+        "cohort": "uefa.europa",
+        "competition": "uefa.europa",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:5807",
+        "away": "espn:2990",
+        "home_goals": 2,
+        "away_goals": 2,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:25.089255+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915508",
+        "provider_final_score": [
+          "2",
+          "2"
+        ],
+        "raw_reference": {
+          "path": "raw/4ab06ec4d5cb9deadb4e5ee263676f2d95ba881f67bbd83eb8caef77e5003091.json.gz",
+          "sha256": "4ab06ec4d5cb9deadb4e5ee263676f2d95ba881f67bbd83eb8caef77e5003091",
+          "captured_at": "2026-11-26T21:30:25.089255+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915508"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401915518",
+        "cohort": "uefa.europa",
+        "competition": "uefa.europa",
+        "stage": "league-phase",
+        "season": "2026",
+        "date": "2026-11-26",
+        "kickoff_at": "2026-11-26T17:45:00+00:00",
+        "home": "espn:11706",
+        "away": "espn:1929",
+        "home_goals": 4,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-26T21:30:25.470067+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915518",
+        "provider_final_score": [
+          "4",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/cba6f6053cdc290464e5b5a708399a8e2678cfc44ce9ad20507b85d85a35bb7d.json.gz",
+          "sha256": "cba6f6053cdc290464e5b5a708399a8e2678cfc44ce9ad20507b85d85a35bb7d",
+          "captured_at": "2026-11-26T21:30:25.470067+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915518"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      }
+    ],
+    "channels": {
+      "history": {
+        "requests": 98,
+        "successful_requests": 98,
+        "failures": {},
+        "status": "RESPONSE_RECEIVED",
+        "new_result_observations": 18,
+        "quarantined": 29,
+        "training_eligibility": "SEPARATE_RAW_EVIDENCE_AND_VENUE_AUDIT_REQUIRED"
+      },
+      "market": {
+        "requests": 1,
+        "successful_requests": 0,
+        "failures": {
+          "TLS": 1
+        },
+        "status": "FAILED",
+        "raw_snapshot_saved": false,
+        "verified_quote_count": 0,
+        "model_ready": false,
+        "quote_status": "NO_RESPONSE"
+      }
+    },
+    "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+    "market_model_ready": false
+  },
+  "status": "COMPLETED",
+  "status_scope": "REQUEST_EXECUTION_NOT_MODEL_READINESS",
+  "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+  "market_model_ready": false,
+  "finished_at": "2026-11-26T21:30:51.352148+00:00"
+}
