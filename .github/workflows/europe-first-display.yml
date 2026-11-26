@@ -30,6 +30,7 @@ jobs:
             workspace-updates/20261123-prematch-literature
             workspace-updates/20261125-r13-domestic-form
             workspace-updates/20261126-europe-first-display
+            workspace-updates/20261106-uel-review
       - uses: actions/checkout@v4
         with:
           repository: kaka597000/Football-Analysis
@@ -44,3 +45,4 @@ jobs:
         run: |
           (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
           python -B "$PACKAGE/prepare.py" verify
+          python -B "$PACKAGE/test_review.py"

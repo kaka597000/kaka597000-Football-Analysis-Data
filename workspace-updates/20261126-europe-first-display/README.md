@@ -20,3 +20,12 @@ folder=workspace-updates/20261126-europe-first-display
 (cd "$folder" && sha256sum -c SHA256SUMS)
 PYTHONPATH=/path/to/Football-Analysis/runtime python -B "$folder/prepare.py" verify
 ```
+
+赛后复盘读取状态目录下的 `normalized-results.jsonl` 和其中各条 `raw_reference.path` 对应的 ESPN 比赛摘要原件。可保留多次采集。程序核对原始主客队和开球时间、成年男子联赛阶段、完整 90 分钟、采集时刻和原始响应哈希。赛果冲突或待完赛保留在原分母。输出含首选、三选命中顺位、同场 R7 与市场净得失、水位对应的五类原盘口结算和原三席结果。研究复盘输出保留严格盘口与独立展示证据的状态，正式阶段仍按原验收协议。
+
+```bash
+PYTHONPATH=/path/to/Football-Analysis/runtime \
+  python -B "$folder/review.py" --result-state "$RESULT_STATE" > euro-review.json
+```
+
+未供应赛果时可省略 `--result-state` 重放完整赛前覆盖。3 个来自 11 月 6 日原档的欧联完赛摘要用于回归校验。

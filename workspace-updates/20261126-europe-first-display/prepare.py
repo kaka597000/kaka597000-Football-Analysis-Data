@@ -273,6 +273,7 @@ def publication(rounds, issue):
         message.write_text(table, encoding='utf-8')
     if read(scorecard) != rounds or message.read_text(encoding='utf-8') != table:
         raise ValueError('report changes an original first-selection table')
+    verified = {}
     for short, section in rounds.items():
         fixtures = [r['fixture'] for r in section['rows']]
         selected = {r['rank']: r['fixture']['match_id'] for r in section['rows'] if r['rank']}
@@ -294,13 +295,15 @@ def publication(rounds, issue):
                     raise ValueError('active route now exists; investigate before retiring the refusal')
             ref = ledger.register(fixtures, identity, track, directory)
             atomic_json(index, ref)
-        record = ledger._read(directory, read(index))
+        ref = read(index)
+        record = ledger._read(directory, ref)
         if (record['payload']['identity'] != identity or record['payload']['track'] != track
                 or record['payload']['fixtures'] != {f['match_id']: f for f in fixtures}
                 or not aware(section['window']['recorded_at']) <= aware(record['recorded_at'])
                 < min(aware(f['kickoff_at']) for f in fixtures)):
             raise ValueError('publication freeze differs from its original window or table')
-        print(short, len(fixtures), record['freeze_id'], record['recorded_at'])
+        verified[short] = ref
+    return verified
 
 
 if __name__ == '__main__':
@@ -311,6 +314,8 @@ if __name__ == '__main__':
         print({key: v['plan'] for key, v in register(True).items()})
     else:
         reject_credentials(read(HERE / 'calendar/captures.json'))
-        publication(scores(register(False)), action == 'prepare-display')
+        rounds = scores(register(False))
+        for short, ref in publication(rounds, action == 'prepare-display').items():
+            print(short, len(rounds[short]['rows']), ref['id'], ref['recorded_at'])
         if action == 'verify':
             verify_official()
