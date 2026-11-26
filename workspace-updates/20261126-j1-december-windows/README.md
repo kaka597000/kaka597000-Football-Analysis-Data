@@ -7,8 +7,10 @@
 | 12 月 4–6 日 | 10 场 | 12 月 4 日 17:30 | [上一轮八场与两场补核](../20261126-r26-j1-first-stage/evidence/full-window-calendar.json) |
 | 12 月 12–13 日 | 10 场 | 12 月 12 日 13:00 | [本轮两份 ESPN 原始赛历及比对](evidence/report.md) |
 
+北京时间 11 月 26 日 18:15 从日本 J.League 官方成年 J1 赛历独立核对两窗。按日本当地时间换算后，20 场与已登记的 ESPN 主客、比赛日期及开球时刻逐场一致。12 月 13 日横滨水手对长崎成功丸的官方明细也显示当地 13:00，即北京时间 12:00。原官方响应、场次详情链接和逐场配对均可复验。[官方赛历](https://www.jleague.jp/j1/match/search-list/?startdate=2026-12-04&enddate=2026-12-13&period=custom&sort_desc=true) · [官方明细](https://www.jleague.jp/match/j1/2026/121302/) · [采集回执](evidence/jleague-december-capture.json) · [逐场核对](evidence/jleague-december-comparison.json)
+
 验收优先看唯一首选 20% 和三选 40%。两窗还各自要求 90 分钟胜平负 65%、实盘大小球非走盘全赢率 70%、精选三场的三个首选全中，以及同场市场对照。每窗须确认十场首版比分及胜平负、至少八场严格实盘、至少七场已结算非走盘。实际展示原文、独立回读、带来源时钟的盘口与 90 分钟赛果按场核验。
 
-以仓库根目录运行 `python -B workspace-updates/20261126-j1-december-windows/verify.py`，令 `PYTHONPATH` 指向固定源码的 `runtime`。验证会重算两组赛程、已归档响应哈希、赛前登记身份及待赛状态。[回放源码](https://github.com/kaka597000/Football-Analysis/commit/73430408cbc7649130608beb36d4d8c6d2419a67) · [文件校验清单](SHA256SUMS)
+以仓库根目录运行 `python -B workspace-updates/20261126-j1-december-windows/verify.py`，令 `PYTHONPATH` 指向固定源码的 `runtime`。验证会重算两组赛程、ESPN 与官方逐场交叉对照、已归档响应哈希、赛前登记身份及待赛状态。[回放源码](https://github.com/kaka597000/Football-Analysis/commit/73430408cbc7649130608beb36d4d8c6d2419a67) · [文件校验清单](SHA256SUMS)
 
 11 月 28–29 日原窗口仍按首次展示锁定的十场复盘。该批严格报价时钟覆盖为 0/10，仍需独立原文回读和实际赛果。[11 月原批次](../20261126-r26-j1-first-stage/README.md)

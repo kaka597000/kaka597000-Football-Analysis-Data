@@ -55,30 +55,35 @@ def history(root):
 
 
 class ResultIntakeTest(unittest.TestCase):
-    def test_real_tonight_calendar_preserves_all_pending(self):
-        registered = prepare.register(False)
-        fixtures = {mid: row['fixture'] for group in registered.values() for mid,row in group['today'].items()}
-        bindings = intake.official_bindings(fixtures)
+    def test_real_calendars_preserve_each_registered_round(self):
+        rosters = {window: intake.registered_fixtures(window) for window in ('round1', 'round2')}
+        self.assertFalse(rosters['round1'].keys() & rosters['round2'].keys())
         with TemporaryDirectory() as tmp:
             root = Path(tmp)
             captures = []
-            for short in registered:
+            for short in prepare.COMPETITIONS:
                 source = prepare.read(HERE/'calendar'/f'uefa-{short}-crosswalk.json')['meta']
                 name = f'uefa-{short}.json.gz'
                 shutil.copyfile(HERE/'calendar'/name, root/name)
                 captures.append(dict(path=name, url=source['url'], captured_at=source['captured_at_utc'],
                                      sha256=source['sha256'], http_status=source['http_status']))
-            out = root/'state'
+            complete = write_manifest(root/'captures.json', captures)
+            partial = write_manifest(root/'partial.json', captures[:1])
             at = datetime.now(timezone.utc)
-            report = intake.assemble(write_manifest(root/'captures.json', captures), out, fixtures, bindings, at)
-            self.assertEqual(report['registered'], 36)
-            self.assertEqual(report['captures_with_errors'], [])
-            self.assertTrue(all(len(v) == 1 and v[0]['status'] == 'UPCOMING' for v in report['matches'].values()))
-            self.assertEqual(results(out, fixtures, at), ({}, {}))
-
-            manifest = write_manifest(root/'partial.json', captures[:1])
-            partial = intake.assemble(manifest, root/'partial', fixtures, bindings, at)
-            self.assertEqual((partial['registered'], sum(not rows for rows in partial['matches'].values())), (36, 18))
+            for window, fixtures in rosters.items():
+                with self.subTest(window=window):
+                    bindings = intake.official_bindings(fixtures)
+                    offset = int(window == 'round2')
+                    self.assertEqual({(f['cohort'], bindings[mid]['matchday']) for mid, f in fixtures.items()},
+                                     {('uefa.europa.conf', 4+offset), ('uefa.europa', 5+offset)})
+                    out = root/window
+                    report = intake.assemble(complete, out, fixtures, bindings, at)
+                    self.assertEqual(report['registered'], 36)
+                    self.assertEqual(report['captures_with_errors'], [])
+                    self.assertTrue(all(len(v) == 1 and v[0]['status'] == 'UPCOMING' for v in report['matches'].values()))
+                    self.assertEqual(results(out, fixtures, at), ({}, {}))
+                    report = intake.assemble(partial, root/f'partial-{window}', fixtures, bindings, at)
+                    self.assertEqual((report['registered'], sum(not rows for rows in report['matches'].values())), (36, 18))
 
     def test_real_dual_finals_and_provider_conflict(self):
         with TemporaryDirectory() as tmp:

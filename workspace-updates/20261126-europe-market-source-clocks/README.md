@@ -14,6 +14,8 @@
 - ESPN Sports Core 的两场欧联抽样均返回 DraftKings 及 Bet365 完整胜平负和同机构全场大小球。四个机构对象以及单独的 DraftKings 对象均缺明确机构报价时间。下一轮的阿尔克马尔对格拉茨风暴样本返回 HTTP 200，报价集合为空。11 月 26 日保存的下一轮完整赛历中，两项赛事各 18 场的 DraftKings 对象均为空。[Core 获取清单](sources/espn-core.json) · [市场字段](sources/espn-bookmaker-fields.json)
 - ESPN 链接指向的 DraftKings 公开赛事页收到 HTTP 403。澳客 `.com` 欧协联公开页列出平均初赔、指定机构的胜平负初赔和亚洲让球初盘选项，本次可见字段缺全场大小球及机构报价时间。[DraftKings 请求记录](sources/draftkings-direct-request.json) · [澳客可见字段](sources/okooo-selector.json)
 
+北京时间 18:12，按澳客公开页面的选择器请求凯拉特对米亚尔比的 bet365 胜平负初赔。HTTP 200 响应的正文为验证码页，机构初赔和报价时点仍待取得。当前取证保留请求及响应哈希，时间是验证码页收到时刻。[澳客具名市场实测](sources/okooo-named-request.json)
+
 当前已归档原首版的严格时钟盘口为欧协联 0/18、欧联 0/18。每个正式窗口的盘线覆盖要求沿用原登记。两项赛事的比分、三选与原精选席位已可在有真实赛果时复盘。[正式指标与赛程登记](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/77) · [首版复盘入口](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/78)
 
 从数据仓库根目录使用 Python 3.12.14 及固定源码的运行依赖复算。[固定源码](https://github.com/kaka597000/Football-Analysis/commit/01bf68219b3ff7d9108f1fd710078e43cd5e8ddc)
