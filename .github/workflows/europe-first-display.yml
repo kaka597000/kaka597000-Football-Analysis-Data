@@ -31,6 +31,7 @@ jobs:
             workspace-updates/20261125-r10-shot-conversion
             workspace-updates/20261125-r13-domestic-form
             workspace-updates/20261126-europe-first-display
+            workspace-updates/20261105-europa-conference-analysis
             workspace-updates/20261106-uel-review
       - uses: actions/checkout@v4
         with:
@@ -49,6 +50,8 @@ jobs:
           python -B "$PACKAGE/benchmarks.py" verify
           python -B "$PACKAGE/test_review.py"
           python -B "$PACKAGE/test_result_intake.py"
+          python -B "$PACKAGE/verify_conference_history.py" > "$RUNNER_TEMP/conference-history.json"
+          cmp "$PACKAGE/result-intake-preflight/uecl-espn/verified.json" "$RUNNER_TEMP/conference-history.json"
       - name: Check the public archive against the original display freezes
         run: |
           proof="$PACKAGE/public-archive"
