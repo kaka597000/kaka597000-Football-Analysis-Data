@@ -1,0 +1,51 @@
+name: Replay J1 original market clocks
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-j1-market-clock-review/**'
+      - '.github/workflows/j1-market-clock-review.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CHECK: workspace-updates/20261126-j1-market-clock-review
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261125-j1-stage-windows
+            workspace-updates/20261126-r26-j1-first-stage
+            workspace-updates/20261126-j1-december-windows
+            workspace-updates/20261126-j1-market-clock-review
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: d751e07a5f51d411663561fb20f8c67599f67c3e
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Verify original quotes and the new BSD source
+        run: |
+          (cd "$CHECK" && sha256sum -c SHA256SUMS)
+          python -B "$CHECK/verify.py" > "$RUNNER_TEMP/j1-market-replay.json"
+          cmp "$CHECK/replay.json" "$RUNNER_TEMP/j1-market-replay.json"
+      - name: Replay the preceding acceptance windows
+        run: |
+          python -B workspace-updates/20261125-j1-stage-windows/review/verify_pending.py
+          python -B workspace-updates/20261126-r26-j1-first-stage/verify_publication.py
+          python -B workspace-updates/20261126-j1-december-windows/verify.py > "$RUNNER_TEMP/december-pending.json"
