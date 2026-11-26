@@ -52,6 +52,8 @@ jobs:
           python -B "$PACKAGE/test_result_intake.py"
           python -B "$PACKAGE/verify_conference_history.py" > "$RUNNER_TEMP/conference-history.json"
           cmp "$PACKAGE/result-intake-preflight/uecl-espn/verified.json" "$RUNNER_TEMP/conference-history.json"
+          python -B "$PACKAGE/venue_check.py" > "$RUNNER_TEMP/europe-venues.json"
+          cmp "$PACKAGE/prematch/venue-opening/verified.json" "$RUNNER_TEMP/europe-venues.json"
       - name: Check the public archive against the original display freezes
         run: |
           proof="$PACKAGE/public-archive"
