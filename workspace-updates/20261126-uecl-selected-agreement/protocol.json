@@ -1,0 +1,14 @@
+{
+  "version": "R39-Conference-League-selected-agreement-1",
+  "label": "HISTORICAL DEVELOPMENT",
+  "competition": "uefa.europa.conf",
+  "stage": "league-phase",
+  "windows": {
+    "screen": {"season": "2025/26", "matchdays": [1, 2, 3, 4, 5, 6], "fixtures": 108},
+    "holdout": {"season": "2026/27", "matchdays": [1, 2, 3], "fixtures": 54}
+  },
+  "inputs": "Use the complete original R13 archive, the R35 replay of both earlier R9 team-score and R10 shot-score heads, and official UEFA matchday identities. Verify the same target, source, date, original score, market and regulation score for each archived control. Bind official events by ordered club identities and exact kickoff. Do not infer a mapping from the score. Exclude no scheduled slot from coverage. These match dates have been used in historical development.",
+  "control": "Rank all matches by the probability of the R13 first score, then scheduled kickoff and match ID. Take three distinct matches. Keep the same R13 first and three scores per fixture for both ranking arms.",
+  "candidate": "First put fixtures with R35 paired_inputs=true where the original R13 first score is also the first score for both the archived fixed-full R9 and R10 heads. Rank by the original probability/kickoff/match-ID order inside each group. Fill remaining seats from the original probability order among the other fixtures. The comparison uses existing scores and two independently motivated heads that share model inputs. No probabilities are learned or refitted for this ranking.",
+  "evaluation": "Each season reports full-round first/three coverage, three unique selected fixtures per matchday, selected first hits, selected three hits, batches with all three firsts right, and the market on the identical selected members where available. A ranking advances to an independent pregame comparison only when it improves at least one of the batch sweep or selected first counts and loses none of those counts or the selected three count, on both fixed windows. Missing result evidence remains pending in its original round. First-stage formal acceptance uses its existing real first display and registered complete forward windows."
+}
