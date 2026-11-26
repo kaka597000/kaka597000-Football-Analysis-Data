@@ -1,0 +1,51 @@
+name: Replay guarded zero-goal backups in three competitions
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-r40-zero-score-third/**'
+      - '.github/workflows/r40-zero-score-third.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261126-r40-zero-score-third
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261123-prematch-literature
+            workspace-updates/20261125-r13-domestic-form
+            workspace-updates/20261126-r40-zero-score-third
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: c51a00b2e66f1feedc681c6920a47afce917980a
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Check signed inputs and reproduce the registered historical results
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          cmp "$PACKAGE/protocol.json" source/research/20261126-r40-zero-score-third/protocol.json
+          python -B -m unittest research_program.test_zero_score_third research_program.test_score_coverage_policy
+          python -B -m research_program.zero_score_third --data . --out "$RUNNER_TEMP/r40-replay"
+          diff -qr "$PACKAGE/replay" "$RUNNER_TEMP/r40-replay"
