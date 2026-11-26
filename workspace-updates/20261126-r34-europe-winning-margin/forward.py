@@ -5,17 +5,14 @@ from datetime import datetime, timezone
 from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
 import sys
-from tempfile import TemporaryDirectory
 
 import numpy as np
 
 from publication import atomic_json, deliver
 from research.analysis_freeze import aware
-from research_program import continuation_forward as continuation
-from research_program import domestic_form, europe_winning_margin as margins
+from research_program import europe_winning_margin as margins
 from research_program import europe_score_dispersion as replay
 from research_program import goal_state_forward as ledger
-from research_program import r10_shot_model as decisions
 from research_program.goal_state_study import sha, write_new
 from research_program.paired_kpi_inference import compare
 from storage_lock import exclusive_lock
@@ -24,6 +21,7 @@ HERE = Path(__file__).resolve().parent
 ORIGINAL = HERE.parent/'20261126-europe-first-display'
 sys.path.insert(0, str(ORIGINAL))
 import prepare
+from forward_sources import original_grids
 
 
 CODE = 'uefa.europa.conf'
@@ -58,55 +56,19 @@ def inputs():
 
 def restore(rows, identity):
     """Recover each original score head from its exact prior inputs and signed recipe."""
-    spec = prepare.read(replay.PROTOCOL)
-    data = HERE.parents[1]
-    with TemporaryDirectory(prefix='r34-uecl-original-') as directory:
-        root = Path(directory)
-        for kind in ('r5', 'r13'):
-            path, checksum = prepare.ARCHIVES[kind]
-            replay.unpack(data, dict(path=path, sha256=checksum), root/kind)
-        replay.unpack(data, spec['archives']['r13'], root/'recipe')
-        replay.unpack(data, spec['archives'][CODE]['r7'], root/'r7')
-        recipe_path = root/'recipe'/CODE/'forward.json'
-        baseline_path = root/'r7/main/forward.json'
-        recipe, baseline = map(prepare.read, (recipe_path, baseline_path))
-        if (recipe['competition'] != CODE or baseline['competition'] != CODE
-                or sha(baseline_path) != recipe['baseline_sha256']):
-            raise ValueError('the Conference League recipe references a different baseline')
-        for row in rows:
-            fixture = row['fixture']
-            mid = fixture['match_id']
-            original, ref, _ = prepare.original(root/'r13', mid)
-            odds, odds_ref, _ = prepare.original(root/'r5/issued', mid)
-            payload = original['payload']
-            game = continuation.frozen_game(fixture, odds['payload'])
-            if (ref != row['first'] or odds_ref != row['odds_source_first']
-                    or payload['recipe_sha256'] != sha(recipe_path) or recipe['doses'] != payload['doses']
-                    or game['stage'] != 'league-phase' or replay.base.actual_line(game) != payload['line']
-                    or max(recipe['through'], baseline['through'], payload['domestic_through'])
-                    >= aware(original['fixture']['cutoff_at']).astimezone(timezone.utc).date().isoformat()):
-                raise ValueError('original recipe, price or source date differs: ' + mid)
-            prior = continuation.matrix(game, baseline)
-            full = domestic_form.adjust(prior, np.asarray(payload['features']), recipe['fitted'])
-            original_pick, heads = decisions.decisions(prior, full, recipe['doses'], payload['line'], row['r7'])
-            grid = heads['score']
-            cells = [tuple(map(int, pick.split('-'))) for pick in original_pick['top3']]
-            if (original_pick != row['forecast']
-                    or abs(grid[cells[0]] - payload['quality']['p_first']) > 2e-10
-                    or abs(sum(grid[cell] for cell in cells) - payload['quality']['p_three']) > 2e-10):
-                raise ValueError('restored score head differs from its frozen picks: ' + mid)
-            calibrated = grid
-            ordered = original_pick['top3']
-            if replay.base.top_three_scores(grid) == ordered:
-                coefficients = identity['dose'] * np.asarray(identity['coefficients'])
-                calibrated = margins.adjust(grid, margins.group_masses(grid), coefficients)
-                ordered = replay.base.top_three_scores(calibrated)
-            yield mid, dict(forecasts=dict(r13=original_pick, market=row['market'],
-                                     r34=dict(original_pick, primary=ordered[0], top3=ordered)),
-                            line=payload['line'], original_first=ref, original_price=odds_ref,
-                            original_price_cutoff=row['source_odds_cutoff_at'],
-                            original_recipe_sha256=sha(recipe_path),
-                            grids={'r13': grid.tolist(), 'r34': calibrated.tolist()})
+    coefficients = identity['dose'] * np.asarray(identity['coefficients'])
+    for row, (mid, source) in zip(rows, original_grids(rows, CODE), strict=True):
+        grid, original = source['grid'], source['forecast']
+        calibrated = grid
+        ordered = original['top3']
+        if replay.base.top_three_scores(grid) == ordered:
+            calibrated = margins.adjust(grid, margins.group_masses(grid), coefficients)
+            ordered = replay.base.top_three_scores(calibrated)
+        keys = ('line', 'original_first', 'original_price', 'original_price_cutoff', 'original_recipe_sha256')
+        yield mid, dict({key: source[key] for key in keys},
+                        forecasts=dict(r13=original, market=row['market'],
+                                       r34=dict(original, primary=ordered[0], top3=ordered)),
+                        grids={'r13': grid.tolist(), 'r34': calibrated.tolist()})
 
 
 def table(rows, payloads):
