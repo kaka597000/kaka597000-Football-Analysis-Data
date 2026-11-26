@@ -21,6 +21,17 @@ from research_program.three_arm_review import _certify
 
 SEASON_TYPES = {v[0]: v[2] for v in prepare.COMPETITIONS.values()}
 SCOPE_SUFFIX = ':NEW_FORMAT:league_phase'
+KICKOFF_CONFLICT = 'conflicting verified actual kickoffs'
+
+
+def espn_kickoff(body, reference, fixture):
+    captured = aware(reference['captured_at'])
+    kickoff_fixture = dict(fixture, competition=fixture['cohort'])
+    start = summary_kickoff(body, reference['source_url'], kickoff_fixture, captured)
+    return dict(match_id=fixture['match_id'], competition=fixture['cohort'], home=fixture['home'], away=fixture['away'],
+                identity_verified=True, actual_kickoff_at=start.astimezone(prepare.BEIJING).isoformat(),
+                observed_at=reference['captured_at'], raw_file=reference['path'],
+                source_sha256=reference['sha256'], source_url=reference['source_url'])
 
 
 def certify_result(row, fixture, state, at):
@@ -54,15 +65,10 @@ def certify_result(row, fixture, state, at):
             raise ValueError('extra periods or regulation half scores conflict')
     aligned = dict(row, cohort=code, stage=fixture['stage'])
     result = _certify(aligned, fixture, state, at)
-    kickoff_fixture = dict(fixture, competition=code)
     try:
-        start = summary_kickoff(raw, reference['source_url'], kickoff_fixture, aware(reference['captured_at']))
+        evidence = espn_kickoff(raw, reference, fixture)
     except (AttributeError, KeyError, TypeError, ValueError) as error:
         return dict(result, provider='espn', actual_kickoff=None, kickoff_issue=str(error))
-    evidence = dict(match_id=fixture['match_id'], competition=code, home=fixture['home'], away=fixture['away'],
-                    identity_verified=True, actual_kickoff_at=start.astimezone(prepare.BEIJING).isoformat(),
-                    observed_at=reference['captured_at'], raw_file=reference['path'],
-                    source_sha256=sha256(raw).hexdigest(), source_url=reference['source_url'])
     return dict(result, provider='espn', actual_kickoff=evidence, kickoff_issue=None)
 
 
@@ -101,14 +107,62 @@ def results(state, fixtures, at, official=None):
         first = dict(ordered[0], confirmed_result_sources=providers)
         starts = [r['actual_kickoff'] for r in ordered if r['actual_kickoff'] is not None]
         if len({r['actual_kickoff_at'] for r in starts}) > 1:
-            first = dict(first, actual_kickoff=None, kickoff_issue='conflicting verified actual kickoffs')
+            first = dict(first, actual_kickoff=None, kickoff_issue=KICKOFF_CONFLICT)
         elif starts:
             first = dict(first, actual_kickoff=starts[0], kickoff_issue=None)
         accepted[mid] = first
     return accepted, dict(issues)
 
 
-def grade(group, observed, benchmark=None):
+def verify_kickoffs(state, fixtures, finalized, at):
+    """Reconcile retained in-play clocks with clocks from certified full-time summaries."""
+    if state is None or not (state/'intake.json').is_file():
+        return {}
+    starts, issues = defaultdict(list), {}
+    observations = prepare.read(state/'intake.json')['matches']
+    for mid in fixtures.keys() & observations.keys():
+        fixture = fixtures[mid]
+        for row in observations[mid]:
+            if row['provider'] != 'espn' or row['status'] in ('STATUS_SCHEDULED', 'STATUS_FULL_TIME'):
+                continue
+            try:
+                ref = row['source']
+                if aware(ref['captured_at']) > at:
+                    continue
+                if result_intake.endpoint(ref['source_url']) != ('espn', fixture['cohort'], mid):
+                    raise ValueError('ESPN in-play capture points to a different event')
+                body = result_intake.raw_result(state, ref['path'], ref['sha256'])
+                document = json.loads(body)
+                game, = document['header']['competitions']
+                status = game['status']['type']
+                if status['state'] != 'in' or status['completed'] is not False:
+                    continue
+                name, _ = result_intake.espn_score(document, fixture)
+                if name != row['status'] or aware(game['date']) != aware(fixture['kickoff_at']):
+                    raise ValueError('ESPN in-play status or scheduled kickoff differs')
+                starts[mid].append(espn_kickoff(body, ref, fixture))
+            except result_intake.EVIDENCE_ERRORS as error:
+                issues.setdefault(mid, str(error))
+
+    reconciled = {}
+    for mid in starts.keys() | issues.keys():
+        final = finalized.get(mid, {})
+        candidates = starts[mid]
+        if final.get('actual_kickoff') is not None:
+            candidates.append(final['actual_kickoff'])
+        conflict = final.get('kickoff_issue') == KICKOFF_CONFLICT
+        if conflict or len({row['actual_kickoff_at'] for row in candidates}) > 1:
+            reconciled[mid] = dict(actual_kickoff=None, kickoff_issue=KICKOFF_CONFLICT)
+        elif candidates:
+            first = min(candidates, key=lambda row: (aware(row['observed_at']), row['source_sha256']))
+            reconciled[mid] = dict(actual_kickoff=first, kickoff_issue=None)
+        else:
+            reconciled[mid] = dict(actual_kickoff=None, kickoff_issue=issues[mid])
+    return reconciled
+
+
+def grade(group, observed, benchmark=None, *, kickoffs=None):
+    kickoffs = kickoffs or {}
     rows = []
     picks = {}
     outcomes = {}
@@ -120,6 +174,7 @@ def grade(group, observed, benchmark=None):
         original, control = record['forecast'], record['r7']
         line = original['total_line']
         verified = observed.get(mid)
+        kickoff = kickoffs.get(mid, verified or {})
         actual = [verified['home'], verified['away']] if verified else None
         day = aware(fixture['kickoff_at']).astimezone(prepare.BEIJING).date().isoformat()
         rows.append(dict(id=mid, date=day, cohort=fixture['cohort'], actual=actual, line=line,
@@ -136,10 +191,11 @@ def grade(group, observed, benchmark=None):
                              hit=metrics, hit_rank=rank, research_line_settlement=settlement,
                              result_source=verified['source'] if verified else None,
                              confirmed_result_sources=verified.get('confirmed_result_sources', {}) if verified else {},
-                             actual_kickoff=verified['actual_kickoff'] if verified else None,
-                             kickoff_issue=verified['kickoff_issue'] if verified else None)
+                             actual_kickoff=kickoff.get('actual_kickoff'), kickoff_issue=kickoff.get('kickoff_issue'))
     report = dict(registered=len(group), verified_results=len(actuals), pending=len(group) - len(actuals),
                 verified_actual_kickoffs=sum(row['actual_kickoff'] is not None for row in outcomes.values()),
+                verified_actual_kickoffs_awaiting_result=sum(row['actual_kickoff'] is not None and row['actual'] is None
+                                                           for row in outcomes.values()),
                 dual_source_results=sum(row['confirmed_result_sources'].keys() >= {'espn', 'uefa'} for row in outcomes.values()),
                 first_choices=dict(sorted(Counter(pick['primary'] for pick in picks.values()).items())),
                 first_different_from_r7=sum(r['forecast']['r13']['primary'] != r['forecast']['r7']['primary']
@@ -169,11 +225,13 @@ def review(state=None, *, at=None):
     fixtures = {entry['fixture']['match_id']: entry['fixture']
                 for group in original.values() for entry in group['rows']}
     verified, issues = results(state, fixtures, cutoff)
+    kickoffs = verify_kickoffs(state, fixtures, verified, cutoff)
     return dict(as_of=cutoff.astimezone(prepare.BEIJING).isoformat(),
                 scope='R13 original pregame research forecasts',
                 formal_display_status='INDEPENDENT_READBACK_PENDING',
                 timed_market_verified=0, result_issues=issues,
-                competitions={short: dict(display=published[short], **grade(group['rows'], verified, comparisons.get(short)))
+                competitions={short: dict(display=published[short],
+                                          **grade(group['rows'], verified, comparisons.get(short), kickoffs=kickoffs))
                               for short, group in original.items()})
 
 

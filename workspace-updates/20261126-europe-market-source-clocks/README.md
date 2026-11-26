@@ -16,6 +16,8 @@
 
 北京时间 18:12，按澳客公开页面的选择器请求凯拉特对米亚尔比的 bet365 胜平负初赔。HTTP 200 响应的正文为验证码页，机构初赔和报价时点仍待取得。当前取证保留请求及响应哈希，时间是验证码页收到时刻。[澳客具名市场实测](sources/okooo-named-request.json)
 
+北京时间 19:20 至 19:21，以同一场比赛为代表检查两处公开入口。AsianOdds 返回 HTTP 503，Odds.Directory 返回 HTTP 522。两个响应均无比赛报价，具名机构及逐市场报价时点保持缺项。本次记录用于评估后续窗口的采集来源，原首版仍使用原截止。[入口与原响应哈希](sources/approved-asian-sources.json)
+
 当前已归档原首版的严格时钟盘口为欧协联 0/18、欧联 0/18。每个正式窗口的盘线覆盖要求沿用原登记。两项赛事的比分、三选与原精选席位已可在有真实赛果时复盘。[正式指标与赛程登记](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/77) · [首版复盘入口](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/pull/78)
 
 从数据仓库根目录使用 Python 3.12.14 及固定源码的运行依赖复算。[固定源码](https://github.com/kaka597000/Football-Analysis/commit/01bf68219b3ff7d9108f1fd710078e43cd5e8ddc)
