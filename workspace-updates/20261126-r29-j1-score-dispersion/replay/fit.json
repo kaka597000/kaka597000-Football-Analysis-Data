@@ -1,0 +1,56 @@
+{
+  "version": "R29-J1-outcome-conditional-dispersion-1",
+  "competition": "jpn.1",
+  "stage": "regular",
+  "label": "EXPERIMENTAL / OOD",
+  "protocol_sha256": "b66e7e09c660cb615ec811692bb438c9ced0e81e80ca4d0e6b3b2a0477b07c14",
+  "r25_protocol_sha256": "b07be887dce6ea449af5f905c8d2be53337d4876af6900fafca2f175155f7eb1",
+  "windows": {
+    "train": {
+      "before": "2025-01-01",
+      "fixtures": 2291
+    },
+    "validation": {
+      "from": "2025-01-01",
+      "before": "2025-07-01",
+      "fixtures": 218
+    },
+    "late_2025": {
+      "from": "2025-07-01",
+      "before": "2026-01-01",
+      "fixtures": 162
+    },
+    "early_2026_27": {
+      "from": "2026-01-01",
+      "before": "2026-11-22",
+      "fixtures": 150
+    }
+  },
+  "beta": {
+    "win": 0.03499,
+    "draw": 0.048113
+  },
+  "invariants": {
+    "wdl": 1.1102230246251565e-16,
+    "conditional_mean": 5.773159728050814e-14
+  },
+  "selected_dose": 0.0,
+  "validation_trials": {
+    "0.0": {
+      "score_top1": 23,
+      "score_top3": 71,
+      "score_log_loss": 2.712758886960732
+    },
+    "0.5": {
+      "score_top1": 22,
+      "score_top3": 71,
+      "score_log_loss": 2.71393924975175
+    },
+    "1.0": {
+      "score_top1": 22,
+      "score_top3": 70,
+      "score_log_loss": 2.715973939746477
+    }
+  },
+  "prospective_screen_passed": false
+}

@@ -1,0 +1,51 @@
+name: Reproduce the R29 J1 score dispersion replay
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-r29-j1-score-dispersion/**'
+      - '.github/workflows/r29-j1-score-dispersion.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261126-r29-j1-score-dispersion
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261123-prematch-literature
+            workspace-updates/20261126-r29-j1-score-dispersion
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: d7115172dfc23996371bf063a25552dc1dbe2102
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Rebuild the signed R7 matrices and replay the registered windows
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          cmp "$PACKAGE/protocol.json" source/research/20261126-r29-j1-score-dispersion/protocol.json
+          python -B -m research_program.j1_score_dispersion --data . --out "$RUNNER_TEMP/r29-replay"
+          diff -qr "$PACKAGE/replay" "$RUNNER_TEMP/r29-replay"
