@@ -1,0 +1,5182 @@
+{
+  "mode": "HISTORICAL_REPLAY",
+  "forecast_sha256": "66dd22e8b4b5da665203776b404ecc6204fa833b61beb4b429c975a3be78655f",
+  "target_identity_sha256": "bc104871d05f8bef3800eb42d4b8e9e1739eed60969ca2feb2b24ec7673d905b",
+  "fixed_holdout_sha256": "94256bef415d6ed8bda59b52831e5196bf5f929a194716cf2e64037926cb4353",
+  "score_field_conflicts": {
+    "espn:401915746": {
+      "uefa_id": "2050309",
+      "regular": {
+        "away": 0,
+        "home": 3
+      },
+      "total": {
+        "away": 1,
+        "home": 3
+      },
+      "verified_source": {
+        "path": "espn-401915746.json.gz",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/summary?event=401915746",
+        "captured_at": "2026-11-26T11:58:05.922311+00:00",
+        "sha256": "f59b3b7b507b86570d93420d37d0bd02e74ee048dc8a0cad7417622e8aa2e82d",
+        "http_status": 200,
+        "uefa_match_id": "2050309"
+      },
+      "verified_score": [
+        3,
+        1
+      ],
+      "espn_halves": {
+        "home": [
+          3,
+          0
+        ],
+        "away": [
+          0,
+          1
+        ]
+      }
+    },
+    "espn:401915560": {
+      "uefa_id": "2050089",
+      "regular": {
+        "away": 0,
+        "home": 1
+      },
+      "total": {
+        "away": 2,
+        "home": 1
+      },
+      "verified_source": {
+        "path": "espn-401915560.json.gz",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915560",
+        "captured_at": "2026-11-26T11:58:09.531944+00:00",
+        "sha256": "78cd3ae4d94bbb7df63980f6d27be0d2fde76f3fa619ddf7b03f21e9aeac8fed",
+        "http_status": 200,
+        "uefa_match_id": "2050089"
+      },
+      "verified_score": [
+        1,
+        2
+      ],
+      "espn_halves": {
+        "home": [
+          1,
+          0
+        ],
+        "away": [
+          0,
+          2
+        ]
+      }
+    },
+    "espn:401915571": {
+      "uefa_id": "2050086",
+      "regular": {
+        "away": 0,
+        "home": 1
+      },
+      "total": {
+        "away": 0,
+        "home": 3
+      },
+      "verified_source": {
+        "path": "espn-401915571.json.gz",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/summary?event=401915571",
+        "captured_at": "2026-11-26T11:58:12.217878+00:00",
+        "sha256": "7442a479bc71f20feac3d3422e7dc4481ed4d9a41c497629b0b355bd488b6c96",
+        "http_status": 200,
+        "uefa_match_id": "2050086"
+      },
+      "verified_score": [
+        3,
+        0
+      ],
+      "espn_halves": {
+        "home": [
+          1,
+          2
+        ],
+        "away": [
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "result_issues": {},
+  "source_issues": [
+    {
+      "capture_index": 1,
+      "match_id": "espn:401915560",
+      "reason": "UEFA response does not establish a completed regulation score"
+    },
+    {
+      "capture_index": 1,
+      "match_id": "espn:401915571",
+      "reason": "UEFA response does not establish a completed regulation score"
+    },
+    {
+      "capture_index": 2,
+      "match_id": "espn:401915746",
+      "reason": "UEFA response does not establish a completed regulation score"
+    }
+  ],
+  "competitions": {
+    "uefa.europa.conf": {
+      "official_round_source": {
+        "competition": "UEFA Conference League",
+        "competition_id": "2019",
+        "path": "uecl-2026-09-16_to_11-05.json.gz",
+        "url": "https://match.uefa.com/v5/matches?competitionId=2019&seasonYear=2027&limit=100&offset=0&fromDate=2026-09-16&toDate=2026-11-05",
+        "captured_at": "2026-11-26T11:54:03.527354+00:00",
+        "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4",
+        "http_status": 200
+      },
+      "selected_summary": {
+        "planned_slots": 9,
+        "occupied": 9,
+        "settled": 9,
+        "primary_hits": 3,
+        "displayed_three_hits": 3,
+        "complete_batches": 3,
+        "primary_sweeps": 0,
+        "displayed_three_sweeps": 0,
+        "pending": 0
+      },
+      "selected_market": {
+        "score_top1": {
+          "eligible": 9,
+          "market_hits": 3,
+          "r13_hits": 3
+        },
+        "score_top3": {
+          "eligible": 9,
+          "market_hits": 3,
+          "r13_hits": 3
+        }
+      },
+      "potential_sweeps_if_selected_after_results": 3,
+      "fully_verified_rounds": 3,
+      "matchdays": {
+        "1": {
+          "fixtures": 18,
+          "verified_regulation": 18,
+          "first_kickoff": "2026-10-16T00:45:00+08:00",
+          "last_kickoff": "2026-10-16T03:00:00+08:00",
+          "full_round_first_hits": 6,
+          "full_round_three_hits": 11,
+          "at_least_three_first_hits_available": true,
+          "batch": {
+            "planned_slots": 3,
+            "occupied": 3,
+            "settled": 3,
+            "primary_hits": 1,
+            "displayed_three_hits": 1,
+            "complete_batches": 1,
+            "primary_sweeps": 0,
+            "displayed_three_sweeps": 0,
+            "pending": 0
+          },
+          "selected_market": {
+            "score_top1": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 1
+            },
+            "score_top3": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 1
+            }
+          },
+          "selected": [
+            "espn:401915848",
+            "espn:401915856",
+            "espn:401915854"
+          ],
+          "matches": [
+            {
+              "match_id": "espn:401915747",
+              "uefa_match_id": "2050322",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Riga FC",
+              "away": "Kairat Almaty",
+              "clubs": [
+                "espn:19246",
+                "espn:2528"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11528361332223999,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915748",
+              "uefa_match_id": "2050315",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "FC Lugano",
+              "away": "Red Star Belgrade",
+              "clubs": [
+                "espn:7672",
+                "espn:2290"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.1154898406369037,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "a0d49f6757ee773ca83657bd0dc0b750a25fc34f790d5453c9ba61035708cad3",
+              "actual": "3-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915854",
+              "uefa_match_id": "2050321",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "CSU Craiova",
+              "away": "Getafe",
+              "clubs": [
+                "espn:8089",
+                "espn:2922"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-0",
+                "0-1"
+              ],
+              "first_probability": 0.13551900085265745,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "0-0",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "4143a3d111a76f92278a8ba3603ae4019d64428df99a5899993086f19862bc7c",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915855",
+              "uefa_match_id": "2050324",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "CSKA Sofia",
+              "away": "AS Monaco",
+              "clubs": [
+                "espn:10834",
+                "espn:174"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "0-1",
+                "1-2"
+              ],
+              "first_probability": 0.11190034049713898,
+              "market": {
+                "primary": "0-2",
+                "top3": [
+                  "0-2",
+                  "1-2",
+                  "1-1"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "b291ffaa75f839ffa96df224dde1037117e21df4b587fd99058e98662dfb7246",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915856",
+              "uefa_match_id": "2050313",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Panathinaikos",
+              "away": "Borac Banja Luka",
+              "clubs": [
+                "espn:443",
+                "espn:20710"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "3-0",
+                "1-0"
+              ],
+              "first_probability": 0.138218391785093,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "3-0",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "73691c8ff8ac5274f6667cbf49218184497de128a4449a3279e7f713b08ecd80",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915857",
+              "uefa_match_id": "2050325",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Mjällby AIF",
+              "away": "Inter D'Escaldes",
+              "clubs": [
+                "espn:20301",
+                "espn:20703"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "1-0",
+                "1-1"
+              ],
+              "first_probability": 0.11631749920191525,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "1-0",
+                  "1-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "2fa7c7de5eebd2126179bbbfd5e9ab438dc253d58eb14019ab9f22ec38e6c776",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915858",
+              "uefa_match_id": "2050316",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "KuPS Kuopio",
+              "away": "Trabzonspor",
+              "clubs": [
+                "espn:8169",
+                "espn:997"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "0-1",
+                "1-2"
+              ],
+              "first_probability": 0.12084399160786488,
+              "market": {
+                "primary": "0-2",
+                "top3": [
+                  "0-2",
+                  "0-1",
+                  "1-2"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "8b9e767b6fa2eab86cb735b1ae5d6e1ff774d81751cf95cece7e7fead4d73704",
+              "actual": "2-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915859",
+              "uefa_match_id": "2050326",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Egnatia",
+              "away": "FC Midtjylland",
+              "clubs": [
+                "espn:21943",
+                "espn:572"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "0-1"
+              ],
+              "first_probability": 0.11849010089912393,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915860",
+              "uefa_match_id": "2050312",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "KAA Gent",
+              "away": "AGF",
+              "clubs": [
+                "espn:3611",
+                "espn:7853"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "0-1"
+              ],
+              "first_probability": 0.11856469018521655,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915861",
+              "uefa_match_id": "2050323",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Hajduk Split",
+              "away": "Ajax Amsterdam",
+              "clubs": [
+                "espn:489",
+                "espn:139"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "0-1"
+              ],
+              "first_probability": 0.10397936667218105,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "0-1"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "31989b8584cbc60658a3de6887b79a30970cb5c084c6a24de137a0f3e109f6a4",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915746",
+              "uefa_match_id": "2050309",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Atalanta",
+              "away": "Pafos",
+              "clubs": [
+                "espn:105",
+                "espn:22281"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.11193816120510751,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "3-1",
+              "score_source": {
+                "provider": "espn",
+                "path": "espn-401915746.json.gz",
+                "sha256": "f59b3b7b507b86570d93420d37d0bd02e74ee048dc8a0cad7417622e8aa2e82d"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915847",
+              "uefa_match_id": "2050319",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "SK Brann",
+              "away": "Lincoln Red Imps",
+              "clubs": [
+                "espn:620",
+                "espn:17856"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.10318360009086715,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915848",
+              "uefa_match_id": "2050310",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "SC Freiburg",
+              "away": "Jablonec",
+              "clubs": [
+                "espn:126",
+                "espn:7922"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "3-0",
+                "1-0"
+              ],
+              "first_probability": 0.1437752941827618,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "1-0",
+                  "3-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "94055724b031674da0443f217bc77271de4bcfa58610899419bb192429caa86e",
+              "actual": "3-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915849",
+              "uefa_match_id": "2050318",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Sint-Truidense",
+              "away": "Iberia 1999",
+              "clubs": [
+                "espn:936",
+                "espn:20025"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "3-0",
+                "4-0"
+              ],
+              "first_probability": 0.11835313451936534,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "3-0",
+                  "2-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "8cd6e093a6a3aa98b7c903ef41f3352a5adddf861b80dd4cec2ab16d7fd56c7c",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915850",
+              "uefa_match_id": "2050320",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Heart of Midlothian",
+              "away": "FC Nordsjælland",
+              "clubs": [
+                "espn:262",
+                "espn:3101"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "2-1"
+              ],
+              "first_probability": 0.11463764468665731,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "2-1"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "3ea5a4487db7e81a3900f766be4798c996f8208a523f499248e76a444a917ada",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915851",
+              "uefa_match_id": "2050317",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "FC Twente",
+              "away": "FC Thun",
+              "clubs": [
+                "espn:152",
+                "espn:3024"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11403175684490129,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915852",
+              "uefa_match_id": "2050311",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "F.C. København",
+              "away": "Braga",
+              "clubs": [
+                "espn:909",
+                "espn:2994"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "0-0"
+              ],
+              "first_probability": 0.1295137925357311,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-0",
+                  "0-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7619e17a506b58181b1f1a1f2ff5dad6c0bf401423abdb080a73d32395844c91",
+              "actual": "3-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915853",
+              "uefa_match_id": "2050314",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Brighton & Hove Albion",
+              "away": "Kauno Zalgiris",
+              "clubs": [
+                "espn:331",
+                "espn:20028"
+              ],
+              "primary": "3-0",
+              "top3": [
+                "3-0",
+                "4-0",
+                "2-0"
+              ],
+              "first_probability": 0.13001417570443108,
+              "market": {
+                "primary": "3-0",
+                "top3": [
+                  "3-0",
+                  "4-0",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 4.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "236a37fb8e30ccbc563577b522f99320bc40532b18d1b8cfb4f117bad85b3a91",
+              "actual": "4-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            }
+          ]
+        },
+        "2": {
+          "fixtures": 18,
+          "verified_regulation": 18,
+          "first_kickoff": "2026-10-22T22:30:00+08:00",
+          "last_kickoff": "2026-10-23T03:00:00+08:00",
+          "full_round_first_hits": 3,
+          "full_round_three_hits": 6,
+          "at_least_three_first_hits_available": true,
+          "batch": {
+            "planned_slots": 3,
+            "occupied": 3,
+            "settled": 3,
+            "primary_hits": 1,
+            "displayed_three_hits": 1,
+            "complete_batches": 1,
+            "primary_sweeps": 0,
+            "displayed_three_sweeps": 0,
+            "pending": 0
+          },
+          "selected_market": {
+            "score_top1": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 1
+            },
+            "score_top3": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 1
+            }
+          },
+          "selected": [
+            "espn:401915845",
+            "espn:401915833",
+            "espn:401915841"
+          ],
+          "matches": [
+            {
+              "match_id": "espn:401915846",
+              "uefa_match_id": "2050336",
+              "kickoff_at": "2026-10-22T14:30:00+00:00",
+              "home": "Kairat Almaty",
+              "away": "Panathinaikos",
+              "clubs": [
+                "espn:2528",
+                "espn:443"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "0-1",
+                "1-1"
+              ],
+              "first_probability": 0.12371069071347135,
+              "market": {
+                "primary": "0-1",
+                "top3": [
+                  "0-1",
+                  "0-2",
+                  "1-1"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "5d729944e64a84a621d8c967e6e8a58b696623016c91bbbe530ef41ce97cdaf6",
+              "actual": "1-5",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915745",
+              "uefa_match_id": "2050337",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Trabzonspor",
+              "away": "Heart of Midlothian",
+              "clubs": [
+                "espn:997",
+                "espn:262"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "3-0",
+                "2-1"
+              ],
+              "first_probability": 0.1023835293984624,
+              "market": {
+                "primary": "2-1",
+                "top3": [
+                  "2-1",
+                  "2-0",
+                  "3-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "53c71329c39469b3ee104e6fec275ab19fd0883f24288045e36a5653102b292f",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915838",
+              "uefa_match_id": "2050332",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Pafos",
+              "away": "Riga FC",
+              "clubs": [
+                "espn:22281",
+                "espn:19246"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11358393800147647,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915839",
+              "uefa_match_id": "2050341",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Inter D'Escaldes",
+              "away": "CSU Craiova",
+              "clubs": [
+                "espn:20703",
+                "espn:8089"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11639144121378163,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-3",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915840",
+              "uefa_match_id": "2050333",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Getafe",
+              "away": "FC Lugano",
+              "clubs": [
+                "espn:2922",
+                "espn:7672"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "0-0"
+              ],
+              "first_probability": 0.12107099595103257,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-0",
+                  "0-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "b818ac97b0a32c5e035cab501d23e8432deba11855bcb7784e5a3c708470ca9c",
+              "actual": "2-5",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915841",
+              "uefa_match_id": "2050343",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Kauno Zalgiris",
+              "away": "SK Brann",
+              "clubs": [
+                "espn:20028",
+                "espn:620"
+              ],
+              "primary": "0-1",
+              "top3": [
+                "0-1",
+                "0-2",
+                "1-1"
+              ],
+              "first_probability": 0.1251774389540628,
+              "market": {
+                "primary": "0-1",
+                "top3": [
+                  "0-1",
+                  "1-1",
+                  "0-2"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "2c364d56c3483d1af25bde76b7315ca2028f52efbecd3b1af740bf062c988ca5",
+              "actual": "1-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915842",
+              "uefa_match_id": "2050338",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Jablonec",
+              "away": "Brighton & Hove Albion",
+              "clubs": [
+                "espn:7922",
+                "espn:331"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "1-2"
+              ],
+              "first_probability": 0.11296024715723199,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "0-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915843",
+              "uefa_match_id": "2050331",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Red Star Belgrade",
+              "away": "F.C. København",
+              "clubs": [
+                "espn:2290",
+                "espn:909"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "1-0"
+              ],
+              "first_probability": 0.11569981387985229,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915844",
+              "uefa_match_id": "2050339",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "FC Nordsjælland",
+              "away": "CSKA Sofia",
+              "clubs": [
+                "espn:3101",
+                "espn:10834"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "3-0",
+                "1-0"
+              ],
+              "first_probability": 0.1112674017513416,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "2-1",
+                  "1-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "b010237653eda50554fe64da9f5440953a9e8d1390719f5fb3c9b4ce0c6992a7",
+              "actual": "2-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915845",
+              "uefa_match_id": "2050344",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Iberia 1999",
+              "away": "Mjällby AIF",
+              "clubs": [
+                "espn:20025",
+                "espn:20301"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "1-0"
+              ],
+              "first_probability": 0.13068463756520604,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "0-1",
+                  "1-0"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "c621d8d079055ab0214c0284bf5dcaf6e4a921ce438f1c69d894a73d86efcf7d",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915743",
+              "uefa_match_id": "2050335",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Borac Banja Luka",
+              "away": "KuPS Kuopio",
+              "clubs": [
+                "espn:20710",
+                "espn:8169"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.11119566732912031,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915744",
+              "uefa_match_id": "2050340",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "AGF",
+              "away": "Egnatia",
+              "clubs": [
+                "espn:7853",
+                "espn:21943"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.12080448855228598,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915832",
+              "uefa_match_id": "2050327",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Braga",
+              "away": "KAA Gent",
+              "clubs": [
+                "espn:2994",
+                "espn:3611"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.12343014403185407,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-0",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "dee55225a08d230f1ead49aaf656e730f429d81c22b7800cddccc1576e08c079",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915833",
+              "uefa_match_id": "2050334",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Lincoln Red Imps",
+              "away": "FC Twente",
+              "clubs": [
+                "espn:17856",
+                "espn:152"
+              ],
+              "primary": "0-3",
+              "top3": [
+                "0-3",
+                "0-2",
+                "0-4"
+              ],
+              "first_probability": 0.12957674929455645,
+              "market": {
+                "primary": "0-2",
+                "top3": [
+                  "0-2",
+                  "0-3",
+                  "1-2"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "ac6244cca455bb15ca56ad740a8f1ab783521a1356a8ae8fc79529bdabecd3be",
+              "actual": "1-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915834",
+              "uefa_match_id": "2050342",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "FC Thun",
+              "away": "Hajduk Split",
+              "clubs": [
+                "espn:3024",
+                "espn:489"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "2-1"
+              ],
+              "first_probability": 0.11168564767166736,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "2-1"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "da9ac8fb63aee496ab5839850c3b3d817a474590addb225982ac95374e15b0bf",
+              "actual": "0-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915835",
+              "uefa_match_id": "2050330",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "FC Midtjylland",
+              "away": "Sint-Truidense",
+              "clubs": [
+                "espn:572",
+                "espn:936"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.11709426306876028,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "0-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915836",
+              "uefa_match_id": "2050329",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "AS Monaco",
+              "away": "SC Freiburg",
+              "clubs": [
+                "espn:174",
+                "espn:126"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.11899533566524115,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "1983f124256925d9ec6a41c2b57b47894924ace8c1022b3131e9188fdcfc23c2",
+              "actual": "3-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915837",
+              "uefa_match_id": "2050328",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Ajax Amsterdam",
+              "away": "Atalanta",
+              "clubs": [
+                "espn:139",
+                "espn:105"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11451473639183038,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            }
+          ]
+        },
+        "3": {
+          "fixtures": 18,
+          "verified_regulation": 18,
+          "first_kickoff": "2026-11-06T01:45:00+08:00",
+          "last_kickoff": "2026-11-06T04:00:00+08:00",
+          "full_round_first_hits": 5,
+          "full_round_three_hits": 8,
+          "at_least_three_first_hits_available": true,
+          "batch": {
+            "planned_slots": 3,
+            "occupied": 3,
+            "settled": 3,
+            "primary_hits": 1,
+            "displayed_three_hits": 1,
+            "complete_batches": 1,
+            "primary_sweeps": 0,
+            "displayed_three_sweeps": 0,
+            "pending": 0
+          },
+          "selected_market": {
+            "score_top1": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 1
+            },
+            "score_top3": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 1
+            }
+          },
+          "selected": [
+            "espn:401915742",
+            "espn:401915821",
+            "espn:401915825"
+          ],
+          "matches": [
+            {
+              "match_id": "espn:401915741",
+              "uefa_match_id": "2050362",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Mjällby AIF",
+              "away": "Borac Banja Luka",
+              "clubs": [
+                "espn:20301",
+                "espn:20710"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.12091861728099694,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915742",
+              "uefa_match_id": "2050355",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Lincoln Red Imps",
+              "away": "Hajduk Split",
+              "clubs": [
+                "espn:17856",
+                "espn:489"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "0-1",
+                "0-3"
+              ],
+              "first_probability": 0.136994815706205,
+              "market": {
+                "primary": "0-2",
+                "top3": [
+                  "0-2",
+                  "0-1",
+                  "0-3"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "e682617b6a7c32371ea6dfbb524b9b51b77b20d89e44ad00e02811682487830d",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915825",
+              "uefa_match_id": "2050357",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Trabzonspor",
+              "away": "SC Freiburg",
+              "clubs": [
+                "espn:997",
+                "espn:126"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.12332534982334986,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "684457ac9dc6d88317fab263d565ed8811ba2ff9e180946459259999adc8c9f1",
+              "actual": "0-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915826",
+              "uefa_match_id": "2050353",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "KuPS Kuopio",
+              "away": "KAA Gent",
+              "clubs": [
+                "espn:8169",
+                "espn:3611"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "1-0"
+              ],
+              "first_probability": 0.12195977115797094,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "0-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915827",
+              "uefa_match_id": "2050349",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Red Star Belgrade",
+              "away": "Inter D'Escaldes",
+              "clubs": [
+                "espn:2290",
+                "espn:20703"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.10014631415244901,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915828",
+              "uefa_match_id": "2050361",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "FC Thun",
+              "away": "Heart of Midlothian",
+              "clubs": [
+                "espn:3024",
+                "espn:262"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-2"
+              ],
+              "first_probability": 0.11667101746185006,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "35248c84f4b589bce115354b9820cd1860d27629a3ce0b50e97c14b58bb65049",
+              "actual": "3-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915829",
+              "uefa_match_id": "2050348",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "FC Midtjylland",
+              "away": "Ajax Amsterdam",
+              "clubs": [
+                "espn:572",
+                "espn:139"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "0-0"
+              ],
+              "first_probability": 0.1197815227377358,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-6",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915830",
+              "uefa_match_id": "2050345",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Atalanta",
+              "away": "Kairat Almaty",
+              "clubs": [
+                "espn:105",
+                "espn:2528"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "2-1",
+                "1-1"
+              ],
+              "first_probability": 0.09519948259580491,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915831",
+              "uefa_match_id": "2050360",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "AGF",
+              "away": "Braga",
+              "clubs": [
+                "espn:7853",
+                "espn:2994"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11717086652335201,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "0-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915740",
+              "uefa_match_id": "2050347",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "F.C. København",
+              "away": "Iberia 1999",
+              "clubs": [
+                "espn:909",
+                "espn:20025"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "1-0",
+                "1-1"
+              ],
+              "first_probability": 0.1129647701606242,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915817",
+              "uefa_match_id": "2050358",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "CSU Craiova",
+              "away": "Egnatia",
+              "clubs": [
+                "espn:8089",
+                "espn:21943"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11341532360780729,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915818",
+              "uefa_match_id": "2050359",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Riga FC",
+              "away": "Jablonec",
+              "clubs": [
+                "espn:19246",
+                "espn:7922"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11600987248665508,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915819",
+              "uefa_match_id": "2050350",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Panathinaikos",
+              "away": "CSKA Sofia",
+              "clubs": [
+                "espn:443",
+                "espn:10834"
+              ],
+              "primary": "2-1",
+              "top3": [
+                "2-1",
+                "2-0",
+                "1-1"
+              ],
+              "first_probability": 0.09490813469547438,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915820",
+              "uefa_match_id": "2050356",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Sint-Truidense",
+              "away": "SK Brann",
+              "clubs": [
+                "espn:936",
+                "espn:620"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11415616630809848,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915821",
+              "uefa_match_id": "2050352",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Getafe",
+              "away": "Brighton & Hove Albion",
+              "clubs": [
+                "espn:2922",
+                "espn:331"
+              ],
+              "primary": "0-1",
+              "top3": [
+                "0-1",
+                "0-2",
+                "1-1"
+              ],
+              "first_probability": 0.12946533808307994,
+              "market": {
+                "primary": "0-1",
+                "top3": [
+                  "0-1",
+                  "0-2",
+                  "1-1"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "8a516bee97b73f5e69fa15cf4313c491e8df6a53f6cdffc677c7d1c0db39af35",
+              "actual": "0-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915822",
+              "uefa_match_id": "2050354",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "FC Twente",
+              "away": "Pafos",
+              "clubs": [
+                "espn:152",
+                "espn:22281"
+              ],
+              "primary": "3-0",
+              "top3": [
+                "3-0",
+                "2-0",
+                "4-0"
+              ],
+              "first_probability": 0.10887205907071923,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "3-0",
+                  "2-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "915562ba606b864b65f3a3435e6d9fe821478b4a0ea702d6c1befe20cf0b9d40",
+              "actual": "3-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915823",
+              "uefa_match_id": "2050351",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "FC Lugano",
+              "away": "Kauno Zalgiris",
+              "clubs": [
+                "espn:7672",
+                "espn:20028"
+              ],
+              "primary": "2-1",
+              "top3": [
+                "2-1",
+                "3-1",
+                "2-0"
+              ],
+              "first_probability": 0.09094431847233957,
+              "market": {},
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "actual": "3-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915824",
+              "uefa_match_id": "2050346",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "AS Monaco",
+              "away": "FC Nordsjælland",
+              "clubs": [
+                "espn:174",
+                "espn:3101"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.10552359825366761,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "2-1",
+                  "1-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "7ea83156251dafe6bb6b39c7ca6ec48a49484bb473ac06807e520386667e5c78",
+              "panel_sha256": "157618aba5c513c65adb619fd6c02be745a1e5b3bc0afe4d905a8c970a76efd6",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uecl-2026-09-16_to_11-05.json.gz",
+                "sha256": "67fa3da3b9ded5f934a89435422f6ce5c1955375f7c067b557ba9d9f202029c4"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    "uefa.europa": {
+      "official_round_source": {
+        "competition": "UEFA Europa League",
+        "competition_id": "14",
+        "path": "uel-2026-09-16_to_11-05.json.gz",
+        "url": "https://match.uefa.com/v5/matches?competitionId=14&seasonYear=2027&limit=100&offset=0&fromDate=2026-09-16&toDate=2026-11-05",
+        "captured_at": "2026-11-26T11:54:31.887178+00:00",
+        "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3",
+        "http_status": 200
+      },
+      "selected_summary": {
+        "planned_slots": 12,
+        "occupied": 12,
+        "settled": 12,
+        "primary_hits": 0,
+        "displayed_three_hits": 2,
+        "complete_batches": 4,
+        "primary_sweeps": 0,
+        "displayed_three_sweeps": 0,
+        "pending": 0
+      },
+      "selected_market": {
+        "score_top1": {
+          "eligible": 11,
+          "market_hits": 1,
+          "r13_hits": 0
+        },
+        "score_top3": {
+          "eligible": 11,
+          "market_hits": 3,
+          "r13_hits": 2
+        }
+      },
+      "potential_sweeps_if_selected_after_results": 0,
+      "fully_verified_rounds": 4,
+      "matchdays": {
+        "1": {
+          "fixtures": 18,
+          "verified_regulation": 18,
+          "first_kickoff": "2026-09-17T00:45:00+08:00",
+          "last_kickoff": "2026-09-18T03:00:00+08:00",
+          "full_round_first_hits": 0,
+          "full_round_three_hits": 3,
+          "at_least_three_first_hits_available": false,
+          "batch": {
+            "planned_slots": 3,
+            "occupied": 3,
+            "settled": 3,
+            "primary_hits": 0,
+            "displayed_three_hits": 0,
+            "complete_batches": 1,
+            "primary_sweeps": 0,
+            "displayed_three_sweeps": 0,
+            "pending": 0
+          },
+          "selected_market": {
+            "score_top1": {
+              "eligible": 3,
+              "market_hits": 0,
+              "r13_hits": 0
+            },
+            "score_top3": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 0
+            }
+          },
+          "selected": [
+            "espn:401915611",
+            "espn:401915588",
+            "espn:401915587"
+          ],
+          "matches": [
+            {
+              "match_id": "espn:401915594",
+              "uefa_match_id": "2050065",
+              "kickoff_at": "2026-09-16T16:45:00+00:00",
+              "home": "Ararat-Armenia",
+              "away": "Sparta Prague",
+              "clubs": [
+                "espn:20024",
+                "espn:433"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11680326136181077,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "1-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915611",
+              "uefa_match_id": "2050063",
+              "kickoff_at": "2026-09-16T16:45:00+00:00",
+              "home": "Omonia Nicosia",
+              "away": "Celta Vigo",
+              "clubs": [
+                "espn:617",
+                "espn:85"
+              ],
+              "primary": "0-1",
+              "top3": [
+                "0-1",
+                "1-1",
+                "0-2"
+              ],
+              "first_probability": 0.13215990783276568,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "0-1",
+                  "0-0"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "68ecc06b8e48c6a901521a11ebafec1348aa1597f27d42284f4a502f3535f77f",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915586",
+              "uefa_match_id": "2050058",
+              "kickoff_at": "2026-09-16T19:00:00+00:00",
+              "home": "AC Milan",
+              "away": "Benfica",
+              "clubs": [
+                "espn:103",
+                "espn:1929"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "2-2"
+              ],
+              "first_probability": 0.11848739088547215,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "dbe0a6b96b4a278983ffb456580c07b4ea6e6e492edab39f2e3c19abefe8125b",
+              "actual": "0-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915587",
+              "uefa_match_id": "2050057",
+              "kickoff_at": "2026-09-16T19:00:00+00:00",
+              "home": "Bayer Leverkusen",
+              "away": "NK Celje",
+              "clubs": [
+                "espn:131",
+                "espn:3362"
+              ],
+              "primary": "4-0",
+              "top3": [
+                "4-0",
+                "3-0",
+                "5-0"
+              ],
+              "first_probability": 0.127342600925062,
+              "market": {
+                "primary": "3-0",
+                "top3": [
+                  "3-0",
+                  "4-0",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 4.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "336440d7fc76d2697656deaa3dfd2172d423846d98b819900d388e9347a294dc",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915588",
+              "uefa_match_id": "2050059",
+              "kickoff_at": "2026-09-16T19:00:00+00:00",
+              "home": "Olympiacos",
+              "away": "Jagiellonia Bialystok",
+              "clubs": [
+                "espn:435",
+                "espn:11505"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "3-0",
+                "1-0"
+              ],
+              "first_probability": 0.13040540079400587,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "1-0",
+                  "3-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "d30f505d4078e2a52a48be21831d012e2dfb6674ae0d4ab812a7b67e920c0d1d",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915589",
+              "uefa_match_id": "2050064",
+              "kickoff_at": "2026-09-16T19:00:00+00:00",
+              "home": "Hapoel Be'er",
+              "away": "Dinamo Zagreb",
+              "clubs": [
+                "espn:13083",
+                "espn:597"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "1-2"
+              ],
+              "first_probability": 0.11782868108580967,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "0-1",
+                  "1-2"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "f50ed2584618064a92c7c8e91eecf8ef1585e9983683415e8fcbcca89e62dde9",
+              "actual": "0-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915590",
+              "uefa_match_id": "2050060",
+              "kickoff_at": "2026-09-16T19:00:00+00:00",
+              "home": "Anderlecht",
+              "away": "Lyon",
+              "clubs": [
+                "espn:441",
+                "espn:167"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.11573882253963974,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915592",
+              "uefa_match_id": "2050062",
+              "kickoff_at": "2026-09-16T19:00:00+00:00",
+              "home": "Sunderland",
+              "away": "AZ Alkmaar",
+              "clubs": [
+                "espn:366",
+                "espn:140"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "1-0",
+                "1-1"
+              ],
+              "first_probability": 0.11858952426313502,
+              "market": {
+                "primary": "1-0",
+                "top3": [
+                  "1-0",
+                  "2-0",
+                  "1-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "eb6d48d72c3af55fbbc75a9b5e098c66e5f20922f0b649001f0ae09ae5201a83",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915593",
+              "uefa_match_id": "2050061",
+              "kickoff_at": "2026-09-16T19:00:00+00:00",
+              "home": "SK Sturm Graz",
+              "away": "Stade Rennais",
+              "clubs": [
+                "espn:3746",
+                "espn:169"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "0-2"
+              ],
+              "first_probability": 0.10179690589056836,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "0-2"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c9ec0df46dca4609a33b7fae118b2cde5c6099fff254cd44deaebac7e669d904",
+              "actual": "0-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915584",
+              "uefa_match_id": "2050074",
+              "kickoff_at": "2026-09-17T16:45:00+00:00",
+              "home": "Levski Sofia",
+              "away": "RB Salzburg",
+              "clubs": [
+                "espn:490",
+                "espn:2790"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "0-1"
+              ],
+              "first_probability": 0.11855520258669165,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "0-1"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "093f911a906b8cffd5bfc5f3ff67545da034417aa7afa3e686161d21a2a95d54",
+              "actual": "0-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915585",
+              "uefa_match_id": "2050072",
+              "kickoff_at": "2026-09-17T16:45:00+00:00",
+              "home": "OFI Crete",
+              "away": "TSG Hoffenheim",
+              "clubs": [
+                "espn:1010",
+                "espn:7911"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "0-3",
+                "1-2"
+              ],
+              "first_probability": 0.10470383283189566,
+              "market": {
+                "primary": "0-2",
+                "top3": [
+                  "0-2",
+                  "1-2",
+                  "0-3"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "0ace85c0e9caa74f4c79d9a29a47ebd80125bea54d33c9fe437fc6870dc2d4d4",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915569",
+              "uefa_match_id": "2050070",
+              "kickoff_at": "2026-09-17T19:00:00+00:00",
+              "home": "Crystal Palace",
+              "away": "Lech Poznan",
+              "clubs": [
+                "espn:384",
+                "espn:2990"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "2-1",
+                "3-0"
+              ],
+              "first_probability": 0.10532234470558362,
+              "market": {
+                "primary": "2-1",
+                "top3": [
+                  "2-1",
+                  "2-0",
+                  "1-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "244b2777357566cde1d4fd0af69a4610e71a1d838f4abcc88b804d39e02f8b4e",
+              "actual": "4-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915570",
+              "uefa_match_id": "2050073",
+              "kickoff_at": "2026-09-17T19:00:00+00:00",
+              "home": "Lillestrom",
+              "away": "Torreense",
+              "clubs": [
+                "espn:987",
+                "espn:21615"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-0"
+              ],
+              "first_probability": 0.11175364038203951,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-0",
+                  "2-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "09170bf4d958a7e21072baf0e073ec8df0f40d1eae9decd608d83755318e24c3",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915580",
+              "uefa_match_id": "2050068",
+              "kickoff_at": "2026-09-17T19:00:00+00:00",
+              "home": "Viktoria Plzen",
+              "away": "Union St.-Gilloise",
+              "clubs": [
+                "espn:11706",
+                "espn:5807"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.12146916158845746,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "0-3",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915581",
+              "uefa_match_id": "2050069",
+              "kickoff_at": "2026-09-17T19:00:00+00:00",
+              "home": "Celtic",
+              "away": "Ferencvaros",
+              "clubs": [
+                "espn:256",
+                "espn:622"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "2-0"
+              ],
+              "first_probability": 0.09880515222378579,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "06e62a0435eda970400244055a8833cbb4a837ce819484678f194853d43bfb99",
+              "actual": "1-3",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915582",
+              "uefa_match_id": "2050066",
+              "kickoff_at": "2026-09-17T19:00:00+00:00",
+              "home": "Juventus",
+              "away": "NEC Nijmegen",
+              "clubs": [
+                "espn:111",
+                "espn:147"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "3-0",
+                "2-1"
+              ],
+              "first_probability": 0.10953631916197945,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "3-0",
+                  "2-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c8c14fe9a49d64cdb4d6292a3eeb8fbcf1d38d3f1ed3251a85a8bc5302b0f1ef",
+              "actual": "5-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915583",
+              "uefa_match_id": "2050067",
+              "kickoff_at": "2026-09-17T19:00:00+00:00",
+              "home": "Real Sociedad",
+              "away": "AFC Bournemouth",
+              "clubs": [
+                "espn:89",
+                "espn:349"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "0-1"
+              ],
+              "first_probability": 0.12303341216967145,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "0-1"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "0ec6dfa2d79a7437cd85d667f1ee803f4c1f2a9b4028e938a7bf1af56f719a9c",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915591",
+              "uefa_match_id": "2050071",
+              "kickoff_at": "2026-09-17T19:00:00+00:00",
+              "home": "Besiktas",
+              "away": "Marseille",
+              "clubs": [
+                "espn:1895",
+                "espn:176"
+              ],
+              "primary": "2-1",
+              "top3": [
+                "2-1",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.09868598874643304,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "3f8f1f92d0377078fce4c07a77b45c48149d1de75bb5762e90b89bcd00f9ec9c",
+              "actual": "4-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            }
+          ]
+        },
+        "2": {
+          "fixtures": 18,
+          "verified_regulation": 18,
+          "first_kickoff": "2026-10-16T00:45:00+08:00",
+          "last_kickoff": "2026-10-16T03:00:00+08:00",
+          "full_round_first_hits": 1,
+          "full_round_three_hits": 9,
+          "at_least_three_first_hits_available": false,
+          "batch": {
+            "planned_slots": 3,
+            "occupied": 3,
+            "settled": 3,
+            "primary_hits": 0,
+            "displayed_three_hits": 1,
+            "complete_batches": 1,
+            "primary_sweeps": 0,
+            "displayed_three_sweeps": 0,
+            "pending": 0
+          },
+          "selected_market": {
+            "score_top1": {
+              "eligible": 3,
+              "market_hits": 0,
+              "r13_hits": 0
+            },
+            "score_top3": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 1
+            }
+          },
+          "selected": [
+            "espn:401915575",
+            "espn:401915560",
+            "espn:401915571"
+          ],
+          "matches": [
+            {
+              "match_id": "espn:401915566",
+              "uefa_match_id": "2050076",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Lyon",
+              "away": "Crystal Palace",
+              "clubs": [
+                "espn:167",
+                "espn:384"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "2-1"
+              ],
+              "first_probability": 0.11917761045259151,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "2-1"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "95400e3f964e2b6b4eeb32475b7d0e41b01cd7e2cc31c8853ba3441e9a17fcee",
+              "actual": "3-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915567",
+              "uefa_match_id": "2050083",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Sparta Prague",
+              "away": "Lillestrom",
+              "clubs": [
+                "espn:433",
+                "espn:987"
+              ],
+              "primary": "2-1",
+              "top3": [
+                "2-1",
+                "2-0",
+                "1-1"
+              ],
+              "first_probability": 0.09857648744125058,
+              "market": {
+                "primary": "2-1",
+                "top3": [
+                  "2-1",
+                  "2-0",
+                  "1-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "893096538c4c567ce0bfdd2580fe985b6545ff80c8d214cb47a00209c17fd65e",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915568",
+              "uefa_match_id": "2050082",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "RB Salzburg",
+              "away": "AC Milan",
+              "clubs": [
+                "espn:2790",
+                "espn:103"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "0-1"
+              ],
+              "first_probability": 0.11192319371719234,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "0-1"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "680ef8c9cc5773bfab0d956612168a086853b94ac1d8184fcc97b9c589b613da",
+              "actual": "0-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915573",
+              "uefa_match_id": "2050077",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "AZ Alkmaar",
+              "away": "Hapoel Be'er",
+              "clubs": [
+                "espn:140",
+                "espn:13083"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.12017492563326489,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915574",
+              "uefa_match_id": "2050080",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Union St.-Gilloise",
+              "away": "Real Sociedad",
+              "clubs": [
+                "espn:5807",
+                "espn:89"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "2-1"
+              ],
+              "first_probability": 0.11707234710441873,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-2"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "0a8aedb9ce075fe498c20235f19433dac56e10f5daa7142e0d4b395a53ebc0d5",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915575",
+              "uefa_match_id": "2050091",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Torreense",
+              "away": "Sunderland",
+              "clubs": [
+                "espn:21615",
+                "espn:366"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "0-1",
+                "0-3"
+              ],
+              "first_probability": 0.16135944253654919,
+              "market": {
+                "primary": "0-2",
+                "top3": [
+                  "0-2",
+                  "0-1",
+                  "0-3"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "bdb00542b780d3a11f1c0ce7a189a1409cb0b0fb3eff11fddb0a363ac7eaa256",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915576",
+              "uefa_match_id": "2050085",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "Lech Poznan",
+              "away": "Bayer Leverkusen",
+              "clubs": [
+                "espn:2990",
+                "espn:131"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "1-2",
+                "1-1"
+              ],
+              "first_probability": 0.09733470137326282,
+              "market": {
+                "primary": "1-2",
+                "top3": [
+                  "1-2",
+                  "0-2",
+                  "1-1"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "d48612ffcf217b9ceb24c632e683f9c2fa1fdff368db8c7edc091b73fa269bb7",
+              "actual": "0-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915577",
+              "uefa_match_id": "2050087",
+              "kickoff_at": "2026-10-15T16:45:00+00:00",
+              "home": "NK Celje",
+              "away": "Omonia Nicosia",
+              "clubs": [
+                "espn:3362",
+                "espn:617"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "0-1"
+              ],
+              "first_probability": 0.12563029759434907,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "0-3",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915549",
+              "uefa_match_id": "2050081",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Dinamo Zagreb",
+              "away": "Anderlecht",
+              "clubs": [
+                "espn:597",
+                "espn:441"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.10959395365582507,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915550",
+              "uefa_match_id": "2050078",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Marseille",
+              "away": "Olympiacos",
+              "clubs": [
+                "espn:176",
+                "espn:435"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "0-1"
+              ],
+              "first_probability": 0.12934851184586285,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "0-1",
+                  "1-0"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "191cc4ec7382570dde195aa7c26b1807daa7c3990b9d92ede266c8ac173513b3",
+              "actual": "0-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915560",
+              "uefa_match_id": "2050089",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Celta Vigo",
+              "away": "Juventus",
+              "clubs": [
+                "espn:85",
+                "espn:111"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "0-0"
+              ],
+              "first_probability": 0.13526170056995648,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "0-1",
+                  "0-0"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 2.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "edd75849e796f224802a25e1494dc93e6db0e8be687babf63bd1d5b433424929",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "espn",
+                "path": "espn-401915560.json.gz",
+                "sha256": "78cd3ae4d94bbb7df63980f6d27be0d2fde76f3fa619ddf7b03f21e9aeac8fed"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915561",
+              "uefa_match_id": "2050088",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Jagiellonia Bialystok",
+              "away": "Ararat-Armenia",
+              "clubs": [
+                "espn:11505",
+                "espn:20024"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "2-1",
+                "1-1"
+              ],
+              "first_probability": 0.10603716868599469,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "1-1",
+                  "2-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "b354403d0193827b7104fe048b1a4fd6d9a711bbb15923cc9fb957b011c58a86",
+              "actual": "3-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915562",
+              "uefa_match_id": "2050075",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Benfica",
+              "away": "Celtic",
+              "clubs": [
+                "espn:1929",
+                "espn:256"
+              ],
+              "primary": "3-0",
+              "top3": [
+                "3-0",
+                "4-0",
+                "2-0"
+              ],
+              "first_probability": 0.10132503686379098,
+              "market": {
+                "primary": "3-0",
+                "top3": [
+                  "3-0",
+                  "2-0",
+                  "3-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "cf24b85d66d33aa1ff9640fa6ea72e1fc61b40270e0b55389223b9b99c1c8e7e",
+              "actual": "4-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915563",
+              "uefa_match_id": "2050090",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "TSG Hoffenheim",
+              "away": "Besiktas",
+              "clubs": [
+                "espn:7911",
+                "espn:1895"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "2-0"
+              ],
+              "first_probability": 0.10623486402025226,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "2-2"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "1b070e0a59855661c6fd0925df061e9a615475e7b80768cebd47d20533fff850",
+              "actual": "2-3",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915564",
+              "uefa_match_id": "2050079",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Ferencvaros",
+              "away": "Viktoria Plzen",
+              "clubs": [
+                "espn:622",
+                "espn:11706"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.10691331351028548,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "85c87553fb4dcb5c6c487d25896d9188b306f976517762968b6f68b286421ee2",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915565",
+              "uefa_match_id": "2050092",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "NEC Nijmegen",
+              "away": "Levski Sofia",
+              "clubs": [
+                "espn:147",
+                "espn:490"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.11947234975772596,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-0",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "cf86fa2bd1f7f30fa437651cbbfaaae66ea779c7ff802f1aa0fafdf7c4922338",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915571",
+              "uefa_match_id": "2050086",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "AFC Bournemouth",
+              "away": "SK Sturm Graz",
+              "clubs": [
+                "espn:349",
+                "espn:3746"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "3-0",
+                "4-0"
+              ],
+              "first_probability": 0.13330235742758198,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "3-0",
+                  "4-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "ad5e036db13aa341eecf86433a449afe365f6c9218836768409b35bc31c45bf3",
+              "actual": "3-0",
+              "score_source": {
+                "provider": "espn",
+                "path": "espn-401915571.json.gz",
+                "sha256": "7442a479bc71f20feac3d3422e7dc4481ed4d9a41c497629b0b355bd488b6c96"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915572",
+              "uefa_match_id": "2050084",
+              "kickoff_at": "2026-10-15T19:00:00+00:00",
+              "home": "Stade Rennais",
+              "away": "OFI Crete",
+              "clubs": [
+                "espn:169",
+                "espn:1010"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.12078613320723716,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "2-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            }
+          ]
+        },
+        "3": {
+          "fixtures": 18,
+          "verified_regulation": 18,
+          "first_kickoff": "2026-10-23T00:45:00+08:00",
+          "last_kickoff": "2026-10-23T03:00:00+08:00",
+          "full_round_first_hits": 1,
+          "full_round_three_hits": 3,
+          "at_least_three_first_hits_available": false,
+          "batch": {
+            "planned_slots": 3,
+            "occupied": 3,
+            "settled": 3,
+            "primary_hits": 0,
+            "displayed_three_hits": 0,
+            "complete_batches": 1,
+            "primary_sweeps": 0,
+            "displayed_three_sweeps": 0,
+            "pending": 0
+          },
+          "selected_market": {
+            "score_top1": {
+              "eligible": 2,
+              "market_hits": 0,
+              "r13_hits": 0
+            },
+            "score_top3": {
+              "eligible": 2,
+              "market_hits": 0,
+              "r13_hits": 0
+            }
+          },
+          "selected": [
+            "espn:401915548",
+            "espn:401915542",
+            "espn:401915559"
+          ],
+          "matches": [
+            {
+              "match_id": "espn:401915545",
+              "uefa_match_id": "2050097",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Union St.-Gilloise",
+              "away": "Hapoel Be'er",
+              "clubs": [
+                "espn:5807",
+                "espn:13083"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "2-1",
+                "3-0"
+              ],
+              "first_probability": 0.09834481578029759,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "a0d32d1a374a7fe8498e5d578bb6a383ca2683c6d9b7953ea8c6ccdf7875bb10",
+              "actual": "4-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915546",
+              "uefa_match_id": "2050101",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Lech Poznan",
+              "away": "Sunderland",
+              "clubs": [
+                "espn:2990",
+                "espn:366"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "1-2"
+              ],
+              "first_probability": 0.11222004374217742,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915547",
+              "uefa_match_id": "2050093",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Juventus",
+              "away": "Stade Rennais",
+              "clubs": [
+                "espn:111",
+                "espn:169"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "1-1",
+                "1-0"
+              ],
+              "first_probability": 0.10994624239658302,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "1-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "6db6625e10b4b0578581ef6aee6e3d8b850246a93ed4cb24e2bad4ee359128a2",
+              "actual": "2-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915548",
+              "uefa_match_id": "2050110",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Ararat-Armenia",
+              "away": "AZ Alkmaar",
+              "clubs": [
+                "espn:20024",
+                "espn:140"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "0-1",
+                "0-3"
+              ],
+              "first_probability": 0.1280165643466693,
+              "market": {
+                "primary": "0-2",
+                "top3": [
+                  "0-2",
+                  "0-1",
+                  "1-2"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "390590bba204c97ef1d28daa5889f93fbb2c58bc7cd633909508a45c5811f67c",
+              "actual": "0-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915556",
+              "uefa_match_id": "2050098",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Dinamo Zagreb",
+              "away": "NEC Nijmegen",
+              "clubs": [
+                "espn:597",
+                "espn:147"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "2-0"
+              ],
+              "first_probability": 0.10653099152404444,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "2553ad38b771b89f8ab69384273faf29fd93d91ce0289c79b302cfa1906237bc",
+              "actual": "2-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915557",
+              "uefa_match_id": "2050100",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "SK Sturm Graz",
+              "away": "Marseille",
+              "clubs": [
+                "espn:3746",
+                "espn:176"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "2-2"
+              ],
+              "first_probability": 0.1164661949628015,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "2-2"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "f9c9eb3aef5367f6b39a6c3cdc362e9ce35942d9991ebcda082483aaca5bdb27",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915558",
+              "uefa_match_id": "2050095",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "Ferencvaros",
+              "away": "Torreense",
+              "clubs": [
+                "espn:622",
+                "espn:21615"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "1-0",
+                "1-1"
+              ],
+              "first_probability": 0.11710303914971412,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "1-0",
+                  "1-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "825881e37024964f426ed9e30e0e1ca2cfff60507e95fdb211423d65ded172a3",
+              "actual": "4-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915559",
+              "uefa_match_id": "2050108",
+              "kickoff_at": "2026-10-22T16:45:00+00:00",
+              "home": "OFI Crete",
+              "away": "Bayer Leverkusen",
+              "clubs": [
+                "espn:1010",
+                "espn:131"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "1-2"
+              ],
+              "first_probability": 0.11833565185368355,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "0-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915539",
+              "uefa_match_id": "2050096",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Viktoria Plzen",
+              "away": "Levski Sofia",
+              "clubs": [
+                "espn:11706",
+                "espn:490"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-0"
+              ],
+              "first_probability": 0.116516636459774,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-0",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "6e48738f920dac91811fccee75627b89456c29a445a3229bd94ef90bcf002f6f",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915540",
+              "uefa_match_id": "2050109",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Lillestrom",
+              "away": "Real Sociedad",
+              "clubs": [
+                "espn:987",
+                "espn:89"
+              ],
+              "primary": "0-2",
+              "top3": [
+                "0-2",
+                "1-2",
+                "0-3"
+              ],
+              "first_probability": 0.11127133542682435,
+              "market": {
+                "primary": "0-2",
+                "top3": [
+                  "0-2",
+                  "1-2",
+                  "1-3"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "0bee9151cb7b5822ee188ff78abb54ab8804770fc09ab378ebb83810a62e4874",
+              "actual": "0-6",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915541",
+              "uefa_match_id": "2050103",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "NK Celje",
+              "away": "RB Salzburg",
+              "clubs": [
+                "espn:3362",
+                "espn:2790"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "0-2"
+              ],
+              "first_probability": 0.09895701611945978,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "0-2"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "35a48bb748dc9f5c0fc81f01901a215ad5976ffa8a0baaa66680355eb8efd13b",
+              "actual": "2-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915542",
+              "uefa_match_id": "2050104",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Jagiellonia Bialystok",
+              "away": "Anderlecht",
+              "clubs": [
+                "espn:11505",
+                "espn:441"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-1",
+                "1-2"
+              ],
+              "first_probability": 0.12596420642875392,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "0-1",
+                  "1-2"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "43359f8f7a85a543319896bb757e88b2a9fb7d705deca37a2b44ca51a57d3b80",
+              "actual": "0-3",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915543",
+              "uefa_match_id": "2050106",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "TSG Hoffenheim",
+              "away": "Lyon",
+              "clubs": [
+                "espn:7911",
+                "espn:167"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "2-1"
+              ],
+              "first_probability": 0.10476480535287401,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "3-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915544",
+              "uefa_match_id": "2050105",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Omonia Nicosia",
+              "away": "Benfica",
+              "clubs": [
+                "espn:617",
+                "espn:1929"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.11563694358145682,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "1-4",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915552",
+              "uefa_match_id": "2050102",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "AFC Bournemouth",
+              "away": "AC Milan",
+              "clubs": [
+                "espn:349",
+                "espn:103"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.11291305582278607,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "877e5a83473f2aeb9a15e4a6f5ff5ba6534e6640d6ed12174bd339e0b02477e5",
+              "actual": "3-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915553",
+              "uefa_match_id": "2050107",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Besiktas",
+              "away": "Crystal Palace",
+              "clubs": [
+                "espn:1895",
+                "espn:384"
+              ],
+              "primary": "2-1",
+              "top3": [
+                "2-1",
+                "1-1",
+                "1-2"
+              ],
+              "first_probability": 0.09477963925088911,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "2-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915554",
+              "uefa_match_id": "2050094",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Olympiacos",
+              "away": "Sparta Prague",
+              "clubs": [
+                "espn:435",
+                "espn:433"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11436902082844128,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "1-0",
+                  "1-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "a5e39f09288ce6e3ab7c57c445d319f2fceed226425ed8411e34ade694bcd630",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915555",
+              "uefa_match_id": "2050099",
+              "kickoff_at": "2026-10-22T19:00:00+00:00",
+              "home": "Celtic",
+              "away": "Celta Vigo",
+              "clubs": [
+                "espn:256",
+                "espn:85"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-2"
+              ],
+              "first_probability": 0.10085233515013214,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            }
+          ]
+        },
+        "4": {
+          "fixtures": 18,
+          "verified_regulation": 18,
+          "first_kickoff": "2026-11-04T23:30:00+08:00",
+          "last_kickoff": "2026-11-06T04:00:00+08:00",
+          "full_round_first_hits": 2,
+          "full_round_three_hits": 6,
+          "at_least_three_first_hits_available": false,
+          "batch": {
+            "planned_slots": 3,
+            "occupied": 3,
+            "settled": 3,
+            "primary_hits": 0,
+            "displayed_three_hits": 1,
+            "complete_batches": 1,
+            "primary_sweeps": 0,
+            "displayed_three_sweeps": 0,
+            "pending": 0
+          },
+          "selected_market": {
+            "score_top1": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 0
+            },
+            "score_top3": {
+              "eligible": 3,
+              "market_hits": 1,
+              "r13_hits": 1
+            }
+          },
+          "selected": [
+            "espn:401915536",
+            "espn:401915532",
+            "espn:401915531"
+          ],
+          "matches": [
+            {
+              "match_id": "espn:401915551",
+              "uefa_match_id": "2050118",
+              "kickoff_at": "2026-11-04T15:30:00+00:00",
+              "home": "Stade Rennais",
+              "away": "Olympiacos",
+              "clubs": [
+                "espn:169",
+                "espn:435"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.11028042718542347,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "1-0"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "9f809f5a6e11ebaed267ee2cfc1d111e931c2afcd37200c3e8c0f429a3cd541c",
+              "actual": "0-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915526",
+              "uefa_match_id": "2050121",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Crystal Palace",
+              "away": "TSG Hoffenheim",
+              "clubs": [
+                "espn:384",
+                "espn:7911"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.1010869025853909,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915527",
+              "uefa_match_id": "2050127",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Lillestrom",
+              "away": "Viktoria Plzen",
+              "clubs": [
+                "espn:987",
+                "espn:11706"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "0-1"
+              ],
+              "first_probability": 0.110550937404383,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "0-1"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c899aba7f7a7555adef7eca43f68ad2e1e1da63b0881ad767fd54ce6f31beef8",
+              "actual": "0-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915528",
+              "uefa_match_id": "2050117",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Sparta Prague",
+              "away": "AFC Bournemouth",
+              "clubs": [
+                "espn:433",
+                "espn:349"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "0-2",
+                "1-2"
+              ],
+              "first_probability": 0.10079338366648598,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "0-2"
+                ],
+                "wdl": "away",
+                "total_side": "under",
+                "total_line": 3.0
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "4a3002f37c598f012581c205262a52d7c7e1526f46e0c45eb180fbc6fc75b782",
+              "actual": "1-3",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915534",
+              "uefa_match_id": "2050113",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "AC Milan",
+              "away": "Ferencvaros",
+              "clubs": [
+                "espn:103",
+                "espn:622"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-2"
+              ],
+              "first_probability": 0.10019727571983136,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "0-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915535",
+              "uefa_match_id": "2050126",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "NEC Nijmegen",
+              "away": "Omonia Nicosia",
+              "clubs": [
+                "espn:147",
+                "espn:617"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-2"
+              ],
+              "first_probability": 0.10423200237092864,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "3-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915536",
+              "uefa_match_id": "2050128",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Levski Sofia",
+              "away": "Jagiellonia Bialystok",
+              "clubs": [
+                "espn:490",
+                "espn:11505"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-0"
+              ],
+              "first_probability": 0.12897796882512325,
+              "market": {
+                "primary": "1-0",
+                "top3": [
+                  "1-0",
+                  "1-1",
+                  "0-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "29f255d12b3cf1c9952b7e9d278aa22bdd3090b1a3228bdfa56e136ba0c8d056",
+              "actual": "1-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915537",
+              "uefa_match_id": "2050115",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Real Sociedad",
+              "away": "Lyon",
+              "clubs": [
+                "espn:89",
+                "espn:167"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "2-0"
+              ],
+              "first_probability": 0.09856194871696423,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "2-1",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c92d9abf8d2772e3a5c43e039c28fb77150db002ec699a6565aea622ccb911fa",
+              "actual": "1-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": true,
+                "score_top3": true
+              }
+            },
+            {
+              "match_id": "espn:401915538",
+              "uefa_match_id": "2050119",
+              "kickoff_at": "2026-11-05T17:45:00+00:00",
+              "home": "Anderlecht",
+              "away": "RB Salzburg",
+              "clubs": [
+                "espn:441",
+                "espn:2790"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "2-0"
+              ],
+              "first_probability": 0.09830378303272037,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "2-0",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915522",
+              "uefa_match_id": "2050116",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Celtic",
+              "away": "Besiktas",
+              "clubs": [
+                "espn:256",
+                "espn:1895"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-2",
+                "2-2"
+              ],
+              "first_probability": 0.10158198983559824,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-2",
+                  "2-2"
+                ],
+                "wdl": "away",
+                "total_side": "over",
+                "total_line": 3.25
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "0a2b45b9c5cbf4fd499561c5a8566dd40be38e9fbc2fdfac5a0156e420df5284",
+              "actual": "3-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915523",
+              "uefa_match_id": "2050122",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Sunderland",
+              "away": "Dinamo Zagreb",
+              "clubs": [
+                "espn:366",
+                "espn:597"
+              ],
+              "primary": "2-0",
+              "top3": [
+                "2-0",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.11813647215585253,
+              "market": {
+                "primary": "2-0",
+                "top3": [
+                  "2-0",
+                  "1-0",
+                  "2-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.75
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "ede92f98424be3d3bd15378faa5ed9eb96a0df9dd0e82b4b21cd270d2927f71e",
+              "actual": "0-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915524",
+              "uefa_match_id": "2050120",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "SK Sturm Graz",
+              "away": "NK Celje",
+              "clubs": [
+                "espn:3746",
+                "espn:3362"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.1197960919913944,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "2-3",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915525",
+              "uefa_match_id": "2050112",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Benfica",
+              "away": "Lech Poznan",
+              "clubs": [
+                "espn:1929",
+                "espn:2990"
+              ],
+              "primary": "3-0",
+              "top3": [
+                "3-0",
+                "2-0",
+                "2-1"
+              ],
+              "first_probability": 0.09034362579818253,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "3-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915529",
+              "uefa_match_id": "2050114",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "AZ Alkmaar",
+              "away": "Juventus",
+              "clubs": [
+                "espn:140",
+                "espn:111"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-2"
+              ],
+              "first_probability": 0.10654888161300322,
+              "market": {},
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": null,
+                "score_top3": null
+              }
+            },
+            {
+              "match_id": "espn:401915530",
+              "uefa_match_id": "2050124",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Torreense",
+              "away": "Ararat-Armenia",
+              "clubs": [
+                "espn:21615",
+                "espn:20024"
+              ],
+              "primary": "1-0",
+              "top3": [
+                "1-0",
+                "1-1",
+                "2-0"
+              ],
+              "first_probability": 0.11452204682520731,
+              "market": {
+                "primary": "1-0",
+                "top3": [
+                  "1-0",
+                  "1-1",
+                  "2-0"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "e1fe7109769a6dcf97affe25c07e27227031950be55b22b08efb7f493c883160",
+              "actual": "3-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915531",
+              "uefa_match_id": "2050123",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Celta Vigo",
+              "away": "Union St.-Gilloise",
+              "clubs": [
+                "espn:85",
+                "espn:5807"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "2-1",
+                "1-0"
+              ],
+              "first_probability": 0.12377544536095775,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-0",
+                  "2-1"
+                ],
+                "wdl": "home",
+                "total_side": "under",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "c522481a48511f7895f1c2969743d79d3da3eb306b8bc0a733bf45abf3892941",
+              "actual": "1-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915532",
+              "uefa_match_id": "2050125",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Hapoel Be'er",
+              "away": "OFI Crete",
+              "clubs": [
+                "espn:13083",
+                "espn:1010"
+              ],
+              "primary": "1-1",
+              "top3": [
+                "1-1",
+                "1-0",
+                "2-1"
+              ],
+              "first_probability": 0.1260011801473518,
+              "market": {
+                "primary": "1-1",
+                "top3": [
+                  "1-1",
+                  "1-0",
+                  "2-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 2.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "72120e7a6cd5fb34a8a0c03b70f83316489a94135d30d2d096e12053e2c7d262",
+              "actual": "0-2",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            },
+            {
+              "match_id": "espn:401915533",
+              "uefa_match_id": "2050111",
+              "kickoff_at": "2026-11-05T20:00:00+00:00",
+              "home": "Bayer Leverkusen",
+              "away": "Marseille",
+              "clubs": [
+                "espn:131",
+                "espn:176"
+              ],
+              "primary": "2-1",
+              "top3": [
+                "2-1",
+                "2-0",
+                "3-0"
+              ],
+              "first_probability": 0.09388915517222056,
+              "market": {
+                "primary": "2-1",
+                "top3": [
+                  "2-1",
+                  "2-0",
+                  "3-1"
+                ],
+                "wdl": "home",
+                "total_side": "over",
+                "total_line": 3.5
+              },
+              "espn_identity_sha256": "c0a4c2fae8870918d128f0afdc97084b32a072b37e0aca70f8103bcb12bdf28e",
+              "panel_sha256": "fe86213812a981fc648ecdafaa313f05e904b6848a9d3961a1bfcb453dab70eb",
+              "actual": "0-1",
+              "score_source": {
+                "provider": "uefa",
+                "path": "uel-2026-09-16_to_11-05.json.gz",
+                "sha256": "9e1017b0e78ff008042af63e67e6e3d83c478571376b5aadb3bc956884b416c3"
+              },
+              "market_score_hits": {
+                "score_top1": false,
+                "score_top3": false
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

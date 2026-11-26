@@ -1,0 +1,47 @@
+name: Verify European selected-three matchday replays
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-europe-selected-history/**'
+      - '.github/workflows/europe-selected-history.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261126-europe-selected-history
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261125-r13-domestic-form
+            workspace-updates/20261126-europe-first-display
+            workspace-updates/20261126-r30-europe-score-dispersion
+            workspace-updates/20261126-europe-selected-history
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 2d7754822cc36e0387c61a140a4309be7d6e8ead
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Verify every historical fixture, score source and selected batch
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/audit.py" > "$RUNNER_TEMP/europe-selected-history.json"
+          cmp "$PACKAGE/history.json" "$RUNNER_TEMP/europe-selected-history.json"
