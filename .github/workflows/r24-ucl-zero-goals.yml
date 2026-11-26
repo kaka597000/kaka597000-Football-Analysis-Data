@@ -1,0 +1,58 @@
+name: Replay R24 Champions League zero-goal allocation
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-r24-ucl-zero-goals/**'
+      - '.github/workflows/r24-ucl-zero-goals.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      EXPECTED: workspace-updates/20261126-r24-ucl-zero-goals
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261123-prematch-literature
+            workspace-updates/20261125-r13-domestic-form
+            workspace-updates/20261126-r24-ucl-zero-goals
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: b3fefa7eddc627c262d54c8d023adb5d4fa886e0
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Refit and compare the archived replay
+        shell: bash
+        run: |
+          (cd "$EXPECTED" && sha256sum -c SHA256SUMS)
+          replay="$RUNNER_TEMP/r24-ucl-replay"
+          python -B -m research_program.ucl_zero_goals --data . --out "$replay"
+          for file in fit.json metrics.json; do
+            cmp "$EXPECTED/$file" "$replay/$file"
+          done
+          for file in forecasts.jsonl.gz validation.jsonl.gz; do
+            cmp <(gzip -dc "$EXPECTED/$file") <(gzip -dc "$replay/$file")
+          done

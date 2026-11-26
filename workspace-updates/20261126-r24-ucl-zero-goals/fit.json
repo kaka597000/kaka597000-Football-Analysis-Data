@@ -1,0 +1,72 @@
+{
+  "version": "R24-ucl-zero-goals-1",
+  "competition": "uefa.champions",
+  "stage": "league-phase",
+  "protocol_sha256": "3eecc923cede90bfdb8449aeff91981e391ce8b7b4d8680a313aaf2874806143",
+  "sources": {
+    "data_commit": "ee8ccf985fa1030d739a82b99c850a93c08c7a41",
+    "review_commit": "217da435fe7180f8f246915ec644fd059eaebad1",
+    "review_csv_sha256": "52f9c1cd0a0db994065355a6734e7f2ed9542b6295d5ef71027e2f7b2879884e",
+    "archives": {
+      "r5": {
+        "directory": "20261123-all-scope-kpi",
+        "archive": "models/uefa.champions.tar.gz",
+        "sha256": "52d8ef33d333cd3dc28cc514d7bb21722242be3827673b874d649d41c0fff847"
+      },
+      "r7": {
+        "directory": "20261123-prematch-literature",
+        "archive": "models/uefa.champions.tar.gz",
+        "sha256": "e4f083997b114e1fb2bfe450169efc886572da6ad386e18185d9358960b2a399"
+      },
+      "r13": {
+        "directory": "20261125-r13-domestic-form",
+        "archive": "replay/forecasts.tar.gz",
+        "sha256": "66dd22e8b4b5da665203776b404ecc6204fa833b61beb4b429c975a3be78655f"
+      }
+    }
+  },
+  "windows": {
+    "train": {
+      "from": "2024-07-01",
+      "before": "2025-07-01",
+      "fixtures": 144
+    },
+    "validation": {
+      "from": "2025-07-01",
+      "before": "2025-12-01",
+      "fixtures": 90
+    },
+    "late_2025_26": {
+      "from": "2025-12-01",
+      "before": "2026-07-01",
+      "fixtures": 54
+    },
+    "early_2026_27": {
+      "from": "2026-07-01",
+      "before": "2026-11-05",
+      "fixtures": 72
+    }
+  },
+  "beta_home_blank": -0.003852017555561903,
+  "beta_away_blank": 0.21188922488134834,
+  "training_out_of_grid": 0,
+  "validation_trials": {
+    "0.0": {
+      "first": 5,
+      "three": 20,
+      "log_loss": 3.2274983949412737
+    },
+    "0.5": {
+      "first": 6,
+      "three": 20,
+      "log_loss": 3.225605897524529
+    },
+    "1.0": {
+      "first": 8,
+      "three": 20,
+      "log_loss": 3.2252404679361835
+    }
+  },
+  "selected_dose": 1.0,
+  "prospective_screen_passed": false
+}
