@@ -1,0 +1,34 @@
+name: Verify historical market clock provenance
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261126-market-clock-provenance/**'
+      - '.github/workflows/market-clock-provenance.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    env:
+      PACKAGE: workspace-updates/20261126-market-clock-provenance
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261115-remaining-nations-brazil
+            workspace-updates/20261123-kpi-optimization
+            workspace-updates/20261126-market-clock-provenance
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Check preserved outputs and reproduce the historical audit
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/audit_history.py" > "$RUNNER_TEMP/market-clock-history.json"
+          cmp "$PACKAGE/history.json" "$RUNNER_TEMP/market-clock-history.json"
