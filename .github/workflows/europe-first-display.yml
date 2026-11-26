@@ -28,6 +28,7 @@ jobs:
           sparse-checkout: |
             workspace-updates/20261123-all-scope-kpi
             workspace-updates/20261123-prematch-literature
+            workspace-updates/20261125-r10-shot-conversion
             workspace-updates/20261125-r13-domestic-form
             workspace-updates/20261126-europe-first-display
             workspace-updates/20261106-uel-review
@@ -45,6 +46,7 @@ jobs:
         run: |
           (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
           python -B "$PACKAGE/prepare.py" verify
+          python -B "$PACKAGE/benchmarks.py" verify
           python -B "$PACKAGE/test_review.py"
       - name: Check the public archive against the original display freezes
         run: |
