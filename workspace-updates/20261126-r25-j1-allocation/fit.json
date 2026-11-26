@@ -1,0 +1,51 @@
+{
+  "version": "R25-J1-conditional-team-allocation-1",
+  "competition": "jpn.1",
+  "stage": "regular",
+  "label": "EXPERIMENTAL / OOD",
+  "protocol_sha256": "b07be887dce6ea449af5f905c8d2be53337d4876af6900fafca2f175155f7eb1",
+  "windows": {
+    "train": {
+      "before": "2025-01-01",
+      "fixtures": 2291
+    },
+    "validation": {
+      "from": "2025-01-01",
+      "before": "2025-07-01",
+      "fixtures": 218
+    },
+    "late_2025": {
+      "from": "2025-07-01",
+      "before": "2026-01-01",
+      "fixtures": 162
+    },
+    "early_2026_27": {
+      "from": "2026-01-01",
+      "before": "2026-11-22",
+      "fixtures": 150
+    }
+  },
+  "beta": [
+    0.02046267279252142,
+    -0.09259440005683194
+  ],
+  "validation_trials": {
+    "0.0": {
+      "first": 23,
+      "three": 71,
+      "log_loss": 2.712758886960732
+    },
+    "0.5": {
+      "first": 24,
+      "three": 70,
+      "log_loss": 2.7134828819736208
+    },
+    "1.0": {
+      "first": 23,
+      "three": 70,
+      "log_loss": 2.7143369210454047
+    }
+  },
+  "selected_dose": 0.5,
+  "prospective_screen_passed": false
+}
