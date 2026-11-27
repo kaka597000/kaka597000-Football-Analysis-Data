@@ -1,0 +1,48 @@
+{
+  "registered_at": "2026-11-22T07:23:47.924179+00:00",
+  "unit": "first forecast per regulation mens senior regular league fixture",
+  "fit_seasons": [
+    2020,
+    2021,
+    2022
+  ],
+  "cell_calibration_season": 2023,
+  "weight_selection_season": 2024,
+  "reserved_comparison_season": 2025,
+  "cohorts": [
+    "eng.1",
+    "esp.1",
+    "ger.1",
+    "ita.1",
+    "fra.1"
+  ],
+  "feature_window": 6,
+  "earlier_dates_only": true,
+  "ridge_alpha": 0.03,
+  "cell_bands": "per-team 0,1,2,3,4+ pooled within league; shrink with prior amount of 380 fixtures plus one per cell",
+  "cell_weight_candidates": [
+    0,
+    0.5,
+    1
+  ],
+  "weight_selection_priority": [
+    "first_exact",
+    "three_exact",
+    "negative_score_log_loss",
+    "smaller_weight"
+  ],
+  "training_inputs": "separate Poisson regression goals vs goals and genuine pre-target game xG; prior 4 matches at 1.3 and fixed 6 recent slots; gaps in days capped at 21",
+  "paired_issue_rule": "equal probability mixture of refreshed Test and learned xG PMF (untrained recent-six xG diagnostic for other supported regular leagues). Keep proposed primary only if top exact score of one of the two experts. Otherwise choose mixture mode. Choose two remaining highest-probability alternatives across the whole joint PMF. No mandatory goals or score blacklist.",
+  "latest_replay": "full latest 51; all same-version 40 compared, other 11 reported out of scope; data available by first comprehensive cutoff. Never use latest outcomes to tune.",
+  "holdout_limits": "archived historical xG first-known time missing. Fixed 2025/26 used only for evaluation by this experiment; historical rather than prospective. Only source-timed totals qualify.",
+  "forward_window_bjt": [
+    "2026-11-22T15:20:00+08:00",
+    "2026-11-23T12:00:00+08:00"
+  ],
+  "forward_cohort": "all scheduled English Premier League fixtures within window",
+  "forward_plan_ids": [
+    "espn:401879234",
+    "espn:401878755"
+  ],
+  "activation": "research branch only; preserve active parameters and former freezes"
+}
