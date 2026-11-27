@@ -1249,6 +1249,32 @@
     }
   },
   "historical_j1": {
+    "native_score_hits": {
+      "current": {
+        "score_top1": [
+          1,
+          7
+        ],
+        "score_top3": [
+          3,
+          7
+        ]
+      },
+      "test": {
+        "score_top1": [
+          1,
+          7
+        ],
+        "score_top3": [
+          2,
+          7
+        ]
+      }
+    },
+    "native_versions": {
+      "current": "WCPP-MAIN-1.1+MAIN1.2-DIAGNOSTIC-ADAPTER",
+      "test": "WCPP-SYSTEMATIC-RESEARCH-0.1"
+    },
     "official_minutes": 7,
     "registered": 7,
     "regulation_results": 7
@@ -1330,16 +1356,55 @@
       ]
     }
   },
+  "market_checkpoint_benchmark": {
+    "frozen": 2,
+    "match_evidence": {
+      "espn:401877516": {
+        "bookmaker": "nova88",
+        "cutoff_at": "2026-11-27T05:13:00.601005+00:00",
+        "deadline": "2026-11-27T06:00:00+00:00",
+        "freeze_id": "aab87d192c48ca6b-v000001",
+        "primary": "1-1",
+        "provider_quote_at": "2026-11-27T05:04:31Z",
+        "recorded_at": "2026-11-27T13:13:00.622140+08:00",
+        "top3": [
+          "1-1",
+          "1-0",
+          "2-0"
+        ],
+        "total_direction": "over",
+        "total_line": 2.5,
+        "wdl": "home"
+      },
+      "espn:401877542": {
+        "bookmaker": "nova88",
+        "cutoff_at": "2026-11-27T05:13:00.601005+00:00",
+        "deadline": "2026-11-27T06:00:00+00:00",
+        "freeze_id": "49a1183b56035a7a-v000001",
+        "primary": "1-1",
+        "provider_quote_at": "2026-11-27T05:04:31Z",
+        "recorded_at": "2026-11-27T13:13:00.624694+08:00",
+        "top3": [
+          "1-1",
+          "1-0",
+          "2-1"
+        ],
+        "total_direction": "under",
+        "total_line": 2.5,
+        "wdl": "home"
+      }
+    }
+  },
   "market_checkpoint_samples": {
     "market-t24": {
       "checked_first": "2026-11-27T04:04:00.812979+00:00",
       "checked_last": "2026-11-27T04:04:03.385757+00:00",
-      "first_wave_match_ids": [
+      "fresh_pair_match_ids": [],
+      "in_time": 2,
+      "in_time_match_ids": [
         "espn:401877537",
         "espn:401877539"
       ],
-      "fresh_pair_match_ids": [],
-      "in_time": 2,
       "latest_source_rows": {
         "espn:401877537": {
           "age_at_deadline_seconds": 7194.0,
@@ -1384,12 +1449,12 @@
     "market-t24-close": {
       "checked_first": "2026-11-27T04:55:03.848471+00:00",
       "checked_last": "2026-11-27T04:55:06.538998+00:00",
-      "first_wave_match_ids": [
+      "fresh_pair_match_ids": [],
+      "in_time": 2,
+      "in_time_match_ids": [
         "espn:401877537",
         "espn:401877539"
       ],
-      "fresh_pair_match_ids": [],
-      "in_time": 2,
       "latest_source_rows": {
         "espn:401877537": {
           "age_at_deadline_seconds": 2154.0,
@@ -1424,12 +1489,12 @@
     "market-t24-recheck": {
       "checked_first": "2026-11-27T04:08:00.777207+00:00",
       "checked_last": "2026-11-27T04:08:03.449733+00:00",
-      "first_wave_match_ids": [
+      "fresh_pair_match_ids": [],
+      "in_time": 2,
+      "in_time_match_ids": [
         "espn:401877537",
         "espn:401877539"
       ],
-      "fresh_pair_match_ids": [],
-      "in_time": 2,
       "latest_source_rows": {
         "espn:401877537": {
           "age_at_deadline_seconds": 7194.0,
@@ -1470,6 +1535,49 @@
       },
       "registered": 10,
       "same_book_pair": 0
+    },
+    "market-t24-wave-1400": {
+      "checked_first": "2026-11-27T05:08:12.876497+00:00",
+      "checked_last": "2026-11-27T05:08:15.636853+00:00",
+      "fresh_pair_match_ids": [
+        "espn:401877516",
+        "espn:401877542"
+      ],
+      "in_time": 2,
+      "in_time_match_ids": [
+        "espn:401877516",
+        "espn:401877542"
+      ],
+      "latest_source_rows": {
+        "espn:401877516": {
+          "age_at_deadline_seconds": 3329.0,
+          "latest_bookmakers": [
+            "nova88"
+          ],
+          "latest_open_age_at_deadline_seconds": 3329.0,
+          "latest_open_quoted_at": "2026-11-27T05:04:31+00:00",
+          "latest_rows": 4,
+          "latest_statuses": [
+            "open"
+          ],
+          "quoted_at": "2026-11-27T05:04:31+00:00"
+        },
+        "espn:401877542": {
+          "age_at_deadline_seconds": 3329.0,
+          "latest_bookmakers": [
+            "nova88"
+          ],
+          "latest_open_age_at_deadline_seconds": 3329.0,
+          "latest_open_quoted_at": "2026-11-27T05:04:31+00:00",
+          "latest_rows": 4,
+          "latest_statuses": [
+            "open"
+          ],
+          "quoted_at": "2026-11-27T05:04:31+00:00"
+        }
+      },
+      "registered": 10,
+      "same_book_pair": 2
     }
   },
   "score_review_freeze": {
@@ -1500,6 +1608,11 @@
       "confirmed_firsts": 0,
       "first_frozen_body_verified": true,
       "market_prices_reproduced": 10,
+      "native_pair_coverage": 10,
+      "native_versions": {
+        "current": "WCPP-MAIN-1.1+MAIN1.2-DIAGNOSTIC-ADAPTER",
+        "test": "WCPP-SYSTEMATIC-RESEARCH-0.1"
+      },
       "official_binding": "27defe5fb1c3dc6e-v000001",
       "original_strict_market": 0,
       "pending": 10,

@@ -11,19 +11,23 @@
 | 12 月 4–6 日 | 10 | 0 | 0 |
 | 12 月 12–13 日 | 10 | 0 | 0 |
 
-11 月 25 日的官方赛中、完场页面保留实际开球的分钟区间。常规时间终场比分与 ESPN 逐场一致。后三窗绑定了官方赛前原件，状态以 11 月 27 日 11:50 重放。周末同一结果目录可复盘原 Current、Test、市场对照、R28／R42／R46／R49 各自的首版，以及原综合比分与三席精选。正式综合展示分母仍待原渠道提供独立首送及原文回读。原合格市场须使用各自签发时冻结的报价。[复算](verified.json) · [结果入口](https://github.com/kaka597000/Football-Analysis/blob/e3c50271eecdba75a1329e9baea692f3b084050d/docs/j1-official-kickoff-proof.md)
+11 月 25 日的官方赛中、完场页面保留实际开球的分钟区间。常规时间终场比分与 ESPN 逐场一致。后三窗绑定了官方赛前原件，状态以 11 月 27 日 11:50 重放。周末同一结果目录可复盘原 Current、Test、市场对照、R28／R42／R46／R49 各自的首版，以及原综合比分与三席精选。正式综合展示分母仍待原渠道提供独立首送及原文回读。原合格市场须使用各自签发时冻结的报价。[复算](verified.json) · [结果入口](https://github.com/kaka597000/Football-Analysis/blob/1fb1c8244fd5f0cb4cdb95bd9f3553df860b14f3/docs/j1-official-kickoff-proof.md)
 
 北京时间 11 月 27 日 12:19–12:20，对 11 月 28 日 13:00 和 14:00 两个开球时段的四场实采 ESPN 摘要与 J.League 官方详情，共八份响应，均为 HTTP 200。新入口按原登记时段取数，并从同一目录一次复算两个采集批次。四场官方页面均为赛前状态，周末十场仍全数待结算。11 月 25 日原完赛档案也通过同一读取入口复算，七场实际开球和终场逐场一致。[实采原件](result-wave-rehearsal/captures.tar.gz) · [复算](verified.json)
+
+同一已核赛果现可直接结算原发布记录绑定的 Current、Test 第一比分及三选。用 11 月 25 日原七场复算，两边的首选都为 1/7，三选分别为 3/7 和 2/7。周末十场的两个原版本均已绑定，赛前复算的结算场次为零。日期回放已覆盖开球证据缺失及当时尚未签发的情况。[双模型覆盖和旧场检验](verified.json)
 
 ## 盘口时点
 
 11 月 27 日 11:46 的匿名公开探测匹配周末 10/10 场。逐行时钟距实际接收不超过一小时的同机构胜平负与双边全场大小球覆盖 10/10 场，共 59 个机构与赛事配对。横滨水手对 FC 东京的两份响应共有 21 个市场键，21 个价格行均相同且 `as_of` 更新。接口说明把响应包的时钟定义为已应用的最近上游更新，逐行字段仅给出类型。机构原生报价发布时间仍待来源确认。[采集原件与时点](market-probe/captures.json) · [逐场盘口覆盖](market-probe/coverage.json) · [同场时钟对照](market-probe/baseline-comparison.json) · [InferSports 接口说明](https://api.infersports.dev/openapi.json)
 
-T−24h、T−6h、T−60min、T−15min 按每场独立截止、独立留存。以各节点真实具名市场行复核来源和年龄。已签发的首版仍引用签发时的原证据，后续节点与首发信息按各自版本结算。[盘口采集入口](https://github.com/kaka597000/Football-Analysis/blob/e3c50271eecdba75a1329e9baea692f3b084050d/docs/j1-infersports-market-evidence.md)
+T−24h、T−6h、T−60min、T−15min 按每场独立截止、独立留存。以各节点真实具名市场行复核来源和年龄。已签发的首版仍引用签发时的原证据，后续节点与首发信息按各自版本结算。[盘口采集入口](https://github.com/kaka597000/Football-Analysis/blob/1fb1c8244fd5f0cb4cdb95bd9f3553df860b14f3/docs/j1-infersports-market-evidence.md)
 
 11 月 27 日 12:04 首采和 12:08 复采使用 13:00 的 T−24h 截止。两次均匹配京都不死鸟对大阪樱花、清水心跳对浦和红钻的原赛程。两场最新市场行均为 11:00:06，距节点截止 7,194 秒。本轮节点合格同机构配对为 0/2，另八场尚未进入各自节点的采集区间。[首采回执](market-t24/receipts.json) · [复采回执](market-t24-recheck/receipts.json)
 
 12:55 再次按同一截止采集。两场各有 4 条 Nova88 暂停受注行更新至 12:24:06，价格均为零。两场各 17 条仍开放的同机构同市场报价与 12:08 原件相比，价格和时钟逐行一致，最新开放行仍为 11:00:06。首批两场在此次 T−24h 复采的合格配对仍为 0/2。[12:55 采集回执](market-t24-close/receipts.json) · [逐场时钟与价格变化复算](verified.json)
+
+13:08 采集次日 14:00 开球的神户胜利船对千叶市原、鹿岛鹿角对冈山绿雉。两场都从 Nova88 的同一响应取得全场胜平负和 2.5 球双边开放报价。供应商逐行时钟为 13:04:31，距 14:00 的 T−24h 截止 3,329 秒，节点覆盖为 2/2。沿用既有盘口基准方法，两场基准均在 13:13 首次冻结，记录绑定同一采集回执及十场原登记。此处覆盖按该节点统计，原综合首版的结算仍使用原签发时点的证据。[13:08 采集回执](market-t24-wave-1400/receipts.json) · [两场市场基准冻结](market-t24-wave-1400/benchmark/index.json) · [复算](verified.json)
 
 12:17 对首两场同时核查香港赛马会。匿名公开主页返回 HTTP 200 的客户端页面壳，正常浏览器访问遇到证书校验错误。本次从该官方页面核实的两场具名市场行均为零。[官方网页原件](hkjc-clock-check/raw/hkjc-public-football-home.html) · [采集记录](hkjc-clock-check/request-metadata.json) · [浏览器回执](hkjc-clock-check/browser-failure.json)
 
@@ -68,7 +72,7 @@ T−24h、T−6h、T−60min、T−15min 按每场独立截止、独立留存。
 
 ## 复算
 
-源码输入固定为 `e3c50271eecdba75a1329e9baea692f3b084050d`，原数据输入固定为 `87ef46859990a8760b4af361eef3186f5090d319`。本地复算与 PR 检查使用相同两份输入。
+源码输入固定为 `1fb1c8244fd5f0cb4cdb95bd9f3553df860b14f3`，原数据输入固定为 `87ef46859990a8760b4af361eef3186f5090d319`。本地复算与 PR 检查使用相同两份输入。
 
 ```bash
 (cd workspace-updates/20261127-phase-one-evidence && sha256sum -c SHA256SUMS)

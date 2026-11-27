@@ -5,7 +5,7 @@ import csv
 from datetime import timedelta
 from hashlib import sha256
 import json
-from math import fsum, isfinite, log
+from math import fsum, isclose, isfinite, log
 from pathlib import Path
 import tarfile
 from tempfile import TemporaryDirectory
@@ -15,6 +15,7 @@ from research_program import club_market_capture as club_market
 from research_program import display_window_review as display
 from research_program import goal_state_forward as ledger
 from research_program import j1_window_intake as intake
+from research_program import market_baseline as market
 from research_program import nov25_first_review as acquired
 from research_program.three_arm_review import _results
 
@@ -87,7 +88,32 @@ def historical(data, root, plan_path):
     if replay['settled'] != 7 or any(r['official_result_agreement'] != 'official_and_espn_ft_agree'
                                     for r in replay['match_evidence'].values()):
         raise ValueError('expected the seven original dual-source J1 finals')
-    return dict(registered=7, official_minutes=len(starts), regulation_results=len(scores))
+    original = data / '20261125-j1-stage-windows/nov25'
+    publication = ledger._read(original, intake.read(original / 'publication.json'))
+    original_rows = publication['payload']['identity']['rows']
+    if publication['payload']['fixtures'] != fixtures or original_rows.keys() != fixtures.keys():
+        raise ValueError('previous Current/Test pairs are outside the original published seven')
+    pairs = {mid: ledger._read(original, row['pair']) for mid, row in original_rows.items()}
+    clocks = {mid: dict(actual_kickoff_interval=dict(start_inclusive=row['earliest'], end_exclusive=row['latest']))
+              for mid, row in starts.items()}
+    labels = {row['match_id']: row for row in results}
+    native = display.review_native_scores(fixtures, pairs, labels, clocks, AS_OF)
+    if native['settled'] != 7 or len(native['by_version']) != 1:
+        raise ValueError('previous native pairs did not settle the complete original population')
+    first_id = min(fixtures)
+    incomplete = display.review_native_scores(fixtures, pairs, labels,
+                                              {mid: value for mid, value in clocks.items() if mid != first_id}, AS_OF)
+    if (incomplete['registered'], incomplete['settled'], incomplete['per_match'][first_id]['status']) != (
+            7, 6, 'AWAITING_VERIFIED_KICKOFF'):
+        raise ValueError('a result without actual kickoff proof entered native score credit')
+    cutoff = min(aware(row['recorded_at']) for row in pairs.values()) - timedelta(microseconds=1)
+    earlier = display.review_native_scores(fixtures, pairs, {}, {}, cutoff)
+    if (earlier['registered'], earlier['bound_original_pairs'], earlier['settled']) != (7, 0, 0):
+        raise ValueError('native pair report used a forecast from after the replay cutoff')
+    summary = native['by_version'][0]
+    return dict(registered=7, official_minutes=len(starts), regulation_results=len(scores),
+                native_score_hits={role: {metric: (piece['hits'], piece['eligible']) for metric, piece in values.items()}
+                                   for role, values in summary['scores'].items()}, native_versions=summary['versions'])
 
 
 def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=None):
@@ -124,7 +150,15 @@ def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=N
                                          'original_blocks_present_once_in_order', 'prepared_batch_verified'))
                 or (market['raw_verified_price_snapshots_n'], market['strict_quote_issues_n']) != (10, 0)):
             raise ValueError('expected the original whole body and ten clock-unverified market quotes')
-        readiness.update(first_frozen_body_verified=True, market_prices_reproduced=10, original_strict_market=0)
+        native = settled['native_pair_scores']
+        if (native['registered'], native['bound_original_pairs'], native['settled'], len(native['by_version'])) != (10, 10, 0, 1):
+            raise ValueError('native pair review did not preserve the ten original frozen issues')
+        ready = native['by_version'][0]
+        if any(piece['issued'] != 10 or piece['eligible'] for group in ready['scores'].values()
+               for piece in group.values()):
+            raise ValueError('native score coverage or pregame result credit differs')
+        readiness.update(first_frozen_body_verified=True, market_prices_reproduced=10, original_strict_market=0,
+                         native_pair_coverage=10, native_versions=ready['versions'])
     return readiness
 
 
@@ -378,7 +412,70 @@ def first_checkpoint(data, directory, reg):
                                  if opened else None)
     return dict(registered=len(rows), in_time=len(eligible), same_book_pair=len(paired),
                 checked_first=min(clocked).isoformat(), checked_last=max(clocked).isoformat(),
-                first_wave_match_ids=eligible, fresh_pair_match_ids=paired, latest_source_rows=freshest)
+                in_time_match_ids=eligible, fresh_pair_match_ids=paired, latest_source_rows=freshest)
+
+
+def checkpoint_benchmark(directory, plan_path, fresh_match_ids):
+    plan = verify(intake.read(plan_path))
+    captures_sha = sha256((directory / 'receipts.json').read_bytes()).hexdigest()
+    fixtures = {row['match_id']: row for row in intake.read(directory / 'prepared-fixtures.json')}
+    archived = directory / 'benchmark'
+    references = intake.read(archived / 'index.json')
+    if sorted(ref['match_id'] for ref in references) != sorted(fresh_match_ids):
+        raise ValueError('benchmark must cover every fresh same-book pair in this wave')
+    output = {}
+    track = 'j1-t24-market-baseline'
+    for ref in references:
+        mid = ref['match_id']
+        scope = dict(match_id=mid, stage='prematch', track=track)
+        freeze_id = digest(scope)[:16] + '-v000001'
+        if ref['freeze_id'] != freeze_id or ref['file'] != freeze_id + '.json':
+            raise ValueError('unexpected benchmark freeze reference: ' + mid)
+        first = ledger._read(archived, dict(ref, id=freeze_id))
+        fixture, payload = first['fixture'], first['payload']
+        checkpoint = fixtures[mid]['market_checkpoint']
+        cutoff, issued_at = aware(fixture['cutoff_at']), aware(first['recorded_at'])
+        captured_at = aware(fixture['market_evidence']['odds']['captured_at'])
+        if (any(first[key] != value for key, value in scope.items())
+                or first['recorded_at'] != ref['recorded_at']
+                or fixture != dict(fixtures[mid], cutoff_at=fixture['cutoff_at'])
+                or payload['registration_id'] != plan['freeze_id']
+                or payload['registration_sha256'] != plan['record_sha256']
+                or payload['capture_manifest_sha256'] != captures_sha
+                or payload['checkpoint'] != checkpoint['name']
+                or payload['checkpoint_deadline'] != checkpoint['deadline']
+                or not (aware(plan['recorded_at']) <= aware(checkpoint['checked_at'])
+                        <= captured_at <= aware(checkpoint['verified_at']) <= cutoff <= issued_at
+                        <= aware(checkpoint['deadline']) < aware(fixture['kickoff_at']))):
+            raise ValueError('benchmark fixture, registration or issue time differs: ' + mid)
+        forecast = payload['forecast']
+        replay = market.predict(fixture)
+        stable_keys = ('version', 'method', 'match_id', 'formal_kpi_eligible', 'active_model_changed',
+                       'status', 'quote_snapshot', 'quote_snapshot_sha256', 'primary', 'top3',
+                       'poisson_top3', 'lowest_price_1x2', 'lowest_price_total')
+        total = forecast['full_win_total']
+        replay_total = replay['full_win_total']
+        wdl = forecast['wdl_probabilities']
+        # Optimizer rounding can vary across platforms. Require the same picks and numerical probabilities.
+        numbers = [(forecast['primary_probability'], replay['primary_probability'])]
+        numbers.extend((value, replay['wdl_probabilities'][key]) for key, value in wdl.items())
+        numbers.extend((value, replay_total['settlements'][side][key])
+                       for side, states in total['settlements'].items() for key, value in states.items())
+        if (replay['status'] != 'AVAILABLE' or any(forecast[key] != replay[key] for key in stable_keys)
+                or any(total[key] != replay_total[key] for key in ('line', 'direction', 'objective'))
+                or any(not isclose(a, b, rel_tol=0, abs_tol=1e-10) for a, b in numbers)):
+            raise ValueError('frozen market benchmark does not reproduce: ' + mid)
+        quote = forecast['quote_snapshot']
+        ok, reason, quote_clock = club_market.verify_j1_quote(
+            fixture, fixture['total_quote'], directory, quote['h2h']['prices'])
+        if not ok or quote_clock != quote['total']['quoted_at']:
+            raise ValueError(f'benchmark raw markets do not reproduce: {mid} {reason}')
+        output[mid] = dict(freeze_id=freeze_id, recorded_at=first['recorded_at'],
+                           cutoff_at=fixture['cutoff_at'], deadline=checkpoint['deadline'],
+                           provider_quote_at=quote_clock, bookmaker=quote['bookmaker'],
+                           primary=forecast['primary'], top3=forecast['top3'],
+                           wdl=max(wdl, key=wdl.get), total_line=total['line'], total_direction=total['direction'])
+    return dict(frozen=len(output), match_evidence=output)
 
 
 def compare_checkpoint_prices(before, after):
@@ -567,8 +664,10 @@ def run(data):
     ranked = ranked_europe(data)
     differences = frozen_differences(research, nov_reg)
     review_freeze = score_review_freeze(package, data, nov_reg, ranked, differences)
+    wave = 'market-t24-wave-1400'
     checkpoints = {name: first_checkpoint(data, package / name, nov_reg)
-                   for name in ('market-t24', 'market-t24-recheck', 'market-t24-close')}
+                   for name in ('market-t24', 'market-t24-recheck', 'market-t24-close', wave)}
+    benchmark = checkpoint_benchmark(package / wave, nov_reg, checkpoints[wave]['fresh_pair_match_ids'])
     closing_changes = compare_checkpoint_prices(package/'market-t24-recheck', package/'market-t24-close')
     with TemporaryDirectory(prefix='phase-one-replay-') as tmp:
         root = Path(tmp)
@@ -582,7 +681,8 @@ def run(data):
                     jleague_espn_wave_rehearsal=result_wave_rehearsal(package, root, nov_reg, nov_bind, research),
                     hkjc_probe=hkjc_probe(package, nov_reg),
                     frozen_score_differences=differences, score_review_freeze=review_freeze,
-                    market_checkpoint_samples=checkpoints, closing_1x2_and_totals_changes=closing_changes)
+                    market_checkpoint_samples=checkpoints, closing_1x2_and_totals_changes=closing_changes,
+                    market_checkpoint_benchmark=benchmark)
 
 
 if __name__ == '__main__':
