@@ -20,6 +20,7 @@ from research_program import goal_state_forward as ledger
 from research_program import j1_checkpoint_review as checkpoint_review
 from research_program import j1_window_intake as intake
 from research_program import nov25_first_review as acquired
+from research_program.paired_kpi_inference import compare
 from research_program.three_arm_review import _results
 
 
@@ -114,9 +115,39 @@ def historical(data, root, plan_path):
     if (earlier['registered'], earlier['bound_original_pairs'], earlier['settled']) != (7, 0, 0):
         raise ValueError('native pair report used a forecast from after the replay cutoff')
     summary = native['by_version'][0]
+    authored = compare_authored_history(original, plan_path.parent, publication, native, scores, starts)
     return dict(registered=7, official_minutes=len(starts), regulation_results=len(scores),
                 native_score_hits={role: {metric: (piece['hits'], piece['eligible']) for metric, piece in values.items()}
-                                   for role, values in summary['scores'].items()}, native_versions=summary['versions'])
+                                   for role, values in summary['scores'].items()}, native_versions=summary['versions'],
+                original_authored_scores=authored)
+
+
+def compare_authored_history(folder, registration, publication, native, results, starts):
+    plan, fixtures, identity = display.prepared_batch(registration, 'nov25', intake.read(folder / 'entries.json'),
+                                                     (folder / 'message.txt').read_text(encoding='utf-8'), folder)
+    locked = display._publication([publication], 'nov25', plan['record_sha256'], results,
+                                  prefix=plan['payload']['track'] + '-')
+    if locked != publication or identity != publication['payload']['identity'] or set(identity['rows']) != results.keys():
+        raise ValueError('original authored body or fixture scope differs')
+    matched, authored = [], {}
+    for f in fixtures:
+        mid = f['match_id']
+        row = identity['rows'][mid]
+        record = ledger._read(folder, row['authored'])
+        if not aware(record['recorded_at']) <= aware(publication['recorded_at']) < aware(starts[mid]['earliest']):
+            raise ValueError('original authored score freezes must precede actual kickoff')
+        choices = row['displayed_scores']
+        authored[mid] = dict(primary=choices[0], top3=choices)
+        matched.append(dict(id=mid, date='2026-11-25', cohort='jpn.1', actual=results[mid],
+                            forecast=dict(native['per_match'][mid]['forecasts'], authored=authored[mid])))
+    audits = {role: compare(matched, baseline=role, candidate='authored') for role in ('current', 'test')}
+    metrics = ('score_top1', 'score_top3')
+    counts = {role: {metric: {key: audit['paired'][metric][key] for key in ('eligible', 'gained', 'lost', 'net_hits')}
+                     for metric in metrics} for role, audit in audits.items()}
+    metrics_authored = audits['current']['tracks']['authored']['metrics']
+    scores = {metric: (metrics_authored[metric]['hits'], metrics_authored[metric]['eligible']) for metric in metrics}
+    return dict(evidence='original_frozen_body', publication=publication['freeze_id'], hits=scores,
+                versus_native=counts, selected=acquired.seats(identity['selected'], authored, results))
 
 
 def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=None,
@@ -201,15 +232,21 @@ def ranked_europe(data):
     return result
 
 
-def r7_four_goal_bands(data):
-    source = data / '20261127-r45-j1-four-goal-path'
-    expected = dict(line.split()[::-1] for line in (source / 'SHA256SUMS').read_text().splitlines())
+def archived_replay(source, names):
+    expected = {path.removeprefix('./'): sha for sha, path in
+                (line.split() for line in (source / 'SHA256SUMS').read_text().splitlines())}
     rows = []
-    for name in ('replay/validation.jsonl.gz', 'replay/forecasts.jsonl.gz'):
+    for name in names:
         body = (source / name).read_bytes()
         if sha256(body).hexdigest() != expected[name]:
-            raise ValueError('the original R45 replay input changed: ' + name)
+            raise ValueError('the original replay input changed: ' + name)
         rows.extend(json.loads(line) for line in gzip.decompress(body).splitlines())
+    return rows
+
+
+def r7_four_goal_bands(data):
+    source = data / '20261127-r45-j1-four-goal-path'
+    rows = archived_replay(source, ('replay/validation.jsonl.gz', 'replay/forecasts.jsonl.gz'))
     windows = {'validation': 218, 'late_2025': 162, 'early_2026_27': 150}
     if (Counter(row['window'] for row in rows) != windows or len({row['id'] for row in rows}) != len(rows)
             or any(row['cohort'] != 'jpn.1' or row['stage'] != 'regular' for row in rows)):
@@ -620,7 +657,7 @@ def compare_frozen_scores(rows, baseline, candidate, seats):
 def frozen_differences(folders, registration):
     _, fixtures, slates, _ = display._registered(intake.read(registration))
     population = set(slates['nov28_29'])
-    reports = {}
+    reports, by_track = {}, {}
     for folder in folders:
         index = intake.read(folder / 'receipts.json')
         plan = ledger._read(folder, index['registration'])
@@ -642,7 +679,60 @@ def frozen_differences(folders, registration):
         compared = {pair: compare_frozen_scores(rows, *arms, identity.get('selected', {}))
                     for pair, arms in identity['pairs'].items()}
         reports[track] = dict(freeze_id=plan['freeze_id'], registered=len(rows), pairs=compared)
-    return reports
+        by_track[track] = rows
+    return reports, by_track
+
+
+def r42_historical_matches(data, forecasts):
+    def lists(arms):
+        return tuple(tuple(arms[role]['top3']) for role in ('r7', 'half_dose'))
+
+    week = {mid: lists(arms) for mid, arms in forecasts.items()}
+    templates = {choices for choices in week.values() if choices[0] != choices[1]}
+    if len(templates) != 2 or any(a[0] != b[0] for a, b in week.values()):
+        raise ValueError('R42 replay needs the original fixed-first-score changes')
+    source = data / '20261127-r42-j1-fixed-first-backups'
+    rows = archived_replay(source, ('replay/validation.jsonl.gz', 'replay/history.jsonl.gz'))
+    sizes = {'validation': 218, 'late_2025': 162, 'early_2026_27': 150}
+    identities = {r['id'] for r in rows}
+    if Counter(r['window'] for r in rows) != sizes or len(identities) != len(rows) or identities & week.keys():
+        raise ValueError('R42 history must preserve separated validation and holdout populations')
+    matched = []
+    stats = {name: Counter(matches=0, first_hits=0, r7_three_hits=0, r42_three_hits=0, gained=0, lost=0)
+             for name in sizes}
+    for row in rows:
+        before, after = lists(row['forecast'])
+        if (before, after) not in templates:
+            continue
+        actual = '-'.join(map(str, row['actual']))
+        before_hit, after_hit = actual in before, actual in after
+        stats[row['window']].update(matches=1, first_hits=int(actual == before[0]), r7_three_hits=int(before_hit),
+                                    r42_three_hits=int(after_hit), gained=int(after_hit and not before_hit),
+                                    lost=int(before_hit and not after_hit))
+        matched.append(dict(match_id=row['id'], window=row['window'], date=row['date'],
+                            actual=actual, r7=before, r42=after))
+    return dict(weekend_match_ids=sorted(mid for mid, pair in week.items() if pair in templates),
+                templates=sorted(templates), by_window={name: dict(population=sizes[name], **tallies)
+                                                            for name, tallies in stats.items()}, matched=matched)
+
+
+def research_score_overlap(forecasts):
+    r28 = forecasts['research-r28-j1-process-forward']
+    r42 = forecasts['research-r42-j1-fixed-first-backups']
+    r46 = forecasts['research-r46-j1-process-at-fixed-total']
+    comparisons = (
+        ('r42_half_and_full', r42, 'half_dose', r42, 'full_dose'),
+        ('r28_and_r46_xg_history', r28, 'xg_history', r46, 'xg_history'),
+        ('r28_xg_history_and_r46_xg_fixed_total', r28, 'xg_history', r46, 'xg_same_total'),
+    )
+    report = {}
+    for name, left, a, right, b in comparisons:
+        paired = [(row[a], right[mid][b]) for mid, row in left.items()]
+        report[name] = dict(registered=len(paired),
+                            same_first=sum(x['primary'] == y['primary'] for x, y in paired),
+                            same_ordered_three=sum(x['top3'] == y['top3'] for x, y in paired),
+                            same_three_members=sum(set(x['top3']) == set(y['top3']) for x, y in paired))
+    return report
 
 
 def score_review_freeze(package, data, registration, ranked, differences):
@@ -662,6 +752,22 @@ def score_review_freeze(package, data, registration, ranked, differences):
     return dict(freeze_id=record['freeze_id'], recorded_at=record['recorded_at'])
 
 
+def j1_comparison_freeze(package, registration, historical, templates, overlap):
+    record = verify(intake.read(package / 'j1-score-comparison-freeze.json'))
+    previous = verify(intake.read(package / 'score-review-freeze.json'))
+    plan, fixtures, slates, _ = display._registered(intake.read(registration))
+    first = min(aware(fixtures[mid]['kickoff_at']) for mid in slates['nov28_29'])
+    payload = dict(registration_sha256=plan['record_sha256'], previous_review_sha256=previous['record_sha256'],
+                   original_authored_sha256=digest(historical['original_authored_scores']),
+                   r42_template_history_sha256=digest(templates), weekend_research_overlap_sha256=digest(overlap))
+    if (record['stage'] != 'review' or record['track'] != 'first-stage-j1-score-comparison'
+            or record['payload'] != payload or aware(record['fixture']['kickoff_at']) != first
+            or not aware(previous['recorded_at']) <= aware(record['fixture']['cutoff_at'])
+            <= aware(record['recorded_at']) < first):
+        raise ValueError('first-stage J1 score comparison differs from the recorded review')
+    return dict(freeze_id=record['freeze_id'], recorded_at=record['recorded_at'])
+
+
 def run(data):
     nov = data / '20261125-j1-stage-windows/registration'
     dec = data / '20261126-j1-december-windows/registration'
@@ -673,7 +779,7 @@ def run(data):
     research = tuple(data / name / 'issued' for name in RESEARCH)
     package = Path(__file__).parent
     ranked = ranked_europe(data)
-    differences = frozen_differences(research, nov_reg)
+    differences, forecasts = frozen_differences(research, nov_reg)
     review_freeze = score_review_freeze(package, data, nov_reg, ranked, differences)
     waves = ('market-t24-wave-1400', 'market-t24-wave-1500')
     checkpoints = {name: first_checkpoint(data, package / name, nov_reg)
@@ -691,7 +797,11 @@ def run(data):
     closing_changes = compare_checkpoint_prices(package/'market-t24-recheck', package/'market-t24-close')
     with TemporaryDirectory(prefix='phase-one-replay-') as tmp:
         root = Path(tmp)
-        return dict(as_of=AS_OF.isoformat(), historical_j1=historical(data, root / 'nov25', nov_reg),
+        historical_j1 = historical(data, root / 'nov25', nov_reg)
+        templates = r42_historical_matches(data, forecasts['research-r42-j1-fixed-first-backups'])
+        overlap = research_score_overlap(forecasts)
+        comparison = j1_comparison_freeze(package, nov_reg, historical_j1, templates, overlap)
+        return dict(as_of=AS_OF.isoformat(), historical_j1=historical_j1,
                     upcoming={
                         'nov28_29': forthcoming(data, root, nov_reg, nov_bind, 'nov28_29', research,
                                                 checkpoint_folders=tuple(package / name for name in waves),
@@ -701,6 +811,8 @@ def run(data):
                         'dec12_13': forthcoming(data, root, dec_reg, dec_bind, 'dec12_13', binding_root=dec_official),
                     }, historical_scorecard=scorecard(data), europe_score_ranking=ranked,
                     historical_r7_four_goal_bands=r7_four_goal_bands(data),
+                    historical_r42_weekend_templates=templates, weekend_research_overlap=overlap,
+                    j1_comparison_freeze=comparison,
                     upcoming_market_probe=market_probe(data, package / 'market-probe', nov_reg,
                                                        tuple(package / name for name in waves)),
                     jleague_espn_wave_rehearsal=result_wave_rehearsal(package, root, nov_reg, nov_bind, research),
