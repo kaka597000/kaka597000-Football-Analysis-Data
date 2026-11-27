@@ -38,12 +38,14 @@ def historical(data, root, plan_path):
     archive_path = data / '20261125-forward-settlement/nov25/evidence.tar.gz'
     if sha256(archive_path.read_bytes()).hexdigest() != originals['archive_sha256']:
         raise ValueError('previous raw archive differs from the signed audit')
+    capture_dir = root / 'captures' / 'previous-results'
+    capture_dir.mkdir(parents=True)
     with tarfile.open(archive_path) as archive:
         def rows(file):
             return [json.loads(line) for line in archive.extractfile('snapshot/' + file).read().splitlines()]
 
         def restore(row):
-            path = acquired.file_in(root, row['path'])
+            path = acquired.file_in(capture_dir, row['path'])
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(archive.extractfile('intake/' + row['path']).read())
 
@@ -65,6 +67,10 @@ def historical(data, root, plan_path):
             for row in (originals['matches'][mid]['official_kickoff_source'], finale):
                 restore(row)
                 official[mid].append(dict(row, code=code, raw_file=row['path']))
+    (capture_dir / 'espn.jsonl').write_text(''.join(json.dumps(row) + '\n' for _, row in summaries),
+                                           encoding='utf-8')
+    (capture_dir / 'official-captures.json').write_text(json.dumps(official), encoding='utf-8')
+    summaries, official = intake.acquisitions(root, AS_OF)
     replay, results, starts = intake.check(fixtures, bindings, summaries, official, root, AS_OF)
     state = data / '20261126-j1-forward-result-review/nov25-state'
     expected, issues = _results(state, fixtures, AS_OF)
@@ -265,6 +271,75 @@ def first_checkpoint(data, directory, reg):
                 first_wave_match_ids=eligible, fresh_pair_match_ids=paired, latest_source_rows=freshest)
 
 
+def result_wave_rehearsal(package, root, registration, binding, research):
+    plan, fixtures, slates, _ = display._registered(intake.read(registration))
+    source = root / 'retained-waves'
+    source.mkdir()
+    with tarfile.open(package / 'result-wave-rehearsal/captures.tar.gz') as archive:
+        archive.extractall(source, filter='data')
+    scopes, received = {}, []
+    for folder in sorted((source / 'captures').iterdir()):
+        receipt = intake.read(folder / 'capture.json')
+        schedule = aware(receipt['scheduled_at'])
+        expected = {mid for mid in slates['nov28_29'] if aware(fixtures[mid]['kickoff_at']) == schedule}
+        if (receipt['registration'] != plan['freeze_id'] or receipt['window'] != 'nov28_29'
+                or receipt['blocked'] or expected != set(receipt['fixtures']) or len(expected) != 2
+                or schedule in scopes):
+            raise ValueError('retained wave differs from the original registration')
+        scopes[schedule] = sorted(expected)
+        official = intake.read(folder / 'official-captures.json')
+        summaries = [json.loads(line) for line in (folder / 'espn.jsonl').read_text().splitlines()]
+        if ({'espn:' + row['event_id']: row for row in summaries}
+                != {mid: row['espn'] for mid, row in receipt['fixtures'].items()}
+                or official != {mid: [row['jleague']] for mid, row in receipt['fixtures'].items()}):
+            raise ValueError('capture manifests disagree with their original receipt')
+        for sources in receipt['fixtures'].values():
+            for item in sources.values():
+                arrival = aware(item['captured_at_utc'])
+                if (item['http_status'] != 200 or not item.get('sha256')
+                        or not aware(item['requested_at_utc']) <= arrival < schedule):
+                    raise ValueError('expected the actual prematch capture clocks')
+                received.append(arrival)
+    if len(scopes) != 2:
+        raise ValueError('expected both retained original kickoff waves')
+    at = max(received)
+    out = root / 'wave-results'
+    intake.intake(registration, 'nov28_29', binding, source, out, research, at)
+    review = intake.read(out / 'review.json')
+    governed = {mid for mids in scopes.values() for mid in mids}
+    scheduled = {mid for mid, row in review['match_evidence'].items() if row['official_state'] == 'scheduled'}
+    if (scheduled != governed or (review['registered'], review['actual_starts'], review['settled'], review['pending'])
+            != (10, 0, 0, 10) or any(r['settled'] for r in review['research'].values())):
+        raise ValueError('a genuine prematch capture gained result credit or changed the original denominator')
+    return dict(waves={stamp.isoformat(): mids for stamp, mids in scopes.items()}, at=at.isoformat(),
+                response_captures=len(received), observed_scheduled=len(scheduled),
+                registered=review['registered'], actual_starts=0, pending=10)
+
+
+def hkjc_probe(package, registration):
+    folder = package / 'hkjc-clock-check'
+    ref = intake.read(folder / 'request-metadata.json')
+    browser = intake.read(folder / 'browser-failure.json')
+    body = (folder / 'raw/hkjc-public-football-home.html').read_bytes()
+    _, fixtures, slates, _ = display._registered(intake.read(registration))
+    earliest = min(aware(fixtures[mid]['kickoff_at']) for mid in slates['nov28_29'])
+    original = {mid for mid in slates['nov28_29'] if aware(fixtures[mid]['kickoff_at']) == earliest}
+    targets = intake.read(folder / 'targets.json')
+    if ({row['espn_match_id'] for row in targets} != original or len(targets) != len(original)
+            or any(aware(row['kickoff_utc']) != earliest
+                   or (row['home_espn_id'], row['away_espn_id']) !=
+                   (fixtures[row['espn_match_id']]['home'], fixtures[row['espn_match_id']]['away'])
+                   for row in targets)):
+        raise ValueError('HKJC probe does not refer to the original first wave')
+    if (ref['http_status'] != 200 or ref['response_bytes'] != len(body)
+            or sha256(body).hexdigest() != ref['response_sha256'] or b'<div id="root"></div>' not in body
+            or browser['navigation_url'] != ref['url'] or browser['tls_verification'] != 'default enabled'):
+        raise ValueError('HKJC page format or original browser observation differs')
+    return dict(targets=len(targets), matched_market_rows=0,
+                http_status=ref['http_status'], retrieved_at=ref['response_received_utc'],
+                browser_error=browser['error'])
+
+
 def run(data):
     nov = data / '20261125-j1-stage-windows/registration'
     dec = data / '20261126-j1-december-windows/registration'
@@ -284,6 +359,8 @@ def run(data):
                         'dec12_13': forthcoming(data, root, dec_reg, dec_bind, 'dec12_13', binding_root=dec_official),
                     }, historical_scorecard=scorecard(data), europe_score_ranking=ranked_europe(data),
                     upcoming_market_probe=market_probe(data, package / 'market-probe', nov_reg),
+                    jleague_espn_wave_rehearsal=result_wave_rehearsal(package, root, nov_reg, nov_bind, research),
+                    hkjc_probe=hkjc_probe(package, nov_reg),
                     market_checkpoint_samples={name: first_checkpoint(data, package / name, nov_reg)
                                                for name in ('market-t24', 'market-t24-recheck')})
 
