@@ -1,0 +1,47 @@
+name: Verify December J1 pregame identities and quote evidence
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261127-j1-december-evidence/**'
+      - '.github/workflows/j1-december-evidence-20261127.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261127-j1-december-evidence
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261126-j1-december-windows/registration
+            workspace-updates/20261126-r26-j1-first-stage/evidence
+            workspace-updates/20261127-europe-round1-review
+            workspace-updates/20261127-j1-december-evidence
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: cbac9d911548ce2c2051647f805d1c52e8af42b6
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Verify retained match cards and actual stale-price rejection
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/verify.py" > "$RUNNER_TEMP/j1-december-evidence.json"
+          cmp "$PACKAGE/verified.json" "$RUNNER_TEMP/j1-december-evidence.json"
+          python -B -m unittest research_program.test_club_market_capture research_program.test_display_window_review research_program.test_nov25_first_review
