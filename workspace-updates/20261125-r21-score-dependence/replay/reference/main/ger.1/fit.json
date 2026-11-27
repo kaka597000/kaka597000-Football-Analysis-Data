@@ -1,0 +1,113 @@
+{
+  "version": "R21-five-league-score-dependence-1",
+  "competition": "ger.1",
+  "bounds": [
+    "2024-07-01",
+    "2025-07-01",
+    "2026-07-01"
+  ],
+  "train_n": 1530,
+  "validation_n": 306,
+  "training_through": "2024-05-18",
+  "validation_through": "2025-05-17",
+  "fitted": {
+    "context": {
+      "version": "R21-five-league-score-dependence-1",
+      "features": [
+        "intercept",
+        "club_concordance",
+        "club_chance_volume"
+      ],
+      "beta": [
+        -0.2499439859735589,
+        -0.1280313274354382,
+        -0.0331916675800331
+      ],
+      "training_rows": 1530,
+      "penalized_relative_loss": -3.8754993184538558
+    },
+    "constant": {
+      "version": "R21-five-league-score-dependence-1",
+      "features": [
+        "intercept"
+      ],
+      "beta": [
+        -0.24459124084243078
+      ],
+      "training_rows": 1530,
+      "penalized_relative_loss": -3.829231385255962
+    }
+  },
+  "doses": {
+    "context": {
+      "score": 1.0,
+      "wdl": 0.0,
+      "total": 1.0
+    },
+    "constant": {
+      "score": 1.0,
+      "wdl": 0.0,
+      "total": 1.0
+    }
+  },
+  "trials": {
+    "context": [
+      {
+        "dose": 0.0,
+        "first": 27,
+        "three": 81,
+        "wdl": 161,
+        "total": 190,
+        "total_n": 306,
+        "loss": 936.6149479317124
+      },
+      {
+        "dose": 0.5,
+        "first": 27,
+        "three": 78,
+        "wdl": 161,
+        "total": 191,
+        "total_n": 306,
+        "loss": 937.5774760996062
+      },
+      {
+        "dose": 1.0,
+        "first": 29,
+        "three": 80,
+        "wdl": 161,
+        "total": 192,
+        "total_n": 306,
+        "loss": 939.3491798634069
+      }
+    ],
+    "constant": [
+      {
+        "dose": 0.0,
+        "first": 27,
+        "three": 81,
+        "wdl": 161,
+        "total": 190,
+        "total_n": 306,
+        "loss": 936.6149479317124
+      },
+      {
+        "dose": 0.5,
+        "first": 27,
+        "three": 77,
+        "wdl": 161,
+        "total": 191,
+        "total_n": 306,
+        "loss": 937.5802926222132
+      },
+      {
+        "dose": 1.0,
+        "first": 29,
+        "three": 80,
+        "wdl": 161,
+        "total": 193,
+        "total_n": 306,
+        "loss": 939.378169430615
+      }
+    ]
+  }
+}

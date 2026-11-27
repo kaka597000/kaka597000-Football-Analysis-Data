@@ -1,0 +1,44 @@
+{
+  "schema": "r21-source-lock-v1",
+  "repository": "https://github.com/kaka597000/Football-Analysis",
+  "source_commit": "828f7a68daff347dfef4e69185e7761965954582",
+  "protocol_sha256": "a4eb968e0965882c0844235fb0e9448a25a172f4a4ea8f16ec6d5e490439ed52",
+  "runtime": {
+    "python": "3.12",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "lightgbm": "4.6.0",
+    "requirements_file": "requirements.txt",
+    "reproducibility_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OPENBLAS_CORETYPE": "Haswell",
+      "NPY_DISABLE_CPU_FEATURES": "AVX512F",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "PYTHONHASHSEED": "0"
+    }
+  },
+  "committed_source_files_sha256": {
+    "requirements.txt": "7fc1d6710436a33fe8d0ced77a592d3320d2fc583124b5624f127670d934e9a0",
+    "research/20261125-r21-score-dependence/protocol.json": "a4eb968e0965882c0844235fb0e9448a25a172f4a4ea8f16ec6d5e490439ed52",
+    "runtime/research_program/score_dependence.py": "f5526f8b59ecd3422e1c682ec98f6d89909371c1a70f58039a4b4d6b3b5546c6",
+    "runtime/research_program/score_dependence_study.py": "126753e8cd2d51e13b10323903f9f6559e64e2e5cf29ddd0c59319851d8e9eab",
+    "runtime/research_program/score_dependence_forward.py": "931360eb12a079ab20574bfc0f49afe0d05a9d7849ca69eb655dc32e9560de8b",
+    "runtime/research_program/territory_forward.py": "d600f9b1bcf959fe37634affeab04adcd6f74f5e0b6bf9b639d695e2caf2211c",
+    "runtime/research_program/ranked_score_study.py": "b26e882b0caa7f5996bf4e0d995e40f99792aa5cb8678febceae039dcdf0c1fc",
+    "runtime/research_program/paired_kpi_inference.py": "d5135d158f74907abb1886abc76c97d365222667f6fe208b163d8378c839d74c"
+  },
+  "study_windows": [
+    "evaluation",
+    "recent",
+    "november_extension"
+  ],
+  "forward_registration_sha256": "03fbf89faf84312015532a3d935824bfe6e5eb0560c609a2f3654cc873aea33c",
+  "ranked_plan_sha256": "2b8e50f9248f21685b19f5236c10c6a02fe6926bd52ac3b4da1d4c4b7936cf35",
+  "posthoc_actual_ranks_sha256": "aba78fa049eee88b73ca67410df4079f10b764f2323b74b6c92f88a898fbcda7",
+  "understat_archive_sha256": "c83b75b247ad86e1fa8b52fa7063e666837be02016386188e250a128a73225c2",
+  "r14_archive_source_path": "workspace-updates/20261125-r14-territory-press/inputs/understat.tar.gz",
+  "python": "3.12",
+  "lightgbm": "4.6.0"
+}
