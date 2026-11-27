@@ -1,0 +1,918 @@
+{
+  "schema": "WCPP-UCL-REFRESH-REVIEW-1",
+  "protocol_sha256": "cb9957425b563df912281009144d0cd5e6b25198b4eacc45b4f2dc57006ee828",
+  "population": 36,
+  "first_paired": 36,
+  "completed": 12,
+  "pending_results": [
+    "espn:401915281",
+    "espn:401915282",
+    "espn:401915283",
+    "espn:401915284",
+    "espn:401915285",
+    "espn:401915286",
+    "espn:401915287",
+    "espn:401915288",
+    "espn:401915289",
+    "espn:401915290",
+    "espn:401915292",
+    "espn:401915365",
+    "espn:401915366",
+    "espn:401915367",
+    "espn:401915368",
+    "espn:401915369",
+    "espn:401915370",
+    "espn:401915371",
+    "espn:401915372",
+    "espn:401915373",
+    "espn:401915374",
+    "espn:401915375",
+    "espn:401915376",
+    "espn:401915377"
+  ],
+  "missing_first_pairs": [],
+  "unscored_observations": [],
+  "independent_denominators": {
+    "active_current": {
+      "settled_population": 12,
+      "primary_n": 12,
+      "primary_hits": 0,
+      "wdl_n": 12,
+      "wdl_hits": 8,
+      "actual_line_n": 0,
+      "actual_line_five_way": {}
+    },
+    "refreshed_current": {
+      "settled_population": 12,
+      "primary_n": 12,
+      "primary_hits": 0,
+      "wdl_n": 12,
+      "wdl_hits": 8,
+      "actual_line_n": 0,
+      "actual_line_five_way": {}
+    },
+    "active_test": {
+      "settled_population": 12,
+      "primary_n": 12,
+      "primary_hits": 1,
+      "wdl_n": 12,
+      "wdl_hits": 7,
+      "actual_line_n": 0,
+      "actual_line_five_way": {}
+    },
+    "refreshed_test": {
+      "settled_population": 12,
+      "primary_n": 12,
+      "primary_hits": 0,
+      "wdl_n": 12,
+      "wdl_hits": 6,
+      "actual_line_n": 0,
+      "actual_line_five_way": {}
+    }
+  },
+  "probability_metrics": {
+    "active_current": {
+      "n": 12,
+      "metrics": {
+        "exact_top1": 0.0,
+        "exact_top3": 0.0,
+        "exact_top5": 0.5,
+        "score_log_loss": 3.021747537491511,
+        "score_brier": 0.946687832687477,
+        "wdl_brier": 0.5951642804415813,
+        "wdl_rps": 0.22349185644458144,
+        "wdl_accuracy": 0.6666666666666666
+      },
+      "calibration_bins": [
+        {
+          "n": 9,
+          "mean_probability": 0.08860488170001628,
+          "hit_rate": 0.0
+        },
+        {
+          "n": 3,
+          "mean_probability": 0.100787206375813,
+          "hit_rate": 0.0
+        }
+      ],
+      "primary": {
+        "n": 12,
+        "hits": 0,
+        "coverage": 1.0,
+        "accuracy": 0.0,
+        "full_population_accuracy": 0.0,
+        "net_hits_vs_probability_top1_same_subset": 0
+      },
+      "frozen_wdl": {
+        "n": 0,
+        "hits": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "full_population_accuracy": 0.0,
+        "net_hits_vs_probability_direction_same_subset": 0
+      },
+      "market_paired_n": 0,
+      "market_paired_brier": null,
+      "tail": {
+        "away3+": {
+          "brier": 0.0680267997335247,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "away4+": {
+          "brier": 0.06373866949269594,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "home3+": {
+          "brier": 0.1658659559334005,
+          "observed_events": 2,
+          "recall_at_preregistered_half": 0.0
+        },
+        "home4+": {
+          "brier": 0.07394351695676304,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "total4+": {
+          "brier": 0.23724311714722476,
+          "observed_events": 4,
+          "recall_at_preregistered_half": 0.5
+        },
+        "total5+": {
+          "brier": 0.13885954464867514,
+          "observed_events": 2,
+          "recall_at_preregistered_half": 0.0
+        }
+      },
+      "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+    },
+    "refreshed_current": {
+      "n": 12,
+      "metrics": {
+        "exact_top1": 0.0,
+        "exact_top3": 0.16666666666666666,
+        "exact_top5": 0.25,
+        "score_log_loss": 3.0955937914604696,
+        "score_brier": 0.9483010318497921,
+        "wdl_brier": 0.5258904277750257,
+        "wdl_rps": 0.19085046057665847,
+        "wdl_accuracy": 0.6666666666666666
+      },
+      "calibration_bins": [
+        {
+          "n": 12,
+          "mean_probability": 0.0853765192534698,
+          "hit_rate": 0.0
+        }
+      ],
+      "primary": {
+        "n": 12,
+        "hits": 0,
+        "coverage": 1.0,
+        "accuracy": 0.0,
+        "full_population_accuracy": 0.0,
+        "net_hits_vs_probability_top1_same_subset": 0
+      },
+      "frozen_wdl": {
+        "n": 0,
+        "hits": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "full_population_accuracy": 0.0,
+        "net_hits_vs_probability_direction_same_subset": 0
+      },
+      "market_paired_n": 0,
+      "market_paired_brier": null,
+      "tail": {
+        "away3+": {
+          "brier": 0.07771300725629253,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "away4+": {
+          "brier": 0.06014033328311463,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "home3+": {
+          "brier": 0.18060287291587973,
+          "observed_events": 2,
+          "recall_at_preregistered_half": 0.0
+        },
+        "home4+": {
+          "brier": 0.09904101523318702,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "total4+": {
+          "brier": 0.25510086277085264,
+          "observed_events": 4,
+          "recall_at_preregistered_half": 1.0
+        },
+        "total5+": {
+          "brier": 0.18102409895574798,
+          "observed_events": 2,
+          "recall_at_preregistered_half": 0.0
+        }
+      },
+      "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+    },
+    "active_test": {
+      "n": 12,
+      "metrics": {
+        "exact_top1": 0.08333333333333333,
+        "exact_top3": 0.25,
+        "exact_top5": 0.5,
+        "score_log_loss": 2.8264884127509853,
+        "score_brier": 0.9281614309539631,
+        "wdl_brier": 0.5618616646073925,
+        "wdl_rps": 0.20329733752340337,
+        "wdl_accuracy": 0.5833333333333334
+      },
+      "calibration_bins": [
+        {
+          "n": 8,
+          "mean_probability": 0.0897718722696354,
+          "hit_rate": 0.125
+        },
+        {
+          "n": 4,
+          "mean_probability": 0.1106822461582449,
+          "hit_rate": 0.0
+        }
+      ],
+      "primary": {
+        "n": 12,
+        "hits": 1,
+        "coverage": 1.0,
+        "accuracy": 0.08333333333333333,
+        "full_population_accuracy": 0.08333333333333333,
+        "net_hits_vs_probability_top1_same_subset": 0
+      },
+      "frozen_wdl": {
+        "n": 0,
+        "hits": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "full_population_accuracy": 0.0,
+        "net_hits_vs_probability_direction_same_subset": 0
+      },
+      "market_paired_n": 0,
+      "market_paired_brier": null,
+      "tail": {
+        "away3+": {
+          "brier": 0.042088860827619416,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 1.0
+        },
+        "away4+": {
+          "brier": 0.04019685262892036,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "home3+": {
+          "brier": 0.18078834599262592,
+          "observed_events": 2,
+          "recall_at_preregistered_half": 0.0
+        },
+        "home4+": {
+          "brier": 0.08065547080581373,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "total4+": {
+          "brier": 0.2021234019589699,
+          "observed_events": 4,
+          "recall_at_preregistered_half": 0.75
+        },
+        "total5+": {
+          "brier": 0.12209508403413416,
+          "observed_events": 2,
+          "recall_at_preregistered_half": 0.0
+        }
+      },
+      "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+    },
+    "refreshed_test": {
+      "n": 12,
+      "metrics": {
+        "exact_top1": 0.0,
+        "exact_top3": 0.25,
+        "exact_top5": 0.5833333333333334,
+        "score_log_loss": 2.9451929603989275,
+        "score_brier": 0.9370924669813824,
+        "wdl_brier": 0.5519190374115521,
+        "wdl_rps": 0.19893565889500373,
+        "wdl_accuracy": 0.5
+      },
+      "calibration_bins": [
+        {
+          "n": 10,
+          "mean_probability": 0.08376968077629594,
+          "hit_rate": 0.0
+        },
+        {
+          "n": 2,
+          "mean_probability": 0.11292192874984697,
+          "hit_rate": 0.0
+        }
+      ],
+      "primary": {
+        "n": 12,
+        "hits": 0,
+        "coverage": 1.0,
+        "accuracy": 0.0,
+        "full_population_accuracy": 0.0,
+        "net_hits_vs_probability_top1_same_subset": 0
+      },
+      "frozen_wdl": {
+        "n": 0,
+        "hits": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "full_population_accuracy": 0.0,
+        "net_hits_vs_probability_direction_same_subset": 0
+      },
+      "market_paired_n": 0,
+      "market_paired_brier": null,
+      "tail": {
+        "away3+": {
+          "brier": 0.05748798200937147,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 1.0
+        },
+        "away4+": {
+          "brier": 0.04400063438176748,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "home3+": {
+          "brier": 0.1912055280399456,
+          "observed_events": 2,
+          "recall_at_preregistered_half": 0.5
+        },
+        "home4+": {
+          "brier": 0.09931686825802494,
+          "observed_events": 1,
+          "recall_at_preregistered_half": 0.0
+        },
+        "total4+": {
+          "brier": 0.22294029129723328,
+          "observed_events": 4,
+          "recall_at_preregistered_half": 1.0
+        },
+        "total5+": {
+          "brier": 0.15421225535221056,
+          "observed_events": 2,
+          "recall_at_preregistered_half": 0.0
+        }
+      },
+      "notice": "Inputs must already be time-held-out, source-verified first-freeze records; this function cannot certify their provenance. No filtered subset replaces full-population metrics. Total-line five-way settlement uses existing paired_review, not a guessed line."
+    }
+  },
+  "primary_calibration": {
+    "active_current": {
+      "n": 12,
+      "ece": 0.09165046286896546,
+      "bins": [
+        {
+          "n": 9,
+          "probability": 0.08860488170001628,
+          "hit_rate": 0.0
+        },
+        {
+          "n": 3,
+          "probability": 0.100787206375813,
+          "hit_rate": 0.0
+        }
+      ]
+    },
+    "refreshed_current": {
+      "n": 12,
+      "ece": 0.0853765192534698,
+      "bins": [
+        {
+          "n": 12,
+          "probability": 0.0853765192534698,
+          "hit_rate": 0.0
+        }
+      ]
+    },
+    "active_test": {
+      "n": 12,
+      "ece": 0.060379500539658036,
+      "bins": [
+        {
+          "n": 8,
+          "probability": 0.0897718722696354,
+          "hit_rate": 0.125
+        },
+        {
+          "n": 4,
+          "probability": 0.1106822461582449,
+          "hit_rate": 0.0
+        }
+      ]
+    },
+    "refreshed_test": {
+      "n": 12,
+      "ece": 0.08862838877188778,
+      "bins": [
+        {
+          "n": 10,
+          "probability": 0.08376968077629594,
+          "hit_rate": 0.0
+        },
+        {
+          "n": 2,
+          "probability": 0.11292192874984697,
+          "hit_rate": 0.0
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "active_current_vs_refreshed_current": {
+      "n": 12,
+      "changed_right": 0,
+      "changed_wrong": 0,
+      "net_primary_hits": 0,
+      "paired_one_sided_pvalue": 1.0,
+      "status": "BLOCKED_PENDING_INDEPENDENT_REVIEW",
+      "reasons": [
+        "INDEPENDENT_RESULT_AND_SOURCE_ASOF_AUDIT_REQUIRED",
+        "INDEPENDENT_REAL_LINE_AUDIT_REQUIRED",
+        "INSUFFICIENT_PREDECLARED_SAMPLE",
+        "INCOMPLETE_PREDECLARED_POPULATION",
+        "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+        "QUALITY_REGRESSION:score_log_loss",
+        "QUALITY_REGRESSION:score_brier",
+        "TAIL_CALIBRATION_REGRESSION:away3+",
+        "TAIL_CALIBRATION_REGRESSION:home3+",
+        "TAIL_CALIBRATION_REGRESSION:home4+",
+        "TAIL_CALIBRATION_REGRESSION:total4+",
+        "TAIL_CALIBRATION_REGRESSION:total5+"
+      ]
+    },
+    "active_test_vs_refreshed_test": {
+      "n": 12,
+      "changed_right": 0,
+      "changed_wrong": 1,
+      "net_primary_hits": -1,
+      "paired_one_sided_pvalue": 1.0,
+      "status": "BLOCKED_PENDING_INDEPENDENT_REVIEW",
+      "reasons": [
+        "INDEPENDENT_RESULT_AND_SOURCE_ASOF_AUDIT_REQUIRED",
+        "INDEPENDENT_REAL_LINE_AUDIT_REQUIRED",
+        "INSUFFICIENT_PREDECLARED_SAMPLE",
+        "INCOMPLETE_PREDECLARED_POPULATION",
+        "PRIMARY_NET_GAIN_NOT_ESTABLISHED",
+        "QUALITY_REGRESSION:score_log_loss",
+        "QUALITY_REGRESSION:score_brier",
+        "WDL_DIRECTION_REGRESSION_OR_COVERAGE_CHANGE",
+        "PRIMARY_CONFIDENCE_CALIBRATION_REGRESSION",
+        "TAIL_CALIBRATION_REGRESSION:away3+",
+        "TAIL_CALIBRATION_REGRESSION:away4+",
+        "TAIL_CALIBRATION_REGRESSION:home3+",
+        "TAIL_CALIBRATION_REGRESSION:home4+",
+        "TAIL_CALIBRATION_REGRESSION:total4+",
+        "TAIL_CALIBRATION_REGRESSION:total5+"
+      ]
+    }
+  },
+  "rows": [
+    {
+      "match_id": "espn:401915300",
+      "home_goals": 1,
+      "away_goals": 0,
+      "models": {
+        "active_current": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915380",
+      "home_goals": 1,
+      "away_goals": 0,
+      "models": {
+        "active_current": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915294",
+      "home_goals": 0,
+      "away_goals": 1,
+      "models": {
+        "active_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915295",
+      "home_goals": 1,
+      "away_goals": 1,
+      "models": {
+        "active_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915296",
+      "home_goals": 1,
+      "away_goals": 0,
+      "models": {
+        "active_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "3-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "4-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915297",
+      "home_goals": 0,
+      "away_goals": 2,
+      "models": {
+        "active_current": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "1-2",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "1-2",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915298",
+      "home_goals": 5,
+      "away_goals": 1,
+      "models": {
+        "active_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "3-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915299",
+      "home_goals": 3,
+      "away_goals": 1,
+      "models": {
+        "active_current": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915379",
+      "home_goals": 2,
+      "away_goals": 2,
+      "models": {
+        "active_current": {
+          "primary": "2-0",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "3-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915293",
+      "home_goals": 0,
+      "away_goals": 1,
+      "models": {
+        "active_current": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "1-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": false,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915378",
+      "home_goals": 1,
+      "away_goals": 4,
+      "models": {
+        "active_current": {
+          "primary": "1-2",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "1-2",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "1-2",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "1-2",
+          "primary_hit": false,
+          "wdl_reference": "客胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        }
+      }
+    },
+    {
+      "match_id": "espn:401915291",
+      "home_goals": 2,
+      "away_goals": 0,
+      "models": {
+        "active_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "active_test": {
+          "primary": "2-0",
+          "primary_hit": true,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_current": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        },
+        "refreshed_test": {
+          "primary": "2-1",
+          "primary_hit": false,
+          "wdl_reference": "主胜",
+          "wdl_hit": true,
+          "total_settlement": null
+        }
+      }
+    }
+  ],
+  "automatic_promotion": false,
+  "active_assets_modified": false,
+  "notice": "Real source evidence only. No single comparison or software gate changes the active registry.",
+  "reviewed_at": "2026-11-27T08:30:24.467698+00:00",
+  "result_requests": 2,
+  "result_attempted_ids": [
+    "espn:401915378",
+    "espn:401915291"
+  ],
+  "failures": [],
+  "bundle_sha256": "c3e9ae11fda8279717b54bb2df4e3ec3bd3a09388901e7e4051118190517e9b6",
+  "mode": "REVIEW_ONLY_NO_NEW_INFERENCE"
+}
