@@ -1,0 +1,72 @@
+{
+  "version": "R45-J1-four-or-more-goal-path-1",
+  "protocol_sha256": "ee4b436e53ef52520e683121ceda6f31d00a9ca28d6293357c9f92b33dcd0af0",
+  "windows": {
+    "train": {
+      "before": "2025-01-01",
+      "fixtures": 2291
+    },
+    "validation": {
+      "from": "2025-01-01",
+      "before": "2025-07-01",
+      "fixtures": 218
+    },
+    "late_2025": {
+      "from": "2025-07-01",
+      "before": "2026-01-01",
+      "fixtures": 162
+    },
+    "early_2026_27": {
+      "from": "2026-01-01",
+      "before": "2026-11-22",
+      "fixtures": 150
+    }
+  },
+  "fitted": {
+    "context": [
+      [
+        0.052789,
+        -0.557574
+      ],
+      [
+        -0.044552,
+        -0.581128
+      ]
+    ],
+    "static": [
+      [
+        0.001623,
+        0.0
+      ],
+      [
+        -0.07059,
+        0.0
+      ]
+    ]
+  },
+  "informative_training_games": 2291,
+  "validation_counts": {
+    "r7": [
+      23,
+      71
+    ],
+    "guarded_third": [
+      23,
+      71
+    ],
+    "context_half": [
+      24,
+      69
+    ],
+    "context_full": [
+      24,
+      69
+    ],
+    "static_full": [
+      24,
+      69
+    ]
+  },
+  "selected_arm": "r7",
+  "forward_eligible": false
+}
