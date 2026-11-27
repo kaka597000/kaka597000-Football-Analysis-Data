@@ -1,0 +1,60 @@
+name: Reproduce J1 season chances and its first issues
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261127-r49-j1-season-chance-rates/**'
+      - '.github/workflows/r49-j1-season-chance-rates.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261127-r49-j1-season-chance-rates
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261123-all-scope-kpi
+            workspace-updates/20261123-prematch-literature/models
+            workspace-updates/20261125-forward-settlement/nov25
+            workspace-updates/20261127-j1-december-evidence
+            workspace-updates/20261127-j1-december-readiness/prepared
+            workspace-updates/20261127-r42-j1-fixed-first-backups
+            workspace-updates/20261127-r49-j1-season-chance-rates
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: f3f3f41673492b43b3d44770e4de76d8571fccb3
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Replay the raw season rates and verify the ten prematch records
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          cmp "$PACKAGE/protocol.json" source/research/20261127-r49-j1-season-chance-rates/protocol.json
+          python -B "$PACKAGE/evidence/prepare.py" --out "$RUNNER_TEMP/j1-r49-snapshots.json"
+          cmp "$PACKAGE/evidence/snapshots.json" "$RUNNER_TEMP/j1-r49-snapshots.json"
+          python -B -m research_program.j1_season_chance_rates --data . --replay "$RUNNER_TEMP/j1-r49-replay"
+          diff -qr "$PACKAGE/replay" "$RUNNER_TEMP/j1-r49-replay"
+          python -B -m research_program.j1_season_chance_rates --data . --check "$RUNNER_TEMP/j1-r49-check.json"
+          cmp "$PACKAGE/prematch-comparison.json" "$RUNNER_TEMP/j1-r49-check.json"
+          python -B -m research_program.j1_season_chance_rates --data . --verify "$PACKAGE/issued"
