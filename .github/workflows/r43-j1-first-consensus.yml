@@ -1,0 +1,53 @@
+name: Reproduce R43 J1 first score consensus
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261127-r43-j1-first-consensus/**'
+      - '.github/workflows/r43-j1-first-consensus.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261127-r43-j1-first-consensus
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OPENBLAS_CORETYPE: Haswell
+      OPENBLAS_NUM_THREADS: '1'
+      NPY_DISABLE_CPU_FEATURES: AVX512F
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261126-r29-j1-score-dispersion
+            workspace-updates/20261127-r41-j1-local-score-calibration
+            workspace-updates/20261127-r42-j1-fixed-first-backups
+            workspace-updates/20261127-r43-j1-first-consensus
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: 075bfccac2c8e252dad2a6144bb42db17d74a45c
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Reconstruct the complete historical comparison and the pregame check
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          cmp "$PACKAGE/protocol.json" source/research/20261127-r43-j1-first-consensus/protocol.json
+          python -B -m research_program.j1_first_consensus --data . --replay "$RUNNER_TEMP/r43-replay"
+          diff -qr "$PACKAGE/replay" "$RUNNER_TEMP/r43-replay"
+          python -B "$PACKAGE/verify_check.py"
