@@ -5,13 +5,15 @@ import csv
 from datetime import timedelta
 from hashlib import sha256
 import json
+from math import fsum, isfinite, log
 from pathlib import Path
 import tarfile
 from tempfile import TemporaryDirectory
 
-from research.analysis_freeze import aware, verify
+from research.analysis_freeze import aware, digest, verify
 from research_program import club_market_capture as club_market
 from research_program import display_window_review as display
+from research_program import goal_state_forward as ledger
 from research_program import j1_window_intake as intake
 from research_program import nov25_first_review as acquired
 from research_program.three_arm_review import _results
@@ -145,7 +147,104 @@ def ranked_europe(data):
                             **{f'matrix_top_{k}': sum(rank is not None and rank <= k for rank in ranks)
                                for k in (1, 3, 5, 10)},
                             outside_6=sum(rank is None or rank > 6 for rank in ranks))
+        source = report['score_grid_sources'][code]
+        if source['original_display']['sha256'] != seal['payload']['original_display_sha256'][code]:
+            raise ValueError('score grid source omits the original Europe display identity')
+        result[code]['total_and_split'] = europe_total_and_split(data, source, group['per_match'])
     return result
+
+
+def probability_rank(probabilities, index):
+    probability = probabilities[index]
+    return 1 + sum(value > probability or (i < index and value == probability)
+                   for i, value in enumerate(probabilities))
+
+
+def score_path(grid, actual):
+    home, away = actual
+    size = len(grid)
+    cells = [value for row in grid for value in row]
+    if (not size or any(len(row) != size for row in grid)
+            or not all(isfinite(value) and value >= 0 for value in cells)
+            or abs(fsum(cells) - 1) > 2e-12 or not (0 <= home < size and 0 <= away < size)
+            or grid[home][away] <= 0):
+        raise ValueError('invalid retained score support or probability of the recorded result')
+    total = home + away
+    split_groups = [[grid[h][t-h] for h in range(max(0, t-size+1), min(size-1, t)+1)]
+                    for t in range(2*size-1)]
+    totals = [fsum(group) for group in split_groups]
+    diagnostic = dict(actual_total=total, actual_total_rank=probability_rank(totals, total),
+                      split_rank_given_total=probability_rank(split_groups[total], home-max(0, total-size+1)),
+                      actual_total_probability=totals[total],
+                      actual_split_probability_given_total=grid[home][away]/totals[total])
+    return probability_rank(cells, home*size + away), totals, diagnostic
+
+
+def europe_total_and_split(data, source, rows):
+    folder = data / source['package'] / 'issued'
+    original = ledger._read(data / '20261126-europe-first-display/publication', source['original_display'])
+    registration = ledger._read(folder, source['registration'])
+    publication = ledger._read(folder, source['display'])
+    fixtures = original['payload']['fixtures']
+    index_path = folder / 'receipts.json'
+    index = intake.read(index_path)
+    identity = publication['payload']['identity']
+    if (registration['payload']['fixtures'] != fixtures or publication['payload']['fixtures'] != fixtures
+            or index['registration'] != source['registration']
+            or index['matches'].keys() != fixtures.keys() or fixtures.keys() != rows.keys()
+            or identity['receipts_sha256'] != sha256(index_path.read_bytes()).hexdigest()
+            or identity['registration'] != registration['record_sha256']
+            or registration['payload']['identity']['original_display'] != original['record_sha256']):
+        raise ValueError('the retained European R13 grids differ from the original full slate')
+    read_at = aware(publication['recorded_at'])
+    baseline, candidate = registration['payload']['identity']['pairs']['vs_r13']
+    if baseline != 'r13':
+        raise ValueError('expected the original R13 control')
+    ranks, variant = {}, {}
+    first_changes, three_changes = 0, 0
+    for mid, settled in rows.items():
+        ref = index['matches'][mid]
+        issue = ledger._read(folder, ref)
+        saved = issue['payload']
+        actual_start = aware(settled['actual_kickoff']['actual_kickoff_at'])
+        if (issue['fixture'] != dict(fixtures[mid], cutoff_at=registration['recorded_at'])
+                or issue['track'] != registration['payload']['track']
+                or saved['registration_sha256'] != registration['record_sha256']
+                or saved['original_first'] != settled['original_first']
+                or saved['forecasts']['r13'] != settled['original_forecast']
+                or not aware(original['recorded_at']) <= aware(registration['recorded_at'])
+                <= aware(issue['recorded_at']) <= read_at < min(actual_start, aware(fixtures[mid]['kickoff_at']))):
+            raise ValueError('score distribution differs from the original European first: ' + mid)
+        rank, totals, ranks[mid] = score_path(saved['grids'][baseline], settled['actual'])
+        if rank != settled['score_grid_diagnosis']['matrix_rank']:
+            raise ValueError('original joint score rank differs from its settled audit: ' + mid)
+        new_rank, new_totals, choice = score_path(saved['grids'][candidate], settled['actual'])
+        variant[mid] = dict(choice, joint_score_rank=new_rank,
+                            maximum_total_probability_change=max(abs(before-after) for before, after in
+                                                                 zip(totals, new_totals, strict=True)))
+        before, after = (saved['forecasts'][track] for track in (baseline, candidate))
+        first_changes += before['primary'] != after['primary']
+        three_changes += set(before['top3']) != set(after['top3'])
+    first_misses = [ranks[mid] for mid, row in rows.items() if not row['hit']['score_top1']]
+    three_misses = [ranks[mid] for mid, row in rows.items() if not row['hit']['score_top3']]
+    rank_changes = [variant[mid]['split_rank_given_total'] - row['split_rank_given_total'] for mid, row in ranks.items()]
+    log_loss = {arm: round(-fsum(log(row['actual_split_probability_given_total']) for row in group.values()) / len(group), 9)
+                for arm, group in ((baseline, ranks), (candidate, variant))}
+    per_match = {mid: {key: round(item, 12) if isinstance(item, float) else item
+                       for key, item in row.items()} for mid, row in ranks.items()}
+    return dict(per_match=per_match, paired_variant=dict(
+                    baseline=baseline, candidate=candidate, n=len(rows), first_changes=first_changes,
+                    three_membership_changes=three_changes, conditional_log_loss=log_loss,
+                    split_rank_improved=sum(delta < 0 for delta in rank_changes),
+                    split_rank_worsened=sum(delta > 0 for delta in rank_changes),
+                    maximum_total_probability_change=round(max(row['maximum_total_probability_change']
+                                                               for row in variant.values()), 12)),
+                first_misses=dict(n=len(first_misses),
+                                  total_rank_above_3=sum(row['actual_total_rank'] > 3 for row in first_misses),
+                                  split_rank_above_1=sum(row['split_rank_given_total'] > 1 for row in first_misses)),
+                three_misses=dict(n=len(three_misses),
+                                  total_rank_above_3=sum(row['actual_total_rank'] > 3 for row in three_misses),
+                                  split_rank_above_3=sum(row['split_rank_given_total'] > 3 for row in three_misses)))
 
 
 def scorecard(data):
@@ -340,6 +439,74 @@ def hkjc_probe(package, registration):
                 browser_error=browser['error'])
 
 
+def compare_frozen_scores(rows, baseline, candidate, seats):
+    """List exactly which future scores could change a registered pair's hit count."""
+    first_pairs, list_pairs, orders, first, members = 0, 0, 0, {}, {}
+    for mid, arms in rows.items():
+        before, after = (arms[name] for name in (baseline, candidate))
+        old_first, new_first = before.get('primary'), after.get('primary')
+        if old_first is not None and new_first is not None:
+            first_pairs += 1
+            if old_first != new_first:
+                first[mid] = dict(gain_if=new_first, loss_if=old_first)
+        old_list, new_list = before.get('top3'), after.get('top3')
+        if old_list is not None and new_list is not None:
+            list_pairs += 1
+            orders += old_list != new_list
+            added, removed = set(new_list) - set(old_list), set(old_list) - set(new_list)
+            if added or removed:
+                members[mid] = dict(gain_if=sorted(added), loss_if=sorted(removed))
+    return dict(baseline=baseline, candidate=candidate, first_comparable=first_pairs,
+                three_comparable=list_pairs, ordered_three_changes=orders, first_differences=first,
+                three_membership_differences=members, baseline_seats=seats.get(baseline),
+                candidate_seats=seats.get(candidate))
+
+
+def frozen_differences(folders, registration):
+    _, fixtures, slates, _ = display._registered(intake.read(registration))
+    population = set(slates['nov28_29'])
+    reports = {}
+    for folder in folders:
+        index = intake.read(folder / 'receipts.json')
+        plan = ledger._read(folder, index['registration'])
+        identity = plan['payload']['identity']
+        track = plan['payload']['track']
+        if (track in reports or set(index['matches']) != population
+                or set(identity['forecast_sha256']) != population):
+            raise ValueError('expected each frozen comparison with the complete weekend population')
+        rows = {}
+        for mid, ref in index['matches'].items():
+            record = ledger._read(folder, ref)
+            acquired.same_fixture(fixtures[mid], record['fixture'])
+            payload = dict(record['payload'])
+            if (payload.pop('registration_sha256') != plan['record_sha256']
+                    or digest(payload) != identity['forecast_sha256'][mid]
+                    or not aware(plan['recorded_at']) <= aware(record['recorded_at']) <= AS_OF):
+                raise ValueError('original pregame forecast or its clock differs: ' + mid)
+            rows[mid] = payload['forecasts']
+        compared = {pair: compare_frozen_scores(rows, *arms, identity.get('selected', {}))
+                    for pair, arms in identity['pairs'].items()}
+        reports[track] = dict(freeze_id=plan['freeze_id'], registered=len(rows), pairs=compared)
+    return reports
+
+
+def score_review_freeze(package, data, registration, ranked, differences):
+    record = verify(intake.read(package / 'score-review-freeze.json'))
+    previous = verify(intake.read(data / '20261127-europe-round1-review/review-freeze.json'))
+    _, fixtures, slates, _ = display._registered(intake.read(registration))
+    first_kickoff = min(aware(fixtures[mid]['kickoff_at']) for mid in slates['nov28_29'])
+    payload = record['payload']
+    if (record['stage'] != 'review' or record['track'] != 'first-stage-score-review'
+            or payload['original_europe_review_sha256'] != previous['record_sha256']
+            or payload['european_total_and_split_sha256'] != digest(ranked)
+            or payload['j1_frozen_score_differences_sha256'] != digest(differences)
+            or payload['j1_research_registrations'] != {track: row['freeze_id'] for track, row in differences.items()}
+            or not aware(previous['recorded_at']) <= aware(record['recorded_at']) < first_kickoff
+            or aware(record['fixture']['kickoff_at']) != first_kickoff):
+        raise ValueError('score review decision differs from the verified European and pregame J1 evidence')
+    return dict(freeze_id=record['freeze_id'], recorded_at=record['recorded_at'])
+
+
 def run(data):
     nov = data / '20261125-j1-stage-windows/registration'
     dec = data / '20261126-j1-december-windows/registration'
@@ -350,6 +517,9 @@ def run(data):
     dec_official = dec_bind.parent / 'official'
     research = tuple(data / name / 'issued' for name in RESEARCH)
     package = Path(__file__).parent
+    ranked = ranked_europe(data)
+    differences = frozen_differences(research, nov_reg)
+    review_freeze = score_review_freeze(package, data, nov_reg, ranked, differences)
     with TemporaryDirectory(prefix='phase-one-replay-') as tmp:
         root = Path(tmp)
         return dict(as_of=AS_OF.isoformat(), historical_j1=historical(data, root / 'nov25', nov_reg),
@@ -357,10 +527,11 @@ def run(data):
                         'nov28_29': forthcoming(data, root, nov_reg, nov_bind, 'nov28_29', research),
                         'dec04_06': forthcoming(data, root, dec_reg, dec_bind, 'dec04_06', binding_root=dec_official),
                         'dec12_13': forthcoming(data, root, dec_reg, dec_bind, 'dec12_13', binding_root=dec_official),
-                    }, historical_scorecard=scorecard(data), europe_score_ranking=ranked_europe(data),
+                    }, historical_scorecard=scorecard(data), europe_score_ranking=ranked,
                     upcoming_market_probe=market_probe(data, package / 'market-probe', nov_reg),
                     jleague_espn_wave_rehearsal=result_wave_rehearsal(package, root, nov_reg, nov_bind, research),
                     hkjc_probe=hkjc_probe(package, nov_reg),
+                    frozen_score_differences=differences, score_review_freeze=review_freeze,
                     market_checkpoint_samples={name: first_checkpoint(data, package / name, nov_reg)
                                                for name in ('market-t24', 'market-t24-recheck')})
 
