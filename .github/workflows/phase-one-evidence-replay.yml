@@ -1,0 +1,71 @@
+name: First-stage evidence replay
+on:
+  push:
+    branches: [data/phase-one-evidence-20261127]
+    paths:
+      - .github/workflows/phase-one-evidence-replay.yml
+      - workspace-updates/20261127-phase-one-evidence/**
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/phase-one-evidence-replay.yml
+      - workspace-updates/20261127-phase-one-evidence/**
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: audit
+          sparse-checkout: workspace-updates/20261127-phase-one-evidence
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: inputs
+          ref: 87ef46859990a8760b4af361eef3186f5090d319
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /workspace-updates/20261123-all-scope-kpi/results/scorecard.csv
+            /workspace-updates/20261125-forward-settlement/nov25/evidence.tar.gz
+            /workspace-updates/20261125-j1-stage-windows/registration/
+            /workspace-updates/20261126-j1-december-windows/registration/
+            /workspace-updates/20261126-j1-forward-result-review/nov25-state/
+            /workspace-updates/20261126-r26-j1-first-stage/nov28_29/
+            /workspace-updates/20261126-r26-j1-first-stage/evidence/public-source-snapshots.tar.gz
+            /workspace-updates/20261126-r28-j1-process-forward/issued/
+            /workspace-updates/20261127-europe-round1-review/j1-capture-plan.json
+            /workspace-updates/20261127-europe-round1-review/review-freeze.json
+            /workspace-updates/20261127-europe-round1-review/settlement/report.json
+            /workspace-updates/20261127-j1-december-evidence/kickoff-packet.json
+            /workspace-updates/20261127-j1-december-evidence/official/
+            /workspace-updates/20261127-j1-december-readiness/prepared/team-ids.json
+            /workspace-updates/20261127-j1-official-kickoff/kickoff-packet.json
+            /workspace-updates/20261127-j1-official-kickoff/pregame/
+            /workspace-updates/20261127-r42-j1-fixed-first-backups/issued/
+            /workspace-updates/20261127-r46-j1-process-at-fixed-total/issued/
+            /workspace-updates/20261127-r49-j1-season-chance-rates/issued/
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          path: source
+          ref: 89de5c0eb856067d4e7793821d222ba71b804b13
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: source/requirements.txt
+      - run: python -m pip install -r source/requirements.txt
+      - name: Verify stored evidence and replay the original windows
+        run: |
+          bundle=audit/workspace-updates/20261127-phase-one-evidence
+          (cd "$bundle" && sha256sum -c SHA256SUMS)
+          PYTHONPATH=source/runtime python -B "$bundle/verify.py" --data-root inputs > "$RUNNER_TEMP/verified.json"
+          cmp "$bundle/verified.json" "$RUNNER_TEMP/verified.json"
