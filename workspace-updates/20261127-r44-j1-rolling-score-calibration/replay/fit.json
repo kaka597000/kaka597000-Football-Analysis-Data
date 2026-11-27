@@ -1,0 +1,64 @@
+{
+  "version": "R44-J1-rolling-score-calibration-1",
+  "protocol_sha256": "d64295f8e41d3c0a9ce0f5f877e0b0f3ec3e7682bd98b70dedfe2a2a03ef17b7",
+  "windows": {
+    "train": {
+      "before": "2025-01-01",
+      "fixtures": 2291
+    },
+    "validation": {
+      "from": "2025-01-01",
+      "before": "2025-07-01",
+      "fixtures": 218
+    },
+    "late_2025": {
+      "from": "2025-07-01",
+      "before": "2026-01-01",
+      "fixtures": 162
+    },
+    "early_2026_27": {
+      "from": "2026-01-01",
+      "before": "2026-11-22",
+      "fixtures": 150
+    }
+  },
+  "selected_arm": "r7",
+  "validation_trials": {
+    "r7": {
+      "first": 23,
+      "three": 71,
+      "log_loss": 2.712758886960732
+    },
+    "context_half": {
+      "first": 23,
+      "three": 70,
+      "log_loss": 2.7078377459001475
+    },
+    "context_full": {
+      "first": 22,
+      "three": 72,
+      "log_loss": 2.705079148179419
+    },
+    "recency_only": {
+      "first": 22,
+      "three": 72,
+      "log_loss": 2.7110513416076096
+    }
+  },
+  "prospective_screen_passed": false,
+  "causal_history_ranges": {
+    "earlier_results": [
+      2291,
+      2814
+    ],
+    "recency_weight_sum": [
+      109.57462474,
+      297.16665856
+    ],
+    "context_weight_sum": [
+      0.6759255,
+      155.95497204
+    ]
+  },
+  "max_projection_error": 1.5543122344752192e-15
+}
