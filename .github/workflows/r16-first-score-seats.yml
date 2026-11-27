@@ -1,0 +1,52 @@
+name: Verify R16 first-score seat ranking
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261125-r16-selection/**'
+      - '.github/workflows/r16-first-score-seats.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      R16: workspace-updates/20261125-r16-selection
+      R7: workspace-updates/20261123-prematch-literature
+      PYTHONPATH: source/runtime
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLCONFIGDIR: /tmp/mpl-r16
+      OPENBLAS_CORETYPE: Haswell
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - id: pin
+        shell: python
+        run: |
+          import os, pathlib, re
+          revision = (pathlib.Path(os.environ['R16']) / 'source-commit.txt').read_text().strip()
+          if not re.fullmatch(r'[0-9a-f]{40}', revision):
+              raise ValueError('R16 source commit pin must be a full Git SHA')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              print(f'revision={revision}', file=output)
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: ${{ steps.pin.outputs.revision }}
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0
+      - name: Run the pinned numerical source regression tests
+        run: python -m unittest discover -s source/runtime/research_program -p 'test_first_score_ranking.py' -v
+      - name: Refit and verify the R16 data package
+        run: |
+          python -B "$R16/verify.py" \
+            --source "$GITHUB_WORKSPACE/source" \
+            --r7 "$R7" \
+            --forward "$R16/forward"
