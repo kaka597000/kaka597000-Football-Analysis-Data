@@ -1,0 +1,235 @@
+{
+  "run_id": "20261127T211621-collect",
+  "started_at": "2026-11-27T21:16:21.582389+00:00",
+  "mode": "collect",
+  "policy": {
+    "max_cohorts": 17,
+    "historical_only_scopes_skipped": 0,
+    "max_requests": 100,
+    "lookback_days": 2,
+    "promotion": "NEVER",
+    "max_collection_seconds": 90,
+    "data_sources": "existing public JSON endpoints only",
+    "paid_api_calls": false
+  },
+  "github_run_id": "46069168375",
+  "github_run_attempt": "1",
+  "source_commit": "fbed25e9648e4ba4061042b7f97b6a2f23f1213c",
+  "source_worktree_dirty": false,
+  "seed_sha256": "897ca1edf19633db8f300a98f487b2c4c08b826f6a06ebdb0a1863d91bb3d652",
+  "active_model_modified": false,
+  "result": {
+    "schema": "WCPP-AUTOMATION-COLLECTION-1",
+    "captured_at": "2026-11-27T21:16:21.624191+00:00",
+    "request_count": 65,
+    "successful_requests": 64,
+    "max_requests": 100,
+    "retry_used": false,
+    "events_seen": 66,
+    "new_result_observations": 2,
+    "quarantined": 11,
+    "market_snapshot_saved": false,
+    "all_sources_free_public": true,
+    "wallclock_limit_seconds": 90,
+    "budget_status": "BOUNDED_SCAN_FINISHED",
+    "coverage_complete": false,
+    "coverage_by_competition": {
+      "afc.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 2,
+        "new_rows": 0,
+        "quarantined": 2
+      },
+      "aus.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "bra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 3,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "eng.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "esp.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fifa.world": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "fra.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ger.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ita.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "jpn.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 7,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "ned.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 1,
+        "new_rows": 1,
+        "quarantined": 0
+      },
+      "nor.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "swe.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 0,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.champions": {
+        "scoreboards_ok": 3,
+        "events_seen": 9,
+        "new_rows": 0,
+        "quarantined": 9
+      },
+      "uefa.europa": {
+        "scoreboards_ok": 3,
+        "events_seen": 18,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "uefa.europa.conf": {
+        "scoreboards_ok": 3,
+        "events_seen": 18,
+        "new_rows": 0,
+        "quarantined": 0
+      },
+      "usa.1": {
+        "scoreboards_ok": 3,
+        "events_seen": 2,
+        "new_rows": 0,
+        "quarantined": 0
+      }
+    },
+    "new_rows": [
+      {
+        "match_id": "espn:401892133",
+        "cohort": "aus.1",
+        "competition": "aus.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-27",
+        "kickoff_at": "2026-11-27T08:40:00+00:00",
+        "home": "espn:19340",
+        "away": "espn:11143",
+        "home_goals": 2,
+        "away_goals": 0,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-27T21:16:22.784656+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/summary?event=401892133",
+        "provider_final_score": [
+          "2",
+          "0"
+        ],
+        "raw_reference": {
+          "path": "raw/a9f3a13a8ca90a86662b22de05e967223bf67c28dde1aca3660a5ca4101e07f1.json.gz",
+          "sha256": "a9f3a13a8ca90a86662b22de05e967223bf67c28dde1aca3660a5ca4101e07f1",
+          "captured_at": "2026-11-27T21:16:22.784656+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/summary?event=401892133"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      },
+      {
+        "match_id": "espn:401875536",
+        "cohort": "ned.1",
+        "competition": "ned.1",
+        "stage": "regular",
+        "season": "2026",
+        "date": "2026-11-27",
+        "kickoff_at": "2026-11-27T19:00:00+00:00",
+        "home": "espn:145",
+        "away": "espn:156",
+        "home_goals": 1,
+        "away_goals": 1,
+        "neutral": false,
+        "gender": "male",
+        "age": "senior",
+        "score_basis": "regulation_90",
+        "known_at": "2026-11-27T21:16:25.510844+00:00",
+        "known_at_policy": "ACTUAL_CAPTURE_NOT_HISTORICAL_FIRST_KNOWN",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/summary?event=401875536",
+        "provider_final_score": [
+          "1",
+          "1"
+        ],
+        "raw_reference": {
+          "path": "raw/fe9c4c98d641397d1551ef74f753bef965027cd08bac2799850adf090b94f3c5.json.gz",
+          "sha256": "fe9c4c98d641397d1551ef74f753bef965027cd08bac2799850adf090b94f3c5",
+          "captured_at": "2026-11-27T21:16:25.510844+00:00",
+          "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/summary?event=401875536"
+        },
+        "event_coverage": "NOT_CERTIFIED"
+      }
+    ],
+    "channels": {
+      "history": {
+        "requests": 64,
+        "successful_requests": 64,
+        "failures": {},
+        "status": "RESPONSE_RECEIVED",
+        "new_result_observations": 2,
+        "quarantined": 11,
+        "training_eligibility": "SEPARATE_RAW_EVIDENCE_AND_VENUE_AUDIT_REQUIRED"
+      },
+      "market": {
+        "requests": 1,
+        "successful_requests": 0,
+        "failures": {
+          "TLS": 1
+        },
+        "status": "FAILED",
+        "raw_snapshot_saved": false,
+        "verified_quote_count": 0,
+        "model_ready": false,
+        "quote_status": "NO_RESPONSE"
+      }
+    },
+    "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+    "market_model_ready": false
+  },
+  "status": "COMPLETED",
+  "status_scope": "REQUEST_EXECUTION_NOT_MODEL_READINESS",
+  "data_status": "PARTIAL_NO_VERIFIED_MARKET",
+  "market_model_ready": false,
+  "finished_at": "2026-11-27T21:16:41.379231+00:00"
+}
