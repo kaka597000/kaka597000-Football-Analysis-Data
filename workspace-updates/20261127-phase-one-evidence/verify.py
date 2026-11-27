@@ -5,7 +5,7 @@ import csv
 from datetime import timedelta
 from hashlib import sha256
 import json
-from math import fsum, isclose, isfinite, log
+from math import fsum, isfinite, log
 from pathlib import Path
 import tarfile
 from tempfile import TemporaryDirectory
@@ -14,8 +14,8 @@ from research.analysis_freeze import aware, digest, verify
 from research_program import club_market_capture as club_market
 from research_program import display_window_review as display
 from research_program import goal_state_forward as ledger
+from research_program import j1_checkpoint_review as checkpoint_review
 from research_program import j1_window_intake as intake
-from research_program import market_baseline as market
 from research_program import nov25_first_review as acquired
 from research_program.three_arm_review import _results
 
@@ -116,9 +116,10 @@ def historical(data, root, plan_path):
                                    for role, values in summary['scores'].items()}, native_versions=summary['versions'])
 
 
-def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=None):
+def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=None, checkpoint_folders=(), at=AS_OF):
     out = root / window
-    intake.intake(reg, window, binding, root / 'empty-intake', out, research, AS_OF, binding_root=binding_root)
+    intake.intake(reg, window, binding, root / 'empty-intake', out, research, at,
+                  binding_root=binding_root, checkpoint_folders=checkpoint_folders)
     original = data / '20261126-r26-j1-first-stage' / window
     batch_root = None
     if window == 'nov28_29':
@@ -130,7 +131,7 @@ def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=N
     official = display.review(intake.read(reg), ledger_root=original, result_state=out,
                               evidence_root=out, batch_root=batch_root,
                               jleague_kickoffs=intake.read(out / 'jleague-kickoffs.json'),
-                              actual_kickoffs=intake.read(out / 'actual-kickoffs.json'), at=AS_OF)
+                              actual_kickoffs=intake.read(out / 'actual-kickoffs.json'), at=at)
     settled = official['windows'][window]
     report = intake.read(out / 'review.json')
     research_reads = {tag: dict(freeze_id=group['freeze_id'], registered=group['registered'],
@@ -143,6 +144,14 @@ def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=N
         raise ValueError('a research issue gained credit before kickoff')
     readiness = dict(registered=10, pending=10, actual_starts=0, confirmed_firsts=0, research=research_reads,
                      registration=report['registration'], official_binding=report['binding_freeze'])
+    if checkpoint_folders:
+        node = report['market_checkpoints']['T-24h']
+        if ((node['registered'], node['issued'], node['settled']) != (10, 2, 0)
+                or any(metric['eligible'] for metric in node['metrics'].values())
+                or sum(row['status'] == 'AWAITING_VERIFIED_REGULATION' for row in node['per_match'].values()) != 2):
+            raise ValueError('the two frozen market benchmarks gained credit before verified regulation')
+        readiness['market_checkpoint_readiness'] = {
+            'T-24h': {key: node[key] for key in ('registered', 'issued', 'settled', 'metrics')}}
     if batch_root:
         body = settled['repository_batch_body_audit']
         market = settled['actual_bookmaker_quote']
@@ -416,63 +425,21 @@ def first_checkpoint(data, directory, reg):
 
 
 def checkpoint_benchmark(directory, plan_path, fresh_match_ids):
-    plan = verify(intake.read(plan_path))
-    captures_sha = sha256((directory / 'receipts.json').read_bytes()).hexdigest()
-    fixtures = {row['match_id']: row for row in intake.read(directory / 'prepared-fixtures.json')}
-    archived = directory / 'benchmark'
-    references = intake.read(archived / 'index.json')
-    if sorted(ref['match_id'] for ref in references) != sorted(fresh_match_ids):
+    plan, universe, slates, _ = display._registered(intake.read(plan_path))
+    fixtures = {mid: universe[mid] for mid in slates['nov28_29']}
+    checkpoint, records = checkpoint_review.read_wave(directory, plan, fixtures)
+    if checkpoint != 'T-24h' or records.keys() != set(fresh_match_ids):
         raise ValueError('benchmark must cover every fresh same-book pair in this wave')
     output = {}
-    track = 'j1-t24-market-baseline'
-    for ref in references:
-        mid = ref['match_id']
-        scope = dict(match_id=mid, stage='prematch', track=track)
-        freeze_id = digest(scope)[:16] + '-v000001'
-        if ref['freeze_id'] != freeze_id or ref['file'] != freeze_id + '.json':
-            raise ValueError('unexpected benchmark freeze reference: ' + mid)
-        first = ledger._read(archived, dict(ref, id=freeze_id))
+    for mid, first in records.items():
         fixture, payload = first['fixture'], first['payload']
-        checkpoint = fixtures[mid]['market_checkpoint']
-        cutoff, issued_at = aware(fixture['cutoff_at']), aware(first['recorded_at'])
-        captured_at = aware(fixture['market_evidence']['odds']['captured_at'])
-        if (any(first[key] != value for key, value in scope.items())
-                or first['recorded_at'] != ref['recorded_at']
-                or fixture != dict(fixtures[mid], cutoff_at=fixture['cutoff_at'])
-                or payload['registration_id'] != plan['freeze_id']
-                or payload['registration_sha256'] != plan['record_sha256']
-                or payload['capture_manifest_sha256'] != captures_sha
-                or payload['checkpoint'] != checkpoint['name']
-                or payload['checkpoint_deadline'] != checkpoint['deadline']
-                or not (aware(plan['recorded_at']) <= aware(checkpoint['checked_at'])
-                        <= captured_at <= aware(checkpoint['verified_at']) <= cutoff <= issued_at
-                        <= aware(checkpoint['deadline']) < aware(fixture['kickoff_at']))):
-            raise ValueError('benchmark fixture, registration or issue time differs: ' + mid)
         forecast = payload['forecast']
-        replay = market.predict(fixture)
-        stable_keys = ('version', 'method', 'match_id', 'formal_kpi_eligible', 'active_model_changed',
-                       'status', 'quote_snapshot', 'quote_snapshot_sha256', 'primary', 'top3',
-                       'poisson_top3', 'lowest_price_1x2', 'lowest_price_total')
         total = forecast['full_win_total']
-        replay_total = replay['full_win_total']
         wdl = forecast['wdl_probabilities']
-        # Optimizer rounding can vary across platforms. Require the same picks and numerical probabilities.
-        numbers = [(forecast['primary_probability'], replay['primary_probability'])]
-        numbers.extend((value, replay['wdl_probabilities'][key]) for key, value in wdl.items())
-        numbers.extend((value, replay_total['settlements'][side][key])
-                       for side, states in total['settlements'].items() for key, value in states.items())
-        if (replay['status'] != 'AVAILABLE' or any(forecast[key] != replay[key] for key in stable_keys)
-                or any(total[key] != replay_total[key] for key in ('line', 'direction', 'objective'))
-                or any(not isclose(a, b, rel_tol=0, abs_tol=1e-10) for a, b in numbers)):
-            raise ValueError('frozen market benchmark does not reproduce: ' + mid)
         quote = forecast['quote_snapshot']
-        ok, reason, quote_clock = club_market.verify_j1_quote(
-            fixture, fixture['total_quote'], directory, quote['h2h']['prices'])
-        if not ok or quote_clock != quote['total']['quoted_at']:
-            raise ValueError(f'benchmark raw markets do not reproduce: {mid} {reason}')
-        output[mid] = dict(freeze_id=freeze_id, recorded_at=first['recorded_at'],
-                           cutoff_at=fixture['cutoff_at'], deadline=checkpoint['deadline'],
-                           provider_quote_at=quote_clock, bookmaker=quote['bookmaker'],
+        output[mid] = dict(freeze_id=first['freeze_id'], recorded_at=first['recorded_at'],
+                           cutoff_at=fixture['cutoff_at'], deadline=payload['checkpoint_deadline'],
+                           provider_quote_at=quote['total']['quoted_at'], bookmaker=quote['bookmaker'],
                            primary=forecast['primary'], top3=forecast['top3'],
                            wdl=max(wdl, key=wdl.get), total_line=total['line'], total_direction=total['direction'])
     return dict(frozen=len(output), match_evidence=output)
@@ -673,7 +640,9 @@ def run(data):
         root = Path(tmp)
         return dict(as_of=AS_OF.isoformat(), historical_j1=historical(data, root / 'nov25', nov_reg),
                     upcoming={
-                        'nov28_29': forthcoming(data, root, nov_reg, nov_bind, 'nov28_29', research),
+                        'nov28_29': forthcoming(data, root, nov_reg, nov_bind, 'nov28_29', research,
+                                                checkpoint_folders=(package / wave,),
+                                                at=aware('2026-11-27T13:14:00+08:00')),
                         'dec04_06': forthcoming(data, root, dec_reg, dec_bind, 'dec04_06', binding_root=dec_official),
                         'dec12_13': forthcoming(data, root, dec_reg, dec_bind, 'dec12_13', binding_root=dec_official),
                     }, historical_scorecard=scorecard(data), europe_score_ranking=ranked,
