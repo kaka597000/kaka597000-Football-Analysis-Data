@@ -1,0 +1,50 @@
+name: Verify official J.League kickoff evidence for J1
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261127-j1-official-kickoff/**'
+      - '.github/workflows/j1-official-kickoff-20261127.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261127-j1-official-kickoff
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261125-forward-settlement/nov25
+            workspace-updates/20261125-j1-stage-windows/registration
+            workspace-updates/20261126-j1-forward-result-review/nov25-state
+            workspace-updates/20261126-r26-j1-first-stage/nov28_29
+            workspace-updates/20261126-r26-j1-first-stage/evidence
+            workspace-updates/20261127-europe-round1-review
+            workspace-updates/20261127-j1-official-kickoff
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: bfed38d5591e31577c96b2ca16ad683d98335cf3
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Revalidate the pregame identities and original kickoff minutes
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/bind.py" > "$RUNNER_TEMP/jleague-proof.json"
+          cmp "$PACKAGE/verified.json" "$RUNNER_TEMP/jleague-proof.json"
+          python -B -m unittest research.test_display_receipt_settlement research_program.test_display_window_review research_program.test_nov25_first_review
