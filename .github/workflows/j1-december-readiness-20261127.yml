@@ -1,0 +1,47 @@
+name: Reproduce J1 December market and display inputs
+
+on:
+  pull_request:
+    paths:
+      - 'workspace-updates/20261127-j1-december-readiness/**'
+      - '.github/workflows/j1-december-readiness-20261127.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PACKAGE: workspace-updates/20261127-j1-december-readiness
+      PYTHONPATH: source/runtime
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            workspace-updates/20261125-j1-stage-windows/registration
+            workspace-updates/20261126-r26-j1-first-stage/evidence
+            workspace-updates/20261126-j1-december-windows/registration
+            workspace-updates/20261127-j1-december-evidence
+            workspace-updates/20261127-j1-december-readiness
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          ref: b47a99e72ade13bf03f75046c18f8f30175597da
+          path: source
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r source/requirements.txt lightgbm==4.6.0 pandas==3.1.0
+      - name: Rebuild both window inputs and check the raw market paths
+        run: |
+          (cd "$PACKAGE" && sha256sum -c SHA256SUMS)
+          python -B "$PACKAGE/verify.py" --out "$RUNNER_TEMP/j1-december-readiness"
+          diff -qr "$PACKAGE/prepared" "$RUNNER_TEMP/j1-december-readiness"
