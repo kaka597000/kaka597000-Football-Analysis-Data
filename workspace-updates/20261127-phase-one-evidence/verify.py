@@ -360,14 +360,61 @@ def first_checkpoint(data, directory, reg):
         if replay['market_availability'] == 'FRESH_SAME_BOOK_PAIR':
             paired.append(mid)
         raw = intake.read(directory / proof['odds']['file'])
-        times = [aware(item['as_of']) for item in raw['odds'] if item.get('as_of')]
+        clocks = [(aware(item['as_of']), item['status'], item['bookmaker']) for item in raw['odds']
+                  if item.get('as_of') and item['period'] == 'full_time'
+                  and item['market_type'] in ('1x2', 'totals')]
+        times = [stamp for stamp, _, _ in clocks]
         if times:
             latest = max(times)
+            opened = max((stamp for stamp, status, _ in clocks if status == 'open'), default=None)
+            newest = [(status, book) for stamp, status, book in clocks if stamp == latest]
             freshest[mid] = dict(quoted_at=latest.isoformat(),
-                                 age_at_deadline_seconds=(deadline-latest).total_seconds())
+                                 age_at_deadline_seconds=(deadline-latest).total_seconds(),
+                                 latest_statuses=sorted({status for status, _ in newest}),
+                                 latest_bookmakers=sorted({book for _, book in newest}),
+                                 latest_rows=len(newest),
+                                 latest_open_quoted_at=opened.isoformat() if opened else None,
+                                 latest_open_age_at_deadline_seconds=(deadline-opened).total_seconds()
+                                 if opened else None)
     return dict(registered=len(rows), in_time=len(eligible), same_book_pair=len(paired),
                 checked_first=min(clocked).isoformat(), checked_last=max(clocked).isoformat(),
                 first_wave_match_ids=eligible, fresh_pair_match_ids=paired, latest_source_rows=freshest)
+
+
+def compare_checkpoint_prices(before, after):
+    def full_time_rows(directory):
+        grouped = {}
+        for row in intake.read(directory / 'prepared-fixtures.json'):
+            evidence = row.get('market_evidence')
+            if evidence is None:
+                continue
+            raw = intake.read(directory / evidence['odds']['file'])
+            marks = {}
+            for quote in raw['odds']:
+                if (quote['period'] != 'full_time' or quote['market_type'] not in ('1x2', 'totals')
+                        or quote['status'] != 'open' or quote['format'] != 'decimal'
+                        or not isinstance(quote['prices'], dict)):
+                    continue
+                key = (quote['bookmaker'], quote['market_type'], quote['line'])
+                quote_row = (tuple(sorted(quote['prices'].items())), quote.get('as_of'))
+                marks.setdefault(key, set()).add(quote_row)
+            unique = {key: next(iter(values)) for key, values in marks.items() if len(values) == 1}
+            grouped[row['match_id']] = raw['event_id'], unique
+        return grouped
+
+    old, new = full_time_rows(before), full_time_rows(after)
+    result = {}
+    for mid in sorted(old.keys() & new.keys()):
+        old_event, old_marks = old[mid]
+        new_event, new_marks = new[mid]
+        if old_event != new_event:
+            result[mid] = dict(previous_event_id=old_event, provider_event_id=new_event, common_market_rows=0)
+            continue
+        common = old_marks.keys() & new_marks.keys()
+        result[mid] = dict(provider_event_id=new_event, common_market_rows=len(common),
+                           price_changes=sum(old_marks[key][0] != new_marks[key][0] for key in common),
+                           timestamp_changes=sum(old_marks[key][1] != new_marks[key][1] for key in common))
+    return result
 
 
 def result_wave_rehearsal(package, root, registration, binding, research):
@@ -520,6 +567,9 @@ def run(data):
     ranked = ranked_europe(data)
     differences = frozen_differences(research, nov_reg)
     review_freeze = score_review_freeze(package, data, nov_reg, ranked, differences)
+    checkpoints = {name: first_checkpoint(data, package / name, nov_reg)
+                   for name in ('market-t24', 'market-t24-recheck', 'market-t24-close')}
+    closing_changes = compare_checkpoint_prices(package/'market-t24-recheck', package/'market-t24-close')
     with TemporaryDirectory(prefix='phase-one-replay-') as tmp:
         root = Path(tmp)
         return dict(as_of=AS_OF.isoformat(), historical_j1=historical(data, root / 'nov25', nov_reg),
@@ -532,8 +582,7 @@ def run(data):
                     jleague_espn_wave_rehearsal=result_wave_rehearsal(package, root, nov_reg, nov_bind, research),
                     hkjc_probe=hkjc_probe(package, nov_reg),
                     frozen_score_differences=differences, score_review_freeze=review_freeze,
-                    market_checkpoint_samples={name: first_checkpoint(data, package / name, nov_reg)
-                                               for name in ('market-t24', 'market-t24-recheck')})
+                    market_checkpoint_samples=checkpoints, closing_1x2_and_totals_changes=closing_changes)
 
 
 if __name__ == '__main__':

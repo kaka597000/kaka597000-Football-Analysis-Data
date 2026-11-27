@@ -23,6 +23,8 @@ T−24h、T−6h、T−60min、T−15min 按每场独立截止、独立留存。
 
 11 月 27 日 12:04 首采和 12:08 复采使用 13:00 的 T−24h 截止。两次均匹配京都不死鸟对大阪樱花、清水心跳对浦和红钻的原赛程。两场最新市场行均为 11:00:06，距节点截止 7,194 秒。本轮节点合格同机构配对为 0/2，另八场尚未进入各自节点的采集区间。[首采回执](market-t24/receipts.json) · [复采回执](market-t24-recheck/receipts.json)
 
+12:55 再次按同一截止采集。两场各有 4 条 Nova88 暂停受注行更新至 12:24:06，价格均为零。两场各 17 条仍开放的同机构同市场报价与 12:08 原件相比，价格和时钟逐行一致，最新开放行仍为 11:00:06。首批两场在此次 T−24h 复采的合格配对仍为 0/2。[12:55 采集回执](market-t24-close/receipts.json) · [逐场时钟与价格变化复算](verified.json)
+
 12:17 对首两场同时核查香港赛马会。匿名公开主页返回 HTTP 200 的客户端页面壳，正常浏览器访问遇到证书校验错误。本次从该官方页面核实的两场具名市场行均为零。[官方网页原件](hkjc-clock-check/raw/hkjc-public-football-home.html) · [采集记录](hkjc-clock-check/request-metadata.json) · [浏览器回执](hkjc-clock-check/browser-failure.json)
 
 ## PR 审核
