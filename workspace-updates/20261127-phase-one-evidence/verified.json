@@ -1902,7 +1902,7 @@
     }
   },
   "market_checkpoint_benchmark": {
-    "frozen": 2,
+    "frozen": 3,
     "match_evidence": {
       "espn:401877516": {
         "bookmaker": "nova88",
@@ -1920,6 +1920,23 @@
         "total_direction": "over",
         "total_line": 2.5,
         "wdl": "home"
+      },
+      "espn:401877525": {
+        "bookmaker": "macau",
+        "cutoff_at": "2026-11-27T06:52:41.175486+00:00",
+        "deadline": "2026-11-27T07:00:00+00:00",
+        "freeze_id": "b91f8f5d7554cef4-v000001",
+        "primary": "1-1",
+        "provider_quote_at": "2026-11-27T06:36:48Z",
+        "recorded_at": "2026-11-27T14:52:41.190155+08:00",
+        "top3": [
+          "1-1",
+          "1-2",
+          "0-1"
+        ],
+        "total_direction": "under",
+        "total_line": 2.75,
+        "wdl": "away"
       },
       "espn:401877542": {
         "bookmaker": "nova88",
@@ -2149,11 +2166,47 @@
       },
       "registered": 10,
       "same_book_pair": 0
+    },
+    "market-t24-wave-1500-close": {
+      "checked_first": "2026-11-27T06:52:11.289885+00:00",
+      "checked_last": "2026-11-27T06:52:12.787193+00:00",
+      "fresh_pair_match_ids": [
+        "espn:401877525"
+      ],
+      "in_time": 1,
+      "in_time_match_ids": [
+        "espn:401877525"
+      ],
+      "latest_source_rows": {
+        "espn:401877525": {
+          "age_at_deadline_seconds": 864.0,
+          "latest_bookmakers": [
+            "macau"
+          ],
+          "latest_open_age_at_deadline_seconds": 864.0,
+          "latest_open_quoted_at": "2026-11-27T06:45:36+00:00",
+          "latest_rows": 1,
+          "latest_statuses": [
+            "open"
+          ],
+          "quoted_at": "2026-11-27T06:45:36+00:00"
+        }
+      },
+      "registered": 10,
+      "same_book_pair": 1
     }
   },
   "score_review_freeze": {
     "freeze_id": "5eb40663982e7c2d-v000001",
     "recorded_at": "2026-11-27T12:37:58.435868+08:00"
+  },
+  "third_wave_closing_price_changes": {
+    "espn:401877525": {
+      "common_market_rows": 21,
+      "price_changes": 2,
+      "provider_event_id": "evt_DJT9E48P",
+      "timestamp_changes": 4
+    }
   },
   "upcoming": {
     "dec04_06": {
@@ -2180,7 +2233,7 @@
       "first_frozen_body_verified": true,
       "market_checkpoint_readiness": {
         "T-24h": {
-          "issued": 2,
+          "issued": 3,
           "metrics": {
             "actual_ou": {
               "accuracy": null,
@@ -2264,6 +2317,14 @@
           "price_changes": 2,
           "provider_event_id": "evt_DJT9E48P",
           "timestamp_changes": 6
+        }
+      },
+      "market-t24-wave-1500-close": {
+        "espn:401877525": {
+          "common_market_rows": 21,
+          "price_changes": 3,
+          "provider_event_id": "evt_DJT9E48P",
+          "timestamp_changes": 9
         }
       }
     },

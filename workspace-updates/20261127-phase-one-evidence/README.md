@@ -11,7 +11,7 @@
 | 12 月 4–6 日 | 10 | 0 | 0 |
 | 12 月 12–13 日 | 10 | 0 | 0 |
 
-11 月 25 日的官方赛中、完场页面保留实际开球的分钟区间。常规时间终场比分与 ESPN 逐场一致。后三窗绑定了官方赛前原件。11 月周末窗口用 11 月 27 日 14:02 重放，两期 12 月窗口用当日 11:50 重放。周末同一结果目录可复盘原 Current、Test、市场对照、R28／R42／R46／R49 各自的首版，以及原综合比分与三席精选。正式综合展示分母仍待原渠道提供独立首送及原文回读。原合格市场须使用各自签发时冻结的报价。[复算](verified.json) · [结果入口](https://github.com/kaka597000/Football-Analysis/blob/859f454ae90bc9f7e6c743e016fb68d4e18f912d/docs/j1-official-kickoff-proof.md)
+11 月 25 日的官方赛中、完场页面保留实际开球的分钟区间。常规时间终场比分与 ESPN 逐场一致。后三窗绑定了官方赛前原件。11 月周末窗口用 11 月 27 日 14:52 重放，两期 12 月窗口用当日 11:50 重放。周末同一结果目录可复盘原 Current、Test、市场对照、R28／R42／R46／R49 各自的首版，以及原综合比分与三席精选。正式综合展示分母仍待原渠道提供独立首送及原文回读。原合格市场须使用各自签发时冻结的报价。[复算](verified.json) · [结果入口](https://github.com/kaka597000/Football-Analysis/blob/859f454ae90bc9f7e6c743e016fb68d4e18f912d/docs/j1-official-kickoff-proof.md)
 
 北京时间 11 月 27 日 12:19–12:20，对 11 月 28 日 13:00 和 14:00 两个开球时段的四场实采 ESPN 摘要与 J.League 官方详情，共八份响应，均为 HTTP 200。新入口按原登记时段取数，并从同一目录一次复算两个采集批次。四场官方页面均为赛前状态，周末十场仍全数待结算。11 月 25 日原完赛档案也通过同一读取入口复算，七场实际开球和终场逐场一致。[实采原件](result-wave-rehearsal/captures.tar.gz) · [复算](verified.json)
 
@@ -33,7 +33,9 @@ T−24h、T−6h、T−60min、T−15min 按每场独立截止、独立留存。
 
 14:02 取样次日 15:00 开球的柏太阳神对广岛三箭。澳门的最新胜平负行时钟为 13:57:41，距 15:00 截止 62 分 19 秒。最新大小球行采用 Nova88 的 13:04:31。此次合格同机构配对为 0/1。与上午的原响应共有 21 条可比市场行，其中两条胜平负价格变化，六条供应商时钟更新。赛前签发按实际截止输出空基准清单。[14:02 采集原件](market-t24-wave-1500/receipts.json) · [签发清单](market-t24-wave-1500/benchmark/index.json) · [逐行比较](verified.json)
 
-市场基准已接入同一赛果入口。14:02 的赛前复算保留了周末十场，按 T−24h 识别出两份冻结，四项结算分母均为零。各节点使用各自冻结的第一比分、三选、胜平负和实际盘线。走盘从大小球全赢率分母中剔除，半赢计入非走盘分母。[节点复算](verified.json) · [入口说明](https://github.com/kaka597000/Football-Analysis/blob/859f454ae90bc9f7e6c743e016fb68d4e18f912d/docs/j1-official-kickoff-proof.md)
+14:52 复采柏太阳神对广岛三箭。澳门同一响应包含全场胜平负和大小球，胜平负行时间为 14:45:36，所用 2.75 球行时间为 14:36:48，距截止分别为 14 分 24 秒及 23 分 12 秒。此次配对覆盖 1/1，市场基准于 14:52:41 冻结。[复采回执](market-t24-wave-1500-close/receipts.json) · [首次基准冻结](market-t24-wave-1500-close/benchmark/index.json)
+
+市场基准已接入同一赛果入口。14:52 的赛前复算保留了周末十场，按 T−24h 识别出三份冻结，四项结算分母均为零。各节点使用各自冻结的第一比分、三选、胜平负和实际盘线。走盘从大小球全赢率分母中剔除，半赢计入非走盘分母。[节点复算](verified.json) · [入口说明](https://github.com/kaka597000/Football-Analysis/blob/859f454ae90bc9f7e6c743e016fb68d4e18f912d/docs/j1-official-kickoff-proof.md)
 
 12:17 对首两场同时核查香港赛马会。匿名公开主页返回 HTTP 200 的客户端页面壳，正常浏览器访问遇到证书校验错误。本次从该官方页面核实的两场具名市场行均为零。[官方网页原件](hkjc-clock-check/raw/hkjc-public-football-home.html) · [采集记录](hkjc-clock-check/request-metadata.json) · [浏览器回执](hkjc-clock-check/browser-failure.json)
 

@@ -781,7 +781,7 @@ def run(data):
     ranked = ranked_europe(data)
     differences, forecasts = frozen_differences(research, nov_reg)
     review_freeze = score_review_freeze(package, data, nov_reg, ranked, differences)
-    waves = ('market-t24-wave-1400', 'market-t24-wave-1500')
+    waves = ('market-t24-wave-1400', 'market-t24-wave-1500', 'market-t24-wave-1500-close')
     checkpoints = {name: first_checkpoint(data, package / name, nov_reg)
                    for name in ('market-t24', 'market-t24-recheck', 'market-t24-close', *waves)}
     benchmarks = [checkpoint_benchmark(package / name, nov_reg, checkpoints[name]['fresh_pair_match_ids'])
@@ -790,9 +790,12 @@ def run(data):
     frozen = sum(packet['frozen'] for packet in benchmarks)
     if benchmarks[0]['frozen'] != 2 or frozen != len(match_evidence):
         raise ValueError('first market benchmark coverage changed or contains duplicates')
-    latest = checkpoints[waves[-1]]
-    if latest['in_time_match_ids'] != ['espn:401877525'] or latest['same_book_pair'] or benchmarks[-1]['frozen']:
+    initial, closing = (checkpoints[name] for name in waves[1:])
+    target = ['espn:401877525']
+    if initial['in_time_match_ids'] != target or initial['same_book_pair'] or benchmarks[1]['frozen']:
         raise ValueError('14:02 sample must preserve the one registered match without a fresh pair')
+    if closing['in_time_match_ids'] != target or closing['fresh_pair_match_ids'] != target or benchmarks[2]['frozen'] != 1:
+        raise ValueError('14:52 sample must preserve the one fresh pair and original issue')
     benchmark = dict(frozen=frozen, match_evidence=match_evidence)
     closing_changes = compare_checkpoint_prices(package/'market-t24-recheck', package/'market-t24-close')
     with TemporaryDirectory(prefix='phase-one-replay-') as tmp:
@@ -806,7 +809,7 @@ def run(data):
                         'nov28_29': forthcoming(data, root, nov_reg, nov_bind, 'nov28_29', research,
                                                 checkpoint_folders=tuple(package / name for name in waves),
                                                 expected_benchmarks=frozen,
-                                                at=aware('2026-11-27T14:02:20+08:00')),
+                                                at=aware('2026-11-27T14:52:42+08:00')),
                         'dec04_06': forthcoming(data, root, dec_reg, dec_bind, 'dec04_06', binding_root=dec_official),
                         'dec12_13': forthcoming(data, root, dec_reg, dec_bind, 'dec12_13', binding_root=dec_official),
                     }, historical_scorecard=scorecard(data), europe_score_ranking=ranked,
@@ -819,6 +822,7 @@ def run(data):
                     hkjc_probe=hkjc_probe(package, nov_reg),
                     frozen_score_differences=differences, score_review_freeze=review_freeze,
                     market_checkpoint_samples=checkpoints, closing_1x2_and_totals_changes=closing_changes,
+                    third_wave_closing_price_changes=compare_checkpoint_prices(package/waves[1], package/waves[2]),
                     market_checkpoint_benchmark=benchmark)
 
 
