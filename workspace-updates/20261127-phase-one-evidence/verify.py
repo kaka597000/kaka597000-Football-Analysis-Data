@@ -1,8 +1,11 @@
 """Replay the first-stage evidence inputs without reading current scores or rewriting forecasts."""
 
 import argparse
+from bisect import bisect_right
+from collections import Counter
 import csv
 from datetime import timedelta
+import gzip
 from hashlib import sha256
 import json
 from math import fsum, isfinite, log
@@ -116,7 +119,8 @@ def historical(data, root, plan_path):
                                    for role, values in summary['scores'].items()}, native_versions=summary['versions'])
 
 
-def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=None, checkpoint_folders=(), at=AS_OF):
+def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=None,
+                checkpoint_folders=(), expected_benchmarks=0, at=AS_OF):
     out = root / window
     intake.intake(reg, window, binding, root / 'empty-intake', out, research, at,
                   binding_root=binding_root, checkpoint_folders=checkpoint_folders)
@@ -146,10 +150,10 @@ def forthcoming(data, root, reg, binding, window, research=(), *, binding_root=N
                      registration=report['registration'], official_binding=report['binding_freeze'])
     if checkpoint_folders:
         node = report['market_checkpoints']['T-24h']
-        if ((node['registered'], node['issued'], node['settled']) != (10, 2, 0)
+        if ((node['registered'], node['issued'], node['settled']) != (10, expected_benchmarks, 0)
                 or any(metric['eligible'] for metric in node['metrics'].values())
-                or sum(row['status'] == 'AWAITING_VERIFIED_REGULATION' for row in node['per_match'].values()) != 2):
-            raise ValueError('the two frozen market benchmarks gained credit before verified regulation')
+                or sum(row['status'] == 'AWAITING_VERIFIED_REGULATION' for row in node['per_match'].values()) != expected_benchmarks):
+            raise ValueError('frozen market benchmarks are missing or gained credit before regulation')
         readiness['market_checkpoint_readiness'] = {
             'T-24h': {key: node[key] for key in ('registered', 'issued', 'settled', 'metrics')}}
     if batch_root:
@@ -194,6 +198,43 @@ def ranked_europe(data):
         if source['original_display']['sha256'] != seal['payload']['original_display_sha256'][code]:
             raise ValueError('score grid source omits the original Europe display identity')
         result[code]['total_and_split'] = europe_total_and_split(data, source, group['per_match'])
+    return result
+
+
+def r7_four_goal_bands(data):
+    source = data / '20261127-r45-j1-four-goal-path'
+    expected = dict(line.split()[::-1] for line in (source / 'SHA256SUMS').read_text().splitlines())
+    rows = []
+    for name in ('replay/validation.jsonl.gz', 'replay/forecasts.jsonl.gz'):
+        body = (source / name).read_bytes()
+        if sha256(body).hexdigest() != expected[name]:
+            raise ValueError('the original R45 replay input changed: ' + name)
+        rows.extend(json.loads(line) for line in gzip.decompress(body).splitlines())
+    windows = {'validation': 218, 'late_2025': 162, 'early_2026_27': 150}
+    if (Counter(row['window'] for row in rows) != windows or len({row['id'] for row in rows}) != len(rows)
+            or any(row['cohort'] != 'jpn.1' or row['stage'] != 'regular' for row in rows)):
+        raise ValueError('R45 replay must retain its three distinct J1 time windows')
+
+    def summary(group):
+        actual_high = [row for row in group if sum(row['actual']) >= 4]
+        return dict(matches=len(group), actual_four_plus=len(actual_high),
+                    expected_four_plus={arm: round(fsum(row['p_four_plus'][arm] for row in group), 6)
+                                        for arm in ('r7', 'context_full')},
+                    r7_high_score_top3=sum('-'.join(map(str, row['actual'])) in row['forecast']['r7']['top3']
+                                          for row in actual_high))
+
+    edges = (0., .20, .30, .40, 1.)
+    result = {}
+    for period in windows:
+        group = [row for row in rows if row['window'] == period]
+        selected = [[] for _ in edges[1:]]
+        for row in group:
+            probs = row['p_four_plus']
+            if any(not 0 <= probs[arm] <= 1 for arm in ('r7', 'context_full')):
+                raise ValueError('expected numerical four-goal probability')
+            selected[bisect_right(edges[1:-1], probs['r7'])].append(row)
+        result[period] = dict(total=summary(group), bands=[dict(minimum=low, maximum=high, **summary(part))
+            for low, high, part in zip(edges[:-1], edges[1:], selected, strict=True)])
     return result
 
 
@@ -308,7 +349,7 @@ def scorecard(data):
     return result
 
 
-def market_probe(data, probe, reg):
+def market_probe(data, probe, reg, checkpoint_folders=()):
     _, universe, slates, _ = display._registered(intake.read(reg))
     crosswalk = intake.read(data / '20261127-j1-december-readiness/prepared/team-ids.json')['jpn.1']
     captures = intake.read(probe / 'captures.json')
@@ -357,9 +398,15 @@ def market_probe(data, probe, reg):
     reported = intake.read(probe / 'coverage.json')
     if (reported['strict_fixture_coverage'], reported['strict_book_pairs']) != (covered, pairs):
         raise ValueError('same-book timed market probe coverage differs')
+    event_by_match = {row['match_id']: row['event_id'] for row in mapped}
+    changes = {}
+    for folder in checkpoint_folders:
+        changes[folder.name] = {mid: compare_market_responses(prices[event_by_match[mid]][1], after)
+                                for mid, after in captured_markets(folder).items()}
     return dict(fixtures=len(mapped), fresh_at_capture=covered, same_book_pairs=pairs,
                 earliest_capture=min(ref['captured_at'] for ref, _ in prices.values()),
-                last_capture=max(ref['captured_at'] for ref, _ in prices.values()))
+                last_capture=max(ref['captured_at'] for ref, _ in prices.values()),
+                checkpoint_comparisons=changes)
 
 
 def first_checkpoint(data, directory, reg):
@@ -428,8 +475,8 @@ def checkpoint_benchmark(directory, plan_path, fresh_match_ids):
     plan, universe, slates, _ = display._registered(intake.read(plan_path))
     fixtures = {mid: universe[mid] for mid in slates['nov28_29']}
     checkpoint, records = checkpoint_review.read_wave(directory, plan, fixtures)
-    if checkpoint != 'T-24h' or records.keys() != set(fresh_match_ids):
-        raise ValueError('benchmark must cover every fresh same-book pair in this wave')
+    if checkpoint != 'T-24h' or not records.keys() <= set(fresh_match_ids):
+        raise ValueError('benchmarks must be based on fresh same-book pairs in their own wave')
     output = {}
     for mid, first in records.items():
         fixture, payload = first['fixture'], first['payload']
@@ -445,40 +492,37 @@ def checkpoint_benchmark(directory, plan_path, fresh_match_ids):
     return dict(frozen=len(output), match_evidence=output)
 
 
-def compare_checkpoint_prices(before, after):
-    def full_time_rows(directory):
-        grouped = {}
-        for row in intake.read(directory / 'prepared-fixtures.json'):
-            evidence = row.get('market_evidence')
-            if evidence is None:
-                continue
-            raw = intake.read(directory / evidence['odds']['file'])
-            marks = {}
-            for quote in raw['odds']:
-                if (quote['period'] != 'full_time' or quote['market_type'] not in ('1x2', 'totals')
-                        or quote['status'] != 'open' or quote['format'] != 'decimal'
-                        or not isinstance(quote['prices'], dict)):
-                    continue
-                key = (quote['bookmaker'], quote['market_type'], quote['line'])
-                quote_row = (tuple(sorted(quote['prices'].items())), quote.get('as_of'))
-                marks.setdefault(key, set()).add(quote_row)
-            unique = {key: next(iter(values)) for key, values in marks.items() if len(values) == 1}
-            grouped[row['match_id']] = raw['event_id'], unique
-        return grouped
+def captured_markets(directory):
+    return {row['match_id']: intake.read(acquired.file_in(directory, row['market_evidence']['odds']['file']))
+            for row in intake.read(directory / 'prepared-fixtures.json') if row.get('market_evidence')}
 
+
+def compare_market_responses(before, after):
+    def full_time_rows(raw):
+        markets = {}
+        for quote in raw['odds']:
+            if (quote['period'] != 'full_time' or quote['market_type'] not in ('1x2', 'totals')
+                    or quote['status'] != 'open' or quote['format'] != 'decimal'
+                    or not isinstance(quote['prices'], dict)):
+                continue
+            key = (quote['bookmaker'], quote['market_type'], quote['line'])
+            row = (tuple(sorted(quote['prices'].items())), quote.get('as_of'))
+            markets.setdefault(key, set()).add(row)
+        return {key: next(iter(values)) for key, values in markets.items() if len(values) == 1}
+
+    old_id, new_id = before['event_id'], after['event_id']
+    if old_id != new_id:
+        return dict(previous_event_id=old_id, provider_event_id=new_id, common_market_rows=0)
     old, new = full_time_rows(before), full_time_rows(after)
-    result = {}
-    for mid in sorted(old.keys() & new.keys()):
-        old_event, old_marks = old[mid]
-        new_event, new_marks = new[mid]
-        if old_event != new_event:
-            result[mid] = dict(previous_event_id=old_event, provider_event_id=new_event, common_market_rows=0)
-            continue
-        common = old_marks.keys() & new_marks.keys()
-        result[mid] = dict(provider_event_id=new_event, common_market_rows=len(common),
-                           price_changes=sum(old_marks[key][0] != new_marks[key][0] for key in common),
-                           timestamp_changes=sum(old_marks[key][1] != new_marks[key][1] for key in common))
-    return result
+    common = old.keys() & new.keys()
+    return dict(provider_event_id=new_id, common_market_rows=len(common),
+                price_changes=sum(old[key][0] != new[key][0] for key in common),
+                timestamp_changes=sum(old[key][1] != new[key][1] for key in common))
+
+
+def compare_checkpoint_prices(before, after):
+    old, new = captured_markets(before), captured_markets(after)
+    return {mid: compare_market_responses(old[mid], new[mid]) for mid in sorted(old.keys() & new.keys())}
 
 
 def result_wave_rehearsal(package, root, registration, binding, research):
@@ -631,22 +675,34 @@ def run(data):
     ranked = ranked_europe(data)
     differences = frozen_differences(research, nov_reg)
     review_freeze = score_review_freeze(package, data, nov_reg, ranked, differences)
-    wave = 'market-t24-wave-1400'
+    waves = ('market-t24-wave-1400', 'market-t24-wave-1500')
     checkpoints = {name: first_checkpoint(data, package / name, nov_reg)
-                   for name in ('market-t24', 'market-t24-recheck', 'market-t24-close', wave)}
-    benchmark = checkpoint_benchmark(package / wave, nov_reg, checkpoints[wave]['fresh_pair_match_ids'])
+                   for name in ('market-t24', 'market-t24-recheck', 'market-t24-close', *waves)}
+    benchmarks = [checkpoint_benchmark(package / name, nov_reg, checkpoints[name]['fresh_pair_match_ids'])
+                  for name in waves]
+    match_evidence = {mid: row for packet in benchmarks for mid, row in packet['match_evidence'].items()}
+    frozen = sum(packet['frozen'] for packet in benchmarks)
+    if benchmarks[0]['frozen'] != 2 or frozen != len(match_evidence):
+        raise ValueError('first market benchmark coverage changed or contains duplicates')
+    latest = checkpoints[waves[-1]]
+    if latest['in_time_match_ids'] != ['espn:401877525'] or latest['same_book_pair'] or benchmarks[-1]['frozen']:
+        raise ValueError('14:02 sample must preserve the one registered match without a fresh pair')
+    benchmark = dict(frozen=frozen, match_evidence=match_evidence)
     closing_changes = compare_checkpoint_prices(package/'market-t24-recheck', package/'market-t24-close')
     with TemporaryDirectory(prefix='phase-one-replay-') as tmp:
         root = Path(tmp)
         return dict(as_of=AS_OF.isoformat(), historical_j1=historical(data, root / 'nov25', nov_reg),
                     upcoming={
                         'nov28_29': forthcoming(data, root, nov_reg, nov_bind, 'nov28_29', research,
-                                                checkpoint_folders=(package / wave,),
-                                                at=aware('2026-11-27T13:14:00+08:00')),
+                                                checkpoint_folders=tuple(package / name for name in waves),
+                                                expected_benchmarks=frozen,
+                                                at=aware('2026-11-27T14:02:20+08:00')),
                         'dec04_06': forthcoming(data, root, dec_reg, dec_bind, 'dec04_06', binding_root=dec_official),
                         'dec12_13': forthcoming(data, root, dec_reg, dec_bind, 'dec12_13', binding_root=dec_official),
                     }, historical_scorecard=scorecard(data), europe_score_ranking=ranked,
-                    upcoming_market_probe=market_probe(data, package / 'market-probe', nov_reg),
+                    historical_r7_four_goal_bands=r7_four_goal_bands(data),
+                    upcoming_market_probe=market_probe(data, package / 'market-probe', nov_reg,
+                                                       tuple(package / name for name in waves)),
                     jleague_espn_wave_rehearsal=result_wave_rehearsal(package, root, nov_reg, nov_bind, research),
                     hkjc_probe=hkjc_probe(package, nov_reg),
                     frozen_score_differences=differences, score_review_freeze=review_freeze,

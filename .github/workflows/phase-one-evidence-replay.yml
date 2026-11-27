@@ -52,6 +52,9 @@ jobs:
             /workspace-updates/20261127-j1-official-kickoff/kickoff-packet.json
             /workspace-updates/20261127-j1-official-kickoff/pregame/
             /workspace-updates/20261127-r42-j1-fixed-first-backups/issued/
+            /workspace-updates/20261127-r45-j1-four-goal-path/SHA256SUMS
+            /workspace-updates/20261127-r45-j1-four-goal-path/replay/forecasts.jsonl.gz
+            /workspace-updates/20261127-r45-j1-four-goal-path/replay/validation.jsonl.gz
             /workspace-updates/20261127-r46-j1-process-at-fixed-total/issued/
             /workspace-updates/20261127-r49-j1-season-chance-rates/issued/
           persist-credentials: false
@@ -59,7 +62,7 @@ jobs:
         with:
           repository: kaka597000/Football-Analysis
           path: source
-          ref: 72550eb307380f376766aea626ff94902a7149dd
+          ref: 859f454ae90bc9f7e6c743e016fb68d4e18f912d
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
