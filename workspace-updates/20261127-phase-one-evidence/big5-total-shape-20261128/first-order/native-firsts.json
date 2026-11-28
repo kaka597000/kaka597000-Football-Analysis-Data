@@ -1,0 +1,126 @@
+{
+  "espn:401875081": {
+    "receipt": {
+      "freeze_id": "cde5f0f99b457794-v000001",
+      "recorded_at": "2026-11-28T20:39:18.487337+08:00",
+      "sha256": "e98db5218f5d3d7367a259094371e3d6047bcaddfdde060fe4dcb50f2b84104c",
+      "evaluation_slot": "FIRST_PREMATCH"
+    },
+    "raw_receipt": "first-order/native/401875081/first-pair.json.gz",
+    "receipt_archive_sha256": "c815e535b127141605e6d1705180045f3b9c2608b915bf26aa5dc4bec26f912a",
+    "sources": [
+      {
+        "captured_at": "2026-11-28T12:37:08.501483+00:00",
+        "query_time": "2026-11-28T12:37:08.501483+00:00",
+        "sha256": "22ff07ca47c46b93f175705b96d5b8ea6aa1a2211278aff2252fbf9698b005b3",
+        "source_tier": "L2",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401875081",
+        "supports_field": [
+          "fixture_identity",
+          "kickoff"
+        ],
+        "file": "first-order/native/401875081/espn.json.gz",
+        "archive_sha256": "041a967d654661ad3bf69aaf714f79e55f997e487ac47234e8b931d697c7f5b7"
+      },
+      {
+        "captured_at": "2026-11-28T12:37:08.764933+00:00",
+        "query_time": "2026-11-28T12:37:08.764933+00:00",
+        "sha256": "3865d5a10054dced005e1d4ec259f1c700422fb4f62d151ebbc75481cddf1e63",
+        "source_tier": "L2",
+        "source_url": "https://www.fotmob.com/api/data/matchDetails?matchId=5749763",
+        "supports_field": [
+          "fixture_identity",
+          "kickoff"
+        ],
+        "file": "first-order/native/401875081/fotmob.json.gz",
+        "archive_sha256": "e7c4f9f3ee743955569e8b8297755f954267826e1c4b5617fff07acad38fdb3b"
+      }
+    ],
+    "arms": {
+      "current_model": {
+        "primary": "1-0",
+        "top3": [
+          "1-0",
+          "1-1",
+          "2-0"
+        ],
+        "status": "OBSERVE",
+        "train_through": "2026-09-20",
+        "line_available": false
+      },
+      "test_model": {
+        "primary": "1-0",
+        "top3": [
+          "1-0",
+          "2-0",
+          "1-1"
+        ],
+        "status": "OBSERVE",
+        "train_through": "2026-09-20",
+        "line_available": false
+      }
+    }
+  },
+  "espn:401884723": {
+    "receipt": {
+      "freeze_id": "3eb892247dee3100-v000001",
+      "recorded_at": "2026-11-28T20:39:18.451424+08:00",
+      "sha256": "cebc8c0755a9ca7c8aa0f561d524c4aef17de9f55f8c74074aa036ea67f8987a",
+      "evaluation_slot": "FIRST_PREMATCH"
+    },
+    "raw_receipt": "first-order/native/401884723/first-pair.json.gz",
+    "receipt_archive_sha256": "bcb3b3345748cb0194d1effd85f49fdf7a2824e0439b73da2c48bb053a061a95",
+    "sources": [
+      {
+        "captured_at": "2026-11-28T12:37:07.873153+00:00",
+        "query_time": "2026-11-28T12:37:07.873153+00:00",
+        "sha256": "435e7c7c7e3dda7b0532bb2801717c20715ed767d27e245db4a9078e5714655c",
+        "source_tier": "L2",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/summary?event=401884723",
+        "supports_field": [
+          "fixture_identity",
+          "kickoff"
+        ],
+        "file": "first-order/native/401884723/espn.json.gz",
+        "archive_sha256": "1da0169ff2d9a83a1a87685986c3ae7f48d08e875aa66e9b5fae22d6ed0e221f"
+      },
+      {
+        "captured_at": "2026-11-28T12:37:08.139337+00:00",
+        "query_time": "2026-11-28T12:37:08.139337+00:00",
+        "sha256": "b8d5a9200de311549f43ad29d1592467745d4fdb179c25e05b8333f4b7e0dd81",
+        "source_tier": "L2",
+        "source_url": "https://www.fotmob.com/api/data/matchDetails?matchId=5881238",
+        "supports_field": [
+          "fixture_identity",
+          "kickoff"
+        ],
+        "file": "first-order/native/401884723/fotmob.json.gz",
+        "archive_sha256": "25b396149e5b2d92f3529da428c351b4303e9c884943e02653d5c4240116c9ff"
+      }
+    ],
+    "arms": {
+      "current_model": {
+        "primary": "2-1",
+        "top3": [
+          "2-1",
+          "2-0",
+          "1-1"
+        ],
+        "status": "OBSERVE",
+        "train_through": "2026-10-09",
+        "line_available": false
+      },
+      "test_model": {
+        "primary": "1-1",
+        "top3": [
+          "1-1",
+          "2-1",
+          "2-0"
+        ],
+        "status": "OBSERVE",
+        "train_through": "2026-10-09",
+        "line_available": false
+      }
+    }
+  }
+}

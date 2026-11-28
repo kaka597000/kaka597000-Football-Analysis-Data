@@ -49,6 +49,7 @@ jobs:
             /workspace-updates/20261123-prematch-literature/models/ger.1.tar.gz
             /workspace-updates/20261123-prematch-literature/models/ita.1.tar.gz
             /workspace-updates/20261125-r8-prematch/score/first-issues.tar.gz
+            /workspace-updates/20261125-r8-prematch/score/forecasts.tar.gz
             /workspace-updates/20261125-r14-territory-press/forward/first-issues.tar.gz
             /workspace-updates/20261125-r21-score-dependence/forward/
             /workspace-updates/20261125-r22-draw-preserving/forward/
@@ -196,3 +197,21 @@ jobs:
           folder=audit/workspace-updates/20261127-phase-one-evidence/big5-total-shape-20261128
           PYTHONPATH=r13-source/runtime python -B "$folder/settlement_rehearsal.py" --data-root inputs --out "$RUNNER_TEMP/big5-settlement.json"
           cmp "$folder/settlement-check/verified.json" "$RUNNER_TEMP/big5-settlement.json"
+      - name: Replay Big Five first-score reordering and additional local firsts
+        env:
+          OPENBLAS_CORETYPE: Haswell
+          NPY_DISABLE_CPU_FEATURES: AVX512F
+        run: |
+          folder=audit/workspace-updates/20261127-phase-one-evidence/big5-total-shape-20261128
+          out="$RUNNER_TEMP/big5-first-order"
+          PYTHONPATH=r13-source/runtime python -B "$folder/first_order.py" --data-root inputs --out "$out"
+          for file in verified.json fixtures.jsonl.gz; do
+            cmp "$folder/first-order/$file" "$out/$file"
+          done
+          at=$(jq -r .recorded_at "$folder/first-order/native-firsts-freeze.json")
+          PYTHONPATH=r13-source/runtime python -B "$folder/settlement_additions.py" \
+            --evidence-root "$folder/settlement-check" --receipts "$folder/settlement-check/pending-receipts.json" \
+            --at "$at" --out "$RUNNER_TEMP/big5-settlement-additions.json"
+          jq -e '.registered == 31 and .verified_finals == 0 and
+            ([.per_match | to_entries[] | select(.value.registered_firsts | contains(["Current","Test"])) | .key] | sort) ==
+            ["espn:401875081","espn:401882796","espn:401884723"]' "$RUNNER_TEMP/big5-settlement-additions.json"
