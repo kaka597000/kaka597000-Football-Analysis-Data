@@ -197,6 +197,11 @@ jobs:
           folder=audit/workspace-updates/20261127-phase-one-evidence/big5-total-shape-20261128
           PYTHONPATH=r13-source/runtime python -B "$folder/settlement_rehearsal.py" --data-root inputs --out "$RUNNER_TEMP/big5-settlement.json"
           cmp "$folder/settlement-check/verified.json" "$RUNNER_TEMP/big5-settlement.json"
+          PYTHONPATH=r13-source/runtime python -B "$folder/capture_check.py"
+          PYTHONPATH=r13-source/runtime python -B "$folder/process_check.py" --out "$RUNNER_TEMP/big5-recent-process.json"
+          cmp "$folder/recent-process/verified.json" "$RUNNER_TEMP/big5-recent-process.json"
+          PYTHONPATH=r13-source/runtime python -B "$folder/opening_progress.py" --out "$RUNNER_TEMP/big5-opening.json"
+          cmp "$folder/opening-live/verified.json" "$RUNNER_TEMP/big5-opening.json"
       - name: Replay Big Five first-score reordering and additional local firsts
         env:
           OPENBLAS_CORETYPE: Haswell

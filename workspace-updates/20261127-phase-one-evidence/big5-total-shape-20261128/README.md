@@ -33,3 +33,24 @@ PYTHONPATH=/path/to/source/runtime python -B settlement.py \
   --evidence-root /path/to/postmatch-captures --receipts /path/to/capture-receipts.json \
   --at "$actual_review_cutoff" --out /path/to/new-settlement.json
 ```
+
+采集按原 31 场登记发出精确场次请求。`kickoff` 到该场计划开球后采 ESPN 摘要，`full-time` 到计划开球加 90 分钟后采 ESPN 和 FotMob。实际完赛由原件状态和比赛时钟决定。每个新采集目录保留原始 JSON、请求及接收 UTC 时刻、HTTP 状态和独立 SHA-256 回执。退回 401、403 或 429 时停止本批对同一服务的继续请求。两阶段均可用相同证据根目录，按真实获取时间并入结算。离线核查已覆盖提前到达节点、原字节回放以及单个服务限流后的收据保留。
+
+```bash
+PYTHONPATH=/path/to/source/runtime python -B capture_weekend.py \
+  --phase kickoff --match-id espn:401882796 \
+  --evidence-root /path/to/match-evidence --out /path/to/match-evidence/opening-start
+```
+
+贝蒂斯–巴列卡诺实际开球为北京时间 **21:05:07**，晚于计划 5 分 7 秒。21:02 与 21:04 的 ESPN 原件仍为待赛，21:08 的 FotMob 原件显示比赛已开始，21:09 的 ESPN 原件给出第一节开球事件及带时区的时刻。截至 21:09，31 场中 1 场实开时刻已核实，终场可结算 0 场。[逐次响应与开球时刻](opening-live/verified.json) · [观察冻结](opening-live/review-freeze.json)
+
+22:00 的意甲与 22:30 的德甲另保留七场已核实的同场地顶级联赛过程原件。此前目标场摘要已列出相应历史比赛。各场的比赛 ID、主客队、计划开球、常规时间比分和全场 xG 均按原响应复核。这批取证时间晚于两场 20:39 的模型首版，供后续综合比较。
+
+| 球队与场地 | 样本 | xG 均值 | xGA 均值 |
+| --- | ---: | ---: | ---: |
+| 弗罗西诺内主场 | 2 | 2.545 | 0.955 |
+| 帕尔马客场 | 2 | 0.635 | 2.340 |
+| 美因茨主场 | 2 | 1.120 | 2.735 |
+| 柏林联合客场 | 1 | 0.340 | 2.580 |
+
+帕尔马 3–0 亚特兰大的客场中，帕尔马 xG 为 0.46。该场的进球和机会质量分别保留。柏林联合的客场 xG 对应一场资格已核验的联赛比赛，原表另有两个同客场 ID 的赛事归属未在此回放中核验。[七场逐场原件复算](recent-process/verified.json) · [证据冻结](recent-process/review-freeze.json)
