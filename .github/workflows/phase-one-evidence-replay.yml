@@ -57,6 +57,7 @@ jobs:
             /workspace-updates/20261126-europe-first-display/prematch/uecl-process/captures.json
             /workspace-updates/20261126-europe-first-display/prematch/uecl-process/match-5804283.json.gz
             /workspace-updates/20261126-europe-first-display/prematch/uecl-process/match-5804302.json.gz
+            /workspace-updates/20261126-europe-first-display/prematch/venue-opening/verified.json
             /workspace-updates/20261126-europe-first-display/publication/
             /workspace-updates/20261126-j1-december-windows/registration/
             /workspace-updates/20261126-j1-forward-result-review/nov25-state/
@@ -154,3 +155,10 @@ jobs:
           for file in verified.json fixtures.jsonl.gz; do
             cmp "$folder/$file" "$out/$file"
           done
+      - name: Rehearse the registered UEL price inputs and locked R13 recipes
+        run: |
+          folder=audit/workspace-updates/20261127-phase-one-evidence/europe-r13-market-inputs-20261128
+          PYTHONPATH=source/runtime python -B "$folder/rehearse.py" --data-root inputs --out "$RUNNER_TEMP/uel-prices.json"
+          PYTHONPATH=r13-source/runtime python -B "$folder/rehearse_model.py" --data-root inputs --out "$RUNNER_TEMP/uel-model.json"
+          cmp "$folder/verified-prices.json" "$RUNNER_TEMP/uel-prices.json"
+          cmp "$folder/verified-model.json" "$RUNNER_TEMP/uel-model.json"
