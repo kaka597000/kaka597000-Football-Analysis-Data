@@ -41,6 +41,7 @@ jobs:
             /workspace-updates/20261125-r13-domestic-form/replay/forecasts.tar.gz
             /workspace-updates/20261125-r13-domestic-form/forward/first-issues.tar.gz
             /workspace-updates/20261125-r13-domestic-form/inputs/domestic.tar.gz
+            /workspace-updates/20261125-r13-domestic-form/manifest.json
             /workspace-updates/20261126-europe-first-display/capture-plan/round1.json
             /workspace-updates/20261126-europe-first-display/capture-plan/round2.json
             /workspace-updates/20261126-europe-first-display/registration/
@@ -51,6 +52,9 @@ jobs:
             /workspace-updates/20261126-europe-first-display/calendar/uefa-uel-crosswalk.json
             /workspace-updates/20261126-europe-first-display/calendar/uefa-uecl.json.gz
             /workspace-updates/20261126-europe-first-display/calendar/uefa-uecl-crosswalk.json
+            /workspace-updates/20261126-europe-first-display/prematch/uecl-process/captures.json
+            /workspace-updates/20261126-europe-first-display/prematch/uecl-process/match-5804283.json.gz
+            /workspace-updates/20261126-europe-first-display/prematch/uecl-process/match-5804302.json.gz
             /workspace-updates/20261126-europe-first-display/publication/
             /workspace-updates/20261126-j1-december-windows/registration/
             /workspace-updates/20261126-j1-forward-result-review/nov25-state/
@@ -131,3 +135,11 @@ jobs:
           folder=audit/workspace-updates/20261127-phase-one-evidence/europe-market-fallback-study-20261128
           PYTHONPATH=r13-source/runtime python -B "$folder/replay.py" --data-root inputs > "$RUNNER_TEMP/r13-market-ablation.json"
           cmp "$folder/verified.json" "$RUNNER_TEMP/r13-market-ablation.json"
+      - name: Replay the R13 domestic results coverage audit
+        run: |
+          folder=audit/workspace-updates/20261127-phase-one-evidence/europe-r13-domestic-refresh-20261128
+          out="$RUNNER_TEMP/r13-domestic-refresh"
+          PYTHONPATH=r13-source/runtime python -B "$folder/replay.py" --data-root inputs --out "$out"
+          for file in verified.json known-league-delta.jsonl new-league-delta.jsonl october-league-delta.jsonl; do
+            cmp "$folder/$file" "$out/$file"
+          done

@@ -1,0 +1,46 @@
+{
+  "cohorts": {
+    "uefa.europa": 18,
+    "uefa.europa.conf": 18
+  },
+  "espn_month": "202611",
+  "evaluation": "Compare original DomesticHistory feature coverage and fixture counts by cohort without fitting or issuing new score picks. Keep all 18 registered matches in each competition and record finite new-league history.",
+  "evidence_phase": "DOMESTIC_INPUT_COVERAGE_RESEARCH",
+  "exclusive_date_cutoff_utc": "2026-11-28",
+  "join_key": "Exact ESPN team ID and original next-window home-away fixture",
+  "original_inputs": {
+    "original_domestic": {
+      "path": "20261125-r13-domestic-form/inputs/domestic.tar.gz",
+      "sha256": "21b63839017ec1eed0a4c1925cbf2f959a04c5045a859f93cfe282001d820822"
+    },
+    "original_manifest": {
+      "path": "20261125-r13-domestic-form/manifest.json",
+      "sha256": "57abe46930fde3f06421467e56ac2fb4a33967d070771af059b859c7247bac2e"
+    },
+    "registered_europe_window": {
+      "path": "20261126-europe-first-display/capture-plan/round2.json",
+      "sha256": "26676b12caf4ea293b6665b495c65206b3b25a2cc72c3ca971531c210e2cf7f5"
+    }
+  },
+  "preserve_original": "Reuse the original FT regulation extractor and archived history. Keep previously accepted rows. Retain any conflicting new IDs or different league identity as quarantined evidence.",
+  "requested_top_flight_leagues": [
+    "swe.1",
+    "sui.1",
+    "por.1",
+    "pol.1",
+    "cro.1",
+    "bul.1",
+    "cyp.1",
+    "cze.1",
+    "fin.1",
+    "rou.1",
+    "srb.1",
+    "hun.1"
+  ],
+  "runs": {
+    "expanded_recent": "Known-leagues run plus separately marked November-only newly covered leagues",
+    "known_leagues": "Original and eligible novel rows only from leagues already represented in original history",
+    "original": "Original full R13 domestic archive"
+  },
+  "source_commit": "f3f3f41673492b43b3d44770e4de76d8571fccb3"
+}
