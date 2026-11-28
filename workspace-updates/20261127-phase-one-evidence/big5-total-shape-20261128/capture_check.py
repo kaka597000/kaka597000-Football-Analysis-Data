@@ -12,6 +12,7 @@ from capture_weekend import collect, fetch, fotmob_validation_view, plan
 from research.analysis_freeze import aware
 from result_evidence import retained
 from settlement import load_window, locked_bindings, read
+from settlement_additions import verified_window_results
 from v2_test.data_contract import safe_content
 
 
@@ -29,11 +30,16 @@ def confirm(bundle):
         raise ValueError('result capture became eligible before 90 minutes')
 
     root = bundle / 'settlement-check'
-    morning = read(root / 'morning-reference.json')['fixtures']
+    reference = read(root / 'morning-reference.json')
+    morning = reference['fixtures']
     previous = read(root / 'morning-receipts.json')
     samples = {(row['match_id'], row['provider']): row for row in previous}
     sample = samples[('espn:401884720', 'espn')]
     raw = gzip.decompress((root / sample['path']).read_bytes())
+    at = aware(reference['as_of'])
+    only = verified_window_results(morning, root, [sample], at)[sample['match_id']]
+    if only['actual'] is not None or not only['actual_kickoff_at'] or not only['final_receipts']:
+        raise ValueError('a single score provider must remain pending while retaining its start and raw score')
 
     class Response(io.BytesIO):
         status = 200

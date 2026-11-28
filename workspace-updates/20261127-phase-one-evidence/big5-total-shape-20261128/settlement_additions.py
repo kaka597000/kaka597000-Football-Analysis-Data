@@ -7,13 +7,23 @@ from hashlib import sha256
 import json
 from pathlib import Path
 
+from comprehensive_evidence import MID as FROSINONE_PARMA, frosinone_first
 from research.analysis_freeze import aware, verify
 from research_program.goal_state_study import sha, write_new
 from result_evidence import verify_results
 from settlement import DIRECTIONS, first_opening, grade, load_window, locked_bindings, read
 
 
-def added_firsts(bundle, fixtures):
+def verified_window_results(fixtures, root, receipts, at):
+    outcomes = verify_results(fixtures, root, receipts, at)
+    for outcome in outcomes.values():
+        if outcome['actual'] is not None and not outcome['both_providers']:
+            outcome['actual'] = None
+            outcome['issues'] = sorted({*outcome['issues'], 'awaiting independent regulation score'})
+    return outcomes
+
+
+def added_firsts(bundle, fixtures, *, at):
     root = bundle / 'first-order'
     old = verify(read(bundle / 'weekend-freeze.json'))
     lock = verify(read(root / 'native-firsts-freeze.json'))
@@ -63,6 +73,9 @@ def added_firsts(bundle, fixtures):
             arms[arm] = dict(reference, forecast={'primary': frozen[0], 'top3': frozen[1],
                                                  'wdl': DIRECTIONS.get(pick.get('wdl_direction'))})
         additions[mid] = arms
+    comprehensive = frosinone_first(bundle, fixtures[FROSINONE_PARMA], spec[FROSINONE_PARMA]['receipt'])
+    if aware(comprehensive['recorded_at']) <= at:
+        additions[FROSINONE_PARMA]['综合'] = comprehensive
     return additions
 
 
@@ -80,5 +93,5 @@ if __name__ == '__main__':
     if at < aware(lock['recorded_at']):
         raise ValueError('review cutoff predates the registered native first additions')
     fixtures = load_window(bundle, locked_bindings(bundle))
-    verified = verify_results(fixtures, args.evidence_root, read(args.receipts), at)
-    write_new(args.out, grade(fixtures, verified, added_firsts(bundle, fixtures)))
+    verified = verified_window_results(fixtures, args.evidence_root, read(args.receipts), at)
+    write_new(args.out, grade(fixtures, verified, added_firsts(bundle, fixtures, at=at)))

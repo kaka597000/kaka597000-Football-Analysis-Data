@@ -198,8 +198,10 @@ jobs:
           PYTHONPATH=r13-source/runtime python -B "$folder/settlement_rehearsal.py" --data-root inputs --out "$RUNNER_TEMP/big5-settlement.json"
           cmp "$folder/settlement-check/verified.json" "$RUNNER_TEMP/big5-settlement.json"
           PYTHONPATH=r13-source/runtime python -B "$folder/capture_check.py"
-          PYTHONPATH=r13-source/runtime python -B "$folder/process_check.py" --out "$RUNNER_TEMP/big5-recent-process.json"
+          PYTHONPATH=r13-source/runtime python -B "$folder/process_check.py" --out "$RUNNER_TEMP/big5-recent-process.json" \
+            --union-coverage-out "$RUNNER_TEMP/big5-union-coverage.json"
           cmp "$folder/recent-process/verified.json" "$RUNNER_TEMP/big5-recent-process.json"
+          cmp "$folder/recent-process/union-exclusions/verified.json" "$RUNNER_TEMP/big5-union-coverage.json"
           PYTHONPATH=r13-source/runtime python -B "$folder/opening_progress.py" --out "$RUNNER_TEMP/big5-opening.json"
           cmp "$folder/opening-live/verified.json" "$RUNNER_TEMP/big5-opening.json"
       - name: Replay Big Five first-score reordering and additional local firsts
@@ -219,4 +221,11 @@ jobs:
             --at "$at" --out "$RUNNER_TEMP/big5-settlement-additions.json"
           jq -e '.registered == 31 and .verified_finals == 0 and
             ([.per_match | to_entries[] | select(.value.registered_firsts | contains(["Current","Test"])) | .key] | sort) ==
-            ["espn:401875081","espn:401882796","espn:401884723"]' "$RUNNER_TEMP/big5-settlement-additions.json"
+            ["espn:401875081","espn:401882796","espn:401884723"] and
+            (.per_match["espn:401875081"].registered_firsts | index("综合") | not)' "$RUNNER_TEMP/big5-settlement-additions.json"
+          at=$(gzip -dc "$folder/comprehensive/frosinone-parma/first.json.gz" | jq -r .recorded_at)
+          PYTHONPATH=r13-source/runtime python -B "$folder/settlement_additions.py" \
+            --evidence-root "$folder/settlement-check" --receipts "$folder/settlement-check/pending-receipts.json" \
+            --at "$at" --out "$RUNNER_TEMP/big5-frosinone-comprehensive.json"
+          jq -e '.registered == 31 and .verified_finals == 0 and
+            .per_match["espn:401875081"].score_and_direction["综合"].top3 == ["1-0","2-0","1-1"]' "$RUNNER_TEMP/big5-frosinone-comprehensive.json"

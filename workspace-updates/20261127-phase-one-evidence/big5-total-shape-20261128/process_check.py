@@ -22,29 +22,41 @@ def expected_goals(body):
     return left_right
 
 
-def build(bundle):
-    root = (bundle / 'recent-process').resolve()
-    targets = load_window(bundle, locked_bindings(bundle))
+def locked_summaries(bundle):
     target_sources = bundle / 'first-order/native-firsts.json'
     lock = verify(read(bundle / 'first-order/native-firsts-freeze.json'))
     if lock['payload']['native_firsts_sha256'] != sha(target_sources):
         raise ValueError('the target match summaries differ from their pre-kickoff receipt')
-    sources = read(target_sources)
+    return read(target_sources)
+
+
+def same_venue_form(bundle, fixture, capture, side):
+    provider_target, = (row for row in capture['sources'] if row['source_url'].startswith('https://www.fotmob.com/'))
+    schedule_raw = bundle / provider_target['file']
+    if sha(schedule_raw) != provider_target['archive_sha256'] or aware(provider_target['captured_at']) >= aware(fixture['kickoff_at']):
+        raise ValueError('target team-form archive differs')
+    upcoming = json.loads(gzip.decompress(schedule_raw.read_bytes()))
+    index = ('home', 'away').index(side)
+    side_id = fixture['fotmob'][side + '_id']
+    same_venue = [row for row in upcoming['content']['matchFacts']['teamForm'][index]
+                  if row[side]['isOurTeam'] and str(row[side]['id']) == side_id]
+    form = {row['linkToMatch'].rsplit('#', 1)[-1]: row for row in same_venue}
+    if len(form) != len(same_venue):
+        raise ValueError('repeated match in the original form list')
+    return form
+
+
+def build(bundle):
+    root = (bundle / 'recent-process').resolve()
+    targets = load_window(bundle, locked_bindings(bundle))
+    sources = locked_summaries(bundle)
     groups = {}
     for r in read(root / 'receipts.json'):
         match, side = r['target'], r['side']
         fixture, capture = targets[match], sources[match]
-        provider_target, = (row for row in capture['sources'] if row['source_url'].startswith('https://www.fotmob.com/'))
-        schedule_raw = bundle / provider_target['file']
         kickoff = aware(fixture['kickoff_at'])
-        if sha(schedule_raw) != provider_target['archive_sha256'] or aware(provider_target['captured_at']) >= kickoff:
-            raise ValueError('target team-form archive differs')
-        upcoming = json.loads(gzip.decompress(schedule_raw.read_bytes()))
         index = ('home', 'away').index(side)
-        team_form = upcoming['content']['matchFacts']['teamForm'][index]
-        history, = (row for row in team_form if row['linkToMatch'].rsplit('#', 1)[-1] == r['prior_match_id'])
-        if not history[side]['isOurTeam'] or str(history[side]['id']) != fixture['fotmob'][side + '_id']:
-            raise ValueError('the original form list has a different team or venue')
+        history = same_venue_form(bundle, fixture, capture, side)[r['prior_match_id']]
         body, collected = retained(root, r, kickoff)
         if collected >= kickoff or sha(root / r['path']) != r['archive_sha256']:
             raise ValueError('prior form response or cutoff differs')
@@ -73,9 +85,47 @@ def build(bundle):
     return {'scope': 'PRIOR_SAME_VENUE_LEAGUE_FORM_IN_RETAINED_TARGET_SUMMARIES', 'context': output}
 
 
+def union_coverage(bundle, process):
+    mid = 'espn:401884723'
+    fixture = load_window(bundle, locked_bindings(bundle))[mid]
+    form = same_venue_form(bundle, fixture, locked_summaries(bundle)[mid], 'away')
+    root = (bundle / 'recent-process/union-exclusions').resolve()
+    kickoff = aware(fixture['kickoff_at'])
+    included = {row['match_id'] for row in process['context'][mid]['away']['matches']}
+    excluded = {}
+    for ref in read(root / 'receipts.json'):
+        prior = ref['prior_match_id']
+        if prior in included or prior in excluded:
+            raise ValueError('overlap in the Union away-form scope')
+        endpoint(ref['source_url'], {'www.fotmob.com'}, '/api/data/matchDetails', 'matchId', prior)
+        body, collected = retained(root, ref, kickoff)
+        history = form[prior]
+        raw = json.loads(body)
+        general, header = raw['general'], raw['header']
+        date = aware(history['date']['utcTime'])
+        teams = [str(history[side]['id']) for side in ('home', 'away')]
+        league = str(general['leagueId'])
+        if (not date <= aware(ref['requested_at']) <= collected < kickoff
+                or general['gender'] != 'male' or str(general['matchId']) != prior
+                or league == fixture['fotmob']['league_id']
+                or not general['leagueName'].strip()
+                or [str(general[side + 'Team']['id']) for side in ('home', 'away')] != teams
+                or [str(team['id']) for team in header['teams']] != teams
+                or aware(general['matchTimeUTCDate']) != date or aware(header['status']['utcTime']) != date):
+            raise ValueError('Union exclusion is not an identified previous match outside the Bundesliga')
+        excluded[prior] = {'league_id': league, 'league_name': general['leagueName'],
+                           'opponent': history['home']['name'], 'source': ref}
+    if (included | excluded.keys()) != form.keys():
+        raise ValueError('Union exclusions do not account for the complete frozen away-form list')
+    return {'match_id': mid, 'qualification': 'UNION_AWAY_BUNDESLIGA',
+            'original_same_venue_count': len(form), 'included_match_ids': sorted(included),
+            'excluded': excluded}
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--union-coverage-out', type=Path)
     args = parser.parse_args()
     bundle = Path(__file__).resolve().parent
     root = bundle / 'recent-process'
@@ -83,6 +133,16 @@ if __name__ == '__main__':
     artifacts = lock['payload']['artifact_sha256']
     if sha(root / 'receipts.json') != artifacts['receipts.json']:
         raise ValueError('recent form receipts differ from the review freeze')
-    write_new(args.out, build(bundle))
+    process = build(bundle)
+    write_new(args.out, process)
     if sha(args.out) != artifacts['verified.json']:
         raise ValueError('recent form replay differs from the review freeze')
+    if args.union_coverage_out:
+        root = root / 'union-exclusions'
+        lock = verify(read(root / 'review-freeze.json'))
+        artifacts = lock['payload']['artifact_sha256']
+        if sha(root / 'receipts.json') != artifacts['receipts.json'] or sha(args.out) != artifacts['process_verified.json']:
+            raise ValueError('Union form scope differs from its review freeze')
+        write_new(args.union_coverage_out, union_coverage(bundle, process))
+        if sha(args.union_coverage_out) != artifacts['verified.json']:
+            raise ValueError('Union form scope replay differs from its review freeze')

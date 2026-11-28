@@ -29,12 +29,12 @@
 从固定 R13 源码的 `runtime` 加载项目证据解析。源清单中的每条记录保留 `match_id`、`provider`、相对于证据目录的 `path`、解压后原文的 `sha256`、`source_url`、`captured_at` 和 HTTP 状态。结果文件逐联赛携带已结场次、有效分母及同场得失。
 
 ```bash
-PYTHONPATH=/path/to/source/runtime python -B settlement.py \
+PYTHONPATH=/path/to/source/runtime python -B settlement_additions.py \
   --evidence-root /path/to/postmatch-captures --receipts /path/to/capture-receipts.json \
   --at "$actual_review_cutoff" --out /path/to/new-settlement.json
 ```
 
-采集按原 31 场登记发出精确场次请求。`kickoff` 到该场计划开球后采 ESPN 摘要，`full-time` 到计划开球加 90 分钟后采 ESPN 和 FotMob。实际完赛由原件状态和比赛时钟决定。每个新采集目录保留原始 JSON、请求及接收 UTC 时刻、HTTP 状态和独立 SHA-256 回执。退回 401、403 或 429 时停止本批对同一服务的继续请求。两阶段均可用相同证据根目录，按真实获取时间并入结算。离线核查已覆盖提前到达节点、原字节回放以及单个服务限流后的收据保留。
+采集按原 31 场登记发出精确场次请求。`kickoff` 到该场计划开球后采 ESPN 摘要，`full-time` 到计划开球加 90 分钟后采 ESPN 和 FotMob。实际完赛由原件状态和比赛时钟决定。实时结算要求两源 90 分钟比分一致，保留单源终场的原件及开球时刻供复核。每个新采集目录保留原始 JSON、请求及接收 UTC 时刻、HTTP 状态和独立 SHA-256 回执。退回 401、403 或 429 时停止本批对同一服务的继续请求。两阶段均可用相同证据根目录，按真实获取时间并入结算。离线核查已覆盖提前到达节点、单源终场、原字节回放以及单个服务限流后的收据保留。
 
 ```bash
 PYTHONPATH=/path/to/source/runtime python -B capture_weekend.py \
@@ -53,4 +53,6 @@ PYTHONPATH=/path/to/source/runtime python -B capture_weekend.py \
 | 美因茨主场 | 2 | 1.120 | 2.735 |
 | 柏林联合客场 | 1 | 0.340 | 2.580 |
 
-帕尔马 3–0 亚特兰大的客场中，帕尔马 xG 为 0.46。该场的进球和机会质量分别保留。柏林联合的客场 xG 对应一场资格已核验的联赛比赛，原表另有两个同客场 ID 的赛事归属未在此回放中核验。[七场逐场原件复算](recent-process/verified.json) · [证据冻结](recent-process/review-freeze.json)
+帕尔马 3–0 亚特兰大的客场中，帕尔马 xG 为 0.46。该场的进球和机会质量分别保留。柏林联合原赛前表的三个客场均核对赛事归属，其中一场德甲对弗赖堡，另两场分别是德国杯和俱乐部友谊赛。柏林联合德甲客场 xG 的有效样本为一场。[七场逐场原件复算](recent-process/verified.json) · [证据冻结](recent-process/review-freeze.json) · [柏林联合客场赛事范围复算](recent-process/union-exclusions/verified.json)
+
+21:15 的 ESPN 和 FotMob 证实弗罗西诺内（4–2–3–1）与帕尔马（3–5–2）双方首发名单一致。21:17 综合首版首选 **1–0**，三选 **1–0／2–0／1–1**，胜平负倾向主胜。帕尔马两个已核联赛客场合计 1.27 xG，两场都有进球。原六个研究轨首选均为 2–1，此场 20:39 的 Current 和 Test 首选均为 1–0。机构自身报价时点未核，大小球保持观望。首发接收时间和综合本地冻结时间已核，球队发布时点和渠道独立送达收据待核。[综合原首版](comprehensive/frosinone-parma/first.json.gz) · [首发响应收据](comprehensive/frosinone-parma/receipts.json)
