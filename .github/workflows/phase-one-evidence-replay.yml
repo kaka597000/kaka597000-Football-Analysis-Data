@@ -36,6 +36,10 @@ jobs:
             /workspace-updates/20261125-j1-stage-windows/registration/
             /workspace-updates/20261125-j1-stage-windows/nov25/
             /workspace-updates/20261126-europe-first-display/capture-plan/round2.json
+            /workspace-updates/20261126-europe-first-display/registration/
+            /workspace-updates/20261126-europe-first-display/calendar/captures.json
+            /workspace-updates/20261126-europe-first-display/calendar/uel-2026-12-10.json.gz
+            /workspace-updates/20261126-europe-first-display/calendar/uecl-2026-12-10.json.gz
             /workspace-updates/20261126-europe-first-display/calendar/uefa-uel.json.gz
             /workspace-updates/20261126-europe-first-display/calendar/uefa-uel-crosswalk.json
             /workspace-updates/20261126-europe-first-display/calendar/uefa-uecl.json.gz
@@ -70,7 +74,7 @@ jobs:
         with:
           repository: kaka597000/Football-Analysis
           path: source
-          ref: 6a52804781d1530d0bdc1eaec29f57b48c5420cb
+          ref: f73b7e6fe9da7c542c46a69dd92fcf8739a79526
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -100,3 +104,11 @@ jobs:
           folder=audit/workspace-updates/20261127-phase-one-evidence/market-readiness-20261128
           PYTHONPATH=source/runtime python -B "$folder/verify.py" --data-root inputs > "$RUNNER_TEMP/market-readiness.json"
           cmp "$folder/verified.json" "$RUNNER_TEMP/market-readiness.json"
+      - name: Replay the European market collector on retained sources
+        run: |
+          folder=audit/workspace-updates/20261127-phase-one-evidence/europe-market-collector-20261128
+          out="$RUNNER_TEMP/europe-market-collector"
+          PYTHONPATH=source/runtime python -B "$folder/prepare.py" --original-data inputs --source source --out "$out"
+          for file in fixtures-uel.json fixtures-uecl.json team-ids.json replay.json; do
+            cmp "$folder/$file" "$out/$file"
+          done
