@@ -2,6 +2,8 @@
 
 本轮按建议优先核查正式首版、实盘时间和两仓依赖，并将日职联的结算与盘口采集单独提交到当前 main 的审核线上。第一阶段逐赛事使用原登记目标与覆盖门槛。[源码 PR](https://github.com/kaka597000/Football-Analysis/pull/131) · [四阶段目标](https://github.com/kaka597000/Football-Analysis/blob/baac2b8342f557ac7913e0c45ad3ea2ed4861e5b/project-goals.json)
 
+按最新优先级，五大联赛的 31 场周末待赛已绑定六组研究原首版，并复算总进球分布调整及首场 Current／Test。[五大联赛](big5-total-shape-20261128/README.md)
+
 11 月 28 日追加五场真实开球和终场证据、原首版比分以及四组研究的同场结算。原十场范围及 11 月 27 日的赛前重放保留。[11 月 28 日复盘](j1-weekend-results/20261128/README.md)
 
 日职联十场原正文的 2,901 字节与冻结哈希一致，GitHub 原档在 11 月 26 日已核实同一份字节。独立频道消息 ID、首送时钟及原文回读仍缺。[公开原档核验](https://github.com/kaka597000/kaka597000-Football-Analysis-Data/blob/87ef46859990a8760b4af361eef3186f5090d319/workspace-updates/20261126-r26-j1-first-stage/public-archive/verified.json)

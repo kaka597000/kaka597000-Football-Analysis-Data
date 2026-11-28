@@ -1,0 +1,52 @@
+{
+  "match_id": "espn:401882796",
+  "first_model_pair": {
+    "freeze_id": "18e479f4b6ce358f-v000001",
+    "recorded_at": "2026-11-28T20:13:57.710311+08:00",
+    "sha256": "58372831b81c6871779d5dd29eda1a71ef1b544e531b0157589855ea26bb41f6",
+    "evaluation_slot": "FIRST_PREMATCH"
+  },
+  "complete_receipt": "opening/first-model-pair.json.gz",
+  "complete_receipt_sha256": "931742ce5503ea3a0118518d783eeeff5a9f419e5cf07af8c266a79154bfa072",
+  "espn_capture": {
+    "captured_at": "2026-11-28T12:11:47.482636+00:00",
+    "sha256": "2747a6a8648b3de58e932eef839fb5bb00256e7b6c67e7fcf1bc678e6576e516",
+    "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882796"
+  },
+  "display_status": "LOCAL_FIRST_MODEL_PAIR",
+  "strict_total_eligible": false,
+  "arms": {
+    "current_model": {
+      "first": "1-1",
+      "three": [
+        "1-1",
+        "1-0",
+        "2-1"
+      ],
+      "status": "OBSERVE",
+      "wdl": {
+        "主胜": 0.5450992667311984,
+        "平局": 0.23580252616444458,
+        "客胜": 0.21909820710435696
+      },
+      "training_through": "2026-10-09",
+      "total": null
+    },
+    "test_model": {
+      "first": "1-1",
+      "three": [
+        "1-1",
+        "1-0",
+        "2-0"
+      ],
+      "status": "OBSERVE",
+      "wdl": {
+        "主胜": 0.5588101547511566,
+        "平局": 0.24164207474923202,
+        "客胜": 0.1995477704996115
+      },
+      "training_through": "2026-10-09",
+      "total": null
+    }
+  }
+}

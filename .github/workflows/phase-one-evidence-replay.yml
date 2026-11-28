@@ -33,10 +33,26 @@ jobs:
           sparse-checkout: |
             /workspace-updates/20261123-all-scope-kpi/results/scorecard.csv
             /workspace-updates/20261123-all-scope-kpi/forward-first-issues.tar.gz
+            /workspace-updates/20261123-all-scope-kpi/models/eng.1.tar.gz
+            /workspace-updates/20261123-all-scope-kpi/models/esp.1.tar.gz
+            /workspace-updates/20261123-all-scope-kpi/models/fra.1.tar.gz
+            /workspace-updates/20261123-all-scope-kpi/models/ger.1.tar.gz
+            /workspace-updates/20261123-all-scope-kpi/models/ita.1.tar.gz
             /workspace-updates/20261123-all-scope-kpi/models/uefa.europa.tar.gz
             /workspace-updates/20261123-all-scope-kpi/models/uefa.europa.conf.tar.gz
             /workspace-updates/20261123-prematch-literature/models/uefa.europa.tar.gz
             /workspace-updates/20261123-prematch-literature/models/uefa.europa.conf.tar.gz
+            /workspace-updates/20261123-prematch-literature/first-issues.tar.gz
+            /workspace-updates/20261123-prematch-literature/models/eng.1.tar.gz
+            /workspace-updates/20261123-prematch-literature/models/esp.1.tar.gz
+            /workspace-updates/20261123-prematch-literature/models/fra.1.tar.gz
+            /workspace-updates/20261123-prematch-literature/models/ger.1.tar.gz
+            /workspace-updates/20261123-prematch-literature/models/ita.1.tar.gz
+            /workspace-updates/20261125-r8-prematch/score/first-issues.tar.gz
+            /workspace-updates/20261125-r14-territory-press/forward/first-issues.tar.gz
+            /workspace-updates/20261125-r21-score-dependence/forward/
+            /workspace-updates/20261125-r22-draw-preserving/forward/
+            /workspace-updates/20261125-r23-penalty-opportunity/forward/
             /workspace-updates/20261125-forward-settlement/nov25/evidence.tar.gz
             /workspace-updates/20261125-j1-stage-windows/registration/
             /workspace-updates/20261125-j1-stage-windows/nov25/
@@ -162,3 +178,16 @@ jobs:
           PYTHONPATH=r13-source/runtime python -B "$folder/rehearse_model.py" --data-root inputs --out "$RUNNER_TEMP/uel-model.json"
           cmp "$folder/verified-prices.json" "$RUNNER_TEMP/uel-prices.json"
           cmp "$folder/verified-model.json" "$RUNNER_TEMP/uel-model.json"
+      - name: Replay the fixed Big Five dispersion study and weekend prior issues
+        env:
+          OPENBLAS_CORETYPE: Haswell
+          NPY_DISABLE_CPU_FEATURES: AVX512F
+        run: |
+          folder=audit/workspace-updates/20261127-phase-one-evidence/big5-total-shape-20261128
+          out="$RUNNER_TEMP/big5-total-shape"
+          PYTHONPATH=r13-source/runtime python -B "$folder/replay.py" --data-root inputs --out "$out"
+          for file in verified.json fixtures.jsonl.gz; do
+            cmp "$folder/$file" "$out/$file"
+          done
+          PYTHONPATH=r13-source/runtime python -B "$folder/weekend.py" --data-root inputs --out "$RUNNER_TEMP/big5-weekend.json"
+          cmp "$folder/weekend.json" "$RUNNER_TEMP/big5-weekend.json"

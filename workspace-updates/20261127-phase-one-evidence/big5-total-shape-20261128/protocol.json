@@ -1,0 +1,80 @@
+{
+  "version": "BIG5-R7-RESULT-CONDITIONAL-TOTAL-DISPERSION-1",
+  "registered_purpose": "Develop a single fixed R7 adjustment for omitted low and high total paths observed in the completed Nov 27/28 Big Five kickoff wave. Evaluate all five leagues separately.",
+  "evidence_status": "DATE_CAUSAL_DEVELOPMENT_ON_PREVIOUSLY_STUDIED_RESULTS",
+  "source_commit": "f3f3f41673492b43b3d44770e4de76d8571fccb3",
+  "data_commit": "87ef46859990a8760b4af361eef3186f5090d319",
+  "archives": {
+    "eng.1": {
+      "panel": {
+        "path": "20261123-all-scope-kpi/models/eng.1.tar.gz",
+        "sha256": "24c16ba4bf9b5162065a4a61fe2530f9cb60651d04dadd77ed4d9b4f1aefea89"
+      },
+      "r7": {
+        "path": "20261123-prematch-literature/models/eng.1.tar.gz",
+        "sha256": "3d3cbb1eb5928792075c31d122ec585f8c78d5d59cacfdb4223d05a3ef5ade79"
+      }
+    },
+    "esp.1": {
+      "panel": {
+        "path": "20261123-all-scope-kpi/models/esp.1.tar.gz",
+        "sha256": "896ea97482cf7e46ac008fa065cecfebf62eb3edfd06f0faf7657ccd68c51d6b"
+      },
+      "r7": {
+        "path": "20261123-prematch-literature/models/esp.1.tar.gz",
+        "sha256": "59b37c994bb214ec1e0ce6b33c04ce37385b96824bd8eefc2b5b08288b8aceed"
+      }
+    },
+    "ger.1": {
+      "panel": {
+        "path": "20261123-all-scope-kpi/models/ger.1.tar.gz",
+        "sha256": "90079c9a2e94734b70975cb57d8fc6b207800810ea340e8d0926610c058730dc"
+      },
+      "r7": {
+        "path": "20261123-prematch-literature/models/ger.1.tar.gz",
+        "sha256": "871e07c4fec619dc8be419b1eb1349d25ad8b5c2ff6ee511d684a381b5b820b5"
+      }
+    },
+    "ita.1": {
+      "panel": {
+        "path": "20261123-all-scope-kpi/models/ita.1.tar.gz",
+        "sha256": "ddfa214515150604da52bf7917eac3809f4796e89d56c64e80cbeb093cec5cc9"
+      },
+      "r7": {
+        "path": "20261123-prematch-literature/models/ita.1.tar.gz",
+        "sha256": "a5e44f036cda468d24f2aa9cb84d9ab5fa06256f4ed86406956d7ce4adb1f093"
+      }
+    },
+    "fra.1": {
+      "panel": {
+        "path": "20261123-all-scope-kpi/models/fra.1.tar.gz",
+        "sha256": "422fed4a570fd5cf9ec92aad483b2ba7135efc81964420963f49b874799145b3"
+      },
+      "r7": {
+        "path": "20261123-prematch-literature/models/fra.1.tar.gz",
+        "sha256": "d63534b44d31a391db1f095c29b20ddaeeabee8c2792778e8483ee8a5459885d"
+      }
+    }
+  },
+  "windows": {
+    "fit": {
+      "from": "2025-07-01",
+      "before": "2026-01-01"
+    },
+    "selection": {
+      "from": "2026-01-01",
+      "before": "2026-07-01"
+    },
+    "evaluation": {
+      "from": "2026-07-01",
+      "before": "2026-11-23"
+    }
+  },
+  "arms": {
+    "r7": 0,
+    "half": 0.5,
+    "full": 1
+  },
+  "method": "Reuse the R30 tilt optimization within each result bucket. Fit win and draw widths by league on the fit period only. Preserve the original WDL marginal and mean total within each result bucket; keep R7 WDL and actual-line decisions. Compute all registered options before ranking by first hit, three hits, then original score NLL and lower mixture dose. Options must at least tie R7 on both exact metrics in selection. On evaluation report all, hold R7 unless selected improves at least one score KPI and loses neither; only consider prospective testing with a separately frozen valid future comparison.",
+  "reporting": "Count complete original date slices, verified fixture and 90-minute labels, first recommended statistical score, three distinct scores, same-match gains and losses and clustered uncertainty. Add baseline versus candidate coverage of observed totals outside the corresponding three-score min-max envelope. Odds remain legacy historical observations, separate from strict bookmaker-clock evidence. No new live issue in this diagnostic."
+}
