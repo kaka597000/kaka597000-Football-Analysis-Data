@@ -1,0 +1,168 @@
+{
+  "schema": "WCPP-GOVERNANCE-THIRD-VALIDATION-1",
+  "source_commit": "78427c8f9d5ef508855ef6dd981d9052ee0d0795",
+  "upstream_source_integrated": "d5645f1",
+  "upstream_data_integrated": "241229c",
+  "strict_integration": {
+    "tests": 1080,
+    "suites": 25,
+    "skipped": 0,
+    "failures": 0,
+    "batch": "historical pre-final suite discovery",
+    "exact_executed_commit": null,
+    "complete_for_final_source_head": false
+  },
+  "focused_tests": {
+    "bounded_fusion": 4,
+    "portfolio_lifecycle": 6,
+    "note": "one additional single-slot test was added after full suite discovery and passed in focused run"
+  },
+  "data_tests": 30,
+  "closed_development_scopes": [
+    "eng.1",
+    "esp.1",
+    "fra.1",
+    "ger.1",
+    "ita.1"
+  ],
+  "frozen_replay_source": "8534d90f801abff8ace07938f9cc104feeaac407",
+  "original_replay_results_unchanged": true,
+  "protected_original_hashes_verified": 32,
+  "lifecycle_policy_id": "10c6e4d066987888-v000001",
+  "future_evidence": "all three original batches pending; no promotion",
+  "deployed": false,
+  "evidence_sha256": {
+    "data-tests-final.log.gz": "5b9d4525a5a531ab3501819969e21290784aaf9bf02cec0fdf1cecb60beb4854",
+    "import-boundaries.json": "c7d573cf81dd232b07d84682dbf9e2105681937bde7918937d6dfe250e71f624",
+    "integration.log.gz": "eba0842039bb3dc44b6ac4817e366a922379b892ad1ba4f84e80f28cf73f4932",
+    "lifecycle-initial.json": "e7d572470eab0b70ca0d01eb3d011fea06918f42d24d3e0d64d1fd402a3ed631",
+    "policy-receipt.json": "e70ee5ff768f344da736bc503c5747627dce5ef4af37886211130696b4048103",
+    "policy.json": "f1a2601008a3d7131a7efaecf09c72aa1a353eea4ae6f7edc9bfc3689e592494",
+    "replay-sequence.json": "4d44497b0a7511b906c638f209b0e4dc19b41955397bec5e5f0871127f2add41",
+    "replay-three-arm.json": "c80c6d6990e8cf1fdd5ad36c9505690acca9875f173c4bba185598dbe91ae557",
+    "replay-transformer.json": "f59df2586b8a4a9c85996d36f1cd58fa93b14c0a302404d2d7822f79d88e446d",
+    "report.json": "df4a64370b228a3778bc3f6a3512cc72c52ac0d1d266eeab14e90af6300f88a5",
+    "rows.jsonl.gz": "ee086196b6bd82d88591a643a15e6980b5b77980bdc5b3d41cfa493ffe072d7d",
+    "data-tests-roundoff.log.gz": "a53331ab81d2e8b79cb7267c19d96148e744a3c00fffbb0c598bbcf2cc855eb4"
+  },
+  "development_replay_comparison": {
+    "exact": [
+      "identities",
+      "weights",
+      "primary",
+      "counts",
+      "source_hashes"
+    ],
+    "probability_metrics_absolute_tolerance": 1e-12,
+    "failed_byte_compare_run": 44269213354,
+    "reason": "cross-runner math library probability metric differences around 1e-15; no selection or count changes"
+  },
+  "source_commit_role": "Historical delivery anchor, not an exact snapshot of the original executed worktree; see acceptance-correction/historical-audit.json.",
+  "data_tests_note": "30 belongs to data-tests-roundoff.log.gz; earlier data-tests-final.log.gz contains 28. Original timestamps and exact executed trees were not captured.",
+  "acceptance_correction": {
+    "historical_audit": "acceptance-correction/historical-audit.json",
+    "original_validation": "acceptance-correction/validation.before-correction.json",
+    "receipt": "acceptance-correction/receipt.json",
+    "latest_complete_recheck": {
+      "runs": [
+        {
+          "source_commit": "783e02ddebd427383dbdd6a9e4b359dc68c13d8b",
+          "data_commit": "0884b5e166a0a21c404e5350a5bb209e71ed2e88",
+          "source_runtime_tree": "4c3ef88ac8db4025f64dba91ca1a49cb166af917",
+          "source_scripts_tree": "3a62e7a8c937a378f210ee638ab2a77797907802",
+          "data_runtime_tree": "d0de7721419eb431546129b17a39abc8623cbaba",
+          "source_initial_status": "",
+          "data_initial_status": "",
+          "python": "Python 3.12.14",
+          "name": "strict-integration",
+          "cwd": "/workspace/Football-Analysis",
+          "command": [
+            "/workspace/football-venv/bin/python",
+            "scripts/run_tests.py",
+            "--layer",
+            "integration"
+          ],
+          "started_at": "2026-11-18T16:50:30.864529+08:00",
+          "complete_command": true,
+          "finished_at": "2026-11-18T16:51:41.644449+08:00",
+          "exit_code": 0,
+          "suite_counts": [
+            71,
+            3,
+            156,
+            6,
+            68,
+            24,
+            8,
+            29,
+            58,
+            9,
+            28,
+            1,
+            168,
+            15,
+            267,
+            11,
+            11,
+            10,
+            19,
+            35,
+            15,
+            36,
+            21,
+            8,
+            4
+          ],
+          "tests": 1081,
+          "suite_count": 25,
+          "skip_lines": 0,
+          "failure_summary": [
+            "Failed suites: none"
+          ],
+          "log_sha256": "8d70f3ff509b89fd755cab7f9ee6aabccf9925efc8806b8c7258613b368919fd",
+          "compressed_log_sha256": "40603f9f9bda4fbce8e5ebf2fa013c0184f9630de67826a5f8401ac4c41ef23b"
+        },
+        {
+          "source_commit": "783e02ddebd427383dbdd6a9e4b359dc68c13d8b",
+          "data_commit": "0884b5e166a0a21c404e5350a5bb209e71ed2e88",
+          "source_runtime_tree": "4c3ef88ac8db4025f64dba91ca1a49cb166af917",
+          "source_scripts_tree": "3a62e7a8c937a378f210ee638ab2a77797907802",
+          "data_runtime_tree": "d0de7721419eb431546129b17a39abc8623cbaba",
+          "source_initial_status": "",
+          "data_initial_status": "",
+          "python": "Python 3.12.14",
+          "name": "data-tests",
+          "cwd": "/workspace/kaka597000-Football-Analysis-Data",
+          "command": [
+            "/workspace/football-venv/bin/python",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "runtime",
+            "-v"
+          ],
+          "started_at": "2026-11-18T16:51:41.666345+08:00",
+          "complete_command": true,
+          "finished_at": "2026-11-18T16:51:42.004957+08:00",
+          "exit_code": 0,
+          "suite_counts": [
+            30
+          ],
+          "tests": 30,
+          "suite_count": 1,
+          "skip_lines": 0,
+          "failure_summary": [],
+          "log_sha256": "de8b19e47080dd1ed5304fb9cd018680343fc6885c56dcc9ac9eb598a0c18f21",
+          "compressed_log_sha256": "02d97109c8cbfd21443acf2caee2749cd9d83cae9d2d3e769a754977953fc711"
+        }
+      ],
+      "protected_files": 71,
+      "protected_hashes_unchanged": true,
+      "source_final_status": "",
+      "data_final_status": "?? workspace-updates/20261118-governance/third/acceptance-correction/",
+      "finished_at": "2026-11-18T16:51:42.080102+08:00"
+    },
+    "scope": "Only documentation/evidence changes after tested commits; do not describe the later documentation HEAD as the exact checkout tested."
+  }
+}

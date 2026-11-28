@@ -1,0 +1,46 @@
+{
+  "schema": "WCPP-GOVERNANCE-VALIDATION-1",
+  "source_base": "b56f309801373c952fa4897a7b38539a8a22c1ff",
+  "data_base": "377626f6dce66ce96e1e35698ea7788ea1d2f7f8",
+  "integration": {
+    "tests": 1039,
+    "suites": 25,
+    "skipped": 0,
+    "failures": 0,
+    "command": "python scripts/run_tests.py --layer integration"
+  },
+  "additional_public_api_identity_tests": 1,
+  "data_poller_contract_tests": {
+    "public_api_v1": 4,
+    "legacy_frozen_pin": 4
+  },
+  "frozen_matrix_selection_replays": {
+    "three_arm": 18,
+    "sequence": 18,
+    "transformer": 24
+  },
+  "protected_file_hashes": 32,
+  "workflow_hash_unchanged": true,
+  "active_artifacts_changed": false,
+  "inference_math_changed": false,
+  "merged": false,
+  "deployed": false,
+  "latest_observed_run": {
+    "id": 44250121199,
+    "conclusion": "success"
+  },
+  "evidence_sha256": {
+    "consolidation.json": "ff791dadb9b44501526a0a6a7ceab5f0057e07528ae9685440e89bc7c448739c",
+    "data-legacy-api.log.gz": "e12df1a8937ffe2bbc274573bf2df491b9c5143b1b888a951492d2a838b5f57d",
+    "data-public-api.log.gz": "e12df1a8937ffe2bbc274573bf2df491b9c5143b1b888a951492d2a838b5f57d",
+    "integration.log.gz": "3363310aa43503c8af6a0d22f01d981b1c6b59d17c6b336858c707ee90986cd1",
+    "replay-sequence.json": "4d44497b0a7511b906c638f209b0e4dc19b41955397bec5e5f0871127f2add41",
+    "replay-three-arm.json": "c80c6d6990e8cf1fdd5ad36c9505690acca9875f173c4bba185598dbe91ae557",
+    "replay-transformer.json": "f59df2586b8a4a9c85996d36f1cd58fa93b14c0a302404d2d7822f79d88e446d",
+    "data-all.log.gz": "b34bbcc936163c863e44e8c41401ea7a3a0f5611eddbb6d7fe5652f42eea8e1a",
+    "portable.log.gz": "d37334dda129ab22231db3678f09814bfa591a9cdc0f065961167dc3c396f218"
+  },
+  "source_commit": "8534d90f801abff8ace07938f9cc104feeaac407",
+  "data_full_suite_tests": 25,
+  "portable_tests": 11
+}

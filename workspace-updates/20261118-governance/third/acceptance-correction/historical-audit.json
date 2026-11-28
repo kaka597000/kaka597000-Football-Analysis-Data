@@ -1,0 +1,58 @@
+{
+  "runs": [
+    {
+      "log": "integration.log.gz",
+      "tests": 1080,
+      "suites": 25,
+      "skips": 0,
+      "result": "Failed suites: none",
+      "started_at": null,
+      "finished_at": null,
+      "execution_time_evidence": "No absolute execution timestamps recorded in original log; filesystem mtime below is only a local observation, not verified start/end.",
+      "observed_local_log_mtime": "2026-11-18T16:38:43.283610+08:00",
+      "exact_executed_commit": null,
+      "commit_evidence": "Tests ran in a development worktree before subsequent commits; original logs did not bind the full executed tree to a commit.",
+      "command": "cd /workspace/Football-Analysis && /workspace/football-venv/bin/python scripts/run_tests.py --layer integration",
+      "later_delivery_anchor": "78427c8f9d5ef508855ef6dd981d9052ee0d0795",
+      "excluded_later_test": "test_only_one_review_slot_and_family_correction",
+      "is_complete_for_final_source_head": false
+    },
+    {
+      "log": "data-tests-final.log.gz",
+      "tests": 28,
+      "suites": 1,
+      "skips": 0,
+      "result": "OK",
+      "started_at": null,
+      "finished_at": null,
+      "execution_time_evidence": "No absolute execution timestamps recorded in original log; filesystem mtime below is only a local observation, not verified start/end.",
+      "observed_local_log_mtime": "2026-11-18T16:39:42.617890+08:00",
+      "exact_executed_commit": null,
+      "commit_evidence": "Tests ran in a development worktree before subsequent commits; original logs did not bind the full executed tree to a commit.",
+      "command": "cd /workspace/kaka597000-Football-Analysis-Data && PYTHONPATH=/workspace/Football-Analysis/runtime /workspace/football-venv/bin/python -m unittest discover -s runtime -v",
+      "later_delivery_anchor": "827823541897b6403203321181cc3f76b2e1ede5"
+    },
+    {
+      "log": "data-tests-roundoff.log.gz",
+      "tests": 30,
+      "suites": 1,
+      "skips": 0,
+      "result": "OK",
+      "started_at": null,
+      "finished_at": null,
+      "execution_time_evidence": "No absolute execution timestamps recorded in original log; filesystem mtime below is only a local observation, not verified start/end.",
+      "observed_local_log_mtime": "2026-11-18T16:44:47.268914+08:00",
+      "exact_executed_commit": null,
+      "commit_evidence": "Tests ran in a development worktree before subsequent commits; original logs did not bind the full executed tree to a commit.",
+      "command": "cd /workspace/kaka597000-Football-Analysis-Data && PYTHONPATH=/workspace/Football-Analysis/runtime /workspace/football-venv/bin/python -m unittest discover -s runtime -v",
+      "later_delivery_anchor": "490bf21b54c31f2a4920f976219e9858e7c0f7e1"
+    }
+  ],
+  "focused_runs": {
+    "bounded_fusion": 4,
+    "portfolio_lifecycle": 6,
+    "absolute_start_end": null,
+    "standalone_log_retained": false,
+    "evidence": "Prior tool output and original delivery note; five lifecycle tests and four fusion tests already occur in 1080-run log. Only the single-slot test was additional. Do not add all 10 again or call the sum a complete run."
+  }
+}

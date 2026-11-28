@@ -47,7 +47,7 @@ class PollResultsTests(unittest.TestCase):
         }))
         self.binding = {'registration_sha256': hashlib.sha256(self.registration.read_bytes()).hexdigest()}
         plan = {'recorded_at': '2026-11-18T03:12Z', 'payload': {'binding': self.binding}}
-        patcher = patch.object(poller, '_predictions', return_value=(plan, self.fixtures, {}))
+        patcher = patch.object(poller, 'read_predictions', return_value=(plan, self.fixtures, {}))
         patcher.start()
         self.addCleanup(patcher.stop)
 
