@@ -1,0 +1,58 @@
+{
+  "scope": "REGISTERED_BIG_FIVE_OPENING_KICKOFF_OBSERVATION",
+  "observed_at": "2026-11-28T13:09:07.471024+00:00",
+  "registered": 31,
+  "verified_finals": 0,
+  "verified_actual_starts": 1,
+  "opening": {
+    "match_id": "espn:401882796",
+    "scheduled": "2026-11-28T13:00:00+00:00",
+    "actual_kickoff_at": "2026-11-28T13:05:07+00:00",
+    "delay_seconds": 307.0,
+    "observations": [
+      {
+        "observed_at": "2026-11-28T13:02:18.871455+00:00",
+        "provider": "espn",
+        "provider_status": "STATUS_SCHEDULED",
+        "state": "pre",
+        "sha256": "ee5fc9a01fc45b271d6de99dae0576b7726c6e2b1852d6493bd30551817a0d37",
+        "path": "2102-betis-kickoff/401882796-espn.json.gz"
+      },
+      {
+        "observed_at": "2026-11-28T13:04:21.772860+00:00",
+        "provider": "espn",
+        "provider_status": "STATUS_SCHEDULED",
+        "state": "pre",
+        "sha256": "a913675e25b0be51c37666a736c1b3d031765b3a572d97916963ddae2e40a1ef",
+        "path": "2104-betis-kickoff/401882796-espn.json.gz"
+      },
+      {
+        "observed_at": "2026-11-28T13:08:39.450005+00:00",
+        "provider": "fotmob",
+        "provider_status": "STARTED",
+        "state": "in",
+        "sha256": "11f1d23d391705bd838ee3a07f5bd4f76c3a5d2834faf1da425e95c13d599091",
+        "path": "2108-betis-fotmob-check/401882796-fotmob.json.gz"
+      },
+      {
+        "observed_at": "2026-11-28T13:09:07.471024+00:00",
+        "provider": "espn",
+        "provider_status": "STATUS_FIRST_HALF",
+        "state": "in",
+        "sha256": "e1d94c949f6fdd95d5d0bc02fb5604af40de5e006c1fc391a945e8d764c86fde",
+        "path": "2109-betis-kickoff/401882796-espn.json.gz"
+      }
+    ],
+    "kickoff_evidence": [
+      {
+        "provider": "espn",
+        "path": "2109-betis-kickoff/401882796-espn.json.gz",
+        "sha256": "e1d94c949f6fdd95d5d0bc02fb5604af40de5e006c1fc391a945e8d764c86fde",
+        "source_url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882796",
+        "captured_at": "2026-11-28T13:09:07.471024+00:00",
+        "actual_kickoff_at": "2026-11-28T13:05:07+00:00"
+      }
+    ],
+    "issues": []
+  }
+}

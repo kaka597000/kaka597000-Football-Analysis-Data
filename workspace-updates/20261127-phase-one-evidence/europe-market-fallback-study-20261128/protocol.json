@@ -1,0 +1,54 @@
+{
+  "arms": {
+    "first_issue": "Recompute the actual R13 price input and reproduce all frozen picks.",
+    "no_market": "Withhold both 1X2 and total and the paired flag. Use the existing R7 team prior and exact R13 coefficients/doses.",
+    "wdl_only": "Withhold only total/line and paired status. Use unaltered R7/R13 settings and same-fixture 1X2 when originally supplied."
+  },
+  "decision": "Keep the two competitions separate. Recompute the original domestic histories and reuse them in all arms. Compare exact first, distinct ordered three and WDL using the same 90-minute fixtures. Do not estimate a totals pick when withholding the line. No fitting, tuning, model selection or prospective certification. R2 archived domestic feature coverage audited without producing new fixture picks.",
+  "evidence_status": "PAST_LABELS_ALREADY_REVIEWED_FIXED_INPUT_ABLATION",
+  "inputs": {
+    "next_population": {
+      "path": "20261126-europe-first-display/capture-plan/round2.json",
+      "sha256": "26676b12caf4ea293b6665b495c65206b3b25a2cc72c3ca971531c210e2cf7f5"
+    },
+    "population": {
+      "path": "20261126-europe-first-display/capture-plan/round1.json",
+      "sha256": "2fb5e1115ec5966a9a07e3d4b147025f82e9c0a03037374831f4cfa7bdb8eee2"
+    },
+    "r13_actual_domestic": {
+      "path": "20261125-r13-domestic-form/inputs/domestic.tar.gz",
+      "sha256": "21b63839017ec1eed0a4c1925cbf2f959a04c5045a859f93cfe282001d820822"
+    },
+    "r13_actual_firsts": {
+      "path": "20261125-r13-domestic-form/forward/first-issues.tar.gz",
+      "sha256": "86808d14475d3584439af1571f9ece8a23b82ffc2801bb3e9a00078073f3fc08"
+    },
+    "r13_complete_recipes": {
+      "path": "20261125-r13-domestic-form/replay/forecasts.tar.gz",
+      "sha256": "66dd22e8b4b5da665203776b404ecc6204fa833b61beb4b429c975a3be78655f"
+    },
+    "r5_actual_prices": {
+      "path": "20261123-all-scope-kpi/forward-first-issues.tar.gz",
+      "sha256": "11eeb44fab0fd49602c8f9b04e00979318391d6242d483efc82034a3bdcf8d7a"
+    },
+    "r7_uecl_estimator": {
+      "path": "20261123-prematch-literature/models/uefa.europa.conf.tar.gz",
+      "sha256": "92760d1b4decde74615f94c84a2ffcff3d0b309733c01d2174bc674a73990b8e"
+    },
+    "r7_uel_estimator": {
+      "path": "20261123-prematch-literature/models/uefa.europa.tar.gz",
+      "sha256": "bd0304a91ae3a1294edbf7040489ef9f124cfe3d83c3571ba387df54ea541db5"
+    },
+    "regulation_labels": {
+      "path": "20261127-europe-round1-review/settlement/report.json",
+      "sha256": "3ef3b790c8d3269ace0032f7a5ab42a762e283f893c50b448636e0553ee52f89"
+    }
+  },
+  "registered_population_n_by_cohort": {
+    "uefa.europa": 18,
+    "uefa.europa.conf": 18
+  },
+  "registered_utc_date": "2026-11-26",
+  "source_commit": "f3f3f41673492b43b3d44770e4de76d8571fccb3",
+  "unchanged_model_implementation_since": "628b12a1aa560df454dc1132fb76614cf33b4556"
+}

@@ -1,0 +1,33 @@
+{
+  "version": "BIG5-R7-R8-FIRST-RANK-IN-FIXED-THREE-1",
+  "evidence": "DATE_CAUSAL_DEVELOPMENT_ON_PREVIOUSLY_STUDIED_RESULTS",
+  "r7_archive_lock_sha256": "e792a75d747b7a89e727b9e2dd062ebe928804e1be3ba06583f70e7694f55bf7",
+  "r8_archive": {
+    "path": "20261125-r8-prematch/score/forecasts.tar.gz",
+    "sha256": "7930422dab244068ac0392ada3d8f97ac81f69f04f0e10057f442c2728eb4bcc"
+  },
+  "windows": {
+    "selection": {
+      "from": "2025-07-01",
+      "before": "2026-01-01"
+    },
+    "same_season_check": {
+      "from": "2026-01-01",
+      "before": "2026-07-01"
+    },
+    "next_season_check": {
+      "from": "2026-07-01",
+      "before": "2026-11-23"
+    }
+  },
+  "maximum_gaps": {
+    "r7": null,
+    "half_point": 0.005,
+    "one_point": 0.01,
+    "one_and_half": 0.015,
+    "two_points": 0.02
+  },
+  "switch_rule": "Use the original R8 first only if it is another member of the R7 three and its R7 probability is within the specified absolute gap of the R7 first. Promote it to first and preserve the relative order of the other two. Retain R7 direction and total. For a missing candidate keep R7 and preserve the denominator.",
+  "selection_rule": "Per league select highest score-top1 hit count in the selection window, breaking ties in favor of R7, then smaller gap. Report both subsequent fixed date checks separately. A research candidate must lose no first hits in either check and add first hits in at least one. No variant may replace any member of the original R7 three.",
+  "forward_rule": "The original 31 research cases remain fixed. A new track may be registered before its first kickoff only after passing the historical screen and reconstructing the original R7 grids with real issue cutoffs. No post-kickoff firsts. Historical evidence never certifies formal display or institution-native price time."
+}
