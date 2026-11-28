@@ -1,0 +1,3397 @@
+{
+  "competitions": {
+    "uefa.europa": {
+      "as_issued_versus_masked_market": {
+        "no_market": {
+          "bootstrap": {
+            "confidence": 0.95,
+            "per_metric_percentile_intervals": true,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "unit": "whole match date"
+          },
+          "cohorts": {
+            "uefa.europa": 18
+          },
+          "common_total_pushes": 0,
+          "comparison": {
+            "baseline": "first_issue",
+            "candidate": "no_market"
+          },
+          "evidence": {
+            "matchday_basis": "supplied date",
+            "mode": "REPLAY_COMPARISON",
+            "prospective_certified": false
+          },
+          "paired": {
+            "actual_ou": {
+              "coverage": 0.0,
+              "date_cluster_ci": null,
+              "eligible": 0,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -11,
+              "fixed_population_net_rate": -0.6111111111111112,
+              "gained": 0,
+              "lost": 0,
+              "matchday_clusters": 0,
+              "net_hits": 0,
+              "net_rate": null,
+              "resolved_gate_denominator": 18,
+              "tied": 0
+            },
+            "score_top1": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": 2,
+              "fixed_population_net_rate": 0.1111111111111111,
+              "gained": 2,
+              "lost": 0,
+              "matchday_clusters": 1,
+              "net_hits": 2,
+              "net_rate": 0.1111111111111111,
+              "resolved_gate_denominator": 18,
+              "tied": 16
+            },
+            "score_top3": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "gained": 1,
+              "lost": 1,
+              "matchday_clusters": 1,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "resolved_gate_denominator": 18,
+              "tied": 16
+            },
+            "wdl": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -2,
+              "fixed_population_net_rate": -0.1111111111111111,
+              "gained": 1,
+              "lost": 3,
+              "matchday_clusters": 1,
+              "net_hits": -2,
+              "net_rate": -0.1111111111111111,
+              "resolved_gate_denominator": 18,
+              "tied": 14
+            }
+          },
+          "pending": 0,
+          "population": 18,
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "settled_population": 18,
+          "tracks": {
+            "first_issue": {
+              "metrics": {
+                "actual_ou": {
+                  "eligible": 18,
+                  "eligible_rate": 0.6111111111111112,
+                  "hits": 11,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.6111111111111112,
+                  "target": 0.7
+                },
+                "score_top1": {
+                  "eligible": 18,
+                  "eligible_rate": 0.0,
+                  "hits": 0,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.0,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "eligible": 18,
+                  "eligible_rate": 0.3888888888888889,
+                  "hits": 7,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.3888888888888889,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "eligible": 18,
+                  "eligible_rate": 0.6666666666666666,
+                  "hits": 12,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.6666666666666666,
+                  "target": 0.65
+                }
+              },
+              "total_settlements": {
+                "FULL_LOSS": 7,
+                "FULL_WIN": 11,
+                "HALF_LOSS": 0,
+                "HALF_WIN": 0,
+                "PUSH": 0
+              }
+            },
+            "no_market": {
+              "metrics": {
+                "actual_ou": {
+                  "eligible": 0,
+                  "eligible_rate": null,
+                  "hits": 0,
+                  "issued": 0,
+                  "registered_coverage": 0.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.0,
+                  "target": 0.7
+                },
+                "score_top1": {
+                  "eligible": 18,
+                  "eligible_rate": 0.1111111111111111,
+                  "hits": 2,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.1111111111111111,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "eligible": 18,
+                  "eligible_rate": 0.3888888888888889,
+                  "hits": 7,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.3888888888888889,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "eligible": 18,
+                  "eligible_rate": 0.5555555555555556,
+                  "hits": 10,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.5555555555555556,
+                  "target": 0.65
+                }
+              },
+              "total_settlements": {
+                "FULL_LOSS": 0,
+                "FULL_WIN": 0,
+                "HALF_LOSS": 0,
+                "HALF_WIN": 0,
+                "PUSH": 0
+              }
+            }
+          }
+        },
+        "wdl_only": {
+          "bootstrap": {
+            "confidence": 0.95,
+            "per_metric_percentile_intervals": true,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "unit": "whole match date"
+          },
+          "cohorts": {
+            "uefa.europa": 18
+          },
+          "common_total_pushes": 0,
+          "comparison": {
+            "baseline": "first_issue",
+            "candidate": "wdl_only"
+          },
+          "evidence": {
+            "matchday_basis": "supplied date",
+            "mode": "REPLAY_COMPARISON",
+            "prospective_certified": false
+          },
+          "paired": {
+            "actual_ou": {
+              "coverage": 0.0,
+              "date_cluster_ci": null,
+              "eligible": 0,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -11,
+              "fixed_population_net_rate": -0.6111111111111112,
+              "gained": 0,
+              "lost": 0,
+              "matchday_clusters": 0,
+              "net_hits": 0,
+              "net_rate": null,
+              "resolved_gate_denominator": 18,
+              "tied": 0
+            },
+            "score_top1": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": 3,
+              "fixed_population_net_rate": 0.16666666666666666,
+              "gained": 3,
+              "lost": 0,
+              "matchday_clusters": 1,
+              "net_hits": 3,
+              "net_rate": 0.16666666666666666,
+              "resolved_gate_denominator": 18,
+              "tied": 15
+            },
+            "score_top3": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "gained": 0,
+              "lost": 0,
+              "matchday_clusters": 1,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "resolved_gate_denominator": 18,
+              "tied": 18
+            },
+            "wdl": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "gained": 0,
+              "lost": 0,
+              "matchday_clusters": 1,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "resolved_gate_denominator": 18,
+              "tied": 18
+            }
+          },
+          "pending": 0,
+          "population": 18,
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "settled_population": 18,
+          "tracks": {
+            "first_issue": {
+              "metrics": {
+                "actual_ou": {
+                  "eligible": 18,
+                  "eligible_rate": 0.6111111111111112,
+                  "hits": 11,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.6111111111111112,
+                  "target": 0.7
+                },
+                "score_top1": {
+                  "eligible": 18,
+                  "eligible_rate": 0.0,
+                  "hits": 0,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.0,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "eligible": 18,
+                  "eligible_rate": 0.3888888888888889,
+                  "hits": 7,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.3888888888888889,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "eligible": 18,
+                  "eligible_rate": 0.6666666666666666,
+                  "hits": 12,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.6666666666666666,
+                  "target": 0.65
+                }
+              },
+              "total_settlements": {
+                "FULL_LOSS": 7,
+                "FULL_WIN": 11,
+                "HALF_LOSS": 0,
+                "HALF_WIN": 0,
+                "PUSH": 0
+              }
+            },
+            "wdl_only": {
+              "metrics": {
+                "actual_ou": {
+                  "eligible": 0,
+                  "eligible_rate": null,
+                  "hits": 0,
+                  "issued": 0,
+                  "registered_coverage": 0.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.0,
+                  "target": 0.7
+                },
+                "score_top1": {
+                  "eligible": 18,
+                  "eligible_rate": 0.16666666666666666,
+                  "hits": 3,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.16666666666666666,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "eligible": 18,
+                  "eligible_rate": 0.3888888888888889,
+                  "hits": 7,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.3888888888888889,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "eligible": 18,
+                  "eligible_rate": 0.6666666666666666,
+                  "hits": 12,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.6666666666666666,
+                  "target": 0.65
+                }
+              },
+              "total_settlements": {
+                "FULL_LOSS": 0,
+                "FULL_WIN": 0,
+                "HALF_LOSS": 0,
+                "HALF_WIN": 0,
+                "PUSH": 0
+              }
+            }
+          }
+        }
+      },
+      "frozen_r13_reproduced": 18,
+      "prospective_input_coverage_from_archived_history": {
+        "coverage": {
+          "both": 7,
+          "neither": 1,
+          "one": 10
+        },
+        "fixture_count_with_rest_or_load_difference": 0,
+        "fixtures": 18,
+        "rows": [
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-21",
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915485",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Lyon",
+              "Union St.-Gilloise"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              null
+            ],
+            "match_id": "espn:401915486",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Lech Poznan",
+              "Ferencvaros"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915487",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "NK Celje",
+              "Olympiacos"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-21",
+              null
+            ],
+            "match_id": "espn:401915488",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "AFC Bournemouth",
+              "Viktoria Plzen"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              null
+            ],
+            "match_id": "espn:401915489",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "RB Salzburg",
+              "Sparta Prague"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              null
+            ],
+            "match_id": "espn:401915490",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Real Sociedad",
+              "Torreense"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-08",
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915491",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Benfica",
+              "OFI Crete"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-21",
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915492",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Bayer Leverkusen",
+              "Besiktas"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              "2026-11-21"
+            ],
+            "match_id": "espn:401915493",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "AC Milan",
+              "Sunderland"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915494",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "AZ Alkmaar",
+              "SK Sturm Graz"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              "2026-11-21"
+            ],
+            "match_id": "espn:401915495",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Marseille",
+              "Celta Vigo"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-21"
+            ],
+            "match_id": "espn:401915496",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Jagiellonia Bialystok",
+              "Crystal Palace"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              null
+            ],
+            "match_id": "espn:401915497",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Stade Rennais",
+              "Dinamo Zagreb"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-21"
+            ],
+            "match_id": "espn:401915498",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Omonia Nicosia",
+              "Celtic"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915499",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Hapoel Be'er",
+              "Juventus"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-21"
+            ],
+            "match_id": "espn:401915500",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Ararat-Armenia",
+              "NEC Nijmegen"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915510",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Levski Sofia",
+              "Lillestrom"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              "2026-11-21"
+            ],
+            "match_id": "espn:401915511",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Anderlecht",
+              "TSG Hoffenheim"
+            ]
+          }
+        ]
+      },
+      "recorded_market_modes": {
+        "paired": 18
+      },
+      "selection_changes": {
+        "no_market": {
+          "first": 11,
+          "three_membership": 15
+        },
+        "wdl_only": {
+          "first": 13,
+          "three_membership": 11
+        }
+      }
+    },
+    "uefa.europa.conf": {
+      "as_issued_versus_masked_market": {
+        "no_market": {
+          "bootstrap": {
+            "confidence": 0.95,
+            "per_metric_percentile_intervals": true,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "unit": "whole match date"
+          },
+          "cohorts": {
+            "uefa.europa.conf": 18
+          },
+          "common_total_pushes": 0,
+          "comparison": {
+            "baseline": "first_issue",
+            "candidate": "no_market"
+          },
+          "evidence": {
+            "matchday_basis": "supplied date",
+            "mode": "REPLAY_COMPARISON",
+            "prospective_certified": false
+          },
+          "paired": {
+            "actual_ou": {
+              "coverage": 0.0,
+              "date_cluster_ci": null,
+              "eligible": 0,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -11,
+              "fixed_population_net_rate": -0.6111111111111112,
+              "gained": 0,
+              "lost": 0,
+              "matchday_clusters": 0,
+              "net_hits": 0,
+              "net_rate": null,
+              "resolved_gate_denominator": 18,
+              "tied": 0
+            },
+            "score_top1": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -1,
+              "fixed_population_net_rate": -0.05555555555555555,
+              "gained": 0,
+              "lost": 1,
+              "matchday_clusters": 1,
+              "net_hits": -1,
+              "net_rate": -0.05555555555555555,
+              "resolved_gate_denominator": 18,
+              "tied": 17
+            },
+            "score_top3": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -3,
+              "fixed_population_net_rate": -0.16666666666666666,
+              "gained": 1,
+              "lost": 4,
+              "matchday_clusters": 1,
+              "net_hits": -3,
+              "net_rate": -0.16666666666666666,
+              "resolved_gate_denominator": 18,
+              "tied": 13
+            },
+            "wdl": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": 1,
+              "fixed_population_net_rate": 0.05555555555555555,
+              "gained": 3,
+              "lost": 2,
+              "matchday_clusters": 1,
+              "net_hits": 1,
+              "net_rate": 0.05555555555555555,
+              "resolved_gate_denominator": 18,
+              "tied": 13
+            }
+          },
+          "pending": 0,
+          "population": 18,
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "settled_population": 18,
+          "tracks": {
+            "first_issue": {
+              "metrics": {
+                "actual_ou": {
+                  "eligible": 17,
+                  "eligible_rate": 0.6470588235294118,
+                  "hits": 11,
+                  "issued": 17,
+                  "registered_coverage": 0.9444444444444444,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.6111111111111112,
+                  "target": 0.7
+                },
+                "score_top1": {
+                  "eligible": 18,
+                  "eligible_rate": 0.05555555555555555,
+                  "hits": 1,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.05555555555555555,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "eligible": 18,
+                  "eligible_rate": 0.3333333333333333,
+                  "hits": 6,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.3333333333333333,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "eligible": 18,
+                  "eligible_rate": 0.5,
+                  "hits": 9,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.5,
+                  "target": 0.65
+                }
+              },
+              "total_settlements": {
+                "FULL_LOSS": 6,
+                "FULL_WIN": 11,
+                "HALF_LOSS": 0,
+                "HALF_WIN": 0,
+                "PUSH": 0
+              }
+            },
+            "no_market": {
+              "metrics": {
+                "actual_ou": {
+                  "eligible": 0,
+                  "eligible_rate": null,
+                  "hits": 0,
+                  "issued": 0,
+                  "registered_coverage": 0.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.0,
+                  "target": 0.7
+                },
+                "score_top1": {
+                  "eligible": 18,
+                  "eligible_rate": 0.0,
+                  "hits": 0,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.0,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "eligible": 18,
+                  "eligible_rate": 0.16666666666666666,
+                  "hits": 3,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.16666666666666666,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "eligible": 18,
+                  "eligible_rate": 0.5555555555555556,
+                  "hits": 10,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.5555555555555556,
+                  "target": 0.65
+                }
+              },
+              "total_settlements": {
+                "FULL_LOSS": 0,
+                "FULL_WIN": 0,
+                "HALF_LOSS": 0,
+                "HALF_WIN": 0,
+                "PUSH": 0
+              }
+            }
+          }
+        },
+        "wdl_only": {
+          "bootstrap": {
+            "confidence": 0.95,
+            "per_metric_percentile_intervals": true,
+            "repetitions": 5000,
+            "seed": 20261123,
+            "unit": "whole match date"
+          },
+          "cohorts": {
+            "uefa.europa.conf": 18
+          },
+          "common_total_pushes": 0,
+          "comparison": {
+            "baseline": "first_issue",
+            "candidate": "wdl_only"
+          },
+          "evidence": {
+            "matchday_basis": "supplied date",
+            "mode": "REPLAY_COMPARISON",
+            "prospective_certified": false
+          },
+          "paired": {
+            "actual_ou": {
+              "coverage": 0.0,
+              "date_cluster_ci": null,
+              "eligible": 0,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -11,
+              "fixed_population_net_rate": -0.6111111111111112,
+              "gained": 0,
+              "lost": 0,
+              "matchday_clusters": 0,
+              "net_hits": 0,
+              "net_rate": null,
+              "resolved_gate_denominator": 18,
+              "tied": 0
+            },
+            "score_top1": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -1,
+              "fixed_population_net_rate": -0.05555555555555555,
+              "gained": 0,
+              "lost": 1,
+              "matchday_clusters": 1,
+              "net_hits": -1,
+              "net_rate": -0.05555555555555555,
+              "resolved_gate_denominator": 18,
+              "tied": 17
+            },
+            "score_top3": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": -1,
+              "fixed_population_net_rate": -0.05555555555555555,
+              "gained": 1,
+              "lost": 2,
+              "matchday_clusters": 1,
+              "net_hits": -1,
+              "net_rate": -0.05555555555555555,
+              "resolved_gate_denominator": 18,
+              "tied": 15
+            },
+            "wdl": {
+              "coverage": 1.0,
+              "date_cluster_ci": null,
+              "eligible": 18,
+              "fixed_population_date_cluster_ci": null,
+              "fixed_population_net_hits": 0,
+              "fixed_population_net_rate": 0.0,
+              "gained": 0,
+              "lost": 0,
+              "matchday_clusters": 1,
+              "net_hits": 0,
+              "net_rate": 0.0,
+              "resolved_gate_denominator": 18,
+              "tied": 18
+            }
+          },
+          "pending": 0,
+          "population": 18,
+          "schema": "WCPP-PAIRED-KPI-INFERENCE-1",
+          "settled_population": 18,
+          "tracks": {
+            "first_issue": {
+              "metrics": {
+                "actual_ou": {
+                  "eligible": 17,
+                  "eligible_rate": 0.6470588235294118,
+                  "hits": 11,
+                  "issued": 17,
+                  "registered_coverage": 0.9444444444444444,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.6111111111111112,
+                  "target": 0.7
+                },
+                "score_top1": {
+                  "eligible": 18,
+                  "eligible_rate": 0.05555555555555555,
+                  "hits": 1,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.05555555555555555,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "eligible": 18,
+                  "eligible_rate": 0.3333333333333333,
+                  "hits": 6,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.3333333333333333,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "eligible": 18,
+                  "eligible_rate": 0.5,
+                  "hits": 9,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.5,
+                  "target": 0.65
+                }
+              },
+              "total_settlements": {
+                "FULL_LOSS": 6,
+                "FULL_WIN": 11,
+                "HALF_LOSS": 0,
+                "HALF_WIN": 0,
+                "PUSH": 0
+              }
+            },
+            "wdl_only": {
+              "metrics": {
+                "actual_ou": {
+                  "eligible": 0,
+                  "eligible_rate": null,
+                  "hits": 0,
+                  "issued": 0,
+                  "registered_coverage": 0.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.0,
+                  "target": 0.7
+                },
+                "score_top1": {
+                  "eligible": 18,
+                  "eligible_rate": 0.0,
+                  "hits": 0,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.0,
+                  "target": 0.2
+                },
+                "score_top3": {
+                  "eligible": 18,
+                  "eligible_rate": 0.2777777777777778,
+                  "hits": 5,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.2777777777777778,
+                  "target": 0.4
+                },
+                "wdl": {
+                  "eligible": 18,
+                  "eligible_rate": 0.5,
+                  "hits": 9,
+                  "issued": 18,
+                  "registered_coverage": 1.0,
+                  "resolved_gate_denominator": 18,
+                  "resolved_gate_rate": 0.5,
+                  "target": 0.65
+                }
+              },
+              "total_settlements": {
+                "FULL_LOSS": 0,
+                "FULL_WIN": 0,
+                "HALF_LOSS": 0,
+                "HALF_WIN": 0,
+                "PUSH": 0
+              }
+            }
+          }
+        }
+      },
+      "frozen_r13_reproduced": 18,
+      "prospective_input_coverage_from_archived_history": {
+        "coverage": {
+          "both": 5,
+          "neither": 5,
+          "one": 8
+        },
+        "fixture_count_with_rest_or_load_difference": 0,
+        "fixtures": 18,
+        "rows": [
+          {
+            "domestic_games": [
+              0,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              null
+            ],
+            "match_id": "espn:401915628",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Mjällby AIF",
+              "Pafos"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              null
+            ],
+            "match_id": "espn:401915629",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Egnatia",
+              "Kauno Zalgiris"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-21",
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915630",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Sint-Truidense",
+              "Ajax Amsterdam"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              "2026-11-21"
+            ],
+            "match_id": "espn:401915732",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Brighton & Hove Albion",
+              "AS Monaco"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-21",
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915733",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "SC Freiburg",
+              "Panathinaikos"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915734",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Riga FC",
+              "Atalanta"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              null
+            ],
+            "match_id": "espn:401915735",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "KuPS Kuopio",
+              "CSKA Sofia"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              null
+            ],
+            "match_id": "espn:401915736",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Getafe",
+              "Inter D'Escaldes"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              null
+            ],
+            "match_id": "espn:401915737",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Kairat Almaty",
+              "CSU Craiova"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915792",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Hajduk Split",
+              "FC Nordsjælland"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-21",
+              null
+            ],
+            "match_id": "espn:401915793",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Heart of Midlothian",
+              "Borac Banja Luka"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915794",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "FC Thun",
+              "KAA Gent"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-20",
+              "2026-11-22"
+            ],
+            "match_id": "espn:401915795",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "AGF",
+              "FC Twente"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              null
+            ],
+            "match_id": "espn:401915796",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Trabzonspor",
+              "Jablonec"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              "2026-11-08"
+            ],
+            "match_id": "espn:401915797",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "SK Brann",
+              "Braga"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              8
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              "2026-11-23"
+            ],
+            "match_id": "espn:401915798",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Lincoln Red Imps",
+              "FC Midtjylland"
+            ]
+          },
+          {
+            "domestic_games": [
+              0,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              null,
+              null
+            ],
+            "match_id": "espn:401915799",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "Iberia 1999",
+              "Red Star Belgrade"
+            ]
+          },
+          {
+            "domestic_games": [
+              8,
+              0
+            ],
+            "latest_archived_domestic_day": [
+              "2026-11-22",
+              null
+            ],
+            "match_id": "espn:401915800",
+            "rest_or_14_day_load_difference_present": false,
+            "teams": [
+              "F.C. København",
+              "FC Lugano"
+            ]
+          }
+        ]
+      },
+      "recorded_market_modes": {
+        "paired": 17,
+        "team_fallback": 1
+      },
+      "selection_changes": {
+        "no_market": {
+          "first": 9,
+          "three_membership": 15
+        },
+        "wdl_only": {
+          "first": 9,
+          "three_membership": 10
+        }
+      }
+    }
+  },
+  "domestic_history_through": "2026-11-24",
+  "domestic_sha256": "4ef2be976c00be12118b54b90d4dbb34adb04d384adbcc7cddcae495df8a19cf",
+  "evidence_status": "PAST_LABELS_ALREADY_REVIEWED_FIXED_INPUT_ABLATION",
+  "protocol_freeze": "f3025b314900abb1-v000001",
+  "rows": {
+    "uefa.europa": [
+      {
+        "actual": [
+          0,
+          0
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "ac08cd9c3126896248ce943bb735b31b7547d0217f39901370da0a0f2e58f259",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "3-0",
+              "2-1"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "2-1",
+              "1-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "1-0",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915501",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Lyon",
+          "Lillestrom"
+        ]
+      },
+      {
+        "actual": [
+          4,
+          1
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "584dc974f18357ded521ea279f99e9dc3bdcd23893f82448cf985c39522f555a",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "3-0",
+              "4-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "2-0",
+              "1-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915502",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Juventus",
+          "Omonia Nicosia"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          3
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "e7520fdd1d7433e253791ecd21fafd3b4603fce210ae80dab39c914d55ebe8d3",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-2",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915503",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "OFI Crete",
+          "Anderlecht"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          1
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "4499e3f7feaee6e722c01a3cb3e9e9788498539fe24bb767a0af4f6d4230bd28",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "2-1",
+              "1-0"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "2-1",
+              "1-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "2-1",
+              "1-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915504",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Crystal Palace",
+          "Real Sociedad"
+        ]
+      },
+      {
+        "actual": [
+          3,
+          1
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "b1ba3a6488770b8df3fc44da4103305af5e87781559598df4fd7aaea26da040a",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "2-1",
+              "1-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915505",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "NEC Nijmegen",
+          "Stade Rennais"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          1
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "2e165ab5534b66da544060a077afcfd6aac77eedcf47123fec7c67034ace9642",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "3-0",
+              "2-1"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "2-0",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "2-0",
+              "3-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915506",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Besiktas",
+          "Hapoel Be'er"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          0
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "915f84d440225cc185178d305809121b5afe7dfec76eed2ed64392e19b7f3a5f",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915507",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Marseille",
+          "Levski Sofia"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          2
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "f0fad6bc0e3d04ab6931291aa5573ad6acb2a07b57e0fc29ce2791b76f00d634",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "3-0",
+              "2-1"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "2-1",
+              "3-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "2-1",
+              "3-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915508",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Union St.-Gilloise",
+          "Lech Poznan"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          2
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "356d4e4963dca7c25806dd6efe7c64f6786385d4fb11dfd24b95be3efc5c89c8",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-2"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "1-1",
+              "1-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-2",
+            "top3": [
+              "1-2",
+              "1-1",
+              "2-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915512",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Torreense",
+          "Celtic"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          1
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "eaf07405cd4d408bb3b5bc9f5b6ac3c69eed7633acedfbdd005d24bdce0aa0a7",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "3-0",
+              "1-0"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915513",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Sunderland",
+          "Jagiellonia Bialystok"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          4
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "cfc7c3b79b1036199f646aad672af6d5e85fd2f8ed7e3f6ff94b0c9fcd84bd72",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915514",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Sparta Prague",
+          "AZ Alkmaar"
+        ]
+      },
+      {
+        "actual": [
+          3,
+          1
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "af3f19180efb59d486a80405a464cc6e4bf86d419bc6bc9ffae5982983205635",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "2-1",
+              "3-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915515",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "TSG Hoffenheim",
+          "SK Sturm Graz"
+        ]
+      },
+      {
+        "actual": [
+          0,
+          0
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          0
+        ],
+        "first_issue_sha256": "e93b0b90a3b6d9cf714f010322f79bbf9331f2a3ca2ffd8f0b6eb0a17e11008e",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "2-1",
+              "1-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "2-0",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "2-0",
+              "3-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915516",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Ferencvaros",
+          "NK Celje"
+        ]
+      },
+      {
+        "actual": [
+          0,
+          2
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "ebef6169bc9528820b5327a3d55174f58ef05b78d27dbf9fb50a0268d655a2c3",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-2"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-2",
+              "0-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915517",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Dinamo Zagreb",
+          "Bayer Leverkusen"
+        ]
+      },
+      {
+        "actual": [
+          4,
+          0
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "d2a10fcb8b333c05aa21fee3284cf42e1ef27125162735b1e3fed36ab2753272",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-2",
+            "top3": [
+              "1-2",
+              "0-2",
+              "1-1"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-2",
+              "0-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915518",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Viktoria Plzen",
+          "Benfica"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          2
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "d4483fa13f7a36487dfa3b83a8e274cdedb402bbc5499b77a28234b7b1e17ce3",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915519",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Celta Vigo",
+          "AFC Bournemouth"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          0
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "b5f3483ebb2a00f5fa5cf14690f53189cef76f6e86f5880c4370114b18873c35",
+        "forecast": {
+          "first_issue": {
+            "primary": "3-0",
+            "top3": [
+              "3-0",
+              "2-0",
+              "4-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "2-1",
+            "top3": [
+              "2-1",
+              "2-0",
+              "3-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915520",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "RB Salzburg",
+          "Ararat-Armenia"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          4
+        ],
+        "cohort": "uefa.europa",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "5c76aa5d3e7bd000d0d04d7977facf158f57fd51312ba4d88fa7d7593e720c8b",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-1",
+              "1-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915521",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Olympiacos",
+          "AC Milan"
+        ]
+      }
+    ],
+    "uefa.europa.conf": [
+      {
+        "actual": [
+          2,
+          0
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "77542c20bd3c9eb3b84e1bf733f01bce1dee6777820d679c70eb808d82b4c618",
+        "forecast": {
+          "first_issue": {
+            "primary": "0-2",
+            "top3": [
+              "0-2",
+              "0-1",
+              "0-3"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-2",
+              "0-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915738",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Inter D'Escaldes",
+          "F.C. København"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          0
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          0
+        ],
+        "first_issue_sha256": "1203bcbb88e37c89377ec0441b216eaf10646fab1d520ca038d2d0b6bc295b43",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": 2.5,
+            "total_side": "under",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915739",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Kauno Zalgiris",
+          "Riga FC"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          1
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "b9b94c022d849e5f94ad9efaab30c3563eb8c60f5312f158f4b6f4ffc99c975c",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "2-1",
+              "1-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915801",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "SC Freiburg",
+          "FC Twente"
+        ]
+      },
+      {
+        "actual": [
+          4,
+          0
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "c202217ab66727b69ee22efcba3cd5012c8b0fcf55c04407666dfaddec374c1c",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "3-0",
+              "1-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915802",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Braga",
+          "KuPS Kuopio"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          2
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "2226401277d57bf0d38e6e3277b92b2323a1cb168f293174390da9d0c5b83ff3",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-2",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915803",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "CSKA Sofia",
+          "Trabzonspor"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          1
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "168d6f8d476fa53de730546944c956addd10870f4de47cc4df00d85eb83cd3e7",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915804",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "KAA Gent",
+          "Red Star Belgrade"
+        ]
+      },
+      {
+        "actual": [
+          0,
+          2
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "2f8274f353ce59cf9577196a9b0190e976b19d22021a95b4be65657090541297",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "0-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915805",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Hajduk Split",
+          "Sint-Truidense"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          3
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "5c1bfeec62ad46c221343bc15d4d64b2a146f66224e8b709dda743fc69a7af7a",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-2"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-2",
+              "0-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915806",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Borac Banja Luka",
+          "Atalanta"
+        ]
+      },
+      {
+        "actual": [
+          3,
+          2
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "c7c9f5b0e669ddf591673e976cd248afe4b4bb5e176110d3d1e511a08436a518",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915807",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "FC Nordsjælland",
+          "Panathinaikos"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          4
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "27b7e5ea1fc46183bc013853742e76ec902db6afb06ce7d2b60394ceef8f7937",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "2-1",
+              "1-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915808",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "SK Brann",
+          "AGF"
+        ]
+      },
+      {
+        "actual": [
+          0,
+          2
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "69f55aaa36992dadd41dfb65199ddc23aabd93dfa9d822c292a6c20cbb789a0e",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915809",
+        "line": null,
+        "odds_mode_original": "team_fallback",
+        "teams": [
+          "Pafos",
+          "FC Midtjylland"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          1
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          0
+        ],
+        "first_issue_sha256": "e5ee70dac0dcc4059bf1423100d01c0ced34c05c5f5c4d083ba502ca92d87e78",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "1-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915810",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Egnatia",
+          "Lincoln Red Imps"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          3
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          8
+        ],
+        "first_issue_sha256": "77ea65fa9e258ede59ee81466af2428b5d37d7bb2569fc3dadee3165456eac59",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-2",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915811",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Heart of Midlothian",
+          "AS Monaco"
+        ]
+      },
+      {
+        "actual": [
+          2,
+          0
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          0
+        ],
+        "first_issue_sha256": "950b5f6c396d42bae886abb0d62526b6a68d45494a53739ab685f81bb1920c03",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "0-1",
+              "1-2"
+            ],
+            "total_line": 2.5,
+            "total_side": "over",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "2-1",
+              "1-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-2",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915812",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Jablonec",
+          "FC Lugano"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          0
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          8
+        ],
+        "first_issue_sha256": "ab56cd68d109b03c0160ef8d59d05424a70a4fea08e64eb41d4f3609641ae913",
+        "forecast": {
+          "first_issue": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "0-2",
+              "1-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "under",
+            "wdl": "away"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "0-1",
+            "top3": [
+              "0-1",
+              "1-2",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "away"
+          }
+        },
+        "id": "espn:401915813",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Iberia 1999",
+          "Getafe"
+        ]
+      },
+      {
+        "actual": [
+          4,
+          0
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "a0c8a7b28ef72c84a5011bcc06162a02f9cde3dcedd0123cbf2f24ac33a551c8",
+        "forecast": {
+          "first_issue": {
+            "primary": "2-0",
+            "top3": [
+              "2-0",
+              "3-0",
+              "4-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "1-1",
+              "2-0"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915814",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Brighton & Hove Albion",
+          "CSU Craiova"
+        ]
+      },
+      {
+        "actual": [
+          4,
+          0
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          8,
+          0
+        ],
+        "first_issue_sha256": "10688ba346fc06fe65f2409e40658fd1b0e4b6e80e39acdc4ef181254eddbc80",
+        "forecast": {
+          "first_issue": {
+            "primary": "3-0",
+            "top3": [
+              "3-0",
+              "2-0",
+              "4-0"
+            ],
+            "total_line": 3.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "1-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-0",
+            "top3": [
+              "1-0",
+              "2-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915815",
+        "line": 3.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Ajax Amsterdam",
+          "FC Thun"
+        ]
+      },
+      {
+        "actual": [
+          1,
+          0
+        ],
+        "cohort": "uefa.europa.conf",
+        "date": "2026-11-26",
+        "domestic_games": [
+          0,
+          0
+        ],
+        "first_issue_sha256": "10e2ddde23a61e079915d22709b34112f0656d706837363d8205fab53a767d7c",
+        "forecast": {
+          "first_issue": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": 2.5,
+            "total_side": "under",
+            "wdl": "home"
+          },
+          "no_market": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "0-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          },
+          "wdl_only": {
+            "primary": "1-1",
+            "top3": [
+              "1-1",
+              "1-0",
+              "2-1"
+            ],
+            "total_line": null,
+            "total_side": null,
+            "wdl": "home"
+          }
+        },
+        "id": "espn:401915816",
+        "line": 2.5,
+        "odds_mode_original": "paired",
+        "teams": [
+          "Kairat Almaty",
+          "Mjällby AIF"
+        ]
+      }
+    ]
+  }
+}

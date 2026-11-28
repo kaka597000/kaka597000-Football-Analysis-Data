@@ -32,9 +32,16 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             /workspace-updates/20261123-all-scope-kpi/results/scorecard.csv
+            /workspace-updates/20261123-all-scope-kpi/forward-first-issues.tar.gz
+            /workspace-updates/20261123-prematch-literature/models/uefa.europa.tar.gz
+            /workspace-updates/20261123-prematch-literature/models/uefa.europa.conf.tar.gz
             /workspace-updates/20261125-forward-settlement/nov25/evidence.tar.gz
             /workspace-updates/20261125-j1-stage-windows/registration/
             /workspace-updates/20261125-j1-stage-windows/nov25/
+            /workspace-updates/20261125-r13-domestic-form/replay/forecasts.tar.gz
+            /workspace-updates/20261125-r13-domestic-form/forward/first-issues.tar.gz
+            /workspace-updates/20261125-r13-domestic-form/inputs/domestic.tar.gz
+            /workspace-updates/20261126-europe-first-display/capture-plan/round1.json
             /workspace-updates/20261126-europe-first-display/capture-plan/round2.json
             /workspace-updates/20261126-europe-first-display/registration/
             /workspace-updates/20261126-europe-first-display/calendar/captures.json
@@ -76,6 +83,12 @@ jobs:
           path: source
           ref: f73b7e6fe9da7c542c46a69dd92fcf8739a79526
           persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: kaka597000/Football-Analysis
+          path: r13-source
+          ref: f3f3f41673492b43b3d44770e4de76d8571fccb3
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -112,3 +125,9 @@ jobs:
           for file in fixtures-uel.json fixtures-uecl.json team-ids.json replay.json; do
             cmp "$folder/$file" "$out/$file"
           done
+      - name: Replay the fixed R13 price-input comparison
+        run: |
+          python -m pip install lightgbm==4.6.0 pandas==3.1.0
+          folder=audit/workspace-updates/20261127-phase-one-evidence/europe-market-fallback-study-20261128
+          PYTHONPATH=r13-source/runtime python -B "$folder/replay.py" --data-root inputs > "$RUNNER_TEMP/r13-market-ablation.json"
+          cmp "$folder/verified.json" "$RUNNER_TEMP/r13-market-ablation.json"
