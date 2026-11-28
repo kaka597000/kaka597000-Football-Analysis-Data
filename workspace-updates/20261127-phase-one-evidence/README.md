@@ -2,6 +2,8 @@
 
 本轮按建议优先核查正式首版、实盘时间和两仓依赖，并将日职联的结算与盘口采集单独提交到当前 main 的审核线上。第一阶段逐赛事使用原登记目标与覆盖门槛。[源码 PR](https://github.com/kaka597000/Football-Analysis/pull/131) · [四阶段目标](https://github.com/kaka597000/Football-Analysis/blob/baac2b8342f557ac7913e0c45ad3ea2ed4861e5b/project-goals.json)
 
+11 月 28 日追加五场真实开球和终场证据、原首版比分以及四组研究的同场结算。原十场范围及 11 月 27 日的赛前重放保留。[11 月 28 日复盘](j1-weekend-results/20261128/README.md)
+
 ## 赛果和首版
 
 | 日职联窗口，北京时间 | 原场次 | 核实实际开球 | 核实常规时间赛果 |

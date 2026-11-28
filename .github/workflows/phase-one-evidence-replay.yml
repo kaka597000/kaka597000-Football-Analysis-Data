@@ -65,7 +65,7 @@ jobs:
         with:
           repository: kaka597000/Football-Analysis
           path: source
-          ref: 859f454ae90bc9f7e6c743e016fb68d4e18f912d
+          ref: 6a52804781d1530d0bdc1eaec29f57b48c5420cb
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -79,3 +79,14 @@ jobs:
           (cd "$bundle" && sha256sum -c SHA256SUMS)
           PYTHONPATH=source/runtime python -B "$bundle/verify.py" --data-root inputs > "$RUNNER_TEMP/verified.json"
           cmp "$bundle/verified.json" "$RUNNER_TEMP/verified.json"
+      - name: Replay five verified J1 weekend results
+        run: |
+          bundle=audit/workspace-updates/20261127-phase-one-evidence
+          day="$bundle/j1-weekend-results/20261128"
+          out="$RUNNER_TEMP/j1-weekend-20261128"
+          PYTHONPATH=source/runtime python -B "$day/replay.py" --original-data inputs \
+            --wave-bundle "$day" --checkpoint-bundle "$bundle" --out "$out" \
+            --at 2026-11-28T10:45:52+00:00
+          for file in review.json first-window.json normalized-results.jsonl; do
+            cmp "$day/$file" "$out/$file"
+          done
