@@ -61,11 +61,16 @@ def confirmed_lineups(fixture, root, receipts, at):
     return result
 
 
-def frosinone_first(bundle, fixture, pair):
+def frosinone_first(bundle, fixture, pair, *, as_of):
     root = (bundle / 'comprehensive/frosinone-parma').resolve()
+    if not root.exists():
+        return None
     record = verify(json.loads(gzip.decompress((root / 'first.json.gz').read_bytes())))
+    issued = aware(record['recorded_at'])
+    if as_of < issued:
+        return None
     identity, payload = record['fixture'], record['payload']
-    at, issued, kickoff = map(aware, (identity['cutoff_at'], record['recorded_at'], fixture['kickoff_at']))
+    at, kickoff = map(aware, (identity['cutoff_at'], fixture['kickoff_at']))
     receipts = read(root / 'receipts.json')
     if (record['match_id'] != MID or record['stage'] != 'prematch' or record['track'] != 'comprehensive'
             or record['revision'] != 1 or record['previous_sha256'] is not None

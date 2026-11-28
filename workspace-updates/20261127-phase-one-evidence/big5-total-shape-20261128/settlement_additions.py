@@ -73,8 +73,8 @@ def added_firsts(bundle, fixtures, *, at):
             arms[arm] = dict(reference, forecast={'primary': frozen[0], 'top3': frozen[1],
                                                  'wdl': DIRECTIONS.get(pick.get('wdl_direction'))})
         additions[mid] = arms
-    comprehensive = frosinone_first(bundle, fixtures[FROSINONE_PARMA], spec[FROSINONE_PARMA]['receipt'])
-    if aware(comprehensive['recorded_at']) <= at:
+    comprehensive = frosinone_first(bundle, fixtures[FROSINONE_PARMA], spec[FROSINONE_PARMA]['receipt'], as_of=at)
+    if comprehensive:
         additions[FROSINONE_PARMA]['综合'] = comprehensive
     return additions
 

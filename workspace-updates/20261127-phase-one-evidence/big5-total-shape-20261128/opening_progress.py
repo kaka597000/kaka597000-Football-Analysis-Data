@@ -8,7 +8,7 @@ from research.analysis_freeze import aware, verify
 from research_program.goal_state_study import sha, write_new
 from result_evidence import endpoint, espn_event, retained
 from settlement import grade, load_window, locked_bindings, read
-from settlement_additions import added_firsts, verified_window_results
+from settlement_additions import verified_window_results
 
 
 def opening(bundle):
@@ -52,7 +52,7 @@ def opening(bundle):
         observations.append({'observed_at': captured.isoformat(), 'provider': provider, 'provider_status': label,
                              'state': state, 'sha256': ref['sha256'], 'path': ref['path']})
     outcomes = verified_window_results(matches, root, admissible, at)
-    report = grade(matches, outcomes, added_firsts(bundle, matches, at=at))
+    report = grade(matches, outcomes)
     live = report['per_match'][mid]
     began = live['actual_kickoff_at']
     return {'scope': 'REGISTERED_BIG_FIVE_OPENING_KICKOFF_OBSERVATION', 'observed_at': at.isoformat(),
