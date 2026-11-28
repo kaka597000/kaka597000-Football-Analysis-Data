@@ -191,3 +191,8 @@ jobs:
           done
           PYTHONPATH=r13-source/runtime python -B "$folder/weekend.py" --data-root inputs --out "$RUNNER_TEMP/big5-weekend.json"
           cmp "$folder/weekend.json" "$RUNNER_TEMP/big5-weekend.json"
+      - name: Rehearse Big Five result evidence and actual-kickoff settlement
+        run: |
+          folder=audit/workspace-updates/20261127-phase-one-evidence/big5-total-shape-20261128
+          PYTHONPATH=r13-source/runtime python -B "$folder/settlement_rehearsal.py" --data-root inputs --out "$RUNNER_TEMP/big5-settlement.json"
+          cmp "$folder/settlement-check/verified.json" "$RUNNER_TEMP/big5-settlement.json"

@@ -17,3 +17,17 @@
 北京时间 11 月 28 日 20:08 至 11 月 29 日 24:00 的赛历有 31 场待赛。英超 8、西甲 6、德甲 6、意甲 5、法甲 6。R7、R8、R14、R21、R22、R23 在这 31 场逐轨均有可核首版。R8 相对 R7 的首选和三选成员分别在 10 场和 21 场有变化。原登记和结果均按比赛 ID 锁定。英超 R22 在利兹联–考文垂、布莱顿–纽卡斯尔的首选分别由 1–0 到 2–0、由 1–1 到 2–1。两场三选成员相同。德甲 R14 在美因茨–柏林联合的首选由 2–1 到 2–0，三选成员相同。[赛历快照](schedule/manifest.json) · [全部原首版与真实分歧](weekend.json) · [窗口冻结](weekend-freeze.json)
 
 首场贝蒂斯–巴列卡诺保留原研究 R7 首选 2–1、R8 首选 1–1。北京时间 20:13 的新 Current 与 Test 统计首版均为 1–1，Current 三选 1–1／1–0／2–1，Test 三选 1–1／1–0／2–0。两者训练截止均为 10 月 9 日，均标记观察。ESPN 当次摘要无官方首发字段，所见报价没有独立机构发布时间，严格大小球有效样本为零。[当天新模型首版](opening-comparator.json)
+
+北京时间 20:22 的 ESPN 和 FotMob 原件均列出两队首发，11 人名单逐人一致。贝蒂斯队形记录分别为 4–3–3 与 4–2–3–1。20:27 综合首版以 1–1 为第一比分，三选 1–1／1–0／2–1，独立胜平负倾向主胜，大小球观望。巴列卡诺近两个有据客场的 xG 分别为 1.42 和 2.25，合计仅进一球。贝蒂斯近两个有据主场均进两球、均失球。保留客队一球，同时给主队零封和主队进第二球各一条备选路径。独立球队发布时钟和渠道首次送达未核实。[综合首版与阵容原件](opening-lineups.json)
+
+## 实际开球与赛果结算
+
+31 场在开球前锁定了 FotMob 的比赛、联赛及主客球队 ID。ESPN 的首节起步事件提供实际开球时钟，FotMob 的常规时间比分用于同场复核。存档比分冲突会保留待定。开球时钟缺失、首版晚于实际开球或恰好同一时刻的记录继续保留在原 31 场，比分和胜平负的有效分母按各自合格记录计算。研究、Current、Test 和综合分别保留。31 场赛前预演可结算 0 场，上一批已完赛的五联赛各一场用于离线核验，两源比分及 ESPN 实开均复现 5/5。英超、德甲和西甲沿用旧档的文件收时，意甲和法甲有独立响应回执。[赛前身份冻结](schedule/fotmob-bindings-freeze.json) · [结算复算](settlement-check/verified.json) · [结算证据冻结](settlement-evidence-freeze.json)
+
+从固定 R13 源码的 `runtime` 加载项目证据解析。源清单中的每条记录保留 `match_id`、`provider`、相对于证据目录的 `path`、解压后原文的 `sha256`、`source_url`、`captured_at` 和 HTTP 状态。结果文件逐联赛携带已结场次、有效分母及同场得失。
+
+```bash
+PYTHONPATH=/path/to/source/runtime python -B settlement.py \
+  --evidence-root /path/to/postmatch-captures --receipts /path/to/capture-receipts.json \
+  --at "$actual_review_cutoff" --out /path/to/new-settlement.json
+```
