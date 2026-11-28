@@ -1,0 +1,32 @@
+{
+  "version": "R13-europe-historical-market-input-temporal-replay-1",
+  "purpose": "Check whether the fixed market input comparison from the first real window repeats across prior league-phase rounds. Fit no model, choose no weights, preserve the registered future comparison.",
+  "evidence_status": "DATE_CAUSAL_DEVELOPMENT_ON_PREVIOUSLY_STUDIED_LABELS",
+  "data_commit": "87ef46859990a8760b4af361eef3186f5090d319",
+  "source_commit": "f3f3f41673492b43b3d44770e4de76d8571fccb3",
+  "reference_protocol": {
+    "path": "20261126-r30-europe-score-dispersion/protocol.json",
+    "sha256": "f8942bc68b404b4d9d03116409073f89b1be01413907c8a15af73562178118d5"
+  },
+  "excluded_plans": {
+    "round1": {
+      "path": "20261126-europe-first-display/capture-plan/round1.json",
+      "sha256": "2fb5e1115ec5966a9a07e3d4b147025f82e9c0a03037374831f4cfa7bdb8eee2"
+    },
+    "round2": {
+      "path": "20261126-europe-first-display/capture-plan/round2.json",
+      "sha256": "26676b12caf4ea293b6665b495c65206b3b25a2cc72c3ca971531c210e2cf7f5"
+    }
+  },
+  "windows": {
+    "2025_26_early": {"from": "2025-07-01", "before": "2025-11-07", "uefa.europa": 72, "uefa.europa.conf": 54},
+    "2025_26_late": {"from": "2025-11-07", "before": "2026-07-01", "uefa.europa": 72, "uefa.europa.conf": 54},
+    "2026_27_early": {"from": "2026-07-01", "before": "2026-11-06", "uefa.europa": 72, "uefa.europa.conf": 54}
+  },
+  "arms": {
+    "archive": "Reproduce the R13 archive with its original historical market input.",
+    "without_totals": "Remove total and paired flag only. Retain original 1X2 if available and otherwise use the same team prior. Use the fitted recipes and archive domestic design.",
+    "without_any_odds": "Remove total, paired flag and 1X2. Use the same team prior and the same fitted recipes and domestic design."
+  },
+  "report": "For each competition and fixed date slice report full registered league-phase population plus the subset with both valid 1X2 and a paired total on the frozen historical panel. Show original market input coverage, each arm's first, three and WDL effective denominators, paired hit gains and losses, score disagreements and date cluster intervals. Retained historical totals are model-input evidence. Masked arms have no totals pick. Historical odds and reconstruction are insufficient to certify actual first display or bookmaker-native quote time."
+}

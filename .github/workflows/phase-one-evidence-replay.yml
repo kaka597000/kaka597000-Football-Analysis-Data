@@ -33,6 +33,8 @@ jobs:
           sparse-checkout: |
             /workspace-updates/20261123-all-scope-kpi/results/scorecard.csv
             /workspace-updates/20261123-all-scope-kpi/forward-first-issues.tar.gz
+            /workspace-updates/20261123-all-scope-kpi/models/uefa.europa.tar.gz
+            /workspace-updates/20261123-all-scope-kpi/models/uefa.europa.conf.tar.gz
             /workspace-updates/20261123-prematch-literature/models/uefa.europa.tar.gz
             /workspace-updates/20261123-prematch-literature/models/uefa.europa.conf.tar.gz
             /workspace-updates/20261125-forward-settlement/nov25/evidence.tar.gz
@@ -61,6 +63,7 @@ jobs:
             /workspace-updates/20261126-r26-j1-first-stage/nov28_29/
             /workspace-updates/20261126-r26-j1-first-stage/evidence/public-source-snapshots.tar.gz
             /workspace-updates/20261126-r28-j1-process-forward/issued/
+            /workspace-updates/20261126-r30-europe-score-dispersion/protocol.json
             /workspace-updates/20261126-r34-europe-winning-margin/issued/
             /workspace-updates/20261126-r38-europe-domestic-opponents/issued/
             /workspace-updates/20261127-europe-round1-review/j1-capture-plan.json
@@ -141,5 +144,13 @@ jobs:
           out="$RUNNER_TEMP/r13-domestic-refresh"
           PYTHONPATH=r13-source/runtime python -B "$folder/replay.py" --data-root inputs --out "$out"
           for file in verified.json known-league-delta.jsonl new-league-delta.jsonl october-league-delta.jsonl; do
+            cmp "$folder/$file" "$out/$file"
+          done
+      - name: Replay the fixed R13 market-input comparison across historical dates
+        run: |
+          folder=audit/workspace-updates/20261127-phase-one-evidence/europe-r13-temporal-market-20261128
+          out="$RUNNER_TEMP/r13-temporal-market"
+          PYTHONPATH=r13-source/runtime python -B "$folder/replay.py" --data-root inputs --out "$out"
+          for file in verified.json fixtures.jsonl.gz; do
             cmp "$folder/$file" "$out/$file"
           done
