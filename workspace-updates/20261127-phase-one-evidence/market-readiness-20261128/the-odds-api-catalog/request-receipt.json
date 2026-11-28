@@ -1,0 +1,58 @@
+{
+  "api_success": true,
+  "authenticated": true,
+  "authentication_status": "CREDENTIAL_ACCEPTED",
+  "catalog_entry_count": 78,
+  "catalog_sha256": "cce9b45bcecd5c880b5fc29ac1912d04f088db5dfb2e115b5015cbc3091a39aa",
+  "cf_ray": null,
+  "content_type": "application/json; charset=utf-8",
+  "endpoint_cost_class": "catalog_only_no_credit_endpoint",
+  "fixture_mapping_verified": false,
+  "http_status": 200,
+  "key_present_for_request": true,
+  "method": "GET",
+  "model_ingestion_performed": false,
+  "provider": "the-odds-api",
+  "provider_key_retention_note": "The project safe client removes any dictionary field named key; current raw sport_key values were therefore not retained. Entries below list standard candidate names separately and do not claim those strings were directly read from this response.",
+  "query_time": "2026-11-28T10:55:34.070109+00:00",
+  "quota_headers": {
+    "x-requests-last": "0",
+    "x-requests-remaining": "0",
+    "x-requests-used": "500"
+  },
+  "request_started_at_utc": "2026-11-28T10:55:34.070068+00:00",
+  "response_received_at_utc": "2026-11-28T10:55:34.404127+00:00",
+  "response_sha256": "73f198699b18d146b382f7e549330efb93609a957dda524d246e99eb4882c5e0",
+  "target_catalog_entries": [
+    {
+      "active": true,
+      "candidate_basis": "standard The Odds API sport-key naming; current response key field was removed by clients.scrub(PRIVATE includes key), so candidate is not directly verified from retained response",
+      "description": "Japan Soccer League",
+      "group": "Soccer",
+      "standard_sport_key_candidate": "soccer_japan_j_league",
+      "title": "J League"
+    },
+    {
+      "active": true,
+      "candidate_basis": "standard The Odds API sport-key naming; current response key field was removed by clients.scrub(PRIVATE includes key), so candidate is not directly verified from retained response",
+      "description": "UEFA Europa Conference League",
+      "group": "Soccer",
+      "standard_sport_key_candidate": "soccer_uefa_europa_conference_league",
+      "title": "UEFA Europa Conference League"
+    },
+    {
+      "active": true,
+      "candidate_basis": "standard The Odds API sport-key naming; current response key field was removed by clients.scrub(PRIVATE includes key), so candidate is not directly verified from retained response",
+      "description": "European Europa League",
+      "group": "Soccer",
+      "standard_sport_key_candidate": "soccer_uefa_europa_league",
+      "title": "UEFA Europa League"
+    }
+  ],
+  "target_search_by_title": [
+    "J League",
+    "UEFA Europa League",
+    "UEFA Europa Conference League"
+  ],
+  "url": "https://api.the-odds-api.com/v4/sports"
+}
